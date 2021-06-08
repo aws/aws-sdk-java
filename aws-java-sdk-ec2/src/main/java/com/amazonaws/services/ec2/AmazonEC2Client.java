@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,8 +53,12 @@ import com.amazonaws.services.ec2.model.transform.*;
  * <p>
  * <fullname>Amazon Elastic Compute Cloud</fullname>
  * <p>
- * Amazon Elastic Compute Cloud (Amazon EC2) provides secure and resizable computing capacity in the AWS cloud. Using
+ * Amazon Elastic Compute Cloud (Amazon EC2) provides secure and resizable computing capacity in the AWS Cloud. Using
  * Amazon EC2 eliminates the need to invest in hardware up front, so you can develop and deploy applications faster.
+ * Amazon Virtual Private Cloud (Amazon VPC) enables you to provision a logically isolated section of the AWS Cloud
+ * where you can launch AWS resources in a virtual network that you've defined. Amazon Elastic Block Store (Amazon EBS)
+ * provides block level storage volumes for use with EC2 instances. EBS volumes are highly available and reliable
+ * storage volumes that can be attached to any running instance and used like a hard drive.
  * </p>
  * <p>
  * To learn more, see the following resources:
@@ -69,7 +73,7 @@ import com.amazonaws.services.ec2.model.transform.*;
  * <li>
  * <p>
  * Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon EBS documentation</a>
+ * href="http://aws.amazon.com/documentation/ebs">Amazon EBS documentation</a>
  * </p>
  * </li>
  * <li>
@@ -346,6 +350,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(acceptReservedInstancesExchangeQuoteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptReservedInstancesExchangeQuote");
@@ -357,6 +363,67 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AcceptReservedInstancesExchangeQuoteResult> responseHandler = new StaxResponseHandler<AcceptReservedInstancesExchangeQuoteResult>(
                     new AcceptReservedInstancesExchangeQuoteResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Accepts a request to associate subnets with a transit gateway multicast domain.
+     * </p>
+     * 
+     * @param acceptTransitGatewayMulticastDomainAssociationsRequest
+     * @return Result of the AcceptTransitGatewayMulticastDomainAssociations operation returned by the service.
+     * @sample AmazonEC2.AcceptTransitGatewayMulticastDomainAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AcceptTransitGatewayMulticastDomainAssociationsResult acceptTransitGatewayMulticastDomainAssociations(
+            AcceptTransitGatewayMulticastDomainAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptTransitGatewayMulticastDomainAssociations(request);
+    }
+
+    @SdkInternalApi
+    final AcceptTransitGatewayMulticastDomainAssociationsResult executeAcceptTransitGatewayMulticastDomainAssociations(
+            AcceptTransitGatewayMulticastDomainAssociationsRequest acceptTransitGatewayMulticastDomainAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptTransitGatewayMulticastDomainAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptTransitGatewayMulticastDomainAssociationsRequest> request = null;
+        Response<AcceptTransitGatewayMulticastDomainAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptTransitGatewayMulticastDomainAssociationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(acceptTransitGatewayMulticastDomainAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptTransitGatewayMulticastDomainAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AcceptTransitGatewayMulticastDomainAssociationsResult> responseHandler = new StaxResponseHandler<AcceptTransitGatewayMulticastDomainAssociationsResult>(
+                    new AcceptTransitGatewayMulticastDomainAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -402,6 +469,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(acceptTransitGatewayPeeringAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptTransitGatewayPeeringAttachment");
@@ -413,6 +482,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AcceptTransitGatewayPeeringAttachmentResult> responseHandler = new StaxResponseHandler<AcceptTransitGatewayPeeringAttachmentResult>(
                     new AcceptTransitGatewayPeeringAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -461,6 +531,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AcceptTransitGatewayVpcAttachmentRequestMarshaller().marshall(super.beforeMarshalling(acceptTransitGatewayVpcAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptTransitGatewayVpcAttachment");
@@ -472,6 +544,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AcceptTransitGatewayVpcAttachmentResult> responseHandler = new StaxResponseHandler<AcceptTransitGatewayVpcAttachmentResult>(
                     new AcceptTransitGatewayVpcAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -514,6 +587,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AcceptVpcEndpointConnectionsRequestMarshaller().marshall(super.beforeMarshalling(acceptVpcEndpointConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptVpcEndpointConnections");
@@ -525,6 +600,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AcceptVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<AcceptVpcEndpointConnectionsResult>(
                     new AcceptVpcEndpointConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -573,6 +649,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AcceptVpcPeeringConnectionRequestMarshaller().marshall(super.beforeMarshalling(acceptVpcPeeringConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptVpcPeeringConnection");
@@ -584,6 +662,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AcceptVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<AcceptVpcPeeringConnectionResult>(
                     new AcceptVpcPeeringConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -649,6 +728,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AdvertiseByoipCidrRequestMarshaller().marshall(super.beforeMarshalling(advertiseByoipCidrRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdvertiseByoipCidr");
@@ -660,6 +741,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AdvertiseByoipCidrResult> responseHandler = new StaxResponseHandler<AdvertiseByoipCidrResult>(
                     new AdvertiseByoipCidrResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -697,6 +779,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * You can allocate a carrier IP address which is a public IP address from a telecommunication carrier, to a network
+     * interface which resides in a subnet in a Wavelength Zone (for example an EC2 instance).
+     * </p>
      * 
      * @param allocateAddressRequest
      * @return Result of the AllocateAddress operation returned by the service.
@@ -725,6 +811,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AllocateAddressRequestMarshaller().marshall(super.beforeMarshalling(allocateAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AllocateAddress");
@@ -736,6 +824,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AllocateAddressResult> responseHandler = new StaxResponseHandler<AllocateAddressResult>(
                     new AllocateAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -784,6 +873,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AllocateHostsRequestMarshaller().marshall(super.beforeMarshalling(allocateHostsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AllocateHosts");
@@ -794,6 +885,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<AllocateHostsResult> responseHandler = new StaxResponseHandler<AllocateHostsResult>(new AllocateHostsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -840,6 +932,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(applySecurityGroupsToClientVpnTargetNetworkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApplySecurityGroupsToClientVpnTargetNetwork");
@@ -851,6 +945,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ApplySecurityGroupsToClientVpnTargetNetworkResult> responseHandler = new StaxResponseHandler<ApplySecurityGroupsToClientVpnTargetNetworkResult>(
                     new ApplySecurityGroupsToClientVpnTargetNetworkResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -901,6 +996,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssignIpv6AddressesRequestMarshaller().marshall(super.beforeMarshalling(assignIpv6AddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssignIpv6Addresses");
@@ -912,6 +1009,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssignIpv6AddressesResult> responseHandler = new StaxResponseHandler<AssignIpv6AddressesResult>(
                     new AssignIpv6AddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -976,6 +1074,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssignPrivateIpAddressesRequestMarshaller().marshall(super.beforeMarshalling(assignPrivateIpAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssignPrivateIpAddresses");
@@ -987,6 +1087,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssignPrivateIpAddressesResult> responseHandler = new StaxResponseHandler<AssignPrivateIpAddressesResult>(
                     new AssignPrivateIpAddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -999,8 +1100,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Associates an Elastic IP address with an instance or a network interface. Before you can use an Elastic IP
-     * address, you must allocate it to your account.
+     * Associates an Elastic IP address, or carrier IP address (for instances that are in subnets in Wavelength Zones)
+     * with an instance or a network interface. Before you can use an Elastic IP address, you must allocate it to your
+     * account.
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
@@ -1018,6 +1120,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * with the primary IP address. If the Elastic IP address is already associated with a different instance or a
      * network interface, you get an error unless you allow reassociation. You cannot associate an Elastic IP address
      * with an instance or network interface that has an existing Elastic IP address.
+     * </p>
+     * <p>
+     * [Subnets in Wavelength Zones] You can associate an IP address from the telecommunication carrier to the instance
+     * or network interface.
      * </p>
      * <p>
      * You cannot associate an Elastic IP address with an interface in a different network border group.
@@ -1058,6 +1164,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateAddressRequestMarshaller().marshall(super.beforeMarshalling(associateAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateAddress");
@@ -1069,6 +1177,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateAddressResult> responseHandler = new StaxResponseHandler<AssociateAddressResult>(
                     new AssociateAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1119,6 +1228,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateClientVpnTargetNetworkRequestMarshaller().marshall(super.beforeMarshalling(associateClientVpnTargetNetworkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateClientVpnTargetNetwork");
@@ -1130,6 +1241,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateClientVpnTargetNetworkResult> responseHandler = new StaxResponseHandler<AssociateClientVpnTargetNetworkResult>(
                     new AssociateClientVpnTargetNetworkResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1183,6 +1295,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateDhcpOptionsRequestMarshaller().marshall(super.beforeMarshalling(associateDhcpOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDhcpOptions");
@@ -1194,6 +1308,82 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateDhcpOptionsResult> responseHandler = new StaxResponseHandler<AssociateDhcpOptionsResult>(
                     new AssociateDhcpOptionsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates an AWS Identity and Access Management (IAM) role with an AWS Certificate Manager (ACM) certificate.
+     * This enables the certificate to be used by the ACM for Nitro Enclaves application inside an enclave. For more
+     * information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS
+     * Certificate Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User Guide</i>.
+     * </p>
+     * <p>
+     * When the IAM role is associated with the ACM certificate, the certificate, certificate chain, and encrypted
+     * private key are placed in an Amazon S3 bucket that only the associated IAM role can access. The private key of
+     * the certificate is encrypted with an AWS-managed KMS customer master (CMK) that has an attached attestation-based
+     * CMK policy.
+     * </p>
+     * <p>
+     * To enable the IAM role to access the Amazon S3 object, you must grant it permission to call
+     * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To enable the IAM role to access the
+     * AWS KMS CMK, you must grant it permission to call <code>kms:Decrypt</code> on the AWS KMS CMK returned by the
+     * command. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy"> Grant the role
+     * permission to access the certificate and encryption key</a> in the <i>AWS Nitro Enclaves User Guide</i>.
+     * </p>
+     * 
+     * @param associateEnclaveCertificateIamRoleRequest
+     * @return Result of the AssociateEnclaveCertificateIamRole operation returned by the service.
+     * @sample AmazonEC2.AssociateEnclaveCertificateIamRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateEnclaveCertificateIamRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateEnclaveCertificateIamRoleResult associateEnclaveCertificateIamRole(AssociateEnclaveCertificateIamRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateEnclaveCertificateIamRole(request);
+    }
+
+    @SdkInternalApi
+    final AssociateEnclaveCertificateIamRoleResult executeAssociateEnclaveCertificateIamRole(
+            AssociateEnclaveCertificateIamRoleRequest associateEnclaveCertificateIamRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateEnclaveCertificateIamRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateEnclaveCertificateIamRoleRequest> request = null;
+        Response<AssociateEnclaveCertificateIamRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateEnclaveCertificateIamRoleRequestMarshaller()
+                        .marshall(super.beforeMarshalling(associateEnclaveCertificateIamRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateEnclaveCertificateIamRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AssociateEnclaveCertificateIamRoleResult> responseHandler = new StaxResponseHandler<AssociateEnclaveCertificateIamRoleResult>(
+                    new AssociateEnclaveCertificateIamRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1237,6 +1427,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateIamInstanceProfileRequestMarshaller().marshall(super.beforeMarshalling(associateIamInstanceProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateIamInstanceProfile");
@@ -1248,6 +1440,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateIamInstanceProfileResult> responseHandler = new StaxResponseHandler<AssociateIamInstanceProfileResult>(
                     new AssociateIamInstanceProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1297,6 +1490,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateRouteTableRequestMarshaller().marshall(super.beforeMarshalling(associateRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateRouteTable");
@@ -1308,6 +1503,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateRouteTableResult> responseHandler = new StaxResponseHandler<AssociateRouteTableResult>(
                     new AssociateRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1351,6 +1547,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateSubnetCidrBlockRequestMarshaller().marshall(super.beforeMarshalling(associateSubnetCidrBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSubnetCidrBlock");
@@ -1362,6 +1560,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateSubnetCidrBlockResult> responseHandler = new StaxResponseHandler<AssociateSubnetCidrBlockResult>(
                     new AssociateSubnetCidrBlockResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1412,6 +1611,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(associateTransitGatewayMulticastDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateTransitGatewayMulticastDomain");
@@ -1423,6 +1624,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateTransitGatewayMulticastDomainResult> responseHandler = new StaxResponseHandler<AssociateTransitGatewayMulticastDomainResult>(
                     new AssociateTransitGatewayMulticastDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1467,6 +1669,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateTransitGatewayRouteTableRequestMarshaller().marshall(super.beforeMarshalling(associateTransitGatewayRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateTransitGatewayRouteTable");
@@ -1478,6 +1682,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateTransitGatewayRouteTableResult> responseHandler = new StaxResponseHandler<AssociateTransitGatewayRouteTableResult>(
                     new AssociateTransitGatewayRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1532,6 +1737,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AssociateVpcCidrBlockRequestMarshaller().marshall(super.beforeMarshalling(associateVpcCidrBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateVpcCidrBlock");
@@ -1543,6 +1750,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateVpcCidrBlockResult> responseHandler = new StaxResponseHandler<AssociateVpcCidrBlockResult>(
                     new AssociateVpcCidrBlockResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1595,6 +1803,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AttachClassicLinkVpcRequestMarshaller().marshall(super.beforeMarshalling(attachClassicLinkVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachClassicLinkVpc");
@@ -1606,6 +1816,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AttachClassicLinkVpcResult> responseHandler = new StaxResponseHandler<AttachClassicLinkVpcResult>(
                     new AttachClassicLinkVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1650,6 +1861,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AttachInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(attachInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachInternetGateway");
@@ -1661,6 +1874,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AttachInternetGatewayResult> responseHandler = new StaxResponseHandler<AttachInternetGatewayResult>(
                     new AttachInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1704,6 +1918,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AttachNetworkInterfaceRequestMarshaller().marshall(super.beforeMarshalling(attachNetworkInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachNetworkInterface");
@@ -1715,6 +1931,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AttachNetworkInterfaceResult> responseHandler = new StaxResponseHandler<AttachNetworkInterfaceResult>(
                     new AttachNetworkInterfaceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1732,13 +1949,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * Encrypted EBS volumes must be attached to instances that support Amazon EBS encryption. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * After you attach an EBS volume, you must make it available. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making an EBS Volume Available
-     * For Use</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making an EBS volume available
+     * for use</a>.
      * </p>
      * <p>
      * If a volume has an AWS Marketplace product code:
@@ -1769,7 +1986,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching Amazon EBS
-     * Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param attachVolumeRequest
@@ -1799,6 +2016,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AttachVolumeRequestMarshaller().marshall(super.beforeMarshalling(attachVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachVolume");
@@ -1809,6 +2028,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<AttachVolumeResult> responseHandler = new StaxResponseHandler<AttachVolumeResult>(new AttachVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1856,6 +2076,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AttachVpnGatewayRequestMarshaller().marshall(super.beforeMarshalling(attachVpnGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachVpnGateway");
@@ -1867,6 +2089,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AttachVpnGatewayResult> responseHandler = new StaxResponseHandler<AttachVpnGatewayResult>(
                     new AttachVpnGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1911,6 +2134,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AuthorizeClientVpnIngressRequestMarshaller().marshall(super.beforeMarshalling(authorizeClientVpnIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeClientVpnIngress");
@@ -1922,6 +2147,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AuthorizeClientVpnIngressResult> responseHandler = new StaxResponseHandler<AuthorizeClientVpnIngressResult>(
                     new AuthorizeClientVpnIngressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1980,6 +2206,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AuthorizeSecurityGroupEgressRequestMarshaller().marshall(super.beforeMarshalling(authorizeSecurityGroupEgressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeSecurityGroupEgress");
@@ -1991,6 +2219,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AuthorizeSecurityGroupEgressResult> responseHandler = new StaxResponseHandler<AuthorizeSecurityGroupEgressResult>(
                     new AuthorizeSecurityGroupEgressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2050,6 +2279,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new AuthorizeSecurityGroupIngressRequestMarshaller().marshall(super.beforeMarshalling(authorizeSecurityGroupIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeSecurityGroupIngress");
@@ -2061,6 +2292,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AuthorizeSecurityGroupIngressResult> responseHandler = new StaxResponseHandler<AuthorizeSecurityGroupIngressResult>(
                     new AuthorizeSecurityGroupIngressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2113,6 +2345,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new BundleInstanceRequestMarshaller().marshall(super.beforeMarshalling(bundleInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BundleInstance");
@@ -2124,6 +2358,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<BundleInstanceResult> responseHandler = new StaxResponseHandler<BundleInstanceResult>(
                     new BundleInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2167,6 +2402,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelBundleTaskRequestMarshaller().marshall(super.beforeMarshalling(cancelBundleTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelBundleTask");
@@ -2178,6 +2415,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelBundleTaskResult> responseHandler = new StaxResponseHandler<CancelBundleTaskResult>(
                     new CancelBundleTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2227,6 +2465,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelCapacityReservationRequestMarshaller().marshall(super.beforeMarshalling(cancelCapacityReservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelCapacityReservation");
@@ -2238,6 +2478,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelCapacityReservationResult> responseHandler = new StaxResponseHandler<CancelCapacityReservationResult>(
                     new CancelCapacityReservationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2287,6 +2528,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelConversionTaskRequestMarshaller().marshall(super.beforeMarshalling(cancelConversionTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelConversionTask");
@@ -2298,6 +2541,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelConversionTaskResult> responseHandler = new StaxResponseHandler<CancelConversionTaskResult>(
                     new CancelConversionTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2342,6 +2586,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelExportTaskRequestMarshaller().marshall(super.beforeMarshalling(cancelExportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelExportTask");
@@ -2353,6 +2599,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelExportTaskResult> responseHandler = new StaxResponseHandler<CancelExportTaskResult>(
                     new CancelExportTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2395,6 +2642,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelImportTaskRequestMarshaller().marshall(super.beforeMarshalling(cancelImportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelImportTask");
@@ -2406,6 +2655,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelImportTaskResult> responseHandler = new StaxResponseHandler<CancelImportTaskResult>(
                     new CancelImportTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2428,7 +2678,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance
-     * Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param cancelReservedInstancesListingRequest
@@ -2459,6 +2709,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelReservedInstancesListingRequestMarshaller().marshall(super.beforeMarshalling(cancelReservedInstancesListingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelReservedInstancesListing");
@@ -2470,6 +2722,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelReservedInstancesListingResult> responseHandler = new StaxResponseHandler<CancelReservedInstancesListingResult>(
                     new CancelReservedInstancesListingResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2520,6 +2773,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelSpotFleetRequestsRequestMarshaller().marshall(super.beforeMarshalling(cancelSpotFleetRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSpotFleetRequests");
@@ -2531,6 +2786,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelSpotFleetRequestsResult> responseHandler = new StaxResponseHandler<CancelSpotFleetRequestsResult>(
                     new CancelSpotFleetRequestsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2579,6 +2835,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CancelSpotInstanceRequestsRequestMarshaller().marshall(super.beforeMarshalling(cancelSpotInstanceRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSpotInstanceRequests");
@@ -2590,6 +2848,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CancelSpotInstanceRequestsResult> responseHandler = new StaxResponseHandler<CancelSpotInstanceRequestsResult>(
                     new CancelSpotInstanceRequestsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2634,6 +2893,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ConfirmProductInstanceRequestMarshaller().marshall(super.beforeMarshalling(confirmProductInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmProductInstance");
@@ -2645,6 +2906,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ConfirmProductInstanceResult> responseHandler = new StaxResponseHandler<ConfirmProductInstanceResult>(
                     new ConfirmProductInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2687,6 +2949,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CopyFpgaImageRequestMarshaller().marshall(super.beforeMarshalling(copyFpgaImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyFpgaImage");
@@ -2697,6 +2961,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CopyFpgaImageResult> responseHandler = new StaxResponseHandler<CopyFpgaImageResult>(new CopyFpgaImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2709,13 +2974,25 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Initiates the copy of an AMI from the specified source Region to the current Region. You specify the destination
-     * Region by using its endpoint when making the request.
+     * Initiates the copy of an AMI. You can copy an AMI from one Region to another, or from a Region to an AWS Outpost.
+     * You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost. To
+     * copy an AMI to another partition, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html"
+     * >CreateStoreImageTask</a>.
      * </p>
      * <p>
-     * Copies of encrypted backing snapshots for the AMI are encrypted. Copies of unencrypted backing snapshots remain
-     * unencrypted, unless you set <code>Encrypted</code> during the copy operation. You cannot create an unencrypted
-     * copy of an encrypted backing snapshot.
+     * To copy an AMI from one Region to another, specify the source Region using the <b>SourceRegion</b> parameter, and
+     * specify the destination Region using its endpoint. Copies of encrypted backing snapshots for the AMI are
+     * encrypted. Copies of unencrypted backing snapshots remain unencrypted, unless you set <code>Encrypted</code>
+     * during the copy operation. You cannot create an unencrypted copy of an encrypted backing snapshot.
+     * </p>
+     * <p>
+     * To copy an AMI from a Region to an Outpost, specify the source Region using the <b>SourceRegion</b> parameter,
+     * and specify the ARN of the destination Outpost using <b>DestinationOutpostArn</b>. Backing snapshots copied to an
+     * Outpost are encrypted by default using the default encryption key for the Region, or a different key that you
+     * specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
+     * information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon
+     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * For more information about the prerequisites and limits when copying an AMI, see <a
@@ -2751,6 +3028,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CopyImageRequestMarshaller().marshall(super.beforeMarshalling(copyImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyImage");
@@ -2761,6 +3040,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CopyImageResult> responseHandler = new StaxResponseHandler<CopyImageResult>(new CopyImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2773,18 +3053,26 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy the snapshot within the
-     * same Region or from one Region to another. You can use the snapshot to create EBS volumes or Amazon Machine
-     * Images (AMIs).
+     * Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy a snapshot within the
+     * same Region, from one Region to another, or from a Region to an Outpost. You can't copy a snapshot from an
+     * Outpost to a Region, from one Outpost to another, or within the same Outpost.
      * </p>
      * <p>
-     * Copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted snapshots remain unencrypted, unless
-     * you enable encryption for the snapshot copy operation. By default, encrypted snapshot copies use the default AWS
-     * Key Management Service (AWS KMS) customer master key (CMK); however, you can specify a different CMK.
+     * You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).
      * </p>
      * <p>
-     * To copy an encrypted snapshot that has been shared from another account, you must have permissions for the CMK
-     * used to encrypt the snapshot.
+     * When copying snapshots to a Region, copies of encrypted EBS snapshots remain encrypted. Copies of unencrypted
+     * snapshots remain unencrypted, unless you enable encryption for the snapshot copy operation. By default, encrypted
+     * snapshot copies use the default AWS Key Management Service (AWS KMS) customer master key (CMK); however, you can
+     * specify a different CMK. To copy an encrypted snapshot that has been shared from another account, you must have
+     * permissions for the CMK used to encrypt the snapshot.
+     * </p>
+     * <p>
+     * Snapshots copied to an Outpost are encrypted by default using the default encryption key for the Region, or a
+     * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted
+     * snapshots. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * Snapshots created by copying another snapshot have an arbitrary volume ID that should not be used for any
@@ -2793,7 +3081,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying an Amazon EBS
-     * Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param copySnapshotRequest
@@ -2823,6 +3111,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CopySnapshotRequestMarshaller().marshall(super.beforeMarshalling(copySnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopySnapshot");
@@ -2833,6 +3123,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CopySnapshotResult> responseHandler = new StaxResponseHandler<CopySnapshotResult>(new CopySnapshotResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2853,7 +3144,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Regional RI discounts for that usage. By creating Capacity Reservations, you ensure that you always have access
      * to Amazon EC2 capacity when you need it, for as long as you need it. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
-     * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Reservations</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Your request to create a Capacity Reservation could fail if Amazon EC2 does not have sufficient capacity to
@@ -2866,8 +3157,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Your request could also fail if the requested quantity exceeds your On-Demand Instance limit for the selected
      * instance type. If your request fails due to limit constraints, increase your On-Demand Instance limit for the
      * required instance type and try again. For more information about increasing your instance limits, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 Service Limits</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 Service Quotas</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createCapacityReservationRequest
@@ -2897,6 +3188,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateCapacityReservationRequestMarshaller().marshall(super.beforeMarshalling(createCapacityReservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCapacityReservation");
@@ -2908,6 +3201,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateCapacityReservationResult> responseHandler = new StaxResponseHandler<CreateCapacityReservationResult>(
                     new CreateCapacityReservationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a carrier gateway. For more information about carrier gateways, see <a href=
+     * "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway"
+     * >Carrier gateways</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @param createCarrierGatewayRequest
+     * @return Result of the CreateCarrierGateway operation returned by the service.
+     * @sample AmazonEC2.CreateCarrierGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateCarrierGatewayResult createCarrierGateway(CreateCarrierGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCarrierGateway(request);
+    }
+
+    @SdkInternalApi
+    final CreateCarrierGatewayResult executeCreateCarrierGateway(CreateCarrierGatewayRequest createCarrierGatewayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCarrierGatewayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCarrierGatewayRequest> request = null;
+        Response<CreateCarrierGatewayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCarrierGatewayRequestMarshaller().marshall(super.beforeMarshalling(createCarrierGatewayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCarrierGateway");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateCarrierGatewayResult> responseHandler = new StaxResponseHandler<CreateCarrierGatewayResult>(
+                    new CreateCarrierGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2951,6 +3303,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateClientVpnEndpointRequestMarshaller().marshall(super.beforeMarshalling(createClientVpnEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateClientVpnEndpoint");
@@ -2962,6 +3316,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateClientVpnEndpointResult> responseHandler = new StaxResponseHandler<CreateClientVpnEndpointResult>(
                     new CreateClientVpnEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3006,6 +3361,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateClientVpnRouteRequestMarshaller().marshall(super.beforeMarshalling(createClientVpnRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateClientVpnRoute");
@@ -3017,6 +3374,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateClientVpnRouteResult> responseHandler = new StaxResponseHandler<CreateClientVpnRouteResult>(
                     new CreateClientVpnRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3031,7 +3389,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Provides information to AWS about your VPN customer gateway device. The customer gateway is the appliance at your
      * end of the VPN connection. (The device on the AWS side of the VPN connection is the virtual private gateway.) You
-     * must provide the Internet-routable IP address of the customer gateway's external interface. The IP address must
+     * must provide the internet-routable IP address of the customer gateway's external interface. The IP address must
      * be static and can be behind a device performing network address translation (NAT).
      * </p>
      * <p>
@@ -3041,9 +3399,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <note>
      * <p>
-     * Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception of 7224, which is
-     * reserved in the <code>us-east-1</code> Region, and 9059, which is reserved in the <code>eu-west-1</code> Region.
+     * Amazon EC2 supports all 4-byte ASN numbers in the range of 1 - 2147483647, with the exception of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7224 - reserved in the <code>us-east-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 9059 - reserved in the <code>eu-west-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 17943 - reserved in the <code>ap-southeast-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 10124 - reserved in the <code>ap-northeast-1</code> Region
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site
@@ -3085,6 +3464,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateCustomerGatewayRequestMarshaller().marshall(super.beforeMarshalling(createCustomerGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomerGateway");
@@ -3096,6 +3477,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateCustomerGatewayResult> responseHandler = new StaxResponseHandler<CreateCustomerGatewayResult>(
                     new CreateCustomerGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3141,6 +3523,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateDefaultSubnetRequestMarshaller().marshall(super.beforeMarshalling(createDefaultSubnetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDefaultSubnet");
@@ -3152,6 +3536,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateDefaultSubnetResult> responseHandler = new StaxResponseHandler<CreateDefaultSubnetResult>(
                     new CreateDefaultSubnetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3208,6 +3593,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateDefaultVpcRequestMarshaller().marshall(super.beforeMarshalling(createDefaultVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDefaultVpc");
@@ -3219,6 +3606,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateDefaultVpcResult> responseHandler = new StaxResponseHandler<CreateDefaultVpcResult>(
                     new CreateDefaultVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3250,8 +3638,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>, specify
      * <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another Region, specify
      * <code>region.compute.internal</code> (for example, <code>ap-northeast-1.compute.internal</code>). Otherwise,
-     * specify a domain name (for example, <code>MyCompany.com</code>). This value is used to complete unqualified DNS
-     * hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain names separated by spaces.
+     * specify a domain name (for example, <code>ExampleCompany.com</code>). This value is used to complete unqualified
+     * DNS hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain names separated by spaces.
      * However, Windows and other Linux operating systems treat the value as a single domain, which results in
      * unexpected behavior. If your DHCP options set is associated with a VPC that has instances with multiple operating
      * systems, specify only one domain name.
@@ -3311,6 +3699,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateDhcpOptionsRequestMarshaller().marshall(super.beforeMarshalling(createDhcpOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDhcpOptions");
@@ -3322,6 +3712,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateDhcpOptionsResult> responseHandler = new StaxResponseHandler<CreateDhcpOptionsResult>(
                     new CreateDhcpOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3367,6 +3758,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateEgressOnlyInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(createEgressOnlyInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEgressOnlyInternetGateway");
@@ -3378,6 +3771,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateEgressOnlyInternetGatewayResult> responseHandler = new StaxResponseHandler<CreateEgressOnlyInternetGatewayResult>(
                     new CreateEgressOnlyInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3398,7 +3792,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
-     * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createFleetRequest
@@ -3428,6 +3822,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateFleetRequestMarshaller().marshall(super.beforeMarshalling(createFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFleet");
@@ -3438,6 +3834,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateFleetResult> responseHandler = new StaxResponseHandler<CreateFleetResult>(new CreateFleetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3496,6 +3893,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateFlowLogsRequestMarshaller().marshall(super.beforeMarshalling(createFlowLogsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFlowLogs");
@@ -3507,6 +3906,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateFlowLogsResult> responseHandler = new StaxResponseHandler<CreateFlowLogsResult>(
                     new CreateFlowLogsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3557,6 +3957,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateFpgaImageRequestMarshaller().marshall(super.beforeMarshalling(createFpgaImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFpgaImage");
@@ -3568,6 +3970,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateFpgaImageResult> responseHandler = new StaxResponseHandler<CreateFpgaImageResult>(
                     new CreateFpgaImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3620,6 +4023,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateImageRequestMarshaller().marshall(super.beforeMarshalling(createImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateImage");
@@ -3630,6 +4035,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateImageResult> responseHandler = new StaxResponseHandler<CreateImageResult>(new CreateImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3642,12 +4048,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Exports a running or stopped instance to an S3 bucket.
+     * Exports a running or stopped instance to an Amazon S3 bucket.
      * </p>
      * <p>
      * For information about the supported operating systems, image formats, and known limitations for the types of
      * instances you can export, see <a
-     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting an Instance as a VM Using
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting an instance as a VM Using
      * VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
      * </p>
      * 
@@ -3678,6 +4084,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateInstanceExportTaskRequestMarshaller().marshall(super.beforeMarshalling(createInstanceExportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstanceExportTask");
@@ -3689,6 +4097,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateInstanceExportTaskResult> responseHandler = new StaxResponseHandler<CreateInstanceExportTaskResult>(
                     new CreateInstanceExportTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3736,6 +4145,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(createInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInternetGateway");
@@ -3747,6 +4158,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateInternetGatewayResult> responseHandler = new StaxResponseHandler<CreateInternetGatewayResult>(
                     new CreateInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3807,6 +4219,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateKeyPairRequestMarshaller().marshall(super.beforeMarshalling(createKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateKeyPair");
@@ -3817,6 +4231,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateKeyPairResult> responseHandler = new StaxResponseHandler<CreateKeyPairResult>(new CreateKeyPairResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3863,6 +4278,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateLaunchTemplateRequestMarshaller().marshall(super.beforeMarshalling(createLaunchTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLaunchTemplate");
@@ -3874,6 +4291,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateLaunchTemplateResult> responseHandler = new StaxResponseHandler<CreateLaunchTemplateResult>(
                     new CreateLaunchTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3926,6 +4344,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateLaunchTemplateVersionRequestMarshaller().marshall(super.beforeMarshalling(createLaunchTemplateVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLaunchTemplateVersion");
@@ -3937,6 +4357,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateLaunchTemplateVersionResult> responseHandler = new StaxResponseHandler<CreateLaunchTemplateVersionResult>(
                     new CreateLaunchTemplateVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3979,6 +4400,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateLocalGatewayRouteRequestMarshaller().marshall(super.beforeMarshalling(createLocalGatewayRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocalGatewayRoute");
@@ -3990,6 +4413,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateLocalGatewayRouteResult> responseHandler = new StaxResponseHandler<CreateLocalGatewayRouteResult>(
                     new CreateLocalGatewayRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4034,6 +4458,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(createLocalGatewayRouteTableVpcAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocalGatewayRouteTableVpcAssociation");
@@ -4045,6 +4471,68 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateLocalGatewayRouteTableVpcAssociationResult> responseHandler = new StaxResponseHandler<CreateLocalGatewayRouteTableVpcAssociationResult>(
                     new CreateLocalGatewayRouteTableVpcAssociationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a managed prefix list. You can specify one or more entries for the prefix list. Each entry consists of a
+     * CIDR block and an optional description.
+     * </p>
+     * <p>
+     * You must specify the maximum number of entries for the prefix list. The maximum number of entries cannot be
+     * changed later.
+     * </p>
+     * 
+     * @param createManagedPrefixListRequest
+     * @return Result of the CreateManagedPrefixList operation returned by the service.
+     * @sample AmazonEC2.CreateManagedPrefixList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateManagedPrefixList" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateManagedPrefixListResult createManagedPrefixList(CreateManagedPrefixListRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateManagedPrefixList(request);
+    }
+
+    @SdkInternalApi
+    final CreateManagedPrefixListResult executeCreateManagedPrefixList(CreateManagedPrefixListRequest createManagedPrefixListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createManagedPrefixListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateManagedPrefixListRequest> request = null;
+        Response<CreateManagedPrefixListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateManagedPrefixListRequestMarshaller().marshall(super.beforeMarshalling(createManagedPrefixListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateManagedPrefixList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateManagedPrefixListResult> responseHandler = new StaxResponseHandler<CreateManagedPrefixListResult>(
+                    new CreateManagedPrefixListResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4092,6 +4580,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateNatGatewayRequestMarshaller().marshall(super.beforeMarshalling(createNatGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNatGateway");
@@ -4103,6 +4593,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateNatGatewayResult> responseHandler = new StaxResponseHandler<CreateNatGatewayResult>(
                     new CreateNatGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4150,6 +4641,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateNetworkAclRequestMarshaller().marshall(super.beforeMarshalling(createNetworkAclRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkAcl");
@@ -4161,6 +4654,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateNetworkAclResult> responseHandler = new StaxResponseHandler<CreateNetworkAclResult>(
                     new CreateNetworkAclResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4220,6 +4714,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateNetworkAclEntryRequestMarshaller().marshall(super.beforeMarshalling(createNetworkAclEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkAclEntry");
@@ -4231,6 +4727,68 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateNetworkAclEntryResult> responseHandler = new StaxResponseHandler<CreateNetworkAclEntryResult>(
                     new CreateNetworkAclEntryResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a path to analyze for reachability.
+     * </p>
+     * <p>
+     * Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual
+     * private cloud (VPC). For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/reachability/">What is Reachability Analyzer</a>.
+     * </p>
+     * 
+     * @param createNetworkInsightsPathRequest
+     * @return Result of the CreateNetworkInsightsPath operation returned by the service.
+     * @sample AmazonEC2.CreateNetworkInsightsPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateNetworkInsightsPathResult createNetworkInsightsPath(CreateNetworkInsightsPathRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNetworkInsightsPath(request);
+    }
+
+    @SdkInternalApi
+    final CreateNetworkInsightsPathResult executeCreateNetworkInsightsPath(CreateNetworkInsightsPathRequest createNetworkInsightsPathRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createNetworkInsightsPathRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateNetworkInsightsPathRequest> request = null;
+        Response<CreateNetworkInsightsPathResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateNetworkInsightsPathRequestMarshaller().marshall(super.beforeMarshalling(createNetworkInsightsPathRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkInsightsPath");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateNetworkInsightsPathResult> responseHandler = new StaxResponseHandler<CreateNetworkInsightsPathResult>(
+                    new CreateNetworkInsightsPathResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4279,6 +4837,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateNetworkInterfaceRequestMarshaller().marshall(super.beforeMarshalling(createNetworkInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkInterface");
@@ -4290,6 +4850,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateNetworkInterfaceResult> responseHandler = new StaxResponseHandler<CreateNetworkInterfaceResult>(
                     new CreateNetworkInterfaceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4338,6 +4899,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateNetworkInterfacePermissionRequestMarshaller().marshall(super.beforeMarshalling(createNetworkInterfacePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkInterfacePermission");
@@ -4349,6 +4912,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateNetworkInterfacePermissionResult> responseHandler = new StaxResponseHandler<CreateNetworkInterfacePermissionResult>(
                     new CreateNetworkInterfacePermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4372,8 +4936,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createPlacementGroupRequest
@@ -4403,6 +4967,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreatePlacementGroupRequestMarshaller().marshall(super.beforeMarshalling(createPlacementGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlacementGroup");
@@ -4414,6 +4980,68 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreatePlacementGroupResult> responseHandler = new StaxResponseHandler<CreatePlacementGroupResult>(
                     new CreatePlacementGroupResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a root volume replacement task for an Amazon EC2 instance. The root volume can either be restored to its
+     * initial launch state, or it can be restored using a specific snapshot.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createReplaceRootVolumeTaskRequest
+     * @return Result of the CreateReplaceRootVolumeTask operation returned by the service.
+     * @sample AmazonEC2.CreateReplaceRootVolumeTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateReplaceRootVolumeTaskResult createReplaceRootVolumeTask(CreateReplaceRootVolumeTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReplaceRootVolumeTask(request);
+    }
+
+    @SdkInternalApi
+    final CreateReplaceRootVolumeTaskResult executeCreateReplaceRootVolumeTask(CreateReplaceRootVolumeTaskRequest createReplaceRootVolumeTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createReplaceRootVolumeTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateReplaceRootVolumeTaskRequest> request = null;
+        Response<CreateReplaceRootVolumeTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateReplaceRootVolumeTaskRequestMarshaller().marshall(super.beforeMarshalling(createReplaceRootVolumeTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReplaceRootVolumeTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateReplaceRootVolumeTaskResult> responseHandler = new StaxResponseHandler<CreateReplaceRootVolumeTaskResult>(
+                    new CreateReplaceRootVolumeTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4451,7 +5079,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance
-     * Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createReservedInstancesListingRequest
@@ -4482,6 +5110,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateReservedInstancesListingRequestMarshaller().marshall(super.beforeMarshalling(createReservedInstancesListingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReservedInstancesListing");
@@ -4493,6 +5123,75 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateReservedInstancesListingResult> responseHandler = new StaxResponseHandler<CreateReservedInstancesListingResult>(
                     new CreateReservedInstancesListingResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a task that restores an AMI from an S3 object that was previously created by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html"
+     * >CreateStoreImageTask</a>.
+     * </p>
+     * <p>
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createRestoreImageTaskRequest
+     * @return Result of the CreateRestoreImageTask operation returned by the service.
+     * @sample AmazonEC2.CreateRestoreImageTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateRestoreImageTaskResult createRestoreImageTask(CreateRestoreImageTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRestoreImageTask(request);
+    }
+
+    @SdkInternalApi
+    final CreateRestoreImageTaskResult executeCreateRestoreImageTask(CreateRestoreImageTaskRequest createRestoreImageTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRestoreImageTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRestoreImageTaskRequest> request = null;
+        Response<CreateRestoreImageTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRestoreImageTaskRequestMarshaller().marshall(super.beforeMarshalling(createRestoreImageTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRestoreImageTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateRestoreImageTaskResult> responseHandler = new StaxResponseHandler<CreateRestoreImageTaskResult>(
+                    new CreateRestoreImageTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4565,6 +5264,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateRouteRequestMarshaller().marshall(super.beforeMarshalling(createRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRoute");
@@ -4575,6 +5276,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateRouteResult> responseHandler = new StaxResponseHandler<CreateRouteResult>(new CreateRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4622,6 +5324,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateRouteTableRequestMarshaller().marshall(super.beforeMarshalling(createRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRouteTable");
@@ -4633,6 +5337,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateRouteTableResult> responseHandler = new StaxResponseHandler<CreateRouteTableResult>(
                     new CreateRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4701,6 +5406,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateSecurityGroupRequestMarshaller().marshall(super.beforeMarshalling(createSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSecurityGroup");
@@ -4712,6 +5419,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateSecurityGroupResult> responseHandler = new StaxResponseHandler<CreateSecurityGroupResult>(
                     new CreateSecurityGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4728,12 +5436,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * of EBS volumes, and to save data before shutting down an instance.
      * </p>
      * <p>
+     * You can create snapshots of volumes in a Region and volumes on an Outpost. If you create a snapshot of a volume
+     * in a Region, the snapshot must be stored in the same Region as the volume. If you create a snapshot of a volume
+     * on an Outpost, the snapshot can be stored on the same Outpost as the volume, or in the Region for that Outpost.
+     * </p>
+     * <p>
      * When a snapshot is created, any AWS Marketplace product codes that are associated with the source volume are
      * propagated to the snapshot.
      * </p>
      * <p>
      * You can take a snapshot of an attached volume that is in use. However, snapshots only capture data that has been
-     * written to your EBS volume at the time the snapshot command is issued; this may exclude any data that has been
+     * written to your EBS volume at the time the snapshot command is issued; this might exclude any data that has been
      * cached by any applications or the operating system. If you can pause any file systems on the volume long enough
      * to take a snapshot, your snapshot should be complete. However, if you cannot pause all file writes to the volume,
      * you should unmount the volume from within the instance, issue the snapshot command, and then remount the volume
@@ -4751,13 +5464,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * You can tag your snapshots during creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
      * Elastic Block Store</a> and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -4788,6 +5501,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateSnapshotRequestMarshaller().marshall(super.beforeMarshalling(createSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSnapshot");
@@ -4799,6 +5514,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateSnapshotResult> responseHandler = new StaxResponseHandler<CreateSnapshotResult>(
                     new CreateSnapshotResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4814,6 +5530,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Creates crash-consistent snapshots of multiple EBS volumes and stores the data in S3. Volumes are chosen by
      * specifying an instance. Any attached volumes will produce one snapshot each that is crash-consistent across the
      * instance. Boot volumes can be excluded by changing the parameters.
+     * </p>
+     * <p>
+     * You can create multi-volume snapshots of instances in a Region and instances on an Outpost. If you create
+     * snapshots from an instance in a Region, the snapshots must be stored in the same Region as the instance. If you
+     * create snapshots from an instance on an Outpost, the snapshots can be stored on the same Outpost as the instance,
+     * or in the Region for that Outpost.
      * </p>
      * 
      * @param createSnapshotsRequest
@@ -4843,6 +5565,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(createSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSnapshots");
@@ -4854,6 +5578,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateSnapshotsResult> responseHandler = new StaxResponseHandler<CreateSnapshotsResult>(
                     new CreateSnapshotsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4868,7 +5593,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data
      * feed per AWS account. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in
      * the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -4900,6 +5625,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateSpotDatafeedSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(createSpotDatafeedSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSpotDatafeedSubscription");
@@ -4911,6 +5638,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateSpotDatafeedSubscriptionResult> responseHandler = new StaxResponseHandler<CreateSpotDatafeedSubscriptionResult>(
                     new CreateSpotDatafeedSubscriptionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4923,14 +5651,78 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a subnet in an existing VPC.
+     * Stores an AMI as a single object in an S3 bucket.
      * </p>
      * <p>
-     * When you create each subnet, you provide the VPC ID and IPv4 CIDR block for the subnet. After you create a
-     * subnet, you can't change its CIDR block. The size of the subnet's IPv4 CIDR block can be the same as a VPC's IPv4
-     * CIDR block, or a subset of a VPC's IPv4 CIDR block. If you create more than one subnet in a VPC, the subnets'
-     * CIDR blocks must not overlap. The smallest IPv4 subnet (and VPC) you can create uses a /28 netmask (16 IPv4
-     * addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses).
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createStoreImageTaskRequest
+     * @return Result of the CreateStoreImageTask operation returned by the service.
+     * @sample AmazonEC2.CreateStoreImageTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateStoreImageTaskResult createStoreImageTask(CreateStoreImageTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStoreImageTask(request);
+    }
+
+    @SdkInternalApi
+    final CreateStoreImageTaskResult executeCreateStoreImageTask(CreateStoreImageTaskRequest createStoreImageTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createStoreImageTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateStoreImageTaskRequest> request = null;
+        Response<CreateStoreImageTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateStoreImageTaskRequestMarshaller().marshall(super.beforeMarshalling(createStoreImageTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStoreImageTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateStoreImageTaskResult> responseHandler = new StaxResponseHandler<CreateStoreImageTaskResult>(
+                    new CreateStoreImageTaskResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a subnet in a specified VPC.
+     * </p>
+     * <p>
+     * You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you can't change its CIDR block.
+     * The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses). The CIDR
+     * block must not overlap with the CIDR block of an existing subnet in the VPC.
      * </p>
      * <p>
      * If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR block that uses
@@ -4946,10 +5738,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * If you add more than one subnet to a VPC, they're set up in a star topology with a logical router in the middle.
      * </p>
      * <p>
-     * If you launch an instance in a VPC using an Amazon EBS-backed AMI, the IP address doesn't change if you stop and
-     * restart the instance (unlike a similar instance launched outside a VPC, which gets a new IP address when
-     * restarted). It's therefore possible to have a subnet with no running instances (they're all stopped), but no
-     * remaining IP addresses available.
+     * When you stop an instance in a subnet, it retains its private IPv4 address. It's therefore possible to have a
+     * subnet with no running instances (they're all stopped), but no remaining IP addresses available.
      * </p>
      * <p>
      * For more information about subnets, see <a
@@ -4984,6 +5774,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateSubnetRequestMarshaller().marshall(super.beforeMarshalling(createSubnetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubnet");
@@ -4994,6 +5786,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateSubnetResult> responseHandler = new StaxResponseHandler<CreateSubnetResult>(new CreateSubnetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5046,6 +5839,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateTagsRequestMarshaller().marshall(super.beforeMarshalling(createTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
@@ -5056,6 +5851,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateTagsResult> responseHandler = new StaxResponseHandler<CreateTagsResult>(new CreateTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5109,6 +5905,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateTrafficMirrorFilterRequestMarshaller().marshall(super.beforeMarshalling(createTrafficMirrorFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficMirrorFilter");
@@ -5120,6 +5918,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTrafficMirrorFilterResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorFilterResult>(
                     new CreateTrafficMirrorFilterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5168,6 +5967,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateTrafficMirrorFilterRuleRequestMarshaller().marshall(super.beforeMarshalling(createTrafficMirrorFilterRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficMirrorFilterRule");
@@ -5179,6 +5980,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTrafficMirrorFilterRuleResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorFilterRuleResult>(
                     new CreateTrafficMirrorFilterRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5235,6 +6037,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateTrafficMirrorSessionRequestMarshaller().marshall(super.beforeMarshalling(createTrafficMirrorSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficMirrorSession");
@@ -5246,6 +6050,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTrafficMirrorSessionResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorSessionResult>(
                     new CreateTrafficMirrorSessionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5301,6 +6106,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateTrafficMirrorTargetRequestMarshaller().marshall(super.beforeMarshalling(createTrafficMirrorTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficMirrorTarget");
@@ -5312,6 +6119,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTrafficMirrorTargetResult> responseHandler = new StaxResponseHandler<CreateTrafficMirrorTargetResult>(
                     new CreateTrafficMirrorTargetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5375,6 +6183,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateTransitGatewayRequestMarshaller().marshall(super.beforeMarshalling(createTransitGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitGateway");
@@ -5386,6 +6196,133 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayResult>(
                     new CreateTransitGatewayResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a Connect attachment from a specified transit gateway attachment. A Connect attachment is a GRE-based
+     * tunnel attachment that you can use to establish a connection between a transit gateway and an appliance.
+     * </p>
+     * <p>
+     * A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the underlying transport mechanism.
+     * </p>
+     * 
+     * @param createTransitGatewayConnectRequest
+     * @return Result of the CreateTransitGatewayConnect operation returned by the service.
+     * @sample AmazonEC2.CreateTransitGatewayConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTransitGatewayConnectResult createTransitGatewayConnect(CreateTransitGatewayConnectRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTransitGatewayConnect(request);
+    }
+
+    @SdkInternalApi
+    final CreateTransitGatewayConnectResult executeCreateTransitGatewayConnect(CreateTransitGatewayConnectRequest createTransitGatewayConnectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTransitGatewayConnectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTransitGatewayConnectRequest> request = null;
+        Response<CreateTransitGatewayConnectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTransitGatewayConnectRequestMarshaller().marshall(super.beforeMarshalling(createTransitGatewayConnectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitGatewayConnect");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateTransitGatewayConnectResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayConnectResult>(
+                    new CreateTransitGatewayConnectResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a Connect peer for a specified transit gateway Connect attachment between a transit gateway and an
+     * appliance.
+     * </p>
+     * <p>
+     * The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html#tgw-connect-peer">Connect peers</a> in the
+     * <i>Transit Gateways Guide</i>.
+     * </p>
+     * 
+     * @param createTransitGatewayConnectPeerRequest
+     * @return Result of the CreateTransitGatewayConnectPeer operation returned by the service.
+     * @sample AmazonEC2.CreateTransitGatewayConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTransitGatewayConnectPeerResult createTransitGatewayConnectPeer(CreateTransitGatewayConnectPeerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTransitGatewayConnectPeer(request);
+    }
+
+    @SdkInternalApi
+    final CreateTransitGatewayConnectPeerResult executeCreateTransitGatewayConnectPeer(
+            CreateTransitGatewayConnectPeerRequest createTransitGatewayConnectPeerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTransitGatewayConnectPeerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTransitGatewayConnectPeerRequest> request = null;
+        Response<CreateTransitGatewayConnectPeerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTransitGatewayConnectPeerRequestMarshaller().marshall(super.beforeMarshalling(createTransitGatewayConnectPeerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitGatewayConnectPeer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateTransitGatewayConnectPeerResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayConnectPeerResult>(
+                    new CreateTransitGatewayConnectPeerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5435,6 +6372,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(createTransitGatewayMulticastDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitGatewayMulticastDomain");
@@ -5446,6 +6385,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayMulticastDomainResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayMulticastDomainResult>(
                     new CreateTransitGatewayMulticastDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5496,6 +6436,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(createTransitGatewayPeeringAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitGatewayPeeringAttachment");
@@ -5507,6 +6449,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayPeeringAttachmentResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayPeeringAttachmentResult>(
                     new CreateTransitGatewayPeeringAttachmentResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a reference (route) to a prefix list in a specified transit gateway route table.
+     * </p>
+     * 
+     * @param createTransitGatewayPrefixListReferenceRequest
+     * @return Result of the CreateTransitGatewayPrefixListReference operation returned by the service.
+     * @sample AmazonEC2.CreateTransitGatewayPrefixListReference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPrefixListReference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTransitGatewayPrefixListReferenceResult createTransitGatewayPrefixListReference(CreateTransitGatewayPrefixListReferenceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTransitGatewayPrefixListReference(request);
+    }
+
+    @SdkInternalApi
+    final CreateTransitGatewayPrefixListReferenceResult executeCreateTransitGatewayPrefixListReference(
+            CreateTransitGatewayPrefixListReferenceRequest createTransitGatewayPrefixListReferenceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTransitGatewayPrefixListReferenceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTransitGatewayPrefixListReferenceRequest> request = null;
+        Response<CreateTransitGatewayPrefixListReferenceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTransitGatewayPrefixListReferenceRequestMarshaller().marshall(super
+                        .beforeMarshalling(createTransitGatewayPrefixListReferenceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitGatewayPrefixListReference");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateTransitGatewayPrefixListReferenceResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayPrefixListReferenceResult>(
+                    new CreateTransitGatewayPrefixListReferenceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5549,6 +6550,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateTransitGatewayRouteRequestMarshaller().marshall(super.beforeMarshalling(createTransitGatewayRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitGatewayRoute");
@@ -5560,6 +6563,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayRouteResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayRouteResult>(
                     new CreateTransitGatewayRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5602,6 +6606,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateTransitGatewayRouteTableRequestMarshaller().marshall(super.beforeMarshalling(createTransitGatewayRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitGatewayRouteTable");
@@ -5613,6 +6619,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayRouteTableResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayRouteTableResult>(
                     new CreateTransitGatewayRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5663,6 +6670,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateTransitGatewayVpcAttachmentRequestMarshaller().marshall(super.beforeMarshalling(createTransitGatewayVpcAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitGatewayVpcAttachment");
@@ -5674,6 +6683,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayVpcAttachmentResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayVpcAttachmentResult>(
                     new CreateTransitGatewayVpcAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5686,9 +6696,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates an EBS volume that can be attached to an instance in the same Availability Zone. The volume is created in
-     * the regional endpoint that you send the HTTP request to. For more information see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * Creates an EBS volume that can be attached to an instance in the same Availability Zone.
      * </p>
      * <p>
      * You can create a new empty volume or restore a volume from an EBS snapshot. Any AWS Marketplace product codes
@@ -5698,17 +6706,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * You can create encrypted volumes. Encrypted volumes must be attached to instances that support Amazon EBS
      * encryption. Volumes that are created from encrypted snapshots are also automatically encrypted. For more
      * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
-     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * You can tag your volumes during creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating an Amazon EBS
-     * Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createVolumeRequest
@@ -5738,6 +6746,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVolumeRequestMarshaller().marshall(super.beforeMarshalling(createVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVolume");
@@ -5748,6 +6758,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateVolumeResult> responseHandler = new StaxResponseHandler<CreateVolumeResult>(new CreateVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5811,6 +6822,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpcRequestMarshaller().marshall(super.beforeMarshalling(createVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpc");
@@ -5821,6 +6834,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<CreateVpcResult> responseHandler = new StaxResponseHandler<CreateVpcResult>(new CreateVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5847,6 +6861,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * An <code>interface</code> endpoint is a network interface in your subnet that serves as an endpoint for
      * communicating with the specified service. You can specify the subnets in which to create an endpoint, and the
      * security groups to associate with the endpoint network interface.
+     * </p>
+     * <p>
+     * A <code>GatewayLoadBalancer</code> endpoint is a network interface in your subnet that serves an endpoint for
+     * communicating with a Gateway Load Balancer that you've configured as a VPC endpoint service.
      * </p>
      * <p>
      * Use <a>DescribeVpcEndpointServices</a> to get a list of supported services.
@@ -5880,6 +6898,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpcEndpointRequestMarshaller().marshall(super.beforeMarshalling(createVpcEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcEndpoint");
@@ -5891,6 +6911,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpcEndpointResult> responseHandler = new StaxResponseHandler<CreateVpcEndpointResult>(
                     new CreateVpcEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5941,6 +6962,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(createVpcEndpointConnectionNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcEndpointConnectionNotification");
@@ -5952,6 +6975,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpcEndpointConnectionNotificationResult> responseHandler = new StaxResponseHandler<CreateVpcEndpointConnectionNotificationResult>(
                     new CreateVpcEndpointConnectionNotificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5965,11 +6989,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Creates a VPC endpoint service configuration to which service consumers (AWS accounts, IAM users, and IAM roles)
-     * can connect. Service consumers can create an interface VPC endpoint to connect to your service.
+     * can connect.
      * </p>
      * <p>
-     * To create an endpoint service configuration, you must first create a Network Load Balancer for your service. For
-     * more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
+     * To create an endpoint service configuration, you must first create one of the following for your service:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html">Network Load
+     * Balancer</a>. Service consumers connect to your service using an interface endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html">Gateway Load
+     * Balancer</a>. Service consumers connect to your service using a Gateway Load Balancer endpoint.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
      * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -6007,6 +7047,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(createVpcEndpointServiceConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcEndpointServiceConfiguration");
@@ -6018,6 +7060,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpcEndpointServiceConfigurationResult> responseHandler = new StaxResponseHandler<CreateVpcEndpointServiceConfigurationResult>(
                     new CreateVpcEndpointServiceConfigurationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6077,6 +7120,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpcPeeringConnectionRequestMarshaller().marshall(super.beforeMarshalling(createVpcPeeringConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcPeeringConnection");
@@ -6088,6 +7133,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<CreateVpcPeeringConnectionResult>(
                     new CreateVpcPeeringConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6105,8 +7151,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The supported
-     * connection type is <code>ipsec.1</code>.
+     * Creates a VPN connection between an existing virtual private gateway or transit gateway and a customer gateway.
+     * The supported connection type is <code>ipsec.1</code>.
      * </p>
      * <p>
      * The response includes information that you need to give to your network administrator to configure your customer
@@ -6115,7 +7161,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <important>
      * <p>
      * We strongly recommend that you use HTTPS when calling this operation because the response contains sensitive
-     * cryptographic information for configuring your customer gateway.
+     * cryptographic information for configuring your customer gateway device.
      * </p>
      * </important>
      * <p>
@@ -6158,6 +7204,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpnConnectionRequestMarshaller().marshall(super.beforeMarshalling(createVpnConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpnConnection");
@@ -6169,6 +7217,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpnConnectionResult> responseHandler = new StaxResponseHandler<CreateVpnConnectionResult>(
                     new CreateVpnConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6218,6 +7267,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpnConnectionRouteRequestMarshaller().marshall(super.beforeMarshalling(createVpnConnectionRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpnConnectionRoute");
@@ -6229,6 +7280,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpnConnectionRouteResult> responseHandler = new StaxResponseHandler<CreateVpnConnectionRouteResult>(
                     new CreateVpnConnectionRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6277,6 +7329,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new CreateVpnGatewayRequestMarshaller().marshall(super.beforeMarshalling(createVpnGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpnGateway");
@@ -6288,6 +7342,70 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateVpnGatewayResult> responseHandler = new StaxResponseHandler<CreateVpnGatewayResult>(
                     new CreateVpnGatewayResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a carrier gateway.
+     * </p>
+     * <important>
+     * <p>
+     * If you do not delete the route that contains the carrier gateway as the Target, the route is a blackhole route.
+     * For information about how to delete a route, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html">DeleteRoute</a>.
+     * </p>
+     * </important>
+     * 
+     * @param deleteCarrierGatewayRequest
+     * @return Result of the DeleteCarrierGateway operation returned by the service.
+     * @sample AmazonEC2.DeleteCarrierGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteCarrierGatewayResult deleteCarrierGateway(DeleteCarrierGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCarrierGateway(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCarrierGatewayResult executeDeleteCarrierGateway(DeleteCarrierGatewayRequest deleteCarrierGatewayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCarrierGatewayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCarrierGatewayRequest> request = null;
+        Response<DeleteCarrierGatewayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCarrierGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteCarrierGatewayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCarrierGateway");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteCarrierGatewayResult> responseHandler = new StaxResponseHandler<DeleteCarrierGatewayResult>(
+                    new DeleteCarrierGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6331,6 +7449,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteClientVpnEndpointRequestMarshaller().marshall(super.beforeMarshalling(deleteClientVpnEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteClientVpnEndpoint");
@@ -6342,6 +7462,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteClientVpnEndpointResult> responseHandler = new StaxResponseHandler<DeleteClientVpnEndpointResult>(
                     new DeleteClientVpnEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6387,6 +7508,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteClientVpnRouteRequestMarshaller().marshall(super.beforeMarshalling(deleteClientVpnRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteClientVpnRoute");
@@ -6398,6 +7521,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteClientVpnRouteResult> responseHandler = new StaxResponseHandler<DeleteClientVpnRouteResult>(
                     new DeleteClientVpnRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6442,6 +7566,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteCustomerGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteCustomerGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomerGateway");
@@ -6453,6 +7579,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteCustomerGatewayResult> responseHandler = new StaxResponseHandler<DeleteCustomerGatewayResult>(
                     new DeleteCustomerGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6497,6 +7624,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteDhcpOptionsRequestMarshaller().marshall(super.beforeMarshalling(deleteDhcpOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDhcpOptions");
@@ -6508,6 +7637,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteDhcpOptionsResult> responseHandler = new StaxResponseHandler<DeleteDhcpOptionsResult>(
                     new DeleteDhcpOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6551,6 +7681,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteEgressOnlyInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteEgressOnlyInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEgressOnlyInternetGateway");
@@ -6562,6 +7694,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteEgressOnlyInternetGatewayResult> responseHandler = new StaxResponseHandler<DeleteEgressOnlyInternetGatewayResult>(
                     new DeleteEgressOnlyInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6577,10 +7710,39 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Deletes the specified EC2 Fleet.
      * </p>
      * <p>
-     * After you delete an EC2 Fleet, it launches no new instances. You must specify whether an EC2 Fleet should also
-     * terminate its instances. If you terminate the instances, the EC2 Fleet enters the
-     * <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the <code>deleted_running</code> state,
-     * and the instances continue to run until they are interrupted or you terminate them manually.
+     * After you delete an EC2 Fleet, it launches no new instances.
+     * </p>
+     * <p>
+     * You must specify whether a deleted EC2 Fleet should also terminate its instances. If you choose to terminate the
+     * instances, the EC2 Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the
+     * <code>deleted_running</code> state, and the instances continue to run until they are interrupted or you terminate
+     * them manually.
+     * </p>
+     * <p>
+     * For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet is deleted. A deleted
+     * <code>instant</code> fleet with running instances is not supported.
+     * </p>
+     * <p class="title">
+     * <b>Restrictions</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can delete up to 25 <code>instant</code> fleets in a single request. If you exceed this number, no
+     * <code>instant</code> fleets are deleted and an error is returned. There is no restriction on the number of fleets
+     * of type <code>maintain</code> or <code>request</code> that can be deleted in a single request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Up to 1000 instances can be terminated in a single request to delete <code>instant</code> fleets.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting an EC2
+     * Fleet</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param deleteFleetsRequest
@@ -6610,6 +7772,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteFleetsRequestMarshaller().marshall(super.beforeMarshalling(deleteFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFleets");
@@ -6620,6 +7784,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteFleetsResult> responseHandler = new StaxResponseHandler<DeleteFleetsResult>(new DeleteFleetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6662,6 +7827,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteFlowLogsRequestMarshaller().marshall(super.beforeMarshalling(deleteFlowLogsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFlowLogs");
@@ -6673,6 +7840,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteFlowLogsResult> responseHandler = new StaxResponseHandler<DeleteFlowLogsResult>(
                     new DeleteFlowLogsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6715,6 +7883,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteFpgaImageRequestMarshaller().marshall(super.beforeMarshalling(deleteFpgaImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFpgaImage");
@@ -6726,6 +7896,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteFpgaImageResult> responseHandler = new StaxResponseHandler<DeleteFpgaImageResult>(
                     new DeleteFpgaImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6769,6 +7940,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInternetGateway");
@@ -6780,6 +7953,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteInternetGatewayResult> responseHandler = new StaxResponseHandler<DeleteInternetGatewayResult>(
                     new DeleteInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6822,6 +7996,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteKeyPairRequestMarshaller().marshall(super.beforeMarshalling(deleteKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteKeyPair");
@@ -6832,6 +8008,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteKeyPairResult> responseHandler = new StaxResponseHandler<DeleteKeyPairResult>(new DeleteKeyPairResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6874,6 +8051,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteLaunchTemplateRequestMarshaller().marshall(super.beforeMarshalling(deleteLaunchTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLaunchTemplate");
@@ -6885,6 +8064,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteLaunchTemplateResult> responseHandler = new StaxResponseHandler<DeleteLaunchTemplateResult>(
                     new DeleteLaunchTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6929,6 +8109,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteLaunchTemplateVersionsRequestMarshaller().marshall(super.beforeMarshalling(deleteLaunchTemplateVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLaunchTemplateVersions");
@@ -6940,6 +8122,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteLaunchTemplateVersionsResult> responseHandler = new StaxResponseHandler<DeleteLaunchTemplateVersionsResult>(
                     new DeleteLaunchTemplateVersionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6982,6 +8165,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteLocalGatewayRouteRequestMarshaller().marshall(super.beforeMarshalling(deleteLocalGatewayRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLocalGatewayRoute");
@@ -6993,6 +8178,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteLocalGatewayRouteResult> responseHandler = new StaxResponseHandler<DeleteLocalGatewayRouteResult>(
                     new DeleteLocalGatewayRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7037,6 +8223,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(deleteLocalGatewayRouteTableVpcAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLocalGatewayRouteTableVpcAssociation");
@@ -7048,6 +8236,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteLocalGatewayRouteTableVpcAssociationResult> responseHandler = new StaxResponseHandler<DeleteLocalGatewayRouteTableVpcAssociationResult>(
                     new DeleteLocalGatewayRouteTableVpcAssociationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified managed prefix list. You must first remove all references to the prefix list in your
+     * resources.
+     * </p>
+     * 
+     * @param deleteManagedPrefixListRequest
+     * @return Result of the DeleteManagedPrefixList operation returned by the service.
+     * @sample AmazonEC2.DeleteManagedPrefixList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteManagedPrefixList" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteManagedPrefixListResult deleteManagedPrefixList(DeleteManagedPrefixListRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteManagedPrefixList(request);
+    }
+
+    @SdkInternalApi
+    final DeleteManagedPrefixListResult executeDeleteManagedPrefixList(DeleteManagedPrefixListRequest deleteManagedPrefixListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteManagedPrefixListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteManagedPrefixListRequest> request = null;
+        Response<DeleteManagedPrefixListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteManagedPrefixListRequestMarshaller().marshall(super.beforeMarshalling(deleteManagedPrefixListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteManagedPrefixList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteManagedPrefixListResult> responseHandler = new StaxResponseHandler<DeleteManagedPrefixListResult>(
+                    new DeleteManagedPrefixListResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7092,6 +8338,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteNatGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteNatGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNatGateway");
@@ -7103,6 +8351,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNatGatewayResult> responseHandler = new StaxResponseHandler<DeleteNatGatewayResult>(
                     new DeleteNatGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7146,6 +8395,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteNetworkAclRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkAclRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkAcl");
@@ -7157,6 +8408,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNetworkAclResult> responseHandler = new StaxResponseHandler<DeleteNetworkAclResult>(
                     new DeleteNetworkAclResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7199,6 +8451,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteNetworkAclEntryRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkAclEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkAclEntry");
@@ -7210,6 +8464,119 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNetworkAclEntryResult> responseHandler = new StaxResponseHandler<DeleteNetworkAclEntryResult>(
                     new DeleteNetworkAclEntryResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified network insights analysis.
+     * </p>
+     * 
+     * @param deleteNetworkInsightsAnalysisRequest
+     * @return Result of the DeleteNetworkInsightsAnalysis operation returned by the service.
+     * @sample AmazonEC2.DeleteNetworkInsightsAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteNetworkInsightsAnalysisResult deleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNetworkInsightsAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNetworkInsightsAnalysisResult executeDeleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest deleteNetworkInsightsAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNetworkInsightsAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNetworkInsightsAnalysisRequest> request = null;
+        Response<DeleteNetworkInsightsAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNetworkInsightsAnalysisRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkInsightsAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkInsightsAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteNetworkInsightsAnalysisResult> responseHandler = new StaxResponseHandler<DeleteNetworkInsightsAnalysisResult>(
+                    new DeleteNetworkInsightsAnalysisResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified path.
+     * </p>
+     * 
+     * @param deleteNetworkInsightsPathRequest
+     * @return Result of the DeleteNetworkInsightsPath operation returned by the service.
+     * @sample AmazonEC2.DeleteNetworkInsightsPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteNetworkInsightsPathResult deleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNetworkInsightsPath(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNetworkInsightsPathResult executeDeleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest deleteNetworkInsightsPathRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNetworkInsightsPathRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNetworkInsightsPathRequest> request = null;
+        Response<DeleteNetworkInsightsPathResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNetworkInsightsPathRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkInsightsPathRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkInsightsPath");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteNetworkInsightsPathResult> responseHandler = new StaxResponseHandler<DeleteNetworkInsightsPathResult>(
+                    new DeleteNetworkInsightsPathResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7253,6 +8620,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteNetworkInterfaceRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkInterface");
@@ -7264,6 +8633,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNetworkInterfaceResult> responseHandler = new StaxResponseHandler<DeleteNetworkInterfaceResult>(
                     new DeleteNetworkInterfaceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7310,6 +8680,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteNetworkInterfacePermissionRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkInterfacePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkInterfacePermission");
@@ -7321,6 +8693,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNetworkInterfacePermissionResult> responseHandler = new StaxResponseHandler<DeleteNetworkInterfacePermissionResult>(
                     new DeleteNetworkInterfacePermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7335,8 +8708,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Deletes the specified placement group. You must terminate all instances in the placement group before you can
      * delete the placement group. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param deletePlacementGroupRequest
@@ -7366,6 +8739,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeletePlacementGroupRequestMarshaller().marshall(super.beforeMarshalling(deletePlacementGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePlacementGroup");
@@ -7377,6 +8752,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeletePlacementGroupResult> responseHandler = new StaxResponseHandler<DeletePlacementGroupResult>(
                     new DeletePlacementGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7419,6 +8795,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteQueuedReservedInstancesRequestMarshaller().marshall(super.beforeMarshalling(deleteQueuedReservedInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQueuedReservedInstances");
@@ -7430,6 +8808,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteQueuedReservedInstancesResult> responseHandler = new StaxResponseHandler<DeleteQueuedReservedInstancesResult>(
                     new DeleteQueuedReservedInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7472,6 +8851,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteRouteRequestMarshaller().marshall(super.beforeMarshalling(deleteRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRoute");
@@ -7482,6 +8863,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteRouteResult> responseHandler = new StaxResponseHandler<DeleteRouteResult>(new DeleteRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7525,6 +8907,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteRouteTableRequestMarshaller().marshall(super.beforeMarshalling(deleteRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRouteTable");
@@ -7536,6 +8920,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteRouteTableResult> responseHandler = new StaxResponseHandler<DeleteRouteTableResult>(
                     new DeleteRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7583,6 +8968,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteSecurityGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSecurityGroup");
@@ -7594,6 +8981,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteSecurityGroupResult> responseHandler = new StaxResponseHandler<DeleteSecurityGroupResult>(
                     new DeleteSecurityGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7621,7 +9009,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting an Amazon EBS
-     * Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param deleteSnapshotRequest
@@ -7651,6 +9039,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteSnapshotRequestMarshaller().marshall(super.beforeMarshalling(deleteSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSnapshot");
@@ -7662,6 +9052,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteSnapshotResult> responseHandler = new StaxResponseHandler<DeleteSnapshotResult>(
                     new DeleteSnapshotResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7705,6 +9096,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteSpotDatafeedSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(deleteSpotDatafeedSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSpotDatafeedSubscription");
@@ -7716,6 +9109,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteSpotDatafeedSubscriptionResult> responseHandler = new StaxResponseHandler<DeleteSpotDatafeedSubscriptionResult>(
                     new DeleteSpotDatafeedSubscriptionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7764,6 +9158,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteSubnetRequestMarshaller().marshall(super.beforeMarshalling(deleteSubnetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubnet");
@@ -7774,6 +9170,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteSubnetResult> responseHandler = new StaxResponseHandler<DeleteSubnetResult>(new DeleteSubnetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7821,6 +9218,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteTagsRequestMarshaller().marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
@@ -7831,6 +9230,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(new DeleteTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7876,6 +9276,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteTrafficMirrorFilterRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficMirrorFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficMirrorFilter");
@@ -7887,6 +9289,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTrafficMirrorFilterResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorFilterResult>(
                     new DeleteTrafficMirrorFilterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7929,6 +9332,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteTrafficMirrorFilterRuleRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficMirrorFilterRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficMirrorFilterRule");
@@ -7940,6 +9345,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTrafficMirrorFilterRuleResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorFilterRuleResult>(
                     new DeleteTrafficMirrorFilterRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7982,6 +9388,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteTrafficMirrorSessionRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficMirrorSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficMirrorSession");
@@ -7993,6 +9401,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTrafficMirrorSessionResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorSessionResult>(
                     new DeleteTrafficMirrorSessionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8038,6 +9447,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteTrafficMirrorTargetRequestMarshaller().marshall(super.beforeMarshalling(deleteTrafficMirrorTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficMirrorTarget");
@@ -8049,6 +9460,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTrafficMirrorTargetResult> responseHandler = new StaxResponseHandler<DeleteTrafficMirrorTargetResult>(
                     new DeleteTrafficMirrorTargetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8091,6 +9503,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteTransitGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteTransitGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTransitGateway");
@@ -8102,6 +9516,120 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayResult>(
                     new DeleteTransitGatewayResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified Connect attachment. You must first delete any Connect peers for the attachment.
+     * </p>
+     * 
+     * @param deleteTransitGatewayConnectRequest
+     * @return Result of the DeleteTransitGatewayConnect operation returned by the service.
+     * @sample AmazonEC2.DeleteTransitGatewayConnect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTransitGatewayConnectResult deleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTransitGatewayConnect(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTransitGatewayConnectResult executeDeleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest deleteTransitGatewayConnectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTransitGatewayConnectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTransitGatewayConnectRequest> request = null;
+        Response<DeleteTransitGatewayConnectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTransitGatewayConnectRequestMarshaller().marshall(super.beforeMarshalling(deleteTransitGatewayConnectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTransitGatewayConnect");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteTransitGatewayConnectResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayConnectResult>(
+                    new DeleteTransitGatewayConnectResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified Connect peer.
+     * </p>
+     * 
+     * @param deleteTransitGatewayConnectPeerRequest
+     * @return Result of the DeleteTransitGatewayConnectPeer operation returned by the service.
+     * @sample AmazonEC2.DeleteTransitGatewayConnectPeer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTransitGatewayConnectPeerResult deleteTransitGatewayConnectPeer(DeleteTransitGatewayConnectPeerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTransitGatewayConnectPeer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTransitGatewayConnectPeerResult executeDeleteTransitGatewayConnectPeer(
+            DeleteTransitGatewayConnectPeerRequest deleteTransitGatewayConnectPeerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTransitGatewayConnectPeerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTransitGatewayConnectPeerRequest> request = null;
+        Response<DeleteTransitGatewayConnectPeerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTransitGatewayConnectPeerRequestMarshaller().marshall(super.beforeMarshalling(deleteTransitGatewayConnectPeerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTransitGatewayConnectPeer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteTransitGatewayConnectPeerResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayConnectPeerResult>(
+                    new DeleteTransitGatewayConnectPeerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8146,6 +9674,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(deleteTransitGatewayMulticastDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTransitGatewayMulticastDomain");
@@ -8157,6 +9687,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayMulticastDomainResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayMulticastDomainResult>(
                     new DeleteTransitGatewayMulticastDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8201,6 +9732,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(deleteTransitGatewayPeeringAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTransitGatewayPeeringAttachment");
@@ -8212,6 +9745,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayPeeringAttachmentResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayPeeringAttachmentResult>(
                     new DeleteTransitGatewayPeeringAttachmentResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a reference (route) to a prefix list in a specified transit gateway route table.
+     * </p>
+     * 
+     * @param deleteTransitGatewayPrefixListReferenceRequest
+     * @return Result of the DeleteTransitGatewayPrefixListReference operation returned by the service.
+     * @sample AmazonEC2.DeleteTransitGatewayPrefixListReference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPrefixListReference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTransitGatewayPrefixListReferenceResult deleteTransitGatewayPrefixListReference(DeleteTransitGatewayPrefixListReferenceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTransitGatewayPrefixListReference(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTransitGatewayPrefixListReferenceResult executeDeleteTransitGatewayPrefixListReference(
+            DeleteTransitGatewayPrefixListReferenceRequest deleteTransitGatewayPrefixListReferenceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTransitGatewayPrefixListReferenceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTransitGatewayPrefixListReferenceRequest> request = null;
+        Response<DeleteTransitGatewayPrefixListReferenceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTransitGatewayPrefixListReferenceRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteTransitGatewayPrefixListReferenceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTransitGatewayPrefixListReference");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteTransitGatewayPrefixListReferenceResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayPrefixListReferenceResult>(
+                    new DeleteTransitGatewayPrefixListReferenceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8254,6 +9846,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteTransitGatewayRouteRequestMarshaller().marshall(super.beforeMarshalling(deleteTransitGatewayRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTransitGatewayRoute");
@@ -8265,6 +9859,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayRouteResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayRouteResult>(
                     new DeleteTransitGatewayRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8308,6 +9903,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteTransitGatewayRouteTableRequestMarshaller().marshall(super.beforeMarshalling(deleteTransitGatewayRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTransitGatewayRouteTable");
@@ -8319,6 +9916,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayRouteTableResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayRouteTableResult>(
                     new DeleteTransitGatewayRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8362,6 +9960,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteTransitGatewayVpcAttachmentRequestMarshaller().marshall(super.beforeMarshalling(deleteTransitGatewayVpcAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTransitGatewayVpcAttachment");
@@ -8373,6 +9973,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteTransitGatewayVpcAttachmentResult> responseHandler = new StaxResponseHandler<DeleteTransitGatewayVpcAttachmentResult>(
                     new DeleteTransitGatewayVpcAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8394,7 +9995,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting an Amazon EBS
-     * Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param deleteVolumeRequest
@@ -8424,6 +10025,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVolumeRequestMarshaller().marshall(super.beforeMarshalling(deleteVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVolume");
@@ -8434,6 +10037,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteVolumeResult> responseHandler = new StaxResponseHandler<DeleteVolumeResult>(new DeleteVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8479,6 +10083,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpcRequestMarshaller().marshall(super.beforeMarshalling(deleteVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpc");
@@ -8489,6 +10095,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DeleteVpcResult> responseHandler = new StaxResponseHandler<DeleteVpcResult>(new DeleteVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8533,6 +10140,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(deleteVpcEndpointConnectionNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpcEndpointConnectionNotifications");
@@ -8544,6 +10153,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpcEndpointConnectionNotificationsResult> responseHandler = new StaxResponseHandler<DeleteVpcEndpointConnectionNotificationsResult>(
                     new DeleteVpcEndpointConnectionNotificationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8590,6 +10200,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(deleteVpcEndpointServiceConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpcEndpointServiceConfigurations");
@@ -8601,6 +10213,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpcEndpointServiceConfigurationsResult> responseHandler = new StaxResponseHandler<DeleteVpcEndpointServiceConfigurationsResult>(
                     new DeleteVpcEndpointServiceConfigurationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8613,10 +10226,50 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes the endpoint routes in the
-     * route tables that were associated with the endpoint. Deleting an interface endpoint deletes the endpoint network
-     * interfaces.
+     * Deletes one or more specified VPC endpoints. You can delete any of the following types of VPC endpoints.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Gateway endpoint,
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Gateway Load Balancer endpoint,
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Interface endpoint
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following rules apply when you delete a VPC endpoint:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When you delete a gateway endpoint, we delete the endpoint routes in the route tables that are associated with
+     * the endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
+     * </p>
+     * <p>
+     * You can only delete Gateway Load Balancer endpoints when the routes that are associated with the endpoint are
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you delete an interface endpoint, we delete the endpoint network interfaces.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteVpcEndpointsRequest
      *        Contains the parameters for DeleteVpcEndpoints.
@@ -8646,6 +10299,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpcEndpointsRequestMarshaller().marshall(super.beforeMarshalling(deleteVpcEndpointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpcEndpoints");
@@ -8657,6 +10312,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpcEndpointsResult> responseHandler = new StaxResponseHandler<DeleteVpcEndpointsResult>(
                     new DeleteVpcEndpointsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8702,6 +10358,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpcPeeringConnectionRequestMarshaller().marshall(super.beforeMarshalling(deleteVpcPeeringConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpcPeeringConnection");
@@ -8713,6 +10371,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<DeleteVpcPeeringConnectionResult>(
                     new DeleteVpcPeeringConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8768,6 +10427,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpnConnectionRequestMarshaller().marshall(super.beforeMarshalling(deleteVpnConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpnConnection");
@@ -8779,6 +10440,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpnConnectionResult> responseHandler = new StaxResponseHandler<DeleteVpnConnectionResult>(
                     new DeleteVpnConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8824,6 +10486,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpnConnectionRouteRequestMarshaller().marshall(super.beforeMarshalling(deleteVpnConnectionRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpnConnectionRoute");
@@ -8835,6 +10499,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpnConnectionRouteResult> responseHandler = new StaxResponseHandler<DeleteVpnConnectionRouteResult>(
                     new DeleteVpnConnectionRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8880,6 +10545,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeleteVpnGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteVpnGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpnGateway");
@@ -8891,6 +10558,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteVpnGatewayResult> responseHandler = new StaxResponseHandler<DeleteVpnGatewayResult>(
                     new DeleteVpnGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8938,6 +10606,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeprovisionByoipCidrRequestMarshaller().marshall(super.beforeMarshalling(deprovisionByoipCidrRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeprovisionByoipCidr");
@@ -8949,6 +10619,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeprovisionByoipCidrResult> responseHandler = new StaxResponseHandler<DeprovisionByoipCidrResult>(
                     new DeprovisionByoipCidrResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8999,6 +10670,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DeregisterImageRequestMarshaller().marshall(super.beforeMarshalling(deregisterImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterImage");
@@ -9010,6 +10683,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeregisterImageResult> responseHandler = new StaxResponseHandler<DeregisterImageResult>(
                     new DeregisterImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9057,6 +10731,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(deregisterInstanceEventNotificationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterInstanceEventNotificationAttributes");
@@ -9068,6 +10744,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeregisterInstanceEventNotificationAttributesResult> responseHandler = new StaxResponseHandler<DeregisterInstanceEventNotificationAttributesResult>(
                     new DeregisterInstanceEventNotificationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9114,6 +10791,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(deregisterTransitGatewayMulticastGroupMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterTransitGatewayMulticastGroupMembers");
@@ -9125,6 +10804,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeregisterTransitGatewayMulticastGroupMembersResult> responseHandler = new StaxResponseHandler<DeregisterTransitGatewayMulticastGroupMembersResult>(
                     new DeregisterTransitGatewayMulticastGroupMembersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9171,6 +10851,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(deregisterTransitGatewayMulticastGroupSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterTransitGatewayMulticastGroupSources");
@@ -9182,6 +10864,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeregisterTransitGatewayMulticastGroupSourcesResult> responseHandler = new StaxResponseHandler<DeregisterTransitGatewayMulticastGroupSourcesResult>(
                     new DeregisterTransitGatewayMulticastGroupSourcesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9263,6 +10946,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeAccountAttributesRequestMarshaller().marshall(super.beforeMarshalling(describeAccountAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountAttributes");
@@ -9274,6 +10959,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeAccountAttributesResult> responseHandler = new StaxResponseHandler<DescribeAccountAttributesResult>(
                     new DescribeAccountAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9326,6 +11012,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeAddressesRequestMarshaller().marshall(super.beforeMarshalling(describeAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAddresses");
@@ -9337,6 +11025,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeAddressesResult> responseHandler = new StaxResponseHandler<DescribeAddressesResult>(
                     new DescribeAddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9350,6 +11039,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeAddressesResult describeAddresses() {
         return describeAddresses(new DescribeAddressesRequest());
+    }
+
+    /**
+     * <p>
+     * Describes the attributes of the specified Elastic IP addresses. For requirements, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS"
+     * >Using reverse DNS for email applications</a>.
+     * </p>
+     * 
+     * @param describeAddressesAttributeRequest
+     * @return Result of the DescribeAddressesAttribute operation returned by the service.
+     * @sample AmazonEC2.DescribeAddressesAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeAddressesAttributeResult describeAddressesAttribute(DescribeAddressesAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAddressesAttribute(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAddressesAttributeResult executeDescribeAddressesAttribute(DescribeAddressesAttributeRequest describeAddressesAttributeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAddressesAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAddressesAttributeRequest> request = null;
+        Response<DescribeAddressesAttributeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAddressesAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeAddressesAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAddressesAttribute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeAddressesAttributeResult> responseHandler = new StaxResponseHandler<DescribeAddressesAttributeResult>(
+                    new DescribeAddressesAttributeResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -9401,6 +11148,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeAggregateIdFormatRequestMarshaller().marshall(super.beforeMarshalling(describeAggregateIdFormatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAggregateIdFormat");
@@ -9412,6 +11161,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeAggregateIdFormatResult> responseHandler = new StaxResponseHandler<DescribeAggregateIdFormatResult>(
                     new DescribeAggregateIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9424,14 +11174,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the Availability Zones and Local Zones that are available to you. If there is an event impacting an
-     * Availability Zone or Local Zone, you can use this request to view the state and any provided messages for that
-     * Availability Zone or Local Zone.
+     * Describes the Availability Zones, Local Zones, and Wavelength Zones that are available to you. If there is an
+     * event impacting a zone, you can use this request to view the state and any provided messages for that zone.
      * </p>
      * <p>
-     * For more information about Availability Zones and Local Zones, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and
-     * Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information about Availability Zones, Local Zones, and Wavelength Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions, Zones
+     * and Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeAvailabilityZonesRequest
@@ -9461,6 +11210,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeAvailabilityZonesRequestMarshaller().marshall(super.beforeMarshalling(describeAvailabilityZonesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAvailabilityZones");
@@ -9472,6 +11223,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeAvailabilityZonesResult> responseHandler = new StaxResponseHandler<DescribeAvailabilityZonesResult>(
                     new DescribeAvailabilityZonesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9526,6 +11278,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeBundleTasksRequestMarshaller().marshall(super.beforeMarshalling(describeBundleTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBundleTasks");
@@ -9537,6 +11291,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeBundleTasksResult> responseHandler = new StaxResponseHandler<DescribeBundleTasksResult>(
                     new DescribeBundleTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9588,6 +11343,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeByoipCidrsRequestMarshaller().marshall(super.beforeMarshalling(describeByoipCidrsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeByoipCidrs");
@@ -9599,6 +11356,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeByoipCidrsResult> responseHandler = new StaxResponseHandler<DescribeByoipCidrsResult>(
                     new DescribeByoipCidrsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9642,6 +11400,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeCapacityReservationsRequestMarshaller().marshall(super.beforeMarshalling(describeCapacityReservationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCapacityReservations");
@@ -9653,6 +11413,63 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeCapacityReservationsResult> responseHandler = new StaxResponseHandler<DescribeCapacityReservationsResult>(
                     new DescribeCapacityReservationsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more of your carrier gateways.
+     * </p>
+     * 
+     * @param describeCarrierGatewaysRequest
+     * @return Result of the DescribeCarrierGateways operation returned by the service.
+     * @sample AmazonEC2.DescribeCarrierGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeCarrierGatewaysResult describeCarrierGateways(DescribeCarrierGatewaysRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCarrierGateways(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCarrierGatewaysResult executeDescribeCarrierGateways(DescribeCarrierGatewaysRequest describeCarrierGatewaysRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCarrierGatewaysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCarrierGatewaysRequest> request = null;
+        Response<DescribeCarrierGatewaysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCarrierGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeCarrierGatewaysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCarrierGateways");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeCarrierGatewaysResult> responseHandler = new StaxResponseHandler<DescribeCarrierGatewaysResult>(
+                    new DescribeCarrierGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9697,6 +11514,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeClassicLinkInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeClassicLinkInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClassicLinkInstances");
@@ -9708,6 +11527,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClassicLinkInstancesResult> responseHandler = new StaxResponseHandler<DescribeClassicLinkInstancesResult>(
                     new DescribeClassicLinkInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9757,6 +11577,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeClientVpnAuthorizationRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientVpnAuthorizationRules");
@@ -9768,6 +11590,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClientVpnAuthorizationRulesResult> responseHandler = new StaxResponseHandler<DescribeClientVpnAuthorizationRulesResult>(
                     new DescribeClientVpnAuthorizationRulesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9811,6 +11634,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeClientVpnConnectionsRequestMarshaller().marshall(super.beforeMarshalling(describeClientVpnConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientVpnConnections");
@@ -9822,6 +11647,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClientVpnConnectionsResult> responseHandler = new StaxResponseHandler<DescribeClientVpnConnectionsResult>(
                     new DescribeClientVpnConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9864,6 +11690,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeClientVpnEndpointsRequestMarshaller().marshall(super.beforeMarshalling(describeClientVpnEndpointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientVpnEndpoints");
@@ -9875,6 +11703,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClientVpnEndpointsResult> responseHandler = new StaxResponseHandler<DescribeClientVpnEndpointsResult>(
                     new DescribeClientVpnEndpointsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9917,6 +11746,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeClientVpnRoutesRequestMarshaller().marshall(super.beforeMarshalling(describeClientVpnRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientVpnRoutes");
@@ -9928,6 +11759,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClientVpnRoutesResult> responseHandler = new StaxResponseHandler<DescribeClientVpnRoutesResult>(
                     new DescribeClientVpnRoutesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9971,6 +11803,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeClientVpnTargetNetworksRequestMarshaller().marshall(super.beforeMarshalling(describeClientVpnTargetNetworksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientVpnTargetNetworks");
@@ -9982,6 +11816,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeClientVpnTargetNetworksResult> responseHandler = new StaxResponseHandler<DescribeClientVpnTargetNetworksResult>(
                     new DescribeClientVpnTargetNetworksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10024,6 +11859,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeCoipPoolsRequestMarshaller().marshall(super.beforeMarshalling(describeCoipPoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCoipPools");
@@ -10035,6 +11872,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeCoipPoolsResult> responseHandler = new StaxResponseHandler<DescribeCoipPoolsResult>(
                     new DescribeCoipPoolsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10082,6 +11920,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeConversionTasksRequestMarshaller().marshall(super.beforeMarshalling(describeConversionTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConversionTasks");
@@ -10093,6 +11933,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeConversionTasksResult> responseHandler = new StaxResponseHandler<DescribeConversionTasksResult>(
                     new DescribeConversionTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10145,6 +11986,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeCustomerGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeCustomerGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCustomerGateways");
@@ -10156,6 +11999,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeCustomerGatewaysResult> responseHandler = new StaxResponseHandler<DescribeCustomerGatewaysResult>(
                     new DescribeCustomerGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10207,6 +12051,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeDhcpOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeDhcpOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDhcpOptions");
@@ -10218,6 +12064,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeDhcpOptionsResult> responseHandler = new StaxResponseHandler<DescribeDhcpOptionsResult>(
                     new DescribeDhcpOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10267,6 +12114,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .marshall(super.beforeMarshalling(describeEgressOnlyInternetGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEgressOnlyInternetGateways");
@@ -10278,6 +12127,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeEgressOnlyInternetGatewaysResult> responseHandler = new StaxResponseHandler<DescribeEgressOnlyInternetGatewaysResult>(
                     new DescribeEgressOnlyInternetGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10322,6 +12172,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeElasticGpusRequestMarshaller().marshall(super.beforeMarshalling(describeElasticGpusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeElasticGpus");
@@ -10333,6 +12185,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeElasticGpusResult> responseHandler = new StaxResponseHandler<DescribeElasticGpusResult>(
                     new DescribeElasticGpusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10345,7 +12198,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the specified export image tasks or all your export image tasks.
+     * Describes the specified export image tasks or all of your export image tasks.
      * </p>
      * 
      * @param describeExportImageTasksRequest
@@ -10375,6 +12228,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeExportImageTasksRequestMarshaller().marshall(super.beforeMarshalling(describeExportImageTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExportImageTasks");
@@ -10386,6 +12241,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeExportImageTasksResult> responseHandler = new StaxResponseHandler<DescribeExportImageTasksResult>(
                     new DescribeExportImageTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10398,7 +12254,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the specified export instance tasks or all your export instance tasks.
+     * Describes the specified export instance tasks or all of your export instance tasks.
      * </p>
      * 
      * @param describeExportTasksRequest
@@ -10428,6 +12284,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeExportTasksRequestMarshaller().marshall(super.beforeMarshalling(describeExportTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExportTasks");
@@ -10439,6 +12297,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeExportTasksResult> responseHandler = new StaxResponseHandler<DescribeExportTasksResult>(
                     new DescribeExportTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10486,6 +12345,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeFastSnapshotRestoresRequestMarshaller().marshall(super.beforeMarshalling(describeFastSnapshotRestoresRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFastSnapshotRestores");
@@ -10497,6 +12358,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFastSnapshotRestoresResult> responseHandler = new StaxResponseHandler<DescribeFastSnapshotRestoresResult>(
                     new DescribeFastSnapshotRestoresResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10514,6 +12376,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * EC2 Fleet events are delayed by up to 30 seconds before they can be described. This ensures that you can query by
      * the last evaluated time and not miss a recorded event. EC2 Fleet events are available for 48 hours.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring your EC2
+     * Fleet</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeFleetHistoryRequest
@@ -10543,6 +12410,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeFleetHistoryRequestMarshaller().marshall(super.beforeMarshalling(describeFleetHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetHistory");
@@ -10554,6 +12423,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFleetHistoryResult> responseHandler = new StaxResponseHandler<DescribeFleetHistoryResult>(
                     new DescribeFleetHistoryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10567,6 +12437,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes the running instances for the specified EC2 Fleet.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring your EC2
+     * Fleet</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeFleetInstancesRequest
@@ -10596,6 +12471,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeFleetInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeFleetInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleetInstances");
@@ -10607,6 +12484,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFleetInstancesResult> responseHandler = new StaxResponseHandler<DescribeFleetInstancesResult>(
                     new DescribeFleetInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10620,6 +12498,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes the specified EC2 Fleets or all of your EC2 Fleets.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring your EC2
+     * Fleet</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeFleetsRequest
@@ -10649,6 +12532,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeFleetsRequestMarshaller().marshall(super.beforeMarshalling(describeFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleets");
@@ -10660,6 +12545,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFleetsResult> responseHandler = new StaxResponseHandler<DescribeFleetsResult>(
                     new DescribeFleetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10703,6 +12589,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeFlowLogsRequestMarshaller().marshall(super.beforeMarshalling(describeFlowLogsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFlowLogs");
@@ -10714,6 +12602,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFlowLogsResult> responseHandler = new StaxResponseHandler<DescribeFlowLogsResult>(
                     new DescribeFlowLogsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10761,6 +12650,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeFpgaImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeFpgaImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFpgaImageAttribute");
@@ -10772,6 +12663,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<DescribeFpgaImageAttributeResult>(
                     new DescribeFpgaImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10815,6 +12707,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeFpgaImagesRequestMarshaller().marshall(super.beforeMarshalling(describeFpgaImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFpgaImages");
@@ -10826,6 +12720,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeFpgaImagesResult> responseHandler = new StaxResponseHandler<DescribeFpgaImagesResult>(
                     new DescribeFpgaImagesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10845,8 +12740,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * the instance family and Region of your Dedicated Hosts. When purchasing an offering, ensure that the instance
      * family and Region of the offering matches that of the Dedicated Hosts with which it is to be associated. For more
      * information about supported instance types, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Hosts
-     * Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Hosts</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeHostReservationOfferingsRequest
@@ -10877,6 +12772,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeHostReservationOfferingsRequestMarshaller().marshall(super.beforeMarshalling(describeHostReservationOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHostReservationOfferings");
@@ -10888,6 +12785,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeHostReservationOfferingsResult> responseHandler = new StaxResponseHandler<DescribeHostReservationOfferingsResult>(
                     new DescribeHostReservationOfferingsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10930,6 +12828,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeHostReservationsRequestMarshaller().marshall(super.beforeMarshalling(describeHostReservationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHostReservations");
@@ -10941,6 +12841,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeHostReservationsResult> responseHandler = new StaxResponseHandler<DescribeHostReservationsResult>(
                     new DescribeHostReservationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10988,6 +12889,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeHostsRequestMarshaller().marshall(super.beforeMarshalling(describeHostsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHosts");
@@ -10998,6 +12901,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DescribeHostsResult> responseHandler = new StaxResponseHandler<DescribeHostsResult>(new DescribeHostsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11047,6 +12951,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeIamInstanceProfileAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIamInstanceProfileAssociations");
@@ -11058,6 +12964,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeIamInstanceProfileAssociationsResult> responseHandler = new StaxResponseHandler<DescribeIamInstanceProfileAssociationsResult>(
                     new DescribeIamInstanceProfileAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11121,6 +13028,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeIdFormatRequestMarshaller().marshall(super.beforeMarshalling(describeIdFormatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdFormat");
@@ -11132,6 +13041,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeIdFormatResult> responseHandler = new StaxResponseHandler<DescribeIdFormatResult>(
                     new DescribeIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11199,6 +13109,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeIdentityIdFormatRequestMarshaller().marshall(super.beforeMarshalling(describeIdentityIdFormatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityIdFormat");
@@ -11210,6 +13122,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeIdentityIdFormatResult> responseHandler = new StaxResponseHandler<DescribeIdentityIdFormatResult>(
                     new DescribeIdentityIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11253,6 +13166,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeImageAttribute");
@@ -11264,6 +13179,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeImageAttributeResult> responseHandler = new StaxResponseHandler<DescribeImageAttributeResult>(
                     new DescribeImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11315,6 +13231,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeImagesRequestMarshaller().marshall(super.beforeMarshalling(describeImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeImages");
@@ -11326,6 +13244,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeImagesResult> responseHandler = new StaxResponseHandler<DescribeImagesResult>(
                     new DescribeImagesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11373,6 +13292,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeImportImageTasksRequestMarshaller().marshall(super.beforeMarshalling(describeImportImageTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeImportImageTasks");
@@ -11384,6 +13305,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeImportImageTasksResult> responseHandler = new StaxResponseHandler<DescribeImportImageTasksResult>(
                     new DescribeImportImageTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11431,6 +13353,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeImportSnapshotTasksRequestMarshaller().marshall(super.beforeMarshalling(describeImportSnapshotTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeImportSnapshotTasks");
@@ -11442,6 +13366,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeImportSnapshotTasksResult> responseHandler = new StaxResponseHandler<DescribeImportSnapshotTasksResult>(
                     new DescribeImportSnapshotTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11493,6 +13418,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeInstanceAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeInstanceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceAttribute");
@@ -11504,6 +13431,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceAttributeResult> responseHandler = new StaxResponseHandler<DescribeInstanceAttributeResult>(
                     new DescribeInstanceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11541,7 +13469,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeInstanceCreditSpecificationsRequest
@@ -11573,6 +13501,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeInstanceCreditSpecificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceCreditSpecifications");
@@ -11584,6 +13514,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceCreditSpecificationsResult> responseHandler = new StaxResponseHandler<DescribeInstanceCreditSpecificationsResult>(
                     new DescribeInstanceCreditSpecificationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11630,6 +13561,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeInstanceEventNotificationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceEventNotificationAttributes");
@@ -11641,6 +13574,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceEventNotificationAttributesResult> responseHandler = new StaxResponseHandler<DescribeInstanceEventNotificationAttributesResult>(
                     new DescribeInstanceEventNotificationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11665,9 +13599,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances to identify hardware and
      * software issues. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
-     * Checks for Your Instances</a> and <a
+     * checks for your instances</a> and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-     * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -11675,15 +13609,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or terminate) for your instances
      * related to hardware issues, software updates, or system maintenance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-     * Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * events for your instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Instance state</b> - You can manage your instances from the moment you launch them through their termination.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance Lifecycle</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance lifecycle</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -11715,6 +13649,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeInstanceStatusRequestMarshaller().marshall(super.beforeMarshalling(describeInstanceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceStatus");
@@ -11726,6 +13662,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceStatusResult> responseHandler = new StaxResponseHandler<DescribeInstanceStatusResult>(
                     new DescribeInstanceStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11774,6 +13711,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeInstanceTypeOfferingsRequestMarshaller().marshall(super.beforeMarshalling(describeInstanceTypeOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceTypeOfferings");
@@ -11785,6 +13724,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceTypeOfferingsResult> responseHandler = new StaxResponseHandler<DescribeInstanceTypeOfferingsResult>(
                     new DescribeInstanceTypeOfferingsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11828,6 +13768,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeInstanceTypesRequestMarshaller().marshall(super.beforeMarshalling(describeInstanceTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceTypes");
@@ -11839,6 +13781,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstanceTypesResult> responseHandler = new StaxResponseHandler<DescribeInstanceTypesResult>(
                     new DescribeInstanceTypesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11900,6 +13843,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstances");
@@ -11911,6 +13856,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInstancesResult> responseHandler = new StaxResponseHandler<DescribeInstancesResult>(
                     new DescribeInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11958,6 +13904,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeInternetGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeInternetGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInternetGateways");
@@ -11969,6 +13917,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeInternetGatewaysResult> responseHandler = new StaxResponseHandler<DescribeInternetGatewaysResult>(
                     new DescribeInternetGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12016,6 +13965,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeIpv6PoolsRequestMarshaller().marshall(super.beforeMarshalling(describeIpv6PoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIpv6Pools");
@@ -12027,6 +13978,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeIpv6PoolsResult> responseHandler = new StaxResponseHandler<DescribeIpv6PoolsResult>(
                     new DescribeIpv6PoolsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12074,6 +14026,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeKeyPairsRequestMarshaller().marshall(super.beforeMarshalling(describeKeyPairsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeKeyPairs");
@@ -12085,6 +14039,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeKeyPairsResult> responseHandler = new StaxResponseHandler<DescribeKeyPairsResult>(
                     new DescribeKeyPairsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12103,7 +14058,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes one or more versions of a specified launch template. You can describe all versions, individual
-     * versions, or a range of versions.
+     * versions, or a range of versions. You can also describe all the latest versions or all the default versions of
+     * all the launch templates in your account.
      * </p>
      * 
      * @param describeLaunchTemplateVersionsRequest
@@ -12133,6 +14089,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeLaunchTemplateVersionsRequestMarshaller().marshall(super.beforeMarshalling(describeLaunchTemplateVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLaunchTemplateVersions");
@@ -12144,6 +14102,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLaunchTemplateVersionsResult> responseHandler = new StaxResponseHandler<DescribeLaunchTemplateVersionsResult>(
                     new DescribeLaunchTemplateVersionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12186,6 +14145,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeLaunchTemplatesRequestMarshaller().marshall(super.beforeMarshalling(describeLaunchTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLaunchTemplates");
@@ -12197,6 +14158,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLaunchTemplatesResult> responseHandler = new StaxResponseHandler<DescribeLaunchTemplatesResult>(
                     new DescribeLaunchTemplatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12244,6 +14206,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations");
@@ -12255,6 +14219,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResult>(
                     new DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12301,6 +14266,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeLocalGatewayRouteTableVpcAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocalGatewayRouteTableVpcAssociations");
@@ -12312,6 +14279,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewayRouteTableVpcAssociationsResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewayRouteTableVpcAssociationsResult>(
                     new DescribeLocalGatewayRouteTableVpcAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12356,6 +14324,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeLocalGatewayRouteTablesRequestMarshaller().marshall(super.beforeMarshalling(describeLocalGatewayRouteTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocalGatewayRouteTables");
@@ -12367,6 +14337,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewayRouteTablesResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewayRouteTablesResult>(
                     new DescribeLocalGatewayRouteTablesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12411,6 +14382,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeLocalGatewayVirtualInterfaceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocalGatewayVirtualInterfaceGroups");
@@ -12422,6 +14395,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewayVirtualInterfaceGroupsResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewayVirtualInterfaceGroupsResult>(
                     new DescribeLocalGatewayVirtualInterfaceGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12466,6 +14440,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeLocalGatewayVirtualInterfacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocalGatewayVirtualInterfaces");
@@ -12477,6 +14453,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewayVirtualInterfacesResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewayVirtualInterfacesResult>(
                     new DescribeLocalGatewayVirtualInterfacesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12520,6 +14497,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeLocalGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeLocalGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocalGateways");
@@ -12531,6 +14510,66 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeLocalGatewaysResult> responseHandler = new StaxResponseHandler<DescribeLocalGatewaysResult>(
                     new DescribeLocalGatewaysResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes your managed prefix lists and any AWS-managed prefix lists.
+     * </p>
+     * <p>
+     * To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
+     * </p>
+     * 
+     * @param describeManagedPrefixListsRequest
+     * @return Result of the DescribeManagedPrefixLists operation returned by the service.
+     * @sample AmazonEC2.DescribeManagedPrefixLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeManagedPrefixLists" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeManagedPrefixListsResult describeManagedPrefixLists(DescribeManagedPrefixListsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeManagedPrefixLists(request);
+    }
+
+    @SdkInternalApi
+    final DescribeManagedPrefixListsResult executeDescribeManagedPrefixLists(DescribeManagedPrefixListsRequest describeManagedPrefixListsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeManagedPrefixListsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeManagedPrefixListsRequest> request = null;
+        Response<DescribeManagedPrefixListsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeManagedPrefixListsRequestMarshaller().marshall(super.beforeMarshalling(describeManagedPrefixListsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeManagedPrefixLists");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeManagedPrefixListsResult> responseHandler = new StaxResponseHandler<DescribeManagedPrefixListsResult>(
+                    new DescribeManagedPrefixListsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12575,6 +14614,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeMovingAddressesRequestMarshaller().marshall(super.beforeMarshalling(describeMovingAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMovingAddresses");
@@ -12586,6 +14627,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeMovingAddressesResult> responseHandler = new StaxResponseHandler<DescribeMovingAddressesResult>(
                     new DescribeMovingAddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12633,6 +14675,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeNatGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeNatGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNatGateways");
@@ -12644,6 +14688,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNatGatewaysResult> responseHandler = new StaxResponseHandler<DescribeNatGatewaysResult>(
                     new DescribeNatGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12690,6 +14735,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeNetworkAclsRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkAclsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNetworkAcls");
@@ -12701,6 +14748,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNetworkAclsResult> responseHandler = new StaxResponseHandler<DescribeNetworkAclsResult>(
                     new DescribeNetworkAclsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12714,6 +14762,119 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeNetworkAclsResult describeNetworkAcls() {
         return describeNetworkAcls(new DescribeNetworkAclsRequest());
+    }
+
+    /**
+     * <p>
+     * Describes one or more of your network insights analyses.
+     * </p>
+     * 
+     * @param describeNetworkInsightsAnalysesRequest
+     * @return Result of the DescribeNetworkInsightsAnalyses operation returned by the service.
+     * @sample AmazonEC2.DescribeNetworkInsightsAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeNetworkInsightsAnalysesResult describeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNetworkInsightsAnalyses(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNetworkInsightsAnalysesResult executeDescribeNetworkInsightsAnalyses(
+            DescribeNetworkInsightsAnalysesRequest describeNetworkInsightsAnalysesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeNetworkInsightsAnalysesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNetworkInsightsAnalysesRequest> request = null;
+        Response<DescribeNetworkInsightsAnalysesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNetworkInsightsAnalysesRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkInsightsAnalysesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNetworkInsightsAnalyses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeNetworkInsightsAnalysesResult> responseHandler = new StaxResponseHandler<DescribeNetworkInsightsAnalysesResult>(
+                    new DescribeNetworkInsightsAnalysesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more of your paths.
+     * </p>
+     * 
+     * @param describeNetworkInsightsPathsRequest
+     * @return Result of the DescribeNetworkInsightsPaths operation returned by the service.
+     * @sample AmazonEC2.DescribeNetworkInsightsPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeNetworkInsightsPathsResult describeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNetworkInsightsPaths(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNetworkInsightsPathsResult executeDescribeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest describeNetworkInsightsPathsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeNetworkInsightsPathsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNetworkInsightsPathsRequest> request = null;
+        Response<DescribeNetworkInsightsPathsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNetworkInsightsPathsRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkInsightsPathsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNetworkInsightsPaths");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeNetworkInsightsPathsResult> responseHandler = new StaxResponseHandler<DescribeNetworkInsightsPathsResult>(
+                    new DescribeNetworkInsightsPathsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -12750,6 +14911,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeNetworkInterfaceAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkInterfaceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNetworkInterfaceAttribute");
@@ -12761,6 +14924,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<DescribeNetworkInterfaceAttributeResult>(
                     new DescribeNetworkInterfaceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12806,6 +14970,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeNetworkInterfacePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNetworkInterfacePermissions");
@@ -12817,6 +14983,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNetworkInterfacePermissionsResult> responseHandler = new StaxResponseHandler<DescribeNetworkInterfacePermissionsResult>(
                     new DescribeNetworkInterfacePermissionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12860,6 +15027,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeNetworkInterfacesRequestMarshaller().marshall(super.beforeMarshalling(describeNetworkInterfacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNetworkInterfaces");
@@ -12871,6 +15040,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNetworkInterfacesResult> responseHandler = new StaxResponseHandler<DescribeNetworkInterfacesResult>(
                     new DescribeNetworkInterfacesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12889,8 +15059,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes the specified placement groups or all of your placement groups. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describePlacementGroupsRequest
@@ -12920,6 +15090,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribePlacementGroupsRequestMarshaller().marshall(super.beforeMarshalling(describePlacementGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePlacementGroups");
@@ -12931,6 +15103,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribePlacementGroupsResult> responseHandler = new StaxResponseHandler<DescribePlacementGroupsResult>(
                     new DescribePlacementGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12949,9 +15122,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes available AWS services in a prefix list format, which includes the prefix list name and prefix list ID
-     * of the service and the IP address range for the service. A prefix list ID is required for creating an outbound
-     * security group rule that allows traffic from a VPC to access an AWS service through a gateway VPC endpoint.
-     * Currently, the services that support this action are Amazon S3 and Amazon DynamoDB.
+     * of the service and the IP address range for the service.
+     * </p>
+     * <p>
+     * We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
      * </p>
      * 
      * @param describePrefixListsRequest
@@ -12981,6 +15155,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribePrefixListsRequestMarshaller().marshall(super.beforeMarshalling(describePrefixListsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePrefixLists");
@@ -12992,6 +15168,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribePrefixListsResult> responseHandler = new StaxResponseHandler<DescribePrefixListsResult>(
                     new DescribePrefixListsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13057,6 +15234,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribePrincipalIdFormatRequestMarshaller().marshall(super.beforeMarshalling(describePrincipalIdFormatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePrincipalIdFormat");
@@ -13068,6 +15247,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribePrincipalIdFormatResult> responseHandler = new StaxResponseHandler<DescribePrincipalIdFormatResult>(
                     new DescribePrincipalIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13110,6 +15290,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribePublicIpv4PoolsRequestMarshaller().marshall(super.beforeMarshalling(describePublicIpv4PoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePublicIpv4Pools");
@@ -13121,6 +15303,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribePublicIpv4PoolsResult> responseHandler = new StaxResponseHandler<DescribePublicIpv4PoolsResult>(
                     new DescribePublicIpv4PoolsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13172,6 +15355,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeRegionsRequestMarshaller().marshall(super.beforeMarshalling(describeRegionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegions");
@@ -13183,6 +15368,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeRegionsResult> responseHandler = new StaxResponseHandler<DescribeRegionsResult>(
                     new DescribeRegionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13200,12 +15386,70 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes a root volume replacement task. For more information, see <a
+     * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param describeReplaceRootVolumeTasksRequest
+     * @return Result of the DescribeReplaceRootVolumeTasks operation returned by the service.
+     * @sample AmazonEC2.DescribeReplaceRootVolumeTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeReplaceRootVolumeTasksResult describeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReplaceRootVolumeTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReplaceRootVolumeTasksResult executeDescribeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest describeReplaceRootVolumeTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReplaceRootVolumeTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReplaceRootVolumeTasksRequest> request = null;
+        Response<DescribeReplaceRootVolumeTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReplaceRootVolumeTasksRequestMarshaller().marshall(super.beforeMarshalling(describeReplaceRootVolumeTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReplaceRootVolumeTasks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeReplaceRootVolumeTasksResult> responseHandler = new StaxResponseHandler<DescribeReplaceRootVolumeTasksResult>(
+                    new DescribeReplaceRootVolumeTasksResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes one or more of the Reserved Instances that you purchased.
      * </p>
      * <p>
      * For more information about Reserved Instances, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeReservedInstancesRequest
@@ -13236,6 +15480,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeReservedInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeReservedInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedInstances");
@@ -13247,6 +15493,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeReservedInstancesResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesResult>(
                     new DescribeReservedInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13285,7 +15532,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance
-     * Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeReservedInstancesListingsRequest
@@ -13317,6 +15564,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeReservedInstancesListingsRequestMarshaller().marshall(super.beforeMarshalling(describeReservedInstancesListingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedInstancesListings");
@@ -13328,6 +15577,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeReservedInstancesListingsResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesListingsResult>(
                     new DescribeReservedInstancesListingsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13352,7 +15602,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in
-     * the Amazon Elastic Compute Cloud User Guide.
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeReservedInstancesModificationsRequest
@@ -13385,6 +15635,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeReservedInstancesModificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedInstancesModifications");
@@ -13396,6 +15648,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeReservedInstancesModificationsResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesModificationsResult>(
                     new DescribeReservedInstancesModificationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13424,7 +15677,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance
-     * Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeReservedInstancesOfferingsRequest
@@ -13457,6 +15710,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .marshall(super.beforeMarshalling(describeReservedInstancesOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedInstancesOfferings");
@@ -13468,6 +15723,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeReservedInstancesOfferingsResult> responseHandler = new StaxResponseHandler<DescribeReservedInstancesOfferingsResult>(
                     new DescribeReservedInstancesOfferingsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13524,6 +15780,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeRouteTablesRequestMarshaller().marshall(super.beforeMarshalling(describeRouteTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRouteTables");
@@ -13535,6 +15793,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeRouteTablesResult> responseHandler = new StaxResponseHandler<DescribeRouteTablesResult>(
                     new DescribeRouteTablesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13594,6 +15853,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeScheduledInstanceAvailabilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScheduledInstanceAvailability");
@@ -13605,6 +15866,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeScheduledInstanceAvailabilityResult> responseHandler = new StaxResponseHandler<DescribeScheduledInstanceAvailabilityResult>(
                     new DescribeScheduledInstanceAvailabilityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13648,6 +15910,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeScheduledInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeScheduledInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScheduledInstances");
@@ -13659,6 +15923,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeScheduledInstancesResult> responseHandler = new StaxResponseHandler<DescribeScheduledInstancesResult>(
                     new DescribeScheduledInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13703,6 +15968,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSecurityGroupReferencesRequestMarshaller().marshall(super.beforeMarshalling(describeSecurityGroupReferencesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSecurityGroupReferences");
@@ -13714,6 +15981,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSecurityGroupReferencesResult> responseHandler = new StaxResponseHandler<DescribeSecurityGroupReferencesResult>(
                     new DescribeSecurityGroupReferencesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13763,6 +16031,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSecurityGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSecurityGroups");
@@ -13774,6 +16044,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeSecurityGroupsResult>(
                     new DescribeSecurityGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13795,7 +16066,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information about EBS snapshots, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS Snapshots</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -13826,6 +16097,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSnapshotAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeSnapshotAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSnapshotAttribute");
@@ -13837,6 +16110,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSnapshotAttributeResult> responseHandler = new StaxResponseHandler<DescribeSnapshotAttributeResult>(
                     new DescribeSnapshotAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13898,10 +16172,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * you own or have explicit permissions, or <code>all</code> for public snapshots.
      * </p>
      * <p>
-     * If you are describing a long list of snapshots, you can paginate the output to make the list more manageable. The
-     * <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. If the list of
-     * results exceeds your <code>MaxResults</code> value, then that number of results is returned along with a
-     * <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
+     * If you are describing a long list of snapshots, we recommend that you paginate the output to make the list more
+     * manageable. The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page.
+     * If the list of results exceeds your <code>MaxResults</code> value, then that number of results is returned along
+     * with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
      * retrieve the remaining results.
      * </p>
      * <p>
@@ -13909,7 +16183,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information about EBS snapshots, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS Snapshots</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -13940,6 +16214,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(describeSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSnapshots");
@@ -13951,6 +16227,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSnapshotsResult> responseHandler = new StaxResponseHandler<DescribeSnapshotsResult>(
                     new DescribeSnapshotsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13969,7 +16246,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes the data feed for Spot Instances. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in
      * the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -14002,6 +16279,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotDatafeedSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(describeSpotDatafeedSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSpotDatafeedSubscription");
@@ -14013,6 +16292,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotDatafeedSubscriptionResult> responseHandler = new StaxResponseHandler<DescribeSpotDatafeedSubscriptionResult>(
                     new DescribeSpotDatafeedSubscriptionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14061,6 +16341,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotFleetInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeSpotFleetInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSpotFleetInstances");
@@ -14072,6 +16354,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotFleetInstancesResult> responseHandler = new StaxResponseHandler<DescribeSpotFleetInstancesResult>(
                     new DescribeSpotFleetInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14120,6 +16403,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotFleetRequestHistoryRequestMarshaller().marshall(super.beforeMarshalling(describeSpotFleetRequestHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSpotFleetRequestHistory");
@@ -14131,6 +16416,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotFleetRequestHistoryResult> responseHandler = new StaxResponseHandler<DescribeSpotFleetRequestHistoryResult>(
                     new DescribeSpotFleetRequestHistoryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14177,6 +16463,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotFleetRequestsRequestMarshaller().marshall(super.beforeMarshalling(describeSpotFleetRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSpotFleetRequests");
@@ -14188,6 +16476,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotFleetRequestsResult> responseHandler = new StaxResponseHandler<DescribeSpotFleetRequestsResult>(
                     new DescribeSpotFleetRequestsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14253,6 +16542,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotInstanceRequestsRequestMarshaller().marshall(super.beforeMarshalling(describeSpotInstanceRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSpotInstanceRequests");
@@ -14264,6 +16555,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotInstanceRequestsResult> responseHandler = new StaxResponseHandler<DescribeSpotInstanceRequestsResult>(
                     new DescribeSpotInstanceRequestsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14283,12 +16575,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Describes the Spot price history. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance
-     * Pricing History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * pricing history</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * When you specify a start and end time, this operation returns the prices of the instance types within the time
-     * range that you specified and the time when the price changed. The price is valid within the time period that you
-     * specified; the response merely indicates the last time that the price changed.
+     * When you specify a start and end time, the operation returns the prices of the instance types within that time
+     * range. It also returns the last price change before the start time, which is the effective price as of the start
+     * time.
      * </p>
      * 
      * @param describeSpotPriceHistoryRequest
@@ -14319,6 +16611,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSpotPriceHistoryRequestMarshaller().marshall(super.beforeMarshalling(describeSpotPriceHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSpotPriceHistory");
@@ -14330,6 +16624,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSpotPriceHistoryResult> responseHandler = new StaxResponseHandler<DescribeSpotPriceHistoryResult>(
                     new DescribeSpotPriceHistoryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14379,6 +16674,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeStaleSecurityGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeStaleSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStaleSecurityGroups");
@@ -14390,6 +16687,82 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeStaleSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeStaleSecurityGroupsResult>(
                     new DescribeStaleSecurityGroupsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the progress of the AMI store tasks. You can describe the store tasks for specified AMIs. If you don't
+     * specify the AMIs, you get a paginated list of store tasks from the last 31 days.
+     * </p>
+     * <p>
+     * For each AMI task, the response indicates if the task is <code>InProgress</code>, <code>Completed</code>, or
+     * <code>Failed</code>. For tasks <code>InProgress</code>, the response shows the estimated progress as a
+     * percentage.
+     * </p>
+     * <p>
+     * Tasks are listed in reverse chronological order. Currently, only tasks from the past 31 days can be viewed.
+     * </p>
+     * <p>
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeStoreImageTasksRequest
+     * @return Result of the DescribeStoreImageTasks operation returned by the service.
+     * @sample AmazonEC2.DescribeStoreImageTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeStoreImageTasksResult describeStoreImageTasks(DescribeStoreImageTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStoreImageTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStoreImageTasksResult executeDescribeStoreImageTasks(DescribeStoreImageTasksRequest describeStoreImageTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeStoreImageTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStoreImageTasksRequest> request = null;
+        Response<DescribeStoreImageTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStoreImageTasksRequestMarshaller().marshall(super.beforeMarshalling(describeStoreImageTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStoreImageTasks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeStoreImageTasksResult> responseHandler = new StaxResponseHandler<DescribeStoreImageTasksResult>(
+                    new DescribeStoreImageTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14436,6 +16809,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeSubnetsRequestMarshaller().marshall(super.beforeMarshalling(describeSubnetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubnets");
@@ -14447,6 +16822,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeSubnetsResult> responseHandler = new StaxResponseHandler<DescribeSubnetsResult>(
                     new DescribeSubnetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14499,6 +16875,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeTagsRequestMarshaller().marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
@@ -14509,6 +16887,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DescribeTagsResult> responseHandler = new StaxResponseHandler<DescribeTagsResult>(new DescribeTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14556,6 +16935,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeTrafficMirrorFiltersRequestMarshaller().marshall(super.beforeMarshalling(describeTrafficMirrorFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrafficMirrorFilters");
@@ -14567,6 +16948,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTrafficMirrorFiltersResult> responseHandler = new StaxResponseHandler<DescribeTrafficMirrorFiltersResult>(
                     new DescribeTrafficMirrorFiltersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14610,6 +16992,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeTrafficMirrorSessionsRequestMarshaller().marshall(super.beforeMarshalling(describeTrafficMirrorSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrafficMirrorSessions");
@@ -14621,6 +17005,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTrafficMirrorSessionsResult> responseHandler = new StaxResponseHandler<DescribeTrafficMirrorSessionsResult>(
                     new DescribeTrafficMirrorSessionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14663,6 +17048,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeTrafficMirrorTargetsRequestMarshaller().marshall(super.beforeMarshalling(describeTrafficMirrorTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrafficMirrorTargets");
@@ -14674,6 +17061,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTrafficMirrorTargetsResult> responseHandler = new StaxResponseHandler<DescribeTrafficMirrorTargetsResult>(
                     new DescribeTrafficMirrorTargetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14719,6 +17107,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeTransitGatewayAttachmentsRequestMarshaller().marshall(super.beforeMarshalling(describeTransitGatewayAttachmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransitGatewayAttachments");
@@ -14730,6 +17120,121 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayAttachmentsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayAttachmentsResult>(
                     new DescribeTransitGatewayAttachmentsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more Connect peers.
+     * </p>
+     * 
+     * @param describeTransitGatewayConnectPeersRequest
+     * @return Result of the DescribeTransitGatewayConnectPeers operation returned by the service.
+     * @sample AmazonEC2.DescribeTransitGatewayConnectPeers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTransitGatewayConnectPeersResult describeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTransitGatewayConnectPeers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTransitGatewayConnectPeersResult executeDescribeTransitGatewayConnectPeers(
+            DescribeTransitGatewayConnectPeersRequest describeTransitGatewayConnectPeersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTransitGatewayConnectPeersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTransitGatewayConnectPeersRequest> request = null;
+        Response<DescribeTransitGatewayConnectPeersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTransitGatewayConnectPeersRequestMarshaller()
+                        .marshall(super.beforeMarshalling(describeTransitGatewayConnectPeersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransitGatewayConnectPeers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTransitGatewayConnectPeersResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayConnectPeersResult>(
+                    new DescribeTransitGatewayConnectPeersResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more Connect attachments.
+     * </p>
+     * 
+     * @param describeTransitGatewayConnectsRequest
+     * @return Result of the DescribeTransitGatewayConnects operation returned by the service.
+     * @sample AmazonEC2.DescribeTransitGatewayConnects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTransitGatewayConnectsResult describeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTransitGatewayConnects(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTransitGatewayConnectsResult executeDescribeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest describeTransitGatewayConnectsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTransitGatewayConnectsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTransitGatewayConnectsRequest> request = null;
+        Response<DescribeTransitGatewayConnectsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTransitGatewayConnectsRequestMarshaller().marshall(super.beforeMarshalling(describeTransitGatewayConnectsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransitGatewayConnects");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTransitGatewayConnectsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayConnectsResult>(
+                    new DescribeTransitGatewayConnectsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14774,6 +17279,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeTransitGatewayMulticastDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransitGatewayMulticastDomains");
@@ -14785,6 +17292,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayMulticastDomainsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayMulticastDomainsResult>(
                     new DescribeTransitGatewayMulticastDomainsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14829,6 +17337,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeTransitGatewayPeeringAttachmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransitGatewayPeeringAttachments");
@@ -14840,6 +17350,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayPeeringAttachmentsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayPeeringAttachmentsResult>(
                     new DescribeTransitGatewayPeeringAttachmentsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14884,6 +17395,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeTransitGatewayRouteTablesRequestMarshaller().marshall(super.beforeMarshalling(describeTransitGatewayRouteTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransitGatewayRouteTables");
@@ -14895,6 +17408,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayRouteTablesResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayRouteTablesResult>(
                     new DescribeTransitGatewayRouteTablesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14940,6 +17454,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeTransitGatewayVpcAttachmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransitGatewayVpcAttachments");
@@ -14951,6 +17467,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewayVpcAttachmentsResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewayVpcAttachmentsResult>(
                     new DescribeTransitGatewayVpcAttachmentsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14994,6 +17511,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeTransitGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeTransitGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransitGateways");
@@ -15005,6 +17524,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTransitGatewaysResult> responseHandler = new StaxResponseHandler<DescribeTransitGatewaysResult>(
                     new DescribeTransitGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15021,7 +17541,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information about EBS volumes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS Volumes</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS volumes</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -15052,6 +17572,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVolumeAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeVolumeAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVolumeAttribute");
@@ -15063,6 +17585,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVolumeAttributeResult> responseHandler = new StaxResponseHandler<DescribeVolumeAttributeResult>(
                     new DescribeVolumeAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15089,19 +17612,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <i>Status</i>: Reflects the current status of the volume. The possible values are <code>ok</code>,
      * <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>. If all checks pass, the overall
      * status of the volume is <code>ok</code>. If the check fails, the overall status is <code>impaired</code>. If the
-     * status is <code>insufficient-data</code>, then the checks may still be taking place on your volume at the time.
+     * status is <code>insufficient-data</code>, then the checks might still be taking place on your volume at the time.
      * We recommend that you retry the request. For more information about volume status, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring the Status of
-     * Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring the status of
+     * your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * <i>Events</i>: Reflect the cause of a volume status and may require you to take action. For example, if your
+     * <i>Events</i>: Reflect the cause of a volume status and might require you to take action. For example, if your
      * volume returns an <code>impaired</code> status, then the volume event might be
      * <code>potential-data-inconsistency</code>. This means that your volume has been affected by an issue with the
-     * underlying host, has all I/O operations disabled, and may have inconsistent data.
+     * underlying host, has all I/O operations disabled, and might have inconsistent data.
      * </p>
      * <p>
-     * <i>Actions</i>: Reflect the actions you may have to take in response to an event. For example, if the status of
+     * <i>Actions</i>: Reflect the actions you might have to take in response to an event. For example, if the status of
      * the volume is <code>impaired</code> and the volume event shows <code>potential-data-inconsistency</code>, then
      * the action shows <code>enable-volume-io</code>. This means that you may want to enable the I/O operations for the
      * volume by calling the <a>EnableVolumeIO</a> action and then check the volume for data consistency.
@@ -15139,6 +17662,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVolumeStatusRequestMarshaller().marshall(super.beforeMarshalling(describeVolumeStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVolumeStatus");
@@ -15150,6 +17675,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVolumeStatusResult> responseHandler = new StaxResponseHandler<DescribeVolumeStatusResult>(
                     new DescribeVolumeStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15170,15 +17696,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Describes the specified EBS volumes or all of your EBS volumes.
      * </p>
      * <p>
-     * If you are describing a long list of volumes, you can paginate the output to make the list more manageable. The
-     * <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. If the list of
-     * results exceeds your <code>MaxResults</code> value, then that number of results is returned along with a
-     * <code>NextToken</code> value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
-     * the remaining results.
+     * If you are describing a long list of volumes, we recommend that you paginate the output to make the list more
+     * manageable. The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page.
+     * If the list of results exceeds your <code>MaxResults</code> value, then that number of results is returned along
+     * with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeVolumes</code> request to
+     * retrieve the remaining results.
      * </p>
      * <p>
      * For more information about EBS volumes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS Volumes</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS volumes</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -15209,6 +17735,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVolumesRequestMarshaller().marshall(super.beforeMarshalling(describeVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVolumes");
@@ -15220,6 +17748,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVolumesResult> responseHandler = new StaxResponseHandler<DescribeVolumesResult>(
                     new DescribeVolumesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15237,21 +17766,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Reports the current modification status of EBS volumes.
+     * Describes the most recent volume modification request for the specified EBS volumes.
      * </p>
      * <p>
-     * Current-generation EBS volumes support modification of attributes including type, size, and (for <code>io1</code>
-     * volumes) IOPS provisioning while either attached to or detached from an instance. Following an action from the
-     * API or the console to modify a volume, the status of the modification may be <code>modifying</code>,
-     * <code>optimizing</code>, <code>completed</code>, or <code>failed</code>. If a volume has never been modified,
-     * then certain elements of the returned <code>VolumeModification</code> objects are null.
+     * If a volume has never been modified, some information in the output will be null. If a volume has been modified
+     * more than once, the output includes only the most recent modification request.
      * </p>
      * <p>
      * You can also use CloudWatch Events to check the status of a modification to an EBS volume. For information about
      * CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
      * CloudWatch Events User Guide</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-     * Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * volume modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeVolumesModificationsRequest
@@ -15281,6 +17807,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVolumesModificationsRequestMarshaller().marshall(super.beforeMarshalling(describeVolumesModificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVolumesModifications");
@@ -15292,6 +17820,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVolumesModificationsResult> responseHandler = new StaxResponseHandler<DescribeVolumesModificationsResult>(
                     new DescribeVolumesModificationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15334,6 +17863,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcAttributeRequestMarshaller().marshall(super.beforeMarshalling(describeVpcAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcAttribute");
@@ -15345,6 +17876,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcAttributeResult> responseHandler = new StaxResponseHandler<DescribeVpcAttributeResult>(
                     new DescribeVpcAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15387,6 +17919,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcClassicLinkRequestMarshaller().marshall(super.beforeMarshalling(describeVpcClassicLinkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcClassicLink");
@@ -15398,6 +17932,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcClassicLinkResult> responseHandler = new StaxResponseHandler<DescribeVpcClassicLinkResult>(
                     new DescribeVpcClassicLinkResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15451,6 +17986,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcClassicLinkDnsSupportRequestMarshaller().marshall(super.beforeMarshalling(describeVpcClassicLinkDnsSupportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcClassicLinkDnsSupport");
@@ -15462,6 +17999,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcClassicLinkDnsSupportResult> responseHandler = new StaxResponseHandler<DescribeVpcClassicLinkDnsSupportResult>(
                     new DescribeVpcClassicLinkDnsSupportResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15506,6 +18044,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeVpcEndpointConnectionNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcEndpointConnectionNotifications");
@@ -15517,6 +18057,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointConnectionNotificationsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointConnectionNotificationsResult>(
                     new DescribeVpcEndpointConnectionNotificationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15560,6 +18101,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcEndpointConnectionsRequestMarshaller().marshall(super.beforeMarshalling(describeVpcEndpointConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcEndpointConnections");
@@ -15571,6 +18114,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointConnectionsResult>(
                     new DescribeVpcEndpointConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15615,6 +18159,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeVpcEndpointServiceConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcEndpointServiceConfigurations");
@@ -15626,6 +18172,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointServiceConfigurationsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointServiceConfigurationsResult>(
                     new DescribeVpcEndpointServiceConfigurationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15670,6 +18217,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(describeVpcEndpointServicePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcEndpointServicePermissions");
@@ -15681,6 +18230,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointServicePermissionsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointServicePermissionsResult>(
                     new DescribeVpcEndpointServicePermissionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15694,6 +18244,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes available services to which you can create a VPC endpoint.
+     * </p>
+     * <p>
+     * When the service provider and the consumer have different accounts in multiple Availability Zones, and the
+     * consumer views the VPC endpoint service information, the response only includes the common Availability Zones.
+     * For example, when the service provider account uses <code>us-east-1a</code> and <code>us-east-1c</code> and the
+     * consumer uses <code>us-east-1a</code> and <code>us-east-1b</code>, the response includes the VPC endpoint
+     * services in the common Availability Zone, <code>us-east-1a</code>.
      * </p>
      * 
      * @param describeVpcEndpointServicesRequest
@@ -15724,6 +18281,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcEndpointServicesRequestMarshaller().marshall(super.beforeMarshalling(describeVpcEndpointServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcEndpointServices");
@@ -15735,6 +18294,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointServicesResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointServicesResult>(
                     new DescribeVpcEndpointServicesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15783,6 +18343,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcEndpointsRequestMarshaller().marshall(super.beforeMarshalling(describeVpcEndpointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcEndpoints");
@@ -15794,6 +18356,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcEndpointsResult> responseHandler = new StaxResponseHandler<DescribeVpcEndpointsResult>(
                     new DescribeVpcEndpointsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15841,6 +18404,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcPeeringConnectionsRequestMarshaller().marshall(super.beforeMarshalling(describeVpcPeeringConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcPeeringConnections");
@@ -15852,6 +18417,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpcPeeringConnectionsResult> responseHandler = new StaxResponseHandler<DescribeVpcPeeringConnectionsResult>(
                     new DescribeVpcPeeringConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15899,6 +18465,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpcsRequestMarshaller().marshall(super.beforeMarshalling(describeVpcsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcs");
@@ -15909,6 +18477,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DescribeVpcsResult> responseHandler = new StaxResponseHandler<DescribeVpcsResult>(new DescribeVpcsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15961,6 +18530,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpnConnectionsRequestMarshaller().marshall(super.beforeMarshalling(describeVpnConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpnConnections");
@@ -15972,6 +18543,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpnConnectionsResult> responseHandler = new StaxResponseHandler<DescribeVpnConnectionsResult>(
                     new DescribeVpnConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16024,6 +18596,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DescribeVpnGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeVpnGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpnGateways");
@@ -16035,6 +18609,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeVpnGatewaysResult> responseHandler = new StaxResponseHandler<DescribeVpnGatewaysResult>(
                     new DescribeVpnGatewaysResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16084,6 +18659,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DetachClassicLinkVpcRequestMarshaller().marshall(super.beforeMarshalling(detachClassicLinkVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachClassicLinkVpc");
@@ -16095,6 +18672,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DetachClassicLinkVpcResult> responseHandler = new StaxResponseHandler<DetachClassicLinkVpcResult>(
                     new DetachClassicLinkVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16138,6 +18716,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DetachInternetGatewayRequestMarshaller().marshall(super.beforeMarshalling(detachInternetGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachInternetGateway");
@@ -16149,6 +18729,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DetachInternetGatewayResult> responseHandler = new StaxResponseHandler<DetachInternetGatewayResult>(
                     new DetachInternetGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16192,6 +18773,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DetachNetworkInterfaceRequestMarshaller().marshall(super.beforeMarshalling(detachNetworkInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachNetworkInterface");
@@ -16203,6 +18786,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DetachNetworkInterfaceResult> responseHandler = new StaxResponseHandler<DetachNetworkInterfaceResult>(
                     new DetachNetworkInterfaceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16229,7 +18813,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching an Amazon EBS
-     * Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param detachVolumeRequest
@@ -16259,6 +18843,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DetachVolumeRequestMarshaller().marshall(super.beforeMarshalling(detachVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachVolume");
@@ -16269,6 +18855,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<DetachVolumeResult> responseHandler = new StaxResponseHandler<DetachVolumeResult>(new DetachVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16318,6 +18905,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DetachVpnGatewayRequestMarshaller().marshall(super.beforeMarshalling(detachVpnGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachVpnGateway");
@@ -16329,6 +18918,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DetachVpnGatewayResult> responseHandler = new StaxResponseHandler<DetachVpnGatewayResult>(
                     new DetachVpnGatewayResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16352,7 +18942,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param disableEbsEncryptionByDefaultRequest
@@ -16382,6 +18972,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisableEbsEncryptionByDefaultRequestMarshaller().marshall(super.beforeMarshalling(disableEbsEncryptionByDefaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableEbsEncryptionByDefault");
@@ -16393,6 +18985,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableEbsEncryptionByDefaultResult> responseHandler = new StaxResponseHandler<DisableEbsEncryptionByDefaultResult>(
                     new DisableEbsEncryptionByDefaultResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16435,6 +19028,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisableFastSnapshotRestoresRequestMarshaller().marshall(super.beforeMarshalling(disableFastSnapshotRestoresRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableFastSnapshotRestores");
@@ -16446,6 +19041,66 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableFastSnapshotRestoresResult> responseHandler = new StaxResponseHandler<DisableFastSnapshotRestoresResult>(
                     new DisableFastSnapshotRestoresResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disables access to the EC2 serial console of all instances for your account. By default, access to the EC2 serial
+     * console is disabled for your account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
+     * >Manage account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableSerialConsoleAccessRequest
+     * @return Result of the DisableSerialConsoleAccess operation returned by the service.
+     * @sample AmazonEC2.DisableSerialConsoleAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DisableSerialConsoleAccessResult disableSerialConsoleAccess(DisableSerialConsoleAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableSerialConsoleAccess(request);
+    }
+
+    @SdkInternalApi
+    final DisableSerialConsoleAccessResult executeDisableSerialConsoleAccess(DisableSerialConsoleAccessRequest disableSerialConsoleAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableSerialConsoleAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableSerialConsoleAccessRequest> request = null;
+        Response<DisableSerialConsoleAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableSerialConsoleAccessRequestMarshaller().marshall(super.beforeMarshalling(disableSerialConsoleAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableSerialConsoleAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisableSerialConsoleAccessResult> responseHandler = new StaxResponseHandler<DisableSerialConsoleAccessResult>(
+                    new DisableSerialConsoleAccessResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16490,6 +19145,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(disableTransitGatewayRouteTablePropagationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableTransitGatewayRouteTablePropagation");
@@ -16501,6 +19158,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableTransitGatewayRouteTablePropagationResult> responseHandler = new StaxResponseHandler<DisableTransitGatewayRouteTablePropagationResult>(
                     new DisableTransitGatewayRouteTablePropagationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16544,6 +19202,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisableVgwRoutePropagationRequestMarshaller().marshall(super.beforeMarshalling(disableVgwRoutePropagationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableVgwRoutePropagation");
@@ -16555,6 +19215,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableVgwRoutePropagationResult> responseHandler = new StaxResponseHandler<DisableVgwRoutePropagationResult>(
                     new DisableVgwRoutePropagationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16598,6 +19259,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisableVpcClassicLinkRequestMarshaller().marshall(super.beforeMarshalling(disableVpcClassicLinkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableVpcClassicLink");
@@ -16609,6 +19272,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableVpcClassicLinkResult> responseHandler = new StaxResponseHandler<DisableVpcClassicLinkResult>(
                     new DisableVpcClassicLinkResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16659,6 +19323,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisableVpcClassicLinkDnsSupportRequestMarshaller().marshall(super.beforeMarshalling(disableVpcClassicLinkDnsSupportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableVpcClassicLinkDnsSupport");
@@ -16670,6 +19336,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisableVpcClassicLinkDnsSupportResult> responseHandler = new StaxResponseHandler<DisableVpcClassicLinkDnsSupportResult>(
                     new DisableVpcClassicLinkDnsSupportResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16720,6 +19387,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisassociateAddressRequestMarshaller().marshall(super.beforeMarshalling(disassociateAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateAddress");
@@ -16731,6 +19400,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateAddressResult> responseHandler = new StaxResponseHandler<DisassociateAddressResult>(
                     new DisassociateAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16798,6 +19468,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .marshall(super.beforeMarshalling(disassociateClientVpnTargetNetworkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateClientVpnTargetNetwork");
@@ -16809,6 +19481,69 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateClientVpnTargetNetworkResult> responseHandler = new StaxResponseHandler<DisassociateClientVpnTargetNetworkResult>(
                     new DisassociateClientVpnTargetNetworkResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates an IAM role from an AWS Certificate Manager (ACM) certificate. Disassociating an IAM role from an
+     * ACM certificate removes the Amazon S3 object that contains the certificate, certificate chain, and encrypted
+     * private key from the Amazon S3 bucket. It also revokes the IAM role's permission to use the AWS Key Management
+     * Service (KMS) customer master key (CMK) used to encrypt the private key. This effectively revokes the role's
+     * permission to use the certificate.
+     * </p>
+     * 
+     * @param disassociateEnclaveCertificateIamRoleRequest
+     * @return Result of the DisassociateEnclaveCertificateIamRole operation returned by the service.
+     * @sample AmazonEC2.DisassociateEnclaveCertificateIamRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateEnclaveCertificateIamRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateEnclaveCertificateIamRoleResult disassociateEnclaveCertificateIamRole(DisassociateEnclaveCertificateIamRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateEnclaveCertificateIamRole(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateEnclaveCertificateIamRoleResult executeDisassociateEnclaveCertificateIamRole(
+            DisassociateEnclaveCertificateIamRoleRequest disassociateEnclaveCertificateIamRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateEnclaveCertificateIamRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateEnclaveCertificateIamRoleRequest> request = null;
+        Response<DisassociateEnclaveCertificateIamRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateEnclaveCertificateIamRoleRequestMarshaller().marshall(super
+                        .beforeMarshalling(disassociateEnclaveCertificateIamRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateEnclaveCertificateIamRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisassociateEnclaveCertificateIamRoleResult> responseHandler = new StaxResponseHandler<DisassociateEnclaveCertificateIamRoleResult>(
+                    new DisassociateEnclaveCertificateIamRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16854,6 +19589,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisassociateIamInstanceProfileRequestMarshaller().marshall(super.beforeMarshalling(disassociateIamInstanceProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateIamInstanceProfile");
@@ -16865,6 +19602,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateIamInstanceProfileResult> responseHandler = new StaxResponseHandler<DisassociateIamInstanceProfileResult>(
                     new DisassociateIamInstanceProfileResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16913,6 +19651,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisassociateRouteTableRequestMarshaller().marshall(super.beforeMarshalling(disassociateRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateRouteTable");
@@ -16924,6 +19664,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateRouteTableResult> responseHandler = new StaxResponseHandler<DisassociateRouteTableResult>(
                     new DisassociateRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16968,6 +19709,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisassociateSubnetCidrBlockRequestMarshaller().marshall(super.beforeMarshalling(disassociateSubnetCidrBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSubnetCidrBlock");
@@ -16979,6 +19722,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateSubnetCidrBlockResult> responseHandler = new StaxResponseHandler<DisassociateSubnetCidrBlockResult>(
                     new DisassociateSubnetCidrBlockResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17023,6 +19767,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(disassociateTransitGatewayMulticastDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateTransitGatewayMulticastDomain");
@@ -17034,6 +19780,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateTransitGatewayMulticastDomainResult> responseHandler = new StaxResponseHandler<DisassociateTransitGatewayMulticastDomainResult>(
                     new DisassociateTransitGatewayMulticastDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17078,6 +19825,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(disassociateTransitGatewayRouteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateTransitGatewayRouteTable");
@@ -17089,6 +19838,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateTransitGatewayRouteTableResult> responseHandler = new StaxResponseHandler<DisassociateTransitGatewayRouteTableResult>(
                     new DisassociateTransitGatewayRouteTableResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17136,6 +19886,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new DisassociateVpcCidrBlockRequestMarshaller().marshall(super.beforeMarshalling(disassociateVpcCidrBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateVpcCidrBlock");
@@ -17147,6 +19899,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateVpcCidrBlockResult> responseHandler = new StaxResponseHandler<DisassociateVpcCidrBlockResult>(
                     new DisassociateVpcCidrBlockResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17162,9 +19915,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Enables EBS encryption by default for your account in the current Region.
      * </p>
      * <p>
-     * After you enable encryption by default, the EBS volumes that you create are are always encrypted, either using
-     * the default CMK or the CMK that you specified when you created each volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
+     * After you enable encryption by default, the EBS volumes that you create are always encrypted, either using the
+     * default CMK or the CMK that you specified when you created each volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -17178,7 +19931,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * After you enable encryption by default, you can no longer launch instances using instance types that do not
      * support encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
-     * >Supported Instance Types</a>.
+     * >Supported instance types</a>.
      * </p>
      * 
      * @param enableEbsEncryptionByDefaultRequest
@@ -17208,6 +19961,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new EnableEbsEncryptionByDefaultRequestMarshaller().marshall(super.beforeMarshalling(enableEbsEncryptionByDefaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableEbsEncryptionByDefault");
@@ -17219,6 +19974,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableEbsEncryptionByDefaultResult> responseHandler = new StaxResponseHandler<EnableEbsEncryptionByDefaultResult>(
                     new EnableEbsEncryptionByDefaultResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17240,8 +19996,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon EBS Fast
-     * Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon EBS fast
+     * snapshot restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param enableFastSnapshotRestoresRequest
@@ -17271,6 +20027,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new EnableFastSnapshotRestoresRequestMarshaller().marshall(super.beforeMarshalling(enableFastSnapshotRestoresRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableFastSnapshotRestores");
@@ -17282,6 +20040,66 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableFastSnapshotRestoresResult> responseHandler = new StaxResponseHandler<EnableFastSnapshotRestoresResult>(
                     new EnableFastSnapshotRestoresResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables access to the EC2 serial console of all instances for your account. By default, access to the EC2 serial
+     * console is disabled for your account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
+     * >Manage account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableSerialConsoleAccessRequest
+     * @return Result of the EnableSerialConsoleAccess operation returned by the service.
+     * @sample AmazonEC2.EnableSerialConsoleAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public EnableSerialConsoleAccessResult enableSerialConsoleAccess(EnableSerialConsoleAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableSerialConsoleAccess(request);
+    }
+
+    @SdkInternalApi
+    final EnableSerialConsoleAccessResult executeEnableSerialConsoleAccess(EnableSerialConsoleAccessRequest enableSerialConsoleAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableSerialConsoleAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableSerialConsoleAccessRequest> request = null;
+        Response<EnableSerialConsoleAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableSerialConsoleAccessRequestMarshaller().marshall(super.beforeMarshalling(enableSerialConsoleAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableSerialConsoleAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EnableSerialConsoleAccessResult> responseHandler = new StaxResponseHandler<EnableSerialConsoleAccessResult>(
+                    new EnableSerialConsoleAccessResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17326,6 +20144,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(enableTransitGatewayRouteTablePropagationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableTransitGatewayRouteTablePropagation");
@@ -17337,6 +20157,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableTransitGatewayRouteTablePropagationResult> responseHandler = new StaxResponseHandler<EnableTransitGatewayRouteTablePropagationResult>(
                     new EnableTransitGatewayRouteTablePropagationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17380,6 +20201,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new EnableVgwRoutePropagationRequestMarshaller().marshall(super.beforeMarshalling(enableVgwRoutePropagationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableVgwRoutePropagation");
@@ -17391,6 +20214,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableVgwRoutePropagationResult> responseHandler = new StaxResponseHandler<EnableVgwRoutePropagationResult>(
                     new EnableVgwRoutePropagationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17434,6 +20258,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new EnableVolumeIORequestMarshaller().marshall(super.beforeMarshalling(enableVolumeIORequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableVolumeIO");
@@ -17445,6 +20271,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableVolumeIOResult> responseHandler = new StaxResponseHandler<EnableVolumeIOResult>(
                     new EnableVolumeIOResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17493,6 +20320,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new EnableVpcClassicLinkRequestMarshaller().marshall(super.beforeMarshalling(enableVpcClassicLinkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableVpcClassicLink");
@@ -17504,6 +20333,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableVpcClassicLinkResult> responseHandler = new StaxResponseHandler<EnableVpcClassicLinkResult>(
                     new EnableVpcClassicLinkResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17554,6 +20384,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new EnableVpcClassicLinkDnsSupportRequestMarshaller().marshall(super.beforeMarshalling(enableVpcClassicLinkDnsSupportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableVpcClassicLinkDnsSupport");
@@ -17565,6 +20397,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableVpcClassicLinkDnsSupportResult> responseHandler = new StaxResponseHandler<EnableVpcClassicLinkDnsSupportResult>(
                     new EnableVpcClassicLinkDnsSupportResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17611,6 +20444,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(exportClientVpnClientCertificateRevocationListRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportClientVpnClientCertificateRevocationList");
@@ -17622,6 +20457,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ExportClientVpnClientCertificateRevocationListResult> responseHandler = new StaxResponseHandler<ExportClientVpnClientCertificateRevocationListResult>(
                     new ExportClientVpnClientCertificateRevocationListResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17668,6 +20504,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .marshall(super.beforeMarshalling(exportClientVpnClientConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportClientVpnClientConfiguration");
@@ -17679,6 +20517,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ExportClientVpnClientConfigurationResult> responseHandler = new StaxResponseHandler<ExportClientVpnClientConfigurationResult>(
                     new ExportClientVpnClientConfigurationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17692,8 +20531,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Exports an Amazon Machine Image (AMI) to a VM file. For more information, see <a
-     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting a VM Directory from
-     * an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export User Guide</i>.
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting a VM directly from an
+     * Amazon Machine Image (AMI)</a> in the <i>VM Import/Export User Guide</i>.
      * </p>
      * 
      * @param exportImageRequest
@@ -17723,6 +20562,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ExportImageRequestMarshaller().marshall(super.beforeMarshalling(exportImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportImage");
@@ -17733,6 +20574,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ExportImageResult> responseHandler = new StaxResponseHandler<ExportImageResult>(new ExportImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17781,6 +20623,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ExportTransitGatewayRoutesRequestMarshaller().marshall(super.beforeMarshalling(exportTransitGatewayRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportTransitGatewayRoutes");
@@ -17792,6 +20636,68 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ExportTransitGatewayRoutesResult> responseHandler = new StaxResponseHandler<ExportTransitGatewayRoutesResult>(
                     new ExportTransitGatewayRoutesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the IAM roles that are associated with the specified AWS Certificate Manager (ACM) certificate. It also
+     * returns the name of the Amazon S3 bucket and the Amazon S3 object key where the certificate, certificate chain,
+     * and encrypted private key bundle are stored, and the ARN of the AWS Key Management Service (KMS) customer master
+     * key (CMK) that's used to encrypt the private key.
+     * </p>
+     * 
+     * @param getAssociatedEnclaveCertificateIamRolesRequest
+     * @return Result of the GetAssociatedEnclaveCertificateIamRoles operation returned by the service.
+     * @sample AmazonEC2.GetAssociatedEnclaveCertificateIamRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedEnclaveCertificateIamRoles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAssociatedEnclaveCertificateIamRolesResult getAssociatedEnclaveCertificateIamRoles(GetAssociatedEnclaveCertificateIamRolesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAssociatedEnclaveCertificateIamRoles(request);
+    }
+
+    @SdkInternalApi
+    final GetAssociatedEnclaveCertificateIamRolesResult executeGetAssociatedEnclaveCertificateIamRoles(
+            GetAssociatedEnclaveCertificateIamRolesRequest getAssociatedEnclaveCertificateIamRolesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAssociatedEnclaveCertificateIamRolesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAssociatedEnclaveCertificateIamRolesRequest> request = null;
+        Response<GetAssociatedEnclaveCertificateIamRolesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAssociatedEnclaveCertificateIamRolesRequestMarshaller().marshall(super
+                        .beforeMarshalling(getAssociatedEnclaveCertificateIamRolesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssociatedEnclaveCertificateIamRoles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAssociatedEnclaveCertificateIamRolesResult> responseHandler = new StaxResponseHandler<GetAssociatedEnclaveCertificateIamRolesResult>(
+                    new GetAssociatedEnclaveCertificateIamRolesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17834,6 +20740,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetAssociatedIpv6PoolCidrsRequestMarshaller().marshall(super.beforeMarshalling(getAssociatedIpv6PoolCidrsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssociatedIpv6PoolCidrs");
@@ -17845,6 +20753,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetAssociatedIpv6PoolCidrsResult> responseHandler = new StaxResponseHandler<GetAssociatedIpv6PoolCidrsResult>(
                     new GetAssociatedIpv6PoolCidrsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17889,6 +20798,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetCapacityReservationUsageRequestMarshaller().marshall(super.beforeMarshalling(getCapacityReservationUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCapacityReservationUsage");
@@ -17900,6 +20811,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetCapacityReservationUsageResult> responseHandler = new StaxResponseHandler<GetCapacityReservationUsageResult>(
                     new GetCapacityReservationUsageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17942,6 +20854,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetCoipPoolUsageRequestMarshaller().marshall(super.beforeMarshalling(getCoipPoolUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCoipPoolUsage");
@@ -17953,6 +20867,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetCoipPoolUsageResult> responseHandler = new StaxResponseHandler<GetCoipPoolUsageResult>(
                     new GetCoipPoolUsageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -17981,7 +20896,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output"
-     * >Instance Console Output</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Instance console output</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param getConsoleOutputRequest
@@ -18011,6 +20926,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetConsoleOutputRequestMarshaller().marshall(super.beforeMarshalling(getConsoleOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConsoleOutput");
@@ -18022,6 +20939,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetConsoleOutputResult> responseHandler = new StaxResponseHandler<GetConsoleOutputResult>(
                     new GetConsoleOutputResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18067,6 +20985,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetConsoleScreenshotRequestMarshaller().marshall(super.beforeMarshalling(getConsoleScreenshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConsoleScreenshot");
@@ -18078,6 +20998,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetConsoleScreenshotResult> responseHandler = new StaxResponseHandler<GetConsoleScreenshotResult>(
                     new GetConsoleScreenshotResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18095,7 +21016,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param getDefaultCreditSpecificationRequest
@@ -18125,6 +21046,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetDefaultCreditSpecificationRequestMarshaller().marshall(super.beforeMarshalling(getDefaultCreditSpecificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDefaultCreditSpecification");
@@ -18136,6 +21059,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetDefaultCreditSpecificationResult> responseHandler = new StaxResponseHandler<GetDefaultCreditSpecificationResult>(
                     new GetDefaultCreditSpecificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18154,7 +21078,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param getEbsDefaultKmsKeyIdRequest
@@ -18184,6 +21108,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetEbsDefaultKmsKeyIdRequestMarshaller().marshall(super.beforeMarshalling(getEbsDefaultKmsKeyIdRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEbsDefaultKmsKeyId");
@@ -18195,6 +21121,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetEbsDefaultKmsKeyIdResult> responseHandler = new StaxResponseHandler<GetEbsDefaultKmsKeyIdResult>(
                     new GetEbsDefaultKmsKeyIdResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18211,7 +21138,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param getEbsEncryptionByDefaultRequest
@@ -18241,6 +21168,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetEbsEncryptionByDefaultRequestMarshaller().marshall(super.beforeMarshalling(getEbsEncryptionByDefaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEbsEncryptionByDefault");
@@ -18252,6 +21181,144 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetEbsEncryptionByDefaultResult> responseHandler = new StaxResponseHandler<GetEbsEncryptionByDefaultResult>(
                     new GetEbsEncryptionByDefaultResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Generates a CloudFormation template that streamlines and automates the integration of VPC flow logs with Amazon
+     * Athena. This make it easier for you to query and gain insights from VPC flow logs data. Based on the information
+     * that you provide, we configure resources in the template to do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create a table in Athena that maps fields to a custom log format
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a Lambda function that updates the table with new partitions on a daily, weekly, or monthly basis
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a table partitioned between two timestamps in the past
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a set of named queries in Athena that you can use to get started quickly
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getFlowLogsIntegrationTemplateRequest
+     * @return Result of the GetFlowLogsIntegrationTemplate operation returned by the service.
+     * @sample AmazonEC2.GetFlowLogsIntegrationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFlowLogsIntegrationTemplateResult getFlowLogsIntegrationTemplate(GetFlowLogsIntegrationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFlowLogsIntegrationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetFlowLogsIntegrationTemplateResult executeGetFlowLogsIntegrationTemplate(GetFlowLogsIntegrationTemplateRequest getFlowLogsIntegrationTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFlowLogsIntegrationTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFlowLogsIntegrationTemplateRequest> request = null;
+        Response<GetFlowLogsIntegrationTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFlowLogsIntegrationTemplateRequestMarshaller().marshall(super.beforeMarshalling(getFlowLogsIntegrationTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFlowLogsIntegrationTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetFlowLogsIntegrationTemplateResult> responseHandler = new StaxResponseHandler<GetFlowLogsIntegrationTemplateResult>(
+                    new GetFlowLogsIntegrationTemplateResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the resource groups to which a Capacity Reservation has been added.
+     * </p>
+     * 
+     * @param getGroupsForCapacityReservationRequest
+     * @return Result of the GetGroupsForCapacityReservation operation returned by the service.
+     * @sample AmazonEC2.GetGroupsForCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetGroupsForCapacityReservationResult getGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGroupsForCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final GetGroupsForCapacityReservationResult executeGetGroupsForCapacityReservation(
+            GetGroupsForCapacityReservationRequest getGroupsForCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGroupsForCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGroupsForCapacityReservationRequest> request = null;
+        Response<GetGroupsForCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGroupsForCapacityReservationRequestMarshaller().marshall(super.beforeMarshalling(getGroupsForCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupsForCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetGroupsForCapacityReservationResult> responseHandler = new StaxResponseHandler<GetGroupsForCapacityReservationResult>(
+                    new GetGroupsForCapacityReservationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18300,6 +21367,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetHostReservationPurchasePreviewRequestMarshaller().marshall(super.beforeMarshalling(getHostReservationPurchasePreviewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHostReservationPurchasePreview");
@@ -18311,6 +21380,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetHostReservationPurchasePreviewResult> responseHandler = new StaxResponseHandler<GetHostReservationPurchasePreviewResult>(
                     new GetHostReservationPurchasePreviewResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18324,6 +21394,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Retrieves the configuration data of the specified instance. You can use this data to create a launch template.
+     * </p>
+     * <p>
+     * This action calls on other describe actions to get instance information. Depending on your instance
+     * configuration, you may need to allow the following actions in your IAM policy: DescribeSpotInstanceRequests,
+     * DescribeInstanceCreditSpecifications, DescribeVolumes, DescribeInstanceAttribute, and DescribeElasticGpus. Or,
+     * you can allow <code>describe*</code> depending on your instance requirements.
      * </p>
      * 
      * @param getLaunchTemplateDataRequest
@@ -18353,6 +21429,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetLaunchTemplateDataRequestMarshaller().marshall(super.beforeMarshalling(getLaunchTemplateDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLaunchTemplateData");
@@ -18364,6 +21442,120 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetLaunchTemplateDataResult> responseHandler = new StaxResponseHandler<GetLaunchTemplateDataResult>(
                     new GetLaunchTemplateDataResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about the resources that are associated with the specified managed prefix list.
+     * </p>
+     * 
+     * @param getManagedPrefixListAssociationsRequest
+     * @return Result of the GetManagedPrefixListAssociations operation returned by the service.
+     * @sample AmazonEC2.GetManagedPrefixListAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetManagedPrefixListAssociationsResult getManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetManagedPrefixListAssociations(request);
+    }
+
+    @SdkInternalApi
+    final GetManagedPrefixListAssociationsResult executeGetManagedPrefixListAssociations(
+            GetManagedPrefixListAssociationsRequest getManagedPrefixListAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getManagedPrefixListAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetManagedPrefixListAssociationsRequest> request = null;
+        Response<GetManagedPrefixListAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetManagedPrefixListAssociationsRequestMarshaller().marshall(super.beforeMarshalling(getManagedPrefixListAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetManagedPrefixListAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetManagedPrefixListAssociationsResult> responseHandler = new StaxResponseHandler<GetManagedPrefixListAssociationsResult>(
+                    new GetManagedPrefixListAssociationsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about the entries for a specified managed prefix list.
+     * </p>
+     * 
+     * @param getManagedPrefixListEntriesRequest
+     * @return Result of the GetManagedPrefixListEntries operation returned by the service.
+     * @sample AmazonEC2.GetManagedPrefixListEntries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedPrefixListEntries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetManagedPrefixListEntriesResult getManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetManagedPrefixListEntries(request);
+    }
+
+    @SdkInternalApi
+    final GetManagedPrefixListEntriesResult executeGetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest getManagedPrefixListEntriesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getManagedPrefixListEntriesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetManagedPrefixListEntriesRequest> request = null;
+        Response<GetManagedPrefixListEntriesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetManagedPrefixListEntriesRequestMarshaller().marshall(super.beforeMarshalling(getManagedPrefixListEntriesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetManagedPrefixListEntries");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetManagedPrefixListEntriesResult> responseHandler = new StaxResponseHandler<GetManagedPrefixListEntriesResult>(
+                    new GetManagedPrefixListEntriesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18383,8 +21575,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * (Windows Server 2016 and later). This usually only happens the first time an instance is launched. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a> and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * <p>
      * For the <code>EC2Config</code> service, the password is not generated for rebundled AMIs unless
@@ -18427,6 +21619,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetPasswordDataRequestMarshaller().marshall(super.beforeMarshalling(getPasswordDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPasswordData");
@@ -18438,6 +21632,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetPasswordDataResult> responseHandler = new StaxResponseHandler<GetPasswordDataResult>(
                     new GetPasswordDataResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18484,6 +21679,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new GetReservedInstancesExchangeQuoteRequestMarshaller().marshall(super.beforeMarshalling(getReservedInstancesExchangeQuoteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReservedInstancesExchangeQuote");
@@ -18495,6 +21692,66 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetReservedInstancesExchangeQuoteResult> responseHandler = new StaxResponseHandler<GetReservedInstancesExchangeQuoteResult>(
                     new GetReservedInstancesExchangeQuoteResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the access status of your account to the EC2 serial console of all instances. By default, access to the
+     * EC2 serial console is disabled for your account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
+     * >Manage account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param getSerialConsoleAccessStatusRequest
+     * @return Result of the GetSerialConsoleAccessStatus operation returned by the service.
+     * @sample AmazonEC2.GetSerialConsoleAccessStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSerialConsoleAccessStatusResult getSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSerialConsoleAccessStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetSerialConsoleAccessStatusResult executeGetSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest getSerialConsoleAccessStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSerialConsoleAccessStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSerialConsoleAccessStatusRequest> request = null;
+        Response<GetSerialConsoleAccessStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSerialConsoleAccessStatusRequestMarshaller().marshall(super.beforeMarshalling(getSerialConsoleAccessStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSerialConsoleAccessStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetSerialConsoleAccessStatusResult> responseHandler = new StaxResponseHandler<GetSerialConsoleAccessStatusResult>(
+                    new GetSerialConsoleAccessStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18539,6 +21796,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(getTransitGatewayAttachmentPropagationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTransitGatewayAttachmentPropagations");
@@ -18550,6 +21809,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetTransitGatewayAttachmentPropagationsResult> responseHandler = new StaxResponseHandler<GetTransitGatewayAttachmentPropagationsResult>(
                     new GetTransitGatewayAttachmentPropagationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18595,6 +21855,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(getTransitGatewayMulticastDomainAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTransitGatewayMulticastDomainAssociations");
@@ -18606,6 +21868,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetTransitGatewayMulticastDomainAssociationsResult> responseHandler = new StaxResponseHandler<GetTransitGatewayMulticastDomainAssociationsResult>(
                     new GetTransitGatewayMulticastDomainAssociationsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about the prefix list references in a specified transit gateway route table.
+     * </p>
+     * 
+     * @param getTransitGatewayPrefixListReferencesRequest
+     * @return Result of the GetTransitGatewayPrefixListReferences operation returned by the service.
+     * @sample AmazonEC2.GetTransitGatewayPrefixListReferences
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPrefixListReferences"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetTransitGatewayPrefixListReferencesResult getTransitGatewayPrefixListReferences(GetTransitGatewayPrefixListReferencesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTransitGatewayPrefixListReferences(request);
+    }
+
+    @SdkInternalApi
+    final GetTransitGatewayPrefixListReferencesResult executeGetTransitGatewayPrefixListReferences(
+            GetTransitGatewayPrefixListReferencesRequest getTransitGatewayPrefixListReferencesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTransitGatewayPrefixListReferencesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTransitGatewayPrefixListReferencesRequest> request = null;
+        Response<GetTransitGatewayPrefixListReferencesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTransitGatewayPrefixListReferencesRequestMarshaller().marshall(super
+                        .beforeMarshalling(getTransitGatewayPrefixListReferencesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTransitGatewayPrefixListReferences");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetTransitGatewayPrefixListReferencesResult> responseHandler = new StaxResponseHandler<GetTransitGatewayPrefixListReferencesResult>(
+                    new GetTransitGatewayPrefixListReferencesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18650,6 +21971,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(getTransitGatewayRouteTableAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTransitGatewayRouteTableAssociations");
@@ -18661,6 +21984,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetTransitGatewayRouteTableAssociationsResult> responseHandler = new StaxResponseHandler<GetTransitGatewayRouteTableAssociationsResult>(
                     new GetTransitGatewayRouteTableAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18705,6 +22029,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(getTransitGatewayRouteTablePropagationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTransitGatewayRouteTablePropagations");
@@ -18716,6 +22042,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetTransitGatewayRouteTablePropagationsResult> responseHandler = new StaxResponseHandler<GetTransitGatewayRouteTablePropagationsResult>(
                     new GetTransitGatewayRouteTablePropagationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18766,6 +22093,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(importClientVpnClientCertificateRevocationListRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportClientVpnClientCertificateRevocationList");
@@ -18777,6 +22106,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ImportClientVpnClientCertificateRevocationListResult> responseHandler = new StaxResponseHandler<ImportClientVpnClientCertificateRevocationListResult>(
                     new ImportClientVpnClientCertificateRevocationListResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18789,10 +22119,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI). For more
-     * information, see <a
+     * Import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI).
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing a VM as an
-     * Image Using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
+     * image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
      * </p>
      * 
      * @param importImageRequest
@@ -18822,6 +22154,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ImportImageRequestMarshaller().marshall(super.beforeMarshalling(importImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportImage");
@@ -18832,6 +22166,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ImportImageResult> responseHandler = new StaxResponseHandler<ImportImageResult>(new ImportImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18849,10 +22184,16 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates an import instance task using metadata from the specified disk image. <code>ImportInstance</code> only
-     * supports single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing a
-     * Virtual Machine Using the Amazon EC2 CLI</a>.
+     * Creates an import instance task using metadata from the specified disk image.
+     * </p>
+     * <p>
+     * This API action supports only single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a> instead.
+     * </p>
+     * <p>
+     * This API action is not supported by the AWS Command Line Interface (AWS CLI). For information about using the
+     * Amazon EC2 CLI, which is deprecated, see <a
+     * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing a VM to Amazon
+     * EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action, see <a
@@ -18886,6 +22227,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ImportInstanceRequestMarshaller().marshall(super.beforeMarshalling(importInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportInstance");
@@ -18897,6 +22240,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ImportInstanceResult> responseHandler = new StaxResponseHandler<ImportInstanceResult>(
                     new ImportInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18947,6 +22291,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ImportKeyPairRequestMarshaller().marshall(super.beforeMarshalling(importKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportKeyPair");
@@ -18957,6 +22303,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ImportKeyPairResult> responseHandler = new StaxResponseHandler<ImportKeyPairResult>(new ImportKeyPairResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18970,6 +22317,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Imports a disk into an EBS snapshot.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-import-snapshot.html">Importing a disk as a
+     * snapshot using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
      * </p>
      * 
      * @param importSnapshotRequest
@@ -18999,6 +22351,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ImportSnapshotRequestMarshaller().marshall(super.beforeMarshalling(importSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportSnapshot");
@@ -19010,6 +22364,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ImportSnapshotResult> responseHandler = new StaxResponseHandler<ImportSnapshotResult>(
                     new ImportSnapshotResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19027,9 +22382,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates an import volume task using metadata from the specified disk image.For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html"
-     * >Importing Disks to Amazon EBS</a>.
+     * Creates an import volume task using metadata from the specified disk image.
+     * </p>
+     * <p>
+     * This API action supports only single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a> instead. To
+     * import a disk to a snapshot, use <a>ImportSnapshot</a> instead.
+     * </p>
+     * <p>
+     * This API action is not supported by the AWS Command Line Interface (AWS CLI). For information about using the
+     * Amazon EC2 CLI, which is deprecated, see <a
+     * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#importing-your-volumes-into-amazon-ebs">Importing Disks to
+     * Amazon EBS</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action, see <a
@@ -19063,6 +22426,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ImportVolumeRequestMarshaller().marshall(super.beforeMarshalling(importVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportVolume");
@@ -19073,6 +22438,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ImportVolumeResult> responseHandler = new StaxResponseHandler<ImportVolumeResult>(new ImportVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19085,12 +22451,69 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Enables or disables an Availability Zone group for your account.
+     * Modifies an attribute of the specified Elastic IP address. For requirements, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS"
+     * >Using reverse DNS for email applications</a>.
+     * </p>
+     * 
+     * @param modifyAddressAttributeRequest
+     * @return Result of the ModifyAddressAttribute operation returned by the service.
+     * @sample AmazonEC2.ModifyAddressAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyAddressAttributeResult modifyAddressAttribute(ModifyAddressAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyAddressAttribute(request);
+    }
+
+    @SdkInternalApi
+    final ModifyAddressAttributeResult executeModifyAddressAttribute(ModifyAddressAttributeRequest modifyAddressAttributeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyAddressAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyAddressAttributeRequest> request = null;
+        Response<ModifyAddressAttributeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyAddressAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyAddressAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyAddressAttribute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyAddressAttributeResult> responseHandler = new StaxResponseHandler<ModifyAddressAttributeResult>(
+                    new ModifyAddressAttributeResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Changes the opt-in status of the Local Zone and Wavelength Zone group for your account.
      * </p>
      * <p>
-     * Use <a href=
-     * "https://docs.aws.amazon.com/AWSEC2ApiDocReef/build/server-root/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html"
-     * >describe-availability-zones</a> to view the value for <code>GroupName</code>.
+     * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
+     * DescribeAvailabilityZones</a> to view the value for <code>GroupName</code>.
      * </p>
      * 
      * @param modifyAvailabilityZoneGroupRequest
@@ -19120,6 +22543,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyAvailabilityZoneGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyAvailabilityZoneGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyAvailabilityZoneGroup");
@@ -19131,6 +22556,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyAvailabilityZoneGroupResult> responseHandler = new StaxResponseHandler<ModifyAvailabilityZoneGroupResult>(
                     new ModifyAvailabilityZoneGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19176,6 +22602,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyCapacityReservationRequestMarshaller().marshall(super.beforeMarshalling(modifyCapacityReservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyCapacityReservation");
@@ -19187,6 +22615,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyCapacityReservationResult> responseHandler = new StaxResponseHandler<ModifyCapacityReservationResult>(
                     new ModifyCapacityReservationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19229,6 +22658,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyClientVpnEndpointRequestMarshaller().marshall(super.beforeMarshalling(modifyClientVpnEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClientVpnEndpoint");
@@ -19240,6 +22671,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyClientVpnEndpointResult> responseHandler = new StaxResponseHandler<ModifyClientVpnEndpointResult>(
                     new ModifyClientVpnEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19266,7 +22698,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param modifyDefaultCreditSpecificationRequest
@@ -19297,6 +22729,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyDefaultCreditSpecificationRequestMarshaller().marshall(super.beforeMarshalling(modifyDefaultCreditSpecificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDefaultCreditSpecification");
@@ -19308,6 +22742,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyDefaultCreditSpecificationResult> responseHandler = new StaxResponseHandler<ModifyDefaultCreditSpecificationResult>(
                     new ModifyDefaultCreditSpecificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19333,7 +22768,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param modifyEbsDefaultKmsKeyIdRequest
@@ -19363,6 +22798,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyEbsDefaultKmsKeyIdRequestMarshaller().marshall(super.beforeMarshalling(modifyEbsDefaultKmsKeyIdRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyEbsDefaultKmsKeyId");
@@ -19374,6 +22811,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyEbsDefaultKmsKeyIdResult> responseHandler = new StaxResponseHandler<ModifyEbsDefaultKmsKeyIdResult>(
                     new ModifyEbsDefaultKmsKeyIdResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19445,6 +22883,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyFleetRequestMarshaller().marshall(super.beforeMarshalling(modifyFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyFleet");
@@ -19455,6 +22895,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ModifyFleetResult> responseHandler = new StaxResponseHandler<ModifyFleetResult>(new ModifyFleetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19497,6 +22938,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyFpgaImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyFpgaImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyFpgaImageAttribute");
@@ -19508,6 +22951,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<ModifyFpgaImageAttributeResult>(
                     new ModifyFpgaImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19558,6 +23002,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyHostsRequestMarshaller().marshall(super.beforeMarshalling(modifyHostsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyHosts");
@@ -19568,6 +23014,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ModifyHostsResult> responseHandler = new StaxResponseHandler<ModifyHostsResult>(new ModifyHostsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19635,6 +23082,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyIdFormatRequestMarshaller().marshall(super.beforeMarshalling(modifyIdFormatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyIdFormat");
@@ -19646,6 +23095,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyIdFormatResult> responseHandler = new StaxResponseHandler<ModifyIdFormatResult>(
                     new ModifyIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19715,6 +23165,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyIdentityIdFormatRequestMarshaller().marshall(super.beforeMarshalling(modifyIdentityIdFormatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyIdentityIdFormat");
@@ -19726,6 +23178,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyIdentityIdFormatResult> responseHandler = new StaxResponseHandler<ModifyIdentityIdFormatResult>(
                     new ModifyIdentityIdFormatResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19779,6 +23232,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyImageAttribute");
@@ -19790,6 +23245,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyImageAttributeResult> responseHandler = new StaxResponseHandler<ModifyImageAttributeResult>(
                     new ModifyImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19813,7 +23269,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * To modify some attributes, the instance must be stopped. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html"
-     * >Modifying Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Modifying attributes of a stopped instance</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param modifyInstanceAttributeRequest
@@ -19843,6 +23299,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyInstanceAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyInstanceAttribute");
@@ -19854,6 +23312,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceAttributeResult> responseHandler = new StaxResponseHandler<ModifyInstanceAttributeResult>(
                     new ModifyInstanceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19901,6 +23360,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(modifyInstanceCapacityReservationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyInstanceCapacityReservationAttributes");
@@ -19912,6 +23373,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceCapacityReservationAttributesResult> responseHandler = new StaxResponseHandler<ModifyInstanceCapacityReservationAttributesResult>(
                     new ModifyInstanceCapacityReservationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19930,7 +23392,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param modifyInstanceCreditSpecificationRequest
@@ -19961,6 +23423,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyInstanceCreditSpecificationRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceCreditSpecificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyInstanceCreditSpecification");
@@ -19972,6 +23436,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceCreditSpecificationResult> responseHandler = new StaxResponseHandler<ModifyInstanceCreditSpecificationResult>(
                     new ModifyInstanceCreditSpecificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20014,6 +23479,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyInstanceEventStartTimeRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceEventStartTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyInstanceEventStartTime");
@@ -20025,6 +23492,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceEventStartTimeResult> responseHandler = new StaxResponseHandler<ModifyInstanceEventStartTimeResult>(
                     new ModifyInstanceEventStartTimeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20042,8 +23510,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * instance, the API responds with a state of “pending”. After the parameter modifications are successfully applied
      * to the instance, the state of the modifications changes from “pending” to “applied” in subsequent
      * describe-instances API calls. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user
+     * data</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param modifyInstanceMetadataOptionsRequest
@@ -20073,6 +23541,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyInstanceMetadataOptionsRequestMarshaller().marshall(super.beforeMarshalling(modifyInstanceMetadataOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyInstanceMetadataOptions");
@@ -20084,6 +23554,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstanceMetadataOptionsResult> responseHandler = new StaxResponseHandler<ModifyInstanceMetadataOptionsResult>(
                     new ModifyInstanceMetadataOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20162,6 +23633,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyInstancePlacementRequestMarshaller().marshall(super.beforeMarshalling(modifyInstancePlacementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyInstancePlacement");
@@ -20173,6 +23646,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyInstancePlacementResult> responseHandler = new StaxResponseHandler<ModifyInstancePlacementResult>(
                     new ModifyInstancePlacementResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20216,6 +23690,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyLaunchTemplateRequestMarshaller().marshall(super.beforeMarshalling(modifyLaunchTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyLaunchTemplate");
@@ -20227,6 +23703,70 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyLaunchTemplateResult> responseHandler = new StaxResponseHandler<ModifyLaunchTemplateResult>(
                     new ModifyLaunchTemplateResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the specified managed prefix list.
+     * </p>
+     * <p>
+     * Adding or removing entries in a prefix list creates a new version of the prefix list. Changing the name of the
+     * prefix list does not affect the version.
+     * </p>
+     * <p>
+     * If you specify a current version number that does not match the true current version number, the request fails.
+     * </p>
+     * 
+     * @param modifyManagedPrefixListRequest
+     * @return Result of the ModifyManagedPrefixList operation returned by the service.
+     * @sample AmazonEC2.ModifyManagedPrefixList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedPrefixList" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyManagedPrefixListResult modifyManagedPrefixList(ModifyManagedPrefixListRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyManagedPrefixList(request);
+    }
+
+    @SdkInternalApi
+    final ModifyManagedPrefixListResult executeModifyManagedPrefixList(ModifyManagedPrefixListRequest modifyManagedPrefixListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyManagedPrefixListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyManagedPrefixListRequest> request = null;
+        Response<ModifyManagedPrefixListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyManagedPrefixListRequestMarshaller().marshall(super.beforeMarshalling(modifyManagedPrefixListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyManagedPrefixList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyManagedPrefixListResult> responseHandler = new StaxResponseHandler<ModifyManagedPrefixListResult>(
+                    new ModifyManagedPrefixListResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20272,6 +23812,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyNetworkInterfaceAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyNetworkInterfaceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyNetworkInterfaceAttribute");
@@ -20283,6 +23825,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<ModifyNetworkInterfaceAttributeResult>(
                     new ModifyNetworkInterfaceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20302,7 +23845,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in
-     * the Amazon Elastic Compute Cloud User Guide.
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param modifyReservedInstancesRequest
@@ -20333,6 +23876,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyReservedInstancesRequestMarshaller().marshall(super.beforeMarshalling(modifyReservedInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyReservedInstances");
@@ -20344,6 +23889,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyReservedInstancesResult> responseHandler = new StaxResponseHandler<ModifyReservedInstancesResult>(
                     new ModifyReservedInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20368,7 +23914,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information about modifying snapshot permissions, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-     * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param modifySnapshotAttributeRequest
@@ -20398,6 +23944,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifySnapshotAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifySnapshotAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifySnapshotAttribute");
@@ -20409,6 +23957,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifySnapshotAttributeResult> responseHandler = new StaxResponseHandler<ModifySnapshotAttributeResult>(
                     new ModifySnapshotAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20481,6 +24030,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifySpotFleetRequestRequestMarshaller().marshall(super.beforeMarshalling(modifySpotFleetRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifySpotFleetRequest");
@@ -20492,6 +24043,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifySpotFleetRequestResult> responseHandler = new StaxResponseHandler<ModifySpotFleetRequestResult>(
                     new ModifySpotFleetRequestResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20534,6 +24086,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifySubnetAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifySubnetAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifySubnetAttribute");
@@ -20545,6 +24099,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifySubnetAttributeResult> responseHandler = new StaxResponseHandler<ModifySubnetAttributeResult>(
                     new ModifySubnetAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20600,6 +24155,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(modifyTrafficMirrorFilterNetworkServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTrafficMirrorFilterNetworkServices");
@@ -20611,6 +24168,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyTrafficMirrorFilterNetworkServicesResult> responseHandler = new StaxResponseHandler<ModifyTrafficMirrorFilterNetworkServicesResult>(
                     new ModifyTrafficMirrorFilterNetworkServicesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20656,6 +24214,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyTrafficMirrorFilterRuleRequestMarshaller().marshall(super.beforeMarshalling(modifyTrafficMirrorFilterRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTrafficMirrorFilterRule");
@@ -20667,6 +24227,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyTrafficMirrorFilterRuleResult> responseHandler = new StaxResponseHandler<ModifyTrafficMirrorFilterRuleResult>(
                     new ModifyTrafficMirrorFilterRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20709,6 +24270,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyTrafficMirrorSessionRequestMarshaller().marshall(super.beforeMarshalling(modifyTrafficMirrorSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTrafficMirrorSession");
@@ -20720,6 +24283,122 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyTrafficMirrorSessionResult> responseHandler = new StaxResponseHandler<ModifyTrafficMirrorSessionResult>(
                     new ModifyTrafficMirrorSessionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the specified transit gateway. When you modify a transit gateway, the modified options are applied to
+     * new transit gateway attachments only. Your existing transit gateway attachments are not modified.
+     * </p>
+     * 
+     * @param modifyTransitGatewayRequest
+     * @return Result of the ModifyTransitGateway operation returned by the service.
+     * @sample AmazonEC2.ModifyTransitGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyTransitGatewayResult modifyTransitGateway(ModifyTransitGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyTransitGateway(request);
+    }
+
+    @SdkInternalApi
+    final ModifyTransitGatewayResult executeModifyTransitGateway(ModifyTransitGatewayRequest modifyTransitGatewayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyTransitGatewayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyTransitGatewayRequest> request = null;
+        Response<ModifyTransitGatewayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyTransitGatewayRequestMarshaller().marshall(super.beforeMarshalling(modifyTransitGatewayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTransitGateway");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyTransitGatewayResult> responseHandler = new StaxResponseHandler<ModifyTransitGatewayResult>(
+                    new ModifyTransitGatewayResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies a reference (route) to a prefix list in a specified transit gateway route table.
+     * </p>
+     * 
+     * @param modifyTransitGatewayPrefixListReferenceRequest
+     * @return Result of the ModifyTransitGatewayPrefixListReference operation returned by the service.
+     * @sample AmazonEC2.ModifyTransitGatewayPrefixListReference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPrefixListReference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyTransitGatewayPrefixListReferenceResult modifyTransitGatewayPrefixListReference(ModifyTransitGatewayPrefixListReferenceRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyTransitGatewayPrefixListReference(request);
+    }
+
+    @SdkInternalApi
+    final ModifyTransitGatewayPrefixListReferenceResult executeModifyTransitGatewayPrefixListReference(
+            ModifyTransitGatewayPrefixListReferenceRequest modifyTransitGatewayPrefixListReferenceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyTransitGatewayPrefixListReferenceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyTransitGatewayPrefixListReferenceRequest> request = null;
+        Response<ModifyTransitGatewayPrefixListReferenceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyTransitGatewayPrefixListReferenceRequestMarshaller().marshall(super
+                        .beforeMarshalling(modifyTransitGatewayPrefixListReferenceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTransitGatewayPrefixListReference");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyTransitGatewayPrefixListReferenceResult> responseHandler = new StaxResponseHandler<ModifyTransitGatewayPrefixListReferenceResult>(
+                    new ModifyTransitGatewayPrefixListReferenceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20763,6 +24442,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyTransitGatewayVpcAttachmentRequestMarshaller().marshall(super.beforeMarshalling(modifyTransitGatewayVpcAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTransitGatewayVpcAttachment");
@@ -20774,6 +24455,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyTransitGatewayVpcAttachmentResult> responseHandler = new StaxResponseHandler<ModifyTransitGatewayVpcAttachmentResult>(
                     new ModifyTransitGatewayVpcAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20787,21 +24469,21 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * You can modify several parameters of an existing EBS volume, including volume size, volume type, and IOPS
-     * capacity. If your EBS volume is attached to a current-generation EC2 instance type, you may be able to apply
+     * capacity. If your EBS volume is attached to a current-generation EC2 instance type, you might be able to apply
      * these changes without stopping the instance or detaching the volume from it. For more information about modifying
      * an EBS volume running Linux, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
-     * Type of an EBS Volume on Linux</a>. For more information about modifying an EBS volume running Windows, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
-     * Type of an EBS Volume on Windows</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the size, IOPS, or
+     * type of an EBS volume on Linux</a>. For more information about modifying an EBS volume running Windows, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying the size, IOPS, or
+     * type of an EBS volume on Windows</a>.
      * </p>
      * <p>
      * When you complete a resize operation on your volume, you need to extend the volume's file-system size to take
      * advantage of the new storage capacity. For information about extending a Linux file system, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux"
-     * >Extending a Linux File System</a>. For information about extending a Windows file system, see <a href=
+     * >Extending a Linux file system</a>. For information about extending a Windows file system, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows"
-     * >Extending a Windows File System</a>.
+     * >Extending a Windows file system</a>.
      * </p>
      * <p>
      * You can use CloudWatch Events to check the status of a modification to an EBS volume. For information about
@@ -20809,15 +24491,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * CloudWatch Events User Guide</a>. You can also track the status of a modification using
      * <a>DescribeVolumesModifications</a>. For information about tracking status changes using either method, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-     * Volume Modifications</a>.
+     * volume modifications</a>.
      * </p>
      * <p>
-     * With previous-generation instance types, resizing an EBS volume may require detaching and reattaching the volume
-     * or stopping and restarting the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
-     * Type of an EBS Volume on Linux</a> and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
-     * Type of an EBS Volume on Windows</a>.
+     * With previous-generation instance types, resizing an EBS volume might require detaching and reattaching the
+     * volume or stopping and restarting the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon EBS Elastic Volumes</a>
+     * (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon EBS
+     * Elastic Volumes</a> (Windows).
      * </p>
      * <p>
      * If you reach the maximum volume modification rate per volume limit, you will need to wait at least six hours
@@ -20851,6 +24532,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVolumeRequestMarshaller().marshall(super.beforeMarshalling(modifyVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVolume");
@@ -20861,6 +24544,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ModifyVolumeResult> responseHandler = new StaxResponseHandler<ModifyVolumeResult>(new ModifyVolumeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20912,6 +24596,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVolumeAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyVolumeAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVolumeAttribute");
@@ -20923,6 +24609,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVolumeAttributeResult> responseHandler = new StaxResponseHandler<ModifyVolumeAttributeResult>(
                     new ModifyVolumeAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20965,6 +24652,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVpcAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyVpcAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpcAttribute");
@@ -20976,6 +24665,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcAttributeResult> responseHandler = new StaxResponseHandler<ModifyVpcAttributeResult>(
                     new ModifyVpcAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -20989,7 +24679,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Modifies attributes of a specified VPC endpoint. The attributes that you can modify depend on the type of VPC
-     * endpoint (interface or gateway). For more information, see <a
+     * endpoint (interface, gateway, or Gateway Load Balancer). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC Endpoints</a> in the <i>Amazon
      * Virtual Private Cloud User Guide</i>.
      * </p>
@@ -21022,6 +24712,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVpcEndpointRequestMarshaller().marshall(super.beforeMarshalling(modifyVpcEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpcEndpoint");
@@ -21033,6 +24725,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcEndpointResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointResult>(
                     new ModifyVpcEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21078,6 +24771,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(modifyVpcEndpointConnectionNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpcEndpointConnectionNotification");
@@ -21089,6 +24784,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcEndpointConnectionNotificationResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointConnectionNotificationResult>(
                     new ModifyVpcEndpointConnectionNotificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21101,9 +24797,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Modifies the attributes of your VPC endpoint service configuration. You can change the Network Load Balancers for
-     * your service, and you can specify whether acceptance is required for requests to connect to your endpoint service
-     * through an interface VPC endpoint.
+     * Modifies the attributes of your VPC endpoint service configuration. You can change the Network Load Balancers or
+     * Gateway Load Balancers for your service, and you can specify whether acceptance is required for requests to
+     * connect to your endpoint service through an interface VPC endpoint.
      * </p>
      * <p>
      * If you set or modify the private DNS name, you must prove that you own the private DNS domain name. For more
@@ -21141,6 +24837,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(modifyVpcEndpointServiceConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpcEndpointServiceConfiguration");
@@ -21152,6 +24850,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcEndpointServiceConfigurationResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointServiceConfigurationResult>(
                     new ModifyVpcEndpointServiceConfigurationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21204,6 +24903,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(modifyVpcEndpointServicePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpcEndpointServicePermissions");
@@ -21215,6 +24916,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcEndpointServicePermissionsResult> responseHandler = new StaxResponseHandler<ModifyVpcEndpointServicePermissionsResult>(
                     new ModifyVpcEndpointServicePermissionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21288,6 +24990,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVpcPeeringConnectionOptionsRequestMarshaller().marshall(super.beforeMarshalling(modifyVpcPeeringConnectionOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpcPeeringConnectionOptions");
@@ -21299,6 +25003,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcPeeringConnectionOptionsResult> responseHandler = new StaxResponseHandler<ModifyVpcPeeringConnectionOptionsResult>(
                     new ModifyVpcPeeringConnectionOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21352,6 +25057,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVpcTenancyRequestMarshaller().marshall(super.beforeMarshalling(modifyVpcTenancyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpcTenancy");
@@ -21363,6 +25070,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpcTenancyResult> responseHandler = new StaxResponseHandler<ModifyVpcTenancyResult>(
                     new ModifyVpcTenancyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21461,6 +25169,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVpnConnectionRequestMarshaller().marshall(super.beforeMarshalling(modifyVpnConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpnConnection");
@@ -21472,6 +25182,68 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpnConnectionResult> responseHandler = new StaxResponseHandler<ModifyVpnConnectionResult>(
                     new ModifyVpnConnectionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the connection options for your Site-to-Site VPN connection.
+     * </p>
+     * <p>
+     * When you modify the VPN connection options, the VPN endpoint IP addresses on the AWS side do not change, and the
+     * tunnel options do not change. Your VPN connection will be temporarily unavailable for a brief period while the
+     * VPN connection is updated.
+     * </p>
+     * 
+     * @param modifyVpnConnectionOptionsRequest
+     * @return Result of the ModifyVpnConnectionOptions operation returned by the service.
+     * @sample AmazonEC2.ModifyVpnConnectionOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyVpnConnectionOptionsResult modifyVpnConnectionOptions(ModifyVpnConnectionOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVpnConnectionOptions(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVpnConnectionOptionsResult executeModifyVpnConnectionOptions(ModifyVpnConnectionOptionsRequest modifyVpnConnectionOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVpnConnectionOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVpnConnectionOptionsRequest> request = null;
+        Response<ModifyVpnConnectionOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVpnConnectionOptionsRequestMarshaller().marshall(super.beforeMarshalling(modifyVpnConnectionOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpnConnectionOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVpnConnectionOptionsResult> responseHandler = new StaxResponseHandler<ModifyVpnConnectionOptionsResult>(
+                    new ModifyVpnConnectionOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21514,6 +25286,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVpnTunnelCertificateRequestMarshaller().marshall(super.beforeMarshalling(modifyVpnTunnelCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpnTunnelCertificate");
@@ -21525,6 +25299,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpnTunnelCertificateResult> responseHandler = new StaxResponseHandler<ModifyVpnTunnelCertificateResult>(
                     new ModifyVpnTunnelCertificateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21570,6 +25345,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ModifyVpnTunnelOptionsRequestMarshaller().marshall(super.beforeMarshalling(modifyVpnTunnelOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpnTunnelOptions");
@@ -21581,6 +25358,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpnTunnelOptionsResult> responseHandler = new StaxResponseHandler<ModifyVpnTunnelOptionsResult>(
                     new ModifyVpnTunnelOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21594,8 +25372,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Enables detailed monitoring for a running instance. Otherwise, basic monitoring is enabled. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances
-     * and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring your instances
+     * and volumes</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * To disable detailed monitoring, see .
@@ -21628,6 +25406,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new MonitorInstancesRequestMarshaller().marshall(super.beforeMarshalling(monitorInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MonitorInstances");
@@ -21639,6 +25419,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<MonitorInstancesResult> responseHandler = new StaxResponseHandler<MonitorInstancesResult>(
                     new MonitorInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21685,6 +25466,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new MoveAddressToVpcRequestMarshaller().marshall(super.beforeMarshalling(moveAddressToVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MoveAddressToVpc");
@@ -21696,6 +25479,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<MoveAddressToVpcResult> responseHandler = new StaxResponseHandler<MoveAddressToVpcResult>(
                     new MoveAddressToVpcResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21754,6 +25538,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ProvisionByoipCidrRequestMarshaller().marshall(super.beforeMarshalling(provisionByoipCidrRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ProvisionByoipCidr");
@@ -21765,6 +25551,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ProvisionByoipCidrResult> responseHandler = new StaxResponseHandler<ProvisionByoipCidrResult>(
                     new ProvisionByoipCidrResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21809,6 +25596,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new PurchaseHostReservationRequestMarshaller().marshall(super.beforeMarshalling(purchaseHostReservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseHostReservation");
@@ -21820,6 +25609,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<PurchaseHostReservationResult> responseHandler = new StaxResponseHandler<PurchaseHostReservationResult>(
                     new PurchaseHostReservationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21848,7 +25638,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
      * Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-     * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param purchaseReservedInstancesOfferingRequest
@@ -21880,6 +25670,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new PurchaseReservedInstancesOfferingRequestMarshaller().marshall(super.beforeMarshalling(purchaseReservedInstancesOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseReservedInstancesOffering");
@@ -21891,6 +25683,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<PurchaseReservedInstancesOfferingResult> responseHandler = new StaxResponseHandler<PurchaseReservedInstancesOfferingResult>(
                     new PurchaseReservedInstancesOfferingResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21943,6 +25736,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new PurchaseScheduledInstancesRequestMarshaller().marshall(super.beforeMarshalling(purchaseScheduledInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseScheduledInstances");
@@ -21954,6 +25749,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<PurchaseScheduledInstancesResult> responseHandler = new StaxResponseHandler<PurchaseScheduledInstancesResult>(
                     new PurchaseScheduledInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -21971,12 +25767,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * terminated instances are ignored.
      * </p>
      * <p>
-     * If an instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.
+     * If an instance does not cleanly shut down within a few minutes, Amazon EC2 performs a hard reboot.
      * </p>
      * <p>
      * For more information about troubleshooting, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting Console Output and
-     * Rebooting Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting console output and
+     * rebooting instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param rebootInstancesRequest
@@ -22006,6 +25802,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RebootInstancesRequestMarshaller().marshall(super.beforeMarshalling(rebootInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootInstances");
@@ -22017,6 +25815,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RebootInstancesResult> responseHandler = new StaxResponseHandler<RebootInstancesResult>(
                     new RebootInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22031,7 +25830,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an
      * instance from the AMI. For more information about creating AMIs, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating Your Own AMIs</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating your own AMIs</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <note>
@@ -22041,13 +25840,31 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * </note>
      * <p>
-     * You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from a snapshot of a root
-     * device volume. You specify the snapshot using the block device mapping. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching a Linux
-     * Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance
+     * store volume invalidates its registration. If you make changes to an image, deregister the previous image and
+     * register the new image.
      * </p>
      * <p>
-     * You can't register an image where a secondary (non-root) snapshot has AWS Marketplace product codes.
+     * <b>Register a snapshot of a root device volume</b>
+     * </p>
+     * <p>
+     * You can use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from a snapshot of a root device
+     * volume. You specify the snapshot using a block device mapping. You can't set the encryption state of the volume
+     * using the block device mapping. If the snapshot is encrypted, or encryption by default is enabled, the root
+     * volume of an instance launched from the AMI is encrypted.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html#creating-launching-ami-from-snapshot"
+     * >Create a Linux AMI from a snapshot</a> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Use encryption with EBS-backed
+     * AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * <b>AWS Marketplace product codes</b>
+     * </p>
+     * <p>
+     * If any snapshots have AWS Marketplace product codes, they are copied to the new AMI.
      * </p>
      * <p>
      * Windows and some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server
@@ -22077,13 +25894,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase
      * a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the
      * On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining Billing
-     * Information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * If needed, you can deregister an AMI at any time. Any modifications you make to an AMI backed by an instance
-     * store volume invalidates its registration. If you make changes to an image, deregister the previous image and
-     * register the new image.
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining billing
+     * information</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param registerImageRequest
@@ -22114,6 +25926,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RegisterImageRequestMarshaller().marshall(super.beforeMarshalling(registerImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterImage");
@@ -22124,6 +25938,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<RegisterImageResult> responseHandler = new StaxResponseHandler<RegisterImageResult>(new RegisterImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22172,6 +25987,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(registerInstanceEventNotificationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterInstanceEventNotificationAttributes");
@@ -22183,6 +26000,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RegisterInstanceEventNotificationAttributesResult> responseHandler = new StaxResponseHandler<RegisterInstanceEventNotificationAttributesResult>(
                     new RegisterInstanceEventNotificationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22238,6 +26056,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(registerTransitGatewayMulticastGroupMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterTransitGatewayMulticastGroupMembers");
@@ -22249,6 +26069,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RegisterTransitGatewayMulticastGroupMembersResult> responseHandler = new StaxResponseHandler<RegisterTransitGatewayMulticastGroupMembersResult>(
                     new RegisterTransitGatewayMulticastGroupMembersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22305,6 +26126,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(registerTransitGatewayMulticastGroupSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterTransitGatewayMulticastGroupSources");
@@ -22316,6 +26139,67 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RegisterTransitGatewayMulticastGroupSourcesResult> responseHandler = new StaxResponseHandler<RegisterTransitGatewayMulticastGroupSourcesResult>(
                     new RegisterTransitGatewayMulticastGroupSourcesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Rejects a request to associate cross-account subnets with a transit gateway multicast domain.
+     * </p>
+     * 
+     * @param rejectTransitGatewayMulticastDomainAssociationsRequest
+     * @return Result of the RejectTransitGatewayMulticastDomainAssociations operation returned by the service.
+     * @sample AmazonEC2.RejectTransitGatewayMulticastDomainAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RejectTransitGatewayMulticastDomainAssociationsResult rejectTransitGatewayMulticastDomainAssociations(
+            RejectTransitGatewayMulticastDomainAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectTransitGatewayMulticastDomainAssociations(request);
+    }
+
+    @SdkInternalApi
+    final RejectTransitGatewayMulticastDomainAssociationsResult executeRejectTransitGatewayMulticastDomainAssociations(
+            RejectTransitGatewayMulticastDomainAssociationsRequest rejectTransitGatewayMulticastDomainAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rejectTransitGatewayMulticastDomainAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectTransitGatewayMulticastDomainAssociationsRequest> request = null;
+        Response<RejectTransitGatewayMulticastDomainAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectTransitGatewayMulticastDomainAssociationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(rejectTransitGatewayMulticastDomainAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectTransitGatewayMulticastDomainAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RejectTransitGatewayMulticastDomainAssociationsResult> responseHandler = new StaxResponseHandler<RejectTransitGatewayMulticastDomainAssociationsResult>(
+                    new RejectTransitGatewayMulticastDomainAssociationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22360,6 +26244,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(rejectTransitGatewayPeeringAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectTransitGatewayPeeringAttachment");
@@ -22371,6 +26257,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RejectTransitGatewayPeeringAttachmentResult> responseHandler = new StaxResponseHandler<RejectTransitGatewayPeeringAttachmentResult>(
                     new RejectTransitGatewayPeeringAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22419,6 +26306,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RejectTransitGatewayVpcAttachmentRequestMarshaller().marshall(super.beforeMarshalling(rejectTransitGatewayVpcAttachmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectTransitGatewayVpcAttachment");
@@ -22430,6 +26319,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RejectTransitGatewayVpcAttachmentResult> responseHandler = new StaxResponseHandler<RejectTransitGatewayVpcAttachmentResult>(
                     new RejectTransitGatewayVpcAttachmentResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22472,6 +26362,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RejectVpcEndpointConnectionsRequestMarshaller().marshall(super.beforeMarshalling(rejectVpcEndpointConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectVpcEndpointConnections");
@@ -22483,6 +26375,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RejectVpcEndpointConnectionsResult> responseHandler = new StaxResponseHandler<RejectVpcEndpointConnectionsResult>(
                     new RejectVpcEndpointConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22528,6 +26421,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RejectVpcPeeringConnectionRequestMarshaller().marshall(super.beforeMarshalling(rejectVpcPeeringConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectVpcPeeringConnection");
@@ -22539,6 +26434,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RejectVpcPeeringConnectionResult> responseHandler = new StaxResponseHandler<RejectVpcPeeringConnectionResult>(
                     new RejectVpcPeeringConnectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22599,6 +26495,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReleaseAddressRequestMarshaller().marshall(super.beforeMarshalling(releaseAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReleaseAddress");
@@ -22610,6 +26508,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReleaseAddressResult> responseHandler = new StaxResponseHandler<ReleaseAddressResult>(
                     new ReleaseAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22662,6 +26561,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReleaseHostsRequestMarshaller().marshall(super.beforeMarshalling(releaseHostsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReleaseHosts");
@@ -22672,6 +26573,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ReleaseHostsResult> responseHandler = new StaxResponseHandler<ReleaseHostsResult>(new ReleaseHostsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22721,6 +26623,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(replaceIamInstanceProfileAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReplaceIamInstanceProfileAssociation");
@@ -22732,6 +26636,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReplaceIamInstanceProfileAssociationResult> responseHandler = new StaxResponseHandler<ReplaceIamInstanceProfileAssociationResult>(
                     new ReplaceIamInstanceProfileAssociationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22780,6 +26685,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReplaceNetworkAclAssociationRequestMarshaller().marshall(super.beforeMarshalling(replaceNetworkAclAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReplaceNetworkAclAssociation");
@@ -22791,6 +26698,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReplaceNetworkAclAssociationResult> responseHandler = new StaxResponseHandler<ReplaceNetworkAclAssociationResult>(
                     new ReplaceNetworkAclAssociationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22835,6 +26743,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReplaceNetworkAclEntryRequestMarshaller().marshall(super.beforeMarshalling(replaceNetworkAclEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReplaceNetworkAclEntry");
@@ -22846,6 +26756,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReplaceNetworkAclEntryResult> responseHandler = new StaxResponseHandler<ReplaceNetworkAclEntryResult>(
                     new ReplaceNetworkAclEntryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22894,6 +26805,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReplaceRouteRequestMarshaller().marshall(super.beforeMarshalling(replaceRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReplaceRoute");
@@ -22904,6 +26817,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<ReplaceRouteResult> responseHandler = new StaxResponseHandler<ReplaceRouteResult>(new ReplaceRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -22953,6 +26867,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReplaceRouteTableAssociationRequestMarshaller().marshall(super.beforeMarshalling(replaceRouteTableAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReplaceRouteTableAssociation");
@@ -22964,6 +26880,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReplaceRouteTableAssociationResult> responseHandler = new StaxResponseHandler<ReplaceRouteTableAssociationResult>(
                     new ReplaceRouteTableAssociationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23006,6 +26923,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReplaceTransitGatewayRouteRequestMarshaller().marshall(super.beforeMarshalling(replaceTransitGatewayRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReplaceTransitGatewayRoute");
@@ -23017,6 +26936,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReplaceTransitGatewayRouteResult> responseHandler = new StaxResponseHandler<ReplaceTransitGatewayRouteResult>(
                     new ReplaceTransitGatewayRouteResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23065,6 +26985,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ReportInstanceStatusRequestMarshaller().marshall(super.beforeMarshalling(reportInstanceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReportInstanceStatus");
@@ -23076,6 +26998,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ReportInstanceStatusResult> responseHandler = new StaxResponseHandler<ReportInstanceStatusResult>(
                     new ReportInstanceStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23116,7 +27039,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet Requests</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet requests</a> in
      * the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
@@ -23148,6 +27071,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RequestSpotFleetRequestMarshaller().marshall(super.beforeMarshalling(requestSpotFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RequestSpotFleet");
@@ -23159,6 +27084,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RequestSpotFleetResult> responseHandler = new StaxResponseHandler<RequestSpotFleetResult>(
                     new RequestSpotFleetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23175,7 +27101,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
-     * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Instance requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param requestSpotInstancesRequest
@@ -23206,6 +27132,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RequestSpotInstancesRequestMarshaller().marshall(super.beforeMarshalling(requestSpotInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RequestSpotInstances");
@@ -23217,6 +27145,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RequestSpotInstancesResult> responseHandler = new StaxResponseHandler<RequestSpotInstancesResult>(
                     new RequestSpotInstancesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Resets the attribute of the specified IP address. For requirements, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS"
+     * >Using reverse DNS for email applications</a>.
+     * </p>
+     * 
+     * @param resetAddressAttributeRequest
+     * @return Result of the ResetAddressAttribute operation returned by the service.
+     * @sample AmazonEC2.ResetAddressAttribute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ResetAddressAttributeResult resetAddressAttribute(ResetAddressAttributeRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetAddressAttribute(request);
+    }
+
+    @SdkInternalApi
+    final ResetAddressAttributeResult executeResetAddressAttribute(ResetAddressAttributeRequest resetAddressAttributeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resetAddressAttributeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResetAddressAttributeRequest> request = null;
+        Response<ResetAddressAttributeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResetAddressAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetAddressAttributeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetAddressAttribute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ResetAddressAttributeResult> responseHandler = new StaxResponseHandler<ResetAddressAttributeResult>(
+                    new ResetAddressAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23235,7 +27222,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * After resetting the default CMK to the AWS managed CMK, you can continue to encrypt by a customer managed CMK by
      * specifying it when you create the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -23266,6 +27253,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ResetEbsDefaultKmsKeyIdRequestMarshaller().marshall(super.beforeMarshalling(resetEbsDefaultKmsKeyIdRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetEbsDefaultKmsKeyId");
@@ -23277,6 +27266,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetEbsDefaultKmsKeyIdResult> responseHandler = new StaxResponseHandler<ResetEbsDefaultKmsKeyIdResult>(
                     new ResetEbsDefaultKmsKeyIdResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23320,6 +27310,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ResetFpgaImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetFpgaImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetFpgaImageAttribute");
@@ -23331,6 +27323,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetFpgaImageAttributeResult> responseHandler = new StaxResponseHandler<ResetFpgaImageAttributeResult>(
                     new ResetFpgaImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23379,6 +27372,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ResetImageAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetImageAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetImageAttribute");
@@ -23390,6 +27385,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetImageAttributeResult> responseHandler = new StaxResponseHandler<ResetImageAttributeResult>(
                     new ResetImageAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23411,7 +27407,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * value is <code>true</code>, which means checking is enabled. This value must be <code>false</code> for a NAT
      * instance to perform NAT. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param resetInstanceAttributeRequest
@@ -23441,6 +27437,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ResetInstanceAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetInstanceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetInstanceAttribute");
@@ -23452,6 +27450,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetInstanceAttributeResult> responseHandler = new StaxResponseHandler<ResetInstanceAttributeResult>(
                     new ResetInstanceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23495,6 +27494,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ResetNetworkInterfaceAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetNetworkInterfaceAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetNetworkInterfaceAttribute");
@@ -23506,6 +27507,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<ResetNetworkInterfaceAttributeResult>(
                     new ResetNetworkInterfaceAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23523,7 +27525,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information about modifying snapshot permissions, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-     * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param resetSnapshotAttributeRequest
@@ -23553,6 +27555,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new ResetSnapshotAttributeRequestMarshaller().marshall(super.beforeMarshalling(resetSnapshotAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetSnapshotAttribute");
@@ -23564,6 +27568,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ResetSnapshotAttributeResult> responseHandler = new StaxResponseHandler<ResetSnapshotAttributeResult>(
                     new ResetSnapshotAttributeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23608,6 +27613,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RestoreAddressToClassicRequestMarshaller().marshall(super.beforeMarshalling(restoreAddressToClassicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreAddressToClassic");
@@ -23619,6 +27626,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RestoreAddressToClassicResult> responseHandler = new StaxResponseHandler<RestoreAddressToClassicResult>(
                     new RestoreAddressToClassicResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Restores the entries from a previous version of a managed prefix list to a new version of the prefix list.
+     * </p>
+     * 
+     * @param restoreManagedPrefixListVersionRequest
+     * @return Result of the RestoreManagedPrefixListVersion operation returned by the service.
+     * @sample AmazonEC2.RestoreManagedPrefixListVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreManagedPrefixListVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RestoreManagedPrefixListVersionResult restoreManagedPrefixListVersion(RestoreManagedPrefixListVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreManagedPrefixListVersion(request);
+    }
+
+    @SdkInternalApi
+    final RestoreManagedPrefixListVersionResult executeRestoreManagedPrefixListVersion(
+            RestoreManagedPrefixListVersionRequest restoreManagedPrefixListVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(restoreManagedPrefixListVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestoreManagedPrefixListVersionRequest> request = null;
+        Response<RestoreManagedPrefixListVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestoreManagedPrefixListVersionRequestMarshaller().marshall(super.beforeMarshalling(restoreManagedPrefixListVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreManagedPrefixListVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RestoreManagedPrefixListVersionResult> responseHandler = new StaxResponseHandler<RestoreManagedPrefixListVersionResult>(
+                    new RestoreManagedPrefixListVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23661,6 +27726,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RevokeClientVpnIngressRequestMarshaller().marshall(super.beforeMarshalling(revokeClientVpnIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeClientVpnIngress");
@@ -23672,6 +27739,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RevokeClientVpnIngressResult> responseHandler = new StaxResponseHandler<RevokeClientVpnIngressResult>(
                     new RevokeClientVpnIngressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23684,10 +27752,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * [VPC only] Removes the specified egress rules from a security group for EC2-VPC. This action doesn't apply to
+     * [VPC only] Removes the specified egress rules from a security group for EC2-VPC. This action does not apply to
      * security groups for use in EC2-Classic. To remove a rule, the values that you specify (for example, ports) must
      * match the existing rule's values exactly.
      * </p>
+     * <note>
+     * <p>
+     * [Default VPC] If the values you specify do not match the existing rule's values, no error is returned, and the
+     * output describes the security group rules that were not revoked.
+     * </p>
+     * <p>
+     * AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule has been removed.
+     * </p>
+     * </note>
      * <p>
      * Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
      * protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must also
@@ -23726,6 +27803,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RevokeSecurityGroupEgressRequestMarshaller().marshall(super.beforeMarshalling(revokeSecurityGroupEgressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeSecurityGroupEgress");
@@ -23737,6 +27816,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RevokeSecurityGroupEgressResult> responseHandler = new StaxResponseHandler<RevokeSecurityGroupEgressResult>(
                     new RevokeSecurityGroupEgressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23754,8 +27834,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <note>
      * <p>
-     * [EC2-Classic only] If the values you specify do not match the existing rule's values, no error is returned. Use
-     * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.
+     * [EC2-Classic , default VPC] If the values you specify do not match the existing rule's values, no error is
+     * returned, and the output describes the security group rules that were not revoked.
+     * </p>
+     * <p>
+     * AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule has been removed.
      * </p>
      * </note>
      * <p>
@@ -23796,6 +27879,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RevokeSecurityGroupIngressRequestMarshaller().marshall(super.beforeMarshalling(revokeSecurityGroupIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeSecurityGroupIngress");
@@ -23807,6 +27892,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RevokeSecurityGroupIngressResult> responseHandler = new StaxResponseHandler<RevokeSecurityGroupIngressResult>(
                     new RevokeSecurityGroupIngressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23846,8 +27932,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Some instance types must be launched into a VPC. If you do not have a default VPC, or if you do not specify a
      * subnet ID, the request fails. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance Types
-     * Available Only in a VPC</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance types
+     * available only in a VPC</a>.
      * </p>
      * </li>
      * <li>
@@ -23859,13 +27945,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <li>
      * <p>
      * Not all instance types support IPv6 addresses. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * If you don't specify a security group ID, we use the default security group. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security Groups</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security groups</a>.
      * </p>
      * </li>
      * <li>
@@ -23887,20 +27973,20 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * An instance is ready for you to use when it's in the <code>running</code> state. You can check the state of your
      * instance using <a>DescribeInstances</a>. You can tag instances and EBS volumes during launch, after launch, or
      * both. For more information, see <a>CreateTags</a> and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>.
      * </p>
      * <p>
      * Linux instances have access to the public key of the key pair at boot. You can use this key to provide secure
      * access to the instance. Amazon EC2 public images use this feature to provide secure access without passwords. For
      * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-     * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * pairs</a>.
      * </p>
      * <p>
      * For troubleshooting, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What To Do If
-     * An Instance Immediately Terminates</a>, and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What to do if
+     * an instance immediately terminates</a>, and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html"
-     * >Troubleshooting Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Troubleshooting connecting to your instance</a>.
      * </p>
      * 
      * @param runInstancesRequest
@@ -23930,6 +28016,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RunInstancesRequestMarshaller().marshall(super.beforeMarshalling(runInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RunInstances");
@@ -23940,6 +28028,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<RunInstancesResult> responseHandler = new StaxResponseHandler<RunInstancesResult>(new RunInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -23963,7 +28052,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Instance, but you can terminate it as needed. If you terminate a Scheduled Instance before the current scheduled
      * time period ends, you can launch it again after a few minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled Instances</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param runScheduledInstancesRequest
@@ -23994,6 +28083,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new RunScheduledInstancesRequestMarshaller().marshall(super.beforeMarshalling(runScheduledInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RunScheduledInstances");
@@ -24005,6 +28096,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<RunScheduledInstancesResult> responseHandler = new StaxResponseHandler<RunScheduledInstancesResult>(
                     new RunScheduledInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24047,6 +28139,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new SearchLocalGatewayRoutesRequestMarshaller().marshall(super.beforeMarshalling(searchLocalGatewayRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchLocalGatewayRoutes");
@@ -24058,6 +28152,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<SearchLocalGatewayRoutesResult> responseHandler = new StaxResponseHandler<SearchLocalGatewayRoutesResult>(
                     new SearchLocalGatewayRoutesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24102,6 +28197,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(searchTransitGatewayMulticastGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchTransitGatewayMulticastGroups");
@@ -24113,6 +28210,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<SearchTransitGatewayMulticastGroupsResult> responseHandler = new StaxResponseHandler<SearchTransitGatewayMulticastGroupsResult>(
                     new SearchTransitGatewayMulticastGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24155,6 +28253,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new SearchTransitGatewayRoutesRequestMarshaller().marshall(super.beforeMarshalling(searchTransitGatewayRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchTransitGatewayRoutes");
@@ -24166,6 +28266,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<SearchTransitGatewayRoutesResult> responseHandler = new StaxResponseHandler<SearchTransitGatewayRoutesResult>(
                     new SearchTransitGatewayRoutesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24194,7 +28295,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information about configuring your operating system to generate a crash dump when a kernel panic or stop
      * error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send a
-     * Diagnostic Interrupt</a> (Linux instances) or <a
+     * diagnostic interrupt</a> (Linux instances) or <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send a Diagnostic
      * Interrupt</a> (Windows instances).
      * </p>
@@ -24226,6 +28327,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new SendDiagnosticInterruptRequestMarshaller().marshall(super.beforeMarshalling(sendDiagnosticInterruptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendDiagnosticInterrupt");
@@ -24237,6 +28340,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<SendDiagnosticInterruptResult> responseHandler = new StaxResponseHandler<SendDiagnosticInterruptResult>(
                     new SendDiagnosticInterruptResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24270,7 +28374,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param startInstancesRequest
@@ -24300,6 +28404,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new StartInstancesRequestMarshaller().marshall(super.beforeMarshalling(startInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartInstances");
@@ -24311,6 +28417,63 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<StartInstancesResult> responseHandler = new StaxResponseHandler<StartInstancesResult>(
                     new StartInstancesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts analyzing the specified path. If the path is reachable, the operation returns the shortest feasible path.
+     * </p>
+     * 
+     * @param startNetworkInsightsAnalysisRequest
+     * @return Result of the StartNetworkInsightsAnalysis operation returned by the service.
+     * @sample AmazonEC2.StartNetworkInsightsAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartNetworkInsightsAnalysisResult startNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartNetworkInsightsAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final StartNetworkInsightsAnalysisResult executeStartNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest startNetworkInsightsAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startNetworkInsightsAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartNetworkInsightsAnalysisRequest> request = null;
+        Response<StartNetworkInsightsAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartNetworkInsightsAnalysisRequestMarshaller().marshall(super.beforeMarshalling(startNetworkInsightsAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartNetworkInsightsAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<StartNetworkInsightsAnalysisResult> responseHandler = new StaxResponseHandler<StartNetworkInsightsAnalysisResult>(
+                    new StartNetworkInsightsAnalysisResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24332,8 +28495,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * Before the service provider runs this command, they must add a record to the DNS server. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record"
+     * see <a href=
+     * "https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html#add-dns-txt-record"
      * >Adding a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
@@ -24368,6 +28531,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(startVpcEndpointServicePrivateDnsVerificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartVpcEndpointServicePrivateDnsVerification");
@@ -24379,6 +28544,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<StartVpcEndpointServicePrivateDnsVerificationResult> responseHandler = new StaxResponseHandler<StartVpcEndpointServicePrivateDnsVerificationResult>(
                     new StartVpcEndpointServicePrivateDnsVerificationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24399,8 +28565,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * hibernation</a> and it meets the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
      * prerequisites</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * We don't charge usage for a stopped instance, or data transfer fees; however, your root partition Amazon EBS
@@ -24415,7 +28581,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Instances, but you can specify that Amazon EC2 should hibernate Spot Instances when they are interrupted. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances"
-     * >Hibernating Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Hibernating interrupted Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * When you stop or hibernate an instance, we shut it down. You can restart your instance at any time. Before
@@ -24429,14 +28595,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * an instance, the root device and any other devices attached during the instance launch are automatically deleted.
      * For more information about the differences between rebooting, stopping, hibernating, and terminating instances,
      * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-     * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * When you stop an instance, we attempt to shut it down forcibly after a short while. If your instance appears
      * stuck in the stopping state after a period of time, there may be an issue with the underlying host computer. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-     * Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * stopping your instance</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param stopInstancesRequest
@@ -24466,6 +28632,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new StopInstancesRequestMarshaller().marshall(super.beforeMarshalling(stopInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopInstances");
@@ -24476,6 +28644,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<StopInstancesResult> responseHandler = new StaxResponseHandler<StopInstancesResult>(new StopInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24519,6 +28688,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new TerminateClientVpnConnectionsRequestMarshaller().marshall(super.beforeMarshalling(terminateClientVpnConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateClientVpnConnections");
@@ -24530,6 +28701,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<TerminateClientVpnConnectionsResult> responseHandler = new StaxResponseHandler<TerminateClientVpnConnectionsResult>(
                     new TerminateClientVpnConnectionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24562,13 +28734,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * root device and any other devices attached to the instance persist. When you terminate an instance, any attached
      * EBS volumes with the <code>DeleteOnTermination</code> block device mapping parameter set to <code>true</code> are
      * automatically deleted. For more information about the differences between stopping and terminating instances, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance Lifecycle</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance lifecycle</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information about troubleshooting, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html"
-     * >Troubleshooting Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Troubleshooting terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param terminateInstancesRequest
@@ -24598,6 +28770,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new TerminateInstancesRequestMarshaller().marshall(super.beforeMarshalling(terminateInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateInstances");
@@ -24609,6 +28783,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<TerminateInstancesResult> responseHandler = new StaxResponseHandler<TerminateInstancesResult>(
                     new TerminateInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24651,6 +28826,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new UnassignIpv6AddressesRequestMarshaller().marshall(super.beforeMarshalling(unassignIpv6AddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnassignIpv6Addresses");
@@ -24662,6 +28839,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<UnassignIpv6AddressesResult> responseHandler = new StaxResponseHandler<UnassignIpv6AddressesResult>(
                     new UnassignIpv6AddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24705,6 +28883,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new UnassignPrivateIpAddressesRequestMarshaller().marshall(super.beforeMarshalling(unassignPrivateIpAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnassignPrivateIpAddresses");
@@ -24716,6 +28896,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<UnassignPrivateIpAddressesResult> responseHandler = new StaxResponseHandler<UnassignPrivateIpAddressesResult>(
                     new UnassignPrivateIpAddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24729,8 +28910,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Disables detailed monitoring for a running instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances and
-     * Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring your instances and
+     * volumes</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param unmonitorInstancesRequest
@@ -24760,6 +28941,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new UnmonitorInstancesRequestMarshaller().marshall(super.beforeMarshalling(unmonitorInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnmonitorInstances");
@@ -24771,6 +28954,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<UnmonitorInstancesResult> responseHandler = new StaxResponseHandler<UnmonitorInstancesResult>(
                     new UnmonitorInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24820,6 +29004,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(updateSecurityGroupRuleDescriptionsEgressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSecurityGroupRuleDescriptionsEgress");
@@ -24831,6 +29017,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsEgressResult> responseHandler = new StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsEgressResult>(
                     new UpdateSecurityGroupRuleDescriptionsEgressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24880,6 +29067,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                         .beforeMarshalling(updateSecurityGroupRuleDescriptionsIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSecurityGroupRuleDescriptionsIngress");
@@ -24891,6 +29080,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsIngressResult> responseHandler = new StaxResponseHandler<UpdateSecurityGroupRuleDescriptionsIngressResult>(
                     new UpdateSecurityGroupRuleDescriptionsIngressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -24941,6 +29131,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
                 request = new WithdrawByoipCidrRequestMarshaller().marshall(super.beforeMarshalling(withdrawByoipCidrRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "WithdrawByoipCidr");
@@ -24952,6 +29144,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<WithdrawByoipCidrResult> responseHandler = new StaxResponseHandler<WithdrawByoipCidrResult>(
                     new WithdrawByoipCidrResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

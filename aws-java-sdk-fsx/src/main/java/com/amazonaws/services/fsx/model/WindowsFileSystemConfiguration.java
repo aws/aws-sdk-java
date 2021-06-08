@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      * </p>
      */
     private String activeDirectoryId;
@@ -91,7 +91,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
      * <code>SubnetIDs</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     * >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      */
     private String preferredSubnetId;
@@ -111,7 +111,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     private String preferredFileServerIp;
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of the Amazon FSx file system, measured in megabytes per second.
      * </p>
      */
     private Integer throughputCapacity;
@@ -123,7 +123,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     private java.util.List<String> maintenanceOperationsInProgress;
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      */
     private String weeklyMaintenanceStartTime;
@@ -136,7 +137,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * automatic backups for a maximum of 90 days.
      * </p>
      */
     private Integer automaticBackupRetentionDays;
@@ -151,14 +152,22 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      */
     private Boolean copyTagsToBackups;
 
+    private java.util.List<Alias> aliases;
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     */
+    private WindowsAuditLogConfiguration auditLogConfiguration;
+
+    /**
+     * <p>
+     * The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      * </p>
      * 
      * @param activeDirectoryId
-     *        The ID for an existing Microsoft Active Directory instance that the file system should join when it's
-     *        created.
+     *        The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      */
 
     public void setActiveDirectoryId(String activeDirectoryId) {
@@ -167,11 +176,10 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      * </p>
      * 
-     * @return The ID for an existing Microsoft Active Directory instance that the file system should join when it's
-     *         created.
+     * @return The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      */
 
     public String getActiveDirectoryId() {
@@ -180,12 +188,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      * </p>
      * 
      * @param activeDirectoryId
-     *        The ID for an existing Microsoft Active Directory instance that the file system should join when it's
-     *        created.
+     *        The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -571,7 +578,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
      * <code>SubnetIDs</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     * >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      * 
      * @param preferredSubnetId
@@ -582,7 +589,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that
      *        for <code>SubnetIDs</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     *        >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     *        >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      */
 
     public void setPreferredSubnetId(String preferredSubnetId) {
@@ -599,7 +606,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
      * <code>SubnetIDs</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     * >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      * 
      * @return For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the subnet where the preferred file
@@ -609,7 +616,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *         For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as
      *         that for <code>SubnetIDs</code>. For more information, see <a href=
      *         "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     *         >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     *         >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      */
 
     public String getPreferredSubnetId() {
@@ -626,7 +633,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
      * <code>SubnetIDs</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     * >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      * 
      * @param preferredSubnetId
@@ -637,7 +644,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that
      *        for <code>SubnetIDs</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     *        >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     *        >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -739,11 +746,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of the Amazon FSx file system, measured in megabytes per second.
      * </p>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second.
+     *        The throughput of the Amazon FSx file system, measured in megabytes per second.
      */
 
     public void setThroughputCapacity(Integer throughputCapacity) {
@@ -752,10 +759,10 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of the Amazon FSx file system, measured in megabytes per second.
      * </p>
      * 
-     * @return The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * @return The throughput of the Amazon FSx file system, measured in megabytes per second.
      */
 
     public Integer getThroughputCapacity() {
@@ -764,11 +771,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of the Amazon FSx file system, measured in megabytes per second.
      * </p>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second.
+     *        The throughput of the Amazon FSx file system, measured in megabytes per second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -877,11 +884,13 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred time to perform weekly maintenance, in the UTC time zone.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the
+     *        weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public void setWeeklyMaintenanceStartTime(String weeklyMaintenanceStartTime) {
@@ -890,10 +899,12 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
-     * @return The preferred time to perform weekly maintenance, in the UTC time zone.
+     * @return The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the
+     *         weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public String getWeeklyMaintenanceStartTime() {
@@ -902,11 +913,13 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred time to perform weekly maintenance, in the UTC time zone.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the
+     *        weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -958,12 +971,12 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * automatic backups for a maximum of 90 days.
      * </p>
      * 
      * @param automaticBackupRetentionDays
      *        The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can
-     *        retain automatic backups for a maximum of 35 days.
+     *        retain automatic backups for a maximum of 90 days.
      */
 
     public void setAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
@@ -973,11 +986,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * automatic backups for a maximum of 90 days.
      * </p>
      * 
      * @return The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can
-     *         retain automatic backups for a maximum of 35 days.
+     *         retain automatic backups for a maximum of 90 days.
      */
 
     public Integer getAutomaticBackupRetentionDays() {
@@ -987,12 +1000,12 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * automatic backups for a maximum of 90 days.
      * </p>
      * 
      * @param automaticBackupRetentionDays
      *        The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can
-     *        retain automatic backups for a maximum of 35 days.
+     *        retain automatic backups for a maximum of 90 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1086,6 +1099,104 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Alias> getAliases() {
+        return aliases;
+    }
+
+    /**
+     * @param aliases
+     */
+
+    public void setAliases(java.util.Collection<Alias> aliases) {
+        if (aliases == null) {
+            this.aliases = null;
+            return;
+        }
+
+        this.aliases = new java.util.ArrayList<Alias>(aliases);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAliases(java.util.Collection)} or {@link #withAliases(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param aliases
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WindowsFileSystemConfiguration withAliases(Alias... aliases) {
+        if (this.aliases == null) {
+            setAliases(new java.util.ArrayList<Alias>(aliases.length));
+        }
+        for (Alias ele : aliases) {
+            this.aliases.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param aliases
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WindowsFileSystemConfiguration withAliases(java.util.Collection<Alias> aliases) {
+        setAliases(aliases);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     * 
+     * @param auditLogConfiguration
+     *        The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *        folders, and file shares on the Amazon FSx for Windows File Server file system.
+     */
+
+    public void setAuditLogConfiguration(WindowsAuditLogConfiguration auditLogConfiguration) {
+        this.auditLogConfiguration = auditLogConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     * 
+     * @return The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *         folders, and file shares on the Amazon FSx for Windows File Server file system.
+     */
+
+    public WindowsAuditLogConfiguration getAuditLogConfiguration() {
+        return this.auditLogConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     * 
+     * @param auditLogConfiguration
+     *        The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *        folders, and file shares on the Amazon FSx for Windows File Server file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WindowsFileSystemConfiguration withAuditLogConfiguration(WindowsAuditLogConfiguration auditLogConfiguration) {
+        setAuditLogConfiguration(auditLogConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1120,7 +1231,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
         if (getAutomaticBackupRetentionDays() != null)
             sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays()).append(",");
         if (getCopyTagsToBackups() != null)
-            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups());
+            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups()).append(",");
+        if (getAliases() != null)
+            sb.append("Aliases: ").append(getAliases()).append(",");
+        if (getAuditLogConfiguration() != null)
+            sb.append("AuditLogConfiguration: ").append(getAuditLogConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1186,6 +1301,14 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getCopyTagsToBackups() != null && other.getCopyTagsToBackups().equals(this.getCopyTagsToBackups()) == false)
             return false;
+        if (other.getAliases() == null ^ this.getAliases() == null)
+            return false;
+        if (other.getAliases() != null && other.getAliases().equals(this.getAliases()) == false)
+            return false;
+        if (other.getAuditLogConfiguration() == null ^ this.getAuditLogConfiguration() == null)
+            return false;
+        if (other.getAuditLogConfiguration() != null && other.getAuditLogConfiguration().equals(this.getAuditLogConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1206,6 +1329,8 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());
         hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
+        hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode());
+        hashCode = prime * hashCode + ((getAuditLogConfiguration() == null) ? 0 : getAuditLogConfiguration().hashCode());
         return hashCode;
     }
 

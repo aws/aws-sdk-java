@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -102,23 +102,25 @@ public class CreateConfigurationSetEventDestinationRequestMarshaller implements
                             int dimensionConfigurationsListIndex = 1;
 
                             for (CloudWatchDimensionConfiguration dimensionConfigurationsListValue : dimensionConfigurationsList) {
+                                if (dimensionConfigurationsListValue != null) {
 
-                                if (dimensionConfigurationsListValue.getDimensionName() != null) {
-                                    request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
-                                            + dimensionConfigurationsListIndex + ".DimensionName",
-                                            StringUtils.fromString(dimensionConfigurationsListValue.getDimensionName()));
-                                }
+                                    if (dimensionConfigurationsListValue.getDimensionName() != null) {
+                                        request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
+                                                + dimensionConfigurationsListIndex + ".DimensionName",
+                                                StringUtils.fromString(dimensionConfigurationsListValue.getDimensionName()));
+                                    }
 
-                                if (dimensionConfigurationsListValue.getDimensionValueSource() != null) {
-                                    request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
-                                            + dimensionConfigurationsListIndex + ".DimensionValueSource",
-                                            StringUtils.fromString(dimensionConfigurationsListValue.getDimensionValueSource()));
-                                }
+                                    if (dimensionConfigurationsListValue.getDimensionValueSource() != null) {
+                                        request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
+                                                + dimensionConfigurationsListIndex + ".DimensionValueSource",
+                                                StringUtils.fromString(dimensionConfigurationsListValue.getDimensionValueSource()));
+                                    }
 
-                                if (dimensionConfigurationsListValue.getDefaultDimensionValue() != null) {
-                                    request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
-                                            + dimensionConfigurationsListIndex + ".DefaultDimensionValue",
-                                            StringUtils.fromString(dimensionConfigurationsListValue.getDefaultDimensionValue()));
+                                    if (dimensionConfigurationsListValue.getDefaultDimensionValue() != null) {
+                                        request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
+                                                + dimensionConfigurationsListIndex + ".DefaultDimensionValue",
+                                                StringUtils.fromString(dimensionConfigurationsListValue.getDefaultDimensionValue()));
+                                    }
                                 }
                                 dimensionConfigurationsListIndex++;
                             }

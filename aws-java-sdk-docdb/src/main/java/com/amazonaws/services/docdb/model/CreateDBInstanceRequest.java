@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,11 +81,6 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
-     * </p>
-     * <p>
-     * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the <code>MultiAZ</code> parameter
-     * is set to <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current
-     * endpoint.
      * </p>
      */
     private String availabilityZone;
@@ -423,24 +418,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
-     * <p>
-     * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the <code>MultiAZ</code> parameter
-     * is set to <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current
-     * endpoint.
-     * </p>
      * 
      * @param availabilityZone
-     *        The Amazon EC2 Availability Zone that the instance is created in.</p>
+     *        The Amazon EC2 Availability Zone that the instance is created in. </p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
-     *        </p>
-     *        <p>
-     *        Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the <code>MultiAZ</code>
-     *        parameter is set to <code>true</code>. The specified Availability Zone must be in the same AWS Region as
-     *        the current endpoint.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -457,23 +442,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
-     * <p>
-     * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the <code>MultiAZ</code> parameter
-     * is set to <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current
-     * endpoint.
-     * </p>
      * 
-     * @return The Amazon EC2 Availability Zone that the instance is created in.</p>
+     * @return The Amazon EC2 Availability Zone that the instance is created in. </p>
      *         <p>
      *         Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *         </p>
      *         <p>
      *         Example: <code>us-east-1d</code>
-     *         </p>
-     *         <p>
-     *         Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the <code>MultiAZ</code>
-     *         parameter is set to <code>true</code>. The specified Availability Zone must be in the same AWS Region as
-     *         the current endpoint.
      */
 
     public String getAvailabilityZone() {
@@ -490,24 +465,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
-     * <p>
-     * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the <code>MultiAZ</code> parameter
-     * is set to <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current
-     * endpoint.
-     * </p>
      * 
      * @param availabilityZone
-     *        The Amazon EC2 Availability Zone that the instance is created in.</p>
+     *        The Amazon EC2 Availability Zone that the instance is created in. </p>
      *        <p>
      *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
-     *        </p>
-     *        <p>
-     *        Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the <code>MultiAZ</code>
-     *        parameter is set to <code>true</code>. The specified Availability Zone must be in the same AWS Region as
-     *        the current endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

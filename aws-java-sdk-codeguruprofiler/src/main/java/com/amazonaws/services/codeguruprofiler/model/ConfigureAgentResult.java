@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,13 +26,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConfigureAgentResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
+     * <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return
+     * profiling data.
+     * </p>
+     */
     private AgentConfiguration configuration;
 
     /**
-     * <p/>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
+     * <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return
+     * profiling data.
+     * </p>
      * 
      * @param configuration
+     *        An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
+     *        <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to
+     *        return profiling data.
      */
 
     public void setConfiguration(AgentConfiguration configuration) {
@@ -40,9 +53,15 @@ public class ConfigureAgentResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
+     * <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return
+     * profiling data.
+     * </p>
      * 
-     * @return
+     * @return An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
+     *         <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long
+     *         to return profiling data.
      */
 
     public AgentConfiguration getConfiguration() {
@@ -50,9 +69,16 @@ public class ConfigureAgentResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
+     * <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to return
+     * profiling data.
+     * </p>
      * 
      * @param configuration
+     *        An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
+     *        <code>AgentConfiguration</code> </a> object that specifies if an agent profiles or not and for how long to
+     *        return profiling data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

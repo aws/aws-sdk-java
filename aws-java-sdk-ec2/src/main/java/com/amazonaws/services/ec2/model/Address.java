@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an Elastic IP address.
+ * Describes an Elastic IP address, or a carrier IP address.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Address" target="_top">AWS API Documentation</a>
@@ -88,7 +88,8 @@ public class Address implements Serializable, Cloneable {
     private String publicIpv4Pool;
     /**
      * <p>
-     * The name of the location from which the IP address is advertised.
+     * The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     * addresses.
      * </p>
      */
     private String networkBorderGroup;
@@ -104,6 +105,13 @@ public class Address implements Serializable, Cloneable {
      * </p>
      */
     private String customerOwnedIpv4Pool;
+    /**
+     * <p>
+     * The carrier IP address associated. This option is only available for network interfaces which reside in a subnet
+     * in a Wavelength Zone (for example an EC2 instance).
+     * </p>
+     */
+    private String carrierIp;
 
     /**
      * <p>
@@ -583,11 +591,13 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the location from which the IP address is advertised.
+     * The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     * addresses.
      * </p>
      * 
      * @param networkBorderGroup
-     *        The name of the location from which the IP address is advertised.
+     *        The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS
+     *        advertises IP addresses.
      */
 
     public void setNetworkBorderGroup(String networkBorderGroup) {
@@ -596,10 +606,12 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the location from which the IP address is advertised.
+     * The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     * addresses.
      * </p>
      * 
-     * @return The name of the location from which the IP address is advertised.
+     * @return The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS
+     *         advertises IP addresses.
      */
 
     public String getNetworkBorderGroup() {
@@ -608,11 +620,13 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the location from which the IP address is advertised.
+     * The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     * addresses.
      * </p>
      * 
      * @param networkBorderGroup
-     *        The name of the location from which the IP address is advertised.
+     *        The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS
+     *        advertises IP addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -702,6 +716,52 @@ public class Address implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The carrier IP address associated. This option is only available for network interfaces which reside in a subnet
+     * in a Wavelength Zone (for example an EC2 instance).
+     * </p>
+     * 
+     * @param carrierIp
+     *        The carrier IP address associated. This option is only available for network interfaces which reside in a
+     *        subnet in a Wavelength Zone (for example an EC2 instance).
+     */
+
+    public void setCarrierIp(String carrierIp) {
+        this.carrierIp = carrierIp;
+    }
+
+    /**
+     * <p>
+     * The carrier IP address associated. This option is only available for network interfaces which reside in a subnet
+     * in a Wavelength Zone (for example an EC2 instance).
+     * </p>
+     * 
+     * @return The carrier IP address associated. This option is only available for network interfaces which reside in a
+     *         subnet in a Wavelength Zone (for example an EC2 instance).
+     */
+
+    public String getCarrierIp() {
+        return this.carrierIp;
+    }
+
+    /**
+     * <p>
+     * The carrier IP address associated. This option is only available for network interfaces which reside in a subnet
+     * in a Wavelength Zone (for example an EC2 instance).
+     * </p>
+     * 
+     * @param carrierIp
+     *        The carrier IP address associated. This option is only available for network interfaces which reside in a
+     *        subnet in a Wavelength Zone (for example an EC2 instance).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withCarrierIp(String carrierIp) {
+        setCarrierIp(carrierIp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -738,7 +798,9 @@ public class Address implements Serializable, Cloneable {
         if (getCustomerOwnedIp() != null)
             sb.append("CustomerOwnedIp: ").append(getCustomerOwnedIp()).append(",");
         if (getCustomerOwnedIpv4Pool() != null)
-            sb.append("CustomerOwnedIpv4Pool: ").append(getCustomerOwnedIpv4Pool());
+            sb.append("CustomerOwnedIpv4Pool: ").append(getCustomerOwnedIpv4Pool()).append(",");
+        if (getCarrierIp() != null)
+            sb.append("CarrierIp: ").append(getCarrierIp());
         sb.append("}");
         return sb.toString();
     }
@@ -805,6 +867,10 @@ public class Address implements Serializable, Cloneable {
             return false;
         if (other.getCustomerOwnedIpv4Pool() != null && other.getCustomerOwnedIpv4Pool().equals(this.getCustomerOwnedIpv4Pool()) == false)
             return false;
+        if (other.getCarrierIp() == null ^ this.getCarrierIp() == null)
+            return false;
+        if (other.getCarrierIp() != null && other.getCarrierIp().equals(this.getCarrierIp()) == false)
+            return false;
         return true;
     }
 
@@ -826,6 +892,7 @@ public class Address implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkBorderGroup() == null) ? 0 : getNetworkBorderGroup().hashCode());
         hashCode = prime * hashCode + ((getCustomerOwnedIp() == null) ? 0 : getCustomerOwnedIp().hashCode());
         hashCode = prime * hashCode + ((getCustomerOwnedIpv4Pool() == null) ? 0 : getCustomerOwnedIpv4Pool().hashCode());
+        hashCode = prime * hashCode + ((getCarrierIp() == null) ? 0 : getCarrierIp().hashCode());
         return hashCode;
     }
 

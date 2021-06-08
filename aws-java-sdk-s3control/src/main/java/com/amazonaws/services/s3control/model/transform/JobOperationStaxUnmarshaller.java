@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,11 @@ public class JobOperationStaxUnmarshaller implements Unmarshaller<JobOperation, 
 
                 if (context.testExpression("S3PutObjectTagging", targetDepth)) {
                     jobOperation.setS3PutObjectTagging(S3SetObjectTaggingOperationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("S3DeleteObjectTagging", targetDepth)) {
+                    jobOperation.setS3DeleteObjectTagging(S3DeleteObjectTaggingOperationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

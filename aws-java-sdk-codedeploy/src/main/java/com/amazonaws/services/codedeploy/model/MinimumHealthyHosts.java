@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,12 +28,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * <p>
-     * The minimum healthy instance value.
-     * </p>
-     */
-    private Integer value;
     /**
      * <p>
      * The minimum healthy instance type:
@@ -75,46 +69,12 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String type;
-
     /**
      * <p>
      * The minimum healthy instance value.
      * </p>
-     * 
-     * @param value
-     *        The minimum healthy instance value.
      */
-
-    public void setValue(Integer value) {
-        this.value = value;
-    }
-
-    /**
-     * <p>
-     * The minimum healthy instance value.
-     * </p>
-     * 
-     * @return The minimum healthy instance value.
-     */
-
-    public Integer getValue() {
-        return this.value;
-    }
-
-    /**
-     * <p>
-     * The minimum healthy instance value.
-     * </p>
-     * 
-     * @param value
-     *        The minimum healthy instance value.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public MinimumHealthyHosts withValue(Integer value) {
-        setValue(value);
-        return this;
-    }
+    private Integer value;
 
     /**
      * <p>
@@ -540,6 +500,46 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The minimum healthy instance value.
+     * </p>
+     * 
+     * @param value
+     *        The minimum healthy instance value.
+     */
+
+    public void setValue(Integer value) {
+        this.value = value;
+    }
+
+    /**
+     * <p>
+     * The minimum healthy instance value.
+     * </p>
+     * 
+     * @return The minimum healthy instance value.
+     */
+
+    public Integer getValue() {
+        return this.value;
+    }
+
+    /**
+     * <p>
+     * The minimum healthy instance value.
+     * </p>
+     * 
+     * @param value
+     *        The minimum healthy instance value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MinimumHealthyHosts withValue(Integer value) {
+        setValue(value);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -551,10 +551,10 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getValue() != null)
-            sb.append("Value: ").append(getValue()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getValue() != null)
+            sb.append("Value: ").append(getValue());
         sb.append("}");
         return sb.toString();
     }
@@ -569,13 +569,13 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
         if (obj instanceof MinimumHealthyHosts == false)
             return false;
         MinimumHealthyHosts other = (MinimumHealthyHosts) obj;
-        if (other.getValue() == null ^ this.getValue() == null)
-            return false;
-        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
-            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getValue() == null ^ this.getValue() == null)
+            return false;
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
         return true;
     }
@@ -585,8 +585,8 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;
     }
 

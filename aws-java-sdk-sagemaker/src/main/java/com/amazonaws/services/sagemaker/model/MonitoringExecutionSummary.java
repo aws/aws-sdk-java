@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,7 @@ public class MonitoringExecutionSummary implements Serializable, Cloneable, Stru
     private String processingJobArn;
     /**
      * <p>
-     * The name of teh endpoint used to run the monitoring job.
+     * The name of the endpoint used to run the monitoring job.
      * </p>
      */
     private String endpointName;
@@ -76,6 +76,18 @@ public class MonitoringExecutionSummary implements Serializable, Cloneable, Stru
      * </p>
      */
     private String failureReason;
+    /**
+     * <p>
+     * The name of the monitoring job.
+     * </p>
+     */
+    private String monitoringJobDefinitionName;
+    /**
+     * <p>
+     * The type of the monitoring job.
+     * </p>
+     */
+    private String monitoringType;
 
     /**
      * <p>
@@ -338,11 +350,11 @@ public class MonitoringExecutionSummary implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of teh endpoint used to run the monitoring job.
+     * The name of the endpoint used to run the monitoring job.
      * </p>
      * 
      * @param endpointName
-     *        The name of teh endpoint used to run the monitoring job.
+     *        The name of the endpoint used to run the monitoring job.
      */
 
     public void setEndpointName(String endpointName) {
@@ -351,10 +363,10 @@ public class MonitoringExecutionSummary implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of teh endpoint used to run the monitoring job.
+     * The name of the endpoint used to run the monitoring job.
      * </p>
      * 
-     * @return The name of teh endpoint used to run the monitoring job.
+     * @return The name of the endpoint used to run the monitoring job.
      */
 
     public String getEndpointName() {
@@ -363,11 +375,11 @@ public class MonitoringExecutionSummary implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of teh endpoint used to run the monitoring job.
+     * The name of the endpoint used to run the monitoring job.
      * </p>
      * 
      * @param endpointName
-     *        The name of teh endpoint used to run the monitoring job.
+     *        The name of the endpoint used to run the monitoring job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,6 +429,105 @@ public class MonitoringExecutionSummary implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The name of the monitoring job.
+     * </p>
+     * 
+     * @param monitoringJobDefinitionName
+     *        The name of the monitoring job.
+     */
+
+    public void setMonitoringJobDefinitionName(String monitoringJobDefinitionName) {
+        this.monitoringJobDefinitionName = monitoringJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * The name of the monitoring job.
+     * </p>
+     * 
+     * @return The name of the monitoring job.
+     */
+
+    public String getMonitoringJobDefinitionName() {
+        return this.monitoringJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * The name of the monitoring job.
+     * </p>
+     * 
+     * @param monitoringJobDefinitionName
+     *        The name of the monitoring job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MonitoringExecutionSummary withMonitoringJobDefinitionName(String monitoringJobDefinitionName) {
+        setMonitoringJobDefinitionName(monitoringJobDefinitionName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job.
+     * @see MonitoringType
+     */
+
+    public void setMonitoringType(String monitoringType) {
+        this.monitoringType = monitoringType;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job.
+     * </p>
+     * 
+     * @return The type of the monitoring job.
+     * @see MonitoringType
+     */
+
+    public String getMonitoringType() {
+        return this.monitoringType;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public MonitoringExecutionSummary withMonitoringType(String monitoringType) {
+        setMonitoringType(monitoringType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public MonitoringExecutionSummary withMonitoringType(MonitoringType monitoringType) {
+        this.monitoringType = monitoringType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -443,7 +554,11 @@ public class MonitoringExecutionSummary implements Serializable, Cloneable, Stru
         if (getEndpointName() != null)
             sb.append("EndpointName: ").append(getEndpointName()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: ").append(getFailureReason());
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getMonitoringJobDefinitionName() != null)
+            sb.append("MonitoringJobDefinitionName: ").append(getMonitoringJobDefinitionName()).append(",");
+        if (getMonitoringType() != null)
+            sb.append("MonitoringType: ").append(getMonitoringType());
         sb.append("}");
         return sb.toString();
     }
@@ -490,6 +605,14 @@ public class MonitoringExecutionSummary implements Serializable, Cloneable, Stru
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getMonitoringJobDefinitionName() == null ^ this.getMonitoringJobDefinitionName() == null)
+            return false;
+        if (other.getMonitoringJobDefinitionName() != null && other.getMonitoringJobDefinitionName().equals(this.getMonitoringJobDefinitionName()) == false)
+            return false;
+        if (other.getMonitoringType() == null ^ this.getMonitoringType() == null)
+            return false;
+        if (other.getMonitoringType() != null && other.getMonitoringType().equals(this.getMonitoringType()) == false)
+            return false;
         return true;
     }
 
@@ -506,6 +629,8 @@ public class MonitoringExecutionSummary implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getProcessingJobArn() == null) ? 0 : getProcessingJobArn().hashCode());
         hashCode = prime * hashCode + ((getEndpointName() == null) ? 0 : getEndpointName().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringJobDefinitionName() == null) ? 0 : getMonitoringJobDefinitionName().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringType() == null) ? 0 : getMonitoringType().hashCode());
         return hashCode;
     }
 

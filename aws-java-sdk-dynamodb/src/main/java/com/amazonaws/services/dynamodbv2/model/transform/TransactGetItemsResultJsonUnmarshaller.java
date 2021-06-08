@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,11 +51,14 @@ public class TransactGetItemsResultJsonUnmarshaller implements Unmarshaller<Tran
                 if (context.testExpression("ConsumedCapacity", targetDepth)) {
                     context.nextToken();
                     transactGetItemsResult.setConsumedCapacity(new ListUnmarshaller<ConsumedCapacity>(ConsumedCapacityJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Responses", targetDepth)) {
                     context.nextToken();
-                    transactGetItemsResult.setResponses(new ListUnmarshaller<ItemResponse>(ItemResponseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    transactGetItemsResult.setResponses(new ListUnmarshaller<ItemResponse>(ItemResponseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

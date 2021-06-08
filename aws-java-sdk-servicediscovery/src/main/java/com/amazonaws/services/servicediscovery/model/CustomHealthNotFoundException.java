@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The health check for the instance that is specified by <code>ServiceId</code> and <code>InstanceId</code> is not a
+ * The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a
  * custom health check.
  * </p>
  */

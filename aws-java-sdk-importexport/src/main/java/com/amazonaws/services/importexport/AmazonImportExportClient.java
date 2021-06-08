@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -343,6 +343,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new CancelJobRequestMarshaller().marshall(super.beforeMarshalling(cancelJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
@@ -353,6 +355,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             }
 
             StaxResponseHandler<CancelJobResult> responseHandler = new StaxResponseHandler<CancelJobResult>(new CancelJobResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -432,6 +435,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new CreateJobRequestMarshaller().marshall(super.beforeMarshalling(createJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJob");
@@ -442,6 +447,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             }
 
             StaxResponseHandler<CreateJobResult> responseHandler = new StaxResponseHandler<CreateJobResult>(new CreateJobResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -496,6 +502,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new GetShippingLabelRequestMarshaller().marshall(super.beforeMarshalling(getShippingLabelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetShippingLabel");
@@ -507,6 +515,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
 
             StaxResponseHandler<GetShippingLabelResult> responseHandler = new StaxResponseHandler<GetShippingLabelResult>(
                     new GetShippingLabelResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -559,6 +568,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new GetStatusRequestMarshaller().marshall(super.beforeMarshalling(getStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStatus");
@@ -569,6 +580,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             }
 
             StaxResponseHandler<GetStatusResult> responseHandler = new StaxResponseHandler<GetStatusResult>(new GetStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -617,6 +629,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new ListJobsRequestMarshaller().marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
@@ -627,6 +641,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             }
 
             StaxResponseHandler<ListJobsResult> responseHandler = new StaxResponseHandler<ListJobsResult>(new ListJobsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -714,6 +729,8 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
                 request = new UpdateJobRequestMarshaller().marshall(super.beforeMarshalling(updateJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ImportExport");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJob");
@@ -724,6 +741,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             }
 
             StaxResponseHandler<UpdateJobResult> responseHandler = new StaxResponseHandler<UpdateJobResult>(new UpdateJobResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -803,6 +821,11 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,10 @@ public class DeleteModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
+     * The name or Amazon Resource Name (ARN) of the model package to delete.
+     * </p>
+     * <p>
+     * When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
      */
@@ -35,13 +38,18 @@ public class DeleteModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
+     * The name or Amazon Resource Name (ARN) of the model package to delete.
+     * </p>
+     * <p>
+     * When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
      * 
      * @param modelPackageName
-     *        The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9,
-     *        and - (hyphen).
+     *        The name or Amazon Resource Name (ARN) of the model package to delete.</p>
+     *        <p>
+     *        When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
+     *        (hyphen).
      */
 
     public void setModelPackageName(String modelPackageName) {
@@ -50,12 +58,17 @@ public class DeleteModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
+     * The name or Amazon Resource Name (ARN) of the model package to delete.
+     * </p>
+     * <p>
+     * When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
      * 
-     * @return The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9,
-     *         and - (hyphen).
+     * @return The name or Amazon Resource Name (ARN) of the model package to delete.</p>
+     *         <p>
+     *         When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
+     *         (hyphen).
      */
 
     public String getModelPackageName() {
@@ -64,13 +77,18 @@ public class DeleteModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
+     * The name or Amazon Resource Name (ARN) of the model package to delete.
+     * </p>
+     * <p>
+     * When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
      * 
      * @param modelPackageName
-     *        The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9,
-     *        and - (hyphen).
+     *        The name or Amazon Resource Name (ARN) of the model package to delete.</p>
+     *        <p>
+     *        When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
+     *        (hyphen).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

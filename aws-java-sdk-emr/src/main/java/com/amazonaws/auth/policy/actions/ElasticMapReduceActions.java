@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,20 +37,34 @@ public enum ElasticMapReduceActions implements Action {
     CancelSteps("elasticmapreduce:CancelSteps"),
     /** Action for the CreateSecurityConfiguration operation. */
     CreateSecurityConfiguration("elasticmapreduce:CreateSecurityConfiguration"),
+    /** Action for the CreateStudio operation. */
+    CreateStudio("elasticmapreduce:CreateStudio"),
+    /** Action for the CreateStudioSessionMapping operation. */
+    CreateStudioSessionMapping("elasticmapreduce:CreateStudioSessionMapping"),
     /** Action for the DeleteSecurityConfiguration operation. */
     DeleteSecurityConfiguration("elasticmapreduce:DeleteSecurityConfiguration"),
+    /** Action for the DeleteStudio operation. */
+    DeleteStudio("elasticmapreduce:DeleteStudio"),
+    /** Action for the DeleteStudioSessionMapping operation. */
+    DeleteStudioSessionMapping("elasticmapreduce:DeleteStudioSessionMapping"),
     /** Action for the DescribeCluster operation. */
     DescribeCluster("elasticmapreduce:DescribeCluster"),
     /** Action for the DescribeJobFlows operation. */
     DescribeJobFlows("elasticmapreduce:DescribeJobFlows"),
+    /** Action for the DescribeNotebookExecution operation. */
+    DescribeNotebookExecution("elasticmapreduce:DescribeNotebookExecution"),
     /** Action for the DescribeSecurityConfiguration operation. */
     DescribeSecurityConfiguration("elasticmapreduce:DescribeSecurityConfiguration"),
     /** Action for the DescribeStep operation. */
     DescribeStep("elasticmapreduce:DescribeStep"),
+    /** Action for the DescribeStudio operation. */
+    DescribeStudio("elasticmapreduce:DescribeStudio"),
     /** Action for the GetBlockPublicAccessConfiguration operation. */
     GetBlockPublicAccessConfiguration("elasticmapreduce:GetBlockPublicAccessConfiguration"),
     /** Action for the GetManagedScalingPolicy operation. */
     GetManagedScalingPolicy("elasticmapreduce:GetManagedScalingPolicy"),
+    /** Action for the GetStudioSessionMapping operation. */
+    GetStudioSessionMapping("elasticmapreduce:GetStudioSessionMapping"),
     /** Action for the ListBootstrapActions operation. */
     ListBootstrapActions("elasticmapreduce:ListBootstrapActions"),
     /** Action for the ListClusters operation. */
@@ -61,10 +75,16 @@ public enum ElasticMapReduceActions implements Action {
     ListInstanceGroups("elasticmapreduce:ListInstanceGroups"),
     /** Action for the ListInstances operation. */
     ListInstances("elasticmapreduce:ListInstances"),
+    /** Action for the ListNotebookExecutions operation. */
+    ListNotebookExecutions("elasticmapreduce:ListNotebookExecutions"),
     /** Action for the ListSecurityConfigurations operation. */
     ListSecurityConfigurations("elasticmapreduce:ListSecurityConfigurations"),
     /** Action for the ListSteps operation. */
     ListSteps("elasticmapreduce:ListSteps"),
+    /** Action for the ListStudioSessionMappings operation. */
+    ListStudioSessionMappings("elasticmapreduce:ListStudioSessionMappings"),
+    /** Action for the ListStudios operation. */
+    ListStudios("elasticmapreduce:ListStudios"),
     /** Action for the ModifyCluster operation. */
     ModifyCluster("elasticmapreduce:ModifyCluster"),
     /** Action for the ModifyInstanceFleet operation. */
@@ -89,8 +109,16 @@ public enum ElasticMapReduceActions implements Action {
     SetTerminationProtection("elasticmapreduce:SetTerminationProtection"),
     /** Action for the SetVisibleToAllUsers operation. */
     SetVisibleToAllUsers("elasticmapreduce:SetVisibleToAllUsers"),
+    /** Action for the StartNotebookExecution operation. */
+    StartNotebookExecution("elasticmapreduce:StartNotebookExecution"),
+    /** Action for the StopNotebookExecution operation. */
+    StopNotebookExecution("elasticmapreduce:StopNotebookExecution"),
     /** Action for the TerminateJobFlows operation. */
     TerminateJobFlows("elasticmapreduce:TerminateJobFlows"),
+    /** Action for the UpdateStudio operation. */
+    UpdateStudio("elasticmapreduce:UpdateStudio"),
+    /** Action for the UpdateStudioSessionMapping operation. */
+    UpdateStudioSessionMapping("elasticmapreduce:UpdateStudioSessionMapping"),
 
     ;
 
@@ -102,5 +130,9 @@ public enum ElasticMapReduceActions implements Action {
 
     public String getActionName() {
         return this.action;
+    }
+
+    public boolean isNotType() {
+        return false;
     }
 }

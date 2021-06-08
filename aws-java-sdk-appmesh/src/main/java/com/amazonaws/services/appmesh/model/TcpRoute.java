@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private TcpRouteAction action;
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     */
+    private TcpTimeout timeout;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @param timeout
+     *        An object that represents types of timeouts.
+     */
+
+    public void setTimeout(TcpTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @return An object that represents types of timeouts.
+     */
+
+    public TcpTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @param timeout
+     *        An object that represents types of timeouts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TcpRoute withTimeout(TcpTimeout timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAction() != null)
-            sb.append("Action: ").append(getAction());
+            sb.append("Action: ").append(getAction()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class TcpRoute implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 

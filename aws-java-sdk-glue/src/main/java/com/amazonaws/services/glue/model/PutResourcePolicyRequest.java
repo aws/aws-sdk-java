@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,12 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     private String policyInJson;
     /**
      * <p>
+     * Do not use. For internal use only.
+     * </p>
+     */
+    private String resourceArn;
+    /**
+     * <p>
      * The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to
      * prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.
      * </p>
@@ -41,11 +47,34 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to
-     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the
+     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.
      * </p>
      */
     private String policyExistsCondition;
+    /**
+     * <p>
+     * If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog
+     * resources:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * By directly updating the resource policy with <code>PutResourePolicy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.
+     * </p>
+     */
+    private String enableHybrid;
 
     /**
      * <p>
@@ -84,6 +113,46 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public PutResourcePolicyRequest withPolicyInJson(String policyInJson) {
         setPolicyInJson(policyInJson);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Do not use. For internal use only.
+     * </p>
+     * 
+     * @param resourceArn
+     *        Do not use. For internal use only.
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * Do not use. For internal use only.
+     * </p>
+     * 
+     * @return Do not use. For internal use only.
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * Do not use. For internal use only.
+     * </p>
+     * 
+     * @param resourceArn
+     *        Do not use. For internal use only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutResourcePolicyRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
         return this;
     }
 
@@ -139,13 +208,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to
-     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the
+     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.
      * </p>
      * 
      * @param policyExistsCondition
      *        A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used
-     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend
+     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend
      *        on the existence of a policy.
      * @see ExistCondition
      */
@@ -157,12 +226,12 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to
-     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the
+     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.
      * </p>
      * 
      * @return A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used
-     *         to create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend
+     *         to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend
      *         on the existence of a policy.
      * @see ExistCondition
      */
@@ -174,13 +243,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to
-     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the
+     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.
      * </p>
      * 
      * @param policyExistsCondition
      *        A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used
-     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend
+     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend
      *        on the existence of a policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExistCondition
@@ -194,13 +263,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to
-     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the
+     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.
      * </p>
      * 
      * @param policyExistsCondition
      *        A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used
-     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend
+     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend
      *        on the existence of a policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExistCondition
@@ -208,6 +277,197 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public PutResourcePolicyRequest withPolicyExistsCondition(ExistCondition policyExistsCondition) {
         this.policyExistsCondition = policyExistsCondition.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog
+     * resources:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * By directly updating the resource policy with <code>PutResourePolicy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.
+     * </p>
+     * 
+     * @param enableHybrid
+     *        If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data
+     *        Catalog resources:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        By directly updating the resource policy with <code>PutResourePolicy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account
+     *        access, otherwise the call fails. Default is 'FALSE'.
+     * @see EnableHybridValues
+     */
+
+    public void setEnableHybrid(String enableHybrid) {
+        this.enableHybrid = enableHybrid;
+    }
+
+    /**
+     * <p>
+     * If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog
+     * resources:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * By directly updating the resource policy with <code>PutResourePolicy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.
+     * </p>
+     * 
+     * @return If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data
+     *         Catalog resources:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         By directly updating the resource policy with <code>PutResourePolicy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account
+     *         access, otherwise the call fails. Default is 'FALSE'.
+     * @see EnableHybridValues
+     */
+
+    public String getEnableHybrid() {
+        return this.enableHybrid;
+    }
+
+    /**
+     * <p>
+     * If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog
+     * resources:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * By directly updating the resource policy with <code>PutResourePolicy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.
+     * </p>
+     * 
+     * @param enableHybrid
+     *        If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data
+     *        Catalog resources:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        By directly updating the resource policy with <code>PutResourePolicy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account
+     *        access, otherwise the call fails. Default is 'FALSE'.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnableHybridValues
+     */
+
+    public PutResourcePolicyRequest withEnableHybrid(String enableHybrid) {
+        setEnableHybrid(enableHybrid);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog
+     * resources:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * By directly updating the resource policy with <code>PutResourePolicy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.
+     * </p>
+     * 
+     * @param enableHybrid
+     *        If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data
+     *        Catalog resources:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        By directly updating the resource policy with <code>PutResourePolicy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account
+     *        access, otherwise the call fails. Default is 'FALSE'.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnableHybridValues
+     */
+
+    public PutResourcePolicyRequest withEnableHybrid(EnableHybridValues enableHybrid) {
+        this.enableHybrid = enableHybrid.toString();
         return this;
     }
 
@@ -225,10 +485,14 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         sb.append("{");
         if (getPolicyInJson() != null)
             sb.append("PolicyInJson: ").append(getPolicyInJson()).append(",");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getPolicyHashCondition() != null)
             sb.append("PolicyHashCondition: ").append(getPolicyHashCondition()).append(",");
         if (getPolicyExistsCondition() != null)
-            sb.append("PolicyExistsCondition: ").append(getPolicyExistsCondition());
+            sb.append("PolicyExistsCondition: ").append(getPolicyExistsCondition()).append(",");
+        if (getEnableHybrid() != null)
+            sb.append("EnableHybrid: ").append(getEnableHybrid());
         sb.append("}");
         return sb.toString();
     }
@@ -247,6 +511,10 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getPolicyInJson() != null && other.getPolicyInJson().equals(this.getPolicyInJson()) == false)
             return false;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
         if (other.getPolicyHashCondition() == null ^ this.getPolicyHashCondition() == null)
             return false;
         if (other.getPolicyHashCondition() != null && other.getPolicyHashCondition().equals(this.getPolicyHashCondition()) == false)
@@ -254,6 +522,10 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         if (other.getPolicyExistsCondition() == null ^ this.getPolicyExistsCondition() == null)
             return false;
         if (other.getPolicyExistsCondition() != null && other.getPolicyExistsCondition().equals(this.getPolicyExistsCondition()) == false)
+            return false;
+        if (other.getEnableHybrid() == null ^ this.getEnableHybrid() == null)
+            return false;
+        if (other.getEnableHybrid() != null && other.getEnableHybrid().equals(this.getEnableHybrid()) == false)
             return false;
         return true;
     }
@@ -264,8 +536,10 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPolicyInJson() == null) ? 0 : getPolicyInJson().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getPolicyHashCondition() == null) ? 0 : getPolicyHashCondition().hashCode());
         hashCode = prime * hashCode + ((getPolicyExistsCondition() == null) ? 0 : getPolicyExistsCondition().hashCode());
+        hashCode = prime * hashCode + ((getEnableHybrid() == null) ? 0 : getEnableHybrid().hashCode());
         return hashCode;
     }
 

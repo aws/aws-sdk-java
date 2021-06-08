@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,24 +68,35 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * At expressions are useful for one-time schedules. Specify the time in UTC.
+     * At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run
+     * periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a
+     * regular interval.
+     * </p>
+     * <p>
+     * At and cron expressions use Universal Coordinated Time (UTC) by default.
+     * </p>
+     * <p>
+     * The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     * [Day_of_Week] [Year].
      * </p>
      * <p>
      * For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
-     * </p>
-     * <p>
-     * For examples of using these expressions, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      */
     private String schedule;
+    /**
+     * <p>
+     * The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an
+     * at or cron expression.
+     * </p>
+     */
+    private String timezone;
     /**
      * <p>
      * The identifier of the resource associated with the scaling policy. This string consists of the resource type and
@@ -157,6 +168,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -166,6 +183,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
      * </p>
      * </li>
      * </ul>
@@ -244,6 +267,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -257,18 +286,24 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
+     * </p>
+     * </li>
      * </ul>
      */
     private String scalableDimension;
     /**
      * <p>
-     * The date and time that the action is scheduled to begin.
+     * The date and time that the action is scheduled to begin, in UTC.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The date and time that the action is scheduled to end.
+     * The date and time that the action is scheduled to end, in UTC.
      * </p>
      */
     private java.util.Date endTime;
@@ -448,21 +483,25 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * At expressions are useful for one-time schedules. Specify the time in UTC.
+     * At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run
+     * periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a
+     * regular interval.
+     * </p>
+     * <p>
+     * At and cron expressions use Universal Coordinated Time (UTC) by default.
+     * </p>
+     * <p>
+     * The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     * [Day_of_Week] [Year].
      * </p>
      * <p>
      * For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
-     * </p>
-     * <p>
-     * For examples of using these expressions, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param schedule
@@ -485,21 +524,26 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        </ul>
      *        <p>
-     *        At expressions are useful for one-time schedules. Specify the time in UTC.
+     *        At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that
+     *        run periodically at a specified date and time, and rate expressions are useful for scheduled actions that
+     *        run at a regular interval.
+     *        </p>
+     *        <p>
+     *        At and cron expressions use Universal Coordinated Time (UTC) by default.
+     *        </p>
+     *        <p>
+     *        The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     *        [Day_of_Week] [Year].
      *        </p>
      *        <p>
      *        For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      *        <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      *        </p>
      *        <p>
-     *        For more information about cron expressions, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
-     *        >Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
-     *        </p>
-     *        <p>
-     *        For examples of using these expressions, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     *        >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     *        For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html"
+     *        >Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     *        Guide</i>.
      */
 
     public void setSchedule(String schedule) {
@@ -528,21 +572,25 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * At expressions are useful for one-time schedules. Specify the time in UTC.
+     * At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run
+     * periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a
+     * regular interval.
+     * </p>
+     * <p>
+     * At and cron expressions use Universal Coordinated Time (UTC) by default.
+     * </p>
+     * <p>
+     * The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     * [Day_of_Week] [Year].
      * </p>
      * <p>
      * For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
-     * </p>
-     * <p>
-     * For examples of using these expressions, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The schedule for this action. The following formats are supported:</p>
@@ -564,21 +612,26 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         </ul>
      *         <p>
-     *         At expressions are useful for one-time schedules. Specify the time in UTC.
+     *         At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that
+     *         run periodically at a specified date and time, and rate expressions are useful for scheduled actions that
+     *         run at a regular interval.
+     *         </p>
+     *         <p>
+     *         At and cron expressions use Universal Coordinated Time (UTC) by default.
+     *         </p>
+     *         <p>
+     *         The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month]
+     *         [Month] [Day_of_Week] [Year].
      *         </p>
      *         <p>
      *         For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      *         <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      *         </p>
      *         <p>
-     *         For more information about cron expressions, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
-     *         >Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
-     *         </p>
-     *         <p>
-     *         For examples of using these expressions, see <a href=
-     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     *         >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     *         For more information and examples, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html"
+     *         >Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     *         Guide</i>.
      */
 
     public String getSchedule() {
@@ -607,21 +660,25 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * <p>
-     * At expressions are useful for one-time schedules. Specify the time in UTC.
+     * At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that run
+     * periodically at a specified date and time, and rate expressions are useful for scheduled actions that run at a
+     * regular interval.
+     * </p>
+     * <p>
+     * At and cron expressions use Universal Coordinated Time (UTC) by default.
+     * </p>
+     * <p>
+     * The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     * [Day_of_Week] [Year].
      * </p>
      * <p>
      * For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      * </p>
      * <p>
-     * For more information about cron expressions, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
-     * </p>
-     * <p>
-     * For examples of using these expressions, see <a href=
-     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     * >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param schedule
@@ -644,26 +701,77 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        </ul>
      *        <p>
-     *        At expressions are useful for one-time schedules. Specify the time in UTC.
+     *        At expressions are useful for one-time schedules. Cron expressions are useful for scheduled actions that
+     *        run periodically at a specified date and time, and rate expressions are useful for scheduled actions that
+     *        run at a regular interval.
+     *        </p>
+     *        <p>
+     *        At and cron expressions use Universal Coordinated Time (UTC) by default.
+     *        </p>
+     *        <p>
+     *        The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month]
+     *        [Day_of_Week] [Year].
      *        </p>
      *        <p>
      *        For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      *        <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.
      *        </p>
      *        <p>
-     *        For more information about cron expressions, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
-     *        >Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
-     *        </p>
-     *        <p>
-     *        For examples of using these expressions, see <a href=
-     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html"
-     *        >Scheduled Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     *        For more information and examples, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html"
+     *        >Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduledAction withSchedule(String schedule) {
         setSchedule(schedule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an
+     * at or cron expression.
+     * </p>
+     * 
+     * @param timezone
+     *        The time zone used when referring to the date and time of a scheduled action, when the scheduled action
+     *        uses an at or cron expression.
+     */
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
+    }
+
+    /**
+     * <p>
+     * The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an
+     * at or cron expression.
+     * </p>
+     * 
+     * @return The time zone used when referring to the date and time of a scheduled action, when the scheduled action
+     *         uses an at or cron expression.
+     */
+
+    public String getTimezone() {
+        return this.timezone;
+    }
+
+    /**
+     * <p>
+     * The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an
+     * at or cron expression.
+     * </p>
+     * 
+     * @param timezone
+     *        The time zone used when referring to the date and time of a scheduled action, when the scheduled action
+     *        uses an at or cron expression.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledAction withTimezone(String timezone) {
+        setTimezone(timezone);
         return this;
     }
 
@@ -738,6 +846,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -747,6 +861,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
      * </p>
      * </li>
      * </ul>
@@ -820,6 +940,13 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
+     *        Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using
+     *        the endpoint ARN. Example:
+     *        <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *        the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *        <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -829,6 +956,13 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
      *        name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     *        <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>
+     *        .
      *        </p>
      *        </li>
      */
@@ -908,6 +1042,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -917,6 +1057,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
      * </p>
      * </li>
      * </ul>
@@ -990,6 +1136,13 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
+     *         Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified
+     *         using the endpoint ARN. Example:
+     *         <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *         the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *         <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -999,6 +1152,14 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
      *         name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
+     *         Example:
+     *         <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>
+     *         .
      *         </p>
      *         </li>
      */
@@ -1078,6 +1239,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -1087,6 +1254,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
      * </p>
      * </li>
      * </ul>
@@ -1160,6 +1333,13 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
+     *        Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using
+     *        the endpoint ARN. Example:
+     *        <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *        the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *        <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -1169,6 +1349,13 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
      *        name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     *        <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>
+     *        .
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1252,6 +1439,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1263,6 +1456,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
      * </p>
      * </li>
      * </ul>
@@ -1339,6 +1538,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
+     *        <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend entity recognizer endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
@@ -1352,6 +1557,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *        Amazon MSK cluster.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1434,6 +1645,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1445,6 +1662,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
      * </p>
      * </li>
      * </ul>
@@ -1520,6 +1743,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
+     *         <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *         for an Amazon Comprehend entity recognizer endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *         </p>
      *         </li>
@@ -1533,6 +1762,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *         table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *         Amazon MSK cluster.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1615,6 +1850,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1626,6 +1867,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
      * </p>
      * </li>
      * </ul>
@@ -1702,6 +1949,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
+     *        <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend entity recognizer endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
@@ -1715,6 +1968,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *        Amazon MSK cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1799,6 +2058,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1810,6 +2075,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
      * </p>
      * </li>
      * </ul>
@@ -1886,6 +2157,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
+     *        <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend entity recognizer endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
@@ -1901,6 +2178,12 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        table.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *        Amazon MSK cluster.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
@@ -1912,11 +2195,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to begin.
+     * The date and time that the action is scheduled to begin, in UTC.
      * </p>
      * 
      * @param startTime
-     *        The date and time that the action is scheduled to begin.
+     *        The date and time that the action is scheduled to begin, in UTC.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -1925,10 +2208,10 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to begin.
+     * The date and time that the action is scheduled to begin, in UTC.
      * </p>
      * 
-     * @return The date and time that the action is scheduled to begin.
+     * @return The date and time that the action is scheduled to begin, in UTC.
      */
 
     public java.util.Date getStartTime() {
@@ -1937,11 +2220,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to begin.
+     * The date and time that the action is scheduled to begin, in UTC.
      * </p>
      * 
      * @param startTime
-     *        The date and time that the action is scheduled to begin.
+     *        The date and time that the action is scheduled to begin, in UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1952,11 +2235,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to end.
+     * The date and time that the action is scheduled to end, in UTC.
      * </p>
      * 
      * @param endTime
-     *        The date and time that the action is scheduled to end.
+     *        The date and time that the action is scheduled to end, in UTC.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -1965,10 +2248,10 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to end.
+     * The date and time that the action is scheduled to end, in UTC.
      * </p>
      * 
-     * @return The date and time that the action is scheduled to end.
+     * @return The date and time that the action is scheduled to end, in UTC.
      */
 
     public java.util.Date getEndTime() {
@@ -1977,11 +2260,11 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time that the action is scheduled to end.
+     * The date and time that the action is scheduled to end, in UTC.
      * </p>
      * 
      * @param endTime
-     *        The date and time that the action is scheduled to end.
+     *        The date and time that the action is scheduled to end, in UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2105,6 +2388,8 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
             sb.append("ServiceNamespace: ").append(getServiceNamespace()).append(",");
         if (getSchedule() != null)
             sb.append("Schedule: ").append(getSchedule()).append(",");
+        if (getTimezone() != null)
+            sb.append("Timezone: ").append(getTimezone()).append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getScalableDimension() != null)
@@ -2147,6 +2432,10 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSchedule() != null && other.getSchedule().equals(this.getSchedule()) == false)
             return false;
+        if (other.getTimezone() == null ^ this.getTimezone() == null)
+            return false;
+        if (other.getTimezone() != null && other.getTimezone().equals(this.getTimezone()) == false)
+            return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
@@ -2183,6 +2472,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getScheduledActionARN() == null) ? 0 : getScheduledActionARN().hashCode());
         hashCode = prime * hashCode + ((getServiceNamespace() == null) ? 0 : getServiceNamespace().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
+        hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getScalableDimension() == null) ? 0 : getScalableDimension().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());

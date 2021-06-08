@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class StageState implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String stageName;
+
+    private StageExecution inboundExecution;
     /**
      * <p>
      * The state of the inbound transition, which is either enabled or disabled.
@@ -90,6 +92,32 @@ public class StageState implements Serializable, Cloneable, StructuredPojo {
 
     public StageState withStageName(String stageName) {
         setStageName(stageName);
+        return this;
+    }
+
+    /**
+     * @param inboundExecution
+     */
+
+    public void setInboundExecution(StageExecution inboundExecution) {
+        this.inboundExecution = inboundExecution;
+    }
+
+    /**
+     * @return
+     */
+
+    public StageExecution getInboundExecution() {
+        return this.inboundExecution;
+    }
+
+    /**
+     * @param inboundExecution
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StageState withInboundExecution(StageExecution inboundExecution) {
+        setInboundExecution(inboundExecution);
         return this;
     }
 
@@ -257,6 +285,8 @@ public class StageState implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getStageName() != null)
             sb.append("StageName: ").append(getStageName()).append(",");
+        if (getInboundExecution() != null)
+            sb.append("InboundExecution: ").append(getInboundExecution()).append(",");
         if (getInboundTransitionState() != null)
             sb.append("InboundTransitionState: ").append(getInboundTransitionState()).append(",");
         if (getActionStates() != null)
@@ -281,6 +311,10 @@ public class StageState implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStageName() != null && other.getStageName().equals(this.getStageName()) == false)
             return false;
+        if (other.getInboundExecution() == null ^ this.getInboundExecution() == null)
+            return false;
+        if (other.getInboundExecution() != null && other.getInboundExecution().equals(this.getInboundExecution()) == false)
+            return false;
         if (other.getInboundTransitionState() == null ^ this.getInboundTransitionState() == null)
             return false;
         if (other.getInboundTransitionState() != null && other.getInboundTransitionState().equals(this.getInboundTransitionState()) == false)
@@ -302,6 +336,7 @@ public class StageState implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStageName() == null) ? 0 : getStageName().hashCode());
+        hashCode = prime * hashCode + ((getInboundExecution() == null) ? 0 : getInboundExecution().hashCode());
         hashCode = prime * hashCode + ((getInboundTransitionState() == null) ? 0 : getInboundTransitionState().hashCode());
         hashCode = prime * hashCode + ((getActionStates() == null) ? 0 : getActionStates().hashCode());
         hashCode = prime * hashCode + ((getLatestExecution() == null) ? 0 : getLatestExecution().hashCode());

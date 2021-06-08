@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,62 +22,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Rule that controls how a fleet is scaled. Scaling policies are uniquely identified by the combination of name and
  * fleet ID.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>DescribeFleetCapacity</a>
+ * <b>Related actions</b>
  * </p>
- * </li>
- * <li>
  * <p>
- * <a>UpdateFleetCapacity</a>
+ * <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> | <a>DescribeEC2InstanceLimits</a> |
+ * <a>PutScalingPolicy</a> | <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a> | <a>StopFleetActions</a> |
+ * <a>StartFleetActions</a> | <a href=
+ * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
+ * >All APIs by task</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeEC2InstanceLimits</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * Manage scaling policies:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>PutScalingPolicy</a> (auto-scaling)
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeScalingPolicies</a> (auto-scaling)
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteScalingPolicy</a> (auto-scaling)
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * Manage fleet actions:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>StartFleetActions</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>StopFleetActions</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ScalingPolicy" target="_top">AWS API
  *      Documentation</a>
@@ -87,13 +41,21 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet that is associated with this scaling policy.
+     * A unique identifier for the fleet that is associated with this scaling policy.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    private String fleetArn;
+    /**
+     * <p>
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.
      * </p>
      */
     private String name;
@@ -275,18 +237,31 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private String policyType;
     /**
      * <p>
-     * The settings for a target-based scaling policy.
+     * An object that contains settings for a target-based scaling policy.
      * </p>
      */
     private TargetConfiguration targetConfiguration;
+    /**
+     * <p>
+     * The current status of the fleet's scaling policies in a requested fleet location. The status
+     * <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed
+     * for the location.
+     * </p>
+     */
+    private String updateStatus;
+    /**
+     * <p>
+     * </p>
+     */
+    private String location;
 
     /**
      * <p>
-     * A unique identifier for a fleet that is associated with this scaling policy.
+     * A unique identifier for the fleet that is associated with this scaling policy.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that is associated with this scaling policy.
+     *        A unique identifier for the fleet that is associated with this scaling policy.
      */
 
     public void setFleetId(String fleetId) {
@@ -295,10 +270,10 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet that is associated with this scaling policy.
+     * A unique identifier for the fleet that is associated with this scaling policy.
      * </p>
      * 
-     * @return A unique identifier for a fleet that is associated with this scaling policy.
+     * @return A unique identifier for the fleet that is associated with this scaling policy.
      */
 
     public String getFleetId() {
@@ -307,11 +282,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet that is associated with this scaling policy.
+     * A unique identifier for the fleet that is associated with this scaling policy.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that is associated with this scaling policy.
+     *        A unique identifier for the fleet that is associated with this scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,11 +297,67 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public void setFleetArn(String fleetArn) {
+        this.fleetArn = fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public String getFleetArn() {
+        return this.fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingPolicy withFleetArn(String fleetArn) {
+        setFleetArn(fleetArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     *        A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be
+     *        unique.
      */
 
     public void setName(String name) {
@@ -335,10 +366,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.
      * </p>
      * 
-     * @return A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * @return A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be
+     *         unique.
      */
 
     public String getName() {
@@ -347,11 +379,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     *        A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be
+     *        unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2121,11 +2154,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for a target-based scaling policy.
+     * An object that contains settings for a target-based scaling policy.
      * </p>
      * 
      * @param targetConfiguration
-     *        The settings for a target-based scaling policy.
+     *        An object that contains settings for a target-based scaling policy.
      */
 
     public void setTargetConfiguration(TargetConfiguration targetConfiguration) {
@@ -2134,10 +2167,10 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for a target-based scaling policy.
+     * An object that contains settings for a target-based scaling policy.
      * </p>
      * 
-     * @return The settings for a target-based scaling policy.
+     * @return An object that contains settings for a target-based scaling policy.
      */
 
     public TargetConfiguration getTargetConfiguration() {
@@ -2146,16 +2179,144 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for a target-based scaling policy.
+     * An object that contains settings for a target-based scaling policy.
      * </p>
      * 
      * @param targetConfiguration
-     *        The settings for a target-based scaling policy.
+     *        An object that contains settings for a target-based scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withTargetConfiguration(TargetConfiguration targetConfiguration) {
         setTargetConfiguration(targetConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the fleet's scaling policies in a requested fleet location. The status
+     * <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed
+     * for the location.
+     * </p>
+     * 
+     * @param updateStatus
+     *        The current status of the fleet's scaling policies in a requested fleet location. The status
+     *        <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been
+     *        completed for the location.
+     * @see LocationUpdateStatus
+     */
+
+    public void setUpdateStatus(String updateStatus) {
+        this.updateStatus = updateStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of the fleet's scaling policies in a requested fleet location. The status
+     * <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed
+     * for the location.
+     * </p>
+     * 
+     * @return The current status of the fleet's scaling policies in a requested fleet location. The status
+     *         <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been
+     *         completed for the location.
+     * @see LocationUpdateStatus
+     */
+
+    public String getUpdateStatus() {
+        return this.updateStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of the fleet's scaling policies in a requested fleet location. The status
+     * <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed
+     * for the location.
+     * </p>
+     * 
+     * @param updateStatus
+     *        The current status of the fleet's scaling policies in a requested fleet location. The status
+     *        <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been
+     *        completed for the location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocationUpdateStatus
+     */
+
+    public ScalingPolicy withUpdateStatus(String updateStatus) {
+        setUpdateStatus(updateStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the fleet's scaling policies in a requested fleet location. The status
+     * <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed
+     * for the location.
+     * </p>
+     * 
+     * @param updateStatus
+     *        The current status of the fleet's scaling policies in a requested fleet location. The status
+     *        <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been
+     *        completed for the location.
+     * @see LocationUpdateStatus
+     */
+
+    public void setUpdateStatus(LocationUpdateStatus updateStatus) {
+        withUpdateStatus(updateStatus);
+    }
+
+    /**
+     * <p>
+     * The current status of the fleet's scaling policies in a requested fleet location. The status
+     * <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed
+     * for the location.
+     * </p>
+     * 
+     * @param updateStatus
+     *        The current status of the fleet's scaling policies in a requested fleet location. The status
+     *        <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been
+     *        completed for the location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocationUpdateStatus
+     */
+
+    public ScalingPolicy withUpdateStatus(LocationUpdateStatus updateStatus) {
+        this.updateStatus = updateStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * </p>
+     * 
+     * @param location
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * </p>
+     * 
+     * @return
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * </p>
+     * 
+     * @param location
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingPolicy withLocation(String location) {
+        setLocation(location);
         return this;
     }
 
@@ -2173,6 +2334,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getFleetId() != null)
             sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getFleetArn() != null)
+            sb.append("FleetArn: ").append(getFleetArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
@@ -2192,7 +2355,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
         if (getPolicyType() != null)
             sb.append("PolicyType: ").append(getPolicyType()).append(",");
         if (getTargetConfiguration() != null)
-            sb.append("TargetConfiguration: ").append(getTargetConfiguration());
+            sb.append("TargetConfiguration: ").append(getTargetConfiguration()).append(",");
+        if (getUpdateStatus() != null)
+            sb.append("UpdateStatus: ").append(getUpdateStatus()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -2210,6 +2377,10 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
         if (other.getFleetId() == null ^ this.getFleetId() == null)
             return false;
         if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
+            return false;
+        if (other.getFleetArn() == null ^ this.getFleetArn() == null)
+            return false;
+        if (other.getFleetArn() != null && other.getFleetArn().equals(this.getFleetArn()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -2251,6 +2422,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTargetConfiguration() != null && other.getTargetConfiguration().equals(this.getTargetConfiguration()) == false)
             return false;
+        if (other.getUpdateStatus() == null ^ this.getUpdateStatus() == null)
+            return false;
+        if (other.getUpdateStatus() != null && other.getUpdateStatus().equals(this.getUpdateStatus()) == false)
+            return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         return true;
     }
 
@@ -2260,6 +2439,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getFleetArn() == null) ? 0 : getFleetArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getScalingAdjustment() == null) ? 0 : getScalingAdjustment().hashCode());
@@ -2270,6 +2450,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
         hashCode = prime * hashCode + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
         hashCode = prime * hashCode + ((getTargetConfiguration() == null) ? 0 : getTargetConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getUpdateStatus() == null) ? 0 : getUpdateStatus().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

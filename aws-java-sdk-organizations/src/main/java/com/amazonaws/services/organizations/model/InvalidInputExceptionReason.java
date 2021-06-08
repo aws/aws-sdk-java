@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,9 @@ public enum InvalidInputExceptionReason {
     UNRECOGNIZED_SERVICE_PRINCIPAL("UNRECOGNIZED_SERVICE_PRINCIPAL"),
     INVALID_ROLE_NAME("INVALID_ROLE_NAME"),
     INVALID_SYSTEM_TAGS_PARAMETER("INVALID_SYSTEM_TAGS_PARAMETER"),
-    TARGET_NOT_SUPPORTED("TARGET_NOT_SUPPORTED");
+    DUPLICATE_TAG_KEY("DUPLICATE_TAG_KEY"),
+    TARGET_NOT_SUPPORTED("TARGET_NOT_SUPPORTED"),
+    INVALID_EMAIL_ADDRESS_TARGET("INVALID_EMAIL_ADDRESS_TARGET");
 
     private String value;
 

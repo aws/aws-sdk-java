@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ContainerSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Settings for MP4 segments in CMAF */
+    /** These settings relate to the fragmented MP4 container for the segments in your CMAF outputs. */
     private CmfcSettings cmfcSettings;
     /**
      * Container for this output. Some containers require a container settings object. If not specified, the default
@@ -45,22 +45,30 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
      * to locate specific data within the asset.
      */
     private M2tsSettings m2tsSettings;
-    /** Settings for TS segments in HLS */
+    /**
+     * These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS
+     * outputs.
+     */
     private M3u8Settings m3u8Settings;
-    /** Settings for MOV Container. */
+    /** These settings relate to your QuickTime MOV output container. */
     private MovSettings movSettings;
-    /** Settings for MP4 container. You can create audio-only AAC outputs with this container. */
+    /**
+     * These settings relate to your MP4 output container. You can create audio only outputs with this container. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html
+     * #output-codecs-and-containers-supported-for-audio-only.
+     */
     private Mp4Settings mp4Settings;
-    /** Settings for MP4 segments in DASH */
+    /** These settings relate to the fragmented MP4 container for the segments in your DASH outputs. */
     private MpdSettings mpdSettings;
-    /** MXF settings */
+    /** These settings relate to your MXF output container. */
     private MxfSettings mxfSettings;
 
     /**
-     * Settings for MP4 segments in CMAF
+     * These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
      * 
      * @param cmfcSettings
-     *        Settings for MP4 segments in CMAF
+     *        These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
      */
 
     public void setCmfcSettings(CmfcSettings cmfcSettings) {
@@ -68,9 +76,9 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MP4 segments in CMAF
+     * These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
      * 
-     * @return Settings for MP4 segments in CMAF
+     * @return These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
      */
 
     public CmfcSettings getCmfcSettings() {
@@ -78,10 +86,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MP4 segments in CMAF
+     * These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
      * 
      * @param cmfcSettings
-     *        Settings for MP4 segments in CMAF
+     *        These settings relate to the fragmented MP4 container for the segments in your CMAF outputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,10 +262,12 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for TS segments in HLS
+     * These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS
+     * outputs.
      * 
      * @param m3u8Settings
-     *        Settings for TS segments in HLS
+     *        These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in
+     *        your HLS outputs.
      */
 
     public void setM3u8Settings(M3u8Settings m3u8Settings) {
@@ -265,9 +275,11 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for TS segments in HLS
+     * These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS
+     * outputs.
      * 
-     * @return Settings for TS segments in HLS
+     * @return These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in
+     *         your HLS outputs.
      */
 
     public M3u8Settings getM3u8Settings() {
@@ -275,10 +287,12 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for TS segments in HLS
+     * These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in your HLS
+     * outputs.
      * 
      * @param m3u8Settings
-     *        Settings for TS segments in HLS
+     *        These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for the MPEG2-TS segments in
+     *        your HLS outputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,10 +302,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MOV Container.
+     * These settings relate to your QuickTime MOV output container.
      * 
      * @param movSettings
-     *        Settings for MOV Container.
+     *        These settings relate to your QuickTime MOV output container.
      */
 
     public void setMovSettings(MovSettings movSettings) {
@@ -299,9 +313,9 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MOV Container.
+     * These settings relate to your QuickTime MOV output container.
      * 
-     * @return Settings for MOV Container.
+     * @return These settings relate to your QuickTime MOV output container.
      */
 
     public MovSettings getMovSettings() {
@@ -309,10 +323,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MOV Container.
+     * These settings relate to your QuickTime MOV output container.
      * 
      * @param movSettings
-     *        Settings for MOV Container.
+     *        These settings relate to your QuickTime MOV output container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,10 +336,16 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MP4 container. You can create audio-only AAC outputs with this container.
+     * These settings relate to your MP4 output container. You can create audio only outputs with this container. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html
+     * #output-codecs-and-containers-supported-for-audio-only.
      * 
      * @param mp4Settings
-     *        Settings for MP4 container. You can create audio-only AAC outputs with this container.
+     *        These settings relate to your MP4 output container. You can create audio only outputs with this container.
+     *        For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio
+     *        -only.html#output-codecs-and-containers-supported-for-audio-only.
      */
 
     public void setMp4Settings(Mp4Settings mp4Settings) {
@@ -333,9 +353,15 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MP4 container. You can create audio-only AAC outputs with this container.
+     * These settings relate to your MP4 output container. You can create audio only outputs with this container. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html
+     * #output-codecs-and-containers-supported-for-audio-only.
      * 
-     * @return Settings for MP4 container. You can create audio-only AAC outputs with this container.
+     * @return These settings relate to your MP4 output container. You can create audio only outputs with this
+     *         container. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers
+     *         -audio-only.html#output-codecs-and-containers-supported-for-audio-only.
      */
 
     public Mp4Settings getMp4Settings() {
@@ -343,10 +369,16 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MP4 container. You can create audio-only AAC outputs with this container.
+     * These settings relate to your MP4 output container. You can create audio only outputs with this container. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio-only.html
+     * #output-codecs-and-containers-supported-for-audio-only.
      * 
      * @param mp4Settings
-     *        Settings for MP4 container. You can create audio-only AAC outputs with this container.
+     *        These settings relate to your MP4 output container. You can create audio only outputs with this container.
+     *        For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/supported-codecs-containers-audio
+     *        -only.html#output-codecs-and-containers-supported-for-audio-only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,10 +388,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MP4 segments in DASH
+     * These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
      * 
      * @param mpdSettings
-     *        Settings for MP4 segments in DASH
+     *        These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
      */
 
     public void setMpdSettings(MpdSettings mpdSettings) {
@@ -367,9 +399,9 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MP4 segments in DASH
+     * These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
      * 
-     * @return Settings for MP4 segments in DASH
+     * @return These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
      */
 
     public MpdSettings getMpdSettings() {
@@ -377,10 +409,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Settings for MP4 segments in DASH
+     * These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
      * 
      * @param mpdSettings
-     *        Settings for MP4 segments in DASH
+     *        These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -390,10 +422,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * MXF settings
+     * These settings relate to your MXF output container.
      * 
      * @param mxfSettings
-     *        MXF settings
+     *        These settings relate to your MXF output container.
      */
 
     public void setMxfSettings(MxfSettings mxfSettings) {
@@ -401,9 +433,9 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * MXF settings
+     * These settings relate to your MXF output container.
      * 
-     * @return MXF settings
+     * @return These settings relate to your MXF output container.
      */
 
     public MxfSettings getMxfSettings() {
@@ -411,10 +443,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * MXF settings
+     * These settings relate to your MXF output container.
      * 
      * @param mxfSettings
-     *        MXF settings
+     *        These settings relate to your MXF output container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

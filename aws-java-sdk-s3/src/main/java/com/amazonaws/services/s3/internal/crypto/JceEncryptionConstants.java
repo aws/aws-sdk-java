@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,9 +22,6 @@ public class JceEncryptionConstants {
 
     /** Name of the symmetric encryption algorithm */
     public static final String SYMMETRIC_KEY_ALGORITHM = "AES";
-
-    /** Name of the algorithm, mode, and padding we will use in the symmetric cipher for encryption */
-    public static final String SYMMETRIC_CIPHER_METHOD = "AES/CBC/PKCS5Padding";
 
     /** Minimum length of the generated symmetric key */
     public static final int SYMMETRIC_KEY_LENGTH = 256;

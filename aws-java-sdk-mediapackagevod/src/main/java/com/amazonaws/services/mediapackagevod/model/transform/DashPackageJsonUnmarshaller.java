@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,15 +50,23 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("dashManifests", targetDepth)) {
                     context.nextToken();
-                    dashPackage.setDashManifests(new ListUnmarshaller<DashManifest>(DashManifestJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dashPackage.setDashManifests(new ListUnmarshaller<DashManifest>(DashManifestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("encryption", targetDepth)) {
                     context.nextToken();
                     dashPackage.setEncryption(DashEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("includeEncoderConfigurationInSegments", targetDepth)) {
+                    context.nextToken();
+                    dashPackage.setIncludeEncoderConfigurationInSegments(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("periodTriggers", targetDepth)) {
                     context.nextToken();
-                    dashPackage.setPeriodTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dashPackage.setPeriodTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
                     context.nextToken();

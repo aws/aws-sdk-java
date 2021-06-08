@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,13 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Long nonCompliantResourcesCount;
+    /**
+     * <p>
+     * Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as
+     * suppressed.
+     * </p>
+     */
+    private Long suppressedNonCompliantResourcesCount;
     /**
      * <p>
      * The code of any error encountered when this check is performed during this audit. One of
@@ -265,6 +272,52 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as
+     * suppressed.
+     * </p>
+     * 
+     * @param suppressedNonCompliantResourcesCount
+     *        Describes how many of the non-compliant resources created during the evaluation of an audit check were
+     *        marked as suppressed.
+     */
+
+    public void setSuppressedNonCompliantResourcesCount(Long suppressedNonCompliantResourcesCount) {
+        this.suppressedNonCompliantResourcesCount = suppressedNonCompliantResourcesCount;
+    }
+
+    /**
+     * <p>
+     * Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as
+     * suppressed.
+     * </p>
+     * 
+     * @return Describes how many of the non-compliant resources created during the evaluation of an audit check were
+     *         marked as suppressed.
+     */
+
+    public Long getSuppressedNonCompliantResourcesCount() {
+        return this.suppressedNonCompliantResourcesCount;
+    }
+
+    /**
+     * <p>
+     * Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as
+     * suppressed.
+     * </p>
+     * 
+     * @param suppressedNonCompliantResourcesCount
+     *        Describes how many of the non-compliant resources created during the evaluation of an audit check were
+     *        marked as suppressed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuditCheckDetails withSuppressedNonCompliantResourcesCount(Long suppressedNonCompliantResourcesCount) {
+        setSuppressedNonCompliantResourcesCount(suppressedNonCompliantResourcesCount);
+        return this;
+    }
+
+    /**
+     * <p>
      * The code of any error encountered when this check is performed during this audit. One of
      * "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".
      * </p>
@@ -369,6 +422,8 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
             sb.append("TotalResourcesCount: ").append(getTotalResourcesCount()).append(",");
         if (getNonCompliantResourcesCount() != null)
             sb.append("NonCompliantResourcesCount: ").append(getNonCompliantResourcesCount()).append(",");
+        if (getSuppressedNonCompliantResourcesCount() != null)
+            sb.append("SuppressedNonCompliantResourcesCount: ").append(getSuppressedNonCompliantResourcesCount()).append(",");
         if (getErrorCode() != null)
             sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getMessage() != null)
@@ -403,6 +458,11 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getNonCompliantResourcesCount() != null && other.getNonCompliantResourcesCount().equals(this.getNonCompliantResourcesCount()) == false)
             return false;
+        if (other.getSuppressedNonCompliantResourcesCount() == null ^ this.getSuppressedNonCompliantResourcesCount() == null)
+            return false;
+        if (other.getSuppressedNonCompliantResourcesCount() != null
+                && other.getSuppressedNonCompliantResourcesCount().equals(this.getSuppressedNonCompliantResourcesCount()) == false)
+            return false;
         if (other.getErrorCode() == null ^ this.getErrorCode() == null)
             return false;
         if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
@@ -423,6 +483,7 @@ public class AuditCheckDetails implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCheckCompliant() == null) ? 0 : getCheckCompliant().hashCode());
         hashCode = prime * hashCode + ((getTotalResourcesCount() == null) ? 0 : getTotalResourcesCount().hashCode());
         hashCode = prime * hashCode + ((getNonCompliantResourcesCount() == null) ? 0 : getNonCompliantResourcesCount().hashCode());
+        hashCode = prime * hashCode + ((getSuppressedNonCompliantResourcesCount() == null) ? 0 : getSuppressedNonCompliantResourcesCount().hashCode());
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;

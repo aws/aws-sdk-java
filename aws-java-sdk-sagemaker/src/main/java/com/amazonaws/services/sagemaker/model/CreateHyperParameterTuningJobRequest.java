@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning job
-     * launches. The name must be unique within the same AWS account and AWS Region. The name must have { } to { }
+     * launches. The name must be unique within the same AWS account and AWS Region. The name must have 1 to 32
      * characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.
      * </p>
      */
@@ -51,7 +51,11 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private HyperParameterTrainingJobDefinition trainingJobDefinition;
-    /** <p/> */
+    /**
+     * <p>
+     * A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
+     * </p>
+     */
     private java.util.List<HyperParameterTrainingJobDefinition> trainingJobDefinitions;
     /**
      * <p>
@@ -78,7 +82,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * <p>
      * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
@@ -89,14 +93,14 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning job
-     * launches. The name must be unique within the same AWS account and AWS Region. The name must have { } to { }
+     * launches. The name must be unique within the same AWS account and AWS Region. The name must have 1 to 32
      * characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.
      * </p>
      * 
      * @param hyperParameterTuningJobName
      *        The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning
-     *        job launches. The name must be unique within the same AWS account and AWS Region. The name must have { }
-     *        to { } characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
+     *        job launches. The name must be unique within the same AWS account and AWS Region. The name must have 1 to
+     *        32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
      *        sensitive.
      */
 
@@ -107,13 +111,13 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning job
-     * launches. The name must be unique within the same AWS account and AWS Region. The name must have { } to { }
+     * launches. The name must be unique within the same AWS account and AWS Region. The name must have 1 to 32
      * characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.
      * </p>
      * 
      * @return The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning
-     *         job launches. The name must be unique within the same AWS account and AWS Region. The name must have { }
-     *         to { } characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
+     *         job launches. The name must be unique within the same AWS account and AWS Region. The name must have 1 to
+     *         32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
      *         sensitive.
      */
 
@@ -124,14 +128,14 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning job
-     * launches. The name must be unique within the same AWS account and AWS Region. The name must have { } to { }
+     * launches. The name must be unique within the same AWS account and AWS Region. The name must have 1 to 32
      * characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.
      * </p>
      * 
      * @param hyperParameterTuningJobName
      *        The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning
-     *        job launches. The name must be unique within the same AWS account and AWS Region. The name must have { }
-     *        to { } characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
+     *        job launches. The name must be unique within the same AWS account and AWS Region. The name must have 1 to
+     *        32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case
      *        sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -258,9 +262,11 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
+     * </p>
      * 
-     * @return
+     * @return A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
      */
 
     public java.util.List<HyperParameterTrainingJobDefinition> getTrainingJobDefinitions() {
@@ -268,9 +274,12 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
+     * </p>
      * 
      * @param trainingJobDefinitions
+     *        A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
      */
 
     public void setTrainingJobDefinitions(java.util.Collection<HyperParameterTrainingJobDefinition> trainingJobDefinitions) {
@@ -283,7 +292,9 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTrainingJobDefinitions(java.util.Collection)} or
@@ -291,6 +302,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param trainingJobDefinitions
+     *        A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,9 +317,12 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * <p/>
+     * <p>
+     * A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
+     * </p>
      * 
      * @param trainingJobDefinitions
+     *        A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -447,7 +462,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * <p>
      * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
@@ -455,8 +470,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * 
      * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
      *         example, by purpose, owner, or environment. For more information, see <a
-     *         href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-     *         Strategies</a>.</p>
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.</p>
      *         <p>
      *         Tags that you specify for the tuning job are also added to all training jobs that the tuning job
      *         launches.
@@ -470,7 +484,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * <p>
      * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
@@ -479,8 +493,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * @param tags
      *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
      *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-     *        Strategies</a>.</p>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.</p>
      *        <p>
      *        Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      */
@@ -498,7 +511,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * <p>
      * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
@@ -512,8 +525,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * @param tags
      *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
      *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-     *        Strategies</a>.</p>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.</p>
      *        <p>
      *        Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -533,7 +545,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
-     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * <p>
      * Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
@@ -542,8 +554,7 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * @param tags
      *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
      *        example, by purpose, owner, or environment. For more information, see <a
-     *        href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-     *        Strategies</a>.</p>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.</p>
      *        <p>
      *        Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.
      * @return Returns a reference to this object so that method calls can be chained together.

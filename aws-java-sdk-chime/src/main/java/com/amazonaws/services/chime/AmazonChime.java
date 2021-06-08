@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ import com.amazonaws.services.chime.model.*;
  * creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information
  * about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes some
  * server-side API actions to use with the Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
- * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon
- * Chime Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html"> Using the Amazon Chime SDK </a> in the
+ * <i>Amazon Chime Developer Guide</i>.
  * </p>
  * <p>
  * You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend
@@ -58,7 +58,7 @@ import com.amazonaws.services.chime.model.*;
  * Command Reference</i>.
  * </p>
  * </dd>
- * <dt>Using REST API</dt>
+ * <dt>Using REST APIs</dt>
  * <dd>
  * <p>
  * If you use REST to make API calls, you must authenticate your request by providing a signature. Amazon Chime supports
@@ -101,8 +101,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws AccessDeniedException
@@ -131,8 +130,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws AccessDeniedException
@@ -162,8 +160,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws AccessDeniedException
@@ -194,8 +191,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -223,8 +219,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ResourceLimitExceededException
@@ -245,8 +240,33 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be either users or bots.
-     * The member role designates whether the member is a chat room administrator or a general chat room member.
+     * Adds a specified number of users to a channel.
+     * </p>
+     * 
+     * @param batchCreateChannelMembershipRequest
+     * @return Result of the BatchCreateChannelMembership operation returned by the service.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @sample AmazonChime.BatchCreateChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchCreateChannelMembershipResult batchCreateChannelMembership(BatchCreateChannelMembershipRequest batchCreateChannelMembershipRequest);
+
+    /**
+     * <p>
+     * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be users or bots. The
+     * member role designates whether the member is a chat room administrator or a general chat room member.
      * </p>
      * 
      * @param batchCreateRoomMembershipRequest
@@ -258,8 +278,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -288,8 +307,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -312,7 +330,7 @@ public interface AmazonChime {
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are disassociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are disassociated from the account,but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -332,8 +350,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -368,8 +385,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -387,16 +403,15 @@ public interface AmazonChime {
     /**
      * <p>
      * Updates phone number product types or calling names. You can update one attribute at a time for each
-     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update either the product type or the calling
-     * name.
+     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the product type or the calling name.
      * </p>
      * <p>
-     * For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice Connector. For toll-free
-     * numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the US,
+     * you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param batchUpdatePhoneNumberRequest
@@ -406,8 +421,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -435,8 +449,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -466,8 +479,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -484,6 +496,111 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers
+     * use this API. <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.
+     * </p>
+     * 
+     * @param createAppInstanceRequest
+     * @return Result of the CreateAppInstance operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateAppInstanceResult createAppInstance(CreateAppInstanceRequest createAppInstanceRequest);
+
+    /**
+     * <p>
+     * Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the
+     * following actions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeleteChannelMessage</code> actions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.
+     * </p>
+     * 
+     * @param createAppInstanceAdminRequest
+     * @return Result of the CreateAppInstanceAdmin operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateAppInstanceAdminResult createAppInstanceAdmin(CreateAppInstanceAdminRequest createAppInstanceAdminRequest);
+
+    /**
+     * <p>
+     * Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a unique
+     * <code>appInstanceUserId</code> and <code>Name</code> for that user.
+     * </p>
+     * 
+     * @param createAppInstanceUserRequest
+     * @return Result of the CreateAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateAppInstanceUserResult createAppInstanceUser(CreateAppInstanceUserRequest createAppInstanceUserRequest);
+
+    /**
+     * <p>
      * Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
@@ -494,8 +611,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ResourceLimitExceededException
@@ -526,8 +642,7 @@ public interface AmazonChime {
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -546,10 +661,230 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Creates a channel to which you can add users and send messages.
+     * </p>
+     * <p>
+     * <b>Restriction</b>: You can't change a channel's privacy.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelRequest
+     * @return Result of the CreateChannel operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateChannelResult createChannel(CreateChannelRequest createChannelRequest);
+
+    /**
+     * <p>
+     * Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you
+     * first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up
+     * when you delete users or channels.
+     * </p>
+     * <p>
+     * If you ban a user who is already part of a channel, that user is automatically kicked from the channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelBanRequest
+     * @return Result of the CreateChannelBan operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateChannelBanResult createChannelBan(CreateChannelBanRequest createChannelBanRequest);
+
+    /**
+     * <p>
+     * Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the request header. A channel
+     * member can:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * List messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Send messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Receive messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Edit their own messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Leave the channel
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Privacy settings impact this action as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Private Channels: You must be a member to list or send messages.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelMembershipRequest
+     * @return Result of the CreateChannelMembership operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateChannelMembershipResult createChannelMembership(CreateChannelMembershipRequest createChannelMembershipRequest);
+
+    /**
+     * <p>
+     * Creates a new <code>ChannelModerator</code>. A channel moderator can:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Add and remove other members of the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Add and remove other moderators of the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Add and remove user bans for the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redact messages in the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * List messages in the channel.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelModeratorRequest
+     * @return Result of the CreateChannelModerator operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateChannelModeratorResult createChannelModerator(CreateChannelModeratorRequest createChannelModeratorRequest);
+
+    /**
+     * <p>
      * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
-     * information about the Amazon Chime SDK, see <a
+     * information about specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param createMeetingRequest
@@ -557,8 +892,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ResourceLimitExceededException
      *         The request exceeds the resource limit.
      * @throws ThrottledClientException
@@ -577,8 +911,74 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
-     * Voice Connector product types. For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * Uses the join token and call metadata in a meeting request (From number, To number, and so forth) to initiate an
+     * outbound call to a public switched telephone network (PSTN) and join them into a Chime meeting. Also ensures that
+     * the From number belongs to the customer.
+     * </p>
+     * <p>
+     * To play welcome audio or implement an interactive voice response (IVR), use the
+     * <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.
+     * </p>
+     * 
+     * @param createMeetingDialOutRequest
+     * @return Result of the CreateMeetingDialOut operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateMeetingDialOut
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingDialOut" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateMeetingDialOutResult createMeetingDialOut(CreateMeetingDialOutRequest createMeetingDialOutRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about
+     * specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i> .
+     * </p>
+     * 
+     * @param createMeetingWithAttendeesRequest
+     * @return Result of the CreateMeetingWithAttendees operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateMeetingWithAttendees
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateMeetingWithAttendeesResult createMeetingWithAttendees(CreateMeetingWithAttendeesRequest createMeetingWithAttendeesRequest);
+
+    /**
+     * <p>
+     * Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot use the Amazon Chime
+     * Business Calling product type. For numbers outside the US, you must use the Amazon Chime SIP Media Application
+     * Dial-In product type.
      * </p>
      * 
      * @param createPhoneNumberOrderRequest
@@ -586,8 +986,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation.
      * @throws UnauthorizedClientException
@@ -619,8 +1018,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -647,8 +1045,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ResourceLimitExceededException
@@ -682,8 +1079,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ResourceLimitExceededException
      *         The request exceeds the resource limit.
      * @throws ThrottledClientException
@@ -700,6 +1096,96 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Creates a SIP media application.
+     * </p>
+     * 
+     * @param createSipMediaApplicationRequest
+     * @return Result of the CreateSipMediaApplication operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateSipMediaApplicationResult createSipMediaApplication(CreateSipMediaApplicationRequest createSipMediaApplicationRequest);
+
+    /**
+     * <p>
+     * Creates an outbound call to a phone number from the phone number specified in the request, and it invokes the
+     * endpoint of the specified <code>sipMediaApplicationId</code>.
+     * </p>
+     * 
+     * @param createSipMediaApplicationCallRequest
+     * @return Result of the CreateSipMediaApplicationCall operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateSipMediaApplicationCall
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipMediaApplicationCall"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateSipMediaApplicationCallResult createSipMediaApplicationCall(CreateSipMediaApplicationCallRequest createSipMediaApplicationCallRequest);
+
+    /**
+     * <p>
+     * Creates a SIP rule which can be used to run a SIP media application as a target for a specific trigger type.
+     * </p>
+     * 
+     * @param createSipRuleRequest
+     * @return Result of the CreateSipRule operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateSipRuleResult createSipRule(CreateSipRuleRequest createSipRuleRequest);
+
+    /**
+     * <p>
      * Creates a user under the specified Amazon Chime account.
      * </p>
      * 
@@ -712,8 +1198,7 @@ public interface AmazonChime {
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -744,8 +1229,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation.
      * @throws UnauthorizedClientException
@@ -780,8 +1264,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation.
      * @throws UnauthorizedClientException
@@ -802,8 +1285,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime account. You must suspend all users before deleting a <code>Team</code>
-     * account. You can use the <a>BatchSuspendUser</a> action to do so.
+     * Deletes the specified Amazon Chime account. You must suspend all users before deleting <code>Team</code> account.
+     * You can use the <a>BatchSuspendUser</a> action to dodo.
      * </p>
      * <p>
      * For <code>EnterpriseLWA</code> and <code>EnterpriseAD</code> accounts, you must release the claimed domains for
@@ -811,8 +1294,8 @@ public interface AmazonChime {
      * suspended.
      * </p>
      * <p>
-     * Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore a deleted account
-     * from your <code>Disabled</code> accounts list, you must contact AWS Support.
+     * Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore deleted account from
+     * your <code>Disabled</code> accounts list, you must contact AWS Support.
      * </p>
      * <p>
      * After 90 days, deleted accounts are permanently removed from your <code>Disabled</code> accounts list.
@@ -825,8 +1308,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -845,6 +1327,112 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Deletes an <code>AppInstance</code> and all associated data asynchronously.
+     * </p>
+     * 
+     * @param deleteAppInstanceRequest
+     * @return Result of the DeleteAppInstance operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAppInstanceResult deleteAppInstance(DeleteAppInstanceRequest deleteAppInstanceRequest);
+
+    /**
+     * <p>
+     * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the
+     * user.
+     * </p>
+     * 
+     * @param deleteAppInstanceAdminRequest
+     * @return Result of the DeleteAppInstanceAdmin operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteAppInstanceAdminResult deleteAppInstanceAdmin(DeleteAppInstanceAdminRequest deleteAppInstanceAdminRequest);
+
+    /**
+     * <p>
+     * Deletes the streaming configurations of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param deleteAppInstanceStreamingConfigurationsRequest
+     * @return Result of the DeleteAppInstanceStreamingConfigurations operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAppInstanceStreamingConfigurationsResult deleteAppInstanceStreamingConfigurations(
+            DeleteAppInstanceStreamingConfigurationsRequest deleteAppInstanceStreamingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Deletes an <code>AppInstanceUser</code>.
+     * </p>
+     * 
+     * @param deleteAppInstanceUserRequest
+     * @return Result of the DeleteAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteAppInstanceUserResult deleteAppInstanceUser(DeleteAppInstanceUserRequest deleteAppInstanceUserRequest);
+
+    /**
+     * <p>
      * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>.
      * Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the
      * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
@@ -856,8 +1444,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws NotFoundException
@@ -876,6 +1463,165 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible
+     * process.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelRequest
+     * @return Result of the DeleteChannel operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteChannelResult deleteChannel(DeleteChannelRequest deleteChannelRequest);
+
+    /**
+     * <p>
+     * Removes a user from a channel's ban list.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelBanRequest
+     * @return Result of the DeleteChannelBan operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteChannelBanResult deleteChannelBan(DeleteChannelBanRequest deleteChannelBanRequest);
+
+    /**
+     * <p>
+     * Removes a member from a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelMembershipRequest
+     * @return Result of the DeleteChannelMembership operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteChannelMembershipResult deleteChannelMembership(DeleteChannelMembershipRequest deleteChannelMembershipRequest);
+
+    /**
+     * <p>
+     * Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately.
+     * A background process deletes any revisions created by <code>UpdateChannelMessage</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelMessageRequest
+     * @return Result of the DeleteChannelMessage operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteChannelMessageResult deleteChannelMessage(DeleteChannelMessageRequest deleteChannelMessageRequest);
+
+    /**
+     * <p>
+     * Deletes a channel moderator.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelModeratorRequest
+     * @return Result of the DeleteChannelModerator operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteChannelModeratorResult deleteChannelModerator(DeleteChannelModeratorRequest deleteChannelModeratorRequest);
+
+    /**
+     * <p>
      * Deletes the events configuration that allows a bot to receive outgoing events.
      * </p>
      * 
@@ -886,8 +1632,7 @@ public interface AmazonChime {
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -902,8 +1647,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted and
-     * clients can no longer join it. For more information about the Amazon Chime SDK, see <a
+     * Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and
+     * prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
      * </p>
@@ -913,8 +1658,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws NotFoundException
@@ -947,8 +1691,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -975,8 +1718,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1001,8 +1743,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -1033,8 +1774,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -1049,6 +1789,64 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Deletes a SIP media application.
+     * </p>
+     * 
+     * @param deleteSipMediaApplicationRequest
+     * @return Result of the DeleteSipMediaApplication operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteSipMediaApplicationResult deleteSipMediaApplication(DeleteSipMediaApplicationRequest deleteSipMediaApplicationRequest);
+
+    /**
+     * <p>
+     * Deletes a SIP rule. You must disable a SIP rule before you can delete it.
+     * </p>
+     * 
+     * @param deleteSipRuleRequest
+     * @return Result of the DeleteSipRule operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteSipRuleResult deleteSipRule(DeleteSipRuleRequest deleteSipRuleRequest);
+
+    /**
+     * <p>
      * Deletes the specified Amazon Chime Voice Connector. Any phone numbers associated with the Amazon Chime Voice
      * Connector must be disassociated from it before it can be deleted.
      * </p>
@@ -1060,8 +1858,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ConflictException
@@ -1080,6 +1877,35 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Deletes the emergency calling configuration details from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return Result of the DeleteVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteVoiceConnectorEmergencyCallingConfigurationResult deleteVoiceConnectorEmergencyCallingConfiguration(
+            DeleteVoiceConnectorEmergencyCallingConfigurationRequest deleteVoiceConnectorEmergencyCallingConfigurationRequest);
+
+    /**
+     * <p>
      * Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code> and phone numbers
      * associated with the group must be removed before it can be deleted.
      * </p>
@@ -1091,8 +1917,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ConflictException
@@ -1113,6 +1938,12 @@ public interface AmazonChime {
      * <p>
      * Deletes the origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorOriginationRequest
      * @return Result of the DeleteVoiceConnectorOrigination operation returned by the service.
@@ -1121,8 +1952,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1149,8 +1979,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1177,8 +2006,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1198,6 +2026,12 @@ public interface AmazonChime {
      * <p>
      * Deletes the termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorTerminationRequest
      * @return Result of the DeleteVoiceConnectorTermination operation returned by the service.
@@ -1206,8 +2040,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1234,8 +2067,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1253,6 +2085,276 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Returns the full details of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param describeAppInstanceRequest
+     * @return Result of the DescribeAppInstance operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeAppInstanceResult describeAppInstance(DescribeAppInstanceRequest describeAppInstanceRequest);
+
+    /**
+     * <p>
+     * Returns the full details of an <code>AppInstanceAdmin</code>.
+     * </p>
+     * 
+     * @param describeAppInstanceAdminRequest
+     * @return Result of the DescribeAppInstanceAdmin operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeAppInstanceAdminResult describeAppInstanceAdmin(DescribeAppInstanceAdminRequest describeAppInstanceAdminRequest);
+
+    /**
+     * <p>
+     * Returns the full details of an <code>AppInstanceUser</code> .
+     * </p>
+     * 
+     * @param describeAppInstanceUserRequest
+     * @return Result of the DescribeAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeAppInstanceUserResult describeAppInstanceUser(DescribeAppInstanceUserRequest describeAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelRequest
+     * @return Result of the DescribeChannel operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeChannelResult describeChannel(DescribeChannelRequest describeChannelRequest);
+
+    /**
+     * <p>
+     * Returns the full details of a channel ban.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelBanRequest
+     * @return Result of the DescribeChannelBan operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeChannelBanResult describeChannelBan(DescribeChannelBanRequest describeChannelBanRequest);
+
+    /**
+     * <p>
+     * Returns the full details of a user's channel membership.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelMembershipRequest
+     * @return Result of the DescribeChannelMembership operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeChannelMembershipResult describeChannelMembership(DescribeChannelMembershipRequest describeChannelMembershipRequest);
+
+    /**
+     * <p>
+     * Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelMembershipForAppInstanceUserRequest
+     * @return Result of the DescribeChannelMembershipForAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannelMembershipForAppInstanceUser
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeChannelMembershipForAppInstanceUserResult describeChannelMembershipForAppInstanceUser(
+            DescribeChannelMembershipForAppInstanceUserRequest describeChannelMembershipForAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelModeratedByAppInstanceUserRequest
+     * @return Result of the DescribeChannelModeratedByAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannelModeratedByAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeChannelModeratedByAppInstanceUserResult describeChannelModeratedByAppInstanceUser(
+            DescribeChannelModeratedByAppInstanceUserRequest describeChannelModeratedByAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * Returns the full details of a single ChannelModerator.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelModeratorRequest
+     * @return Result of the DescribeChannelModerator operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeChannelModeratorResult describeChannelModerator(DescribeChannelModeratorRequest describeChannelModeratorRequest);
+
+    /**
+     * <p>
      * Disassociates the primary provisioned phone number from the specified Amazon Chime user.
      * </p>
      * 
@@ -1263,8 +2365,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1291,8 +2392,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1320,8 +2420,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1350,8 +2449,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1380,8 +2478,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1398,7 +2495,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dial out
+     * Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dialout
      * settings. For more information about these settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime
      * Administration Guide</i>.
@@ -1413,8 +2510,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -1429,9 +2525,64 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Gets the retention settings for an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param getAppInstanceRetentionSettingsRequest
+     * @return Result of the GetAppInstanceRetentionSettings operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetAppInstanceRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAppInstanceRetentionSettingsResult getAppInstanceRetentionSettings(GetAppInstanceRetentionSettingsRequest getAppInstanceRetentionSettingsRequest);
+
+    /**
+     * <p>
+     * Gets the streaming settings for an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param getAppInstanceStreamingConfigurationsRequest
+     * @return Result of the GetAppInstanceStreamingConfigurations operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAppInstanceStreamingConfigurationsResult getAppInstanceStreamingConfigurations(
+            GetAppInstanceStreamingConfigurationsRequest getAppInstanceStreamingConfigurationsRequest);
+
+    /**
+     * <p>
      * Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about
      * the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param getAttendeeRequest
@@ -1439,8 +2590,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
@@ -1469,8 +2619,7 @@ public interface AmazonChime {
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws NotFoundException
@@ -1487,6 +2636,39 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Gets the full details of a channel message.
+     * </p>
+     * <note>
+     * <p>
+     * The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
+     * makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param getChannelMessageRequest
+     * @return Result of the GetChannelMessage operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetChannelMessageResult getChannelMessage(GetChannelMessageRequest getChannelMessageRequest);
+
+    /**
+     * <p>
      * Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint
      * or Lambda function ARN.
      * </p>
@@ -1498,8 +2680,7 @@ public interface AmazonChime {
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -1525,8 +2706,7 @@ public interface AmazonChime {
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1545,7 +2725,7 @@ public interface AmazonChime {
      * <p>
      * Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon
      * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
-     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param getMeetingRequest
@@ -1553,8 +2733,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
@@ -1573,6 +2752,29 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * The details of the endpoint for the messaging session.
+     * </p>
+     * 
+     * @param getMessagingSessionEndpointRequest
+     * @return Result of the GetMessagingSessionEndpoint operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetMessagingSessionEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetMessagingSessionEndpointResult getMessagingSessionEndpoint(GetMessagingSessionEndpointRequest getMessagingSessionEndpointRequest);
+
+    /**
+     * <p>
      * Retrieves details for the specified phone number ID, such as associations, capabilities, and product type.
      * </p>
      * 
@@ -1583,8 +2785,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1601,8 +2802,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified phone number order, such as order creation timestamp, phone numbers in E.164
-     * format, product type, and order status.
+     * Retrieves details for the specified phone number order, such as the order creation timestamp, phone numbers in
+     * E.164 format, product type, and order status.
      * </p>
      * 
      * @param getPhoneNumberOrderRequest
@@ -1612,8 +2813,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1639,8 +2839,7 @@ public interface AmazonChime {
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1667,8 +2866,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1687,7 +2885,7 @@ public interface AmazonChime {
      * <p>
      * Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about
      * retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat
-     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
+     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * 
      * @param getRetentionSettingsRequest
@@ -1699,8 +2897,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -1723,8 +2920,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -1743,7 +2939,89 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified user ID, such as primary email address, license type, and personal meeting
+     * Retrieves the information for a SIP media application, including name, AWS Region, and endpoints.
+     * </p>
+     * 
+     * @param getSipMediaApplicationRequest
+     * @return Result of the GetSipMediaApplication operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipMediaApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetSipMediaApplicationResult getSipMediaApplication(GetSipMediaApplicationRequest getSipMediaApplicationRequest);
+
+    /**
+     * <p>
+     * Returns the logging configuration for the specified SIP media application.
+     * </p>
+     * 
+     * @param getSipMediaApplicationLoggingConfigurationRequest
+     * @return Result of the GetSipMediaApplicationLoggingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetSipMediaApplicationLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipMediaApplicationLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSipMediaApplicationLoggingConfigurationResult getSipMediaApplicationLoggingConfiguration(
+            GetSipMediaApplicationLoggingConfigurationRequest getSipMediaApplicationLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and target endpoints.
+     * </p>
+     * 
+     * @param getSipRuleRequest
+     * @return Result of the GetSipRule operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSipRuleResult getSipRule(GetSipRuleRequest getSipRuleRequest);
+
+    /**
+     * <p>
+     * Retrieves details for the specified user ID, such as primary email address, license type,and personal meeting
      * PIN.
      * </p>
      * <p>
@@ -1758,8 +3036,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1786,8 +3063,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1804,7 +3080,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps, name, outbound host, and
+     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps,name, outbound host, and
      * encryption requirements.
      * </p>
      * 
@@ -1815,8 +3091,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1833,8 +3108,37 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps, name, and associated
-     * <code>VoiceConnectorItems</code>.
+     * Gets the emergency calling configuration details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return Result of the GetVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetVoiceConnectorEmergencyCallingConfigurationResult getVoiceConnectorEmergencyCallingConfiguration(
+            GetVoiceConnectorEmergencyCallingConfigurationRequest getVoiceConnectorEmergencyCallingConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated
+     * <code>VoiceConnectorItems</code> .
      * </p>
      * 
      * @param getVoiceConnectorGroupRequest
@@ -1844,8 +3148,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1873,8 +3176,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1902,8 +3204,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1930,8 +3231,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1960,8 +3260,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1989,8 +3288,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2018,8 +3316,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2048,8 +3345,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2078,8 +3374,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2096,6 +3391,81 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Returns a list of the administrators in the <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param listAppInstanceAdminsRequest
+     * @return Result of the ListAppInstanceAdmins operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListAppInstanceAdmins
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListAppInstanceAdminsResult listAppInstanceAdmins(ListAppInstanceAdminsRequest listAppInstanceAdminsRequest);
+
+    /**
+     * <p>
+     * List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param listAppInstanceUsersRequest
+     * @return Result of the ListAppInstanceUsers operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListAppInstanceUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAppInstanceUsersResult listAppInstanceUsers(ListAppInstanceUsersRequest listAppInstanceUsersRequest);
+
+    /**
+     * <p>
+     * Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.
+     * </p>
+     * 
+     * @param listAppInstancesRequest
+     * @return Result of the ListAppInstances operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListAppInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAppInstancesResult listAppInstances(ListAppInstancesRequest listAppInstancesRequest);
+
+    /**
+     * <p>
      * Lists the tags applied to an Amazon Chime SDK attendee resource.
      * </p>
      * 
@@ -2104,8 +3474,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
@@ -2126,7 +3495,7 @@ public interface AmazonChime {
      * <p>
      * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param listAttendeesRequest
@@ -2134,8 +3503,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
@@ -2164,8 +3532,7 @@ public interface AmazonChime {
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws BadRequestException
@@ -2182,6 +3549,248 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Lists all the users banned from a particular channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelBansRequest
+     * @return Result of the ListChannelBans operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelBans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListChannelBansResult listChannelBans(ListChannelBansRequest listChannelBansRequest);
+
+    /**
+     * <p>
+     * Lists all channel memberships in a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMembershipsRequest
+     * @return Result of the ListChannelMemberships operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListChannelMembershipsResult listChannelMemberships(ListChannelMembershipsRequest listChannelMembershipsRequest);
+
+    /**
+     * <p>
+     * Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an
+     * <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMembershipsForAppInstanceUserRequest
+     * @return Result of the ListChannelMembershipsForAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelMembershipsForAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListChannelMembershipsForAppInstanceUserResult listChannelMembershipsForAppInstanceUser(
+            ListChannelMembershipsForAppInstanceUserRequest listChannelMembershipsForAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted
+     * by creation timestamp in descending order.
+     * </p>
+     * <note>
+     * <p>
+     * Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do
+     * not appear in the results. This action always returns the latest version of an edited message.
+     * </p>
+     * <p>
+     * Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+     * that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMessagesRequest
+     * @return Result of the ListChannelMessages operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelMessages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListChannelMessagesResult listChannelMessages(ListChannelMessagesRequest listChannelMessagesRequest);
+
+    /**
+     * <p>
+     * Lists all the moderators for a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelModeratorsRequest
+     * @return Result of the ListChannelModerators operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelModerators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListChannelModeratorsResult listChannelModerators(ListChannelModeratorsRequest listChannelModeratorsRequest);
+
+    /**
+     * <p>
+     * Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow
+     * results.
+     * </p>
+     * <p class="title">
+     * <b>Functionality &amp; restrictions</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelsRequest
+     * @return Result of the ListChannels operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListChannelsResult listChannels(ListChannelsRequest listChannelsRequest);
+
+    /**
+     * <p>
+     * A list of the channels moderated by an <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelsModeratedByAppInstanceUserRequest
+     * @return Result of the ListChannelsModeratedByAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelsModeratedByAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListChannelsModeratedByAppInstanceUserResult listChannelsModeratedByAppInstanceUser(
+            ListChannelsModeratedByAppInstanceUserRequest listChannelsModeratedByAppInstanceUserRequest);
+
+    /**
+     * <p>
      * Lists the tags applied to an Amazon Chime SDK meeting resource.
      * </p>
      * 
@@ -2190,8 +3799,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
@@ -2212,7 +3820,7 @@ public interface AmazonChime {
      * <p>
      * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param listMeetingsRequest
@@ -2220,8 +3828,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws UnauthorizedClientException
@@ -2246,8 +3853,7 @@ public interface AmazonChime {
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2273,10 +3879,11 @@ public interface AmazonChime {
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -2301,8 +3908,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2330,8 +3936,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ThrottledClientException
@@ -2359,8 +3964,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ThrottledClientException
@@ -2377,6 +3981,83 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Lists the SIP media applications under the administrator's AWS account.
+     * </p>
+     * 
+     * @param listSipMediaApplicationsRequest
+     * @return Result of the ListSipMediaApplications operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListSipMediaApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSipMediaApplications" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListSipMediaApplicationsResult listSipMediaApplications(ListSipMediaApplicationsRequest listSipMediaApplicationsRequest);
+
+    /**
+     * <p>
+     * Lists the SIP rules under the administrator's AWS account.
+     * </p>
+     * 
+     * @param listSipRulesRequest
+     * @return Result of the ListSipRules operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListSipRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSipRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListSipRulesResult listSipRules(ListSipRulesRequest listSipRulesRequest);
+
+    /**
+     * <p>
+     * Lists supported phone number countries.
+     * </p>
+     * 
+     * @param listSupportedPhoneNumberCountriesRequest
+     * @return Result of the ListSupportedPhoneNumberCountries operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListSupportedPhoneNumberCountries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSupportedPhoneNumberCountries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSupportedPhoneNumberCountriesResult listSupportedPhoneNumberCountries(ListSupportedPhoneNumberCountriesRequest listSupportedPhoneNumberCountriesRequest);
+
+    /**
+     * <p>
      * Lists the tags applied to an Amazon Chime SDK meeting resource.
      * </p>
      * 
@@ -2385,8 +4066,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -2414,8 +4094,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2440,8 +4119,7 @@ public interface AmazonChime {
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2468,8 +4146,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2495,8 +4172,7 @@ public interface AmazonChime {
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2523,8 +4199,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2541,6 +4216,63 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Sets the amount of time in days that a given <code>AppInstance</code> retains data.
+     * </p>
+     * 
+     * @param putAppInstanceRetentionSettingsRequest
+     * @return Result of the PutAppInstanceRetentionSettings operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutAppInstanceRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutAppInstanceRetentionSettingsResult putAppInstanceRetentionSettings(PutAppInstanceRetentionSettingsRequest putAppInstanceRetentionSettingsRequest);
+
+    /**
+     * <p>
+     * The data streaming configurations of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param putAppInstanceStreamingConfigurationsRequest
+     * @return Result of the PutAppInstanceStreamingConfigurations operation returned by the service.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutAppInstanceStreamingConfigurationsResult putAppInstanceStreamingConfigurations(
+            PutAppInstanceStreamingConfigurationsRequest putAppInstanceStreamingConfigurationsRequest);
+
+    /**
+     * <p>
      * Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either
      * an HTTPS endpoint or a Lambda function ARN. For more information, see <a>Bot</a>.
      * </p>
@@ -2552,8 +4284,7 @@ public interface AmazonChime {
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -2573,13 +4304,13 @@ public interface AmazonChime {
      * Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to
      * monitor usage of this API for your account. For more information, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS
-     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.
+     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * <p>
      * To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b>
      * field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in
-     * the <i>Amazon Chime Administration Guide</i>.
+     * the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * 
      * @param putRetentionSettingsRequest
@@ -2591,8 +4322,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ThrottledClientException
@@ -2609,6 +4339,65 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Updates the logging configuration for the specified SIP media application.
+     * </p>
+     * 
+     * @param putSipMediaApplicationLoggingConfigurationRequest
+     * @return Result of the PutSipMediaApplicationLoggingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutSipMediaApplicationLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutSipMediaApplicationLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutSipMediaApplicationLoggingConfigurationResult putSipMediaApplicationLoggingConfiguration(
+            PutSipMediaApplicationLoggingConfigurationRequest putSipMediaApplicationLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency
+     * phone numbers and calling countries. Origination and termination settings must be enabled for the Amazon Chime
+     * Voice Connector before emergency calling can be configured.
+     * </p>
+     * 
+     * @param putVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return Result of the PutVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutVoiceConnectorEmergencyCallingConfigurationResult putVoiceConnectorEmergencyCallingConfiguration(
+            PutVoiceConnectorEmergencyCallingConfigurationRequest putVoiceConnectorEmergencyCallingConfigurationRequest);
+
+    /**
+     * <p>
      * Adds a logging configuration for the specified Amazon Chime Voice Connector. The logging configuration specifies
      * whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
      * </p>
@@ -2620,8 +4409,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2641,6 +4429,12 @@ public interface AmazonChime {
      * <p>
      * Adds origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorOriginationRequest
      * @return Result of the PutVoiceConnectorOrigination operation returned by the service.
@@ -2649,8 +4443,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2679,8 +4472,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2698,7 +4490,7 @@ public interface AmazonChime {
     /**
      * <p>
      * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration
-     * specifies whether media streaming is enabled for sending to Amazon Kinesis. It also sets the retention period, in
+     * specifies whether media streaming is enabled for sending to Indonesians. It also sets the retention period, in
      * hours, for the Amazon Kinesis data.
      * </p>
      * 
@@ -2709,8 +4501,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2730,6 +4521,12 @@ public interface AmazonChime {
      * <p>
      * Adds termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorTerminationRequest
      * @return Result of the PutVoiceConnectorTermination operation returned by the service.
@@ -2738,8 +4535,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws AccessDeniedException
@@ -2768,8 +4564,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2787,6 +4582,38 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Redacts message content, but not metadata. The message exists in the back end, but the action returns null
+     * content, and the state shows as redacted.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param redactChannelMessageRequest
+     * @return Result of the RedactChannelMessage operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.RedactChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RedactChannelMessageResult redactChannelMessage(RedactChannelMessageRequest redactChannelMessageRequest);
+
+    /**
+     * <p>
      * Redacts the specified message from the specified Amazon Chime conversation.
      * </p>
      * 
@@ -2795,8 +4622,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ThrottledClientException
@@ -2815,7 +4641,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Redacts the specified message from the specified Amazon Chime chat room.
+     * Redacts the specified message from the specified Amazon Chime channel.
      * </p>
      * 
      * @param redactRoomMessageRequest
@@ -2823,8 +4649,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ThrottledClientException
@@ -2853,8 +4678,7 @@ public interface AmazonChime {
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -2882,8 +4706,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2910,8 +4733,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2930,7 +4752,10 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Searches phone numbers that can be ordered.
+     * Searches for phone numbers that can be ordered. For US numbers, provide at least one of the following search
+     * filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you
+     * provide <code>City</code>, you must also provide <code>State</code>. Numbers outside the US only support the
+     * <code>PhoneNumberType</code> filter, which you must use.
      * </p>
      * 
      * @param searchAvailablePhoneNumbersRequest
@@ -2938,8 +4763,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation.
      * @throws UnauthorizedClientException
@@ -2958,6 +4782,43 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Sends a message to a particular channel that the member is a part of.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * <p>
+     * Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code>
+     * messages can contain 30 bytes of data and no metadata.
+     * </p>
+     * </note>
+     * 
+     * @param sendChannelMessageRequest
+     * @return Result of the SendChannelMessage operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.SendChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    SendChannelMessageResult sendChannelMessage(SendChannelMessageRequest sendChannelMessageRequest);
+
+    /**
+     * <p>
      * Applies the specified tags to the specified Amazon Chime SDK attendee.
      * </p>
      * 
@@ -2966,8 +4827,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ResourceLimitExceededException
@@ -2996,8 +4856,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ResourceLimitExceededException
@@ -3026,8 +4885,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -3052,8 +4910,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws NotFoundException
@@ -3080,8 +4937,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws NotFoundException
@@ -3108,8 +4964,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -3137,8 +4992,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3170,8 +5024,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ThrottledClientException
@@ -3188,6 +5041,60 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Updates <code>AppInstance</code> metadata.
+     * </p>
+     * 
+     * @param updateAppInstanceRequest
+     * @return Result of the UpdateAppInstance operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAppInstanceResult updateAppInstance(UpdateAppInstanceRequest updateAppInstanceRequest);
+
+    /**
+     * <p>
+     * Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.
+     * </p>
+     * 
+     * @param updateAppInstanceUserRequest
+     * @return Result of the UpdateAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateAppInstanceUserResult updateAppInstanceUser(UpdateAppInstanceUserRequest updateAppInstanceUserRequest);
+
+    /**
+     * <p>
      * Updates the status of the specified bot, such as starting or stopping the bot from running in your Amazon Chime
      * Enterprise account.
      * </p>
@@ -3199,8 +5106,7 @@ public interface AmazonChime {
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -3217,6 +5123,108 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Update a channel's attributes.
+     * </p>
+     * <p>
+     * <b>Restriction</b>: You can't change a channel's privacy.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelRequest
+     * @return Result of the UpdateChannel operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateChannelResult updateChannel(UpdateChannelRequest updateChannelRequest);
+
+    /**
+     * <p>
+     * Updates the content of a message.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelMessageRequest
+     * @return Result of the UpdateChannelMessage operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateChannelMessageResult updateChannelMessage(UpdateChannelMessageRequest updateChannelMessageRequest);
+
+    /**
+     * <p>
+     * The details of the time when a user last read messages in a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelReadMarkerRequest
+     * @return Result of the UpdateChannelReadMarker operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateChannelReadMarker
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateChannelReadMarkerResult updateChannelReadMarker(UpdateChannelReadMarkerRequest updateChannelReadMarkerRequest);
+
+    /**
+     * <p>
      * Updates global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon
      * Chime Voice Connector settings.
      * </p>
@@ -3226,8 +5234,7 @@ public interface AmazonChime {
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3249,11 +5256,12 @@ public interface AmazonChime {
      * in one action.
      * </p>
      * <p>
-     * For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the
+     * U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param updatePhoneNumberRequest
@@ -3263,8 +5271,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3291,8 +5298,7 @@ public interface AmazonChime {
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3319,8 +5325,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3345,8 +5350,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -3379,8 +5383,7 @@ public interface AmazonChime {
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -3395,6 +5398,66 @@ public interface AmazonChime {
 
     /**
      * <p>
+     * Updates the details of the specified SIP media application.
+     * </p>
+     * 
+     * @param updateSipMediaApplicationRequest
+     * @return Result of the UpdateSipMediaApplication operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSipMediaApplicationResult updateSipMediaApplication(UpdateSipMediaApplicationRequest updateSipMediaApplicationRequest);
+
+    /**
+     * <p>
+     * Updates the details of the specified SIP rule.
+     * </p>
+     * 
+     * @param updateSipRuleRequest
+     * @return Result of the UpdateSipRule operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateSipRuleResult updateSipRule(UpdateSipRuleRequest updateSipRuleRequest);
+
+    /**
+     * <p>
      * Updates user details for a specified user ID. Currently, only <code>LicenseType</code> updates are supported for
      * this action.
      * </p>
@@ -3406,8 +5469,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3434,8 +5496,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3462,8 +5523,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3480,7 +5540,7 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Updates details for the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
+     * Updates details of the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
      * Connector priority ranking.
      * </p>
      * 
@@ -3491,8 +5551,7 @@ public interface AmazonChime {
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ConflictException

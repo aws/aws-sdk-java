@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,10 +21,15 @@ import javax.annotation.Generated;
  * </p>
  * <note>
  * <p>
- * Some of the reasons in the following list might not be applicable to this specific API or operation:
+ * Some of the reasons in the following list might not be applicable to this specific API or operation.
  * </p>
  * </note>
  * <ul>
+ * <li>
+ * <p>
+ * DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+ * </p>
+ * </li>
  * <li>
  * <p>
  * IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -37,7 +42,17 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * INVALID_ENUM: You specified an invalid value.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
  * </p>
  * </li>
  * <li>
@@ -121,6 +136,16 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
  * </p>
  * </li>
  * </ul>

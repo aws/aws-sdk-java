@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class CriterionAdditionalPropertiesMarshaller {
 
     private static final MarshallingInfo<List> EQ_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("eq").build();
+    private static final MarshallingInfo<List> EQEXACTMATCH_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("eqExactMatch").build();
     private static final MarshallingInfo<Long> GT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("gt").build();
     private static final MarshallingInfo<Long> GTE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class CriterionAdditionalPropertiesMarshaller {
 
         try {
             protocolMarshaller.marshall(criterionAdditionalProperties.getEq(), EQ_BINDING);
+            protocolMarshaller.marshall(criterionAdditionalProperties.getEqExactMatch(), EQEXACTMATCH_BINDING);
             protocolMarshaller.marshall(criterionAdditionalProperties.getGt(), GT_BINDING);
             protocolMarshaller.marshall(criterionAdditionalProperties.getGte(), GTE_BINDING);
             protocolMarshaller.marshall(criterionAdditionalProperties.getLt(), LT_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,9 @@ public class SearchUsersResultJsonUnmarshaller implements Unmarshaller<SearchUse
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Users", targetDepth)) {
                     context.nextToken();
-                    searchUsersResult.setUsers(new ListUnmarshaller<UserData>(UserDataJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchUsersResult.setUsers(new ListUnmarshaller<UserData>(UserDataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

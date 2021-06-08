@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the code review.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      */
     private String codeReviewArn;
@@ -42,16 +44,26 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
      * Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user
      * making the request.
      * </p>
+     * <p>
+     * The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name
+     * (ARN). For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     * > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * </p>
      */
     private String userId;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the code review.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
      * @param codeReviewArn
-     *        The Amazon Resource Name (ARN) that identifies the code review.
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *        <code>CodeReview</code> </a> object.
      */
 
     public void setCodeReviewArn(String codeReviewArn) {
@@ -60,10 +72,14 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the code review.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the code review.
+     * @return The Amazon Resource Name (ARN) of the <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *         <code>CodeReview</code> </a> object.
      */
 
     public String getCodeReviewArn() {
@@ -72,11 +88,15 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the code review.
+     * The Amazon Resource Name (ARN) of the <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a>
+     * object.
      * </p>
      * 
      * @param codeReviewArn
-     *        The Amazon Resource Name (ARN) that identifies the code review.
+     *        The Amazon Resource Name (ARN) of the <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
+     *        <code>CodeReview</code> </a> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,10 +153,21 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
      * Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user
      * making the request.
      * </p>
+     * <p>
+     * The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name
+     * (ARN). For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     * > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * </p>
      * 
      * @param userId
      *        Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the
-     *        user making the request.
+     *        user making the request. </p>
+     *        <p>
+     *        The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon
+     *        Resource Name (ARN). For more information, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     *        > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      */
 
     public void setUserId(String userId) {
@@ -148,9 +179,20 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
      * Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user
      * making the request.
      * </p>
+     * <p>
+     * The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name
+     * (ARN). For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     * > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * </p>
      * 
      * @return Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the
-     *         user making the request.
+     *         user making the request. </p>
+     *         <p>
+     *         The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon
+     *         Resource Name (ARN). For more information, see <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     *         > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      */
 
     public String getUserId() {
@@ -162,10 +204,21 @@ public class DescribeRecommendationFeedbackRequest extends com.amazonaws.AmazonW
      * Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user
      * making the request.
      * </p>
+     * <p>
+     * The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon Resource Name
+     * (ARN). For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     * > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * </p>
      * 
      * @param userId
      *        Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the
-     *        user making the request.
+     *        user making the request. </p>
+     *        <p>
+     *        The <code>UserId</code> is an IAM principal that can be specified as an AWS account ID or an Amazon
+     *        Resource Name (ARN). For more information, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"
+     *        > Specifying a Principal</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

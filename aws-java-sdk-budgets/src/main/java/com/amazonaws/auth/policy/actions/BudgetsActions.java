@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,30 @@ public enum BudgetsActions implements Action {
 
     /** Action for the CreateBudget operation. */
     CreateBudget("budgets:CreateBudget"),
+    /** Action for the CreateBudgetAction operation. */
+    CreateBudgetAction("budgets:CreateBudgetAction"),
     /** Action for the CreateNotification operation. */
     CreateNotification("budgets:CreateNotification"),
     /** Action for the CreateSubscriber operation. */
     CreateSubscriber("budgets:CreateSubscriber"),
     /** Action for the DeleteBudget operation. */
     DeleteBudget("budgets:DeleteBudget"),
+    /** Action for the DeleteBudgetAction operation. */
+    DeleteBudgetAction("budgets:DeleteBudgetAction"),
     /** Action for the DeleteNotification operation. */
     DeleteNotification("budgets:DeleteNotification"),
     /** Action for the DeleteSubscriber operation. */
     DeleteSubscriber("budgets:DeleteSubscriber"),
     /** Action for the DescribeBudget operation. */
     DescribeBudget("budgets:DescribeBudget"),
+    /** Action for the DescribeBudgetAction operation. */
+    DescribeBudgetAction("budgets:DescribeBudgetAction"),
+    /** Action for the DescribeBudgetActionHistories operation. */
+    DescribeBudgetActionHistories("budgets:DescribeBudgetActionHistories"),
+    /** Action for the DescribeBudgetActionsForAccount operation. */
+    DescribeBudgetActionsForAccount("budgets:DescribeBudgetActionsForAccount"),
+    /** Action for the DescribeBudgetActionsForBudget operation. */
+    DescribeBudgetActionsForBudget("budgets:DescribeBudgetActionsForBudget"),
     /** Action for the DescribeBudgetPerformanceHistory operation. */
     DescribeBudgetPerformanceHistory("budgets:DescribeBudgetPerformanceHistory"),
     /** Action for the DescribeBudgets operation. */
@@ -47,8 +59,12 @@ public enum BudgetsActions implements Action {
     DescribeNotificationsForBudget("budgets:DescribeNotificationsForBudget"),
     /** Action for the DescribeSubscribersForNotification operation. */
     DescribeSubscribersForNotification("budgets:DescribeSubscribersForNotification"),
+    /** Action for the ExecuteBudgetAction operation. */
+    ExecuteBudgetAction("budgets:ExecuteBudgetAction"),
     /** Action for the UpdateBudget operation. */
     UpdateBudget("budgets:UpdateBudget"),
+    /** Action for the UpdateBudgetAction operation. */
+    UpdateBudgetAction("budgets:UpdateBudgetAction"),
     /** Action for the UpdateNotification operation. */
     UpdateNotification("budgets:UpdateNotification"),
     /** Action for the UpdateSubscriber operation. */
@@ -64,5 +80,9 @@ public enum BudgetsActions implements Action {
 
     public String getActionName() {
         return this.action;
+    }
+
+    public boolean isNotType() {
+        return false;
     }
 }

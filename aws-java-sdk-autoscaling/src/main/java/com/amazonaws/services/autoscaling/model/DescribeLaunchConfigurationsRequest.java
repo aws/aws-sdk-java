@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,9 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The launch configuration names. If you omit this parameter, all launch configurations are described.
      * </p>
+     * <p>
+     * Array Members: Maximum number of 50 items.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> launchConfigurationNames;
     /**
@@ -49,8 +52,13 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The launch configuration names. If you omit this parameter, all launch configurations are described.
      * </p>
+     * <p>
+     * Array Members: Maximum number of 50 items.
+     * </p>
      * 
-     * @return The launch configuration names. If you omit this parameter, all launch configurations are described.
+     * @return The launch configuration names. If you omit this parameter, all launch configurations are described.</p>
+     *         <p>
+     *         Array Members: Maximum number of 50 items.
      */
 
     public java.util.List<String> getLaunchConfigurationNames() {
@@ -64,9 +72,14 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The launch configuration names. If you omit this parameter, all launch configurations are described.
      * </p>
+     * <p>
+     * Array Members: Maximum number of 50 items.
+     * </p>
      * 
      * @param launchConfigurationNames
-     *        The launch configuration names. If you omit this parameter, all launch configurations are described.
+     *        The launch configuration names. If you omit this parameter, all launch configurations are described.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 items.
      */
 
     public void setLaunchConfigurationNames(java.util.Collection<String> launchConfigurationNames) {
@@ -83,13 +96,18 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
      * The launch configuration names. If you omit this parameter, all launch configurations are described.
      * </p>
      * <p>
+     * Array Members: Maximum number of 50 items.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLaunchConfigurationNames(java.util.Collection)} or
      * {@link #withLaunchConfigurationNames(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param launchConfigurationNames
-     *        The launch configuration names. If you omit this parameter, all launch configurations are described.
+     *        The launch configuration names. If you omit this parameter, all launch configurations are described.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,9 +125,14 @@ public class DescribeLaunchConfigurationsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The launch configuration names. If you omit this parameter, all launch configurations are described.
      * </p>
+     * <p>
+     * Array Members: Maximum number of 50 items.
+     * </p>
      * 
      * @param launchConfigurationNames
-     *        The launch configuration names. If you omit this parameter, all launch configurations are described.
+     *        The launch configuration names. If you omit this parameter, all launch configurations are described.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

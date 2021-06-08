@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ListenerTls implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A reference to an object that represents a listener's TLS certificate.
+     * A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.
      * </p>
      */
     private ListenerTlsCertificate certificate;
@@ -57,14 +57,20 @@ public class ListenerTls implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String mode;
+    /**
+     * <p>
+     * A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.
+     * </p>
+     */
+    private ListenerTlsValidationContext validation;
 
     /**
      * <p>
-     * A reference to an object that represents a listener's TLS certificate.
+     * A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.
      * </p>
      * 
      * @param certificate
-     *        A reference to an object that represents a listener's TLS certificate.
+     *        A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.
      */
 
     public void setCertificate(ListenerTlsCertificate certificate) {
@@ -73,10 +79,10 @@ public class ListenerTls implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A reference to an object that represents a listener's TLS certificate.
+     * A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.
      * </p>
      * 
-     * @return A reference to an object that represents a listener's TLS certificate.
+     * @return A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.
      */
 
     public ListenerTlsCertificate getCertificate() {
@@ -85,11 +91,11 @@ public class ListenerTls implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A reference to an object that represents a listener's TLS certificate.
+     * A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.
      * </p>
      * 
      * @param certificate
-     *        A reference to an object that represents a listener's TLS certificate.
+     *        A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,6 +296,46 @@ public class ListenerTls implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.
+     * </p>
+     * 
+     * @param validation
+     *        A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.
+     */
+
+    public void setValidation(ListenerTlsValidationContext validation) {
+        this.validation = validation;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.
+     * </p>
+     * 
+     * @return A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.
+     */
+
+    public ListenerTlsValidationContext getValidation() {
+        return this.validation;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.
+     * </p>
+     * 
+     * @param validation
+     *        A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListenerTls withValidation(ListenerTlsValidationContext validation) {
+        setValidation(validation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -304,7 +350,9 @@ public class ListenerTls implements Serializable, Cloneable, StructuredPojo {
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getMode() != null)
-            sb.append("Mode: ").append(getMode());
+            sb.append("Mode: ").append(getMode()).append(",");
+        if (getValidation() != null)
+            sb.append("Validation: ").append(getValidation());
         sb.append("}");
         return sb.toString();
     }
@@ -327,6 +375,10 @@ public class ListenerTls implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
             return false;
+        if (other.getValidation() == null ^ this.getValidation() == null)
+            return false;
+        if (other.getValidation() != null && other.getValidation().equals(this.getValidation()) == false)
+            return false;
         return true;
     }
 
@@ -337,6 +389,7 @@ public class ListenerTls implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
         hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
+        hashCode = prime * hashCode + ((getValidation() == null) ? 0 : getValidation().hashCode());
         return hashCode;
     }
 

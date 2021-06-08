@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class NodeConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZone").build();
     private static final MarshallingInfo<StructuredPojo> LOGPUBLISHINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingConfiguration").build();
+    private static final MarshallingInfo<String> STATEDB_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StateDB").build();
 
     private static final NodeConfigurationMarshaller instance = new NodeConfigurationMarshaller();
 
@@ -53,6 +55,7 @@ public class NodeConfigurationMarshaller {
             protocolMarshaller.marshall(nodeConfiguration.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(nodeConfiguration.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(nodeConfiguration.getLogPublishingConfiguration(), LOGPUBLISHINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(nodeConfiguration.getStateDB(), STATEDB_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,13 +65,14 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
     private Long maxRetries;
     /**
      * <p>
-     * An object that represents a duration of time.
+     * The timeout for each retry attempt.
      * </p>
      */
     private Duration perRetryTimeout;
     /**
      * <p>
-     * Specify a valid value.
+     * Specify a valid value. The event occurs before any processing of a request has started and is encountered when
+     * the upstream is temporarily or permanently unavailable.
      * </p>
      */
     private java.util.List<String> tcpRetryEvents;
@@ -360,11 +361,11 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An object that represents a duration of time.
+     * The timeout for each retry attempt.
      * </p>
      * 
      * @param perRetryTimeout
-     *        An object that represents a duration of time.
+     *        The timeout for each retry attempt.
      */
 
     public void setPerRetryTimeout(Duration perRetryTimeout) {
@@ -373,10 +374,10 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An object that represents a duration of time.
+     * The timeout for each retry attempt.
      * </p>
      * 
-     * @return An object that represents a duration of time.
+     * @return The timeout for each retry attempt.
      */
 
     public Duration getPerRetryTimeout() {
@@ -385,11 +386,11 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An object that represents a duration of time.
+     * The timeout for each retry attempt.
      * </p>
      * 
      * @param perRetryTimeout
-     *        An object that represents a duration of time.
+     *        The timeout for each retry attempt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,10 +401,12 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify a valid value.
+     * Specify a valid value. The event occurs before any processing of a request has started and is encountered when
+     * the upstream is temporarily or permanently unavailable.
      * </p>
      * 
-     * @return Specify a valid value.
+     * @return Specify a valid value. The event occurs before any processing of a request has started and is encountered
+     *         when the upstream is temporarily or permanently unavailable.
      * @see TcpRetryPolicyEvent
      */
 
@@ -413,11 +416,13 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify a valid value.
+     * Specify a valid value. The event occurs before any processing of a request has started and is encountered when
+     * the upstream is temporarily or permanently unavailable.
      * </p>
      * 
      * @param tcpRetryEvents
-     *        Specify a valid value.
+     *        Specify a valid value. The event occurs before any processing of a request has started and is encountered
+     *        when the upstream is temporarily or permanently unavailable.
      * @see TcpRetryPolicyEvent
      */
 
@@ -432,7 +437,8 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify a valid value.
+     * Specify a valid value. The event occurs before any processing of a request has started and is encountered when
+     * the upstream is temporarily or permanently unavailable.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -441,7 +447,8 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param tcpRetryEvents
-     *        Specify a valid value.
+     *        Specify a valid value. The event occurs before any processing of a request has started and is encountered
+     *        when the upstream is temporarily or permanently unavailable.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TcpRetryPolicyEvent
      */
@@ -458,11 +465,13 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify a valid value.
+     * Specify a valid value. The event occurs before any processing of a request has started and is encountered when
+     * the upstream is temporarily or permanently unavailable.
      * </p>
      * 
      * @param tcpRetryEvents
-     *        Specify a valid value.
+     *        Specify a valid value. The event occurs before any processing of a request has started and is encountered
+     *        when the upstream is temporarily or permanently unavailable.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TcpRetryPolicyEvent
      */
@@ -474,11 +483,13 @@ public class HttpRetryPolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify a valid value.
+     * Specify a valid value. The event occurs before any processing of a request has started and is encountered when
+     * the upstream is temporarily or permanently unavailable.
      * </p>
      * 
      * @param tcpRetryEvents
-     *        Specify a valid value.
+     *        Specify a valid value. The event occurs before any processing of a request has started and is encountered
+     *        when the upstream is temporarily or permanently unavailable.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TcpRetryPolicyEvent
      */

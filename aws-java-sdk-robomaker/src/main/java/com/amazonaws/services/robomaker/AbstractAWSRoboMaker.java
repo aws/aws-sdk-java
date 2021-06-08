@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,11 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
     }
 
     @Override
+    public BatchDeleteWorldsResult batchDeleteWorlds(BatchDeleteWorldsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchDescribeSimulationJobResult batchDescribeSimulationJob(BatchDescribeSimulationJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -44,6 +49,16 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
 
     @Override
     public CancelSimulationJobBatchResult cancelSimulationJobBatch(CancelSimulationJobBatchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelWorldExportJobResult cancelWorldExportJob(CancelWorldExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelWorldGenerationJobResult cancelWorldGenerationJob(CancelWorldGenerationJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,6 +103,21 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
     }
 
     @Override
+    public CreateWorldExportJobResult createWorldExportJob(CreateWorldExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateWorldGenerationJobResult createWorldGenerationJob(CreateWorldGenerationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateWorldTemplateResult createWorldTemplate(CreateWorldTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteFleetResult deleteFleet(DeleteFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +134,11 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
 
     @Override
     public DeleteSimulationApplicationResult deleteSimulationApplication(DeleteSimulationApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWorldTemplateResult deleteWorldTemplate(DeleteWorldTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -148,6 +183,31 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
     }
 
     @Override
+    public DescribeWorldResult describeWorld(DescribeWorldRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeWorldExportJobResult describeWorldExportJob(DescribeWorldExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeWorldGenerationJobResult describeWorldGenerationJob(DescribeWorldGenerationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeWorldTemplateResult describeWorldTemplate(DescribeWorldTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetWorldTemplateBodyResult getWorldTemplateBody(GetWorldTemplateBodyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDeploymentJobsResult listDeploymentJobs(ListDeploymentJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -188,6 +248,26 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
     }
 
     @Override
+    public ListWorldExportJobsResult listWorldExportJobs(ListWorldExportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWorldGenerationJobsResult listWorldGenerationJobs(ListWorldGenerationJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWorldTemplatesResult listWorldTemplates(ListWorldTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWorldsResult listWorlds(ListWorldsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RegisterRobotResult registerRobot(RegisterRobotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -224,6 +304,11 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
 
     @Override
     public UpdateSimulationApplicationResult updateSimulationApplication(UpdateSimulationApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateWorldTemplateResult updateWorldTemplate(UpdateWorldTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

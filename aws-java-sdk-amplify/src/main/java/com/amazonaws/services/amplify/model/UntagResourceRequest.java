@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure used to untag resource.
+ * The request structure for the untag resource request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UntagResource" target="_top">AWS API
@@ -30,24 +30,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Resource arn used to untag resource.
+     * The Amazon Resource Name (ARN) to use to untag a resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * Tag keys used to untag resource.
+     * The tag keys to use to untag a resource.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * Resource arn used to untag resource.
+     * The Amazon Resource Name (ARN) to use to untag a resource.
      * </p>
      * 
      * @param resourceArn
-     *        Resource arn used to untag resource.
+     *        The Amazon Resource Name (ARN) to use to untag a resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,10 +56,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Resource arn used to untag resource.
+     * The Amazon Resource Name (ARN) to use to untag a resource.
      * </p>
      * 
-     * @return Resource arn used to untag resource.
+     * @return The Amazon Resource Name (ARN) to use to untag a resource.
      */
 
     public String getResourceArn() {
@@ -68,11 +68,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Resource arn used to untag resource.
+     * The Amazon Resource Name (ARN) to use to untag a resource.
      * </p>
      * 
      * @param resourceArn
-     *        Resource arn used to untag resource.
+     *        The Amazon Resource Name (ARN) to use to untag a resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tag keys used to untag resource.
+     * The tag keys to use to untag a resource.
      * </p>
      * 
-     * @return Tag keys used to untag resource.
+     * @return The tag keys to use to untag a resource.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -95,11 +95,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tag keys used to untag resource.
+     * The tag keys to use to untag a resource.
      * </p>
      * 
      * @param tagKeys
-     *        Tag keys used to untag resource.
+     *        The tag keys to use to untag a resource.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -113,7 +113,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tag keys used to untag resource.
+     * The tag keys to use to untag a resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        Tag keys used to untag resource.
+     *        The tag keys to use to untag a resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Tag keys used to untag resource.
+     * The tag keys to use to untag a resource.
      * </p>
      * 
      * @param tagKeys
-     *        Tag keys used to untag resource.
+     *        The tag keys to use to untag a resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

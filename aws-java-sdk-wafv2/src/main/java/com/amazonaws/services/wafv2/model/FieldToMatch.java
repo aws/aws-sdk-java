@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,13 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
- * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
  * <p>
  * The part of a web request that you want AWS WAF to inspect. Include the single <code>FieldToMatch</code> type that
  * you want to inspect, with additional specifications as needed, according to the type. You specify a single request
@@ -43,6 +36,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or
      * <code>Referer</code>. This setting isn't case sensitive.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
+     * </p>
      */
     private SingleHeader singleHeader;
     /**
@@ -53,6 +49,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      * specification.
+     * </p>
+     * <p>
+     * Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
      * </p>
      */
     private SingleQueryArgument singleQueryArgument;
@@ -77,9 +76,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
     private QueryString queryString;
     /**
      * <p>
-     * Inspect the request body, which immediately follows the request headers. This is the part of a request that
-     * contains any additional data that you want to send to your web server as the HTTP request body, such as data from
-     * a form.
+     * Inspect the request body as plain text. The request body immediately follows the request headers. This is the
+     * part of a request that contains any additional data that you want to send to your web server as the HTTP request
+     * body, such as data from a form.
      * </p>
      * <p>
      * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
@@ -98,16 +97,37 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Method method;
+    /**
+     * <p>
+     * Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a
+     * request that contains any additional data that you want to send to your web server as the HTTP request body, such
+     * as data from a form.
+     * </p>
+     * <p>
+     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
+     * underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web request, such as
+     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that
+     * enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support inspecting the entire contents of
+     * web requests whose bodies exceed the 8 KB limit.
+     * </p>
+     */
+    private JsonBody jsonBody;
 
     /**
      * <p>
      * Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or
      * <code>Referer</code>. This setting isn't case sensitive.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
+     * </p>
      * 
      * @param singleHeader
      *        Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code>
-     *        or <code>Referer</code>. This setting isn't case sensitive.
+     *        or <code>Referer</code>. This setting isn't case sensitive.</p>
+     *        <p>
+     *        Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
      */
 
     public void setSingleHeader(SingleHeader singleHeader) {
@@ -119,9 +139,14 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or
      * <code>Referer</code>. This setting isn't case sensitive.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
+     * </p>
      * 
      * @return Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code>
-     *         or <code>Referer</code>. This setting isn't case sensitive.
+     *         or <code>Referer</code>. This setting isn't case sensitive.</p>
+     *         <p>
+     *         Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
      */
 
     public SingleHeader getSingleHeader() {
@@ -133,10 +158,15 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or
      * <code>Referer</code>. This setting isn't case sensitive.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
+     * </p>
      * 
      * @param singleHeader
      *        Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code>
-     *        or <code>Referer</code>. This setting isn't case sensitive.
+     *        or <code>Referer</code>. This setting isn't case sensitive.</p>
+     *        <p>
+     *        Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,6 +184,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      * specification.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
+     * </p>
      * 
      * @param singleQueryArgument
      *        Inspect a single query argument. Provide the name of the query argument to inspect, such as
@@ -162,6 +195,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      *        specification.
+     *        </p>
+     *        <p>
+     *        Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
      */
 
     public void setSingleQueryArgument(SingleQueryArgument singleQueryArgument) {
@@ -177,6 +213,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      * specification.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
+     * </p>
      * 
      * @return Inspect a single query argument. Provide the name of the query argument to inspect, such as
      *         <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
@@ -184,6 +223,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         This is used only to indicate the web request component for AWS WAF to inspect, in the
      *         <a>FieldToMatch</a> specification.
+     *         </p>
+     *         <p>
+     *         Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
      */
 
     public SingleQueryArgument getSingleQueryArgument() {
@@ -199,6 +241,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      * specification.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
+     * </p>
      * 
      * @param singleQueryArgument
      *        Inspect a single query argument. Provide the name of the query argument to inspect, such as
@@ -207,6 +252,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      *        specification.
+     *        </p>
+     *        <p>
+     *        Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,9 +392,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Inspect the request body, which immediately follows the request headers. This is the part of a request that
-     * contains any additional data that you want to send to your web server as the HTTP request body, such as data from
-     * a form.
+     * Inspect the request body as plain text. The request body immediately follows the request headers. This is the
+     * part of a request that contains any additional data that you want to send to your web server as the HTTP request
+     * body, such as data from a form.
      * </p>
      * <p>
      * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
@@ -358,9 +406,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param body
-     *        Inspect the request body, which immediately follows the request headers. This is the part of a request
-     *        that contains any additional data that you want to send to your web server as the HTTP request body, such
-     *        as data from a form. </p>
+     *        Inspect the request body as plain text. The request body immediately follows the request headers. This is
+     *        the part of a request that contains any additional data that you want to send to your web server as the
+     *        HTTP request body, such as data from a form. </p>
      *        <p>
      *        Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by
      *        the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't
@@ -376,9 +424,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Inspect the request body, which immediately follows the request headers. This is the part of a request that
-     * contains any additional data that you want to send to your web server as the HTTP request body, such as data from
-     * a form.
+     * Inspect the request body as plain text. The request body immediately follows the request headers. This is the
+     * part of a request that contains any additional data that you want to send to your web server as the HTTP request
+     * body, such as data from a form.
      * </p>
      * <p>
      * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
@@ -389,9 +437,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * web requests whose bodies exceed the 8 KB limit.
      * </p>
      * 
-     * @return Inspect the request body, which immediately follows the request headers. This is the part of a request
-     *         that contains any additional data that you want to send to your web server as the HTTP request body, such
-     *         as data from a form. </p>
+     * @return Inspect the request body as plain text. The request body immediately follows the request headers. This is
+     *         the part of a request that contains any additional data that you want to send to your web server as the
+     *         HTTP request body, such as data from a form. </p>
      *         <p>
      *         Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by
      *         the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you
@@ -407,9 +455,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Inspect the request body, which immediately follows the request headers. This is the part of a request that
-     * contains any additional data that you want to send to your web server as the HTTP request body, such as data from
-     * a form.
+     * Inspect the request body as plain text. The request body immediately follows the request headers. This is the
+     * part of a request that contains any additional data that you want to send to your web server as the HTTP request
+     * body, such as data from a form.
      * </p>
      * <p>
      * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
@@ -421,9 +469,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param body
-     *        Inspect the request body, which immediately follows the request headers. This is the part of a request
-     *        that contains any additional data that you want to send to your web server as the HTTP request body, such
-     *        as data from a form. </p>
+     *        Inspect the request body as plain text. The request body immediately follows the request headers. This is
+     *        the part of a request that contains any additional data that you want to send to your web server as the
+     *        HTTP request body, such as data from a form. </p>
      *        <p>
      *        Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by
      *        the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't
@@ -486,6 +534,103 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a
+     * request that contains any additional data that you want to send to your web server as the HTTP request body, such
+     * as data from a form.
+     * </p>
+     * <p>
+     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
+     * underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web request, such as
+     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that
+     * enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support inspecting the entire contents of
+     * web requests whose bodies exceed the 8 KB limit.
+     * </p>
+     * 
+     * @param jsonBody
+     *        Inspect the request body as JSON. The request body immediately follows the request headers. This is the
+     *        part of a request that contains any additional data that you want to send to your web server as the HTTP
+     *        request body, such as data from a form. </p>
+     *        <p>
+     *        Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by
+     *        the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't
+     *        allow additional bytes in by combining a statement that inspects the body of the web request, such as
+     *        <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
+     *        <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of the request. AWS WAF
+     *        doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
+     */
+
+    public void setJsonBody(JsonBody jsonBody) {
+        this.jsonBody = jsonBody;
+    }
+
+    /**
+     * <p>
+     * Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a
+     * request that contains any additional data that you want to send to your web server as the HTTP request body, such
+     * as data from a form.
+     * </p>
+     * <p>
+     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
+     * underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web request, such as
+     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that
+     * enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support inspecting the entire contents of
+     * web requests whose bodies exceed the 8 KB limit.
+     * </p>
+     * 
+     * @return Inspect the request body as JSON. The request body immediately follows the request headers. This is the
+     *         part of a request that contains any additional data that you want to send to your web server as the HTTP
+     *         request body, such as data from a form. </p>
+     *         <p>
+     *         Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by
+     *         the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you
+     *         don't allow additional bytes in by combining a statement that inspects the body of the web request, such
+     *         as <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
+     *         <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of the request. AWS WAF
+     *         doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
+     */
+
+    public JsonBody getJsonBody() {
+        return this.jsonBody;
+    }
+
+    /**
+     * <p>
+     * Inspect the request body as JSON. The request body immediately follows the request headers. This is the part of a
+     * request that contains any additional data that you want to send to your web server as the HTTP request body, such
+     * as data from a form.
+     * </p>
+     * <p>
+     * Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by the
+     * underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web request, such as
+     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a> that
+     * enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support inspecting the entire contents of
+     * web requests whose bodies exceed the 8 KB limit.
+     * </p>
+     * 
+     * @param jsonBody
+     *        Inspect the request body as JSON. The request body immediately follows the request headers. This is the
+     *        part of a request that contains any additional data that you want to send to your web server as the HTTP
+     *        request body, such as data from a form. </p>
+     *        <p>
+     *        Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS WAF for inspection by
+     *        the underlying host service. If you don't need to inspect more than 8 KB, you can guarantee that you don't
+     *        allow additional bytes in by combining a statement that inspects the body of the web request, such as
+     *        <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
+     *        <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of the request. AWS WAF
+     *        doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldToMatch withJsonBody(JsonBody jsonBody) {
+        setJsonBody(jsonBody);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -510,7 +655,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
         if (getBody() != null)
             sb.append("Body: ").append(getBody()).append(",");
         if (getMethod() != null)
-            sb.append("Method: ").append(getMethod());
+            sb.append("Method: ").append(getMethod()).append(",");
+        if (getJsonBody() != null)
+            sb.append("JsonBody: ").append(getJsonBody());
         sb.append("}");
         return sb.toString();
     }
@@ -553,6 +700,10 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMethod() != null && other.getMethod().equals(this.getMethod()) == false)
             return false;
+        if (other.getJsonBody() == null ^ this.getJsonBody() == null)
+            return false;
+        if (other.getJsonBody() != null && other.getJsonBody().equals(this.getJsonBody()) == false)
+            return false;
         return true;
     }
 
@@ -568,6 +719,7 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getQueryString() == null) ? 0 : getQueryString().hashCode());
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getMethod() == null) ? 0 : getMethod().hashCode());
+        hashCode = prime * hashCode + ((getJsonBody() == null) ? 0 : getJsonBody().hashCode());
         return hashCode;
     }
 

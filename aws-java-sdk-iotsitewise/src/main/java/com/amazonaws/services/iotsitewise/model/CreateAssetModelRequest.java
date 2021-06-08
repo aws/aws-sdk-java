@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The property definitions of the asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset Properties</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -54,7 +54,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      * children of any other assets created from this asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -64,6 +64,14 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.List<AssetModelHierarchyDefinition> assetModelHierarchies;
+    /**
+     * <p>
+     * The composite asset models that are part of this asset model. Composite asset models are asset models that
+     * contain specific properties. Each composite model has a type that defines the properties that the composite model
+     * supports. Use composite asset models to define alarms on this asset model.
+     * </p>
+     */
+    private java.util.List<AssetModelCompositeModelDefinition> assetModelCompositeModels;
     /**
      * <p>
      * A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse
@@ -163,7 +171,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The property definitions of the asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset Properties</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -174,7 +182,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The property definitions of the asset model. For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     *         Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *         properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
      *         <p>
      *         You can specify up to 200 properties per asset model. For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
@@ -188,7 +196,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The property definitions of the asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset Properties</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -200,7 +208,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * @param assetModelProperties
      *        The property definitions of the asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     *        Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 200 properties per asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
@@ -219,7 +227,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The property definitions of the asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset Properties</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -236,7 +244,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * @param assetModelProperties
      *        The property definitions of the asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     *        Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 200 properties per asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
@@ -257,7 +265,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The property definitions of the asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset Properties</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -269,7 +277,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * @param assetModelProperties
      *        The property definitions of the asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset
-     *        Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 200 properties per asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
@@ -286,7 +294,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      * children of any other assets created from this asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -298,7 +306,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * @return The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      *         children of any other assets created from this asset model. For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *         Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *         hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
      *         <p>
      *         You can specify up to 10 hierarchies per asset model. For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
@@ -313,7 +321,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      * children of any other assets created from this asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -326,7 +334,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      *        The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      *        children of any other assets created from this asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 10 hierarchies per asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
@@ -346,7 +354,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      * children of any other assets created from this asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -364,7 +372,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      *        The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      *        children of any other assets created from this asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 10 hierarchies per asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
@@ -386,7 +394,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      * children of any other assets created from this asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -399,7 +407,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      *        The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be
      *        children of any other assets created from this asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
      *        <p>
      *        You can specify up to 10 hierarchies per asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
@@ -409,6 +417,92 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
 
     public CreateAssetModelRequest withAssetModelHierarchies(java.util.Collection<AssetModelHierarchyDefinition> assetModelHierarchies) {
         setAssetModelHierarchies(assetModelHierarchies);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The composite asset models that are part of this asset model. Composite asset models are asset models that
+     * contain specific properties. Each composite model has a type that defines the properties that the composite model
+     * supports. Use composite asset models to define alarms on this asset model.
+     * </p>
+     * 
+     * @return The composite asset models that are part of this asset model. Composite asset models are asset models
+     *         that contain specific properties. Each composite model has a type that defines the properties that the
+     *         composite model supports. Use composite asset models to define alarms on this asset model.
+     */
+
+    public java.util.List<AssetModelCompositeModelDefinition> getAssetModelCompositeModels() {
+        return assetModelCompositeModels;
+    }
+
+    /**
+     * <p>
+     * The composite asset models that are part of this asset model. Composite asset models are asset models that
+     * contain specific properties. Each composite model has a type that defines the properties that the composite model
+     * supports. Use composite asset models to define alarms on this asset model.
+     * </p>
+     * 
+     * @param assetModelCompositeModels
+     *        The composite asset models that are part of this asset model. Composite asset models are asset models that
+     *        contain specific properties. Each composite model has a type that defines the properties that the
+     *        composite model supports. Use composite asset models to define alarms on this asset model.
+     */
+
+    public void setAssetModelCompositeModels(java.util.Collection<AssetModelCompositeModelDefinition> assetModelCompositeModels) {
+        if (assetModelCompositeModels == null) {
+            this.assetModelCompositeModels = null;
+            return;
+        }
+
+        this.assetModelCompositeModels = new java.util.ArrayList<AssetModelCompositeModelDefinition>(assetModelCompositeModels);
+    }
+
+    /**
+     * <p>
+     * The composite asset models that are part of this asset model. Composite asset models are asset models that
+     * contain specific properties. Each composite model has a type that defines the properties that the composite model
+     * supports. Use composite asset models to define alarms on this asset model.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssetModelCompositeModels(java.util.Collection)} or
+     * {@link #withAssetModelCompositeModels(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param assetModelCompositeModels
+     *        The composite asset models that are part of this asset model. Composite asset models are asset models that
+     *        contain specific properties. Each composite model has a type that defines the properties that the
+     *        composite model supports. Use composite asset models to define alarms on this asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssetModelRequest withAssetModelCompositeModels(AssetModelCompositeModelDefinition... assetModelCompositeModels) {
+        if (this.assetModelCompositeModels == null) {
+            setAssetModelCompositeModels(new java.util.ArrayList<AssetModelCompositeModelDefinition>(assetModelCompositeModels.length));
+        }
+        for (AssetModelCompositeModelDefinition ele : assetModelCompositeModels) {
+            this.assetModelCompositeModels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The composite asset models that are part of this asset model. Composite asset models are asset models that
+     * contain specific properties. Each composite model has a type that defines the properties that the composite model
+     * supports. Use composite asset models to define alarms on this asset model.
+     * </p>
+     * 
+     * @param assetModelCompositeModels
+     *        The composite asset models that are part of this asset model. Composite asset models are asset models that
+     *        contain specific properties. Each composite model has a type that defines the properties that the
+     *        composite model supports. Use composite asset models to define alarms on this asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssetModelRequest withAssetModelCompositeModels(java.util.Collection<AssetModelCompositeModelDefinition> assetModelCompositeModels) {
+        setAssetModelCompositeModels(assetModelCompositeModels);
         return this;
     }
 
@@ -558,6 +652,8 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("AssetModelProperties: ").append(getAssetModelProperties()).append(",");
         if (getAssetModelHierarchies() != null)
             sb.append("AssetModelHierarchies: ").append(getAssetModelHierarchies()).append(",");
+        if (getAssetModelCompositeModels() != null)
+            sb.append("AssetModelCompositeModels: ").append(getAssetModelCompositeModels()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTags() != null)
@@ -592,6 +688,10 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getAssetModelHierarchies() != null && other.getAssetModelHierarchies().equals(this.getAssetModelHierarchies()) == false)
             return false;
+        if (other.getAssetModelCompositeModels() == null ^ this.getAssetModelCompositeModels() == null)
+            return false;
+        if (other.getAssetModelCompositeModels() != null && other.getAssetModelCompositeModels().equals(this.getAssetModelCompositeModels()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -612,6 +712,7 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getAssetModelDescription() == null) ? 0 : getAssetModelDescription().hashCode());
         hashCode = prime * hashCode + ((getAssetModelProperties() == null) ? 0 : getAssetModelProperties().hashCode());
         hashCode = prime * hashCode + ((getAssetModelHierarchies() == null) ? 0 : getAssetModelHierarchies().hashCode());
+        hashCode = prime * hashCode + ((getAssetModelCompositeModels() == null) ? 0 : getAssetModelCompositeModels().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

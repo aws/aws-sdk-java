@@ -49,6 +49,28 @@
       ],
       "documentation":"<p>If the DNS server for your on-premises domain uses a publicly addressable IP address, you must add a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds this address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges from your Microsoft AD on AWS to a peer VPC. </p> <p>Before you call <i>AddIpRoutes</i>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <i>AddIpRoutes</i> operation, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html\">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>"
     },
+    "AddRegion":{
+      "name":"AddRegion",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AddRegionRequest"},
+      "output":{"shape":"AddRegionResult"},
+      "errors":[
+        {"shape":"DirectoryUnavailableException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"EntityDoesNotExistException"},
+        {"shape":"DirectoryAlreadyInRegionException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"DirectoryDoesNotExistException"},
+        {"shape":"RegionLimitExceededException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Adds two domain controllers in the specified Region for the specified directory.</p>"
+    },
     "AddTagsToResource":{
       "name":"AddTagsToResource",
       "http":{
@@ -132,7 +154,7 @@
         {"shape":"ClientException"},
         {"shape":"ServiceException"}
       ],
-      "documentation":"<p>Creates a computer account in the specified directory, and joins the computer to the directory.</p>"
+      "documentation":"<p>Creates an Active Directory computer object in the specified directory.</p>"
     },
     "CreateConditionalForwarder":{
       "name":"CreateConditionalForwarder",
@@ -339,7 +361,7 @@
         {"shape":"ClientException"},
         {"shape":"ServiceException"}
       ],
-      "documentation":"<p>Deletes from the system the certificate that was registered for a secured LDAP connection.</p>"
+      "documentation":"<p>Deletes from the system the certificate that was registered for secure LDAP or client certificate authentication.</p>"
     },
     "DeregisterEventTopic":{
       "name":"DeregisterEventTopic",
@@ -373,7 +395,7 @@
         {"shape":"ClientException"},
         {"shape":"ServiceException"}
       ],
-      "documentation":"<p>Displays information about the certificate registered for a secured LDAP connection.</p>"
+      "documentation":"<p>Displays information about the certificate registered for secure LDAP or client certificate authentication.</p>"
     },
     "DescribeConditionalForwarders":{
       "name":"DescribeConditionalForwarders",
@@ -462,6 +484,25 @@
       ],
       "documentation":"<p>Describes the status of LDAP security for the specified directory.</p>"
     },
+    "DescribeRegions":{
+      "name":"DescribeRegions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeRegionsRequest"},
+      "output":{"shape":"DescribeRegionsResult"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"DirectoryDoesNotExistException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Provides information about the Regions that are configured for multi-Region replication.</p>"
+    },
     "DescribeSharedDirectories":{
       "name":"DescribeSharedDirectories",
       "http":{
@@ -515,6 +556,24 @@
       ],
       "documentation":"<p>Obtains information about the trust relationships for this account.</p> <p>If no input parameters are provided, such as DirectoryId or TrustIds, this request describes all the trust relationships belonging to the account.</p>"
     },
+    "DisableClientAuthentication":{
+      "name":"DisableClientAuthentication",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisableClientAuthenticationRequest"},
+      "output":{"shape":"DisableClientAuthenticationResult"},
+      "errors":[
+        {"shape":"DirectoryDoesNotExistException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"InvalidClientAuthStatusException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Disables alternative client authentication methods for the specified directory. </p>"
+    },
     "DisableLDAPS":{
       "name":"DisableLDAPS",
       "http":{
@@ -565,6 +624,25 @@
         {"shape":"ServiceException"}
       ],
       "documentation":"<p>Disables single-sign on for a directory.</p>"
+    },
+    "EnableClientAuthentication":{
+      "name":"EnableClientAuthentication",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"EnableClientAuthenticationRequest"},
+      "output":{"shape":"EnableClientAuthenticationResult"},
+      "errors":[
+        {"shape":"DirectoryDoesNotExistException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"InvalidClientAuthStatusException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"NoAvailableCertificateException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Enables alternative client authentication methods for the specified directory.</p>"
     },
     "EnableLDAPS":{
       "name":"EnableLDAPS",
@@ -666,7 +744,7 @@
         {"shape":"ClientException"},
         {"shape":"ServiceException"}
       ],
-      "documentation":"<p>For the specified directory, lists all the certificates registered for a secured LDAP connection.</p>"
+      "documentation":"<p>For the specified directory, lists all the certificates registered for a secure LDAP or client certificate authentication.</p>"
     },
     "ListIpRoutes":{
       "name":"ListIpRoutes",
@@ -753,7 +831,7 @@
         {"shape":"ClientException"},
         {"shape":"ServiceException"}
       ],
-      "documentation":"<p>Registers a certificate for secured LDAP connection.</p>"
+      "documentation":"<p>Registers a certificate for a secure LDAP or client certificate authentication.</p>"
     },
     "RegisterEventTopic":{
       "name":"RegisterEventTopic",
@@ -804,6 +882,24 @@
         {"shape":"ServiceException"}
       ],
       "documentation":"<p>Removes IP address blocks from a directory.</p>"
+    },
+    "RemoveRegion":{
+      "name":"RemoveRegion",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RemoveRegionRequest"},
+      "output":{"shape":"RemoveRegionResult"},
+      "errors":[
+        {"shape":"DirectoryUnavailableException"},
+        {"shape":"DirectoryDoesNotExistException"},
+        {"shape":"UnsupportedOperationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ClientException"},
+        {"shape":"ServiceException"}
+      ],
+      "documentation":"<p>Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary Region with this operation. Instead, use the <code>DeleteDirectory</code> API.</p>"
     },
     "RemoveTagsFromResource":{
       "name":"RemoveTagsFromResource",
@@ -1026,7 +1122,7 @@
         "Message":{"shape":"ExceptionMessage"},
         "RequestId":{"shape":"RequestId"}
       },
-      "documentation":"<p>You do not have sufficient access to perform this action.</p>",
+      "documentation":"<p>Client authentication is not available in this region at this time.</p>",
       "exception":true
     },
     "AccessUrl":{
@@ -1060,6 +1156,30 @@
       "members":{
       }
     },
+    "AddRegionRequest":{
+      "type":"structure",
+      "required":[
+        "DirectoryId",
+        "RegionName",
+        "VPCSettings"
+      ],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The identifier of the directory to which you want to add Region replication.</p>"
+        },
+        "RegionName":{
+          "shape":"RegionName",
+          "documentation":"<p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>"
+        },
+        "VPCSettings":{"shape":"DirectoryVpcSettings"}
+      }
+    },
+    "AddRegionResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "AddTagsToResourceRequest":{
       "type":"structure",
       "required":[
@@ -1083,6 +1203,10 @@
       }
     },
     "AddedDateTime":{"type":"timestamp"},
+    "AdditionalRegions":{
+      "type":"list",
+      "member":{"shape":"RegionName"}
+    },
     "AliasName":{
       "type":"string",
       "max":62,
@@ -1180,6 +1304,14 @@
         "ExpiryDateTime":{
           "shape":"CertificateExpiryDateTime",
           "documentation":"<p>The date and time when the certificate will expire.</p>"
+        },
+        "Type":{
+          "shape":"CertificateType",
+          "documentation":"<p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>"
+        },
+        "ClientCertAuthSettings":{
+          "shape":"ClientCertAuthSettings",
+          "documentation":"<p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>"
         }
       },
       "documentation":"<p>Information about the certificate.</p>"
@@ -1240,6 +1372,10 @@
         "ExpiryDateTime":{
           "shape":"CertificateExpiryDateTime",
           "documentation":"<p>The date and time when the certificate will expire.</p>"
+        },
+        "Type":{
+          "shape":"CertificateType",
+          "documentation":"<p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>"
         }
       },
       "documentation":"<p>Contains general information about a certificate.</p>"
@@ -1266,6 +1402,13 @@
       ]
     },
     "CertificateStateReason":{"type":"string"},
+    "CertificateType":{
+      "type":"string",
+      "enum":[
+        "ClientCertAuth",
+        "ClientLDAPS"
+      ]
+    },
     "CertificatesInfo":{
       "type":"list",
       "member":{"shape":"CertificateInfo"}
@@ -1277,6 +1420,20 @@
     "CidrIps":{
       "type":"list",
       "member":{"shape":"CidrIp"}
+    },
+    "ClientAuthenticationType":{
+      "type":"string",
+      "enum":["SmartCard"]
+    },
+    "ClientCertAuthSettings":{
+      "type":"structure",
+      "members":{
+        "OCSPUrl":{
+          "shape":"OCSPUrl",
+          "documentation":"<p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>"
+        }
+      },
+      "documentation":"<p>Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations. </p>"
     },
     "ClientException":{
       "type":"structure",
@@ -1517,7 +1674,7 @@
         },
         "Password":{
           "shape":"Password",
-          "documentation":"<p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p> <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>"
+          "documentation":"<p>The password for the directory administrator. The directory creation process creates a directory administrator account with the user name <code>Administrator</code> and this password.</p> <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p> <p>The regex pattern for this string is made up of the following conditions:</p> <ul> <li> <p>Length (?=^.{8,64}$) – Must be between 8 and 64 characters</p> </li> </ul> <p>AND any 3 of the following password complexity rules required by Active Directory:</p> <ul> <li> <p>Numbers and upper case and lowercase (?=.*\\d)(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and special characters and lower case (?=.*\\d)(?=.*[^A-Za-z0-9\\s])(?=.*[a-z])</p> </li> <li> <p>Special characters and upper case and lower case (?=.*[^A-Za-z0-9\\s])(?=.*[A-Z])(?=.*[a-z])</p> </li> <li> <p>Numbers and upper case and special characters (?=.*\\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\\s])</p> </li> </ul> <p>For additional information about how Active Directory passwords are enforced, see <a href=\"https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements\">Password must meet complexity requirements</a> on the Microsoft website.</p>"
         },
         "Description":{
           "shape":"Description",
@@ -2036,6 +2193,37 @@
         }
       }
     },
+    "DescribeRegionsRequest":{
+      "type":"structure",
+      "required":["DirectoryId"],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The identifier of the directory.</p>"
+        },
+        "RegionName":{
+          "shape":"RegionName",
+          "documentation":"<p>The name of the Region. For example, <code>us-east-1</code>.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null if this is the first call.</p>"
+        }
+      }
+    },
+    "DescribeRegionsResult":{
+      "type":"structure",
+      "members":{
+        "RegionsDescription":{
+          "shape":"RegionsDescription",
+          "documentation":"<p>List of Region information related to the directory for each replicated Region.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <a>DescribeRegions</a> to retrieve the next set of items.</p>"
+        }
+      }
+    },
     "DescribeSharedDirectoriesRequest":{
       "type":"structure",
       "required":["OwnerDirectoryId"],
@@ -2152,6 +2340,15 @@
     "DesiredNumberOfDomainControllers":{
       "type":"integer",
       "min":2
+    },
+    "DirectoryAlreadyInRegionException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ExceptionMessage"},
+        "RequestId":{"shape":"RequestId"}
+      },
+      "documentation":"<p>The Region you specified is the same Region where the AWS Managed Microsoft AD directory was created. Specify a different Region and try again.</p>",
+      "exception":true
     },
     "DirectoryAlreadySharedException":{
       "type":"structure",
@@ -2318,6 +2515,10 @@
         "OwnerDirectoryDescription":{
           "shape":"OwnerDirectoryDescription",
           "documentation":"<p>Describes the AWS Managed Microsoft AD directory in the directory owner account.</p>"
+        },
+        "RegionsInfo":{
+          "shape":"RegionsInfo",
+          "documentation":"<p>Lists the Regions where the directory has replicated.</p>"
         }
       },
       "documentation":"<p>Contains information about an AWS Directory Service directory.</p>"
@@ -2418,7 +2619,7 @@
     },
     "DirectoryShortName":{
       "type":"string",
-      "pattern":"^[^\\\\/:*?\\\"\\<\\>|.]+[^\\\\/:*?\\\"<>|]*$"
+      "pattern":"^[^\\\\/:*?\"<>|.]+[^\\\\/:*?\"<>|]*$"
     },
     "DirectorySize":{
       "type":"string",
@@ -2500,6 +2701,28 @@
         }
       },
       "documentation":"<p>Contains information about the directory.</p>"
+    },
+    "DisableClientAuthenticationRequest":{
+      "type":"structure",
+      "required":[
+        "DirectoryId",
+        "Type"
+      ],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The identifier of the directory </p>"
+        },
+        "Type":{
+          "shape":"ClientAuthenticationType",
+          "documentation":"<p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>"
+        }
+      }
+    },
+    "DisableClientAuthenticationResult":{
+      "type":"structure",
+      "members":{
+      }
     },
     "DisableLDAPSRequest":{
       "type":"structure",
@@ -2648,6 +2871,28 @@
     "DomainControllers":{
       "type":"list",
       "member":{"shape":"DomainController"}
+    },
+    "EnableClientAuthenticationRequest":{
+      "type":"structure",
+      "required":[
+        "DirectoryId",
+        "Type"
+      ],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The identifier of the specified directory. </p>"
+        },
+        "Type":{
+          "shape":"ClientAuthenticationType",
+          "documentation":"<p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in the on-premises AD. </p>"
+        }
+      }
+    },
+    "EnableClientAuthenticationResult":{
+      "type":"structure",
+      "members":{
+      }
     },
     "EnableLDAPSRequest":{
       "type":"structure",
@@ -2826,6 +3071,15 @@
         "RequestId":{"shape":"RequestId"}
       },
       "documentation":"<p>The certificate PEM that was provided has incorrect encoding.</p>",
+      "exception":true
+    },
+    "InvalidClientAuthStatusException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ExceptionMessage"},
+        "RequestId":{"shape":"RequestId"}
+      },
+      "documentation":"<p>Client authentication is already enabled.</p>",
       "exception":true
     },
     "InvalidLDAPSStatusException":{
@@ -3191,13 +3445,19 @@
         "Message":{"shape":"ExceptionMessage"},
         "RequestId":{"shape":"RequestId"}
       },
-      "documentation":"<p>The LDAP activities could not be performed because at least one valid certificate must be registered with the system.</p>",
+      "documentation":"<p>Client authentication setup could not be completed because at least one valid certificate must be registered in the system.</p>",
       "exception":true
     },
     "Notes":{
       "type":"string",
       "max":1024,
       "sensitive":true
+    },
+    "OCSPUrl":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":"^(https?|ftp|file|ldaps?)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;()]*[-a-zA-Z0-9+&@#/%=~_|()]"
     },
     "OrganizationalUnitDN":{
       "type":"string",
@@ -3282,7 +3542,7 @@
       "members":{
         "RadiusServers":{
           "shape":"Servers",
-          "documentation":"<p>An array of strings that contains the IP addresses of the RADIUS server endpoints, or the IP addresses of your RADIUS server load balancer.</p>"
+          "documentation":"<p>An array of strings that contains the fully qualified domain name (FQDN) or IP addresses of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server load balancer.</p>"
         },
         "RadiusPort":{
           "shape":"PortNumber",
@@ -3334,6 +3594,84 @@
       "max":20,
       "min":1
     },
+    "RegionDescription":{
+      "type":"structure",
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The identifier of the directory.</p>"
+        },
+        "RegionName":{
+          "shape":"RegionName",
+          "documentation":"<p>The name of the Region. For example, <code>us-east-1</code>.</p>"
+        },
+        "RegionType":{
+          "shape":"RegionType",
+          "documentation":"<p>Specifies whether the Region is the primary Region or an additional Region.</p>"
+        },
+        "Status":{
+          "shape":"DirectoryStage",
+          "documentation":"<p>The status of the replication process for the specified Region.</p>"
+        },
+        "VpcSettings":{"shape":"DirectoryVpcSettings"},
+        "DesiredNumberOfDomainControllers":{
+          "shape":"DesiredNumberOfDomainControllers",
+          "documentation":"<p>The desired number of domain controllers in the specified Region for the specified directory.</p>"
+        },
+        "LaunchTime":{
+          "shape":"LaunchTime",
+          "documentation":"<p>Specifies when the Region replication began.</p>"
+        },
+        "StatusLastUpdatedDateTime":{
+          "shape":"StateLastUpdatedDateTime",
+          "documentation":"<p>The date and time that the Region status was last updated.</p>"
+        },
+        "LastUpdatedDateTime":{
+          "shape":"LastUpdatedDateTime",
+          "documentation":"<p>The date and time that the Region description was last updated.</p>"
+        }
+      },
+      "documentation":"<p>The replicated Region information for a directory.</p>"
+    },
+    "RegionLimitExceededException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ExceptionMessage"},
+        "RequestId":{"shape":"RequestId"}
+      },
+      "documentation":"<p>You have reached the limit for maximum number of simultaneous Region replications per directory.</p>",
+      "exception":true
+    },
+    "RegionName":{
+      "type":"string",
+      "max":32,
+      "min":8
+    },
+    "RegionType":{
+      "type":"string",
+      "enum":[
+        "Primary",
+        "Additional"
+      ]
+    },
+    "RegionsDescription":{
+      "type":"list",
+      "member":{"shape":"RegionDescription"}
+    },
+    "RegionsInfo":{
+      "type":"structure",
+      "members":{
+        "PrimaryRegion":{
+          "shape":"RegionName",
+          "documentation":"<p>The Region where the AWS Managed Microsoft AD directory was originally created.</p>"
+        },
+        "AdditionalRegions":{
+          "shape":"AdditionalRegions",
+          "documentation":"<p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>"
+        }
+      },
+      "documentation":"<p>Provides information about the Regions that are configured for multi-Region replication.</p>"
+    },
     "RegisterCertificateRequest":{
       "type":"structure",
       "required":[
@@ -3348,6 +3686,14 @@
         "CertificateData":{
           "shape":"CertificateData",
           "documentation":"<p>The certificate PEM string that needs to be registered.</p>"
+        },
+        "Type":{
+          "shape":"CertificateType",
+          "documentation":"<p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>"
+        },
+        "ClientCertAuthSettings":{
+          "shape":"ClientCertAuthSettings",
+          "documentation":"<p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>"
         }
       }
     },
@@ -3429,6 +3775,21 @@
       }
     },
     "RemoveIpRoutesResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "RemoveRegionRequest":{
+      "type":"structure",
+      "required":["DirectoryId"],
+      "members":{
+        "DirectoryId":{
+          "shape":"DirectoryId",
+          "documentation":"<p>The identifier of the directory for which you want to remove Region replication.</p>"
+        }
+      }
+    },
+    "RemoveRegionResult":{
       "type":"structure",
       "members":{
       }

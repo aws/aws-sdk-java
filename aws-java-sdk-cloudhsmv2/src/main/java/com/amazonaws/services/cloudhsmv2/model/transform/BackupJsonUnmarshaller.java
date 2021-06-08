@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,10 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
                     context.nextToken();
                     backup.setCopyTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("NeverExpires", targetDepth)) {
+                    context.nextToken();
+                    backup.setNeverExpires(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("SourceRegion", targetDepth)) {
                     context.nextToken();
                     backup.setSourceRegion(context.getUnmarshaller(String.class).unmarshall(context));
@@ -86,7 +90,9 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
                 }
                 if (context.testExpression("TagList", targetDepth)) {
                     context.nextToken();
-                    backup.setTagList(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    backup.setTagList(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

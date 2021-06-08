@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,9 +64,17 @@ public class Ac3SettingsJsonUnmarshaller implements Unmarshaller<Ac3Settings, Js
                     context.nextToken();
                     ac3Settings.setDialnorm(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("dynamicRangeCompressionLine", targetDepth)) {
+                    context.nextToken();
+                    ac3Settings.setDynamicRangeCompressionLine(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("dynamicRangeCompressionProfile", targetDepth)) {
                     context.nextToken();
                     ac3Settings.setDynamicRangeCompressionProfile(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("dynamicRangeCompressionRf", targetDepth)) {
+                    context.nextToken();
+                    ac3Settings.setDynamicRangeCompressionRf(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lfeFilter", targetDepth)) {
                     context.nextToken();

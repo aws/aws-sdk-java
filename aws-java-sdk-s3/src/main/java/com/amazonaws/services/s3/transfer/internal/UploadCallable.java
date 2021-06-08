@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Encryption;
+import com.amazonaws.services.s3.AmazonS3EncryptionV2;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
@@ -207,7 +208,7 @@ public class UploadCallable implements Callable<UploadResult> {
      * as the multipart upload id.
      */
     private UploadResult uploadInParts() throws Exception {
-        boolean isUsingEncryption = s3 instanceof AmazonS3Encryption;
+        boolean isUsingEncryption = s3 instanceof AmazonS3Encryption || s3 instanceof AmazonS3EncryptionV2;
         long optimalPartSize = getOptimalPartSize(isUsingEncryption);
 
         try {
@@ -459,7 +460,8 @@ public class UploadCallable implements Callable<UploadResult> {
     private boolean shouldCalculatePartMd5() {
         return origReq.getObjectLockMode() != null
                 || origReq.getObjectLockRetainUntilDate() != null
-                || origReq.getObjectLockLegalHoldStatus() != null;
+                || origReq.getObjectLockLegalHoldStatus() != null
+                || configuration.isAlwaysCalculateMultipartMd5();
     }
 
     private enum State {

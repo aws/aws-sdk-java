@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,74 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Creates a new cost anomaly detection monitor with the requested type and monitor specification.
+     * </p>
+     * 
+     * @param createAnomalyMonitorRequest
+     * @return A Java Future containing the result of the CreateAnomalyMonitor operation returned by the service.
+     * @sample AWSCostExplorerAsync.CreateAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnomalyMonitorResult> createAnomalyMonitorAsync(CreateAnomalyMonitorRequest createAnomalyMonitorRequest);
+
+    /**
+     * <p>
+     * Creates a new cost anomaly detection monitor with the requested type and monitor specification.
+     * </p>
+     * 
+     * @param createAnomalyMonitorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAnomalyMonitor operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.CreateAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnomalyMonitorResult> createAnomalyMonitorAsync(CreateAnomalyMonitorRequest createAnomalyMonitorRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAnomalyMonitorRequest, CreateAnomalyMonitorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with
+     * email or SNS notifications. Email subscribers can set a dollar threshold and a time frequency for receiving
+     * notifications.
+     * </p>
+     * 
+     * @param createAnomalySubscriptionRequest
+     * @return A Java Future containing the result of the CreateAnomalySubscription operation returned by the service.
+     * @sample AWSCostExplorerAsync.CreateAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnomalySubscriptionResult> createAnomalySubscriptionAsync(
+            CreateAnomalySubscriptionRequest createAnomalySubscriptionRequest);
+
+    /**
+     * <p>
+     * Adds a subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with
+     * email or SNS notifications. Email subscribers can set a dollar threshold and a time frequency for receiving
+     * notifications.
+     * </p>
+     * 
+     * @param createAnomalySubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAnomalySubscription operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.CreateAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnomalySubscriptionResult> createAnomalySubscriptionAsync(
+            CreateAnomalySubscriptionRequest createAnomalySubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAnomalySubscriptionRequest, CreateAnomalySubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Cost Category with the requested name and rules.
      * </p>
      * 
@@ -85,6 +153,70 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     java.util.concurrent.Future<CreateCostCategoryDefinitionResult> createCostCategoryDefinitionAsync(
             CreateCostCategoryDefinitionRequest createCostCategoryDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateCostCategoryDefinitionRequest, CreateCostCategoryDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a cost anomaly monitor.
+     * </p>
+     * 
+     * @param deleteAnomalyMonitorRequest
+     * @return A Java Future containing the result of the DeleteAnomalyMonitor operation returned by the service.
+     * @sample AWSCostExplorerAsync.DeleteAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnomalyMonitorResult> deleteAnomalyMonitorAsync(DeleteAnomalyMonitorRequest deleteAnomalyMonitorRequest);
+
+    /**
+     * <p>
+     * Deletes a cost anomaly monitor.
+     * </p>
+     * 
+     * @param deleteAnomalyMonitorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAnomalyMonitor operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.DeleteAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnomalyMonitorResult> deleteAnomalyMonitorAsync(DeleteAnomalyMonitorRequest deleteAnomalyMonitorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAnomalyMonitorRequest, DeleteAnomalyMonitorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a cost anomaly subscription.
+     * </p>
+     * 
+     * @param deleteAnomalySubscriptionRequest
+     * @return A Java Future containing the result of the DeleteAnomalySubscription operation returned by the service.
+     * @sample AWSCostExplorerAsync.DeleteAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnomalySubscriptionResult> deleteAnomalySubscriptionAsync(
+            DeleteAnomalySubscriptionRequest deleteAnomalySubscriptionRequest);
+
+    /**
+     * <p>
+     * Deletes a cost anomaly subscription.
+     * </p>
+     * 
+     * @param deleteAnomalySubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAnomalySubscription operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.DeleteAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnomalySubscriptionResult> deleteAnomalySubscriptionAsync(
+            DeleteAnomalySubscriptionRequest deleteAnomalySubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAnomalySubscriptionRequest, DeleteAnomalySubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -170,13 +302,117 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves all of the cost anomalies detected on your account, during the time period specified by the
+     * <code>DateInterval</code> object.
+     * </p>
+     * 
+     * @param getAnomaliesRequest
+     * @return A Java Future containing the result of the GetAnomalies operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetAnomalies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAnomaliesResult> getAnomaliesAsync(GetAnomaliesRequest getAnomaliesRequest);
+
+    /**
+     * <p>
+     * Retrieves all of the cost anomalies detected on your account, during the time period specified by the
+     * <code>DateInterval</code> object.
+     * </p>
+     * 
+     * @param getAnomaliesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAnomalies operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetAnomalies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAnomaliesResult> getAnomaliesAsync(GetAnomaliesRequest getAnomaliesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAnomaliesRequest, GetAnomaliesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the cost anomaly monitor definitions for your account. You can filter using a list of cost anomaly
+     * monitor Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param getAnomalyMonitorsRequest
+     * @return A Java Future containing the result of the GetAnomalyMonitors operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetAnomalyMonitors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalyMonitors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAnomalyMonitorsResult> getAnomalyMonitorsAsync(GetAnomalyMonitorsRequest getAnomalyMonitorsRequest);
+
+    /**
+     * <p>
+     * Retrieves the cost anomaly monitor definitions for your account. You can filter using a list of cost anomaly
+     * monitor Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param getAnomalyMonitorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAnomalyMonitors operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetAnomalyMonitors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalyMonitors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAnomalyMonitorsResult> getAnomalyMonitorsAsync(GetAnomalyMonitorsRequest getAnomalyMonitorsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAnomalyMonitorsRequest, GetAnomalyMonitorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly
+     * monitor Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param getAnomalySubscriptionsRequest
+     * @return A Java Future containing the result of the GetAnomalySubscriptions operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetAnomalySubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalySubscriptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAnomalySubscriptionsResult> getAnomalySubscriptionsAsync(GetAnomalySubscriptionsRequest getAnomalySubscriptionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly
+     * monitor Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param getAnomalySubscriptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAnomalySubscriptions operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetAnomalySubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalySubscriptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAnomalySubscriptionsResult> getAnomalySubscriptionsAsync(GetAnomalySubscriptionsRequest getAnomalySubscriptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAnomalySubscriptionsRequest, GetAnomalySubscriptionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric, such as
      * <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter
      * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
      * range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Management account in an organization in AWS Organizations have access to all
      * member accounts.
+     * </p>
+     * <p>
+     * For information about filter limitations, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-limits.html">Quotas and
+     * restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param getCostAndUsageRequest
@@ -194,8 +430,13 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
      * range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Management account in an organization in AWS Organizations have access to all
      * member accounts.
+     * </p>
+     * <p>
+     * For information about filter limitations, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-limits.html">Quotas and
+     * restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param getCostAndUsageRequest
@@ -218,7 +459,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a
      * specific time range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Management account in an organization in AWS Organizations have access to all
      * member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.
      * </p>
      * <note>
@@ -247,7 +488,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a
      * specific time range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Management account in an organization in AWS Organizations have access to all
      * member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.
      * </p>
      * <note>
@@ -273,6 +514,47 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     java.util.concurrent.Future<GetCostAndUsageWithResourcesResult> getCostAndUsageWithResourcesAsync(
             GetCostAndUsageWithResourcesRequest getCostAndUsageWithResourcesRequest,
             com.amazonaws.handlers.AsyncHandler<GetCostAndUsageWithResourcesRequest, GetCostAndUsageWithResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves an array of Cost Category names and values incurred cost.
+     * </p>
+     * <note>
+     * <p>
+     * If some Cost Category names and values are not associated with any cost, they will not be returned by this API.
+     * </p>
+     * </note>
+     * 
+     * @param getCostCategoriesRequest
+     * @return A Java Future containing the result of the GetCostCategories operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetCostCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostCategoriesResult> getCostCategoriesAsync(GetCostCategoriesRequest getCostCategoriesRequest);
+
+    /**
+     * <p>
+     * Retrieves an array of Cost Category names and values incurred cost.
+     * </p>
+     * <note>
+     * <p>
+     * If some Cost Category names and values are not associated with any cost, they will not be returned by this API.
+     * </p>
+     * </note>
+     * 
+     * @param getCostCategoriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCostCategories operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetCostCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostCategoriesResult> getCostCategoriesAsync(GetCostCategoriesRequest getCostCategoriesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCostCategoriesRequest, GetCostCategoriesResult> asyncHandler);
 
     /**
      * <p>
@@ -344,7 +626,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * <p>
      * Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic
      * Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a
-     * reservation. An organization's master account can see the coverage of the associated member accounts. This
+     * reservation. An organization's management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about
      * reservation usage by the following dimensions:
      * </p>
@@ -428,7 +710,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * <p>
      * Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic
      * Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a
-     * reservation. An organization's master account can see the coverage of the associated member accounts. This
+     * reservation. An organization's management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about
      * reservation usage by the following dimensions:
      * </p>
@@ -580,9 +862,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves the reservation utilization for your account. Master accounts in an organization have access to member
-     * accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to
-     * determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
+     * Retrieves the reservation utilization for your account. Management account in an organization have access to
+     * member accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code>
+     * to determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
      * </p>
      * 
      * @param getReservationUtilizationRequest
@@ -596,9 +878,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves the reservation utilization for your account. Master accounts in an organization have access to member
-     * accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to
-     * determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
+     * Retrieves the reservation utilization for your account. Management account in an organization have access to
+     * member accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code>
+     * to determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
      * </p>
      * 
      * @param getReservationUtilizationRequest
@@ -617,13 +899,13 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Creates recommendations that helps you save cost by identifying idle and underutilized Amazon EC2 instances.
+     * Creates recommendations that help you save cost by identifying idle and underutilized Amazon EC2 instances.
      * </p>
      * <p>
      * Recommendations are generated to either downsize or terminate instances, along with providing savings detail and
      * metrics. For details on calculation and function, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing Your Cost with
-     * Rightsizing Recommendations</a>.
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing Your Cost with
+     * Rightsizing Recommendations</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param getRightsizingRecommendationRequest
@@ -638,13 +920,13 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Creates recommendations that helps you save cost by identifying idle and underutilized Amazon EC2 instances.
+     * Creates recommendations that help you save cost by identifying idle and underutilized Amazon EC2 instances.
      * </p>
      * <p>
      * Recommendations are generated to either downsize or terminate instances, along with providing savings detail and
      * metrics. For details on calculation and function, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing Your Cost with
-     * Rightsizing Recommendations</a>.
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing Your Cost with
+     * Rightsizing Recommendations</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param getRightsizingRecommendationRequest
@@ -665,7 +947,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     /**
      * <p>
      * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
-     * a Savings Plan. An organization’s master account can see the coverage of the associated member accounts. This
+     * a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for
      * Savings Plans usage with the following dimensions:
      * </p>
@@ -706,7 +988,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     /**
      * <p>
      * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
-     * a Savings Plan. An organization’s master account can see the coverage of the associated member accounts. This
+     * a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for
      * Savings Plans usage with the following dimensions:
      * </p>
@@ -787,8 +1069,8 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     /**
      * <p>
      * Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity.
-     * Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in
-     * <code>SAVINGS_PLANS</code> to determine the possible dimension values.
+     * Management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code>
+     * in <code>SAVINGS_PLANS</code> to determine the possible dimension values.
      * </p>
      * <note>
      * <p>
@@ -808,8 +1090,8 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     /**
      * <p>
      * Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity.
-     * Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in
-     * <code>SAVINGS_PLANS</code> to determine the possible dimension values.
+     * Management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code>
+     * in <code>SAVINGS_PLANS</code> to determine the possible dimension values.
      * </p>
      * <note>
      * <p>
@@ -992,6 +1274,103 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     java.util.concurrent.Future<ListCostCategoryDefinitionsResult> listCostCategoryDefinitionsAsync(
             ListCostCategoryDefinitionsRequest listCostCategoryDefinitionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListCostCategoryDefinitionsRequest, ListCostCategoryDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the feedback property of a given cost anomaly.
+     * </p>
+     * 
+     * @param provideAnomalyFeedbackRequest
+     * @return A Java Future containing the result of the ProvideAnomalyFeedback operation returned by the service.
+     * @sample AWSCostExplorerAsync.ProvideAnomalyFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ProvideAnomalyFeedbackResult> provideAnomalyFeedbackAsync(ProvideAnomalyFeedbackRequest provideAnomalyFeedbackRequest);
+
+    /**
+     * <p>
+     * Modifies the feedback property of a given cost anomaly.
+     * </p>
+     * 
+     * @param provideAnomalyFeedbackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ProvideAnomalyFeedback operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.ProvideAnomalyFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ProvideAnomalyFeedbackResult> provideAnomalyFeedbackAsync(ProvideAnomalyFeedbackRequest provideAnomalyFeedbackRequest,
+            com.amazonaws.handlers.AsyncHandler<ProvideAnomalyFeedbackRequest, ProvideAnomalyFeedbackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing cost anomaly monitor. The changes made are applied going forward, and does not change
+     * anomalies detected in the past.
+     * </p>
+     * 
+     * @param updateAnomalyMonitorRequest
+     * @return A Java Future containing the result of the UpdateAnomalyMonitor operation returned by the service.
+     * @sample AWSCostExplorerAsync.UpdateAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnomalyMonitorResult> updateAnomalyMonitorAsync(UpdateAnomalyMonitorRequest updateAnomalyMonitorRequest);
+
+    /**
+     * <p>
+     * Updates an existing cost anomaly monitor. The changes made are applied going forward, and does not change
+     * anomalies detected in the past.
+     * </p>
+     * 
+     * @param updateAnomalyMonitorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAnomalyMonitor operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.UpdateAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnomalyMonitorResult> updateAnomalyMonitorAsync(UpdateAnomalyMonitorRequest updateAnomalyMonitorRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAnomalyMonitorRequest, UpdateAnomalyMonitorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing cost anomaly monitor subscription.
+     * </p>
+     * 
+     * @param updateAnomalySubscriptionRequest
+     * @return A Java Future containing the result of the UpdateAnomalySubscription operation returned by the service.
+     * @sample AWSCostExplorerAsync.UpdateAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnomalySubscriptionResult> updateAnomalySubscriptionAsync(
+            UpdateAnomalySubscriptionRequest updateAnomalySubscriptionRequest);
+
+    /**
+     * <p>
+     * Updates an existing cost anomaly monitor subscription.
+     * </p>
+     * 
+     * @param updateAnomalySubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAnomalySubscription operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.UpdateAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnomalySubscriptionResult> updateAnomalySubscriptionAsync(
+            UpdateAnomalySubscriptionRequest updateAnomalySubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAnomalySubscriptionRequest, UpdateAnomalySubscriptionResult> asyncHandler);
 
     /**
      * <p>

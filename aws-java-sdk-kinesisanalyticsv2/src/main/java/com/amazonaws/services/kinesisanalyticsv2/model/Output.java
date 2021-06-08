@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes an SQL-based Amazon Kinesis Data Analytics application's output configuration, in which you identify an
+ * Describes a SQL-based Kinesis Data Analytics application's output configuration, in which you identify an
  * in-application stream and a destination where you want the in-application stream data to be written. The destination
  * can be a Kinesis data stream or a Kinesis Data Firehose delivery stream.
  * </p>
@@ -39,13 +39,13 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Identifies an Amazon Kinesis data stream as the destination.
+     * Identifies a Kinesis data stream as the destination.
      * </p>
      */
     private KinesisStreamsOutput kinesisStreamsOutput;
     /**
      * <p>
-     * Identifies an Amazon Kinesis Data Firehose delivery stream as the destination.
+     * Identifies a Kinesis Data Firehose delivery stream as the destination.
      * </p>
      */
     private KinesisFirehoseOutput kinesisFirehoseOutput;
@@ -104,11 +104,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies an Amazon Kinesis data stream as the destination.
+     * Identifies a Kinesis data stream as the destination.
      * </p>
      * 
      * @param kinesisStreamsOutput
-     *        Identifies an Amazon Kinesis data stream as the destination.
+     *        Identifies a Kinesis data stream as the destination.
      */
 
     public void setKinesisStreamsOutput(KinesisStreamsOutput kinesisStreamsOutput) {
@@ -117,10 +117,10 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies an Amazon Kinesis data stream as the destination.
+     * Identifies a Kinesis data stream as the destination.
      * </p>
      * 
-     * @return Identifies an Amazon Kinesis data stream as the destination.
+     * @return Identifies a Kinesis data stream as the destination.
      */
 
     public KinesisStreamsOutput getKinesisStreamsOutput() {
@@ -129,11 +129,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies an Amazon Kinesis data stream as the destination.
+     * Identifies a Kinesis data stream as the destination.
      * </p>
      * 
      * @param kinesisStreamsOutput
-     *        Identifies an Amazon Kinesis data stream as the destination.
+     *        Identifies a Kinesis data stream as the destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies an Amazon Kinesis Data Firehose delivery stream as the destination.
+     * Identifies a Kinesis Data Firehose delivery stream as the destination.
      * </p>
      * 
      * @param kinesisFirehoseOutput
-     *        Identifies an Amazon Kinesis Data Firehose delivery stream as the destination.
+     *        Identifies a Kinesis Data Firehose delivery stream as the destination.
      */
 
     public void setKinesisFirehoseOutput(KinesisFirehoseOutput kinesisFirehoseOutput) {
@@ -157,10 +157,10 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies an Amazon Kinesis Data Firehose delivery stream as the destination.
+     * Identifies a Kinesis Data Firehose delivery stream as the destination.
      * </p>
      * 
-     * @return Identifies an Amazon Kinesis Data Firehose delivery stream as the destination.
+     * @return Identifies a Kinesis Data Firehose delivery stream as the destination.
      */
 
     public KinesisFirehoseOutput getKinesisFirehoseOutput() {
@@ -169,11 +169,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies an Amazon Kinesis Data Firehose delivery stream as the destination.
+     * Identifies a Kinesis Data Firehose delivery stream as the destination.
      * </p>
      * 
      * @param kinesisFirehoseOutput
-     *        Identifies an Amazon Kinesis Data Firehose delivery stream as the destination.
+     *        Identifies a Kinesis Data Firehose delivery stream as the destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

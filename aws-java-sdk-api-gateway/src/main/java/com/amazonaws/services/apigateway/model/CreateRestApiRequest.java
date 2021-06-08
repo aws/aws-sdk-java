@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,6 +94,14 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default,
+     * clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     */
+    private Boolean disableExecuteApiEndpoint;
 
     /**
      * <p>
@@ -645,6 +653,78 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default,
+     * clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @param disableExecuteApiEndpoint
+     *        Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By
+     *        default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+     *        endpoint. To require that clients use a custom domain name to invoke your API, disable the default
+     *        endpoint.
+     */
+
+    public void setDisableExecuteApiEndpoint(Boolean disableExecuteApiEndpoint) {
+        this.disableExecuteApiEndpoint = disableExecuteApiEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default,
+     * clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @return Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By
+     *         default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+     *         endpoint. To require that clients use a custom domain name to invoke your API, disable the default
+     *         endpoint.
+     */
+
+    public Boolean getDisableExecuteApiEndpoint() {
+        return this.disableExecuteApiEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default,
+     * clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @param disableExecuteApiEndpoint
+     *        Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By
+     *        default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+     *        endpoint. To require that clients use a custom domain name to invoke your API, disable the default
+     *        endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRestApiRequest withDisableExecuteApiEndpoint(Boolean disableExecuteApiEndpoint) {
+        setDisableExecuteApiEndpoint(disableExecuteApiEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default,
+     * clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To
+     * require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @return Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By
+     *         default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+     *         endpoint. To require that clients use a custom domain name to invoke your API, disable the default
+     *         endpoint.
+     */
+
+    public Boolean isDisableExecuteApiEndpoint() {
+        return this.disableExecuteApiEndpoint;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -675,7 +755,9 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getPolicy() != null)
             sb.append("Policy: ").append(getPolicy()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDisableExecuteApiEndpoint() != null)
+            sb.append("DisableExecuteApiEndpoint: ").append(getDisableExecuteApiEndpoint());
         sb.append("}");
         return sb.toString();
     }
@@ -730,6 +812,10 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDisableExecuteApiEndpoint() == null ^ this.getDisableExecuteApiEndpoint() == null)
+            return false;
+        if (other.getDisableExecuteApiEndpoint() != null && other.getDisableExecuteApiEndpoint().equals(this.getDisableExecuteApiEndpoint()) == false)
+            return false;
         return true;
     }
 
@@ -748,6 +834,7 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDisableExecuteApiEndpoint() == null) ? 0 : getDisableExecuteApiEndpoint().hashCode());
         return hashCode;
     }
 

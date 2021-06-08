@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Contains the parameters for <code>DescribeComputeEnvironments</code>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments" target="_top">AWS
  *      API Documentation</a>
@@ -37,7 +40,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
@@ -52,7 +55,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -135,7 +138,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
@@ -146,7 +149,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *        <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The
      *        remaining results of the initial request can be seen by sending another
      *        <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This
-     *        value can be between 1 and 100. If this parameter is not used, then
+     *        value can be between 1 and 100. If this parameter isn't used, then
      *        <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      */
@@ -161,7 +164,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
@@ -171,7 +174,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *         <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.
      *         The remaining results of the initial request can be seen by sending another
      *         <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This
-     *         value can be between 1 and 100. If this parameter is not used, then
+     *         value can be between 1 and 100. If this parameter isn't used, then
      *         <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      *         applicable.
      */
@@ -186,7 +189,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code>
      * results in a single page along with a <code>nextToken</code> response element. The remaining results of the
      * initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     * <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
      * <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
@@ -197,7 +200,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *        <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The
      *        remaining results of the initial request can be seen by sending another
      *        <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This
-     *        value can be between 1 and 100. If this parameter is not used, then
+     *        value can be between 1 and 100. If this parameter isn't used, then
      *        <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -217,7 +220,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -229,8 +232,8 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *        returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
      *        to return.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
-     *        list and not for other programmatic purposes.
+     *        This token should be treated as an opaque identifier that's only used to retrieve the next items in a list
+     *        and not for other programmatic purposes.
      *        </p>
      */
 
@@ -247,7 +250,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -258,7 +261,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *         returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
      *         to return.</p> <note>
      *         <p>
-     *         This token should be treated as an opaque identifier that is only used to retrieve the next items in a
+     *         This token should be treated as an opaque identifier that's only used to retrieve the next items in a
      *         list and not for other programmatic purposes.
      *         </p>
      */
@@ -276,7 +279,7 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and
+     * This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and
      * not for other programmatic purposes.
      * </p>
      * </note>
@@ -288,8 +291,8 @@ public class DescribeComputeEnvironmentsRequest extends com.amazonaws.AmazonWebS
      *        returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results
      *        to return.</p> <note>
      *        <p>
-     *        This token should be treated as an opaque identifier that is only used to retrieve the next items in a
-     *        list and not for other programmatic purposes.
+     *        This token should be treated as an opaque identifier that's only used to retrieve the next items in a list
+     *        and not for other programmatic purposes.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

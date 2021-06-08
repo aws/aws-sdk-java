@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,12 +32,6 @@ import java.util.concurrent.ExecutorService;
  * (PII) or intellectual property, and provides you with dashboards and alerts that give visibility into how this data
  * is being accessed or moved. For more information, see the <a
  * href="https://docs.aws.amazon.com/macie/latest/userguide/what-is-macie.html">Amazon Macie Classic User Guide</a>.
- * </p>
- * <p>
- * A new Amazon Macie is now available with significant design improvements and additional features, at a lower price
- * and in most AWS Regions. We encourage you to explore and use the new and improved features, and benefit from the
- * reduced cost. To learn about features and pricing for the new Amazon Macie, see <a
- * href="https://aws.amazon.com/macie/">Amazon Macie</a>.
  * </p>
  */
 @ThreadSafe

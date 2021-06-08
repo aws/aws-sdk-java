@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String queueUrl;
     /**
      * <p>
-     * The message to send. The maximum string size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KB.
      * </p>
      * <important>
      * <p>
@@ -71,8 +71,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      */
@@ -87,7 +87,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -108,8 +108,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -173,8 +173,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * <p>
-     * The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can
-     * contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     * The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
+     * can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
      * <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      * </p>
      * <p>
@@ -243,7 +243,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        Queue URLs and names are case-sensitive.
      * @param messageBody
-     *        The message to send. The maximum string size is 256 KB.
+     *        The message to send. The minimum size is one character. The maximum size is 256 KB.
      *        </p>
      *        <important>
      *        <p>
@@ -320,7 +320,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The maximum string size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KB.
      * </p>
      * <important>
      * <p>
@@ -337,7 +337,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * 
      * @param messageBody
-     *        The message to send. The maximum string size is 256 KB.</p> <important>
+     *        The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
      *        <p>
      *        A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *        </p>
@@ -357,7 +357,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The maximum string size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KB.
      * </p>
      * <important>
      * <p>
@@ -373,7 +373,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </important>
      * 
-     * @return The message to send. The maximum string size is 256 KB.</p> <important>
+     * @return The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
      *         <p>
      *         A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *         </p>
@@ -393,7 +393,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The maximum string size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KB.
      * </p>
      * <important>
      * <p>
@@ -410,7 +410,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * 
      * @param messageBody
-     *        The message to send. The maximum string size is 256 KB.</p> <important>
+     *        The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
      *        <p>
      *        A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *        </p>
@@ -518,14 +518,14 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @return Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *         >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -539,15 +539,15 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -558,15 +558,15 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -614,7 +614,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -631,7 +631,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *         <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *         <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *         </p>
      *         </li>
      *         <li>
@@ -659,7 +659,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -677,7 +677,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -703,7 +703,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -721,7 +721,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -775,8 +775,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -840,8 +840,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * <p>
-     * The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can
-     * contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     * The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
+     * can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
      * <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      * </p>
      * <p>
@@ -857,8 +857,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      *        <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *        deduplication interval. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *        > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -923,9 +923,10 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </note>
      *        <p>
-     *        The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
-     *        can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     *        (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
+     *        The maximum length of <code>MessageDeduplicationId</code> is 128 characters.
+     *        <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>,
+     *        <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     *        <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageDeduplicationId</code>, see <a href=
@@ -946,8 +947,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1011,8 +1012,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * <p>
-     * The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can
-     * contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     * The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
+     * can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
      * <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      * </p>
      * <p>
@@ -1027,8 +1028,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      *         <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *         deduplication interval. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *         > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *         > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -1094,9 +1095,10 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         </note>
      *         <p>
-     *         The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
-     *         can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-     *         punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
+     *         The maximum length of <code>MessageDeduplicationId</code> is 128 characters.
+     *         <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>,
+     *         <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     *         <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      *         </p>
      *         <p>
      *         For best practices of using <code>MessageDeduplicationId</code>, see <a href=
@@ -1117,8 +1119,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1182,8 +1184,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </note>
      * <p>
-     * The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can
-     * contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     * The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
+     * can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (
      * <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      * </p>
      * <p>
@@ -1199,8 +1201,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      *        <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *        deduplication interval. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *        > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1265,9 +1267,10 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </note>
      *        <p>
-     *        The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
-     *        can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
-     *        (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
+     *        The maximum length of <code>MessageDeduplicationId</code> is 128 characters.
+     *        <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>,
+     *        <code>A-Z</code>, <code>0-9</code>) and punctuation (
+     *        <code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
      *        </p>
      *        <p>
      *        For best practices of using <code>MessageDeduplicationId</code>, see <a href=

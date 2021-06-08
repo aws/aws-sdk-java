@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class CreateMeetingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The meeting information, including the meeting ID and <code>MediaPlacement</code>.
+     * The meeting information, including the meeting ID and <code>MediaPlacement</code> .
      * </p>
      */
     private Meeting meeting;
 
     /**
      * <p>
-     * The meeting information, including the meeting ID and <code>MediaPlacement</code>.
+     * The meeting information, including the meeting ID and <code>MediaPlacement</code> .
      * </p>
      * 
      * @param meeting
-     *        The meeting information, including the meeting ID and <code>MediaPlacement</code>.
+     *        The meeting information, including the meeting ID and <code>MediaPlacement</code> .
      */
 
     public void setMeeting(Meeting meeting) {
@@ -45,10 +45,10 @@ public class CreateMeetingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The meeting information, including the meeting ID and <code>MediaPlacement</code>.
+     * The meeting information, including the meeting ID and <code>MediaPlacement</code> .
      * </p>
      * 
-     * @return The meeting information, including the meeting ID and <code>MediaPlacement</code>.
+     * @return The meeting information, including the meeting ID and <code>MediaPlacement</code> .
      */
 
     public Meeting getMeeting() {
@@ -57,11 +57,11 @@ public class CreateMeetingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The meeting information, including the meeting ID and <code>MediaPlacement</code>.
+     * The meeting information, including the meeting ID and <code>MediaPlacement</code> .
      * </p>
      * 
      * @param meeting
-     *        The meeting information, including the meeting ID and <code>MediaPlacement</code>.
+     *        The meeting information, including the meeting ID and <code>MediaPlacement</code> .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

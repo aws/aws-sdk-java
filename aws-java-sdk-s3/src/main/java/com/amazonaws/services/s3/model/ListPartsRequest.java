@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#listParts(ListPartsRequest)
  */
-public class ListPartsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListPartsRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the bucket containing the multipart upload whose parts are
@@ -40,7 +40,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      */
     private String bucketName;
@@ -73,6 +73,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      */
     private boolean isRequesterPays;
 
+    private String expectedBucketOwner;
 
     /**
      * Constructs a new ListPartsRequest from the required parameters bucket
@@ -87,7 +88,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -104,6 +105,18 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
         this.uploadId = uploadId;
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public ListPartsRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Returns the name of the bucket containing the multipart upload whose
@@ -129,7 +142,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -152,7 +165,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName

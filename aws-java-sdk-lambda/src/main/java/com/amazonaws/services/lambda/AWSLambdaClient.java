@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,32 +89,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotReadyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.ResourceNotReadyExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EC2AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.EC2AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.PolicyLengthExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KMSAccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.KMSAccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.ServiceExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EC2ThrottledException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.EC2ThrottledExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.KMSInvalidStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidZipFileException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.InvalidZipFileExceptionUnmarshaller.getInstance()))
@@ -122,14 +104,17 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                             new JsonErrorShapeMetadata().withErrorCode("KMSDisabledException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.KMSDisabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestContentException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.InvalidRequestContentExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("EFSIOException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.EFSIOExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCodeSignatureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.InvalidCodeSignatureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRuntimeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.InvalidRuntimeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedConcurrencyConfigNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.ProvisionedConcurrencyConfigNotFoundExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("EFSMountFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.EFSMountFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -143,15 +128,6 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                             new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.ResourceConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CodeStorageExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.CodeStorageExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ENILimitReachedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.ENILimitReachedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SubnetIPAddressLimitReachedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.SubnetIPAddressLimitReachedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KMSNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.KMSNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -161,14 +137,59 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                             new JsonErrorShapeMetadata().withErrorCode("PreconditionFailedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.PreconditionFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedMediaTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.UnsupportedMediaTypeExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EFSMountConnectivityException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.EFSMountConnectivityExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EC2AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.EC2AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.PolicyLengthExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.ServiceExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.KMSInvalidStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestContentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.InvalidRequestContentExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CodeSigningConfigNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.CodeSigningConfigNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedConcurrencyConfigNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.ProvisionedConcurrencyConfigNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CodeStorageExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.CodeStorageExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ENILimitReachedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.ENILimitReachedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SubnetIPAddressLimitReachedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.SubnetIPAddressLimitReachedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CodeVerificationFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.CodeVerificationFailedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EFSMountTimeoutException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.EFSMountTimeoutExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RequestTooLargeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.RequestTooLargeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedMediaTypeException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lambda.model.transform.UnsupportedMediaTypeExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.lambda.model.AWSLambdaException.class));
 
     /**
@@ -426,6 +447,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(addLayerVersionPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddLayerVersionPermission");
@@ -512,6 +535,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new AddPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddPermission");
@@ -581,6 +606,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlias");
@@ -592,6 +619,70 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateAliasResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a code signing configuration. A <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code signing configuration</a>
+     * defines a list of allowed signing profiles and defines the code-signing validation policy (action to be taken if
+     * deployment validation checks fail).
+     * </p>
+     * 
+     * @param createCodeSigningConfigRequest
+     * @return Result of the CreateCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @sample AWSLambda.CreateCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateCodeSigningConfigResult createCodeSigningConfig(CreateCodeSigningConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCodeSigningConfig(request);
+    }
+
+    @SdkInternalApi
+    final CreateCodeSigningConfigResult executeCreateCodeSigningConfig(CreateCodeSigningConfigRequest createCodeSigningConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCodeSigningConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCodeSigningConfigRequest> request = null;
+        Response<CreateCodeSigningConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCodeSigningConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCodeSigningConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCodeSigningConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCodeSigningConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateCodeSigningConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -626,6 +717,22 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda with Amazon SQS</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS Lambda with Amazon MQ</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda with Amazon MSK</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS Lambda with Self-Managed Apache
+     * Kafka</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are only available for stream sources (DynamoDB and Kinesis):
@@ -643,12 +750,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
@@ -696,6 +805,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(createEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventSourceMapping");
@@ -721,11 +832,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     /**
      * <p>
      * Creates a Lambda function. To create a function, you need a <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment package</a> and an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment package</a> and an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">
-     * execution role</a>. The deployment package contains your function code. The execution role grants the function
-     * permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request
-     * tracing.
+     * execution role</a>. The deployment package is a .zip file archive or container image that contains your function
+     * code. The execution role grants the function permission to use AWS services, such as Amazon CloudWatch Logs for
+     * log streaming and AWS X-Ray for request tracing.
      * </p>
      * <p>
      * When you create a function, Lambda provisions an instance of the function and its supporting resources. If your
@@ -747,6 +858,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * version-specific settings later with <a>UpdateFunctionConfiguration</a>. Function-level settings apply to both
      * the unpublished and published versions of the function, and include tags (<a>TagResource</a>) and per-function
      * concurrency limits (<a>PutFunctionConcurrency</a>).
+     * </p>
+     * <p>
+     * You can use code signing if your deployment package is a .zip file archive. To enable code signing for this
+     * function, specify the ARN of a code-signing configuration. When a user attempts to deploy a code package with
+     * <a>UpdateFunctionCode</a>, Lambda checks that the code package has a valid signature from a trusted publisher.
+     * The code-signing configuration includes set set of signing profiles, which define the trusted publishers for this
+     * function.
      * </p>
      * <p>
      * If another account or an AWS service invokes your function, use <a>AddPermission</a> to grant permission by
@@ -775,6 +893,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
+     * @throws CodeVerificationFailedException
+     *         The code signature failed one or more of the validation checks for signature mismatch or expiry, and the
+     *         code signing policy is set to ENFORCE. Lambda blocks the deployment.
+     * @throws InvalidCodeSignatureException
+     *         The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
+     *         fails, even if code signing policy is set to WARN.
+     * @throws CodeSigningConfigNotFoundException
+     *         The specified code signing configuration does not exist.
      * @sample AWSLambda.CreateFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction" target="_top">AWS API
      *      Documentation</a>
@@ -800,6 +926,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new CreateFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunction");
@@ -862,6 +990,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new DeleteAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlias");
@@ -873,6 +1003,72 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAliasResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the code signing configuration. You can delete the code signing configuration only if no function is
+     * using it.
+     * </p>
+     * 
+     * @param deleteCodeSigningConfigRequest
+     * @return Result of the DeleteCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
+     * @sample AWSLambda.DeleteCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteCodeSigningConfigResult deleteCodeSigningConfig(DeleteCodeSigningConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCodeSigningConfig(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCodeSigningConfigResult executeDeleteCodeSigningConfig(DeleteCodeSigningConfigRequest deleteCodeSigningConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCodeSigningConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCodeSigningConfigRequest> request = null;
+        Response<DeleteCodeSigningConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCodeSigningConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteCodeSigningConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCodeSigningConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCodeSigningConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteCodeSigningConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -933,6 +1129,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(deleteEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventSourceMapping");
@@ -1003,6 +1201,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new DeleteFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunction");
@@ -1014,6 +1214,76 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the code signing configuration from the function.
+     * </p>
+     * 
+     * @param deleteFunctionCodeSigningConfigRequest
+     * @return Result of the DeleteFunctionCodeSigningConfig operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws CodeSigningConfigNotFoundException
+     *         The specified code signing configuration does not exist.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
+     * @sample AWSLambda.DeleteFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFunctionCodeSigningConfigResult deleteFunctionCodeSigningConfig(DeleteFunctionCodeSigningConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFunctionCodeSigningConfig(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFunctionCodeSigningConfigResult executeDeleteFunctionCodeSigningConfig(
+            DeleteFunctionCodeSigningConfigRequest deleteFunctionCodeSigningConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFunctionCodeSigningConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFunctionCodeSigningConfigRequest> request = null;
+        Response<DeleteFunctionCodeSigningConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFunctionCodeSigningConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteFunctionCodeSigningConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunctionCodeSigningConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFunctionCodeSigningConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteFunctionCodeSigningConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1067,6 +1337,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(deleteFunctionConcurrencyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunctionConcurrency");
@@ -1134,6 +1406,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(deleteFunctionEventInvokeConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunctionEventInvokeConfig");
@@ -1194,6 +1468,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new DeleteLayerVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLayerVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLayerVersion");
@@ -1259,6 +1535,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(deleteProvisionedConcurrencyConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProvisionedConcurrencyConfig");
@@ -1318,6 +1596,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSettings");
@@ -1380,6 +1660,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAlias");
@@ -1391,6 +1673,67 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
             HttpResponseHandler<AmazonWebServiceResponse<GetAliasResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the specified code signing configuration.
+     * </p>
+     * 
+     * @param getCodeSigningConfigRequest
+     * @return Result of the GetCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AWSLambda.GetCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetCodeSigningConfigResult getCodeSigningConfig(GetCodeSigningConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCodeSigningConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetCodeSigningConfigResult executeGetCodeSigningConfig(GetCodeSigningConfigRequest getCodeSigningConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCodeSigningConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCodeSigningConfigRequest> request = null;
+        Response<GetCodeSigningConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCodeSigningConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCodeSigningConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCodeSigningConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCodeSigningConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCodeSigningConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1442,6 +1785,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetEventSourceMappingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventSourceMapping");
@@ -1506,6 +1851,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunction");
@@ -1517,6 +1864,71 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
             HttpResponseHandler<AmazonWebServiceResponse<GetFunctionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFunctionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the code signing configuration for the specified function.
+     * </p>
+     * 
+     * @param getFunctionCodeSigningConfigRequest
+     * @return Result of the GetFunctionCodeSigningConfig operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @sample AWSLambda.GetFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFunctionCodeSigningConfigResult getFunctionCodeSigningConfig(GetFunctionCodeSigningConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFunctionCodeSigningConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetFunctionCodeSigningConfigResult executeGetFunctionCodeSigningConfig(GetFunctionCodeSigningConfigRequest getFunctionCodeSigningConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFunctionCodeSigningConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFunctionCodeSigningConfigRequest> request = null;
+        Response<GetFunctionCodeSigningConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFunctionCodeSigningConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getFunctionCodeSigningConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionCodeSigningConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFunctionCodeSigningConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetFunctionCodeSigningConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1568,6 +1980,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetFunctionConcurrencyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFunctionConcurrencyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionConcurrency");
@@ -1635,6 +2049,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(getFunctionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionConfiguration");
@@ -1701,6 +2117,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(getFunctionEventInvokeConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionEventInvokeConfig");
@@ -1765,6 +2183,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetLayerVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLayerVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLayerVersion");
@@ -1828,6 +2248,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetLayerVersionByArnRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLayerVersionByArnRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLayerVersionByArn");
@@ -1891,6 +2313,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetLayerVersionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLayerVersionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLayerVersionPolicy");
@@ -1955,6 +2379,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new GetPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicy");
@@ -2020,6 +2446,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(getProvisionedConcurrencyConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProvisionedConcurrencyConfig");
@@ -2111,6 +2539,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ENILimitReachedException
      *         AWS Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
      *         function configuration, because the limit for network interfaces has been reached.
+     * @throws EFSMountConnectivityException
+     *         The function couldn't make a network connection to the configured file system.
+     * @throws EFSMountFailureException
+     *         The function couldn't mount the configured file system due to a permission or configuration issue.
+     * @throws EFSMountTimeoutException
+     *         The function was able to make a network connection to the configured file system, but the mount operation
+     *         timed out.
+     * @throws EFSIOException
+     *         An error occured when reading from or writing to a connected file system.
      * @throws EC2ThrottledException
      *         AWS Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role
      *         provided for the Lambda function.
@@ -2166,6 +2603,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new InvokeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invokeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Invoke");
@@ -2235,10 +2674,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new InvokeAsyncRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invokeAsyncRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InvokeAsync");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
                 request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
 
             } finally {
@@ -2298,6 +2740,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new ListAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAliases");
@@ -2309,6 +2753,68 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAliasesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAliasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
+     * signing configurations</a>. A request returns up to 10,000 configurations per call. You can use the
+     * <code>MaxItems</code> parameter to return fewer configurations per call.
+     * </p>
+     * 
+     * @param listCodeSigningConfigsRequest
+     * @return Result of the ListCodeSigningConfigs operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @sample AWSLambda.ListCodeSigningConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListCodeSigningConfigsResult listCodeSigningConfigs(ListCodeSigningConfigsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCodeSigningConfigs(request);
+    }
+
+    @SdkInternalApi
+    final ListCodeSigningConfigsResult executeListCodeSigningConfigs(ListCodeSigningConfigsRequest listCodeSigningConfigsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCodeSigningConfigsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCodeSigningConfigsRequest> request = null;
+        Response<ListCodeSigningConfigsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCodeSigningConfigsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCodeSigningConfigsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCodeSigningConfigs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCodeSigningConfigsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCodeSigningConfigsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2361,6 +2867,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(listEventSourceMappingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventSourceMappings");
@@ -2432,6 +2940,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(listFunctionEventInvokeConfigsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctionEventInvokeConfigs");
@@ -2461,8 +2971,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * </p>
      * <p>
      * Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in
-     * addition to the unpublished version. To get more information about a function or version, use <a>GetFunction</a>.
+     * addition to the unpublished version.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a> fields. To get the
+     * additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
+     * LastUpdateStatusReasonCode) for a function or version, use <a>GetFunction</a>.
+     * </p>
+     * </note>
      * 
      * @param listFunctionsRequest
      * @return Result of the ListFunctions operation returned by the service.
@@ -2497,6 +3014,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new ListFunctionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFunctionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctions");
@@ -2521,6 +3040,71 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     @Override
     public ListFunctionsResult listFunctions() {
         return listFunctions(new ListFunctionsRequest());
+    }
+
+    /**
+     * <p>
+     * List the functions that use the specified code signing configuration. You can use this method prior to deleting a
+     * code signing configuration, to verify that no functions are using it.
+     * </p>
+     * 
+     * @param listFunctionsByCodeSigningConfigRequest
+     * @return Result of the ListFunctionsByCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AWSLambda.ListFunctionsByCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListFunctionsByCodeSigningConfigResult listFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFunctionsByCodeSigningConfig(request);
+    }
+
+    @SdkInternalApi
+    final ListFunctionsByCodeSigningConfigResult executeListFunctionsByCodeSigningConfig(
+            ListFunctionsByCodeSigningConfigRequest listFunctionsByCodeSigningConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFunctionsByCodeSigningConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFunctionsByCodeSigningConfigRequest> request = null;
+        Response<ListFunctionsByCodeSigningConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFunctionsByCodeSigningConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listFunctionsByCodeSigningConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctionsByCodeSigningConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFunctionsByCodeSigningConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListFunctionsByCodeSigningConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2566,6 +3150,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new ListLayerVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLayerVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLayerVersions");
@@ -2628,6 +3214,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new ListLayersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLayersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLayers");
@@ -2691,6 +3279,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(listProvisionedConcurrencyConfigsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisionedConcurrencyConfigs");
@@ -2754,6 +3344,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new ListTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
@@ -2816,6 +3408,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new ListVersionsByFunctionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVersionsByFunctionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVersionsByFunction");
@@ -2886,6 +3480,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new PublishLayerVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishLayerVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PublishLayerVersion");
@@ -2966,6 +3562,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new PublishVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PublishVersion");
@@ -2977,6 +3575,76 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
             HttpResponseHandler<AmazonWebServiceResponse<PublishVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PublishVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the code signing configuration for the function. Changes to the code signing configuration take effect the
+     * next time a user tries to deploy a code package to the function.
+     * </p>
+     * 
+     * @param putFunctionCodeSigningConfigRequest
+     * @return Result of the PutFunctionCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
+     * @throws CodeSigningConfigNotFoundException
+     *         The specified code signing configuration does not exist.
+     * @sample AWSLambda.PutFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutFunctionCodeSigningConfigResult putFunctionCodeSigningConfig(PutFunctionCodeSigningConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executePutFunctionCodeSigningConfig(request);
+    }
+
+    @SdkInternalApi
+    final PutFunctionCodeSigningConfigResult executePutFunctionCodeSigningConfig(PutFunctionCodeSigningConfigRequest putFunctionCodeSigningConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putFunctionCodeSigningConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutFunctionCodeSigningConfigRequest> request = null;
+        Response<PutFunctionCodeSigningConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutFunctionCodeSigningConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putFunctionCodeSigningConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutFunctionCodeSigningConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutFunctionCodeSigningConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutFunctionCodeSigningConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3042,6 +3710,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new PutFunctionConcurrencyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putFunctionConcurrencyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutFunctionConcurrency");
@@ -3069,7 +3739,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * Configures options for <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
      * invocation</a> on a function, version, or alias. If a configuration already exists for a function, version, or
      * alias, this operation overwrites it. If you exclude any settings, they are removed. To set one option without
-     * affecting existing settings for other options, use <a>PutFunctionEventInvokeConfig</a>.
+     * affecting existing settings for other options, use <a>UpdateFunctionEventInvokeConfig</a>.
      * </p>
      * <p>
      * By default, Lambda retries an asynchronous invocation twice if the function returns an error. It retains events
@@ -3121,6 +3791,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(putFunctionEventInvokeConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutFunctionEventInvokeConfig");
@@ -3187,6 +3859,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(putProvisionedConcurrencyConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutProvisionedConcurrencyConfig");
@@ -3256,6 +3930,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(removeLayerVersionPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveLayerVersionPermission");
@@ -3323,6 +3999,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new RemovePermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
@@ -3386,6 +4064,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3449,6 +4129,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -3517,6 +4199,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new UpdateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAlias");
@@ -3528,6 +4212,70 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateAliasResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the code signing configuration. Changes to the code signing configuration take effect the next time a user
+     * tries to deploy a code package to the function.
+     * </p>
+     * 
+     * @param updateCodeSigningConfigRequest
+     * @return Result of the UpdateCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AWSLambda.UpdateCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateCodeSigningConfigResult updateCodeSigningConfig(UpdateCodeSigningConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCodeSigningConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCodeSigningConfigResult executeUpdateCodeSigningConfig(UpdateCodeSigningConfigRequest updateCodeSigningConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCodeSigningConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCodeSigningConfigRequest> request = null;
+        Response<UpdateCodeSigningConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCodeSigningConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateCodeSigningConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCodeSigningConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCodeSigningConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateCodeSigningConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3559,12 +4307,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
@@ -3616,6 +4366,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(updateEventSourceMappingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEventSourceMapping");
@@ -3640,12 +4392,20 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Updates a Lambda function's code.
+     * Updates a Lambda function's code. If code signing is enabled for the function, the code package must be signed by
+     * a trusted publisher. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring code signing</a>.
      * </p>
      * <p>
      * The function's code is locked when you publish a version. You can't modify the code of a published version, only
      * the unpublished version.
      * </p>
+     * <note>
+     * <p>
+     * For a function defined as a container image, Lambda resolves the image tag to an image digest. In Amazon ECR, if
+     * you update the image tag to a new image, Lambda does not automatically update the function.
+     * </p>
+     * </note>
      * 
      * @param updateFunctionCodeRequest
      * @return Result of the UpdateFunctionCode operation returned by the service.
@@ -3666,6 +4426,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         resource.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
+     * @throws CodeVerificationFailedException
+     *         The code signature failed one or more of the validation checks for signature mismatch or expiry, and the
+     *         code signing policy is set to ENFORCE. Lambda blocks the deployment.
+     * @throws InvalidCodeSignatureException
+     *         The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
+     *         fails, even if code signing policy is set to WARN.
+     * @throws CodeSigningConfigNotFoundException
+     *         The specified code signing configuration does not exist.
      * @sample AWSLambda.UpdateFunctionCode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode" target="_top">AWS API
      *      Documentation</a>
@@ -3691,6 +4459,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                 request = new UpdateFunctionCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFunctionCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunctionCode");
@@ -3749,6 +4519,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
      *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
      *         resource.
+     * @throws CodeVerificationFailedException
+     *         The code signature failed one or more of the validation checks for signature mismatch or expiry, and the
+     *         code signing policy is set to ENFORCE. Lambda blocks the deployment.
+     * @throws InvalidCodeSignatureException
+     *         The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
+     *         fails, even if code signing policy is set to WARN.
+     * @throws CodeSigningConfigNotFoundException
+     *         The specified code signing configuration does not exist.
      * @sample AWSLambda.UpdateFunctionConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -3775,6 +4553,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(updateFunctionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunctionConfiguration");
@@ -3842,6 +4622,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                         .beforeMarshalling(updateFunctionEventInvokeConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunctionEventInvokeConfig");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input for a request action.
+ * Represents the input for a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies" target="_top">AWS
@@ -30,7 +30,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
@@ -87,19 +87,25 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
     private Integer limit;
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * CONTENT TODO
+     * </p>
+     */
+    private String location;
 
     /**
      * <p>
-     * A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
+     *        A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
      *        value.
      */
 
@@ -109,11 +115,11 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
-     *         value.
+     * @return A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or
+     *         ARN value.
      */
 
     public String getFleetId() {
@@ -122,11 +128,11 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
+     *        A unique identifier for the fleet to retrieve scaling policies for. You can use either the fleet ID or ARN
      *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -632,13 +638,14 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      */
 
     public void setNextToken(String nextToken) {
@@ -647,12 +654,13 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
-     *         with a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *         with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *         value.
      */
 
     public String getNextToken() {
@@ -661,18 +669,59 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeScalingPoliciesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * CONTENT TODO
+     * </p>
+     * 
+     * @param location
+     *        CONTENT TODO
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * CONTENT TODO
+     * </p>
+     * 
+     * @return CONTENT TODO
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * CONTENT TODO
+     * </p>
+     * 
+     * @param location
+     *        CONTENT TODO
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeScalingPoliciesRequest withLocation(String location) {
+        setLocation(location);
         return this;
     }
 
@@ -695,7 +744,9 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
         if (getLimit() != null)
             sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -726,6 +777,10 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         return true;
     }
 
@@ -738,6 +793,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getStatusFilter() == null) ? 0 : getStatusFilter().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

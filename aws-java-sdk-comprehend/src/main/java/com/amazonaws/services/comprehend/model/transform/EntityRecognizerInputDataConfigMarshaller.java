@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class EntityRecognizerInputDataConfigMarshaller {
 
+    private static final MarshallingInfo<String> DATAFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataFormat").build();
     private static final MarshallingInfo<List> ENTITYTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("EntityTypes").build();
     private static final MarshallingInfo<StructuredPojo> DOCUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -36,6 +38,8 @@ public class EntityRecognizerInputDataConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Annotations").build();
     private static final MarshallingInfo<StructuredPojo> ENTITYLIST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EntityList").build();
+    private static final MarshallingInfo<List> AUGMENTEDMANIFESTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AugmentedManifests").build();
 
     private static final EntityRecognizerInputDataConfigMarshaller instance = new EntityRecognizerInputDataConfigMarshaller();
 
@@ -53,10 +57,12 @@ public class EntityRecognizerInputDataConfigMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(entityRecognizerInputDataConfig.getDataFormat(), DATAFORMAT_BINDING);
             protocolMarshaller.marshall(entityRecognizerInputDataConfig.getEntityTypes(), ENTITYTYPES_BINDING);
             protocolMarshaller.marshall(entityRecognizerInputDataConfig.getDocuments(), DOCUMENTS_BINDING);
             protocolMarshaller.marshall(entityRecognizerInputDataConfig.getAnnotations(), ANNOTATIONS_BINDING);
             protocolMarshaller.marshall(entityRecognizerInputDataConfig.getEntityList(), ENTITYLIST_BINDING);
+            protocolMarshaller.marshall(entityRecognizerInputDataConfig.getAugmentedManifests(), AUGMENTEDMANIFESTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

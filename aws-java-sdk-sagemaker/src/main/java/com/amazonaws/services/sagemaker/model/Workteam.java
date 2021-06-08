@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,13 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
     private String workteamName;
     /**
      * <p>
-     * The Amazon Cognito user groups that make up the work team.
+     * A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the
+     * work team.
+     * </p>
+     * <p>
+     * Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces
+     * created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * </p>
      */
     private java.util.List<MemberDefinition> memberDefinitions;
@@ -46,6 +52,12 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String workteamArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the workforce.
+     * </p>
+     */
+    private String workforceArn;
     /**
      * <p>
      * The Amazon Marketplace identifier for a vendor's work team.
@@ -125,10 +137,21 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Cognito user groups that make up the work team.
+     * A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the
+     * work team.
+     * </p>
+     * <p>
+     * Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces
+     * created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * </p>
      * 
-     * @return The Amazon Cognito user groups that make up the work team.
+     * @return A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make
+     *         up the work team. </p>
+     *         <p>
+     *         Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private
+     *         workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created
+     *         using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.
      */
 
     public java.util.List<MemberDefinition> getMemberDefinitions() {
@@ -137,11 +160,22 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Cognito user groups that make up the work team.
+     * A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the
+     * work team.
+     * </p>
+     * <p>
+     * Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces
+     * created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * </p>
      * 
      * @param memberDefinitions
-     *        The Amazon Cognito user groups that make up the work team.
+     *        A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make
+     *        up the work team. </p>
+     *        <p>
+     *        Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private
+     *        workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created
+     *        using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.
      */
 
     public void setMemberDefinitions(java.util.Collection<MemberDefinition> memberDefinitions) {
@@ -155,7 +189,13 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Cognito user groups that make up the work team.
+     * A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the
+     * work team.
+     * </p>
+     * <p>
+     * Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces
+     * created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,7 +204,12 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param memberDefinitions
-     *        The Amazon Cognito user groups that make up the work team.
+     *        A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make
+     *        up the work team. </p>
+     *        <p>
+     *        Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private
+     *        workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created
+     *        using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +225,22 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Cognito user groups that make up the work team.
+     * A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the
+     * work team.
+     * </p>
+     * <p>
+     * Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces
+     * created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * </p>
      * 
      * @param memberDefinitions
-     *        The Amazon Cognito user groups that make up the work team.
+     *        A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make
+     *        up the work team. </p>
+     *        <p>
+     *        Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private
+     *        workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created
+     *        using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,6 +286,46 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
 
     public Workteam withWorkteamArn(String workteamArn) {
         setWorkteamArn(workteamArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the workforce.
+     * </p>
+     * 
+     * @param workforceArn
+     *        The Amazon Resource Name (ARN) of the workforce.
+     */
+
+    public void setWorkforceArn(String workforceArn) {
+        this.workforceArn = workforceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the workforce.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the workforce.
+     */
+
+    public String getWorkforceArn() {
+        return this.workforceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the workforce.
+     * </p>
+     * 
+     * @param workforceArn
+     *        The Amazon Resource Name (ARN) of the workforce.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workteam withWorkforceArn(String workforceArn) {
+        setWorkforceArn(workforceArn);
         return this;
     }
 
@@ -521,6 +617,8 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
             sb.append("MemberDefinitions: ").append(getMemberDefinitions()).append(",");
         if (getWorkteamArn() != null)
             sb.append("WorkteamArn: ").append(getWorkteamArn()).append(",");
+        if (getWorkforceArn() != null)
+            sb.append("WorkforceArn: ").append(getWorkforceArn()).append(",");
         if (getProductListingIds() != null)
             sb.append("ProductListingIds: ").append(getProductListingIds()).append(",");
         if (getDescription() != null)
@@ -559,6 +657,10 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWorkteamArn() != null && other.getWorkteamArn().equals(this.getWorkteamArn()) == false)
             return false;
+        if (other.getWorkforceArn() == null ^ this.getWorkforceArn() == null)
+            return false;
+        if (other.getWorkforceArn() != null && other.getWorkforceArn().equals(this.getWorkforceArn()) == false)
+            return false;
         if (other.getProductListingIds() == null ^ this.getProductListingIds() == null)
             return false;
         if (other.getProductListingIds() != null && other.getProductListingIds().equals(this.getProductListingIds()) == false)
@@ -594,6 +696,7 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getWorkteamName() == null) ? 0 : getWorkteamName().hashCode());
         hashCode = prime * hashCode + ((getMemberDefinitions() == null) ? 0 : getMemberDefinitions().hashCode());
         hashCode = prime * hashCode + ((getWorkteamArn() == null) ? 0 : getWorkteamArn().hashCode());
+        hashCode = prime * hashCode + ((getWorkforceArn() == null) ? 0 : getWorkforceArn().hashCode());
         hashCode = prime * hashCode + ((getProductListingIds() == null) ? 0 : getProductListingIds().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSubDomain() == null) ? 0 : getSubDomain().hashCode());

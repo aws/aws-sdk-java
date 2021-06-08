@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,21 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public AssociateEncryptionConfigResult associateEncryptionConfig(AssociateEncryptionConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateIdentityProviderConfigResult associateIdentityProviderConfig(AssociateIdentityProviderConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAddonResult createAddon(CreateAddonRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateClusterResult createCluster(CreateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -40,6 +55,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public CreateNodegroupResult createNodegroup(CreateNodegroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAddonResult deleteAddon(DeleteAddonRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,12 +79,27 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public DescribeAddonResult describeAddon(DescribeAddonRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAddonVersionsResult describeAddonVersions(DescribeAddonVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeClusterResult describeCluster(DescribeClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeFargateProfileResult describeFargateProfile(DescribeFargateProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeIdentityProviderConfigResult describeIdentityProviderConfig(DescribeIdentityProviderConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,12 +114,27 @@ public class AbstractAmazonEKS implements AmazonEKS {
     }
 
     @Override
+    public DisassociateIdentityProviderConfigResult disassociateIdentityProviderConfig(DisassociateIdentityProviderConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAddonsResult listAddons(ListAddonsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListClustersResult listClusters(ListClustersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListFargateProfilesResult listFargateProfiles(ListFargateProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListIdentityProviderConfigsResult listIdentityProviderConfigs(ListIdentityProviderConfigsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,6 +160,11 @@ public class AbstractAmazonEKS implements AmazonEKS {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAddonResult updateAddon(UpdateAddonRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

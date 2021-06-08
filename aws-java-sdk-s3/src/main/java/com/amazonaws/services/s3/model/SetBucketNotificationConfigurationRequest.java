@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon Technologies, Inc.
+ * Copyright 2011-2021 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +22,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * @see SetBucketNotificationConfigurationRequest#SetBucketNotificationConfigurationRequest(String, BucketNotificationConfiguration)
  */
-public class SetBucketNotificationConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetBucketNotificationConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     private BucketNotificationConfiguration notificationConfiguration;
 
     private String bucketName;
+
+    private String expectedBucketOwner;
 
     /**
      * @deprecated Use SetBucketNotificationConfigurationRequest(String, BucketNotificationConfiguration) instead.
@@ -37,7 +39,6 @@ public class SetBucketNotificationConfigurationRequest extends AmazonWebServiceR
         this.notificationConfiguration = bucketNotificationConfiguration;
         this.bucketName = bucket;
     }
-
     /**
      * Constructs a new {@link SetBucketNotificationConfigurationRequest} 
      * to set the bucket notification configuration of
@@ -54,6 +55,19 @@ public class SetBucketNotificationConfigurationRequest extends AmazonWebServiceR
             String bucketName, BucketNotificationConfiguration notificationConfiguration) {
         this.bucketName = bucketName;
         this.notificationConfiguration = notificationConfiguration;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketNotificationConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

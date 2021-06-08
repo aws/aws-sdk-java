@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for the list webhooks request.
+ * The result structure for the list webhooks request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListWebhooks" target="_top">AWS API
@@ -28,24 +28,24 @@ public class ListWebhooksResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * List of webhooks.
+     * A list of webhooks.
      * </p>
      */
     private java.util.List<Webhook> webhooks;
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * List of webhooks.
+     * A list of webhooks.
      * </p>
      * 
-     * @return List of webhooks.
+     * @return A list of webhooks.
      */
 
     public java.util.List<Webhook> getWebhooks() {
@@ -54,11 +54,11 @@ public class ListWebhooksResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * List of webhooks.
+     * A list of webhooks.
      * </p>
      * 
      * @param webhooks
-     *        List of webhooks.
+     *        A list of webhooks.
      */
 
     public void setWebhooks(java.util.Collection<Webhook> webhooks) {
@@ -72,7 +72,7 @@ public class ListWebhooksResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * List of webhooks.
+     * A list of webhooks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListWebhooksResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param webhooks
-     *        List of webhooks.
+     *        A list of webhooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListWebhooksResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * List of webhooks.
+     * A list of webhooks.
      * </p>
      * 
      * @param webhooks
-     *        List of webhooks.
+     *        A list of webhooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +112,13 @@ public class ListWebhooksResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another
+     *        request to retrieve more entries.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +127,12 @@ public class ListWebhooksResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      * 
-     * @return Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *         request to fetch more entries.
+     * @return A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another
+     *         request to retrieve more entries.
      */
 
     public String getNextToken() {
@@ -141,13 +141,13 @@ public class ListWebhooksResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another
+     *        request to retrieve more entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

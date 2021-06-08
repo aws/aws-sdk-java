@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,9 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * [<code>Service-managed</code> permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does
- * not deploy stack instances to the organization master account, even if the master account is in your organization or
- * in an OU in your organization.
+ * [Service-managed permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy
+ * stack instances to the organization management account, even if the organization management account is in your
+ * organization or in an OU in your organization.
  * </p>
  * <p>
  * For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create
@@ -38,6 +38,12 @@ public class DeploymentTargets implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accounts;
+    /**
+     * <p>
+     * Returns the value of the AccountsUrl property.
+     * </p>
+     */
+    private String accountsUrl;
     /**
      * <p>
      * The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
@@ -115,6 +121,46 @@ public class DeploymentTargets implements Serializable, Cloneable {
 
     public DeploymentTargets withAccounts(java.util.Collection<String> accounts) {
         setAccounts(accounts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the value of the AccountsUrl property.
+     * </p>
+     * 
+     * @param accountsUrl
+     *        Returns the value of the AccountsUrl property.
+     */
+
+    public void setAccountsUrl(String accountsUrl) {
+        this.accountsUrl = accountsUrl;
+    }
+
+    /**
+     * <p>
+     * Returns the value of the AccountsUrl property.
+     * </p>
+     * 
+     * @return Returns the value of the AccountsUrl property.
+     */
+
+    public String getAccountsUrl() {
+        return this.accountsUrl;
+    }
+
+    /**
+     * <p>
+     * Returns the value of the AccountsUrl property.
+     * </p>
+     * 
+     * @param accountsUrl
+     *        Returns the value of the AccountsUrl property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentTargets withAccountsUrl(String accountsUrl) {
+        setAccountsUrl(accountsUrl);
         return this;
     }
 
@@ -205,6 +251,8 @@ public class DeploymentTargets implements Serializable, Cloneable {
         sb.append("{");
         if (getAccounts() != null)
             sb.append("Accounts: ").append(getAccounts()).append(",");
+        if (getAccountsUrl() != null)
+            sb.append("AccountsUrl: ").append(getAccountsUrl()).append(",");
         if (getOrganizationalUnitIds() != null)
             sb.append("OrganizationalUnitIds: ").append(getOrganizationalUnitIds());
         sb.append("}");
@@ -225,6 +273,10 @@ public class DeploymentTargets implements Serializable, Cloneable {
             return false;
         if (other.getAccounts() != null && other.getAccounts().equals(this.getAccounts()) == false)
             return false;
+        if (other.getAccountsUrl() == null ^ this.getAccountsUrl() == null)
+            return false;
+        if (other.getAccountsUrl() != null && other.getAccountsUrl().equals(this.getAccountsUrl()) == false)
+            return false;
         if (other.getOrganizationalUnitIds() == null ^ this.getOrganizationalUnitIds() == null)
             return false;
         if (other.getOrganizationalUnitIds() != null && other.getOrganizationalUnitIds().equals(this.getOrganizationalUnitIds()) == false)
@@ -238,6 +290,7 @@ public class DeploymentTargets implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccounts() == null) ? 0 : getAccounts().hashCode());
+        hashCode = prime * hashCode + ((getAccountsUrl() == null) ? 0 : getAccountsUrl().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnitIds() == null) ? 0 : getOrganizationalUnitIds().hashCode());
         return hashCode;
     }

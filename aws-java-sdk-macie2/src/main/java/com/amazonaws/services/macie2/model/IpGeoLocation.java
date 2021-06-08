@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved for future use.
+ * Provides geographic coordinates that indicate where a specified IP address originated from.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpGeoLocation" target="_top">AWS API
@@ -30,24 +30,24 @@ public class IpGeoLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The latitude coordinate of the location, rounded to four decimal places.
      * </p>
      */
     private Double lat;
     /**
      * <p>
-     * Reserved for future use.
+     * The longitude coordinate of the location, rounded to four decimal places.
      * </p>
      */
     private Double lon;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The latitude coordinate of the location, rounded to four decimal places.
      * </p>
      * 
      * @param lat
-     *        Reserved for future use.
+     *        The latitude coordinate of the location, rounded to four decimal places.
      */
 
     public void setLat(Double lat) {
@@ -56,10 +56,10 @@ public class IpGeoLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The latitude coordinate of the location, rounded to four decimal places.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The latitude coordinate of the location, rounded to four decimal places.
      */
 
     public Double getLat() {
@@ -68,11 +68,11 @@ public class IpGeoLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The latitude coordinate of the location, rounded to four decimal places.
      * </p>
      * 
      * @param lat
-     *        Reserved for future use.
+     *        The latitude coordinate of the location, rounded to four decimal places.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class IpGeoLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The longitude coordinate of the location, rounded to four decimal places.
      * </p>
      * 
      * @param lon
-     *        Reserved for future use.
+     *        The longitude coordinate of the location, rounded to four decimal places.
      */
 
     public void setLon(Double lon) {
@@ -96,10 +96,10 @@ public class IpGeoLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The longitude coordinate of the location, rounded to four decimal places.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The longitude coordinate of the location, rounded to four decimal places.
      */
 
     public Double getLon() {
@@ -108,11 +108,11 @@ public class IpGeoLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The longitude coordinate of the location, rounded to four decimal places.
      * </p>
      * 
      * @param lon
-     *        Reserved for future use.
+     *        The longitude coordinate of the location, rounded to four decimal places.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

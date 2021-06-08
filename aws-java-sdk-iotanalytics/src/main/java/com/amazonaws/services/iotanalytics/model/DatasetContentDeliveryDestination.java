@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The destination to which data set contents are delivered.
+ * The destination to which dataset contents are delivered.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentDeliveryDestination"
@@ -30,24 +30,24 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Configuration information for delivery of data set contents to AWS IoT Events.
+     * Configuration information for delivery of dataset contents to AWS IoT Events.
      * </p>
      */
     private IotEventsDestinationConfiguration iotEventsDestinationConfiguration;
     /**
      * <p>
-     * Configuration information for delivery of data set contents to Amazon S3.
+     * Configuration information for delivery of dataset contents to Amazon S3.
      * </p>
      */
     private S3DestinationConfiguration s3DestinationConfiguration;
 
     /**
      * <p>
-     * Configuration information for delivery of data set contents to AWS IoT Events.
+     * Configuration information for delivery of dataset contents to AWS IoT Events.
      * </p>
      * 
      * @param iotEventsDestinationConfiguration
-     *        Configuration information for delivery of data set contents to AWS IoT Events.
+     *        Configuration information for delivery of dataset contents to AWS IoT Events.
      */
 
     public void setIotEventsDestinationConfiguration(IotEventsDestinationConfiguration iotEventsDestinationConfiguration) {
@@ -56,10 +56,10 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Configuration information for delivery of data set contents to AWS IoT Events.
+     * Configuration information for delivery of dataset contents to AWS IoT Events.
      * </p>
      * 
-     * @return Configuration information for delivery of data set contents to AWS IoT Events.
+     * @return Configuration information for delivery of dataset contents to AWS IoT Events.
      */
 
     public IotEventsDestinationConfiguration getIotEventsDestinationConfiguration() {
@@ -68,11 +68,11 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Configuration information for delivery of data set contents to AWS IoT Events.
+     * Configuration information for delivery of dataset contents to AWS IoT Events.
      * </p>
      * 
      * @param iotEventsDestinationConfiguration
-     *        Configuration information for delivery of data set contents to AWS IoT Events.
+     *        Configuration information for delivery of dataset contents to AWS IoT Events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Configuration information for delivery of data set contents to Amazon S3.
+     * Configuration information for delivery of dataset contents to Amazon S3.
      * </p>
      * 
      * @param s3DestinationConfiguration
-     *        Configuration information for delivery of data set contents to Amazon S3.
+     *        Configuration information for delivery of dataset contents to Amazon S3.
      */
 
     public void setS3DestinationConfiguration(S3DestinationConfiguration s3DestinationConfiguration) {
@@ -96,10 +96,10 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Configuration information for delivery of data set contents to Amazon S3.
+     * Configuration information for delivery of dataset contents to Amazon S3.
      * </p>
      * 
-     * @return Configuration information for delivery of data set contents to Amazon S3.
+     * @return Configuration information for delivery of dataset contents to Amazon S3.
      */
 
     public S3DestinationConfiguration getS3DestinationConfiguration() {
@@ -108,11 +108,11 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Configuration information for delivery of data set contents to Amazon S3.
+     * Configuration information for delivery of dataset contents to Amazon S3.
      * </p>
      * 
      * @param s3DestinationConfiguration
-     *        Configuration information for delivery of data set contents to Amazon S3.
+     *        Configuration information for delivery of dataset contents to Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

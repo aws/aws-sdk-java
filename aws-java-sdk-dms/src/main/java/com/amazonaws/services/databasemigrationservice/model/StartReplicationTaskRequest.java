@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
     private String replicationTaskArn;
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      */
     private String startReplicationTaskType;
@@ -83,10 +83,10 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      */
     private String cdcStopPosition;
@@ -133,11 +133,11 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      * 
      * @param startReplicationTaskType
-     *        The type of replication task.
+     *        A type of replication task.
      * @see StartReplicationTaskTypeValue
      */
 
@@ -147,10 +147,10 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      * 
-     * @return The type of replication task.
+     * @return A type of replication task.
      * @see StartReplicationTaskTypeValue
      */
 
@@ -160,11 +160,11 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      * 
      * @param startReplicationTaskType
-     *        The type of replication task.
+     *        A type of replication task.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartReplicationTaskTypeValue
      */
@@ -176,11 +176,11 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      * 
      * @param startReplicationTaskType
-     *        The type of replication task.
+     *        A type of replication task.
      * @see StartReplicationTaskTypeValue
      */
 
@@ -190,11 +190,11 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of replication task.
+     * A type of replication task.
      * </p>
      * 
      * @param startReplicationTaskType
-     *        The type of replication task.
+     *        A type of replication task.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StartReplicationTaskTypeValue
      */
@@ -455,20 +455,20 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @param cdcStopPosition
      *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
      *        or commit time.</p>
      *        <p>
-     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      */
 
     public void setCdcStopPosition(String cdcStopPosition) {
@@ -481,19 +481,19 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @return Indicates when you want a change data capture (CDC) operation to stop. The value can be either server
      *         time or commit time.</p>
      *         <p>
-     *         Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *         Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *         </p>
      *         <p>
-     *         Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *         Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      */
 
     public String getCdcStopPosition() {
@@ -506,20 +506,20 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @param cdcStopPosition
      *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
      *        or commit time.</p>
      *        <p>
-     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

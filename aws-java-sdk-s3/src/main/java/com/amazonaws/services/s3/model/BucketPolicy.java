@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -32,7 +32,7 @@ import java.io.Serializable;
  * </p>
  * <p>
  * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
- * Amazon S3 developer guide</a> for more information on forming bucket
+ * Amazon S3 User Guide</a> for more information on forming bucket
  * polices.
  * </p>
  */

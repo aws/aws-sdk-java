@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,11 @@ public class VpcInterfaceRequest implements Serializable, Cloneable, StructuredP
 
     /** The name of the VPC Interface. This value must be unique within the current flow. */
     private String name;
+    /**
+     * The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the
+     * networkInterfaceType.
+     */
+    private String networkInterfaceType;
     /** Role Arn MediaConnect can assumes to create ENIs in customer's account */
     private String roleArn;
     /** Security Group IDs to be used on ENI. */
@@ -66,6 +71,65 @@ public class VpcInterfaceRequest implements Serializable, Cloneable, StructuredP
 
     public VpcInterfaceRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the
+     * networkInterfaceType.
+     * 
+     * @param networkInterfaceType
+     *        The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the
+     *        networkInterfaceType.
+     * @see NetworkInterfaceType
+     */
+
+    public void setNetworkInterfaceType(String networkInterfaceType) {
+        this.networkInterfaceType = networkInterfaceType;
+    }
+
+    /**
+     * The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the
+     * networkInterfaceType.
+     * 
+     * @return The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the
+     *         networkInterfaceType.
+     * @see NetworkInterfaceType
+     */
+
+    public String getNetworkInterfaceType() {
+        return this.networkInterfaceType;
+    }
+
+    /**
+     * The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the
+     * networkInterfaceType.
+     * 
+     * @param networkInterfaceType
+     *        The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the
+     *        networkInterfaceType.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkInterfaceType
+     */
+
+    public VpcInterfaceRequest withNetworkInterfaceType(String networkInterfaceType) {
+        setNetworkInterfaceType(networkInterfaceType);
+        return this;
+    }
+
+    /**
+     * The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the
+     * networkInterfaceType.
+     * 
+     * @param networkInterfaceType
+     *        The type of network interface. If this value is not included in the request, MediaConnect uses ENA as the
+     *        networkInterfaceType.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkInterfaceType
+     */
+
+    public VpcInterfaceRequest withNetworkInterfaceType(NetworkInterfaceType networkInterfaceType) {
+        this.networkInterfaceType = networkInterfaceType.toString();
         return this;
     }
 
@@ -213,6 +277,8 @@ public class VpcInterfaceRequest implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getNetworkInterfaceType() != null)
+            sb.append("NetworkInterfaceType: ").append(getNetworkInterfaceType()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getSecurityGroupIds() != null)
@@ -237,6 +303,10 @@ public class VpcInterfaceRequest implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getNetworkInterfaceType() == null ^ this.getNetworkInterfaceType() == null)
+            return false;
+        if (other.getNetworkInterfaceType() != null && other.getNetworkInterfaceType().equals(this.getNetworkInterfaceType()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -258,6 +328,7 @@ public class VpcInterfaceRequest implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceType() == null) ? 0 : getNetworkInterfaceType().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());

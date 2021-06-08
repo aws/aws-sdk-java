@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,35 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the resource that you want to retrieve tags for.
+     * The ID of the resource with the tags to list.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceId;
     /**
@@ -42,11 +69,65 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the resource that you want to retrieve tags for.
+     * The ID of the resource with the tags to list.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The ID of the resource that you want to retrieve tags for.
+     *        The ID of the resource with the tags to list.</p>
+     *        <p>
+     *        You can specify any of the following taggable resources.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AWS account – specify the account ID number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     *        <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Root – specify the root ID that begins with <code>r-</code> and looks similar to:
+     *        <code>r-<i>1a2b</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     *        <code>p-<i>12abcdefg3</i> </code>
+     *        </p>
+     *        </li>
      */
 
     public void setResourceId(String resourceId) {
@@ -55,10 +136,64 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the resource that you want to retrieve tags for.
+     * The ID of the resource with the tags to list.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ID of the resource that you want to retrieve tags for.
+     * @return The ID of the resource with the tags to list.</p>
+     *         <p>
+     *         You can specify any of the following taggable resources.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         AWS account – specify the account ID number.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     *         <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Root – specify the root ID that begins with <code>r-</code> and looks similar to:
+     *         <code>r-<i>1a2b</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     *         <code>p-<i>12abcdefg3</i> </code>
+     *         </p>
+     *         </li>
      */
 
     public String getResourceId() {
@@ -67,11 +202,65 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the resource that you want to retrieve tags for.
+     * The ID of the resource with the tags to list.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The ID of the resource that you want to retrieve tags for.
+     *        The ID of the resource with the tags to list.</p>
+     *        <p>
+     *        You can specify any of the following taggable resources.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AWS account – specify the account ID number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     *        <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Root – specify the root ID that begins with <code>r-</code> and looks similar to:
+     *        <code>r-<i>1a2b</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     *        <code>p-<i>12abcdefg3</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

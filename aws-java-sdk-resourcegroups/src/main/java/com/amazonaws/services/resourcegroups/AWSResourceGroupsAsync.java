@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ import com.amazonaws.services.resourcegroups.model.*;
  * databases, and Amazon S3 buckets into groups using criteria that you define as tags. A resource group is a collection
  * of resources that match the resource types specified in a query, and share one or more tags or portions of tags. You
  * can create a group of resources based on their roles in your cloud infrastructure, lifecycle stages, regions,
- * application layers, or virtually any criteria. Resource groups enable you to automate management tasks, such as those
+ * application layers, or virtually any criteria. Resource Groups enable you to automate management tasks, such as those
  * in AWS Systems Manager Automation documents, on tag-related resources in AWS Systems Manager. Groups of tagged
  * resources also let you quickly view a custom console in AWS Systems Manager that shows AWS Config compliance and
  * other monitoring data about member resources.
@@ -80,8 +80,26 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Creates a group with a specified name, description, and resource query.
+     * Creates a resource group with the specified name and description. You can optionally include a resource query, or
+     * a service configuration. For more information about constructing a resource query, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>. For more information about service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:CreateGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createGroupRequest
      * @return A Java Future containing the result of the CreateGroup operation returned by the service.
@@ -93,8 +111,26 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Creates a group with a specified name, description, and resource query.
+     * Creates a resource group with the specified name and description. You can optionally include a resource query, or
+     * a service configuration. For more information about constructing a resource query, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>. For more information about service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:CreateGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createGroupRequest
      * @param asyncHandler
@@ -111,9 +147,22 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Deletes a specified resource group. Deleting a resource group does not delete resources that are members of the
-     * group; it only deletes the group structure.
+     * Deletes the specified resource group. Deleting a resource group does not delete any resources that are members of
+     * the group; it only deletes the group structure.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:DeleteGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteGroupRequest
      * @return A Java Future containing the result of the DeleteGroup operation returned by the service.
@@ -125,9 +174,22 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Deletes a specified resource group. Deleting a resource group does not delete resources that are members of the
-     * group; it only deletes the group structure.
+     * Deletes the specified resource group. Deleting a resource group does not delete any resources that are members of
+     * the group; it only deletes the group structure.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:DeleteGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteGroupRequest
      * @param asyncHandler
@@ -146,6 +208,19 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * <p>
      * Returns information about a specified resource group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GetGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getGroupRequest
      * @return A Java Future containing the result of the GetGroup operation returned by the service.
@@ -159,6 +234,19 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * <p>
      * Returns information about a specified resource group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GetGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getGroupRequest
      * @param asyncHandler
@@ -175,8 +263,85 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Returns the resource query associated with the specified resource group.
+     * Returns the service configuration associated with the specified resource group. For details about the service
+     * configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GetGroupConfiguration</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getGroupConfigurationRequest
+     * @return A Java Future containing the result of the GetGroupConfiguration operation returned by the service.
+     * @sample AWSResourceGroupsAsync.GetGroupConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetGroupConfigurationResult> getGroupConfigurationAsync(GetGroupConfigurationRequest getGroupConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns the service configuration associated with the specified resource group. For details about the service
+     * configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GetGroupConfiguration</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getGroupConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGroupConfiguration operation returned by the service.
+     * @sample AWSResourceGroupsAsyncHandler.GetGroupConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetGroupConfigurationResult> getGroupConfigurationAsync(GetGroupConfigurationRequest getGroupConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGroupConfigurationRequest, GetGroupConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the resource query associated with the specified resource group. For more information about resource
+     * queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GetGroupQuery</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getGroupQueryRequest
      * @return A Java Future containing the result of the GetGroupQuery operation returned by the service.
@@ -188,8 +353,24 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Returns the resource query associated with the specified resource group.
+     * Retrieves the resource query associated with the specified resource group. For more information about resource
+     * queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GetGroupQuery</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getGroupQueryRequest
      * @param asyncHandler
@@ -208,6 +389,19 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * <p>
      * Returns a list of tags that are associated with a resource group, specified by an ARN.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GetTags</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getTagsRequest
      * @return A Java Future containing the result of the GetTags operation returned by the service.
@@ -221,6 +415,19 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * <p>
      * Returns a list of tags that are associated with a resource group, specified by an ARN.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GetTags</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getTagsRequest
      * @param asyncHandler
@@ -237,8 +444,93 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Returns a list of ARNs of resources that are members of a specified resource group.
+     * Adds the specified resources to the specified group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GroupResources</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param groupResourcesRequest
+     * @return A Java Future containing the result of the GroupResources operation returned by the service.
+     * @sample AWSResourceGroupsAsync.GroupResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GroupResourcesResult> groupResourcesAsync(GroupResourcesRequest groupResourcesRequest);
+
+    /**
+     * <p>
+     * Adds the specified resources to the specified group.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:GroupResources</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param groupResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GroupResources operation returned by the service.
+     * @sample AWSResourceGroupsAsyncHandler.GroupResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GroupResourcesResult> groupResourcesAsync(GroupResourcesRequest groupResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<GroupResourcesRequest, GroupResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of ARNs of the resources that are members of a specified resource group.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:ListGroupResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:ListStackResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listGroupResourcesRequest
      * @return A Java Future containing the result of the ListGroupResources operation returned by the service.
@@ -250,8 +542,36 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Returns a list of ARNs of resources that are members of a specified resource group.
+     * Returns a list of ARNs of the resources that are members of a specified resource group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:ListGroupResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:ListStackResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listGroupResourcesRequest
      * @param asyncHandler
@@ -270,6 +590,19 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * <p>
      * Returns a list of existing resource groups in your account.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:ListGroups</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listGroupsRequest
      * @return A Java Future containing the result of the ListGroups operation returned by the service.
@@ -283,6 +616,19 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * <p>
      * Returns a list of existing resource groups in your account.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:ListGroups</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listGroupsRequest
      * @param asyncHandler
@@ -299,9 +645,96 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a
+     * Attaches a service configuration to the specified group. This occurs asynchronously, and can take time to
+     * complete. You can use <a>GetGroupConfiguration</a> to check the status of the update.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:PutGroupConfiguration</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putGroupConfigurationRequest
+     * @return A Java Future containing the result of the PutGroupConfiguration operation returned by the service.
+     * @sample AWSResourceGroupsAsync.PutGroupConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/PutGroupConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutGroupConfigurationResult> putGroupConfigurationAsync(PutGroupConfigurationRequest putGroupConfigurationRequest);
+
+    /**
+     * <p>
+     * Attaches a service configuration to the specified group. This occurs asynchronously, and can take time to
+     * complete. You can use <a>GetGroupConfiguration</a> to check the status of the update.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:PutGroupConfiguration</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putGroupConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutGroupConfiguration operation returned by the service.
+     * @sample AWSResourceGroupsAsyncHandler.PutGroupConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/PutGroupConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutGroupConfigurationResult> putGroupConfigurationAsync(PutGroupConfigurationRequest putGroupConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutGroupConfigurationRequest, PutGroupConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of AWS resource identifiers that matches the specified query. The query uses the same format as a
      * resource query in a CreateGroup or UpdateGroupQuery operation.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:SearchResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:ListStackResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param searchResourcesRequest
      * @return A Java Future containing the result of the SearchResources operation returned by the service.
@@ -313,9 +746,37 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a
+     * Returns a list of AWS resource identifiers that matches the specified query. The query uses the same format as a
      * resource query in a CreateGroup or UpdateGroupQuery operation.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:SearchResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:ListStackResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param searchResourcesRequest
      * @param asyncHandler
@@ -335,6 +796,26 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they
      * are not specified in the request parameters.
      * </p>
+     * <important>
+     * <p>
+     * Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We
+     * use tags to provide you with billing and administration services. Tags are not intended to be used for private or
+     * sensitive data.
+     * </p>
+     * </important>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:Tag</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param tagRequest
      * @return A Java Future containing the result of the Tag operation returned by the service.
@@ -349,6 +830,26 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they
      * are not specified in the request parameters.
      * </p>
+     * <important>
+     * <p>
+     * Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We
+     * use tags to provide you with billing and administration services. Tags are not intended to be used for private or
+     * sensitive data.
+     * </p>
+     * </important>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:Tag</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param tagRequest
      * @param asyncHandler
@@ -364,8 +865,78 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Deletes specified tags from a specified resource.
+     * Removes the specified resources from the specified group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:UngroupResources</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param ungroupResourcesRequest
+     * @return A Java Future containing the result of the UngroupResources operation returned by the service.
+     * @sample AWSResourceGroupsAsync.UngroupResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UngroupResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UngroupResourcesResult> ungroupResourcesAsync(UngroupResourcesRequest ungroupResourcesRequest);
+
+    /**
+     * <p>
+     * Removes the specified resources from the specified group.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:UngroupResources</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param ungroupResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UngroupResources operation returned by the service.
+     * @sample AWSResourceGroupsAsyncHandler.UngroupResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UngroupResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UngroupResourcesResult> ungroupResourcesAsync(UngroupResourcesRequest ungroupResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<UngroupResourcesRequest, UngroupResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes tags from a specified resource group.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:Untag</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param untagRequest
      * @return A Java Future containing the result of the Untag operation returned by the service.
@@ -377,8 +948,21 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Deletes specified tags from a specified resource.
+     * Deletes tags from a specified resource group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:Untag</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param untagRequest
      * @param asyncHandler
@@ -394,8 +978,21 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Updates an existing group with a new or changed description. You cannot update the name of a resource group.
+     * Updates the description for an existing group. You cannot update the name of a resource group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:UpdateGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateGroupRequest
      * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
@@ -407,8 +1004,21 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Updates an existing group with a new or changed description. You cannot update the name of a resource group.
+     * Updates the description for an existing group. You cannot update the name of a resource group.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:UpdateGroup</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateGroupRequest
      * @param asyncHandler
@@ -425,8 +1035,23 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Updates the resource query of a group.
+     * Updates the resource query of a group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:UpdateGroupQuery</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateGroupQueryRequest
      * @return A Java Future containing the result of the UpdateGroupQuery operation returned by the service.
@@ -438,8 +1063,23 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Updates the resource query of a group.
+     * Updates the resource query of a group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:UpdateGroupQuery</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateGroupQueryRequest
      * @param asyncHandler

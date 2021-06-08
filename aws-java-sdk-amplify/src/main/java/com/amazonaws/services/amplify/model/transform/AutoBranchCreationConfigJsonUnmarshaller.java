@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,10 @@ public class AutoBranchCreationConfigJsonUnmarshaller implements Unmarshaller<Au
                 if (context.testExpression("enableBasicAuth", targetDepth)) {
                     context.nextToken();
                     autoBranchCreationConfig.setEnableBasicAuth(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("enablePerformanceMode", targetDepth)) {
+                    context.nextToken();
+                    autoBranchCreationConfig.setEnablePerformanceMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("buildSpec", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,12 @@ public class InvokeEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-Custom-Attributes").build();
     private static final MarshallingInfo<String> TARGETMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-Target-Model").build();
+    private static final MarshallingInfo<String> TARGETVARIANT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-Target-Variant").build();
+    private static final MarshallingInfo<String> TARGETCONTAINERHOSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-Target-Container-Hostname").build();
+    private static final MarshallingInfo<String> INFERENCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-Inference-Id").build();
 
     private static final InvokeEndpointRequestMarshaller instance = new InvokeEndpointRequestMarshaller();
 
@@ -62,6 +68,9 @@ public class InvokeEndpointRequestMarshaller {
             protocolMarshaller.marshall(invokeEndpointRequest.getAccept(), ACCEPT_BINDING);
             protocolMarshaller.marshall(invokeEndpointRequest.getCustomAttributes(), CUSTOMATTRIBUTES_BINDING);
             protocolMarshaller.marshall(invokeEndpointRequest.getTargetModel(), TARGETMODEL_BINDING);
+            protocolMarshaller.marshall(invokeEndpointRequest.getTargetVariant(), TARGETVARIANT_BINDING);
+            protocolMarshaller.marshall(invokeEndpointRequest.getTargetContainerHostname(), TARGETCONTAINERHOSTNAME_BINDING);
+            protocolMarshaller.marshall(invokeEndpointRequest.getInferenceId(), INFERENCEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for video outputs
+ * Settings related to video encoding of your output. The specific video settings depend on the video codec that you
+ * choose. When you work directly in your JSON job specification, include one instance of Video description
+ * (VideoDescription) per output.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoDescription" target="_top">AWS API
  *      Documentation</a>
@@ -42,8 +44,9 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video
      * encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For
      * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings *
+     * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings *
+     * VP8, Vp8Settings * VP9, Vp9Settings
      */
     private VideoCodecSettings codecSettings;
     /**
@@ -261,15 +264,17 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video
      * encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For
      * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings *
+     * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings *
+     * VP8, Vp8Settings * VP9, Vp9Settings
      * 
      * @param codecSettings
      *        Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to
      *        video encoding. The settings in this group vary depending on the value that you choose for Video codec
      *        (Codec). For each codec enum that you choose, define the corresponding settings object. The following
-     *        lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings *
-     *        H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     *        lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings *
+     *        FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings *
+     *        PRORES, ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings
      */
 
     public void setCodecSettings(VideoCodecSettings codecSettings) {
@@ -280,14 +285,16 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video
      * encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For
      * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings *
+     * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings *
+     * VP8, Vp8Settings * VP9, Vp9Settings
      * 
      * @return Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to
      *         video encoding. The settings in this group vary depending on the value that you choose for Video codec
      *         (Codec). For each codec enum that you choose, define the corresponding settings object. The following
-     *         lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings *
-     *         H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     *         lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings *
+     *         FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings *
+     *         PRORES, ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings
      */
 
     public VideoCodecSettings getCodecSettings() {
@@ -298,15 +305,17 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
      * Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video
      * encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For
      * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
-     * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     * settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings *
+     * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings *
+     * VP8, Vp8Settings * VP9, Vp9Settings
      * 
      * @param codecSettings
      *        Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to
      *        video encoding. The settings in this group vary depending on the value that you choose for Video codec
      *        (Codec). For each codec enum that you choose, define the corresponding settings object. The following
-     *        lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings *
-     *        H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+     *        lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings *
+     *        FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings *
+     *        PRORES, ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

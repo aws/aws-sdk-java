@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects
- * into. The default value is "private".
+ * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
+ * objects into. The default value is <code>private</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String accountId;
     /**
      * <p>
+     * The AWS account ID for the administrator account.
+     * </p>
+     */
+    private String administratorAccountId;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the account.
      * </p>
      */
@@ -50,13 +56,14 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private java.util.Date invitedAt;
     /**
      * <p>
-     * The AWS account ID for the master account.
+     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     * administratorAccountId property and is retained only for backward compatibility.
      * </p>
      */
     private String masterAccountId;
     /**
      * <p>
-     * The current status of the relationship between the account and the master account.
+     * The current status of the relationship between the account and the administrator account.
      * </p>
      */
     private String relationshipStatus;
@@ -70,7 +77,7 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     * relationship between the account and the master account.
+     * relationship between the account and the administrator account.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -112,6 +119,46 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     public GetMemberResult withAccountId(String accountId) {
         setAccountId(accountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the administrator account.
+     * </p>
+     * 
+     * @param administratorAccountId
+     *        The AWS account ID for the administrator account.
+     */
+
+    public void setAdministratorAccountId(String administratorAccountId) {
+        this.administratorAccountId = administratorAccountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the administrator account.
+     * </p>
+     * 
+     * @return The AWS account ID for the administrator account.
+     */
+
+    public String getAdministratorAccountId() {
+        return this.administratorAccountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the administrator account.
+     * </p>
+     * 
+     * @param administratorAccountId
+     *        The AWS account ID for the administrator account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMemberResult withAdministratorAccountId(String administratorAccountId) {
+        setAdministratorAccountId(administratorAccountId);
         return this;
     }
 
@@ -243,11 +290,13 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The AWS account ID for the master account.
+     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     * administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
      * @param masterAccountId
-     *        The AWS account ID for the master account.
+     *        (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     *        administratorAccountId property and is retained only for backward compatibility.
      */
 
     public void setMasterAccountId(String masterAccountId) {
@@ -256,10 +305,12 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The AWS account ID for the master account.
+     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     * administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
-     * @return The AWS account ID for the master account.
+     * @return (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     *         administratorAccountId property and is retained only for backward compatibility.
      */
 
     public String getMasterAccountId() {
@@ -268,11 +319,13 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The AWS account ID for the master account.
+     * (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     * administratorAccountId property and is retained only for backward compatibility.
      * </p>
      * 
      * @param masterAccountId
-     *        The AWS account ID for the master account.
+     *        (Deprecated) The AWS account ID for the administrator account. This property has been replaced by the
+     *        administratorAccountId property and is retained only for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,11 +336,11 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The current status of the relationship between the account and the master account.
+     * The current status of the relationship between the account and the administrator account.
      * </p>
      * 
      * @param relationshipStatus
-     *        The current status of the relationship between the account and the master account.
+     *        The current status of the relationship between the account and the administrator account.
      * @see RelationshipStatus
      */
 
@@ -297,10 +350,10 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The current status of the relationship between the account and the master account.
+     * The current status of the relationship between the account and the administrator account.
      * </p>
      * 
-     * @return The current status of the relationship between the account and the master account.
+     * @return The current status of the relationship between the account and the administrator account.
      * @see RelationshipStatus
      */
 
@@ -310,11 +363,11 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The current status of the relationship between the account and the master account.
+     * The current status of the relationship between the account and the administrator account.
      * </p>
      * 
      * @param relationshipStatus
-     *        The current status of the relationship between the account and the master account.
+     *        The current status of the relationship between the account and the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RelationshipStatus
      */
@@ -326,11 +379,11 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The current status of the relationship between the account and the master account.
+     * The current status of the relationship between the account and the administrator account.
      * </p>
      * 
      * @param relationshipStatus
-     *        The current status of the relationship between the account and the master account.
+     *        The current status of the relationship between the account and the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RelationshipStatus
      */
@@ -417,12 +470,12 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     * relationship between the account and the master account.
+     * relationship between the account and the administrator account.
      * </p>
      * 
      * @param updatedAt
      *        The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *        relationship between the account and the master account.
+     *        relationship between the account and the administrator account.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -432,11 +485,11 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     * relationship between the account and the master account.
+     * relationship between the account and the administrator account.
      * </p>
      * 
      * @return The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *         relationship between the account and the master account.
+     *         relationship between the account and the administrator account.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -446,12 +499,12 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     * relationship between the account and the master account.
+     * relationship between the account and the administrator account.
      * </p>
      * 
      * @param updatedAt
      *        The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *        relationship between the account and the master account.
+     *        relationship between the account and the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -474,6 +527,8 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
         sb.append("{");
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getAdministratorAccountId() != null)
+            sb.append("AdministratorAccountId: ").append(getAdministratorAccountId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getEmail() != null)
@@ -505,6 +560,10 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (other.getAccountId() == null ^ this.getAccountId() == null)
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
+        if (other.getAdministratorAccountId() == null ^ this.getAdministratorAccountId() == null)
+            return false;
+        if (other.getAdministratorAccountId() != null && other.getAdministratorAccountId().equals(this.getAdministratorAccountId()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
@@ -543,6 +602,7 @@ public class GetMemberResult extends com.amazonaws.AmazonWebServiceResult<com.am
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getAdministratorAccountId() == null) ? 0 : getAdministratorAccountId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getEmail() == null) ? 0 : getEmail().hashCode());
         hashCode = prime * hashCode + ((getInvitedAt() == null) ? 0 : getInvitedAt().hashCode());

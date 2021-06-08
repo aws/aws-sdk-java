@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,14 @@ public class TaskDefinitionMarshaller {
             .marshallLocationName("ipcMode").build();
     private static final MarshallingInfo<StructuredPojo> PROXYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("proxyConfiguration").build();
+    private static final MarshallingInfo<java.util.Date> REGISTEREDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registeredAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> DEREGISTEREDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deregisteredAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> REGISTEREDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registeredBy").build();
+    private static final MarshallingInfo<StructuredPojo> EPHEMERALSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ephemeralStorage").build();
 
     private static final TaskDefinitionMarshaller instance = new TaskDefinitionMarshaller();
 
@@ -102,6 +110,10 @@ public class TaskDefinitionMarshaller {
             protocolMarshaller.marshall(taskDefinition.getPidMode(), PIDMODE_BINDING);
             protocolMarshaller.marshall(taskDefinition.getIpcMode(), IPCMODE_BINDING);
             protocolMarshaller.marshall(taskDefinition.getProxyConfiguration(), PROXYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getRegisteredAt(), REGISTEREDAT_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getDeregisteredAt(), DEREGISTEREDAT_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getRegisteredBy(), REGISTEREDBY_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getEphemeralStorage(), EPHEMERALSTORAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

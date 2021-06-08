@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,39 +30,108 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
+     * <p>
+     * To request a new public certificate, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
+     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * To import an existing certificate into ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
+     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * To request a private certificate to use FTPS through private IP addresses, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
+     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Certificates with the following cryptographic algorithms and key sizes are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 2048-bit RSA (RSA_2048)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096-bit RSA (RSA_4096)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 256 bit (EC_prime256v1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 384 bit (EC_secp384r1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 521 bit (EC_secp521r1)
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and
+     * information about the issuer.
+     * </p>
+     * </note>
      */
     private String certificate;
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. With a VPC endpoint, you can restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP addresses with your server's
-     * endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
+     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
+     * will need to associate one or more Elastic IP addresses with your server's endpoint.
      * </p>
      */
     private EndpointDetails endpointDetails;
     /**
      * <p>
-     * The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can choose to
-     * connect to the public internet or a VPC endpoint. With a VPC endpoint, your server isn't accessible over the
-     * public internet.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
+     * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
+     * <p>
+     * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
+     * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
+     * endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible
+     * with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.
+     * </p>
+     * </note>
      */
     private String endpointType;
     /**
      * <p>
-     * The RSA private key as generated by <code>ssh-keygen -N "" -f my-new-server-key</code>.
+     * The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     * If you aren't planning to migrate existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key">Changing
-     * the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
+     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
      * </p>
      */
     private String hostKey;
@@ -74,8 +143,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private IdentityProviderDetails identityProviderDetails;
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon
-     * CloudWatch, turning logging on or off.
+     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
+     * in Amazon CloudWatch, turning logging on or off.
      * </p>
      */
     private String loggingRole;
@@ -101,12 +170,35 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
+     * be used to identify your server when clients connect to it over FTPS.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </note>
      */
     private java.util.List<String> protocols;
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
-     * assigned to.
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     */
+    private String securityPolicyName;
+    /**
+     * <p>
+     * A system-assigned unique identifier for a server instance that the user account is assigned to.
      * </p>
      */
     private String serverId;
@@ -116,10 +208,111 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
+     * <p>
+     * To request a new public certificate, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
+     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * To import an existing certificate into ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
+     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * To request a private certificate to use FTPS through private IP addresses, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
+     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Certificates with the following cryptographic algorithms and key sizes are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 2048-bit RSA (RSA_2048)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096-bit RSA (RSA_4096)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 256 bit (EC_prime256v1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 384 bit (EC_secp384r1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 521 bit (EC_secp521r1)
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and
+     * information about the issuer.
+     * </p>
+     * </note>
      * 
      * @param certificate
      *        The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *        <code>Protocols</code> is set to <code>FTPS</code>.
+     *        <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     *        <p>
+     *        To request a new public certificate, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
+     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        </p>
+     *        <p>
+     *        To import an existing certificate into ACM, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
+     *        into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        </p>
+     *        <p>
+     *        To request a private certificate to use FTPS through private IP addresses, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
+     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        </p>
+     *        <p>
+     *        Certificates with the following cryptographic algorithms and key sizes are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        2048-bit RSA (RSA_2048)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4096-bit RSA (RSA_4096)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Elliptic Prime Curve 256 bit (EC_prime256v1)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Elliptic Prime Curve 384 bit (EC_secp384r1)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Elliptic Prime Curve 521 bit (EC_secp521r1)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and
+     *        information about the issuer.
+     *        </p>
      */
 
     public void setCertificate(String certificate) {
@@ -131,9 +324,110 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
+     * <p>
+     * To request a new public certificate, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
+     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * To import an existing certificate into ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
+     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * To request a private certificate to use FTPS through private IP addresses, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
+     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Certificates with the following cryptographic algorithms and key sizes are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 2048-bit RSA (RSA_2048)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096-bit RSA (RSA_4096)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 256 bit (EC_prime256v1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 384 bit (EC_secp384r1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 521 bit (EC_secp521r1)
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and
+     * information about the issuer.
+     * </p>
+     * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *         <code>Protocols</code> is set to <code>FTPS</code>.
+     *         <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     *         <p>
+     *         To request a new public certificate, see <a
+     *         href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
+     *         certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *         </p>
+     *         <p>
+     *         To import an existing certificate into ACM, see <a
+     *         href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
+     *         into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *         </p>
+     *         <p>
+     *         To request a private certificate to use FTPS through private IP addresses, see <a
+     *         href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
+     *         certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *         </p>
+     *         <p>
+     *         Certificates with the following cryptographic algorithms and key sizes are supported:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         2048-bit RSA (RSA_2048)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         4096-bit RSA (RSA_4096)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Elliptic Prime Curve 256 bit (EC_prime256v1)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Elliptic Prime Curve 384 bit (EC_secp384r1)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Elliptic Prime Curve 521 bit (EC_secp521r1)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and
+     *         information about the issuer.
+     *         </p>
      */
 
     public String getCertificate() {
@@ -145,10 +439,111 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
      * <code>Protocols</code> is set to <code>FTPS</code>.
      * </p>
+     * <p>
+     * To request a new public certificate, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
+     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * To import an existing certificate into ACM, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into
+     * ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * To request a private certificate to use FTPS through private IP addresses, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
+     * certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     * </p>
+     * <p>
+     * Certificates with the following cryptographic algorithms and key sizes are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 2048-bit RSA (RSA_2048)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 4096-bit RSA (RSA_4096)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 256 bit (EC_prime256v1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 384 bit (EC_secp384r1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Elliptic Prime Curve 521 bit (EC_secp521r1)
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and
+     * information about the issuer.
+     * </p>
+     * </note>
      * 
      * @param certificate
      *        The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *        <code>Protocols</code> is set to <code>FTPS</code>.
+     *        <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     *        <p>
+     *        To request a new public certificate, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public
+     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        </p>
+     *        <p>
+     *        To import an existing certificate into ACM, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates
+     *        into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        </p>
+     *        <p>
+     *        To request a private certificate to use FTPS through private IP addresses, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a private
+     *        certificate</a> in the <i> AWS Certificate Manager User Guide</i>.
+     *        </p>
+     *        <p>
+     *        Certificates with the following cryptographic algorithms and key sizes are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        2048-bit RSA (RSA_2048)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        4096-bit RSA (RSA_4096)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Elliptic Prime Curve 256 bit (EC_prime256v1)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Elliptic Prime Curve 384 bit (EC_secp384r1)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Elliptic Prime Curve 521 bit (EC_secp521r1)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and
+     *        information about the issuer.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,17 +554,15 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. With a VPC endpoint, you can restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP addresses with your server's
-     * endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
+     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
+     * will need to associate one or more Elastic IP addresses with your server's endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
-     *        protocol-enabled server. With a VPC endpoint, you can restrict access to your server to resources only
-     *        within your VPC. To control incoming internet traffic, you will need to associate one or more Elastic IP
-     *        addresses with your server's endpoint.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC
+     *        endpoint, you can restrict access to your server to resources only within your VPC. To control incoming
+     *        internet traffic, you will need to associate one or more Elastic IP addresses with your server's endpoint.
      */
 
     public void setEndpointDetails(EndpointDetails endpointDetails) {
@@ -178,16 +571,15 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. With a VPC endpoint, you can restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP addresses with your server's
-     * endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
+     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
+     * will need to associate one or more Elastic IP addresses with your server's endpoint.
      * </p>
      * 
-     * @return The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
-     *         protocol-enabled server. With a VPC endpoint, you can restrict access to your server to resources only
-     *         within your VPC. To control incoming internet traffic, you will need to associate one or more Elastic IP
-     *         addresses with your server's endpoint.
+     * @return The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC
+     *         endpoint, you can restrict access to your server to resources only within your VPC. To control incoming
+     *         internet traffic, you will need to associate one or more Elastic IP addresses with your server's
+     *         endpoint.
      */
 
     public EndpointDetails getEndpointDetails() {
@@ -196,17 +588,15 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that are configured for your file transfer protocol-enabled
-     * server. With a VPC endpoint, you can restrict access to your server to resources only within your VPC. To control
-     * incoming internet traffic, you will need to associate one or more Elastic IP addresses with your server's
-     * endpoint.
+     * The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC endpoint, you
+     * can restrict access to your server to resources only within your VPC. To control incoming internet traffic, you
+     * will need to associate one or more Elastic IP addresses with your server's endpoint.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that are configured for your file transfer
-     *        protocol-enabled server. With a VPC endpoint, you can restrict access to your server to resources only
-     *        within your VPC. To control incoming internet traffic, you will need to associate one or more Elastic IP
-     *        addresses with your server's endpoint.
+     *        The virtual private cloud (VPC) endpoint settings that are configured for your server. With a VPC
+     *        endpoint, you can restrict access to your server to resources only within your VPC. To control incoming
+     *        internet traffic, you will need to associate one or more Elastic IP addresses with your server's endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,15 +607,51 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can choose to
-     * connect to the public internet or a VPC endpoint. With a VPC endpoint, your server isn't accessible over the
-     * public internet.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
+     * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
+     * <p>
+     * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
+     * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
+     * endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible
+     * with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.
+     * </p>
+     * </note>
      * 
      * @param endpointType
-     *        The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *        choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, your server isn't
-     *        accessible over the public internet.
+     *        The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *        publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can
+     *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
+     *        attaching Elastic IP addresses directly to it.</p> <note>
+     *        <p>
+     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *        </p>
+     *        <p>
+     *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
+     *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
+     *        server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This
+     *        is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.
+     *        </p>
      * @see EndpointType
      */
 
@@ -235,14 +661,50 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can choose to
-     * connect to the public internet or a VPC endpoint. With a VPC endpoint, your server isn't accessible over the
-     * public internet.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
+     * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
+     * <p>
+     * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
+     * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
+     * endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible
+     * with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.
+     * </p>
+     * </note>
      * 
-     * @return The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *         choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, your server isn't
-     *         accessible over the public internet.
+     * @return The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *         publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you
+     *         can restrict access to your server and resources only within your VPC or choose to make it internet
+     *         facing by attaching Elastic IP addresses directly to it.</p> <note>
+     *         <p>
+     *         After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code>
+     *         in your AWS account if your account hasn't already done so before March 31, 2021. If you have already
+     *         created servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31,
+     *         2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see
+     *         https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *         </p>
+     *         <p>
+     *         It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint
+     *         type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with
+     *         your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address.
+     *         This is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.
+     *         </p>
      * @see EndpointType
      */
 
@@ -252,15 +714,51 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can choose to
-     * connect to the public internet or a VPC endpoint. With a VPC endpoint, your server isn't accessible over the
-     * public internet.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
+     * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
+     * <p>
+     * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
+     * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
+     * endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible
+     * with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.
+     * </p>
+     * </note>
      * 
      * @param endpointType
-     *        The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *        choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, your server isn't
-     *        accessible over the public internet.
+     *        The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *        publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can
+     *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
+     *        attaching Elastic IP addresses directly to it.</p> <note>
+     *        <p>
+     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *        </p>
+     *        <p>
+     *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
+     *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
+     *        server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This
+     *        is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -272,15 +770,51 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can choose to
-     * connect to the public internet or a VPC endpoint. With a VPC endpoint, your server isn't accessible over the
-     * public internet.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
+     * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
+     * <p>
+     * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
+     * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
+     * endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible
+     * with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.
+     * </p>
+     * </note>
      * 
      * @param endpointType
-     *        The type of endpoint that you want your file transfer protocol-enabled server to connect to. You can
-     *        choose to connect to the public internet or a VPC endpoint. With a VPC endpoint, your server isn't
-     *        accessible over the public internet.
+     *        The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *        publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can
+     *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
+     *        attaching Elastic IP addresses directly to it.</p> <note>
+     *        <p>
+     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *        </p>
+     *        <p>
+     *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
+     *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
+     *        server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This
+     *        is not possible with <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -292,32 +826,32 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The RSA private key as generated by <code>ssh-keygen -N "" -f my-new-server-key</code>.
+     * The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     * If you aren't planning to migrate existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key">Changing
-     * the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
+     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
      * </p>
      * 
      * @param hostKey
-     *        The RSA private key as generated by <code>ssh-keygen -N "" -f my-new-server-key</code>.</p> <important>
+     *        The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p>
+     *        <important>
      *        <p>
-     *        If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to
-     *        a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     *        If you aren't planning to migrate existing users from an existing server to a new server, don't update the
+     *        host key. Accidentally changing a server's host key can be disruptive.
      *        </p>
      *        </important>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
-     *        >Changing the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User
-     *        Guide</i>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
+     *        >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
      */
 
     public void setHostKey(String hostKey) {
@@ -326,31 +860,31 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The RSA private key as generated by <code>ssh-keygen -N "" -f my-new-server-key</code>.
+     * The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     * If you aren't planning to migrate existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key">Changing
-     * the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
+     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
      * </p>
      * 
-     * @return The RSA private key as generated by <code>ssh-keygen -N "" -f my-new-server-key</code>.</p> <important>
+     * @return The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p>
+     *         <important>
      *         <p>
-     *         If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server
-     *         to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     *         If you aren't planning to migrate existing users from an existing server to a new server, don't update
+     *         the host key. Accidentally changing a server's host key can be disruptive.
      *         </p>
      *         </important>
      *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
-     *         >Changing the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User
-     *         Guide</i>.
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
+     *         >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
      */
 
     public String getHostKey() {
@@ -359,32 +893,32 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The RSA private key as generated by <code>ssh-keygen -N "" -f my-new-server-key</code>.
+     * The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.
      * </p>
      * <important>
      * <p>
-     * If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to a new
-     * server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     * If you aren't planning to migrate existing users from an existing server to a new server, don't update the host
+     * key. Accidentally changing a server's host key can be disruptive.
      * </p>
      * </important>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key">Changing
-     * the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User Guide</i>.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
+     * >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
      * </p>
      * 
      * @param hostKey
-     *        The RSA private key as generated by <code>ssh-keygen -N "" -f my-new-server-key</code>.</p> <important>
+     *        The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f my-new-server-key</code>.</p>
+     *        <important>
      *        <p>
-     *        If you aren't planning to migrate existing users from an existing file transfer protocol-enabled server to
-     *        a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.
+     *        If you aren't planning to migrate existing users from an existing server to a new server, don't update the
+     *        host key. Accidentally changing a server's host key can be disruptive.
      *        </p>
      *        </important>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html#change-host-key"
-     *        >Changing the Host Key for Your AWS Transfer Family Server</a> in the <i>AWS Transfer Family User
-     *        Guide</i>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
+     *        >Change the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,13 +969,13 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon
-     * CloudWatch, turning logging on or off.
+     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
+     * in Amazon CloudWatch, turning logging on or off.
      * </p>
      * 
      * @param loggingRole
-     *        Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in
-     *        Amazon CloudWatch, turning logging on or off.
+     *        Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be
+     *        logged in Amazon CloudWatch, turning logging on or off.
      */
 
     public void setLoggingRole(String loggingRole) {
@@ -450,12 +984,12 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon
-     * CloudWatch, turning logging on or off.
+     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
+     * in Amazon CloudWatch, turning logging on or off.
      * </p>
      * 
-     * @return Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in
-     *         Amazon CloudWatch, turning logging on or off.
+     * @return Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to
+     *         be logged in Amazon CloudWatch, turning logging on or off.
      */
 
     public String getLoggingRole() {
@@ -464,13 +998,13 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon
-     * CloudWatch, turning logging on or off.
+     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
+     * in Amazon CloudWatch, turning logging on or off.
      * </p>
      * 
      * @param loggingRole
-     *        Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in
-     *        Amazon CloudWatch, turning logging on or off.
+     *        Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be
+     *        logged in Amazon CloudWatch, turning logging on or off.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,6 +1035,24 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
+     * be used to identify your server when clients connect to it over FTPS.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </note>
      * 
      * @return Specifies the file transfer protocol or protocols over which your file transfer protocol client can
      *         connect to your server's endpoint. The available protocols are:</p>
@@ -520,6 +1072,25 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         File Transfer Protocol (FTP): Unencrypted file transfer
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
+     *         which will be used to identify your server when clients connect to it over FTPS.
+     *         </p>
+     *         <p>
+     *         If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     *         <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     *         <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *         </p>
+     *         <p>
+     *         If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     *         associated.
+     *         </p>
+     *         <p>
+     *         If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     *         <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *         </p>
      * @see Protocol
      */
 
@@ -549,6 +1120,24 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
+     * be used to identify your server when clients connect to it over FTPS.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </note>
      * 
      * @param protocols
      *        Specifies the file transfer protocol or protocols over which your file transfer protocol client can
@@ -569,6 +1158,25 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        File Transfer Protocol (FTP): Unencrypted file transfer
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
+     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     *        associated.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        </p>
      * @see Protocol
      */
 
@@ -603,6 +1211,24 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
+     * be used to identify your server when clients connect to it over FTPS.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProtocols(java.util.Collection)} or {@link #withProtocols(java.util.Collection)} if you want to
@@ -628,6 +1254,25 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        File Transfer Protocol (FTP): Unencrypted file transfer
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
+     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     *        associated.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Protocol
      */
@@ -664,6 +1309,24 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
+     * be used to identify your server when clients connect to it over FTPS.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </note>
      * 
      * @param protocols
      *        Specifies the file transfer protocol or protocols over which your file transfer protocol client can
@@ -684,6 +1347,25 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        File Transfer Protocol (FTP): Unencrypted file transfer
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
+     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     *        associated.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Protocol
      */
@@ -715,6 +1397,24 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
+     * be used to identify your server when clients connect to it over FTPS.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
+     * </p>
+     * <p>
+     * If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * </note>
      * 
      * @param protocols
      *        Specifies the file transfer protocol or protocols over which your file transfer protocol client can
@@ -735,6 +1435,25 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        File Transfer Protocol (FTP): Unencrypted file transfer
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
+     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+     *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     *        associated.
+     *        </p>
+     *        <p>
+     *        If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     *        <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to <code>SERVICE_MANAGED</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Protocol
      */
@@ -754,13 +1473,51 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
-     * assigned to.
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @param securityPolicyName
+     *        Specifies the name of the security policy that is attached to the server.
+     */
+
+    public void setSecurityPolicyName(String securityPolicyName) {
+        this.securityPolicyName = securityPolicyName;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @return Specifies the name of the security policy that is attached to the server.
+     */
+
+    public String getSecurityPolicyName() {
+        return this.securityPolicyName;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @param securityPolicyName
+     *        Specifies the name of the security policy that is attached to the server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServerRequest withSecurityPolicyName(String securityPolicyName) {
+        setSecurityPolicyName(securityPolicyName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A system-assigned unique identifier for a server instance that the user account is assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user
-     *        account is assigned to.
+     *        A system-assigned unique identifier for a server instance that the user account is assigned to.
      */
 
     public void setServerId(String serverId) {
@@ -769,12 +1526,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
-     * assigned to.
+     * A system-assigned unique identifier for a server instance that the user account is assigned to.
      * </p>
      * 
-     * @return A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user
-     *         account is assigned to.
+     * @return A system-assigned unique identifier for a server instance that the user account is assigned to.
      */
 
     public String getServerId() {
@@ -783,13 +1538,11 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
-     * assigned to.
+     * A system-assigned unique identifier for a server instance that the user account is assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user
-     *        account is assigned to.
+     *        A system-assigned unique identifier for a server instance that the user account is assigned to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -824,6 +1577,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("LoggingRole: ").append(getLoggingRole()).append(",");
         if (getProtocols() != null)
             sb.append("Protocols: ").append(getProtocols()).append(",");
+        if (getSecurityPolicyName() != null)
+            sb.append("SecurityPolicyName: ").append(getSecurityPolicyName()).append(",");
         if (getServerId() != null)
             sb.append("ServerId: ").append(getServerId());
         sb.append("}");
@@ -868,6 +1623,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false)
             return false;
+        if (other.getSecurityPolicyName() == null ^ this.getSecurityPolicyName() == null)
+            return false;
+        if (other.getSecurityPolicyName() != null && other.getSecurityPolicyName().equals(this.getSecurityPolicyName()) == false)
+            return false;
         if (other.getServerId() == null ^ this.getServerId() == null)
             return false;
         if (other.getServerId() != null && other.getServerId().equals(this.getServerId()) == false)
@@ -887,6 +1646,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getIdentityProviderDetails() == null) ? 0 : getIdentityProviderDetails().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());
         hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode());
+        hashCode = prime * hashCode + ((getSecurityPolicyName() == null) ? 0 : getSecurityPolicyName().hashCode());
         hashCode = prime * hashCode + ((getServerId() == null) ? 0 : getServerId().hashCode());
         return hashCode;
     }

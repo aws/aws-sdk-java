@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,22 @@ public class WorkforceJsonUnmarshaller implements Unmarshaller<Workforce, JsonUn
                 if (context.testExpression("SourceIpConfig", targetDepth)) {
                     context.nextToken();
                     workforce.setSourceIpConfig(SourceIpConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SubDomain", targetDepth)) {
+                    context.nextToken();
+                    workforce.setSubDomain(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CognitoConfig", targetDepth)) {
+                    context.nextToken();
+                    workforce.setCognitoConfig(CognitoConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OidcConfig", targetDepth)) {
+                    context.nextToken();
+                    workforce.setOidcConfig(OidcConfigForResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CreateDate", targetDepth)) {
+                    context.nextToken();
+                    workforce.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

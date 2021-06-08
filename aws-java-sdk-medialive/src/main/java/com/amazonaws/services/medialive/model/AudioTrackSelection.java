@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,13 +26,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AudioTrackSelection implements Serializable, Cloneable, StructuredPojo {
 
-    /** Selects one or more unique audio tracks from within an mp4 source. */
+    /** Selects one or more unique audio tracks from within a source. */
     private java.util.List<AudioTrack> tracks;
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      * 
-     * @return Selects one or more unique audio tracks from within an mp4 source.
+     * @return Selects one or more unique audio tracks from within a source.
      */
 
     public java.util.List<AudioTrack> getTracks() {
@@ -40,10 +40,10 @@ public class AudioTrackSelection implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      * 
      * @param tracks
-     *        Selects one or more unique audio tracks from within an mp4 source.
+     *        Selects one or more unique audio tracks from within a source.
      */
 
     public void setTracks(java.util.Collection<AudioTrack> tracks) {
@@ -56,7 +56,7 @@ public class AudioTrackSelection implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTracks(java.util.Collection)} or {@link #withTracks(java.util.Collection)} if you want to override the
@@ -64,7 +64,7 @@ public class AudioTrackSelection implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param tracks
-     *        Selects one or more unique audio tracks from within an mp4 source.
+     *        Selects one or more unique audio tracks from within a source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +79,10 @@ public class AudioTrackSelection implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Selects one or more unique audio tracks from within an mp4 source.
+     * Selects one or more unique audio tracks from within a source.
      * 
      * @param tracks
-     *        Selects one or more unique audio tracks from within an mp4 source.
+     *        Selects one or more unique audio tracks from within a source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

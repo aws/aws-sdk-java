@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class MutableClusterInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kafkaVersion").build();
     private static final MarshallingInfo<StructuredPojo> LOGGINGINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loggingInfo").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
 
     private static final MutableClusterInfoMarshaller instance = new MutableClusterInfoMarshaller();
 
@@ -66,6 +68,7 @@ public class MutableClusterInfoMarshaller {
             protocolMarshaller.marshall(mutableClusterInfo.getOpenMonitoring(), OPENMONITORING_BINDING);
             protocolMarshaller.marshall(mutableClusterInfo.getKafkaVersion(), KAFKAVERSION_BINDING);
             protocolMarshaller.marshall(mutableClusterInfo.getLoggingInfo(), LOGGINGINFO_BINDING);
+            protocolMarshaller.marshall(mutableClusterInfo.getInstanceType(), INSTANCETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,30 @@ public class EndpointInputJsonUnmarshaller implements Unmarshaller<EndpointInput
                 if (context.testExpression("S3DataDistributionType", targetDepth)) {
                     context.nextToken();
                     endpointInput.setS3DataDistributionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FeaturesAttribute", targetDepth)) {
+                    context.nextToken();
+                    endpointInput.setFeaturesAttribute(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InferenceAttribute", targetDepth)) {
+                    context.nextToken();
+                    endpointInput.setInferenceAttribute(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProbabilityAttribute", targetDepth)) {
+                    context.nextToken();
+                    endpointInput.setProbabilityAttribute(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProbabilityThresholdAttribute", targetDepth)) {
+                    context.nextToken();
+                    endpointInput.setProbabilityThresholdAttribute(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("StartTimeOffset", targetDepth)) {
+                    context.nextToken();
+                    endpointInput.setStartTimeOffset(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EndTimeOffset", targetDepth)) {
+                    context.nextToken();
+                    endpointInput.setEndTimeOffset(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,9 +34,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
-     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
-     * a hyphen and six random characters at the end of the ARN.
+     * Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and
+     * six random characters at the end of the ARN.
      * </p>
      * </note>
      */
@@ -51,7 +51,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you
      * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
-     * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
+     * generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.
      * </p>
      * </note>
      * <p>
@@ -69,15 +69,14 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as those in the request, then the request is ignored (the operation
-     * is idempotent).
+     * If a version with this value already exists and the version <code>SecretString</code> and
+     * <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.
      * </p>
      * </li>
      * <li>
      * <p>
      * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from those in the request then the request fails because you
+     * <code>SecretBinary</code> values are different from those in the request, then the request fails because you
      * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      * </p>
      * </li>
@@ -110,8 +109,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * You can use the account's default CMK to encrypt and decrypt only if you call this operation using credentials
-     * from the same account that owns the secret. If the secret is in a different account, then you must create a
+     * You can use the account default CMK to encrypt and decrypt only if you call this operation using credentials from
+     * the same account that owns the secret. If the secret resides in a different account, then you must create a
      * custom CMK and specify the ARN in this field.
      * </p>
      * </important>
@@ -153,7 +152,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     * <code>{"username":"bob","password":"abc123xyz456"}</code>
      * </p>
      * <p>
      * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
@@ -223,21 +222,34 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per
-     * secret limit.
+     * Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags
+     * per secret limit.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If your tagging schema will be used across multiple services and resources, remember that other services might
-     * have restrictions on allowed characters. Generally allowed characters are: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : / @.
+     * If you use your tagging schema across multiple services and resources, remember other services might have
+     * restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in
+     * UTF-8, plus the following special characters: + - = . _ : / @.
      * </p>
      * </li>
      * </ul>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the
+     * list of regions specified in the parameter.
+     * </p>
+     */
+    private java.util.List<ReplicaRegionType> addReplicaRegions;
+    /**
+     * <p>
+     * (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * </p>
+     */
+    private Boolean forceOverwriteReplicaSecret;
 
     /**
      * <p>
@@ -248,9 +260,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
-     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
-     * a hyphen and six random characters at the end of the ARN.
+     * Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and
+     * six random characters at the end of the ARN.
      * </p>
      * </note>
      * 
@@ -261,9 +273,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <note>
      *        <p>
-     *        Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
-     *        unexpected results when searching for a secret by partial ARN. This is because Secrets Manager
-     *        automatically adds a hyphen and six random characters at the end of the ARN.
+     *        Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     *        unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen
+     *        and six random characters at the end of the ARN.
      *        </p>
      */
 
@@ -280,9 +292,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
-     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
-     * a hyphen and six random characters at the end of the ARN.
+     * Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and
+     * six random characters at the end of the ARN.
      * </p>
      * </note>
      * 
@@ -292,9 +304,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         <note>
      *         <p>
-     *         Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
-     *         unexpected results when searching for a secret by partial ARN. This is because Secrets Manager
-     *         automatically adds a hyphen and six random characters at the end of the ARN.
+     *         Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion
+     *         and unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a
+     *         hyphen and six random characters at the end of the ARN.
      *         </p>
      */
 
@@ -311,9 +323,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
-     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
-     * a hyphen and six random characters at the end of the ARN.
+     * Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen and
+     * six random characters at the end of the ARN.
      * </p>
      * </note>
      * 
@@ -324,9 +336,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <note>
      *        <p>
-     *        Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
-     *        unexpected results when searching for a secret by partial ARN. This is because Secrets Manager
-     *        automatically adds a hyphen and six random characters at the end of the ARN.
+     *        Do not end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     *        unexpected results when searching for a secret by partial ARN. Secrets Manager automatically adds a hyphen
+     *        and six random characters at the end of the ARN.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -346,7 +358,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you
      * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
-     * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
+     * generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.
      * </p>
      * </note>
      * <p>
@@ -364,15 +376,14 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as those in the request, then the request is ignored (the operation
-     * is idempotent).
+     * If a version with this value already exists and the version <code>SecretString</code> and
+     * <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.
      * </p>
      * </li>
      * <li>
      * <p>
      * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from those in the request then the request fails because you
+     * <code>SecretBinary</code> values are different from those in the request, then the request fails because you
      * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      * </p>
      * </li>
@@ -390,7 +401,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in
      *        the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
      *        service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
-     *        and include that value in the request.
+     *        and include the value in the request.
      *        </p>
      *        </note>
      *        <p>
@@ -408,15 +419,14 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are the same as those in the request, then the request is ignored (the
-     *        operation is idempotent).
+     *        If a version with this value already exists and the version <code>SecretString</code> and
+     *        <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are different from those in the request then the request fails because
+     *        <code>SecretBinary</code> values are different from those in the request, then the request fails because
      *        you cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      *        </p>
      *        </li>
@@ -439,7 +449,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you
      * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
-     * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
+     * generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.
      * </p>
      * </note>
      * <p>
@@ -457,15 +467,14 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as those in the request, then the request is ignored (the operation
-     * is idempotent).
+     * If a version with this value already exists and the version <code>SecretString</code> and
+     * <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.
      * </p>
      * </li>
      * <li>
      * <p>
      * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from those in the request then the request fails because you
+     * <code>SecretBinary</code> values are different from those in the request, then the request fails because you
      * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      * </p>
      * </li>
@@ -482,7 +491,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in
      *         the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
      *         service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
-     *         and include that value in the request.
+     *         and include the value in the request.
      *         </p>
      *         </note>
      *         <p>
@@ -500,15 +509,14 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         If a version with this value already exists and that version's <code>SecretString</code> and
-     *         <code>SecretBinary</code> values are the same as those in the request, then the request is ignored (the
-     *         operation is idempotent).
+     *         If a version with this value already exists and the version <code>SecretString</code> and
+     *         <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If a version with this value already exists and that version's <code>SecretString</code> and
-     *         <code>SecretBinary</code> values are different from those in the request then the request fails because
+     *         <code>SecretBinary</code> values are different from those in the request, then the request fails because
      *         you cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      *         </p>
      *         </li>
@@ -531,7 +539,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you
      * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
-     * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
+     * generate a <code>ClientRequestToken</code> yourself for the new version and include the value in the request.
      * </p>
      * </note>
      * <p>
@@ -549,15 +557,14 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as those in the request, then the request is ignored (the operation
-     * is idempotent).
+     * If a version with this value already exists and the version <code>SecretString</code> and
+     * <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.
      * </p>
      * </li>
      * <li>
      * <p>
      * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from those in the request then the request fails because you
+     * <code>SecretBinary</code> values are different from those in the request, then the request fails because you
      * cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      * </p>
      * </li>
@@ -575,7 +582,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in
      *        the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
      *        service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
-     *        and include that value in the request.
+     *        and include the value in the request.
      *        </p>
      *        </note>
      *        <p>
@@ -593,15 +600,14 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are the same as those in the request, then the request is ignored (the
-     *        operation is idempotent).
+     *        If a version with this value already exists and the version <code>SecretString</code> and
+     *        <code>SecretBinary</code> values are the same as those in the request, then the request is ignored.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are different from those in the request then the request fails because
+     *        <code>SecretBinary</code> values are different from those in the request, then the request fails because
      *        you cannot modify an existing version. Instead, use <a>PutSecretValue</a> to create a new version.
      *        </p>
      *        </li>
@@ -673,8 +679,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * You can use the account's default CMK to encrypt and decrypt only if you call this operation using credentials
-     * from the same account that owns the secret. If the secret is in a different account, then you must create a
+     * You can use the account default CMK to encrypt and decrypt only if you call this operation using credentials from
+     * the same account that owns the secret. If the secret resides in a different account, then you must create a
      * custom CMK and specify the ARN in this field.
      * </p>
      * </important>
@@ -695,9 +701,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <important>
      *        <p>
-     *        You can use the account's default CMK to encrypt and decrypt only if you call this operation using
-     *        credentials from the same account that owns the secret. If the secret is in a different account, then you
-     *        must create a custom CMK and specify the ARN in this field.
+     *        You can use the account default CMK to encrypt and decrypt only if you call this operation using
+     *        credentials from the same account that owns the secret. If the secret resides in a different account, then
+     *        you must create a custom CMK and specify the ARN in this field.
      *        </p>
      */
 
@@ -722,8 +728,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * You can use the account's default CMK to encrypt and decrypt only if you call this operation using credentials
-     * from the same account that owns the secret. If the secret is in a different account, then you must create a
+     * You can use the account default CMK to encrypt and decrypt only if you call this operation using credentials from
+     * the same account that owns the secret. If the secret resides in a different account, then you must create a
      * custom CMK and specify the ARN in this field.
      * </p>
      * </important>
@@ -743,9 +749,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         <important>
      *         <p>
-     *         You can use the account's default CMK to encrypt and decrypt only if you call this operation using
-     *         credentials from the same account that owns the secret. If the secret is in a different account, then you
-     *         must create a custom CMK and specify the ARN in this field.
+     *         You can use the account default CMK to encrypt and decrypt only if you call this operation using
+     *         credentials from the same account that owns the secret. If the secret resides in a different account,
+     *         then you must create a custom CMK and specify the ARN in this field.
      *         </p>
      */
 
@@ -770,8 +776,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <important>
      * <p>
-     * You can use the account's default CMK to encrypt and decrypt only if you call this operation using credentials
-     * from the same account that owns the secret. If the secret is in a different account, then you must create a
+     * You can use the account default CMK to encrypt and decrypt only if you call this operation using credentials from
+     * the same account that owns the secret. If the secret resides in a different account, then you must create a
      * custom CMK and specify the ARN in this field.
      * </p>
      * </important>
@@ -792,9 +798,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <important>
      *        <p>
-     *        You can use the account's default CMK to encrypt and decrypt only if you call this operation using
-     *        credentials from the same account that owns the secret. If the secret is in a different account, then you
-     *        must create a custom CMK and specify the ARN in this field.
+     *        You can use the account default CMK to encrypt and decrypt only if you call this operation using
+     *        credentials from the same account that owns the secret. If the secret resides in a different account, then
+     *        you must create a custom CMK and specify the ARN in this field.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -948,7 +954,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     * <code>{"username":"bob","password":"abc123xyz456"}</code>
      * </p>
      * <p>
      * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
@@ -974,7 +980,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *        </p>
      *        <p>
-     *        <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     *        <code>{"username":"bob","password":"abc123xyz456"}</code>
      *        </p>
      *        <p>
      *        If your command-line tool or SDK requires quotation marks around the parameter, you should use single
@@ -1005,7 +1011,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     * <code>{"username":"bob","password":"abc123xyz456"}</code>
      * </p>
      * <p>
      * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
@@ -1030,7 +1036,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *         </p>
      *         <p>
-     *         <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     *         <code>{"username":"bob","password":"abc123xyz456"}</code>
      *         </p>
      *         <p>
      *         If your command-line tool or SDK requires quotation marks around the parameter, you should use single
@@ -1061,7 +1067,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
-     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     * <code>{"username":"bob","password":"abc123xyz456"}</code>
      * </p>
      * <p>
      * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
@@ -1087,7 +1093,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *        </p>
      *        <p>
-     *        <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     *        <code>{"username":"bob","password":"abc123xyz456"}</code>
      *        </p>
      *        <p>
      *        If your command-line tool or SDK requires quotation marks around the parameter, you should use single
@@ -1162,16 +1168,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per
-     * secret limit.
+     * Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags
+     * per secret limit.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If your tagging schema will be used across multiple services and resources, remember that other services might
-     * have restrictions on allowed characters. Generally allowed characters are: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : / @.
+     * If you use your tagging schema across multiple services and resources, remember other services might have
+     * restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in
+     * UTF-8, plus the following special characters: + - = . _ : / @.
      * </p>
      * </li>
      * </ul>
@@ -1235,16 +1241,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         Do not use the <code>aws:</code> prefix in your tag names or values because it is reserved for AWS use.
+     *         Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it for AWS use.
      *         You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against
      *         your tags per secret limit.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If your tagging schema will be used across multiple services and resources, remember that other services
-     *         might have restrictions on allowed characters. Generally allowed characters are: letters, spaces, and
-     *         numbers representable in UTF-8, plus the following special characters: + - = . _ : / @.
+     *         If you use your tagging schema across multiple services and resources, remember other services might have
+     *         restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers
+     *         representable in UTF-8, plus the following special characters: + - = . _ : / @.
      *         </p>
      *         </li>
      */
@@ -1315,16 +1321,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per
-     * secret limit.
+     * Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags
+     * per secret limit.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If your tagging schema will be used across multiple services and resources, remember that other services might
-     * have restrictions on allowed characters. Generally allowed characters are: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : / @.
+     * If you use your tagging schema across multiple services and resources, remember other services might have
+     * restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in
+     * UTF-8, plus the following special characters: + - = . _ : / @.
      * </p>
      * </li>
      * </ul>
@@ -1389,16 +1395,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        Do not use the <code>aws:</code> prefix in your tag names or values because it is reserved for AWS use.
+     *        Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it for AWS use.
      *        You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against
      *        your tags per secret limit.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If your tagging schema will be used across multiple services and resources, remember that other services
-     *        might have restrictions on allowed characters. Generally allowed characters are: letters, spaces, and
-     *        numbers representable in UTF-8, plus the following special characters: + - = . _ : / @.
+     *        If you use your tagging schema across multiple services and resources, remember other services might have
+     *        restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers
+     *        representable in UTF-8, plus the following special characters: + - = . _ : / @.
      *        </p>
      *        </li>
      */
@@ -1474,16 +1480,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per
-     * secret limit.
+     * Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags
+     * per secret limit.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If your tagging schema will be used across multiple services and resources, remember that other services might
-     * have restrictions on allowed characters. Generally allowed characters are: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : / @.
+     * If you use your tagging schema across multiple services and resources, remember other services might have
+     * restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in
+     * UTF-8, plus the following special characters: + - = . _ : / @.
      * </p>
      * </li>
      * </ul>
@@ -1553,16 +1559,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        Do not use the <code>aws:</code> prefix in your tag names or values because it is reserved for AWS use.
+     *        Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it for AWS use.
      *        You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against
      *        your tags per secret limit.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If your tagging schema will be used across multiple services and resources, remember that other services
-     *        might have restrictions on allowed characters. Generally allowed characters are: letters, spaces, and
-     *        numbers representable in UTF-8, plus the following special characters: + - = . _ : / @.
+     *        If you use your tagging schema across multiple services and resources, remember other services might have
+     *        restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers
+     *        representable in UTF-8, plus the following special characters: + - = . _ : / @.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1640,16 +1646,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Do not use the <code>aws:</code> prefix in your tag names or values because it is reserved for AWS use. You can't
-     * edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per
-     * secret limit.
+     * Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it for AWS use. You
+     * can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags
+     * per secret limit.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If your tagging schema will be used across multiple services and resources, remember that other services might
-     * have restrictions on allowed characters. Generally allowed characters are: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : / @.
+     * If you use your tagging schema across multiple services and resources, remember other services might have
+     * restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers representable in
+     * UTF-8, plus the following special characters: + - = . _ : / @.
      * </p>
      * </li>
      * </ul>
@@ -1714,16 +1720,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        Do not use the <code>aws:</code> prefix in your tag names or values because it is reserved for AWS use.
+     *        Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it for AWS use.
      *        You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against
      *        your tags per secret limit.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If your tagging schema will be used across multiple services and resources, remember that other services
-     *        might have restrictions on allowed characters. Generally allowed characters are: letters, spaces, and
-     *        numbers representable in UTF-8, plus the following special characters: + - = . _ : / @.
+     *        If you use your tagging schema across multiple services and resources, remember other services might have
+     *        restrictions on allowed characters. Generally allowed characters: letters, spaces, and numbers
+     *        representable in UTF-8, plus the following special characters: + - = . _ : / @.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1732,6 +1738,136 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     public CreateSecretRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the
+     * list of regions specified in the parameter.
+     * </p>
+     * 
+     * @return (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to
+     *         the list of regions specified in the parameter.
+     */
+
+    public java.util.List<ReplicaRegionType> getAddReplicaRegions() {
+        return addReplicaRegions;
+    }
+
+    /**
+     * <p>
+     * (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the
+     * list of regions specified in the parameter.
+     * </p>
+     * 
+     * @param addReplicaRegions
+     *        (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to
+     *        the list of regions specified in the parameter.
+     */
+
+    public void setAddReplicaRegions(java.util.Collection<ReplicaRegionType> addReplicaRegions) {
+        if (addReplicaRegions == null) {
+            this.addReplicaRegions = null;
+            return;
+        }
+
+        this.addReplicaRegions = new java.util.ArrayList<ReplicaRegionType>(addReplicaRegions);
+    }
+
+    /**
+     * <p>
+     * (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the
+     * list of regions specified in the parameter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAddReplicaRegions(java.util.Collection)} or {@link #withAddReplicaRegions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param addReplicaRegions
+     *        (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to
+     *        the list of regions specified in the parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSecretRequest withAddReplicaRegions(ReplicaRegionType... addReplicaRegions) {
+        if (this.addReplicaRegions == null) {
+            setAddReplicaRegions(new java.util.ArrayList<ReplicaRegionType>(addReplicaRegions.length));
+        }
+        for (ReplicaRegionType ele : addReplicaRegions) {
+            this.addReplicaRegions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to the
+     * list of regions specified in the parameter.
+     * </p>
+     * 
+     * @param addReplicaRegions
+     *        (Optional) Add a list of regions to replicate secrets. Secrets Manager replicates the KMSKeyID objects to
+     *        the list of regions specified in the parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSecretRequest withAddReplicaRegions(java.util.Collection<ReplicaRegionType> addReplicaRegions) {
+        setAddReplicaRegions(addReplicaRegions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * </p>
+     * 
+     * @param forceOverwriteReplicaSecret
+     *        (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     */
+
+    public void setForceOverwriteReplicaSecret(Boolean forceOverwriteReplicaSecret) {
+        this.forceOverwriteReplicaSecret = forceOverwriteReplicaSecret;
+    }
+
+    /**
+     * <p>
+     * (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * </p>
+     * 
+     * @return (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     */
+
+    public Boolean getForceOverwriteReplicaSecret() {
+        return this.forceOverwriteReplicaSecret;
+    }
+
+    /**
+     * <p>
+     * (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * </p>
+     * 
+     * @param forceOverwriteReplicaSecret
+     *        (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSecretRequest withForceOverwriteReplicaSecret(Boolean forceOverwriteReplicaSecret) {
+        setForceOverwriteReplicaSecret(forceOverwriteReplicaSecret);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     * </p>
+     * 
+     * @return (Optional) If set, the replication overwrites a secret with the same name in the destination region.
+     */
+
+    public Boolean isForceOverwriteReplicaSecret() {
+        return this.forceOverwriteReplicaSecret;
     }
 
     /**
@@ -1759,7 +1895,11 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getSecretString() != null)
             sb.append("SecretString: ").append("***Sensitive Data Redacted***").append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAddReplicaRegions() != null)
+            sb.append("AddReplicaRegions: ").append(getAddReplicaRegions()).append(",");
+        if (getForceOverwriteReplicaSecret() != null)
+            sb.append("ForceOverwriteReplicaSecret: ").append(getForceOverwriteReplicaSecret());
         sb.append("}");
         return sb.toString();
     }
@@ -1802,6 +1942,14 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAddReplicaRegions() == null ^ this.getAddReplicaRegions() == null)
+            return false;
+        if (other.getAddReplicaRegions() != null && other.getAddReplicaRegions().equals(this.getAddReplicaRegions()) == false)
+            return false;
+        if (other.getForceOverwriteReplicaSecret() == null ^ this.getForceOverwriteReplicaSecret() == null)
+            return false;
+        if (other.getForceOverwriteReplicaSecret() != null && other.getForceOverwriteReplicaSecret().equals(this.getForceOverwriteReplicaSecret()) == false)
+            return false;
         return true;
     }
 
@@ -1817,6 +1965,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSecretBinary() == null) ? 0 : getSecretBinary().hashCode());
         hashCode = prime * hashCode + ((getSecretString() == null) ? 0 : getSecretString().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAddReplicaRegions() == null) ? 0 : getAddReplicaRegions().hashCode());
+        hashCode = prime * hashCode + ((getForceOverwriteReplicaSecret() == null) ? 0 : getForceOverwriteReplicaSecret().hashCode());
         return hashCode;
     }
 

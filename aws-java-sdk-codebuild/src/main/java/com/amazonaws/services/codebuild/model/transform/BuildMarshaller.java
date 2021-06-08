@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,6 +88,10 @@ public class BuildMarshaller {
             .marshallLocationName("reportArns").build();
     private static final MarshallingInfo<List> FILESYSTEMLOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileSystemLocations").build();
+    private static final MarshallingInfo<StructuredPojo> DEBUGSESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("debugSession").build();
+    private static final MarshallingInfo<String> BUILDBATCHARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildBatchArn").build();
 
     private static final BuildMarshaller instance = new BuildMarshaller();
 
@@ -135,6 +139,8 @@ public class BuildMarshaller {
             protocolMarshaller.marshall(build.getExportedEnvironmentVariables(), EXPORTEDENVIRONMENTVARIABLES_BINDING);
             protocolMarshaller.marshall(build.getReportArns(), REPORTARNS_BINDING);
             protocolMarshaller.marshall(build.getFileSystemLocations(), FILESYSTEMLOCATIONS_BINDING);
+            protocolMarshaller.marshall(build.getDebugSession(), DEBUGSESSION_BINDING);
+            protocolMarshaller.marshall(build.getBuildBatchArn(), BUILDBATCHARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

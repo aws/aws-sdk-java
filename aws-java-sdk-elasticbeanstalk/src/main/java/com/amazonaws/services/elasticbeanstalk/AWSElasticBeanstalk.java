@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
+import com.amazonaws.services.elasticbeanstalk.waiters.AWSElasticBeanstalkWaiters;
 
 /**
  * Interface for accessing Elastic Beanstalk.
@@ -34,8 +35,8 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * <p>
  * For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic
  * Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a
- * href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"
- * >http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software
+ * href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"
+ * >https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software
  * Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to
  * access the API, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
@@ -152,6 +153,28 @@ public interface AWSElasticBeanstalk {
      *      target="_top">AWS API Documentation</a>
      */
     ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest applyEnvironmentManagedActionRequest);
+
+    /**
+     * <p>
+     * Add or change the operations role used by an environment. After this call is made, Elastic Beanstalk uses the
+     * associated operations role for permissions to downstream services during subsequent calls acting on this
+     * environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateEnvironmentOperationsRoleRequest
+     *        Request to add or change the operations role used by an environment.
+     * @return Result of the AssociateEnvironmentOperationsRole operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one or more AWS services.
+     * @sample AWSElasticBeanstalk.AssociateEnvironmentOperationsRole
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateEnvironmentOperationsRoleResult associateEnvironmentOperationsRole(
+            AssociateEnvironmentOperationsRoleRequest associateEnvironmentOperationsRoleRequest);
 
     /**
      * <p>
@@ -789,6 +812,28 @@ public interface AWSElasticBeanstalk {
 
     /**
      * <p>
+     * Disassociate the operations role from an environment. After this call is made, Elastic Beanstalk uses the
+     * caller's permissions for permissions to downstream services during subsequent calls acting on this environment.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param disassociateEnvironmentOperationsRoleRequest
+     *        Request to disassociate the operations role from an environment.
+     * @return Result of the DisassociateEnvironmentOperationsRole operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one or more AWS services.
+     * @sample AWSElasticBeanstalk.DisassociateEnvironmentOperationsRole
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateEnvironmentOperationsRoleResult disassociateEnvironmentOperationsRole(
+            DisassociateEnvironmentOperationsRoleRequest disassociateEnvironmentOperationsRoleRequest);
+
+    /**
+     * <p>
      * Returns a list of the available solution stack names, with the public version first and then in reverse
      * chronological order.
      * </p>
@@ -1222,5 +1267,7 @@ public interface AWSElasticBeanstalk {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSElasticBeanstalkWaiters waiters();
 
 }

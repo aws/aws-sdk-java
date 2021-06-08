@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * This structure contains details about a saved CloudWatch Logs Insights query definition.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/QueryDefinition" target="_top">AWS API
  *      Documentation</a>
@@ -25,18 +28,46 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class QueryDefinition implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The unique ID of the query definition.
+     * </p>
+     */
     private String queryDefinitionId;
-
+    /**
+     * <p>
+     * The name of the query definition.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The query string to use for this definition. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * Query Syntax</a>.
+     * </p>
+     */
     private String queryString;
-
+    /**
+     * <p>
+     * The date that the query definition was most recently modified.
+     * </p>
+     */
     private Long lastModified;
-
+    /**
+     * <p>
+     * If this query definition contains a list of log groups that it is limited to, that list appears here.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> logGroupNames;
 
     /**
+     * <p>
+     * The unique ID of the query definition.
+     * </p>
+     * 
      * @param queryDefinitionId
+     *        The unique ID of the query definition.
      */
 
     public void setQueryDefinitionId(String queryDefinitionId) {
@@ -44,7 +75,11 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The unique ID of the query definition.
+     * </p>
+     * 
+     * @return The unique ID of the query definition.
      */
 
     public String getQueryDefinitionId() {
@@ -52,7 +87,12 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The unique ID of the query definition.
+     * </p>
+     * 
      * @param queryDefinitionId
+     *        The unique ID of the query definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,7 +102,12 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The name of the query definition.
+     * </p>
+     * 
      * @param name
+     *        The name of the query definition.
      */
 
     public void setName(String name) {
@@ -70,7 +115,11 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the query definition.
+     * </p>
+     * 
+     * @return The name of the query definition.
      */
 
     public String getName() {
@@ -78,7 +127,12 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The name of the query definition.
+     * </p>
+     * 
      * @param name
+     *        The name of the query definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,7 +142,16 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The query string to use for this definition. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * Query Syntax</a>.
+     * </p>
+     * 
      * @param queryString
+     *        The query string to use for this definition. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
+     *        Insights Query Syntax</a>.
      */
 
     public void setQueryString(String queryString) {
@@ -96,7 +159,15 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The query string to use for this definition. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * Query Syntax</a>.
+     * </p>
+     * 
+     * @return The query string to use for this definition. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
+     *         Insights Query Syntax</a>.
      */
 
     public String getQueryString() {
@@ -104,7 +175,16 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The query string to use for this definition. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * Query Syntax</a>.
+     * </p>
+     * 
      * @param queryString
+     *        The query string to use for this definition. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
+     *        Insights Query Syntax</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,7 +194,12 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The date that the query definition was most recently modified.
+     * </p>
+     * 
      * @param lastModified
+     *        The date that the query definition was most recently modified.
      */
 
     public void setLastModified(Long lastModified) {
@@ -122,7 +207,11 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The date that the query definition was most recently modified.
+     * </p>
+     * 
+     * @return The date that the query definition was most recently modified.
      */
 
     public Long getLastModified() {
@@ -130,7 +219,12 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The date that the query definition was most recently modified.
+     * </p>
+     * 
      * @param lastModified
+     *        The date that the query definition was most recently modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,7 +234,11 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * If this query definition contains a list of log groups that it is limited to, that list appears here.
+     * </p>
+     * 
+     * @return If this query definition contains a list of log groups that it is limited to, that list appears here.
      */
 
     public java.util.List<String> getLogGroupNames() {
@@ -151,7 +249,12 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * If this query definition contains a list of log groups that it is limited to, that list appears here.
+     * </p>
+     * 
      * @param logGroupNames
+     *        If this query definition contains a list of log groups that it is limited to, that list appears here.
      */
 
     public void setLogGroupNames(java.util.Collection<String> logGroupNames) {
@@ -165,12 +268,16 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * If this query definition contains a list of log groups that it is limited to, that list appears here.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLogGroupNames(java.util.Collection)} or {@link #withLogGroupNames(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param logGroupNames
+     *        If this query definition contains a list of log groups that it is limited to, that list appears here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,7 +292,12 @@ public class QueryDefinition implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * If this query definition contains a list of log groups that it is limited to, that list appears here.
+     * </p>
+     * 
      * @param logGroupNames
+     *        If this query definition contains a list of log groups that it is limited to, that list appears here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

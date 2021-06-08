@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For
- * example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that
- * looks like this:
+ * example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+ * <code>GetRightsizingRecommendation</code>, the Region is a full name (for example,
+ * <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example looks like:
  * </p>
  * <p>
  * <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code>
@@ -61,9 +62,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </ul>
  * <note>
  * <p>
- * For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not
+ * For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not
  * supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also
  * limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.
+ * </p>
+ * <p>
+ * For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not
+ * supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.
  * </p>
  * </note>
  * 

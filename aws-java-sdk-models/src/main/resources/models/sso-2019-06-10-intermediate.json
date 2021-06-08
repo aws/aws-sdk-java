@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -291,6 +292,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.sso.model.AccountInfo",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -352,6 +354,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the AWS account that is assigned to the user.</p>\n@param accountId The identifier of the AWS account that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -420,6 +423,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The display name of the AWS account that is assigned to the user.</p>\n@param accountName The display name of the AWS account that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -488,6 +492,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email address of the AWS account that is assigned to the user.</p>\n@param emailAddress The email address of the AWS account that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -558,6 +563,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the AWS account that is assigned to the user.</p>\n@param accountId The identifier of the AWS account that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -627,6 +633,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The display name of the AWS account that is assigned to the user.</p>\n@param accountName The display name of the AWS account that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -696,6 +703,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email address of the AWS account that is assigned to the user.</p>\n@param emailAddress The email address of the AWS account that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -711,6 +719,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.sso.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -745,6 +754,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.sso.request.GetRoleCredentialsRequest",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -813,6 +823,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The friendly name of the role that is assigned to the user.</p>\n@param roleName The friendly name of the role that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -881,6 +892,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the AWS account that is assigned to the user.</p>\n@param accountId The identifier for the AWS account that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -949,6 +961,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>\n@param accessToken The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1019,6 +1032,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>\n@param accessToken The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1088,6 +1102,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the AWS account that is assigned to the user.</p>\n@param accountId The identifier for the AWS account that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1157,6 +1172,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The friendly name of the role that is assigned to the user.</p>\n@param roleName The friendly name of the role that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1172,6 +1188,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.sso.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "roleName", "accountId", "accessToken" ],
@@ -1203,6 +1220,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.sso.response.GetRoleCredentialsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1264,6 +1282,7 @@
           "variableSetterType" : "RoleCredentials"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The credentials for the role that is assigned to the user.</p>\n@param roleCredentials The credentials for the role that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1334,6 +1353,7 @@
             "variableSetterType" : "RoleCredentials"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The credentials for the role that is assigned to the user.</p>\n@param roleCredentials The credentials for the role that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1349,6 +1369,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.sso.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1383,6 +1404,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.sso.exception.InvalidRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1391,6 +1413,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.sso.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1422,6 +1445,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.sso.request.ListAccountRolesRequest",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1490,6 +1514,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The page token from the previous response output when you request subsequent pages.</p>\n@param nextToken The page token from the previous response output when you request subsequent pages.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1558,6 +1583,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of items that clients can request per page.</p>\n@param maxResults The number of items that clients can request per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1626,6 +1652,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>\n@param accessToken The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1694,6 +1721,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the AWS account that is assigned to the user.</p>\n@param accountId The identifier for the AWS account that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1764,6 +1792,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>\n@param accessToken The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1833,6 +1862,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the AWS account that is assigned to the user.</p>\n@param accountId The identifier for the AWS account that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1902,6 +1932,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of items that clients can request per page.</p>\n@param maxResults The number of items that clients can request per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1971,6 +2002,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The page token from the previous response output when you request subsequent pages.</p>\n@param nextToken The page token from the previous response output when you request subsequent pages.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1986,6 +2018,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.sso.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "accessToken", "accountId" ],
@@ -2017,6 +2050,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.sso.response.ListAccountRolesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2078,6 +2112,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The page token client that is used to retrieve the list of accounts.</p>\n@param nextToken The page token client that is used to retrieve the list of accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2185,6 +2220,7 @@
               "variableSetterType" : "RoleInfo"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2229,6 +2265,7 @@
           "variableSetterType" : "java.util.Collection<RoleInfo>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A paginated response with the list of roles and the next token if more results are available.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRoleList(java.util.Collection)} or {@link #withRoleList(java.util.Collection)} if you want to override the existing values.</p>\n@param roleList A paginated response with the list of roles and the next token if more results are available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2299,6 +2336,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The page token client that is used to retrieve the list of accounts.</p>\n@param nextToken The page token client that is used to retrieve the list of accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2407,6 +2445,7 @@
                 "variableSetterType" : "RoleInfo"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2451,6 +2490,7 @@
             "variableSetterType" : "java.util.Collection<RoleInfo>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A paginated response with the list of roles and the next token if more results are available.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRoleList(java.util.Collection)} or {@link #withRoleList(java.util.Collection)} if you want to override the existing values.</p>\n@param roleList A paginated response with the list of roles and the next token if more results are available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2466,6 +2506,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.sso.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2500,6 +2541,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.sso.request.ListAccountsRequest",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2568,6 +2610,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>\n@param nextToken (Optional) When requesting subsequent pages, this is the page token from the previous response output.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2636,6 +2679,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>This is the number of items clients can request per page.</p>\n@param maxResults This is the number of items clients can request per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2704,6 +2748,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>\n@param accessToken The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2774,6 +2819,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>\n@param accessToken The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2843,6 +2889,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>This is the number of items clients can request per page.</p>\n@param maxResults This is the number of items clients can request per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2912,6 +2959,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>\n@param nextToken (Optional) When requesting subsequent pages, this is the page token from the previous response output.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2927,6 +2975,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.sso.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "accessToken" ],
@@ -2958,6 +3007,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.sso.response.ListAccountsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3019,6 +3069,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The page token client that is used to retrieve the list of accounts.</p>\n@param nextToken The page token client that is used to retrieve the list of accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3126,6 +3177,7 @@
               "variableSetterType" : "AccountInfo"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3170,6 +3222,7 @@
           "variableSetterType" : "java.util.Collection<AccountInfo>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A paginated response with the list of account information and the next token if more results are available.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAccountList(java.util.Collection)} or {@link #withAccountList(java.util.Collection)} if you want to override the existing values.</p>\n@param accountList A paginated response with the list of account information and the next token if more results are available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3279,6 +3332,7 @@
                 "variableSetterType" : "AccountInfo"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3323,6 +3377,7 @@
             "variableSetterType" : "java.util.Collection<AccountInfo>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A paginated response with the list of account information and the next token if more results are available.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAccountList(java.util.Collection)} or {@link #withAccountList(java.util.Collection)} if you want to override the existing values.</p>\n@param accountList A paginated response with the list of account information and the next token if more results are available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3392,6 +3447,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The page token client that is used to retrieve the list of accounts.</p>\n@param nextToken The page token client that is used to retrieve the list of accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3407,6 +3463,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.sso.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3441,6 +3498,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.sso.request.LogoutRequest",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3509,6 +3567,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>\n@param accessToken The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3579,6 +3638,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>\n@param accessToken The token issued by the <code>CreateToken</code> API call. For more information, see <a href=\"https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html\">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3594,6 +3654,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.sso.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "accessToken" ],
@@ -3625,6 +3686,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.sso.response.LogoutResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3633,6 +3695,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.sso.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3667,6 +3730,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.sso.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3675,6 +3739,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.sso.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3706,6 +3771,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.sso.model.RoleCredentials",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3767,6 +3833,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier used for the temporary security credentials. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>\n@param accessKeyId The identifier used for the temporary security credentials. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3835,6 +3902,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key that is used to sign the request. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>\n@param secretAccessKey The key that is used to sign the request. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3903,6 +3971,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token used for temporary credentials. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>\n@param sessionToken The token used for temporary credentials. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3971,6 +4040,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date on which temporary security credentials expire.</p>\n@param expiration The date on which temporary security credentials expire.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4041,6 +4111,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier used for the temporary security credentials. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>\n@param accessKeyId The identifier used for the temporary security credentials. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4110,6 +4181,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date on which temporary security credentials expire.</p>\n@param expiration The date on which temporary security credentials expire.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4179,6 +4251,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key that is used to sign the request. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>\n@param secretAccessKey The key that is used to sign the request. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4248,6 +4321,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token used for temporary credentials. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.</p>\n@param sessionToken The token used for temporary credentials. For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html\">Using Temporary Security Credentials to Request Access to AWS Resources</a> in the <i>AWS IAM User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4263,6 +4337,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.sso.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4297,6 +4372,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.sso.model.RoleInfo",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4358,6 +4434,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The friendly name of the role that is assigned to the user.</p>\n@param roleName The friendly name of the role that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4426,6 +4503,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the AWS account assigned to the user.</p>\n@param accountId The identifier of the AWS account assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4496,6 +4574,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the AWS account assigned to the user.</p>\n@param accountId The identifier of the AWS account assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4565,6 +4644,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The friendly name of the role that is assigned to the user.</p>\n@param roleName The friendly name of the role that is assigned to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4580,6 +4660,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.sso.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4614,6 +4695,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "TooManyRequestsException",
+      "fullyQualifiedName" : "com.amazonaws.services.sso.exception.TooManyRequestsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4622,6 +4704,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.sso.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4653,6 +4736,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "UnauthorizedException",
+      "fullyQualifiedName" : "com.amazonaws.services.sso.exception.UnauthorizedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4661,6 +4745,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.sso.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4686,7 +4771,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSSSOException",

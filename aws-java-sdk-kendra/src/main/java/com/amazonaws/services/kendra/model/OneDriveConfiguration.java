@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Tha Azure Active Directory domain of the organization.
+     * The Azure Active Directory domain of the organization.
      * </p>
      */
     private String tenantDomain;
@@ -77,14 +77,21 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.List<DataSourceToIndexFieldMapping> fieldMappings;
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     */
+    private Boolean disableLocalGroups;
 
     /**
      * <p>
-     * Tha Azure Active Directory domain of the organization.
+     * The Azure Active Directory domain of the organization.
      * </p>
      * 
      * @param tenantDomain
-     *        Tha Azure Active Directory domain of the organization.
+     *        The Azure Active Directory domain of the organization.
      */
 
     public void setTenantDomain(String tenantDomain) {
@@ -93,10 +100,10 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Tha Azure Active Directory domain of the organization.
+     * The Azure Active Directory domain of the organization.
      * </p>
      * 
-     * @return Tha Azure Active Directory domain of the organization.
+     * @return The Azure Active Directory domain of the organization.
      */
 
     public String getTenantDomain() {
@@ -105,11 +112,11 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Tha Azure Active Directory domain of the organization.
+     * The Azure Active Directory domain of the organization.
      * </p>
      * 
      * @param tenantDomain
-     *        Tha Azure Active Directory domain of the organization.
+     *        The Azure Active Directory domain of the organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,6 +508,66 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @param disableLocalGroups
+     *        A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *        <code>False</code>).
+     */
+
+    public void setDisableLocalGroups(Boolean disableLocalGroups) {
+        this.disableLocalGroups = disableLocalGroups;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @return A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *         <code>False</code>).
+     */
+
+    public Boolean getDisableLocalGroups() {
+        return this.disableLocalGroups;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @param disableLocalGroups
+     *        A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *        <code>False</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OneDriveConfiguration withDisableLocalGroups(Boolean disableLocalGroups) {
+        setDisableLocalGroups(disableLocalGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @return A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *         <code>False</code>).
+     */
+
+    public Boolean isDisableLocalGroups() {
+        return this.disableLocalGroups;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -523,7 +590,9 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
         if (getExclusionPatterns() != null)
             sb.append("ExclusionPatterns: ").append(getExclusionPatterns()).append(",");
         if (getFieldMappings() != null)
-            sb.append("FieldMappings: ").append(getFieldMappings());
+            sb.append("FieldMappings: ").append(getFieldMappings()).append(",");
+        if (getDisableLocalGroups() != null)
+            sb.append("DisableLocalGroups: ").append(getDisableLocalGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -562,6 +631,10 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getFieldMappings() != null && other.getFieldMappings().equals(this.getFieldMappings()) == false)
             return false;
+        if (other.getDisableLocalGroups() == null ^ this.getDisableLocalGroups() == null)
+            return false;
+        if (other.getDisableLocalGroups() != null && other.getDisableLocalGroups().equals(this.getDisableLocalGroups()) == false)
+            return false;
         return true;
     }
 
@@ -576,6 +649,7 @@ public class OneDriveConfiguration implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getInclusionPatterns() == null) ? 0 : getInclusionPatterns().hashCode());
         hashCode = prime * hashCode + ((getExclusionPatterns() == null) ? 0 : getExclusionPatterns().hashCode());
         hashCode = prime * hashCode + ((getFieldMappings() == null) ? 0 : getFieldMappings().hashCode());
+        hashCode = prime * hashCode + ((getDisableLocalGroups() == null) ? 0 : getDisableLocalGroups().hashCode());
         return hashCode;
     }
 

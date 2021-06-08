@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,19 +51,18 @@ import com.amazonaws.services.batch.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * AWS Batch enables you to run batch computing workloads on the AWS Cloud. Batch computing is a common way for
- * developers, scientists, and engineers to access large amounts of compute resources, and AWS Batch removes the
- * undifferentiated heavy lifting of configuring and managing the required infrastructure. AWS Batch will be familiar to
- * users of traditional batch computing software. This service can efficiently provision resources in response to jobs
- * submitted in order to eliminate capacity constraints, reduce compute costs, and deliver results quickly.
+ * Using AWS Batch, you can run batch computing workloads on the AWS Cloud. Batch computing is a common means for
+ * developers, scientists, and engineers to access large amounts of compute resources. AWS Batch uses the advantages of
+ * this computing workload to remove the undifferentiated heavy lifting of configuring and managing required
+ * infrastructure. At the same time, it also adopts a familiar batch computing software approach. Given these
+ * advantages, AWS Batch can help you to efficiently provision resources in response to jobs submitted, thus effectively
+ * helping you to eliminate capacity constraints, reduce compute costs, and deliver your results more quickly.
  * </p>
  * <p>
- * As a fully managed service, AWS Batch enables developers, scientists, and engineers to run batch computing workloads
- * of any scale. AWS Batch automatically provisions compute resources and optimizes the workload distribution based on
- * the quantity and scale of the workloads. With AWS Batch, there is no need to install or manage batch computing
- * software, which allows you to focus on analyzing results and solving problems. AWS Batch reduces operational
- * complexities, saves time, and reduces costs, which makes it easy for developers, scientists, and engineers to run
- * their batch jobs in the AWS Cloud.
+ * As a fully managed service, AWS Batch can run batch computing workloads of any scale. AWS Batch automatically
+ * provisions compute resources and optimizes workload distribution based on the quantity and scale of your specific
+ * workloads. With AWS Batch, there's no need to install or manage batch computing software. This means that you can
+ * focus your time and energy on analyzing results and solving your specific problems.
  * </p>
  */
 @ThreadSafe
@@ -298,16 +297,17 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
     /**
      * <p>
      * Cancels a job in an AWS Batch job queue. Jobs that are in the <code>SUBMITTED</code>, <code>PENDING</code>, or
-     * <code>RUNNABLE</code> state are cancelled. Jobs that have progressed to <code>STARTING</code> or
-     * <code>RUNNING</code> are not cancelled (but the API operation still succeeds, even if no job is cancelled); these
+     * <code>RUNNABLE</code> state are canceled. Jobs that have progressed to <code>STARTING</code> or
+     * <code>RUNNING</code> aren't canceled, but the API operation still succeeds, even if no job is canceled. These
      * jobs must be terminated with the <a>TerminateJob</a> operation.
      * </p>
      * 
      * @param cancelJobRequest
+     *        Contains the parameters for <code>CancelJob</code>.
      * @return Result of the CancelJob operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -336,6 +336,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new CancelJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
@@ -360,39 +362,42 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
     /**
      * <p>
      * Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code> compute
-     * environments.
+     * environments. <code>MANAGED</code> compute environments can use Amazon EC2 or AWS Fargate resources.
+     * <code>UNMANAGED</code> compute environments can only use EC2 resources.
      * </p>
      * <p>
      * In a managed compute environment, AWS Batch manages the capacity and instance types of the compute resources
      * within the environment. This is based on the compute resource specification that you define or the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch template</a> that you
-     * specify when you create the compute environment. You can choose to use Amazon EC2 On-Demand Instances or Spot
-     * Instances in your managed compute environment. You can optionally set a maximum price so that Spot Instances only
-     * launch when the Spot Instance price is below a specified percentage of the On-Demand price.
+     * specify when you create the compute environment. Either, you can choose to use EC2 On-Demand Instances and EC2
+     * Spot Instances. Or, you can use Fargate and Fargate Spot capacity in your managed compute environment. You can
+     * optionally set a maximum price so that Spot Instances only launch when the Spot Instance price is less than a
+     * specified percentage of the On-Demand price.
      * </p>
      * <note>
      * <p>
-     * Multi-node parallel jobs are not supported on Spot Instances.
+     * Multi-node parallel jobs aren't supported on Spot Instances.
      * </p>
      * </note>
      * <p>
-     * In an unmanaged compute environment, you can manage your own compute resources. This provides more compute
-     * resource configuration options, such as using a custom AMI, but you must ensure that your AMI meets the Amazon
-     * ECS container instance AMI specification. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container
-     * Instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you have created your
+     * In an unmanaged compute environment, you can manage your own EC2 compute resources and have a lot of flexibility
+     * with how you configure your compute resources. For example, you can use custom AMIs. However, you must verify
+     * that each of your AMIs meet the Amazon ECS container instance AMI specification. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
+     * instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you created your
      * unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon
-     * ECS cluster that is associated with it. Then, manually launch your container instances into that Amazon ECS
-     * cluster. For more information, see <a
+     * ECS cluster that's associated with it. Then, launch your container instances into that Amazon ECS cluster. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an
-     * Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
      * <p>
-     * AWS Batch does not upgrade the AMIs in a compute environment after it is created (for example, when a newer
-     * version of the Amazon ECS-optimized AMI is available). You are responsible for the management of the guest
-     * operating system (including updates and security patches) and any additional application software or utilities
-     * that you install on the compute resources. To use a new AMI for your AWS Batch jobs:
+     * AWS Batch doesn't upgrade the AMIs in a compute environment after the environment is created. For example, it
+     * doesn't update the AMIs when a newer version of the Amazon ECS optimized AMI is available. Therefore, you're
+     * responsible for managing the guest operating system (including its updates and security patches) and any
+     * additional application software or utilities that you install on the compute resources. To use a new AMI for your
+     * AWS Batch jobs, complete these steps:
      * </p>
      * <ol>
      * <li>
@@ -407,22 +412,23 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * </li>
      * <li>
      * <p>
-     * Remove the old compute environment from your job queue.
+     * Remove the earlier compute environment from your job queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delete the old compute environment.
+     * Delete the earlier compute environment.
      * </p>
      * </li>
      * </ol>
      * </note>
      * 
      * @param createComputeEnvironmentRequest
+     *        Contains the parameters for <code>CreateComputeEnvironment</code>.
      * @return Result of the CreateComputeEnvironment operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -452,6 +458,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                         .beforeMarshalling(createComputeEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComputeEnvironment");
@@ -480,17 +488,17 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * the queue and assign an order of preference for the compute environments.
      * </p>
      * <p>
-     * You also set a priority to the job queue that determines the order in which the AWS Batch scheduler places jobs
-     * onto its associated compute environments. For example, if a compute environment is associated with more than one
-     * job queue, the job queue with a higher priority is given preference for scheduling jobs to that compute
-     * environment.
+     * You also set a priority to the job queue that determines the order that the AWS Batch scheduler places jobs onto
+     * its associated compute environments. For example, if a compute environment is associated with more than one job
+     * queue, the job queue with a higher priority is given preference for scheduling jobs to that compute environment.
      * </p>
      * 
      * @param createJobQueueRequest
+     *        Contains the parameters for <code>CreateJobQueue</code>.
      * @return Result of the CreateJobQueue operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -519,6 +527,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new CreateJobQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJobQueue");
@@ -547,14 +557,17 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * <p>
      * Before you can delete a compute environment, you must set its state to <code>DISABLED</code> with the
      * <a>UpdateComputeEnvironment</a> API operation and disassociate it from any job queues with the
-     * <a>UpdateJobQueue</a> API operation.
+     * <a>UpdateJobQueue</a> API operation. Compute environments that use AWS Fargate resources must terminate all
+     * active jobs on that compute environment before deleting the compute environment. If this isn't done, the compute
+     * environment enters an invalid state.
      * </p>
      * 
      * @param deleteComputeEnvironmentRequest
+     *        Contains the parameters for <code>DeleteComputeEnvironment</code>.
      * @return Result of the DeleteComputeEnvironment operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -584,6 +597,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                         .beforeMarshalling(deleteComputeEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteComputeEnvironment");
@@ -609,18 +624,20 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
     /**
      * <p>
      * Deletes the specified job queue. You must first disable submissions for a queue with the <a>UpdateJobQueue</a>
-     * operation. All jobs in the queue are terminated when you delete a job queue.
+     * operation. All jobs in the queue are eventually terminated when you delete a job queue. The jobs are terminated
+     * at a rate of about 16 jobs each second.
      * </p>
      * <p>
-     * It is not necessary to disassociate compute environments from a queue before submitting a
+     * It's not necessary to disassociate compute environments from a queue before submitting a
      * <code>DeleteJobQueue</code> request.
      * </p>
      * 
      * @param deleteJobQueueRequest
+     *        Contains the parameters for <code>DeleteJobQueue</code>.
      * @return Result of the DeleteJobQueue operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -649,6 +666,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new DeleteJobQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteJobQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJobQueue");
@@ -672,14 +691,14 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Deregisters an AWS Batch job definition. Job definitions will be permanently deleted after 180 days.
+     * Deregisters an AWS Batch job definition. Job definitions are permanently deleted after 180 days.
      * </p>
      * 
      * @param deregisterJobDefinitionRequest
      * @return Result of the DeregisterJobDefinition operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -709,6 +728,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                         .beforeMarshalling(deregisterJobDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterJobDefinition");
@@ -736,16 +757,17 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * Describes one or more of your compute environments.
      * </p>
      * <p>
-     * If you are using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
+     * If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
      * operation to determine the <code>ecsClusterArn</code> that you should launch your Amazon ECS container instances
      * into.
      * </p>
      * 
      * @param describeComputeEnvironmentsRequest
+     *        Contains the parameters for <code>DescribeComputeEnvironments</code>.
      * @return Result of the DescribeComputeEnvironments operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -775,6 +797,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                         .beforeMarshalling(describeComputeEnvironmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComputeEnvironments");
@@ -804,10 +828,11 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * </p>
      * 
      * @param describeJobDefinitionsRequest
+     *        Contains the parameters for <code>DescribeJobDefinitions</code>.
      * @return Result of the DescribeJobDefinitions operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -836,6 +861,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new DescribeJobDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobDefinitions");
@@ -864,10 +891,11 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * </p>
      * 
      * @param describeJobQueuesRequest
+     *        Contains the parameters for <code>DescribeJobQueues</code>.
      * @return Result of the DescribeJobQueues operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -896,6 +924,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new DescribeJobQueuesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobQueues");
@@ -923,10 +953,11 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * </p>
      * 
      * @param describeJobsRequest
+     *        Contains the parameters for <code>DescribeJobs</code>.
      * @return Result of the DescribeJobs operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -955,6 +986,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new DescribeJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobs");
@@ -981,35 +1014,36 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * Returns a list of AWS Batch jobs.
      * </p>
      * <p>
-     * You must specify only one of the following:
+     * You must specify only one of the following items:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * a job queue ID to return a list of jobs in that job queue
+     * A job queue ID to return a list of jobs in that job queue
      * </p>
      * </li>
      * <li>
      * <p>
-     * a multi-node parallel job ID to return a list of that job's nodes
+     * A multi-node parallel job ID to return a list of nodes for that job
      * </p>
      * </li>
      * <li>
      * <p>
-     * an array job ID to return a list of that job's children
+     * An array job ID to return a list of the children for that job
      * </p>
      * </li>
      * </ul>
      * <p>
-     * You can filter the results by job status with the <code>jobStatus</code> parameter. If you do not specify a
+     * You can filter the results by job status with the <code>jobStatus</code> parameter. If you don't specify a
      * status, only <code>RUNNING</code> jobs are returned.
      * </p>
      * 
      * @param listJobsRequest
+     *        Contains the parameters for <code>ListJobs</code>.
      * @return Result of the ListJobs operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -1038,6 +1072,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new ListJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
@@ -1061,14 +1097,78 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
+     * Lists the tags for an AWS Batch resource. AWS Batch resources that support tags are compute environments, jobs,
+     * job definitions, and job queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not
+     * supported.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
+     *         valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @sample AWSBatch.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Registers an AWS Batch job definition.
      * </p>
      * 
      * @param registerJobDefinitionRequest
+     *        Contains the parameters for <code>RegisterJobDefinition</code>.
      * @return Result of the RegisterJobDefinition operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -1097,6 +1197,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new RegisterJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerJobDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterJobDefinition");
@@ -1121,15 +1223,26 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
-     * Submits an AWS Batch job from a job definition. Parameters specified during <a>SubmitJob</a> override parameters
-     * defined in the job definition.
+     * Submits an AWS Batch job from a job definition. Parameters that are specified during <a>SubmitJob</a> override
+     * parameters defined in the job definition. vCPU and memory requirements that are specified in the
+     * <code>ResourceRequirements</code> objects in the job definition are the exception. They can't be overridden this
+     * way using the <code>memory</code> and <code>vcpus</code> parameters. Rather, you must specify updates to job
+     * definition parameters in a <code>ResourceRequirements</code> object that's included in the
+     * <code>containerOverrides</code> parameter.
      * </p>
+     * <important>
+     * <p>
+     * Jobs that run on Fargate resources can't be guaranteed to run for more than 14 days. This is because, after 14
+     * days, Fargate resources might become unavailable and job might be terminated.
+     * </p>
+     * </important>
      * 
      * @param submitJobRequest
+     *        Contains the parameters for <code>SubmitJob</code>.
      * @return Result of the SubmitJob operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -1158,6 +1271,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new SubmitJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(submitJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitJob");
@@ -1181,16 +1296,82 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well. AWS Batch resources that support tags are compute
+     * environments, jobs, job definitions, and job queues. ARNs for child jobs of array and multi-node parallel (MNP)
+     * jobs are not supported.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
+     *         valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @sample AWSBatch.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Terminates a job in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code> state are
      * terminated, which causes them to transition to <code>FAILED</code>. Jobs that have not progressed to the
      * <code>STARTING</code> state are cancelled.
      * </p>
      * 
      * @param terminateJobRequest
+     *        Contains the parameters for <code>TerminateJob</code>.
      * @return Result of the TerminateJob operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -1219,6 +1400,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new TerminateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(terminateJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateJob");
@@ -1242,14 +1425,76 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
 
     /**
      * <p>
+     * Deletes specified tags from an AWS Batch resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
+     *         valid.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @sample AWSBatch.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an AWS Batch compute environment.
      * </p>
      * 
      * @param updateComputeEnvironmentRequest
+     *        Contains the parameters for <code>UpdateComputeEnvironment</code>.
      * @return Result of the UpdateComputeEnvironment operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -1279,6 +1524,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                         .beforeMarshalling(updateComputeEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateComputeEnvironment");
@@ -1307,10 +1554,11 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * </p>
      * 
      * @param updateJobQueueRequest
+     *        Contains the parameters for <code>UpdateJobQueue</code>.
      * @return Result of the UpdateJobQueue operation returned by the service.
      * @throws ClientException
      *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
      *         valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
@@ -1339,6 +1587,8 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new UpdateJobQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateJobQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJobQueue");
@@ -1434,6 +1684,11 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

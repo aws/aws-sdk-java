@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,9 +51,8 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).
      * </p>
      * </li>
      * <li>
@@ -175,9 +174,8 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).
      * </p>
      * </li>
      * <li>
@@ -208,9 +206,8 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *         <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *         <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *         <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> |
+     *         <code>deleted</code> | <code>pending</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -251,9 +248,8 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).
      * </p>
      * </li>
      * <li>
@@ -285,9 +281,8 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> |
+     *        <code>deleted</code> | <code>pending</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -330,9 +325,8 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).
      * </p>
      * </li>
      * <li>
@@ -369,9 +363,8 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> |
+     *        <code>deleted</code> | <code>pending</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -416,9 +409,8 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>pending</code>).
      * </p>
      * </li>
      * <li>
@@ -450,9 +442,8 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code> |
+     *        <code>deleted</code> | <code>pending</code>).
      *        </p>
      *        </li>
      *        <li>

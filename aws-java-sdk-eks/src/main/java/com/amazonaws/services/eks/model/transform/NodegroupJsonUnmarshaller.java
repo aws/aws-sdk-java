@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,17 +80,25 @@ public class NodegroupJsonUnmarshaller implements Unmarshaller<Nodegroup, JsonUn
                     context.nextToken();
                     nodegroup.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("capacityType", targetDepth)) {
+                    context.nextToken();
+                    nodegroup.setCapacityType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("scalingConfig", targetDepth)) {
                     context.nextToken();
                     nodegroup.setScalingConfig(NodegroupScalingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("instanceTypes", targetDepth)) {
                     context.nextToken();
-                    nodegroup.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    nodegroup.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("subnets", targetDepth)) {
                     context.nextToken();
-                    nodegroup.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    nodegroup.setSubnets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("remoteAccess", targetDepth)) {
                     context.nextToken();
@@ -109,6 +117,12 @@ public class NodegroupJsonUnmarshaller implements Unmarshaller<Nodegroup, JsonUn
                     nodegroup.setLabels(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("taints", targetDepth)) {
+                    context.nextToken();
+                    nodegroup.setTaints(new ListUnmarshaller<Taint>(TaintJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("resources", targetDepth)) {
                     context.nextToken();
                     nodegroup.setResources(NodegroupResourcesJsonUnmarshaller.getInstance().unmarshall(context));
@@ -120,6 +134,14 @@ public class NodegroupJsonUnmarshaller implements Unmarshaller<Nodegroup, JsonUn
                 if (context.testExpression("health", targetDepth)) {
                     context.nextToken();
                     nodegroup.setHealth(NodegroupHealthJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("updateConfig", targetDepth)) {
+                    context.nextToken();
+                    nodegroup.setUpdateConfig(NodegroupUpdateConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("launchTemplate", targetDepth)) {
+                    context.nextToken();
+                    nodegroup.setLaunchTemplate(LaunchTemplateSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

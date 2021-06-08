@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class HlsCdnSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsBasicPutSettings").build();
     private static final MarshallingInfo<StructuredPojo> HLSMEDIASTORESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsMediaStoreSettings").build();
+    private static final MarshallingInfo<StructuredPojo> HLSS3SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsS3Settings").build();
     private static final MarshallingInfo<StructuredPojo> HLSWEBDAVSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsWebdavSettings").build();
 
@@ -55,6 +57,7 @@ public class HlsCdnSettingsMarshaller {
             protocolMarshaller.marshall(hlsCdnSettings.getHlsAkamaiSettings(), HLSAKAMAISETTINGS_BINDING);
             protocolMarshaller.marshall(hlsCdnSettings.getHlsBasicPutSettings(), HLSBASICPUTSETTINGS_BINDING);
             protocolMarshaller.marshall(hlsCdnSettings.getHlsMediaStoreSettings(), HLSMEDIASTORESETTINGS_BINDING);
+            protocolMarshaller.marshall(hlsCdnSettings.getHlsS3Settings(), HLSS3SETTINGS_BINDING);
             protocolMarshaller.marshall(hlsCdnSettings.getHlsWebdavSettings(), HLSWEBDAVSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

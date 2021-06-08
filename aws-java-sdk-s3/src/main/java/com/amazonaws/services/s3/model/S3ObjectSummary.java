@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,8 +19,7 @@ import java.util.Date;
 
 /**
  * Contains the summary of an object stored in an Amazon S3 bucket. This object
- * doesn't contain contain the
- * object's full metadata or any of its contents.
+ * doesn't contain the object's full metadata or any of its contents.
  * 
  * @see S3Object
  */

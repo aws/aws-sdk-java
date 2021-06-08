@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class CreateInstanceExportTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the instance export task.
+     * Information about the export instance task.
      * </p>
      */
     private ExportTask exportTask;
 
     /**
      * <p>
-     * Information about the instance export task.
+     * Information about the export instance task.
      * </p>
      * 
      * @param exportTask
-     *        Information about the instance export task.
+     *        Information about the export instance task.
      */
 
     public void setExportTask(ExportTask exportTask) {
@@ -45,10 +45,10 @@ public class CreateInstanceExportTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the instance export task.
+     * Information about the export instance task.
      * </p>
      * 
-     * @return Information about the instance export task.
+     * @return Information about the export instance task.
      */
 
     public ExportTask getExportTask() {
@@ -57,11 +57,11 @@ public class CreateInstanceExportTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Information about the instance export task.
+     * Information about the export instance task.
      * </p>
      * 
      * @param exportTask
-     *        Information about the instance export task.
+     *        Information about the export instance task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

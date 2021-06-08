@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,18 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Indicates whether to associate a Carrier IP address with eth0 for a new network interface.
+     * </p>
+     * <p>
+     * Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     * the network interface. For more information about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     */
+    private Boolean associateCarrierIpAddress;
     /**
      * <p>
      * Indicates whether to associate a public IPv4 address with eth0 for a new network interface.
@@ -105,6 +117,108 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
      * </p>
      */
     private String subnetId;
+    /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     */
+    private Integer networkCardIndex;
+
+    /**
+     * <p>
+     * Indicates whether to associate a Carrier IP address with eth0 for a new network interface.
+     * </p>
+     * <p>
+     * Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     * the network interface. For more information about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateCarrierIpAddress
+     *        Indicates whether to associate a Carrier IP address with eth0 for a new network interface.</p>
+     *        <p>
+     *        Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP
+     *        address with the network interface. For more information about Carrier IP addresses, see <a href=
+     *        "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *        >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     */
+
+    public void setAssociateCarrierIpAddress(Boolean associateCarrierIpAddress) {
+        this.associateCarrierIpAddress = associateCarrierIpAddress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to associate a Carrier IP address with eth0 for a new network interface.
+     * </p>
+     * <p>
+     * Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     * the network interface. For more information about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether to associate a Carrier IP address with eth0 for a new network interface.</p>
+     *         <p>
+     *         Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP
+     *         address with the network interface. For more information about Carrier IP addresses, see <a href=
+     *         "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *         >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     */
+
+    public Boolean getAssociateCarrierIpAddress() {
+        return this.associateCarrierIpAddress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to associate a Carrier IP address with eth0 for a new network interface.
+     * </p>
+     * <p>
+     * Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     * the network interface. For more information about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateCarrierIpAddress
+     *        Indicates whether to associate a Carrier IP address with eth0 for a new network interface.</p>
+     *        <p>
+     *        Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP
+     *        address with the network interface. For more information about Carrier IP addresses, see <a href=
+     *        "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *        >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateInstanceNetworkInterfaceSpecification withAssociateCarrierIpAddress(Boolean associateCarrierIpAddress) {
+        setAssociateCarrierIpAddress(associateCarrierIpAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to associate a Carrier IP address with eth0 for a new network interface.
+     * </p>
+     * <p>
+     * Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     * the network interface. For more information about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether to associate a Carrier IP address with eth0 for a new network interface.</p>
+     *         <p>
+     *         Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP
+     *         address with the network interface. For more information about Carrier IP addresses, see <a href=
+     *         "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *         >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     */
+
+    public Boolean isAssociateCarrierIpAddress() {
+        return this.associateCarrierIpAddress;
+    }
 
     /**
      * <p>
@@ -750,6 +864,46 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
     }
 
     /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card.
+     */
+
+    public void setNetworkCardIndex(Integer networkCardIndex) {
+        this.networkCardIndex = networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @return The index of the network card.
+     */
+
+    public Integer getNetworkCardIndex() {
+        return this.networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateInstanceNetworkInterfaceSpecification withNetworkCardIndex(Integer networkCardIndex) {
+        setNetworkCardIndex(networkCardIndex);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -761,6 +915,8 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssociateCarrierIpAddress() != null)
+            sb.append("AssociateCarrierIpAddress: ").append(getAssociateCarrierIpAddress()).append(",");
         if (getAssociatePublicIpAddress() != null)
             sb.append("AssociatePublicIpAddress: ").append(getAssociatePublicIpAddress()).append(",");
         if (getDeleteOnTermination() != null)
@@ -786,7 +942,9 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
         if (getSecondaryPrivateIpAddressCount() != null)
             sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getNetworkCardIndex() != null)
+            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex());
         sb.append("}");
         return sb.toString();
     }
@@ -801,6 +959,10 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
         if (obj instanceof LaunchTemplateInstanceNetworkInterfaceSpecification == false)
             return false;
         LaunchTemplateInstanceNetworkInterfaceSpecification other = (LaunchTemplateInstanceNetworkInterfaceSpecification) obj;
+        if (other.getAssociateCarrierIpAddress() == null ^ this.getAssociateCarrierIpAddress() == null)
+            return false;
+        if (other.getAssociateCarrierIpAddress() != null && other.getAssociateCarrierIpAddress().equals(this.getAssociateCarrierIpAddress()) == false)
+            return false;
         if (other.getAssociatePublicIpAddress() == null ^ this.getAssociatePublicIpAddress() == null)
             return false;
         if (other.getAssociatePublicIpAddress() != null && other.getAssociatePublicIpAddress().equals(this.getAssociatePublicIpAddress()) == false)
@@ -854,6 +1016,10 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getNetworkCardIndex() == null ^ this.getNetworkCardIndex() == null)
+            return false;
+        if (other.getNetworkCardIndex() != null && other.getNetworkCardIndex().equals(this.getNetworkCardIndex()) == false)
+            return false;
         return true;
     }
 
@@ -862,6 +1028,7 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAssociateCarrierIpAddress() == null) ? 0 : getAssociateCarrierIpAddress().hashCode());
         hashCode = prime * hashCode + ((getAssociatePublicIpAddress() == null) ? 0 : getAssociatePublicIpAddress().hashCode());
         hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
@@ -875,6 +1042,7 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecification implements Seri
         hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getSecondaryPrivateIpAddressCount() == null) ? 0 : getSecondaryPrivateIpAddressCount().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkCardIndex() == null) ? 0 : getNetworkCardIndex().hashCode());
         return hashCode;
     }
 

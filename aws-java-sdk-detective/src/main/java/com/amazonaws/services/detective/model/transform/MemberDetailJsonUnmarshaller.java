@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,10 @@ public class MemberDetailJsonUnmarshaller implements Unmarshaller<MemberDetail, 
                     context.nextToken();
                     memberDetail.setMasterId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AdministratorId", targetDepth)) {
+                    context.nextToken();
+                    memberDetail.setAdministratorId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     memberDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -74,11 +78,19 @@ public class MemberDetailJsonUnmarshaller implements Unmarshaller<MemberDetail, 
                 }
                 if (context.testExpression("InvitedTime", targetDepth)) {
                     context.nextToken();
-                    memberDetail.setInvitedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    memberDetail.setInvitedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("UpdatedTime", targetDepth)) {
                     context.nextToken();
-                    memberDetail.setUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    memberDetail.setUpdatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("VolumeUsageInBytes", targetDepth)) {
+                    context.nextToken();
+                    memberDetail.setVolumeUsageInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("VolumeUsageUpdatedTime", targetDepth)) {
+                    context.nextToken();
+                    memberDetail.setVolumeUsageUpdatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("PercentOfGraphUtilization", targetDepth)) {
                     context.nextToken();
@@ -86,7 +98,7 @@ public class MemberDetailJsonUnmarshaller implements Unmarshaller<MemberDetail, 
                 }
                 if (context.testExpression("PercentOfGraphUtilizationUpdatedTime", targetDepth)) {
                     context.nextToken();
-                    memberDetail.setPercentOfGraphUtilizationUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    memberDetail.setPercentOfGraphUtilizationUpdatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,14 +51,16 @@ public class DeleteMessageBatchRequestMarshaller implements Marshaller<Request<D
             int entriesListIndex = 1;
 
             for (DeleteMessageBatchRequestEntry entriesListValue : entriesList) {
+                if (entriesListValue != null) {
 
-                if (entriesListValue.getId() != null) {
-                    request.addParameter("DeleteMessageBatchRequestEntry." + entriesListIndex + ".Id", StringUtils.fromString(entriesListValue.getId()));
-                }
+                    if (entriesListValue.getId() != null) {
+                        request.addParameter("DeleteMessageBatchRequestEntry." + entriesListIndex + ".Id", StringUtils.fromString(entriesListValue.getId()));
+                    }
 
-                if (entriesListValue.getReceiptHandle() != null) {
-                    request.addParameter("DeleteMessageBatchRequestEntry." + entriesListIndex + ".ReceiptHandle",
-                            StringUtils.fromString(entriesListValue.getReceiptHandle()));
+                    if (entriesListValue.getReceiptHandle() != null) {
+                        request.addParameter("DeleteMessageBatchRequestEntry." + entriesListIndex + ".ReceiptHandle",
+                                StringUtils.fromString(entriesListValue.getReceiptHandle()));
+                    }
                 }
                 entriesListIndex++;
             }

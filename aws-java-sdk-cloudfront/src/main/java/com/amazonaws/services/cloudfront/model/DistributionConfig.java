@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A distribution configuration.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DistributionConfig" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DistributionConfig" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -127,17 +127,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     private CustomErrorResponses customErrorResponses;
     /**
      * <p>
-     * Any comments you want to include about the distribution.
-     * </p>
-     * <p>
-     * If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     * </p>
-     * <p>
-     * To delete an existing comment, update the distribution configuration and include an empty <code>Comment</code>
-     * element.
-     * </p>
-     * <p>
-     * To add or change a comment, update the distribution configuration and specify the new comment.
+     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
@@ -168,8 +158,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      */
     private String priceClass;
@@ -922,30 +911,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any comments you want to include about the distribution.
-     * </p>
-     * <p>
-     * If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     * </p>
-     * <p>
-     * To delete an existing comment, update the distribution configuration and include an empty <code>Comment</code>
-     * element.
-     * </p>
-     * <p>
-     * To add or change a comment, update the distribution configuration and specify the new comment.
+     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        Any comments you want to include about the distribution.</p>
-     *        <p>
-     *        If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     *        </p>
-     *        <p>
-     *        To delete an existing comment, update the distribution configuration and include an empty
-     *        <code>Comment</code> element.
-     *        </p>
-     *        <p>
-     *        To add or change a comment, update the distribution configuration and specify the new comment.
+     *        An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      */
 
     public void setComment(String comment) {
@@ -954,29 +924,10 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any comments you want to include about the distribution.
-     * </p>
-     * <p>
-     * If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     * </p>
-     * <p>
-     * To delete an existing comment, update the distribution configuration and include an empty <code>Comment</code>
-     * element.
-     * </p>
-     * <p>
-     * To add or change a comment, update the distribution configuration and specify the new comment.
+     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return Any comments you want to include about the distribution.</p>
-     *         <p>
-     *         If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     *         </p>
-     *         <p>
-     *         To delete an existing comment, update the distribution configuration and include an empty
-     *         <code>Comment</code> element.
-     *         </p>
-     *         <p>
-     *         To add or change a comment, update the distribution configuration and specify the new comment.
+     * @return An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      */
 
     public String getComment() {
@@ -985,30 +936,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any comments you want to include about the distribution.
-     * </p>
-     * <p>
-     * If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     * </p>
-     * <p>
-     * To delete an existing comment, update the distribution configuration and include an empty <code>Comment</code>
-     * element.
-     * </p>
-     * <p>
-     * To add or change a comment, update the distribution configuration and specify the new comment.
+     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        Any comments you want to include about the distribution.</p>
-     *        <p>
-     *        If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     *        </p>
-     *        <p>
-     *        To delete an existing comment, update the distribution configuration and include an empty
-     *        <code>Comment</code> element.
-     *        </p>
-     *        <p>
-     *        To add or change a comment, update the distribution configuration and specify the new comment.
+     *        An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1100,8 +1032,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      * 
      * @param priceClass
@@ -1120,7 +1051,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
      *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     *        For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1144,8 +1074,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      * 
      * @return The price class that corresponds with the maximum price that you want to pay for CloudFront service. If
@@ -1163,7 +1092,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *         information about CloudFront pricing, including how price classes (such as Price Class 100) map to
      *         CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     *         Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
+     *         Pricing</a>.
      * @see PriceClass
      */
 
@@ -1187,8 +1116,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      * 
      * @param priceClass
@@ -1207,7 +1135,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
      *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     *        For price class information, scroll down to see the table at the bottom of the page.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */
@@ -1233,8 +1160,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      * 
      * @param priceClass
@@ -1253,7 +1179,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
      *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     *        For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1277,8 +1202,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      * 
      * @param priceClass
@@ -1297,7 +1221,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
      *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     *        For price class information, scroll down to see the table at the bottom of the page.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */

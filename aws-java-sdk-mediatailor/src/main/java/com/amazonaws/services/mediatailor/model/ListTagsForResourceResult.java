@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs. For example: { "Key1": "Value1", "Key2": "Value2" }
+     * A comma-separated list of tag key:value pairs.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs. For example: { "Key1": "Value1", "Key2": "Value2" }
+     * A comma-separated list of tag key:value pairs.
      * </p>
      * 
-     * @return A comma-separated list of tag key:value pairs. For example: { "Key1": "Value1", "Key2": "Value2" }
+     * @return A comma-separated list of tag key:value pairs.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -44,11 +44,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs. For example: { "Key1": "Value1", "Key2": "Value2" }
+     * A comma-separated list of tag key:value pairs.
      * </p>
      * 
      * @param tags
-     *        A comma-separated list of tag key:value pairs. For example: { "Key1": "Value1", "Key2": "Value2" }
+     *        A comma-separated list of tag key:value pairs.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -57,11 +57,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs. For example: { "Key1": "Value1", "Key2": "Value2" }
+     * A comma-separated list of tag key:value pairs.
      * </p>
      * 
      * @param tags
-     *        A comma-separated list of tag key:value pairs. For example: { "Key1": "Value1", "Key2": "Value2" }
+     *        A comma-separated list of tag key:value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

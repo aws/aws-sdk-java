@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,24 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      */
     private java.util.List<Intent> intents;
+    /**
+     * <p>
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * improvements, otherwise, <code>false</code>.
+     * </p>
+     */
+    private Boolean enableModelImprovements;
+    /**
+     * <p>
+     * The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>,
+     * <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
+     * <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value.
+     * <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
+     * </p>
+     */
+    private Double nluIntentConfidenceThreshold;
     /**
      * <p>
      * The message Amazon Lex uses when it doesn't understand the user's request. For more information, see
@@ -305,6 +323,136 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     public GetBotResult withIntents(java.util.Collection<Intent> intents) {
         setIntents(intents);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * improvements, otherwise, <code>false</code>.
+     * </p>
+     * 
+     * @param enableModelImprovements
+     *        Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *        the improvements, otherwise, <code>false</code>.
+     */
+
+    public void setEnableModelImprovements(Boolean enableModelImprovements) {
+        this.enableModelImprovements = enableModelImprovements;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * improvements, otherwise, <code>false</code>.
+     * </p>
+     * 
+     * @return Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *         the improvements, otherwise, <code>false</code>.
+     */
+
+    public Boolean getEnableModelImprovements() {
+        return this.enableModelImprovements;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * improvements, otherwise, <code>false</code>.
+     * </p>
+     * 
+     * @param enableModelImprovements
+     *        Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *        the improvements, otherwise, <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBotResult withEnableModelImprovements(Boolean enableModelImprovements) {
+        setEnableModelImprovements(enableModelImprovements);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * improvements, otherwise, <code>false</code>.
+     * </p>
+     * 
+     * @return Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *         the improvements, otherwise, <code>false</code>.
+     */
+
+    public Boolean isEnableModelImprovements() {
+        return this.enableModelImprovements;
+    }
+
+    /**
+     * <p>
+     * The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>,
+     * <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
+     * <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value.
+     * <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
+     * </p>
+     * 
+     * @param nluIntentConfidenceThreshold
+     *        The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>,
+     *        <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
+     *        <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this
+     *        value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
+     */
+
+    public void setNluIntentConfidenceThreshold(Double nluIntentConfidenceThreshold) {
+        this.nluIntentConfidenceThreshold = nluIntentConfidenceThreshold;
+    }
+
+    /**
+     * <p>
+     * The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>,
+     * <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
+     * <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value.
+     * <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
+     * </p>
+     * 
+     * @return The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>,
+     *         <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
+     *         href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     *         href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
+     *         <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this
+     *         value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
+     */
+
+    public Double getNluIntentConfidenceThreshold() {
+        return this.nluIntentConfidenceThreshold;
+    }
+
+    /**
+     * <p>
+     * The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>,
+     * <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
+     * <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value.
+     * <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
+     * </p>
+     * 
+     * @param nluIntentConfidenceThreshold
+     *        The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>,
+     *        <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     *        href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
+     *        <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this
+     *        value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBotResult withNluIntentConfidenceThreshold(Double nluIntentConfidenceThreshold) {
+        setNluIntentConfidenceThreshold(nluIntentConfidenceThreshold);
         return this;
     }
 
@@ -1255,6 +1403,10 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             sb.append("Description: ").append(getDescription()).append(",");
         if (getIntents() != null)
             sb.append("Intents: ").append(getIntents()).append(",");
+        if (getEnableModelImprovements() != null)
+            sb.append("EnableModelImprovements: ").append(getEnableModelImprovements()).append(",");
+        if (getNluIntentConfidenceThreshold() != null)
+            sb.append("NluIntentConfidenceThreshold: ").append(getNluIntentConfidenceThreshold()).append(",");
         if (getClarificationPrompt() != null)
             sb.append("ClarificationPrompt: ").append(getClarificationPrompt()).append(",");
         if (getAbortStatement() != null)
@@ -1306,6 +1458,14 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         if (other.getIntents() == null ^ this.getIntents() == null)
             return false;
         if (other.getIntents() != null && other.getIntents().equals(this.getIntents()) == false)
+            return false;
+        if (other.getEnableModelImprovements() == null ^ this.getEnableModelImprovements() == null)
+            return false;
+        if (other.getEnableModelImprovements() != null && other.getEnableModelImprovements().equals(this.getEnableModelImprovements()) == false)
+            return false;
+        if (other.getNluIntentConfidenceThreshold() == null ^ this.getNluIntentConfidenceThreshold() == null)
+            return false;
+        if (other.getNluIntentConfidenceThreshold() != null && other.getNluIntentConfidenceThreshold().equals(this.getNluIntentConfidenceThreshold()) == false)
             return false;
         if (other.getClarificationPrompt() == null ^ this.getClarificationPrompt() == null)
             return false;
@@ -1370,6 +1530,8 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getIntents() == null) ? 0 : getIntents().hashCode());
+        hashCode = prime * hashCode + ((getEnableModelImprovements() == null) ? 0 : getEnableModelImprovements().hashCode());
+        hashCode = prime * hashCode + ((getNluIntentConfidenceThreshold() == null) ? 0 : getNluIntentConfidenceThreshold().hashCode());
         hashCode = prime * hashCode + ((getClarificationPrompt() == null) ? 0 : getClarificationPrompt().hashCode());
         hashCode = prime * hashCode + ((getAbortStatement() == null) ? 0 : getAbortStatement().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,8 +60,23 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * The next message that should be presented to the user.
      * </p>
+     * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
      */
+    @Deprecated
     private String message;
+    /**
+     * <p>
+     * The next message that should be presented to the user.
+     * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
+     * </p>
+     */
+    private String encodedMessage;
     /**
      * <p>
      * The format of the response message. One of the following values:
@@ -149,6 +164,12 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private String sessionId;
+    /**
+     * <p>
+     * A list of active contexts for the session.
+     * </p>
+     */
+    private String activeContexts;
 
     /**
      * <p>
@@ -405,11 +426,20 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * The next message that should be presented to the user.
      * </p>
+     * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
      * 
      * @param message
-     *        The next message that should be presented to the user.
+     *        The next message that should be presented to the user.</p>
+     *        <p>
+     *        You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *        it-IT locales. In all other locales, the <code>message</code> field is null. You should use the
+     *        <code>encodedMessage</code> field instead.
      */
-
+    @Deprecated
     public void setMessage(String message) {
         this.message = message;
     }
@@ -418,10 +448,19 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * The next message that should be presented to the user.
      * </p>
+     * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
      * 
-     * @return The next message that should be presented to the user.
+     * @return The next message that should be presented to the user.</p>
+     *         <p>
+     *         You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *         it-IT locales. In all other locales, the <code>message</code> field is null. You should use the
+     *         <code>encodedMessage</code> field instead.
      */
-
+    @Deprecated
     public String getMessage() {
         return this.message;
     }
@@ -430,14 +469,81 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * The next message that should be presented to the user.
      * </p>
+     * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
      * 
      * @param message
-     *        The next message that should be presented to the user.
+     *        The next message that should be presented to the user.</p>
+     *        <p>
+     *        You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *        it-IT locales. In all other locales, the <code>message</code> field is null. You should use the
+     *        <code>encodedMessage</code> field instead.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public PutSessionResult withMessage(String message) {
+        setMessage(message);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The next message that should be presented to the user.
+     * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
+     * </p>
+     * 
+     * @param encodedMessage
+     *        The next message that should be presented to the user.</p>
+     *        <p>
+     *        The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the
+     *        value.
+     */
+
+    public void setEncodedMessage(String encodedMessage) {
+        this.encodedMessage = encodedMessage;
+    }
+
+    /**
+     * <p>
+     * The next message that should be presented to the user.
+     * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
+     * </p>
+     * 
+     * @return The next message that should be presented to the user.</p>
+     *         <p>
+     *         The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use
+     *         the value.
+     */
+
+    public String getEncodedMessage() {
+        return this.encodedMessage;
+    }
+
+    /**
+     * <p>
+     * The next message that should be presented to the user.
+     * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
+     * </p>
+     * 
+     * @param encodedMessage
+     *        The next message that should be presented to the user.</p>
+     *        <p>
+     *        The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutSessionResult withMessage(String message) {
-        setMessage(message);
+    public PutSessionResult withEncodedMessage(String encodedMessage) {
+        setEncodedMessage(encodedMessage);
         return this;
     }
 
@@ -1110,6 +1216,66 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * A list of active contexts for the session.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of active contexts for the session.
+     */
+
+    public void setActiveContexts(String activeContexts) {
+        this.activeContexts = activeContexts;
+    }
+
+    /**
+     * <p>
+     * A list of active contexts for the session.
+     * </p>
+     * <p>
+     * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * 
+     * @return A list of active contexts for the session.
+     */
+
+    public String getActiveContexts() {
+        return this.activeContexts;
+    }
+
+    /**
+     * <p>
+     * A list of active contexts for the session.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param activeContexts
+     *        A list of active contexts for the session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutSessionResult withActiveContexts(String activeContexts) {
+        setActiveContexts(activeContexts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1131,6 +1297,8 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
             sb.append("SessionAttributes: ").append(getSessionAttributes()).append(",");
         if (getMessage() != null)
             sb.append("Message: ").append("***Sensitive Data Redacted***").append(",");
+        if (getEncodedMessage() != null)
+            sb.append("EncodedMessage: ").append("***Sensitive Data Redacted***").append(",");
         if (getMessageFormat() != null)
             sb.append("MessageFormat: ").append(getMessageFormat()).append(",");
         if (getDialogState() != null)
@@ -1140,7 +1308,9 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (getAudioStream() != null)
             sb.append("AudioStream: ").append(getAudioStream()).append(",");
         if (getSessionId() != null)
-            sb.append("SessionId: ").append(getSessionId());
+            sb.append("SessionId: ").append(getSessionId()).append(",");
+        if (getActiveContexts() != null)
+            sb.append("ActiveContexts: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -1175,6 +1345,10 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getEncodedMessage() == null ^ this.getEncodedMessage() == null)
+            return false;
+        if (other.getEncodedMessage() != null && other.getEncodedMessage().equals(this.getEncodedMessage()) == false)
+            return false;
         if (other.getMessageFormat() == null ^ this.getMessageFormat() == null)
             return false;
         if (other.getMessageFormat() != null && other.getMessageFormat().equals(this.getMessageFormat()) == false)
@@ -1195,6 +1369,10 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getSessionId() != null && other.getSessionId().equals(this.getSessionId()) == false)
             return false;
+        if (other.getActiveContexts() == null ^ this.getActiveContexts() == null)
+            return false;
+        if (other.getActiveContexts() != null && other.getActiveContexts().equals(this.getActiveContexts()) == false)
+            return false;
         return true;
     }
 
@@ -1208,11 +1386,13 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getSlots() == null) ? 0 : getSlots().hashCode());
         hashCode = prime * hashCode + ((getSessionAttributes() == null) ? 0 : getSessionAttributes().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getEncodedMessage() == null) ? 0 : getEncodedMessage().hashCode());
         hashCode = prime * hashCode + ((getMessageFormat() == null) ? 0 : getMessageFormat().hashCode());
         hashCode = prime * hashCode + ((getDialogState() == null) ? 0 : getDialogState().hashCode());
         hashCode = prime * hashCode + ((getSlotToElicit() == null) ? 0 : getSlotToElicit().hashCode());
         hashCode = prime * hashCode + ((getAudioStream() == null) ? 0 : getAudioStream().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
+        hashCode = prime * hashCode + ((getActiveContexts() == null) ? 0 : getActiveContexts().hashCode());
         return hashCode;
     }
 

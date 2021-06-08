@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<DashManifest> dashManifests;
 
     private DashEncryption encryption;
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter
+     * Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of
+     * in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+     */
+    private Boolean includeEncoderConfigurationInSegments;
     /**
      * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation
      * Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into
@@ -136,6 +142,70 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     public DashPackage withEncryption(DashEncryption encryption) {
         setEncryption(encryption);
         return this;
+    }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter
+     * Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of
+     * in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+     * 
+     * @param includeEncoderConfigurationInSegments
+     *        When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence
+     *        Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video
+     *        segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     *        during content playback.
+     */
+
+    public void setIncludeEncoderConfigurationInSegments(Boolean includeEncoderConfigurationInSegments) {
+        this.includeEncoderConfigurationInSegments = includeEncoderConfigurationInSegments;
+    }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter
+     * Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of
+     * in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+     * 
+     * @return When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence
+     *         Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video
+     *         segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     *         during content playback.
+     */
+
+    public Boolean getIncludeEncoderConfigurationInSegments() {
+        return this.includeEncoderConfigurationInSegments;
+    }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter
+     * Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of
+     * in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+     * 
+     * @param includeEncoderConfigurationInSegments
+     *        When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence
+     *        Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video
+     *        segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     *        during content playback.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashPackage withIncludeEncoderConfigurationInSegments(Boolean includeEncoderConfigurationInSegments) {
+        setIncludeEncoderConfigurationInSegments(includeEncoderConfigurationInSegments);
+        return this;
+    }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter
+     * Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of
+     * in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+     * 
+     * @return When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence
+     *         Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video
+     *         segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     *         during content playback.
+     */
+
+    public Boolean isIncludeEncoderConfigurationInSegments() {
+        return this.includeEncoderConfigurationInSegments;
     }
 
     /**
@@ -392,6 +462,8 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
             sb.append("DashManifests: ").append(getDashManifests()).append(",");
         if (getEncryption() != null)
             sb.append("Encryption: ").append(getEncryption()).append(",");
+        if (getIncludeEncoderConfigurationInSegments() != null)
+            sb.append("IncludeEncoderConfigurationInSegments: ").append(getIncludeEncoderConfigurationInSegments()).append(",");
         if (getPeriodTriggers() != null)
             sb.append("PeriodTriggers: ").append(getPeriodTriggers()).append(",");
         if (getSegmentDurationSeconds() != null)
@@ -420,6 +492,11 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false)
             return false;
+        if (other.getIncludeEncoderConfigurationInSegments() == null ^ this.getIncludeEncoderConfigurationInSegments() == null)
+            return false;
+        if (other.getIncludeEncoderConfigurationInSegments() != null
+                && other.getIncludeEncoderConfigurationInSegments().equals(this.getIncludeEncoderConfigurationInSegments()) == false)
+            return false;
         if (other.getPeriodTriggers() == null ^ this.getPeriodTriggers() == null)
             return false;
         if (other.getPeriodTriggers() != null && other.getPeriodTriggers().equals(this.getPeriodTriggers()) == false)
@@ -442,6 +519,7 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getDashManifests() == null) ? 0 : getDashManifests().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
+        hashCode = prime * hashCode + ((getIncludeEncoderConfigurationInSegments() == null) ? 0 : getIncludeEncoderConfigurationInSegments().hashCode());
         hashCode = prime * hashCode + ((getPeriodTriggers() == null) ? 0 : getPeriodTriggers().hashCode());
         hashCode = prime * hashCode + ((getSegmentDurationSeconds() == null) ? 0 : getSegmentDurationSeconds().hashCode());
         hashCode = prime * hashCode + ((getSegmentTemplateFormat() == null) ? 0 : getSegmentTemplateFormat().hashCode());

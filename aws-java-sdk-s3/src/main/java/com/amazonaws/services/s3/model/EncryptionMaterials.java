@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import javax.crypto.SecretKey;
 public class EncryptionMaterials implements Serializable {
     private final KeyPair keyPair;
     private final SecretKey symmetricKey;
+
     private final Map<String, String> desc = new HashMap<String,String>();
 
     /**

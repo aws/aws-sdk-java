@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,7 +78,9 @@ public class TableInputJsonUnmarshaller implements Unmarshaller<TableInput, Json
                 }
                 if (context.testExpression("PartitionKeys", targetDepth)) {
                     context.nextToken();
-                    tableInput.setPartitionKeys(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    tableInput.setPartitionKeys(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ViewOriginalText", targetDepth)) {
                     context.nextToken();
@@ -96,6 +98,10 @@ public class TableInputJsonUnmarshaller implements Unmarshaller<TableInput, Json
                     context.nextToken();
                     tableInput.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (context.testExpression("TargetTable", targetDepth)) {
+                    context.nextToken();
+                    tableInput.setTargetTable(TableIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

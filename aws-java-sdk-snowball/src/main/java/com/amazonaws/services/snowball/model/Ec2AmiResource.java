@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and
- * the Snowball Edge AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the
+ * the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the
  * device.
  * </p>
  * 
@@ -38,7 +38,7 @@ public class Ec2AmiResource implements Serializable, Cloneable, StructuredPojo {
     private String amiId;
     /**
      * <p>
-     * The ID of the AMI on the Snowball Edge device.
+     * The ID of the AMI on the Snow device.
      * </p>
      */
     private String snowballAmiId;
@@ -85,11 +85,11 @@ public class Ec2AmiResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AMI on the Snowball Edge device.
+     * The ID of the AMI on the Snow device.
      * </p>
      * 
      * @param snowballAmiId
-     *        The ID of the AMI on the Snowball Edge device.
+     *        The ID of the AMI on the Snow device.
      */
 
     public void setSnowballAmiId(String snowballAmiId) {
@@ -98,10 +98,10 @@ public class Ec2AmiResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AMI on the Snowball Edge device.
+     * The ID of the AMI on the Snow device.
      * </p>
      * 
-     * @return The ID of the AMI on the Snowball Edge device.
+     * @return The ID of the AMI on the Snow device.
      */
 
     public String getSnowballAmiId() {
@@ -110,11 +110,11 @@ public class Ec2AmiResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AMI on the Snowball Edge device.
+     * The ID of the AMI on the Snow device.
      * </p>
      * 
      * @param snowballAmiId
-     *        The ID of the AMI on the Snowball Edge device.
+     *        The ID of the AMI on the Snow device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

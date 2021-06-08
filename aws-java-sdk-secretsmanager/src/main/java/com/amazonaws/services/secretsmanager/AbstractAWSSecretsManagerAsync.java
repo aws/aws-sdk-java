@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -184,6 +184,32 @@ public class AbstractAWSSecretsManagerAsync extends AbstractAWSSecretsManager im
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveRegionsFromReplicationResult> removeRegionsFromReplicationAsync(RemoveRegionsFromReplicationRequest request) {
+
+        return removeRegionsFromReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveRegionsFromReplicationResult> removeRegionsFromReplicationAsync(RemoveRegionsFromReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveRegionsFromReplicationRequest, RemoveRegionsFromReplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicateSecretToRegionsResult> replicateSecretToRegionsAsync(ReplicateSecretToRegionsRequest request) {
+
+        return replicateSecretToRegionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicateSecretToRegionsResult> replicateSecretToRegionsAsync(ReplicateSecretToRegionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ReplicateSecretToRegionsRequest, ReplicateSecretToRegionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RestoreSecretResult> restoreSecretAsync(RestoreSecretRequest request) {
 
         return restoreSecretAsync(request, null);
@@ -205,6 +231,19 @@ public class AbstractAWSSecretsManagerAsync extends AbstractAWSSecretsManager im
     @Override
     public java.util.concurrent.Future<RotateSecretResult> rotateSecretAsync(RotateSecretRequest request,
             com.amazonaws.handlers.AsyncHandler<RotateSecretRequest, RotateSecretResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationToReplicaResult> stopReplicationToReplicaAsync(StopReplicationToReplicaRequest request) {
+
+        return stopReplicationToReplicaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationToReplicaResult> stopReplicationToReplicaAsync(StopReplicationToReplicaRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopReplicationToReplicaRequest, StopReplicationToReplicaResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -257,6 +296,19 @@ public class AbstractAWSSecretsManagerAsync extends AbstractAWSSecretsManager im
     @Override
     public java.util.concurrent.Future<UpdateSecretVersionStageResult> updateSecretVersionStageAsync(UpdateSecretVersionStageRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSecretVersionStageRequest, UpdateSecretVersionStageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateResourcePolicyResult> validateResourcePolicyAsync(ValidateResourcePolicyRequest request) {
+
+        return validateResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateResourcePolicyResult> validateResourcePolicyAsync(ValidateResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<ValidateResourcePolicyRequest, ValidateResourcePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

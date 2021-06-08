@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,12 +43,22 @@ public class AbstractAWSResourceGroups implements AWSResourceGroups {
     }
 
     @Override
+    public GetGroupConfigurationResult getGroupConfiguration(GetGroupConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetGroupQueryResult getGroupQuery(GetGroupQueryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetTagsResult getTags(GetTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GroupResourcesResult groupResources(GroupResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,12 +73,22 @@ public class AbstractAWSResourceGroups implements AWSResourceGroups {
     }
 
     @Override
+    public PutGroupConfigurationResult putGroupConfiguration(PutGroupConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SearchResourcesResult searchResources(SearchResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public TagResult tag(TagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UngroupResourcesResult ungroupResources(UngroupResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

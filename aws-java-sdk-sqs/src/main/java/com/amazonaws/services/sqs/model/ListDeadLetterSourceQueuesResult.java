@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,13 @@ public class ListDeadLetterSourceQueuesResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> queueUrls;
+    /**
+     * <p>
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -116,6 +123,52 @@ public class ListDeadLetterSourceQueuesResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
+     * </p>
+     * 
+     * @param nextToken
+     *        Pagination token to include in the next request. Token value is <code>null</code> if there are no
+     *        additional results to request, or if you did not set <code>MaxResults</code> in the request.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
+     * </p>
+     * 
+     * @return Pagination token to include in the next request. Token value is <code>null</code> if there are no
+     *         additional results to request, or if you did not set <code>MaxResults</code> in the request.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
+     * </p>
+     * 
+     * @param nextToken
+     *        Pagination token to include in the next request. Token value is <code>null</code> if there are no
+     *        additional results to request, or if you did not set <code>MaxResults</code> in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDeadLetterSourceQueuesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -128,7 +181,9 @@ public class ListDeadLetterSourceQueuesResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrls() != null)
-            sb.append("QueueUrls: ").append(getQueueUrls());
+            sb.append("QueueUrls: ").append(getQueueUrls()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -147,6 +202,10 @@ public class ListDeadLetterSourceQueuesResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getQueueUrls() != null && other.getQueueUrls().equals(this.getQueueUrls()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -156,6 +215,7 @@ public class ListDeadLetterSourceQueuesResult extends com.amazonaws.AmazonWebSer
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getQueueUrls() == null) ? 0 : getQueueUrls().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Unique ID of the instance group to expand or shrink.
+     * Unique ID of the instance group to modify.
      * </p>
      */
     private String instanceGroupId;
@@ -72,7 +72,7 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
      * methods to initialize any additional object members.
      * 
      * @param instanceGroupId
-     *        Unique ID of the instance group to expand or shrink.
+     *        Unique ID of the instance group to modify.
      * @param instanceCount
      *        Target size for the instance group.
      */
@@ -83,11 +83,11 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Unique ID of the instance group to expand or shrink.
+     * Unique ID of the instance group to modify.
      * </p>
      * 
      * @param instanceGroupId
-     *        Unique ID of the instance group to expand or shrink.
+     *        Unique ID of the instance group to modify.
      */
 
     public void setInstanceGroupId(String instanceGroupId) {
@@ -96,10 +96,10 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Unique ID of the instance group to expand or shrink.
+     * Unique ID of the instance group to modify.
      * </p>
      * 
-     * @return Unique ID of the instance group to expand or shrink.
+     * @return Unique ID of the instance group to modify.
      */
 
     public String getInstanceGroupId() {
@@ -108,11 +108,11 @@ public class InstanceGroupModifyConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Unique ID of the instance group to expand or shrink.
+     * Unique ID of the instance group to modify.
      * </p>
      * 
      * @param instanceGroupId
-     *        Unique ID of the instance group to expand or shrink.
+     *        Unique ID of the instance group to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

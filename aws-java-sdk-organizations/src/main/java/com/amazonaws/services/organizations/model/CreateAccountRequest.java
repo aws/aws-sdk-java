@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,8 +45,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role
-     * trusts the master account, allowing users in the master account to assume the role, as permitted by the master
-     * account administrator. The role has administrator permissions in the new member account.
+     * trusts the management account, allowing users in the management account to assume the role, as permitted by the
+     * management account administrator. The role has administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -93,6 +93,22 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String iamUserAccessToBilling;
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify
+     * both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
+     * resources</a> in the AWS Organizations User Guide.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire
+     * request fails and the account is not created.
+     * </p>
+     * </note>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -195,8 +211,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role
-     * trusts the master account, allowing users in the master account to assume the role, as permitted by the master
-     * account administrator. The role has administrator permissions in the new member account.
+     * trusts the management account, allowing users in the management account to assume the role, as permitted by the
+     * management account administrator. The role has administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -231,8 +247,9 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        (Optional)</p>
      *        <p>
      *        The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This
-     *        role trusts the master account, allowing users in the master account to assume the role, as permitted by
-     *        the master account administrator. The role has administrator permissions in the new member account.
+     *        role trusts the management account, allowing users in the management account to assume the role, as
+     *        permitted by the management account administrator. The role has administrator permissions in the new
+     *        member account.
      *        </p>
      *        <p>
      *        If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -273,8 +290,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role
-     * trusts the master account, allowing users in the master account to assume the role, as permitted by the master
-     * account administrator. The role has administrator permissions in the new member account.
+     * trusts the management account, allowing users in the management account to assume the role, as permitted by the
+     * management account administrator. The role has administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -308,9 +325,9 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return (Optional)</p>
      *         <p>
      *         The name of an IAM role that AWS Organizations automatically preconfigures in the new member account.
-     *         This role trusts the master account, allowing users in the master account to assume the role, as
-     *         permitted by the master account administrator. The role has administrator permissions in the new member
-     *         account.
+     *         This role trusts the management account, allowing users in the management account to assume the role, as
+     *         permitted by the management account administrator. The role has administrator permissions in the new
+     *         member account.
      *         </p>
      *         <p>
      *         If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>
@@ -352,8 +369,8 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This role
-     * trusts the master account, allowing users in the master account to assume the role, as permitted by the master
-     * account administrator. The role has administrator permissions in the new member account.
+     * trusts the management account, allowing users in the management account to assume the role, as permitted by the
+     * management account administrator. The role has administrator permissions in the new member account.
      * </p>
      * <p>
      * If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -388,8 +405,9 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        (Optional)</p>
      *        <p>
      *        The name of an IAM role that AWS Organizations automatically preconfigures in the new member account. This
-     *        role trusts the master account, allowing users in the master account to assume the role, as permitted by
-     *        the master account administrator. The role has administrator permissions in the new member account.
+     *        role trusts the management account, allowing users in the management account to assume the role, as
+     *        permitted by the management account administrator. The role has administrator permissions in the new
+     *        member account.
      *        </p>
      *        <p>
      *        If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
@@ -585,6 +603,148 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify
+     * both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
+     * resources</a> in the AWS Organizations User Guide.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire
+     * request fails and the account is not created.
+     * </p>
+     * </note>
+     * 
+     * @return A list of tags that you want to attach to the newly created account. For each tag in the list, you must
+     *         specify both a tag key and a value. You can set the value to an empty string, but you can't set it to
+     *         <code>null</code>. For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS
+     *         Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+     *         <p>
+     *         If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the
+     *         entire request fails and the account is not created.
+     *         </p>
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify
+     * both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
+     * resources</a> in the AWS Organizations User Guide.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire
+     * request fails and the account is not created.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the newly created account. For each tag in the list, you must
+     *        specify both a tag key and a value. You can set the value to an empty string, but you can't set it to
+     *        <code>null</code>. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS
+     *        Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the
+     *        entire request fails and the account is not created.
+     *        </p>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify
+     * both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
+     * resources</a> in the AWS Organizations User Guide.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire
+     * request fails and the account is not created.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the newly created account. For each tag in the list, you must
+     *        specify both a tag key and a value. You can set the value to an empty string, but you can't set it to
+     *        <code>null</code>. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS
+     *        Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the
+     *        entire request fails and the account is not created.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAccountRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created account. For each tag in the list, you must specify
+     * both a tag key and a value. You can set the value to an empty string, but you can't set it to <code>null</code>.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS Organizations
+     * resources</a> in the AWS Organizations User Guide.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the entire
+     * request fails and the account is not created.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the newly created account. For each tag in the list, you must
+     *        specify both a tag key and a value. You can set the value to an empty string, but you can't set it to
+     *        <code>null</code>. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging AWS
+     *        Organizations resources</a> in the AWS Organizations User Guide.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an account, then the
+     *        entire request fails and the account is not created.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAccountRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -603,7 +763,9 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getRoleName() != null)
             sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getIamUserAccessToBilling() != null)
-            sb.append("IamUserAccessToBilling: ").append(getIamUserAccessToBilling());
+            sb.append("IamUserAccessToBilling: ").append(getIamUserAccessToBilling()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -634,6 +796,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getIamUserAccessToBilling() != null && other.getIamUserAccessToBilling().equals(this.getIamUserAccessToBilling()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -646,6 +812,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getAccountName() == null) ? 0 : getAccountName().hashCode());
         hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
         hashCode = prime * hashCode + ((getIamUserAccessToBilling() == null) ? 0 : getIamUserAccessToBilling().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

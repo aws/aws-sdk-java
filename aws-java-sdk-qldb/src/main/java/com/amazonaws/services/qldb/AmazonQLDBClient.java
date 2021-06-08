@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -187,6 +187,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                         .beforeMarshalling(cancelJournalKinesisStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJournalKinesisStream");
@@ -211,7 +213,7 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Creates a new ledger in your AWS account.
+     * Creates a new ledger in your AWS account in the current Region.
      * </p>
      * 
      * @param createLedgerRequest
@@ -249,6 +251,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new CreateLedgerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLedgerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLedger");
@@ -275,10 +279,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
      * Deletes a ledger and all of its contents. This action is irreversible.
      * </p>
      * <p>
-     * If deletion protection is enabled, you must first disable it before you can delete the ledger using the QLDB API
-     * or the AWS Command Line Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables deletion protection for you when you
-     * use it to delete a ledger.
+     * If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it
+     * by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
      * </p>
      * 
      * @param deleteLedgerRequest
@@ -316,6 +318,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new DeleteLedgerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLedgerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLedger");
@@ -340,8 +344,13 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
     /**
      * <p>
      * Returns detailed information about a given Amazon QLDB journal stream. The output includes the Amazon Resource
-     * Name (ARN), stream name, current status, creation time, and the parameters of your original stream creation
+     * Name (ARN), stream name, current status, creation time, and the parameters of the original stream creation
      * request.
+     * </p>
+     * <p>
+     * This action does not return any expired journal streams. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration"
+     * >Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * 
      * @param describeJournalKinesisStreamRequest
@@ -378,6 +387,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                         .beforeMarshalling(describeJournalKinesisStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJournalKinesisStream");
@@ -402,13 +413,13 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Returns information about a journal export job, including the ledger name, export ID, when it was created,
-     * current status, and its start and end time export parameters.
+     * Returns information about a journal export job, including the ledger name, export ID, creation time, current
+     * status, and the parameters of the original export creation request.
      * </p>
      * <p>
      * This action does not return any expired export jobs. For more information, see <a href=
      * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
-     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+     * >Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * <p>
      * If the export job with the given <code>ExportId</code> doesn't exist, then throws
@@ -448,6 +459,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                         .beforeMarshalling(describeJournalS3ExportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJournalS3Export");
@@ -506,6 +519,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new DescribeLedgerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLedgerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLedger");
@@ -575,6 +590,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new ExportJournalToS3RequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportJournalToS3Request));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportJournalToS3");
@@ -598,8 +615,13 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Returns a journal block object at a specified address in a ledger. Also returns a proof of the specified block
-     * for verification if <code>DigestTipAddress</code> is provided.
+     * Returns a block object at a specified address in a journal. Also returns a proof of the specified block for
+     * verification if <code>DigestTipAddress</code> is provided.
+     * </p>
+     * <p>
+     * For information about the data contents in a block, see <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/journal-contents.html">Journal contents</a> in the
+     * <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * <p>
      * If the specified ledger doesn't exist or is in <code>DELETING</code> status, then throws
@@ -646,6 +668,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new GetBlockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBlock");
@@ -706,6 +730,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new GetDigestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDigestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDigest");
@@ -766,6 +792,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new GetRevisionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRevisionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRevision");
@@ -791,6 +819,11 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
      * <p>
      * Returns an array of all Amazon QLDB journal stream descriptors for a given ledger. The output of each stream
      * descriptor includes the same details that are returned by <code>DescribeJournalKinesisStream</code>.
+     * </p>
+     * <p>
+     * This action does not return any expired journal streams. For more information, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration"
+     * >Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * <p>
      * This action returns a maximum of <code>MaxResults</code> items. It is paginated so that you can retrieve all the
@@ -832,6 +865,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                         .beforeMarshalling(listJournalKinesisStreamsForLedgerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJournalKinesisStreamsForLedger");
@@ -866,7 +901,7 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
      * <p>
      * This action does not return any expired export jobs. For more information, see <a href=
      * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
-     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+     * >Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * 
      * @param listJournalS3ExportsRequest
@@ -896,6 +931,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new ListJournalS3ExportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJournalS3ExportsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJournalS3Exports");
@@ -928,7 +965,7 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
      * <p>
      * This action does not return any expired export jobs. For more information, see <a href=
      * "https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration"
-     * >Export Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
+     * >Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * 
      * @param listJournalS3ExportsForLedgerRequest
@@ -959,6 +996,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                         .beforeMarshalling(listJournalS3ExportsForLedgerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJournalS3ExportsForLedger");
@@ -1017,6 +1056,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new ListLedgersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLedgersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLedgers");
@@ -1074,6 +1115,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1097,9 +1140,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
     /**
      * <p>
-     * Creates a stream for a given Amazon QLDB ledger that delivers the journal data to a specified Amazon Kinesis Data
-     * Streams resource. The stream captures every document revision that is committed to your journal and sends it to
-     * the Kinesis data stream.
+     * Creates a journal stream for a given Amazon QLDB ledger. The stream captures every document revision that is
+     * committed to the ledger's journal and delivers the data to a specified Amazon Kinesis Data Streams resource.
      * </p>
      * 
      * @param streamJournalToKinesisRequest
@@ -1135,6 +1177,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new StreamJournalToKinesisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(streamJournalToKinesisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StreamJournalToKinesis");
@@ -1197,6 +1241,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1254,6 +1300,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1311,6 +1359,8 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
                 request = new UpdateLedgerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLedgerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLedger");
@@ -1322,6 +1372,75 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateLedgerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateLedgerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the permissions mode of a ledger.
+     * </p>
+     * <important>
+     * <p>
+     * Before you switch to the <code>STANDARD</code> permissions mode, you must first create all required IAM policies
+     * and table tags to avoid disruption to your users. To learn more, see <a href=
+     * "https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating"
+     * >Migrating to the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.
+     * </p>
+     * </important>
+     * 
+     * @param updateLedgerPermissionsModeRequest
+     * @return Result of the UpdateLedgerPermissionsMode operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in the request aren't valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @sample AmazonQLDB.UpdateLedgerPermissionsMode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateLedgerPermissionsModeResult updateLedgerPermissionsMode(UpdateLedgerPermissionsModeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLedgerPermissionsMode(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLedgerPermissionsModeResult executeUpdateLedgerPermissionsMode(UpdateLedgerPermissionsModeRequest updateLedgerPermissionsModeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLedgerPermissionsModeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLedgerPermissionsModeRequest> request = null;
+        Response<UpdateLedgerPermissionsModeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLedgerPermissionsModeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateLedgerPermissionsModeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLedgerPermissionsMode");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLedgerPermissionsModeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateLedgerPermissionsModeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1406,6 +1525,11 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

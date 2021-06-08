@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,16 @@ public class TopicRuleDestinationSummaryMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusReason").build();
     private static final MarshallingInfo<StructuredPojo> HTTPURLSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("httpUrlSummary").build();
+    private static final MarshallingInfo<StructuredPojo> VPCDESTINATIONSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcDestinationSummary").build();
 
     private static final TopicRuleDestinationSummaryMarshaller instance = new TopicRuleDestinationSummaryMarshaller();
 
@@ -54,8 +60,11 @@ public class TopicRuleDestinationSummaryMarshaller {
         try {
             protocolMarshaller.marshall(topicRuleDestinationSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(topicRuleDestinationSummary.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(topicRuleDestinationSummary.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(topicRuleDestinationSummary.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(topicRuleDestinationSummary.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(topicRuleDestinationSummary.getHttpUrlSummary(), HTTPURLSUMMARY_BINDING);
+            protocolMarshaller.marshall(topicRuleDestinationSummary.getVpcDestinationSummary(), VPCDESTINATIONSUMMARY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

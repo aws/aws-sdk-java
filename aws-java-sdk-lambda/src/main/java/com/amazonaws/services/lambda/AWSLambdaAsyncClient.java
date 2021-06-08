@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -363,6 +363,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCodeSigningConfigResult> createCodeSigningConfigAsync(CreateCodeSigningConfigRequest request) {
+
+        return createCodeSigningConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCodeSigningConfigResult> createCodeSigningConfigAsync(final CreateCodeSigningConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCodeSigningConfigRequest, CreateCodeSigningConfigResult> asyncHandler) {
+        final CreateCodeSigningConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCodeSigningConfigResult>() {
+            @Override
+            public CreateCodeSigningConfigResult call() throws Exception {
+                CreateCodeSigningConfigResult result = null;
+
+                try {
+                    result = executeCreateCodeSigningConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateEventSourceMappingResult> createEventSourceMappingAsync(CreateEventSourceMappingRequest request) {
 
         return createEventSourceMappingAsync(request, null);
@@ -462,6 +495,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCodeSigningConfigResult> deleteCodeSigningConfigAsync(DeleteCodeSigningConfigRequest request) {
+
+        return deleteCodeSigningConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCodeSigningConfigResult> deleteCodeSigningConfigAsync(final DeleteCodeSigningConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCodeSigningConfigRequest, DeleteCodeSigningConfigResult> asyncHandler) {
+        final DeleteCodeSigningConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCodeSigningConfigResult>() {
+            @Override
+            public DeleteCodeSigningConfigResult call() throws Exception {
+                DeleteCodeSigningConfigResult result = null;
+
+                try {
+                    result = executeDeleteCodeSigningConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEventSourceMappingResult> deleteEventSourceMappingAsync(DeleteEventSourceMappingRequest request) {
 
         return deleteEventSourceMappingAsync(request, null);
@@ -512,6 +578,41 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
 
                 try {
                     result = executeDeleteFunction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFunctionCodeSigningConfigResult> deleteFunctionCodeSigningConfigAsync(
+            DeleteFunctionCodeSigningConfigRequest request) {
+
+        return deleteFunctionCodeSigningConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFunctionCodeSigningConfigResult> deleteFunctionCodeSigningConfigAsync(
+            final DeleteFunctionCodeSigningConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFunctionCodeSigningConfigRequest, DeleteFunctionCodeSigningConfigResult> asyncHandler) {
+        final DeleteFunctionCodeSigningConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFunctionCodeSigningConfigResult>() {
+            @Override
+            public DeleteFunctionCodeSigningConfigResult call() throws Exception {
+                DeleteFunctionCodeSigningConfigResult result = null;
+
+                try {
+                    result = executeDeleteFunctionCodeSigningConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -730,6 +831,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetCodeSigningConfigResult> getCodeSigningConfigAsync(GetCodeSigningConfigRequest request) {
+
+        return getCodeSigningConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCodeSigningConfigResult> getCodeSigningConfigAsync(final GetCodeSigningConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCodeSigningConfigRequest, GetCodeSigningConfigResult> asyncHandler) {
+        final GetCodeSigningConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCodeSigningConfigResult>() {
+            @Override
+            public GetCodeSigningConfigResult call() throws Exception {
+                GetCodeSigningConfigResult result = null;
+
+                try {
+                    result = executeGetCodeSigningConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEventSourceMappingResult> getEventSourceMappingAsync(GetEventSourceMappingRequest request) {
 
         return getEventSourceMappingAsync(request, null);
@@ -780,6 +914,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
 
                 try {
                     result = executeGetFunction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFunctionCodeSigningConfigResult> getFunctionCodeSigningConfigAsync(GetFunctionCodeSigningConfigRequest request) {
+
+        return getFunctionCodeSigningConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFunctionCodeSigningConfigResult> getFunctionCodeSigningConfigAsync(final GetFunctionCodeSigningConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFunctionCodeSigningConfigRequest, GetFunctionCodeSigningConfigResult> asyncHandler) {
+        final GetFunctionCodeSigningConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFunctionCodeSigningConfigResult>() {
+            @Override
+            public GetFunctionCodeSigningConfigResult call() throws Exception {
+                GetFunctionCodeSigningConfigResult result = null;
+
+                try {
+                    result = executeGetFunctionCodeSigningConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1163,6 +1330,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListCodeSigningConfigsResult> listCodeSigningConfigsAsync(ListCodeSigningConfigsRequest request) {
+
+        return listCodeSigningConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCodeSigningConfigsResult> listCodeSigningConfigsAsync(final ListCodeSigningConfigsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCodeSigningConfigsRequest, ListCodeSigningConfigsResult> asyncHandler) {
+        final ListCodeSigningConfigsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCodeSigningConfigsResult>() {
+            @Override
+            public ListCodeSigningConfigsResult call() throws Exception {
+                ListCodeSigningConfigsResult result = null;
+
+                try {
+                    result = executeListCodeSigningConfigs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(ListEventSourceMappingsRequest request) {
 
         return listEventSourceMappingsAsync(request, null);
@@ -1306,6 +1506,41 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
             com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult> asyncHandler) {
 
         return listFunctionsAsync(new ListFunctionsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFunctionsByCodeSigningConfigResult> listFunctionsByCodeSigningConfigAsync(
+            ListFunctionsByCodeSigningConfigRequest request) {
+
+        return listFunctionsByCodeSigningConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFunctionsByCodeSigningConfigResult> listFunctionsByCodeSigningConfigAsync(
+            final ListFunctionsByCodeSigningConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFunctionsByCodeSigningConfigRequest, ListFunctionsByCodeSigningConfigResult> asyncHandler) {
+        final ListFunctionsByCodeSigningConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFunctionsByCodeSigningConfigResult>() {
+            @Override
+            public ListFunctionsByCodeSigningConfigResult call() throws Exception {
+                ListFunctionsByCodeSigningConfigResult result = null;
+
+                try {
+                    result = executeListFunctionsByCodeSigningConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -1526,6 +1761,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
 
                 try {
                     result = executePublishVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutFunctionCodeSigningConfigResult> putFunctionCodeSigningConfigAsync(PutFunctionCodeSigningConfigRequest request) {
+
+        return putFunctionCodeSigningConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutFunctionCodeSigningConfigResult> putFunctionCodeSigningConfigAsync(final PutFunctionCodeSigningConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutFunctionCodeSigningConfigRequest, PutFunctionCodeSigningConfigResult> asyncHandler) {
+        final PutFunctionCodeSigningConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutFunctionCodeSigningConfigResult>() {
+            @Override
+            public PutFunctionCodeSigningConfigResult call() throws Exception {
+                PutFunctionCodeSigningConfigResult result = null;
+
+                try {
+                    result = executePutFunctionCodeSigningConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1792,6 +2060,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
 
                 try {
                     result = executeUpdateAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCodeSigningConfigResult> updateCodeSigningConfigAsync(UpdateCodeSigningConfigRequest request) {
+
+        return updateCodeSigningConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCodeSigningConfigResult> updateCodeSigningConfigAsync(final UpdateCodeSigningConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCodeSigningConfigRequest, UpdateCodeSigningConfigResult> asyncHandler) {
+        final UpdateCodeSigningConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCodeSigningConfigResult>() {
+            @Override
+            public UpdateCodeSigningConfigResult call() throws Exception {
+                UpdateCodeSigningConfigResult result = null;
+
+                try {
+                    result = executeUpdateCodeSigningConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

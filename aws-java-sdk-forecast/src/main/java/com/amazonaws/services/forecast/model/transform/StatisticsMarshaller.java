@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,14 @@ public class StatisticsMarshaller {
             .marshallLocationName("Avg").build();
     private static final MarshallingInfo<Double> STDDEV_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Stddev").build();
+    private static final MarshallingInfo<Long> COUNTLONG_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CountLong").build();
+    private static final MarshallingInfo<Long> COUNTDISTINCTLONG_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CountDistinctLong").build();
+    private static final MarshallingInfo<Long> COUNTNULLLONG_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CountNullLong").build();
+    private static final MarshallingInfo<Long> COUNTNANLONG_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CountNanLong").build();
 
     private static final StatisticsMarshaller instance = new StatisticsMarshaller();
 
@@ -68,6 +76,10 @@ public class StatisticsMarshaller {
             protocolMarshaller.marshall(statistics.getMax(), MAX_BINDING);
             protocolMarshaller.marshall(statistics.getAvg(), AVG_BINDING);
             protocolMarshaller.marshall(statistics.getStddev(), STDDEV_BINDING);
+            protocolMarshaller.marshall(statistics.getCountLong(), COUNTLONG_BINDING);
+            protocolMarshaller.marshall(statistics.getCountDistinctLong(), COUNTDISTINCTLONG_BINDING);
+            protocolMarshaller.marshall(statistics.getCountNullLong(), COUNTNULLLONG_BINDING);
+            protocolMarshaller.marshall(statistics.getCountNanLong(), COUNTNANLONG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class CreateDeviceRequestMarshaller {
 
     private static final MarshallingInfo<String> GLOBALNETWORKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("globalNetworkId").build();
+    private static final MarshallingInfo<StructuredPojo> AWSLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AWSLocation").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class CreateDeviceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createDeviceRequest.getGlobalNetworkId(), GLOBALNETWORKID_BINDING);
+            protocolMarshaller.marshall(createDeviceRequest.getAWSLocation(), AWSLOCATION_BINDING);
             protocolMarshaller.marshall(createDeviceRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createDeviceRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(createDeviceRequest.getVendor(), VENDOR_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -118,6 +118,12 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.eventbridge.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OperationDisabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eventbridge.model.transform.OperationDisabledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IllegalStatusException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eventbridge.model.transform.IllegalStatusExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.eventbridge.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -188,11 +194,13 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws InvalidStateException
      *         The specified state is not a valid state for an event source.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.ActivateEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ActivateEventSource"
      *      target="_top">AWS API Documentation</a>
@@ -218,6 +226,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new ActivateEventSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(activateEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ActivateEventSource");
@@ -229,6 +239,264 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ActivateEventSourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ActivateEventSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels the specified replay.
+     * </p>
+     * 
+     * @param cancelReplayRequest
+     * @return Result of the CancelReplay operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws IllegalStatusException
+     *         An error occurred because a replay can be canceled only when the state is Running or Starting.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.CancelReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CancelReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CancelReplayResult cancelReplay(CancelReplayRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelReplay(request);
+    }
+
+    @SdkInternalApi
+    final CancelReplayResult executeCancelReplay(CancelReplayRequest cancelReplayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelReplayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelReplayRequest> request = null;
+        Response<CancelReplayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelReplayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelReplayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelReplay");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelReplayResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelReplayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an API destination, which is an HTTP invocation endpoint configured as a target for events.
+     * </p>
+     * 
+     * @param createApiDestinationRequest
+     * @return Result of the CreateApiDestination operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.CreateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateApiDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateApiDestinationResult createApiDestination(CreateApiDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApiDestination(request);
+    }
+
+    @SdkInternalApi
+    final CreateApiDestinationResult executeCreateApiDestination(CreateApiDestinationRequest createApiDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createApiDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateApiDestinationRequest> request = null;
+        Response<CreateApiDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateApiDestinationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApiDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApiDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateApiDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateApiDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an archive of events with the specified settings. When you create an archive, incoming events might not
+     * immediately start being sent to the archive. Allow a short period of time for changes to take effect. If you do
+     * not specify a pattern to filter events sent to the archive, all events are sent to the archive except replayed
+     * events. Replayed events are not sent to an archive.
+     * </p>
+     * 
+     * @param createArchiveRequest
+     * @return Result of the CreateArchive operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InvalidEventPatternException
+     *         The event pattern is not valid.
+     * @sample AmazonEventBridge.CreateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateArchiveResult createArchive(CreateArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateArchive(request);
+    }
+
+    @SdkInternalApi
+    final CreateArchiveResult executeCreateArchive(CreateArchiveRequest createArchiveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createArchiveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateArchiveRequest> request = null;
+        Response<CreateArchiveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createArchiveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateArchive");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateArchiveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateArchiveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a connection. A connection defines the authorization type and credentials to use for authorization with
+     * an API destination HTTP endpoint.
+     * </p>
+     * 
+     * @param createConnectionRequest
+     * @return Result of the CreateConnection operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.CreateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateConnectionResult createConnection(CreateConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConnection(request);
+    }
+
+    @SdkInternalApi
+    final CreateConnectionResult executeCreateConnection(CreateConnectionRequest createConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConnectionRequest> request = null;
+        Response<CreateConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateConnectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -257,9 +525,11 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.CreateEventBus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateEventBus" target="_top">AWS API
      *      Documentation</a>
@@ -285,6 +555,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new CreateEventBusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEventBusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventBus");
@@ -343,9 +615,11 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.CreatePartnerEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreatePartnerEventSource"
      *      target="_top">AWS API Documentation</a>
@@ -372,6 +646,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(createPartnerEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePartnerEventSource");
@@ -412,11 +688,13 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws InvalidStateException
      *         The specified state is not a valid state for an event source.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.DeactivateEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeactivateEventSource"
      *      target="_top">AWS API Documentation</a>
@@ -442,6 +720,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new DeactivateEventSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deactivateEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeactivateEventSource");
@@ -466,6 +746,252 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Removes all authorization parameters from the connection. This lets you remove the secret from the connection so
+     * you can reuse it without having to create a new connection.
+     * </p>
+     * 
+     * @param deauthorizeConnectionRequest
+     * @return Result of the DeauthorizeConnection operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.DeauthorizeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeauthorizeConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeauthorizeConnectionResult deauthorizeConnection(DeauthorizeConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeauthorizeConnection(request);
+    }
+
+    @SdkInternalApi
+    final DeauthorizeConnectionResult executeDeauthorizeConnection(DeauthorizeConnectionRequest deauthorizeConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deauthorizeConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeauthorizeConnectionRequest> request = null;
+        Response<DeauthorizeConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeauthorizeConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deauthorizeConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeauthorizeConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeauthorizeConnectionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeauthorizeConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified API destination.
+     * </p>
+     * 
+     * @param deleteApiDestinationRequest
+     * @return Result of the DeleteApiDestination operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.DeleteApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteApiDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteApiDestinationResult deleteApiDestination(DeleteApiDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApiDestination(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApiDestinationResult executeDeleteApiDestination(DeleteApiDestinationRequest deleteApiDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteApiDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApiDestinationRequest> request = null;
+        Response<DeleteApiDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApiDestinationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApiDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApiDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApiDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteApiDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified archive.
+     * </p>
+     * 
+     * @param deleteArchiveRequest
+     * @return Result of the DeleteArchive operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.DeleteArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteArchiveResult deleteArchive(DeleteArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteArchive(request);
+    }
+
+    @SdkInternalApi
+    final DeleteArchiveResult executeDeleteArchive(DeleteArchiveRequest deleteArchiveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteArchiveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteArchiveRequest> request = null;
+        Response<DeleteArchiveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteArchiveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteArchive");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteArchiveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteArchiveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a connection.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @return Result of the DeleteConnection operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteConnectionResult deleteConnection(DeleteConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConnection(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConnectionResult executeDeleteConnection(DeleteConnectionRequest deleteConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConnectionRequest> request = null;
+        Response<DeleteConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified custom event bus or partner event bus. All rules associated with this event bus need to be
      * deleted. You can't delete your account's default event bus.
      * </p>
@@ -475,7 +1001,7 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @sample AmazonEventBridge.DeleteEventBus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteEventBus" target="_top">AWS API
      *      Documentation</a>
@@ -501,6 +1027,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new DeleteEventBusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEventBusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventBus");
@@ -538,7 +1066,9 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.DeletePartnerEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeletePartnerEventSource"
      *      target="_top">AWS API Documentation</a>
@@ -565,6 +1095,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(deletePartnerEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePartnerEventSource");
@@ -608,7 +1140,7 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @param deleteRuleRequest
      * @return Result of the DeleteRule operation returned by the service.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -644,6 +1176,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new DeleteRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRule");
@@ -655,6 +1189,186 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves details about an API destination.
+     * </p>
+     * 
+     * @param describeApiDestinationRequest
+     * @return Result of the DescribeApiDestination operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.DescribeApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeApiDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeApiDestinationResult describeApiDestination(DescribeApiDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApiDestination(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApiDestinationResult executeDescribeApiDestination(DescribeApiDestinationRequest describeApiDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeApiDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeApiDestinationRequest> request = null;
+        Response<DescribeApiDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeApiDestinationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeApiDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApiDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeApiDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeApiDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves details about an archive.
+     * </p>
+     * 
+     * @param describeArchiveRequest
+     * @return Result of the DescribeArchive operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.DescribeArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeArchiveResult describeArchive(DescribeArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeArchive(request);
+    }
+
+    @SdkInternalApi
+    final DescribeArchiveResult executeDescribeArchive(DescribeArchiveRequest describeArchiveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeArchiveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeArchiveRequest> request = null;
+        Response<DescribeArchiveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeArchiveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeArchive");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeArchiveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeArchiveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves details about a connection.
+     * </p>
+     * 
+     * @param describeConnectionRequest
+     * @return Result of the DescribeConnection operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.DescribeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeConnectionResult describeConnection(DescribeConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConnection(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConnectionResult executeDescribeConnection(DescribeConnectionRequest describeConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeConnectionRequest> request = null;
+        Response<DescribeConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeConnectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -709,6 +1423,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new DescribeEventBusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventBusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventBus");
@@ -741,6 +1457,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      *         An entity that you specified does not exist.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.DescribeEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeEventSource"
      *      target="_top">AWS API Documentation</a>
@@ -766,6 +1484,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new DescribeEventSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventSource");
@@ -800,6 +1520,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      *         An entity that you specified does not exist.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.DescribePartnerEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribePartnerEventSource"
      *      target="_top">AWS API Documentation</a>
@@ -826,6 +1548,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describePartnerEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePartnerEventSource");
@@ -838,6 +1562,71 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<DescribePartnerEventSourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribePartnerEventSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the progress of a running replay.
+     * A replay processes events to replay based on the time in the event, and replays them using 1 minute intervals. If
+     * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that
+     * covers a 20 minute time range, the events are replayed from the first minute of that 20 minute range first. Then
+     * the events from the second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress
+     * of a replay. The value returned for <code>EventLastReplayedTime</code> indicates the time within the specified
+     * time range associated with the last event replayed.
+     * </p>
+     * 
+     * @param describeReplayRequest
+     * @return Result of the DescribeReplay operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.DescribeReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeReplayResult describeReplay(DescribeReplayRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReplay(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReplayResult executeDescribeReplay(DescribeReplayRequest describeReplayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReplayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReplayRequest> request = null;
+        Response<DescribeReplayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReplayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeReplayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReplay");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReplayResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeReplayResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -888,6 +1677,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new DescribeRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRule");
@@ -924,7 +1715,7 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -958,6 +1749,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new DisableRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableRule");
@@ -993,7 +1786,7 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -1027,6 +1820,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new EnableRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableRule");
@@ -1038,6 +1833,180 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<EnableRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new EnableRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of API destination in the account in the current Region.
+     * </p>
+     * 
+     * @param listApiDestinationsRequest
+     * @return Result of the ListApiDestinations operation returned by the service.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.ListApiDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListApiDestinations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListApiDestinationsResult listApiDestinations(ListApiDestinationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApiDestinations(request);
+    }
+
+    @SdkInternalApi
+    final ListApiDestinationsResult executeListApiDestinations(ListApiDestinationsRequest listApiDestinationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApiDestinationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApiDestinationsRequest> request = null;
+        Response<ListApiDestinationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApiDestinationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApiDestinationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApiDestinations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApiDestinationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListApiDestinationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive
+     * names. Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listArchivesRequest
+     * @return Result of the ListArchives operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.ListArchives
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListArchivesResult listArchives(ListArchivesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListArchives(request);
+    }
+
+    @SdkInternalApi
+    final ListArchivesResult executeListArchives(ListArchivesRequest listArchivesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listArchivesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListArchivesRequest> request = null;
+        Response<ListArchivesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListArchivesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listArchivesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListArchives");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListArchivesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListArchivesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of connections from the account.
+     * </p>
+     * 
+     * @param listConnectionsRequest
+     * @return Result of the ListConnections operation returned by the service.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.ListConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListConnections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListConnectionsResult listConnections(ListConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConnections(request);
+    }
+
+    @SdkInternalApi
+    final ListConnectionsResult executeListConnections(ListConnectionsRequest listConnectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listConnectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListConnectionsRequest> request = null;
+        Response<ListConnectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListConnectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConnectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConnections");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListConnectionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListConnectionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1083,6 +2052,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new ListEventBusesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventBusesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventBuses");
@@ -1114,6 +2085,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @return Result of the ListEventSources operation returned by the service.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.ListEventSources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListEventSources" target="_top">AWS
      *      API Documentation</a>
@@ -1139,6 +2112,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new ListEventSourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventSources");
@@ -1172,6 +2147,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      *         An entity that you specified does not exist.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.ListPartnerEventSourceAccounts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListPartnerEventSourceAccounts"
      *      target="_top">AWS API Documentation</a>
@@ -1198,6 +2175,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listPartnerEventSourceAccountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPartnerEventSourceAccounts");
@@ -1230,6 +2209,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @return Result of the ListPartnerEventSources operation returned by the service.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.ListPartnerEventSources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListPartnerEventSources"
      *      target="_top">AWS API Documentation</a>
@@ -1256,6 +2237,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listPartnerEventSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPartnerEventSources");
@@ -1268,6 +2251,64 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<ListPartnerEventSourcesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListPartnerEventSourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists your replays. You can either list all the replays or you can provide a prefix to match to the replay names.
+     * Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listReplaysRequest
+     * @return Result of the ListReplays operation returned by the service.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.ListReplays
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListReplaysResult listReplays(ListReplaysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReplays(request);
+    }
+
+    @SdkInternalApi
+    final ListReplaysResult executeListReplays(ListReplaysRequest listReplaysRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listReplaysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListReplaysRequest> request = null;
+        Response<ListReplaysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListReplaysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listReplaysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReplays");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListReplaysResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListReplaysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1315,6 +2356,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new ListRuleNamesByTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRuleNamesByTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuleNamesByTarget");
@@ -1378,6 +2421,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new ListRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRules");
@@ -1435,6 +2480,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1492,6 +2539,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new ListTargetsByRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTargetsByRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargetsByRule");
@@ -1547,6 +2596,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new PutEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEvents");
@@ -1578,6 +2629,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @return Result of the PutPartnerEvents operation returned by the service.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.PutPartnerEvents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutPartnerEvents" target="_top">AWS
      *      API Documentation</a>
@@ -1603,6 +2656,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new PutPartnerEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPartnerEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPartnerEvents");
@@ -1627,8 +2682,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Running <code>PutPermission</code> permits the specified AWS account or AWS organization to put events to the
-     * specified <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events arriving to an
-     * event bus in your account.
+     * specified <i>event bus</i>. Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
+     * events arriving to an event bus in your account.
      * </p>
      * <p>
      * For another account to send events to your account, that external account must have an EventBridge rule with your
@@ -1660,7 +2715,9 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.PutPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutPermission" target="_top">AWS API
      *      Documentation</a>
@@ -1686,6 +2743,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new PutPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermission");
@@ -1770,9 +2829,9 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws InvalidEventPatternException
      *         The event pattern is not valid.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -1808,6 +2867,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new PutRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRule");
@@ -1916,6 +2977,26 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * The default event bus of another AWS account
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon API Gateway REST APIs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redshift Clusters to invoke Data API ExecuteStatement on
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom/SaaS HTTPS APIs via EventBridge API Destinations
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker Model Building Pipelines
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
@@ -1929,10 +3010,11 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * <code>RunCommandParameters</code> field.
      * </p>
      * <p>
-     * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
-     * permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies. For EC2
-     * instances, Kinesis data streams, and AWS Step Functions state machines, EventBridge relies on IAM roles that you
-     * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
+     * To be able to make API calls against the resources that you own, Amazon EventBridge (CloudWatch Events) needs the
+     * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies.
+     * For EC2 instances, Kinesis data streams, AWS Step Functions state machines and API Gateway REST APIs, EventBridge
+     * relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html"
      * >Authentication and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
@@ -1942,8 +3024,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when
      * you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for
      * each sent event. Each event sent to another account is charged as a custom event. The account receiving the event
-     * is not charged. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.
+     * is not charged. For more information, see <a href="https://aws.amazon.com/eventbridge/pricing/">Amazon
+     * EventBridge (CloudWatch Events) Pricing</a>.
      * </p>
      * <note>
      * <p>
@@ -2011,9 +3093,9 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -2047,6 +3129,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new PutTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutTargets");
@@ -2083,7 +3167,9 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonEventBridge.RemovePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/RemovePermission" target="_top">AWS
      *      API Documentation</a>
@@ -2109,6 +3195,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new RemovePermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
@@ -2150,7 +3238,7 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -2184,6 +3272,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new RemoveTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTargets");
@@ -2195,6 +3285,77 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<RemoveTargetsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemoveTargetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the specified replay. Events are not necessarily replayed in the exact same order that they were added to
+     * the archive. A replay processes events to replay based on the time in the event, and replays them using 1 minute
+     * intervals. If you specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute
+     * time range, the events are replayed from the first minute of that 20 minute range first. Then the events from the
+     * second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress of a replay. The
+     * value returned for <code>EventLastReplayedTime</code> indicates the time within the specified time range
+     * associated with the last event replayed.
+     * </p>
+     * 
+     * @param startReplayRequest
+     * @return Result of the StartReplay operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws InvalidEventPatternException
+     *         The event pattern is not valid.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonEventBridge.StartReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/StartReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartReplayResult startReplay(StartReplayRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartReplay(request);
+    }
+
+    @SdkInternalApi
+    final StartReplayResult executeStartReplay(StartReplayRequest startReplayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startReplayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartReplayRequest> request = null;
+        Response<StartReplayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartReplayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startReplayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartReplay");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartReplayResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartReplayResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2229,7 +3390,7 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ManagedRuleException
@@ -2263,6 +3424,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2325,6 +3488,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new TestEventPatternRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testEventPatternRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestEventPattern");
@@ -2348,8 +3513,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Removes one or more tags from the specified EventBridge resource. In CloudWatch Events, rules and event buses can
-     * be tagged.
+     * Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge (CloudWatch Events, rules
+     * and event buses can be tagged.
      * </p>
      * 
      * @param untagResourceRequest
@@ -2359,7 +3524,7 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -2391,6 +3556,8 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -2402,6 +3569,197 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an API destination.
+     * </p>
+     * 
+     * @param updateApiDestinationRequest
+     * @return Result of the UpdateApiDestination operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @sample AmazonEventBridge.UpdateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateApiDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateApiDestinationResult updateApiDestination(UpdateApiDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApiDestination(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApiDestinationResult executeUpdateApiDestination(UpdateApiDestinationRequest updateApiDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateApiDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateApiDestinationRequest> request = null;
+        Response<UpdateApiDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateApiDestinationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApiDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApiDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateApiDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateApiDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified archive.
+     * </p>
+     * 
+     * @param updateArchiveRequest
+     * @return Result of the UpdateArchive operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InvalidEventPatternException
+     *         The event pattern is not valid.
+     * @sample AmazonEventBridge.UpdateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateArchiveResult updateArchive(UpdateArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateArchive(request);
+    }
+
+    @SdkInternalApi
+    final UpdateArchiveResult executeUpdateArchive(UpdateArchiveRequest updateArchiveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateArchiveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateArchiveRequest> request = null;
+        Response<UpdateArchiveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateArchiveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateArchive");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateArchiveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateArchiveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates settings for a connection.
+     * </p>
+     * 
+     * @param updateConnectionRequest
+     * @return Result of the UpdateConnection operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @sample AmazonEventBridge.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateConnectionResult updateConnection(UpdateConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConnection(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConnectionResult executeUpdateConnection(UpdateConnectionRequest updateConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConnectionRequest> request = null;
+        Response<UpdateConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EventBridge");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateConnectionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2486,6 +3844,11 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

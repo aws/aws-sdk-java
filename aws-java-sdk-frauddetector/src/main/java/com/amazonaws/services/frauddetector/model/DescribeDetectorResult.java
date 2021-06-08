@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,12 @@ public class DescribeDetectorResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The detector ARN.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -193,6 +199,46 @@ public class DescribeDetectorResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The detector ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The detector ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The detector ARN.
+     * </p>
+     * 
+     * @return The detector ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The detector ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The detector ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDetectorResult withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -209,7 +255,9 @@ public class DescribeDetectorResult extends com.amazonaws.AmazonWebServiceResult
         if (getDetectorVersionSummaries() != null)
             sb.append("DetectorVersionSummaries: ").append(getDetectorVersionSummaries()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -236,6 +284,10 @@ public class DescribeDetectorResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -247,6 +299,7 @@ public class DescribeDetectorResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
         hashCode = prime * hashCode + ((getDetectorVersionSummaries() == null) ? 0 : getDetectorVersionSummaries().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

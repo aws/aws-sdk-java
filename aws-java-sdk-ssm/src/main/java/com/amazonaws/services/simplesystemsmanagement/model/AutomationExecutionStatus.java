@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,17 @@ public enum AutomationExecutionStatus {
     TimedOut("TimedOut"),
     Cancelling("Cancelling"),
     Cancelled("Cancelled"),
-    Failed("Failed");
+    Failed("Failed"),
+    PendingApproval("PendingApproval"),
+    Approved("Approved"),
+    Rejected("Rejected"),
+    Scheduled("Scheduled"),
+    RunbookInProgress("RunbookInProgress"),
+    PendingChangeCalendarOverride("PendingChangeCalendarOverride"),
+    ChangeCalendarOverrideApproved("ChangeCalendarOverrideApproved"),
+    ChangeCalendarOverrideRejected("ChangeCalendarOverrideRejected"),
+    CompletedWithSuccess("CompletedWithSuccess"),
+    CompletedWithFailure("CompletedWithFailure");
 
     private String value;
 

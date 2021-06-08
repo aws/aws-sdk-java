@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
      * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, and hyphens are allowed.
+     * (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      */
     private String family;
@@ -44,27 +44,39 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     private String taskRoleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String executionRoleArn;
     /**
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
-     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
-     * stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.
+     * </p>
+     * <p>
+     * For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon
+     * EC2 instances, any network mode can be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for containers
+     * because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
      * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
+     * <important>
+     * <p>
+     * When using the <code>host</code> network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.
+     * </p>
+     * </important>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
@@ -114,7 +126,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraints;
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
@@ -290,7 +304,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      */
@@ -334,12 +348,25 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      */
     private String ipcMode;
-
+    /**
+     * <p>
+     * The configuration details for the App Mesh proxy.
+     * </p>
+     * <p>
+     * For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of
+     * the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a
+     * proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version
+     * <code>20190301</code> or later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
     private ProxyConfiguration proxyConfiguration;
     /**
      * <p>
@@ -347,18 +374,33 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InferenceAccelerator> inferenceAccelerators;
+    /**
+     * <p>
+     * The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For more information,
+     * see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     * storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     */
+    private EphemeralStorage ephemeralStorage;
 
     /**
      * <p>
      * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
      * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, and hyphens are allowed.
+     * (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
      * @param family
      *        You must specify a <code>family</code> for a task definition, which allows you to track multiple versions
      *        of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255
-     *        letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *        letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      */
 
     public void setFamily(String family) {
@@ -369,12 +411,12 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
      * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, and hyphens are allowed.
+     * (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
      * @return You must specify a <code>family</code> for a task definition, which allows you to track multiple versions
      *         of the same task definition. The <code>family</code> is used as a name for your task definition. Up to
-     *         255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *         255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      */
 
     public String getFamily() {
@@ -385,13 +427,13 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You must specify a <code>family</code> for a task definition, which allows you to track multiple versions of the
      * same task definition. The <code>family</code> is used as a name for your task definition. Up to 255 letters
-     * (uppercase and lowercase), numbers, and hyphens are allowed.
+     * (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
      * @param family
      *        You must specify a <code>family</code> for a task definition, which allows you to track multiple versions
      *        of the same task definition. The <code>family</code> is used as a name for your task definition. Up to 255
-     *        letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *        letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,13 +505,19 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *        Docker daemon can assume.
+     *        The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+     *        permission to make AWS API calls on your behalf. The task execution IAM role is required depending on the
+     *        requirements of your task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS
+     *        task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -478,12 +526,18 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *         Docker daemon can assume.
+     * @return The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+     *         permission to make AWS API calls on your behalf. The task execution IAM role is required depending on the
+     *         requirements of your task. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     *         ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getExecutionRoleArn() {
@@ -492,13 +546,19 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission
+     * to make AWS API calls on your behalf. The task execution IAM role is required depending on the requirements of
+     * your task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *        Docker daemon can assume.
+     *        The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent
+     *        permission to make AWS API calls on your behalf. The task execution IAM role is required depending on the
+     *        requirements of your task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS
+     *        task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,19 +570,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
-     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
-     * stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.
+     * </p>
+     * <p>
+     * For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon
+     * EC2 instances, any network mode can be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for containers
+     * because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
      * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
+     * <important>
+     * <p>
+     * When using the <code>host</code> network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.
+     * </p>
+     * </important>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
@@ -552,19 +621,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
-     *        to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks
-     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
-     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
-     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
+     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the
+     *        default is <code>bridge</code>.</p>
+     *        <p>
+     *        For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on
+     *        Amazon EC2 instances, any network mode can be used. If the network mode is set to <code>none</code>, you
+     *        cannot specify port mappings in your container definitions, and the tasks containers do not have external
+     *        connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
+     *        performance for containers because they use the EC2 network stack instead of the virtualized network stack
+     *        provided by the <code>bridge</code> mode.
+     *        </p>
      *        <p>
      *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
      *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
      *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
      *        host port mappings.
      *        </p>
+     *        <important>
+     *        <p>
+     *        When using the <code>host</code> network mode, you should not run containers using the root user (UID 0).
+     *        It is considered best practice to use a non-root user.
+     *        </p>
+     *        </important>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
@@ -600,19 +678,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
-     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
-     * stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.
+     * </p>
+     * <p>
+     * For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon
+     * EC2 instances, any network mode can be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for containers
+     * because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
      * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
+     * <important>
+     * <p>
+     * When using the <code>host</code> network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.
+     * </p>
+     * </important>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
@@ -641,19 +728,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @return The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     *         <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *         <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     *         required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
-     *         to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks
-     *         containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
-     *         offer the highest networking performance for containers because they use the EC2 network stack instead of
-     *         the virtualized network stack provided by the <code>bridge</code> mode.</p>
+     *         <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the
+     *         default is <code>bridge</code>.</p>
+     *         <p>
+     *         For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks
+     *         on Amazon EC2 instances, any network mode can be used. If the network mode is set to <code>none</code>,
+     *         you cannot specify port mappings in your container definitions, and the tasks containers do not have
+     *         external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
+     *         networking performance for containers because they use the EC2 network stack instead of the virtualized
+     *         network stack provided by the <code>bridge</code> mode.
+     *         </p>
      *         <p>
      *         With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
      *         directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
      *         network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
      *         dynamic host port mappings.
      *         </p>
+     *         <important>
+     *         <p>
+     *         When using the <code>host</code> network mode, you should not run containers using the root user (UID 0).
+     *         It is considered best practice to use a non-root user.
+     *         </p>
+     *         </important>
      *         <p>
      *         If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *         must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
@@ -691,19 +787,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
-     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
-     * stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.
+     * </p>
+     * <p>
+     * For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon
+     * EC2 instances, any network mode can be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for containers
+     * because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
      * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
+     * <important>
+     * <p>
+     * When using the <code>host</code> network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.
+     * </p>
+     * </important>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
@@ -733,19 +838,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
-     *        to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks
-     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
-     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
-     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
+     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the
+     *        default is <code>bridge</code>.</p>
+     *        <p>
+     *        For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on
+     *        Amazon EC2 instances, any network mode can be used. If the network mode is set to <code>none</code>, you
+     *        cannot specify port mappings in your container definitions, and the tasks containers do not have external
+     *        connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
+     *        performance for containers because they use the EC2 network stack instead of the virtualized network stack
+     *        provided by the <code>bridge</code> mode.
+     *        </p>
      *        <p>
      *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
      *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
      *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
      *        host port mappings.
      *        </p>
+     *        <important>
+     *        <p>
+     *        When using the <code>host</code> network mode, you should not run containers using the root user (UID 0).
+     *        It is considered best practice to use a non-root user.
+     *        </p>
+     *        </important>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
@@ -783,19 +897,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
-     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
-     * stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.
+     * </p>
+     * <p>
+     * For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon
+     * EC2 instances, any network mode can be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for containers
+     * because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
      * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
+     * <important>
+     * <p>
+     * When using the <code>host</code> network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.
+     * </p>
+     * </important>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
@@ -825,19 +948,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
-     *        to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks
-     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
-     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
-     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
+     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the
+     *        default is <code>bridge</code>.</p>
+     *        <p>
+     *        For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on
+     *        Amazon EC2 instances, any network mode can be used. If the network mode is set to <code>none</code>, you
+     *        cannot specify port mappings in your container definitions, and the tasks containers do not have external
+     *        connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
+     *        performance for containers because they use the EC2 network stack instead of the virtualized network stack
+     *        provided by the <code>bridge</code> mode.
+     *        </p>
      *        <p>
      *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
      *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
      *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
      *        host port mappings.
      *        </p>
+     *        <important>
+     *        <p>
+     *        When using the <code>host</code> network mode, you should not run containers using the root user (UID 0).
+     *        It is considered best practice to use a non-root user.
+     *        </p>
+     *        </important>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
@@ -873,19 +1005,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     * <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     * If you are using the EC2 launch type, any network mode can be used. If the network mode is set to
-     * <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks containers do
-     * not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack instead of the virtualized network
-     * stack provided by the <code>bridge</code> mode.
+     * <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the default is
+     * <code>bridge</code>.
+     * </p>
+     * <p>
+     * For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on Amazon
+     * EC2 instances, any network mode can be used. If the network mode is set to <code>none</code>, you cannot specify
+     * port mappings in your container definitions, and the tasks containers do not have external connectivity. The
+     * <code>host</code> and <code>awsvpc</code> network modes offer the highest networking performance for containers
+     * because they use the EC2 network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.
      * </p>
      * <p>
      * With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped directly to
      * the corresponding host port (for the <code>host</code> network mode) or the attached elastic network interface
      * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic host port mappings.
      * </p>
+     * <important>
+     * <p>
+     * When using the <code>host</code> network mode, you should not run containers using the root user (UID 0). It is
+     * considered best practice to use a non-root user.
+     * </p>
+     * </important>
      * <p>
      * If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you must
      * specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task definition. For
@@ -915,19 +1056,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param networkMode
      *        The Docker networking mode to use for the containers in the task. The valid values are <code>none</code>,
-     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. The default Docker network mode is
-     *        <code>bridge</code>. If you are using the Fargate launch type, the <code>awsvpc</code> network mode is
-     *        required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set
-     *        to <code>none</code>, you cannot specify port mappings in your container definitions, and the tasks
-     *        containers do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network modes
-     *        offer the highest networking performance for containers because they use the EC2 network stack instead of
-     *        the virtualized network stack provided by the <code>bridge</code> mode.</p>
+     *        <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>. If no network mode is specified, the
+     *        default is <code>bridge</code>.</p>
+     *        <p>
+     *        For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required. For Amazon ECS tasks on
+     *        Amazon EC2 instances, any network mode can be used. If the network mode is set to <code>none</code>, you
+     *        cannot specify port mappings in your container definitions, and the tasks containers do not have external
+     *        connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
+     *        performance for containers because they use the EC2 network stack instead of the virtualized network stack
+     *        provided by the <code>bridge</code> mode.
+     *        </p>
      *        <p>
      *        With the <code>host</code> and <code>awsvpc</code> network modes, exposed container ports are mapped
      *        directly to the corresponding host port (for the <code>host</code> network mode) or the attached elastic
      *        network interface port (for the <code>awsvpc</code> network mode), so you cannot take advantage of dynamic
      *        host port mappings.
      *        </p>
+     *        <important>
+     *        <p>
+     *        When using the <code>host</code> network mode, you should not run containers using the root user (UID 0).
+     *        It is considered best practice to use a non-root user.
+     *        </p>
+     *        </important>
      *        <p>
      *        If the network mode is <code>awsvpc</code>, the task is allocated an elastic network interface, and you
      *        must specify a <a>NetworkConfiguration</a> value when you create a service or run a task with the task
@@ -1195,10 +1345,14 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      * 
-     * @return The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * @return The task launch type that Amazon ECS should validate the task definition against. A client exception is
+     *         returned if the task definition doesn't validate against the compatibilities specified. If no value is
+     *         specified, the parameter is omitted from the response.
      * @see Compatibility
      */
 
@@ -1211,11 +1365,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
+     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
+     *        specified, the parameter is omitted from the response.
      * @see Compatibility
      */
 
@@ -1230,7 +1388,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1239,7 +1399,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
+     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
+     *        specified, the parameter is omitted from the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1256,11 +1418,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
+     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
+     *        specified, the parameter is omitted from the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1272,11 +1438,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
+     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
+     *        specified, the parameter is omitted from the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -2367,7 +2537,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2386,7 +2556,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see PidMode
      */
@@ -2412,7 +2582,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2430,7 +2600,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *         This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *         </p>
      * @see PidMode
      */
@@ -2456,7 +2626,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2475,7 +2645,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PidMode
@@ -2503,7 +2673,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2522,7 +2692,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see PidMode
      */
@@ -2548,7 +2718,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2567,7 +2737,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PidMode
@@ -2617,7 +2787,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2659,7 +2829,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see IpcMode
      */
@@ -2707,7 +2877,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2748,7 +2918,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         </ul>
      *         <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *         This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *         </p>
      * @see IpcMode
      */
@@ -2796,7 +2966,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2838,7 +3008,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpcMode
@@ -2888,7 +3058,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2930,7 +3100,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see IpcMode
      */
@@ -2978,7 +3148,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -3020,7 +3190,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpcMode
@@ -3032,7 +3202,29 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The configuration details for the App Mesh proxy.
+     * </p>
+     * <p>
+     * For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of
+     * the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a
+     * proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version
+     * <code>20190301</code> or later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
      * @param proxyConfiguration
+     *        The configuration details for the App Mesh proxy.</p>
+     *        <p>
+     *        For tasks hosted on Amazon EC2 instances, the container instances require at least version
+     *        <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code> of the
+     *        <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched
+     *        from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
+     *        versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     *        ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setProxyConfiguration(ProxyConfiguration proxyConfiguration) {
@@ -3040,7 +3232,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The configuration details for the App Mesh proxy.
+     * </p>
+     * <p>
+     * For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of
+     * the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a
+     * proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version
+     * <code>20190301</code> or later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The configuration details for the App Mesh proxy.</p>
+     *         <p>
+     *         For tasks hosted on Amazon EC2 instances, the container instances require at least version
+     *         <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code> of the
+     *         <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched
+     *         from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
+     *         versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     *         ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public ProxyConfiguration getProxyConfiguration() {
@@ -3048,7 +3261,29 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The configuration details for the App Mesh proxy.
+     * </p>
+     * <p>
+     * For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of
+     * the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a
+     * proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version
+     * <code>20190301</code> or later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
      * @param proxyConfiguration
+     *        The configuration details for the App Mesh proxy.</p>
+     *        <p>
+     *        For tasks hosted on Amazon EC2 instances, the container instances require at least version
+     *        <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code> of the
+     *        <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched
+     *        from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
+     *        versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     *        ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3131,6 +3366,97 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For more information,
+     * see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     * storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     * 
+     * @param ephemeralStorage
+     *        The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total
+     *        amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     *        storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> <note>
+     *        <p>
+     *        This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code>
+     *        or later.
+     *        </p>
+     */
+
+    public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For more information,
+     * see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     * storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     * 
+     * @return The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total
+     *         amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     *         storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> <note>
+     *         <p>
+     *         This parameter is only supported for tasks hosted on AWS Fargate using platform version
+     *         <code>1.4.0</code> or later.
+     *         </p>
+     */
+
+    public EphemeralStorage getEphemeralStorage() {
+        return this.ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For more information,
+     * see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     * storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     * 
+     * @param ephemeralStorage
+     *        The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total
+     *        amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     *        storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> <note>
+     *        <p>
+     *        This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code>
+     *        or later.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskDefinitionRequest withEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        setEphemeralStorage(ephemeralStorage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3171,7 +3497,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
         if (getProxyConfiguration() != null)
             sb.append("ProxyConfiguration: ").append(getProxyConfiguration()).append(",");
         if (getInferenceAccelerators() != null)
-            sb.append("InferenceAccelerators: ").append(getInferenceAccelerators());
+            sb.append("InferenceAccelerators: ").append(getInferenceAccelerators()).append(",");
+        if (getEphemeralStorage() != null)
+            sb.append("EphemeralStorage: ").append(getEphemeralStorage());
         sb.append("}");
         return sb.toString();
     }
@@ -3246,6 +3574,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getInferenceAccelerators() != null && other.getInferenceAccelerators().equals(this.getInferenceAccelerators()) == false)
             return false;
+        if (other.getEphemeralStorage() == null ^ this.getEphemeralStorage() == null)
+            return false;
+        if (other.getEphemeralStorage() != null && other.getEphemeralStorage().equals(this.getEphemeralStorage()) == false)
+            return false;
         return true;
     }
 
@@ -3269,6 +3601,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getIpcMode() == null) ? 0 : getIpcMode().hashCode());
         hashCode = prime * hashCode + ((getProxyConfiguration() == null) ? 0 : getProxyConfiguration().hashCode());
         hashCode = prime * hashCode + ((getInferenceAccelerators() == null) ? 0 : getInferenceAccelerators().hashCode());
+        hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
         return hashCode;
     }
 

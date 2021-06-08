@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -236,6 +236,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(associateCreatedArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateCreatedArtifact");
@@ -318,6 +320,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(associateDiscoveredResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDiscoveredResource");
@@ -395,6 +399,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(createProgressUpdateStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProgressUpdateStream");
@@ -507,6 +513,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(deleteProgressUpdateStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProgressUpdateStream");
@@ -583,6 +591,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(describeApplicationStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplicationState");
@@ -654,6 +664,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new DescribeMigrationTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMigrationTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMigrationTask");
@@ -752,6 +764,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(disassociateCreatedArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateCreatedArtifact");
@@ -830,6 +844,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(disassociateDiscoveredResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDiscoveredResource");
@@ -912,6 +928,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new ImportMigrationTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importMigrationTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportMigrationTask");
@@ -979,6 +997,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new ListApplicationStatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationStatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationStates");
@@ -1069,6 +1089,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new ListCreatedArtifactsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCreatedArtifactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCreatedArtifacts");
@@ -1140,6 +1162,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(listDiscoveredResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDiscoveredResources");
@@ -1233,6 +1257,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new ListMigrationTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMigrationTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMigrationTasks");
@@ -1300,6 +1326,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(listProgressUpdateStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProgressUpdateStreams");
@@ -1383,6 +1411,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new NotifyApplicationStateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(notifyApplicationStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "NotifyApplicationState");
@@ -1479,6 +1509,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(notifyMigrationTaskStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "NotifyMigrationTaskState");
@@ -1581,6 +1613,8 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                 request = new PutResourceAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourceAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Migration Hub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourceAttributes");
@@ -1677,6 +1711,11 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

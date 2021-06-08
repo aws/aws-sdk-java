@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public AssociateFileSystemResult associateFileSystem(AssociateFileSystemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AttachVolumeResult attachVolume(AttachVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +114,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public CreateStorediSCSIVolumeResult createStorediSCSIVolume(CreateStorediSCSIVolumeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTapePoolResult createTapePool(CreateTapePoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,6 +173,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DeleteTapePoolResult deleteTapePool(DeleteTapePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteVolumeResult deleteVolume(DeleteVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -178,6 +193,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DescribeBandwidthRateLimitScheduleResult describeBandwidthRateLimitSchedule(DescribeBandwidthRateLimitScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeCacheResult describeCache(DescribeCacheRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -189,6 +209,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public DescribeChapCredentialsResult describeChapCredentials(DescribeChapCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFileSystemAssociationsResult describeFileSystemAssociations(DescribeFileSystemAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -273,6 +298,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DisassociateFileSystemResult disassociateFileSystem(DisassociateFileSystemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public JoinDomainResult joinDomain(JoinDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -284,6 +314,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public ListFileSharesResult listFileShares(ListFileSharesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFileSystemAssociationsResult listFileSystemAssociations(ListFileSystemAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -310,6 +345,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     @Override
     public ListTagsForResourceResult listTagsForResource() {
         return listTagsForResource(new ListTagsForResourceRequest());
+    }
+
+    @Override
+    public ListTapePoolsResult listTapePools(ListTapePoolsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -403,7 +443,17 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public UpdateBandwidthRateLimitScheduleResult updateBandwidthRateLimitSchedule(UpdateBandwidthRateLimitScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateChapCredentialsResult updateChapCredentials(UpdateChapCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFileSystemAssociationResult updateFileSystemAssociation(UpdateFileSystemAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -429,6 +479,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public UpdateSMBFileShareResult updateSMBFileShare(UpdateSMBFileShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSMBFileShareVisibilityResult updateSMBFileShareVisibility(UpdateSMBFileShareVisibilityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

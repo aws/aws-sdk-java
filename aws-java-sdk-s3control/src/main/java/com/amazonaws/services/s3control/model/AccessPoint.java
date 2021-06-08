@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class AccessPoint implements Serializable, Cloneable {
      * <p>
      * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      */
     private VpcConfiguration vpcConfiguration;
     /**
@@ -54,6 +60,12 @@ public class AccessPoint implements Serializable, Cloneable {
      * </p>
      */
     private String bucket;
+    /**
+     * <p>
+     * The ARN for the access point.
+     * </p>
+     */
+    private String accessPointArn;
 
     /**
      * <p>
@@ -190,9 +202,19 @@ public class AccessPoint implements Serializable, Cloneable {
      * <p>
      * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      * 
      * @param vpcConfiguration
-     *        The virtual private cloud (VPC) configuration for this access point, if one exists.
+     *        The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
+     *        <p>
+     *        This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
+     *        AWS services.
+     *        </p>
      */
 
     public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
@@ -203,8 +225,18 @@ public class AccessPoint implements Serializable, Cloneable {
      * <p>
      * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      * 
-     * @return The virtual private cloud (VPC) configuration for this access point, if one exists.
+     * @return The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
+     *         <p>
+     *         This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
+     *         AWS services.
+     *         </p>
      */
 
     public VpcConfiguration getVpcConfiguration() {
@@ -215,9 +247,19 @@ public class AccessPoint implements Serializable, Cloneable {
      * <p>
      * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      * 
      * @param vpcConfiguration
-     *        The virtual private cloud (VPC) configuration for this access point, if one exists.
+     *        The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
+     *        <p>
+     *        This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
+     *        AWS services.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,6 +309,46 @@ public class AccessPoint implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN for the access point.
+     * </p>
+     * 
+     * @param accessPointArn
+     *        The ARN for the access point.
+     */
+
+    public void setAccessPointArn(String accessPointArn) {
+        this.accessPointArn = accessPointArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the access point.
+     * </p>
+     * 
+     * @return The ARN for the access point.
+     */
+
+    public String getAccessPointArn() {
+        return this.accessPointArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the access point.
+     * </p>
+     * 
+     * @param accessPointArn
+     *        The ARN for the access point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPoint withAccessPointArn(String accessPointArn) {
+        setAccessPointArn(accessPointArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -285,7 +367,9 @@ public class AccessPoint implements Serializable, Cloneable {
         if (getVpcConfiguration() != null)
             sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getBucket() != null)
-            sb.append("Bucket: ").append(getBucket());
+            sb.append("Bucket: ").append(getBucket()).append(",");
+        if (getAccessPointArn() != null)
+            sb.append("AccessPointArn: ").append(getAccessPointArn());
         sb.append("}");
         return sb.toString();
     }
@@ -316,6 +400,10 @@ public class AccessPoint implements Serializable, Cloneable {
             return false;
         if (other.getBucket() != null && other.getBucket().equals(this.getBucket()) == false)
             return false;
+        if (other.getAccessPointArn() == null ^ this.getAccessPointArn() == null)
+            return false;
+        if (other.getAccessPointArn() != null && other.getAccessPointArn().equals(this.getAccessPointArn()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +416,7 @@ public class AccessPoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkOrigin() == null) ? 0 : getNetworkOrigin().hashCode());
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode());
+        hashCode = prime * hashCode + ((getAccessPointArn() == null) ? 0 : getAccessPointArn().hashCode());
         return hashCode;
     }
 

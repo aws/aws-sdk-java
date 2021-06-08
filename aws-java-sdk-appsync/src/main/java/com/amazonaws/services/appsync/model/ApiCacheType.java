@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,15 @@ public enum ApiCacheType {
     R4_XLARGE("R4_XLARGE"),
     R4_2XLARGE("R4_2XLARGE"),
     R4_4XLARGE("R4_4XLARGE"),
-    R4_8XLARGE("R4_8XLARGE");
+    R4_8XLARGE("R4_8XLARGE"),
+    SMALL("SMALL"),
+    MEDIUM("MEDIUM"),
+    LARGE("LARGE"),
+    XLARGE("XLARGE"),
+    LARGE_2X("LARGE_2X"),
+    LARGE_4X("LARGE_4X"),
+    LARGE_8X("LARGE_8X"),
+    LARGE_12X("LARGE_12X");
 
     private String value;
 

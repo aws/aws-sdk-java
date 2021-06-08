@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,7 +106,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     private String vPCEndpoint;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.
      * </p>
      */
     private String cloudWatchLogGroupARN;
@@ -116,6 +116,27 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String hostEnvironment;
+    /**
+     * <p>
+     * The type of endpoint for your gateway.
+     * </p>
+     * <p>
+     * Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     * </p>
+     */
+    private String endpointType;
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features.
+     * </p>
+     */
+    private String softwareUpdatesEndDate;
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features and bug fixes.
+     * </p>
+     */
+    private String deprecationDate;
 
     /**
      * @param gatewayARN
@@ -725,11 +746,11 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.
      * </p>
      * 
      * @param cloudWatchLogGroupARN
-     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the
+     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the
      *        gateway.
      */
 
@@ -739,10 +760,10 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the
+     * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the
      *         gateway.
      */
 
@@ -752,11 +773,11 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.
      * </p>
      * 
      * @param cloudWatchLogGroupARN
-     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the
+     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the
      *        gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -826,6 +847,141 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The type of endpoint for your gateway.
+     * </p>
+     * <p>
+     * Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     * </p>
+     * 
+     * @param endpointType
+     *        The type of endpoint for your gateway.</p>
+     *        <p>
+     *        Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     */
+
+    public void setEndpointType(String endpointType) {
+        this.endpointType = endpointType;
+    }
+
+    /**
+     * <p>
+     * The type of endpoint for your gateway.
+     * </p>
+     * <p>
+     * Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     * </p>
+     * 
+     * @return The type of endpoint for your gateway.</p>
+     *         <p>
+     *         Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     */
+
+    public String getEndpointType() {
+        return this.endpointType;
+    }
+
+    /**
+     * <p>
+     * The type of endpoint for your gateway.
+     * </p>
+     * <p>
+     * Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     * </p>
+     * 
+     * @param endpointType
+     *        The type of endpoint for your gateway.</p>
+     *        <p>
+     *        Valid Values: <code>STANDARD</code> | <code>FIPS</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withEndpointType(String endpointType) {
+        setEndpointType(endpointType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features.
+     * </p>
+     * 
+     * @param softwareUpdatesEndDate
+     *        Date after which this gateway will not receive software updates for new features.
+     */
+
+    public void setSoftwareUpdatesEndDate(String softwareUpdatesEndDate) {
+        this.softwareUpdatesEndDate = softwareUpdatesEndDate;
+    }
+
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features.
+     * </p>
+     * 
+     * @return Date after which this gateway will not receive software updates for new features.
+     */
+
+    public String getSoftwareUpdatesEndDate() {
+        return this.softwareUpdatesEndDate;
+    }
+
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features.
+     * </p>
+     * 
+     * @param softwareUpdatesEndDate
+     *        Date after which this gateway will not receive software updates for new features.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withSoftwareUpdatesEndDate(String softwareUpdatesEndDate) {
+        setSoftwareUpdatesEndDate(softwareUpdatesEndDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features and bug fixes.
+     * </p>
+     * 
+     * @param deprecationDate
+     *        Date after which this gateway will not receive software updates for new features and bug fixes.
+     */
+
+    public void setDeprecationDate(String deprecationDate) {
+        this.deprecationDate = deprecationDate;
+    }
+
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features and bug fixes.
+     * </p>
+     * 
+     * @return Date after which this gateway will not receive software updates for new features and bug fixes.
+     */
+
+    public String getDeprecationDate() {
+        return this.deprecationDate;
+    }
+
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features and bug fixes.
+     * </p>
+     * 
+     * @param deprecationDate
+     *        Date after which this gateway will not receive software updates for new features and bug fixes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withDeprecationDate(String deprecationDate) {
+        setDeprecationDate(deprecationDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -866,7 +1022,13 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getCloudWatchLogGroupARN() != null)
             sb.append("CloudWatchLogGroupARN: ").append(getCloudWatchLogGroupARN()).append(",");
         if (getHostEnvironment() != null)
-            sb.append("HostEnvironment: ").append(getHostEnvironment());
+            sb.append("HostEnvironment: ").append(getHostEnvironment()).append(",");
+        if (getEndpointType() != null)
+            sb.append("EndpointType: ").append(getEndpointType()).append(",");
+        if (getSoftwareUpdatesEndDate() != null)
+            sb.append("SoftwareUpdatesEndDate: ").append(getSoftwareUpdatesEndDate()).append(",");
+        if (getDeprecationDate() != null)
+            sb.append("DeprecationDate: ").append(getDeprecationDate());
         sb.append("}");
         return sb.toString();
     }
@@ -941,6 +1103,18 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getHostEnvironment() != null && other.getHostEnvironment().equals(this.getHostEnvironment()) == false)
             return false;
+        if (other.getEndpointType() == null ^ this.getEndpointType() == null)
+            return false;
+        if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
+            return false;
+        if (other.getSoftwareUpdatesEndDate() == null ^ this.getSoftwareUpdatesEndDate() == null)
+            return false;
+        if (other.getSoftwareUpdatesEndDate() != null && other.getSoftwareUpdatesEndDate().equals(this.getSoftwareUpdatesEndDate()) == false)
+            return false;
+        if (other.getDeprecationDate() == null ^ this.getDeprecationDate() == null)
+            return false;
+        if (other.getDeprecationDate() != null && other.getDeprecationDate().equals(this.getDeprecationDate()) == false)
+            return false;
         return true;
     }
 
@@ -964,6 +1138,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getVPCEndpoint() == null) ? 0 : getVPCEndpoint().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLogGroupARN() == null) ? 0 : getCloudWatchLogGroupARN().hashCode());
         hashCode = prime * hashCode + ((getHostEnvironment() == null) ? 0 : getHostEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getSoftwareUpdatesEndDate() == null) ? 0 : getSoftwareUpdatesEndDate().hashCode());
+        hashCode = prime * hashCode + ((getDeprecationDate() == null) ? 0 : getDeprecationDate().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,9 @@ public class UpdateRecoveryPointLifecycleResult extends com.amazonaws.AmazonWebS
      * Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
+     * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
      * </p>
      */
     private Lifecycle lifecycle;
@@ -159,6 +162,9 @@ public class UpdateRecoveryPointLifecycleResult extends com.amazonaws.AmazonWebS
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -168,6 +174,9 @@ public class UpdateRecoveryPointLifecycleResult extends com.amazonaws.AmazonWebS
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public void setLifecycle(Lifecycle lifecycle) {
@@ -184,6 +193,9 @@ public class UpdateRecoveryPointLifecycleResult extends com.amazonaws.AmazonWebS
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @return The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
      *         Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
@@ -192,6 +204,9 @@ public class UpdateRecoveryPointLifecycleResult extends com.amazonaws.AmazonWebS
      *         the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *         The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *         cold.
+     *         </p>
+     *         <p>
+     *         Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public Lifecycle getLifecycle() {
@@ -208,6 +223,9 @@ public class UpdateRecoveryPointLifecycleResult extends com.amazonaws.AmazonWebS
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -217,6 +235,9 @@ public class UpdateRecoveryPointLifecycleResult extends com.amazonaws.AmazonWebS
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

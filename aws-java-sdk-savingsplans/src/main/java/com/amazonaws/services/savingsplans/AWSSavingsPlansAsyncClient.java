@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,6 +94,39 @@ public class AWSSavingsPlansAsyncClient extends AWSSavingsPlansClient implements
 
                 try {
                     result = executeCreateSavingsPlan(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQueuedSavingsPlanResult> deleteQueuedSavingsPlanAsync(DeleteQueuedSavingsPlanRequest request) {
+
+        return deleteQueuedSavingsPlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQueuedSavingsPlanResult> deleteQueuedSavingsPlanAsync(final DeleteQueuedSavingsPlanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteQueuedSavingsPlanRequest, DeleteQueuedSavingsPlanResult> asyncHandler) {
+        final DeleteQueuedSavingsPlanRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteQueuedSavingsPlanResult>() {
+            @Override
+            public DeleteQueuedSavingsPlanResult call() throws Exception {
+                DeleteQueuedSavingsPlanResult result = null;
+
+                try {
+                    result = executeDeleteQueuedSavingsPlan(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

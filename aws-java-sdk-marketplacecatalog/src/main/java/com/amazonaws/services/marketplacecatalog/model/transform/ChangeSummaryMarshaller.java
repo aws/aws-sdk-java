@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class ChangeSummaryMarshaller {
             .marshallLocationName("Details").build();
     private static final MarshallingInfo<List> ERRORDETAILLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorDetailList").build();
+    private static final MarshallingInfo<String> CHANGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeName").build();
 
     private static final ChangeSummaryMarshaller instance = new ChangeSummaryMarshaller();
 
@@ -57,6 +59,7 @@ public class ChangeSummaryMarshaller {
             protocolMarshaller.marshall(changeSummary.getEntity(), ENTITY_BINDING);
             protocolMarshaller.marshall(changeSummary.getDetails(), DETAILS_BINDING);
             protocolMarshaller.marshall(changeSummary.getErrorDetailList(), ERRORDETAILLIST_BINDING);
+            protocolMarshaller.marshall(changeSummary.getChangeName(), CHANGENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

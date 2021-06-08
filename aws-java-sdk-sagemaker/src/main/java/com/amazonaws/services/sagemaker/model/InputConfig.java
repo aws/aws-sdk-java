@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,9 +130,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
-     * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
-     * different.
+     * <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
+     * order using a dictionary format for your trained model. The dictionary formats required for the console and CLI
+     * are different.
      * </p>
      * <ul>
      * <li>
@@ -231,6 +231,171 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to
+     * static input shapes, CoreML converter supports Flexible input shapes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific
+     * interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate
+     * all supported input shapes, for example:
+     * <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range
+     * Dimension and Enumerated Shapes. For example
+     * <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     * converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image.
+     * Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
+     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Tensor type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Tensor type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     * >OutputConfig:TargetDevice</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code>
+     * and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def
+     * key. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     * <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private String dataInputConfig;
     /**
@@ -239,6 +404,17 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String framework;
+    /**
+     * <p>
+     * Specifies the framework version to use.
+     * </p>
+     * <p>
+     * This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>, <code>ml_m4</code>,
+     * <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     * </p>
+     */
+    private String frameworkVersion;
 
     /**
      * <p>
@@ -380,9 +556,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
-     * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
-     * different.
+     * <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
+     * order using a dictionary format for your trained model. The dictionary formats required for the console and CLI
+     * are different.
      * </p>
      * <ul>
      * <li>
@@ -481,6 +657,171 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to
+     * static input shapes, CoreML converter supports Flexible input shapes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific
+     * interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate
+     * all supported input shapes, for example:
+     * <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range
+     * Dimension and Enumerated Shapes. For example
+     * <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     * converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image.
+     * Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
+     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Tensor type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Tensor type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     * >OutputConfig:TargetDevice</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code>
+     * and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def
+     * key. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     * <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param dataInputConfig
      *        Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
@@ -575,9 +916,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
-     *        order using a dictionary format for your trained model. The dictionary formats required for the console
-     *        and CLI are different.
+     *        <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data
+     *        inputs in order using a dictionary format for your trained model. The dictionary formats required for the
+     *        console and CLI are different.
      *        </p>
      *        <ul>
      *        <li>
@@ -674,6 +1015,174 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>XGBOOST</code>: input data name and shape are not needed.
      *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     *        <a>OutputConfig$TargetDevice</a> (ML Model format):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In
+     *        addition to static input shapes, CoreML converter supports Flexible input shapes:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some
+     *        specific interval in that dimension, for example:
+     *        <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can
+     *        enumerate all supported input shapes, for example:
+     *        <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both
+     *        Range Dimension and Enumerated Shapes. For example
+     *        <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     *        converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be
+     *        Image. Image input type requires additional input parameters such as <code>bias</code> and
+     *        <code>scale</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        CoreML <code>ClassifierConfig</code> parameters can be specified using
+     *        <a>OutputConfig$CompilerOptions</a>. CoreML converter supports Tensorflow and PyTorch models. CoreML
+     *        conversion examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Tensor type input:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tensor type input without input name (PyTorch):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Image type input:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Image type input without input name (PyTorch):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     *        <code>ml_eia2</code> <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     *        >OutputConfig:TargetDevice</a>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For TensorFlow models saved in the SavedModel format, specify the input names from
+     *        <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>. Specify the
+     *        <code>signature_def_key</code> in <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *        > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature
+     *        def key. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     *        <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *        > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      */
 
@@ -775,9 +1284,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
-     * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
-     * different.
+     * <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
+     * order using a dictionary format for your trained model. The dictionary formats required for the console and CLI
+     * are different.
      * </p>
      * <ul>
      * <li>
@@ -876,6 +1385,171 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to
+     * static input shapes, CoreML converter supports Flexible input shapes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific
+     * interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate
+     * all supported input shapes, for example:
+     * <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range
+     * Dimension and Enumerated Shapes. For example
+     * <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     * converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image.
+     * Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
+     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Tensor type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Tensor type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     * >OutputConfig:TargetDevice</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code>
+     * and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def
+     * key. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     * <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @return Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
      *         form. The data inputs are <a>InputConfig$Framework</a> specific. </p>
@@ -969,9 +1643,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
-     *         order using a dictionary format for your trained model. The dictionary formats required for the console
-     *         and CLI are different.
+     *         <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data
+     *         inputs in order using a dictionary format for your trained model. The dictionary formats required for the
+     *         console and CLI are different.
      *         </p>
      *         <ul>
      *         <li>
@@ -1068,6 +1742,174 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>XGBOOST</code>: input data name and shape are not needed.
      *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     *         <a>OutputConfig$TargetDevice</a> (ML Model format):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In
+     *         addition to static input shapes, CoreML converter supports Flexible input shapes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some
+     *         specific interval in that dimension, for example:
+     *         <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can
+     *         enumerate all supported input shapes, for example:
+     *         <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both
+     *         Range Dimension and Enumerated Shapes. For example
+     *         <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default,
+     *         the converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to
+     *         be Image. Image input type requires additional input parameters such as <code>bias</code> and
+     *         <code>scale</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         CoreML <code>ClassifierConfig</code> parameters can be specified using
+     *         <a>OutputConfig$CompilerOptions</a>. CoreML converter supports Tensorflow and PyTorch models. CoreML
+     *         conversion examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Tensor type input:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tensor type input without input name (PyTorch):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Image type input:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Image type input without input name (PyTorch):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     *         <code>ml_eia2</code> <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     *         >OutputConfig:TargetDevice</a>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For TensorFlow models saved in the SavedModel format, specify the input names from
+     *         <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>. Specify the
+     *         <code>signature_def_key</code> in <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *         > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature
+     *         def key. For example:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     *         <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *         > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      */
 
@@ -1169,9 +2011,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in order
-     * using a dictionary format for your trained model. The dictionary formats required for the console and CLI are
-     * different.
+     * <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
+     * order using a dictionary format for your trained model. The dictionary formats required for the console and CLI
+     * are different.
      * </p>
      * <ul>
      * <li>
@@ -1270,6 +2112,171 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     * <a>OutputConfig$TargetDevice</a> (ML Model format):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to
+     * static input shapes, CoreML converter supports Flexible input shapes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some specific
+     * interval in that dimension, for example: <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can enumerate
+     * all supported input shapes, for example:
+     * <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both Range
+     * Dimension and Enumerated Shapes. For example
+     * <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     * converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be Image.
+     * Image input type requires additional input parameters such as <code>bias</code> and <code>scale</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
+     * CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Tensor type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Tensor type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Image type input without input name (PyTorch):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     * >OutputConfig:TargetDevice</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code>
+     * and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def
+     * key. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     * <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param dataInputConfig
      *        Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
@@ -1364,9 +2371,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the expected data inputs in
-     *        order using a dictionary format for your trained model. The dictionary formats required for the console
-     *        and CLI are different.
+     *        <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format) of the expected data
+     *        inputs in order using a dictionary format for your trained model. The dictionary formats required for the
+     *        console and CLI are different.
      *        </p>
      *        <ul>
      *        <li>
@@ -1464,6 +2471,174 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        <code>XGBOOST</code>: input data name and shape are not needed.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
+     *        <a>OutputConfig$TargetDevice</a> (ML Model format):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In
+     *        addition to static input shapes, CoreML converter supports Flexible input shapes:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Range Dimension. You can use the Range Dimension feature if you know the input shape will be within some
+     *        specific interval in that dimension, for example:
+     *        <code>{"input_1": {"shape": ["1..10", 224, 224, 3]}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Enumerated shapes. Sometimes, the models are trained to work only on a select set of inputs. You can
+     *        enumerate all supported input shapes, for example:
+     *        <code>{"input_1": {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>default_shape</code>: Default input shape. You can set a default shape during conversion for both
+     *        Range Dimension and Enumerated Shapes. For example
+     *        <code>{"input_1": {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>. By default, the
+     *        converter generates an ML Model with inputs of type Tensor (MultiArray). User can set input type to be
+     *        Image. Image input type requires additional input parameters such as <code>bias</code> and
+     *        <code>scale</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        CoreML <code>ClassifierConfig</code> parameters can be specified using
+     *        <a>OutputConfig$CompilerOptions</a>. CoreML converter supports Tensorflow and PyTorch models. CoreML
+     *        conversion examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Tensor type input:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3]}}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tensor type input without input name (PyTorch):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Image type input:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Image type input without input name (PyTorch):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     *        <code>ml_eia2</code> <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     *        >OutputConfig:TargetDevice</a>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For TensorFlow models saved in the SavedModel format, specify the input names from
+     *        <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>. Specify the
+     *        <code>signature_def_key</code> in <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *        > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature
+     *        def key. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     *        <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *        > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1532,6 +2707,73 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the framework version to use.
+     * </p>
+     * <p>
+     * This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>, <code>ml_m4</code>,
+     * <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     * </p>
+     * 
+     * @param frameworkVersion
+     *        Specifies the framework version to use.</p>
+     *        <p>
+     *        This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     *        <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>,
+     *        <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     */
+
+    public void setFrameworkVersion(String frameworkVersion) {
+        this.frameworkVersion = frameworkVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies the framework version to use.
+     * </p>
+     * <p>
+     * This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>, <code>ml_m4</code>,
+     * <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     * </p>
+     * 
+     * @return Specifies the framework version to use.</p>
+     *         <p>
+     *         This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     *         <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>,
+     *         <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     */
+
+    public String getFrameworkVersion() {
+        return this.frameworkVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies the framework version to use.
+     * </p>
+     * <p>
+     * This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     * <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>, <code>ml_m4</code>,
+     * <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     * </p>
+     * 
+     * @param frameworkVersion
+     *        Specifies the framework version to use.</p>
+     *        <p>
+     *        This API field is only supported for PyTorch framework versions <code>1.4</code>, <code>1.5</code>, and
+     *        <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>, <code>ml_c5</code>,
+     *        <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>, and <code>ml_g4dn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputConfig withFrameworkVersion(String frameworkVersion) {
+        setFrameworkVersion(frameworkVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1548,7 +2790,9 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
         if (getDataInputConfig() != null)
             sb.append("DataInputConfig: ").append(getDataInputConfig()).append(",");
         if (getFramework() != null)
-            sb.append("Framework: ").append(getFramework());
+            sb.append("Framework: ").append(getFramework()).append(",");
+        if (getFrameworkVersion() != null)
+            sb.append("FrameworkVersion: ").append(getFrameworkVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -1575,6 +2819,10 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFramework() != null && other.getFramework().equals(this.getFramework()) == false)
             return false;
+        if (other.getFrameworkVersion() == null ^ this.getFrameworkVersion() == null)
+            return false;
+        if (other.getFrameworkVersion() != null && other.getFrameworkVersion().equals(this.getFrameworkVersion()) == false)
+            return false;
         return true;
     }
 
@@ -1586,6 +2834,7 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getS3Uri() == null) ? 0 : getS3Uri().hashCode());
         hashCode = prime * hashCode + ((getDataInputConfig() == null) ? 0 : getDataInputConfig().hashCode());
         hashCode = prime * hashCode + ((getFramework() == null) ? 0 : getFramework().hashCode());
+        hashCode = prime * hashCode + ((getFrameworkVersion() == null) ? 0 : getFrameworkVersion().hashCode());
         return hashCode;
     }
 

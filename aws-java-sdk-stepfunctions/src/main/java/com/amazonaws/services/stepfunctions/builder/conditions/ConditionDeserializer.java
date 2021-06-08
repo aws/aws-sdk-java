@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,6 +37,16 @@ public class ConditionDeserializer {
                 return deserializeBinaryCondition(StringLessThanCondition.builder(), node);
             } else if (node.has(PropertyNames.STRING_LESS_THAN_EQUALS)) {
                 return deserializeBinaryCondition(StringLessThanOrEqualCondition.builder(), node);
+            } else if (node.has(PropertyNames.STRING_EQUALS_PATH)) {
+                return deserializeBinaryCondition(StringEqualsPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.STRING_GREATER_THAN_PATH)) {
+                return deserializeBinaryCondition(StringGreaterThanPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.STRING_GREATER_THAN_EQUALS_PATH)) {
+                return deserializeBinaryCondition(StringGreaterThanOrEqualPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.STRING_LESS_THAN_PATH)) {
+                return deserializeBinaryCondition(StringLessThanPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.STRING_LESS_THAN_EQUALS_PATH)) {
+                return deserializeBinaryCondition(StringLessThanOrEqualPathCondition.builder(), node);
             } else if (node.has(PropertyNames.TIMESTAMP_EQUALS)) {
                 return deserializeBinaryCondition(TimestampEqualsCondition.builder(), node);
             } else if (node.has(PropertyNames.TIMESTAMP_GREATER_THAN)) {
@@ -47,6 +57,16 @@ public class ConditionDeserializer {
                 return deserializeBinaryCondition(TimestampLessThanCondition.builder(), node);
             } else if (node.has(PropertyNames.TIMESTAMP_LESS_THAN_EQUALS)) {
                 return deserializeBinaryCondition(TimestampLessThanOrEqualCondition.builder(), node);
+            } else if (node.has(PropertyNames.TIMESTAMP_EQUALS_PATH)) {
+                return deserializeBinaryCondition(TimestampEqualsPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.TIMESTAMP_GREATER_THAN_PATH)) {
+                return deserializeBinaryCondition(TimestampGreaterThanPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.TIMESTAMP_GREATER_THAN_EQUALS_PATH)) {
+                return deserializeBinaryCondition(TimestampGreaterThanOrEqualPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.TIMESTAMP_LESS_THAN_PATH)) {
+                return deserializeBinaryCondition(TimestampLessThanPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.TIMESTAMP_LESS_THAN_EQUALS_PATH)) {
+                return deserializeBinaryCondition(TimestampLessThanOrEqualPathCondition.builder(), node);
             } else if (node.has(PropertyNames.NUMERIC_EQUALS)) {
                 return deserializeBinaryCondition(NumericEqualsCondition.builder(), node);
             } else if (node.has(PropertyNames.NUMERIC_GREATER_THAN)) {
@@ -57,8 +77,34 @@ public class ConditionDeserializer {
                 return deserializeBinaryCondition(NumericLessThanCondition.builder(), node);
             } else if (node.has(PropertyNames.NUMERIC_LESS_THAN_EQUALS)) {
                 return deserializeBinaryCondition(NumericLessThanOrEqualCondition.builder(), node);
+            } else if (node.has(PropertyNames.NUMERIC_EQUALS_PATH)) {
+                return deserializeBinaryCondition(NumericEqualsPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.NUMERIC_GREATER_THAN_PATH)) {
+                return deserializeBinaryCondition(NumericGreaterThanPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.NUMERIC_GREATER_THAN_EQUALS_PATH)) {
+                return deserializeBinaryCondition(NumericGreaterThanOrEqualPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.NUMERIC_LESS_THAN_PATH)) {
+                return deserializeBinaryCondition(NumericLessThanPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.NUMERIC_LESS_THAN_EQUALS_PATH)) {
+                return deserializeBinaryCondition(NumericLessThanOrEqualPathCondition.builder(), node);
             } else if (node.has(PropertyNames.BOOLEAN_EQUALS)) {
                 return deserializeBinaryCondition(BooleanEqualsCondition.builder(), node);
+            } else if (node.has(PropertyNames.BOOLEAN_EQUALS_PATH)) {
+                return deserializeBinaryCondition(BooleanEqualsPathCondition.builder(), node);
+            } else if (node.has(PropertyNames.IS_NULL)) {
+                return deserializeBinaryCondition(IsNullCondition.builder(), node);
+            } else if (node.has(PropertyNames.IS_PRESENT)) {
+                return deserializeBinaryCondition(IsPresentCondition.builder(), node);
+            } else if (node.has(PropertyNames.IS_STRING)) {
+                return deserializeBinaryCondition(IsStringCondition.builder(), node);
+            } else if (node.has(PropertyNames.IS_NUMERIC)) {
+                return deserializeBinaryCondition(IsNumericCondition.builder(), node);
+            } else if (node.has(PropertyNames.IS_TIMESTAMP)) {
+                return deserializeBinaryCondition(IsTimestampCondition.builder(), node);
+            } else if (node.has(PropertyNames.IS_BOOLEAN)) {
+                return deserializeBinaryCondition(IsBooleanCondition.builder(), node);
+            } else if (node.has(PropertyNames.STRING_MATCHES)) {
+                return deserializeBinaryCondition(StringMatchesCondition.builder(), node);
             }
         } else if (node.has(PropertyNames.AND)) {
             AndCondition.Builder builder = AndCondition.builder();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The app's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the app.
      * </p>
      */
     private String appArn;
@@ -92,11 +92,11 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The app's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the app.
      * </p>
      * 
      * @param appArn
-     *        The app's Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the app.
      */
 
     public void setAppArn(String appArn) {
@@ -105,10 +105,10 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The app's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the app.
      * </p>
      * 
-     * @return The app's Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) of the app.
      */
 
     public String getAppArn() {
@@ -117,11 +117,11 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The app's Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the app.
      * </p>
      * 
      * @param appArn
-     *        The app's Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

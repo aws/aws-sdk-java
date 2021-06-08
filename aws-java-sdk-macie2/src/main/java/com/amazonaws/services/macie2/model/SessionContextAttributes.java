@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class SessionContextAttributes implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date and time, in ISO 8601 format, when the credentials were issued.
+     * The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      * </p>
      */
     private java.util.Date creationDate;
@@ -43,11 +43,11 @@ public class SessionContextAttributes implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date and time, in ISO 8601 format, when the credentials were issued.
+     * The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      * </p>
      * 
      * @param creationDate
-     *        The date and time, in ISO 8601 format, when the credentials were issued.
+     *        The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -56,10 +56,10 @@ public class SessionContextAttributes implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date and time, in ISO 8601 format, when the credentials were issued.
+     * The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      * </p>
      * 
-     * @return The date and time, in ISO 8601 format, when the credentials were issued.
+     * @return The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      */
 
     public java.util.Date getCreationDate() {
@@ -68,11 +68,11 @@ public class SessionContextAttributes implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The date and time, in ISO 8601 format, when the credentials were issued.
+     * The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      * </p>
      * 
      * @param creationDate
-     *        The date and time, in ISO 8601 format, when the credentials were issued.
+     *        The date and time, in UTC and ISO 8601 format, when the credentials were issued.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,25 +37,28 @@ public class PasswordPolicy implements Serializable, Cloneable {
     private Integer minimumPasswordLength;
     /**
      * <p>
-     * Specifies whether to require symbols for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one of the following symbols:
+     * </p>
+     * <p>
+     * ! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '
      * </p>
      */
     private Boolean requireSymbols;
     /**
      * <p>
-     * Specifies whether to require numbers for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).
      * </p>
      */
     private Boolean requireNumbers;
     /**
      * <p>
-     * Specifies whether to require uppercase characters for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).
      * </p>
      */
     private Boolean requireUppercaseCharacters;
     /**
      * <p>
-     * Specifies whether to require lowercase characters for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one lowercase character (a to z).
      * </p>
      */
     private Boolean requireLowercaseCharacters;
@@ -133,11 +136,16 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require symbols for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one of the following symbols:
+     * </p>
+     * <p>
+     * ! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '
      * </p>
      * 
      * @param requireSymbols
-     *        Specifies whether to require symbols for IAM user passwords.
+     *        Specifies whether IAM user passwords must contain at least one of the following symbols:</p>
+     *        <p>
+     *        ! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '
      */
 
     public void setRequireSymbols(Boolean requireSymbols) {
@@ -146,10 +154,15 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require symbols for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one of the following symbols:
+     * </p>
+     * <p>
+     * ! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '
      * </p>
      * 
-     * @return Specifies whether to require symbols for IAM user passwords.
+     * @return Specifies whether IAM user passwords must contain at least one of the following symbols:</p>
+     *         <p>
+     *         ! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '
      */
 
     public Boolean getRequireSymbols() {
@@ -158,11 +171,16 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require symbols for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one of the following symbols:
+     * </p>
+     * <p>
+     * ! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '
      * </p>
      * 
      * @param requireSymbols
-     *        Specifies whether to require symbols for IAM user passwords.
+     *        Specifies whether IAM user passwords must contain at least one of the following symbols:</p>
+     *        <p>
+     *        ! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,10 +191,15 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require symbols for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one of the following symbols:
+     * </p>
+     * <p>
+     * ! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '
      * </p>
      * 
-     * @return Specifies whether to require symbols for IAM user passwords.
+     * @return Specifies whether IAM user passwords must contain at least one of the following symbols:</p>
+     *         <p>
+     *         ! @ # $ % ^ &amp; * ( ) _ + - = [ ] { } | '
      */
 
     public Boolean isRequireSymbols() {
@@ -185,11 +208,11 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require numbers for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).
      * </p>
      * 
      * @param requireNumbers
-     *        Specifies whether to require numbers for IAM user passwords.
+     *        Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).
      */
 
     public void setRequireNumbers(Boolean requireNumbers) {
@@ -198,10 +221,10 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require numbers for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).
      * </p>
      * 
-     * @return Specifies whether to require numbers for IAM user passwords.
+     * @return Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).
      */
 
     public Boolean getRequireNumbers() {
@@ -210,11 +233,11 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require numbers for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).
      * </p>
      * 
      * @param requireNumbers
-     *        Specifies whether to require numbers for IAM user passwords.
+     *        Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,10 +248,10 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require numbers for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).
      * </p>
      * 
-     * @return Specifies whether to require numbers for IAM user passwords.
+     * @return Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).
      */
 
     public Boolean isRequireNumbers() {
@@ -237,11 +260,11 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require uppercase characters for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).
      * </p>
      * 
      * @param requireUppercaseCharacters
-     *        Specifies whether to require uppercase characters for IAM user passwords.
+     *        Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).
      */
 
     public void setRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
@@ -250,10 +273,10 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require uppercase characters for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).
      * </p>
      * 
-     * @return Specifies whether to require uppercase characters for IAM user passwords.
+     * @return Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).
      */
 
     public Boolean getRequireUppercaseCharacters() {
@@ -262,11 +285,11 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require uppercase characters for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).
      * </p>
      * 
      * @param requireUppercaseCharacters
-     *        Specifies whether to require uppercase characters for IAM user passwords.
+     *        Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,10 +300,10 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require uppercase characters for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).
      * </p>
      * 
-     * @return Specifies whether to require uppercase characters for IAM user passwords.
+     * @return Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).
      */
 
     public Boolean isRequireUppercaseCharacters() {
@@ -289,11 +312,11 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require lowercase characters for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one lowercase character (a to z).
      * </p>
      * 
      * @param requireLowercaseCharacters
-     *        Specifies whether to require lowercase characters for IAM user passwords.
+     *        Specifies whether IAM user passwords must contain at least one lowercase character (a to z).
      */
 
     public void setRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
@@ -302,10 +325,10 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require lowercase characters for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one lowercase character (a to z).
      * </p>
      * 
-     * @return Specifies whether to require lowercase characters for IAM user passwords.
+     * @return Specifies whether IAM user passwords must contain at least one lowercase character (a to z).
      */
 
     public Boolean getRequireLowercaseCharacters() {
@@ -314,11 +337,11 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require lowercase characters for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one lowercase character (a to z).
      * </p>
      * 
      * @param requireLowercaseCharacters
-     *        Specifies whether to require lowercase characters for IAM user passwords.
+     *        Specifies whether IAM user passwords must contain at least one lowercase character (a to z).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,10 +352,10 @@ public class PasswordPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to require lowercase characters for IAM user passwords.
+     * Specifies whether IAM user passwords must contain at least one lowercase character (a to z).
      * </p>
      * 
-     * @return Specifies whether to require lowercase characters for IAM user passwords.
+     * @return Specifies whether IAM user passwords must contain at least one lowercase character (a to z).
      */
 
     public Boolean isRequireLowercaseCharacters() {

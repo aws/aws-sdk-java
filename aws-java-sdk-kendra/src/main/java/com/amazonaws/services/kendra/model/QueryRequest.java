@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The unique identifier of the index to search. The identifier is returned in the response from the operation.
+     * The unique identifier of the index to search. The identifier is returned in the response from the
+     * <code>CreateIndex</code> operation.
      * </p>
      */
     private String indexId;
@@ -70,6 +71,24 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     private String queryResultTypeFilter;
     /**
      * <p>
+     * Overrides relevance tuning configurations of fields or attributes set at the index level.
+     * </p>
+     * <p>
+     * If you use this API to override the relevance tuning configured at the index level, but there is no relevance
+     * tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured at the index level, but you do not use this API to override any relevance
+     * tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured for fields at the index level, but you use this API to override only some
+     * of these fields, then for the fields you did not override, the importance is set to 1.
+     * </p>
+     */
+    private java.util.List<DocumentRelevanceConfiguration> documentRelevanceOverrideConfigurations;
+    /**
+     * <p>
      * Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra
      * returns the first page of results. Use this parameter to get result pages after the first one.
      * </p>
@@ -82,15 +101,42 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      */
     private Integer pageSize;
+    /**
+     * <p>
+     * Provides information that determines how the results of the query are sorted. You can set the field that Amazon
+     * Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending
+     * order. In the case of ties in sorting the results, the results are sorted by relevance.
+     * </p>
+     * <p>
+     * If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines
+     * for the result.
+     * </p>
+     */
+    private SortingConfiguration sortingConfiguration;
+    /**
+     * <p>
+     * The user context token.
+     * </p>
+     */
+    private UserContext userContext;
+    /**
+     * <p>
+     * Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a
+     * GUID. Don't use personally identifiable information, such as the user's email address, as the
+     * <code>VisitorId</code>.
+     * </p>
+     */
+    private String visitorId;
 
     /**
      * <p>
-     * The unique identifier of the index to search. The identifier is returned in the response from the operation.
+     * The unique identifier of the index to search. The identifier is returned in the response from the
+     * <code>CreateIndex</code> operation.
      * </p>
      * 
      * @param indexId
      *        The unique identifier of the index to search. The identifier is returned in the response from the
-     *        operation.
+     *        <code>CreateIndex</code> operation.
      */
 
     public void setIndexId(String indexId) {
@@ -99,11 +145,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The unique identifier of the index to search. The identifier is returned in the response from the operation.
+     * The unique identifier of the index to search. The identifier is returned in the response from the
+     * <code>CreateIndex</code> operation.
      * </p>
      * 
      * @return The unique identifier of the index to search. The identifier is returned in the response from the
-     *         operation.
+     *         <code>CreateIndex</code> operation.
      */
 
     public String getIndexId() {
@@ -112,12 +159,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The unique identifier of the index to search. The identifier is returned in the response from the operation.
+     * The unique identifier of the index to search. The identifier is returned in the response from the
+     * <code>CreateIndex</code> operation.
      * </p>
      * 
      * @param indexId
      *        The unique identifier of the index to search. The identifier is returned in the response from the
-     *        operation.
+     *        <code>CreateIndex</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,6 +504,173 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
+     * Overrides relevance tuning configurations of fields or attributes set at the index level.
+     * </p>
+     * <p>
+     * If you use this API to override the relevance tuning configured at the index level, but there is no relevance
+     * tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured at the index level, but you do not use this API to override any relevance
+     * tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured for fields at the index level, but you use this API to override only some
+     * of these fields, then for the fields you did not override, the importance is set to 1.
+     * </p>
+     * 
+     * @return Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
+     *         <p>
+     *         If you use this API to override the relevance tuning configured at the index level, but there is no
+     *         relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     *         </p>
+     *         <p>
+     *         If there is relevance tuning configured at the index level, but you do not use this API to override any
+     *         relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the
+     *         index level.
+     *         </p>
+     *         <p>
+     *         If there is relevance tuning configured for fields at the index level, but you use this API to override
+     *         only some of these fields, then for the fields you did not override, the importance is set to 1.
+     */
+
+    public java.util.List<DocumentRelevanceConfiguration> getDocumentRelevanceOverrideConfigurations() {
+        return documentRelevanceOverrideConfigurations;
+    }
+
+    /**
+     * <p>
+     * Overrides relevance tuning configurations of fields or attributes set at the index level.
+     * </p>
+     * <p>
+     * If you use this API to override the relevance tuning configured at the index level, but there is no relevance
+     * tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured at the index level, but you do not use this API to override any relevance
+     * tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured for fields at the index level, but you use this API to override only some
+     * of these fields, then for the fields you did not override, the importance is set to 1.
+     * </p>
+     * 
+     * @param documentRelevanceOverrideConfigurations
+     *        Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
+     *        <p>
+     *        If you use this API to override the relevance tuning configured at the index level, but there is no
+     *        relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured at the index level, but you do not use this API to override any
+     *        relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the
+     *        index level.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured for fields at the index level, but you use this API to override
+     *        only some of these fields, then for the fields you did not override, the importance is set to 1.
+     */
+
+    public void setDocumentRelevanceOverrideConfigurations(java.util.Collection<DocumentRelevanceConfiguration> documentRelevanceOverrideConfigurations) {
+        if (documentRelevanceOverrideConfigurations == null) {
+            this.documentRelevanceOverrideConfigurations = null;
+            return;
+        }
+
+        this.documentRelevanceOverrideConfigurations = new java.util.ArrayList<DocumentRelevanceConfiguration>(documentRelevanceOverrideConfigurations);
+    }
+
+    /**
+     * <p>
+     * Overrides relevance tuning configurations of fields or attributes set at the index level.
+     * </p>
+     * <p>
+     * If you use this API to override the relevance tuning configured at the index level, but there is no relevance
+     * tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured at the index level, but you do not use this API to override any relevance
+     * tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured for fields at the index level, but you use this API to override only some
+     * of these fields, then for the fields you did not override, the importance is set to 1.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDocumentRelevanceOverrideConfigurations(java.util.Collection)} or
+     * {@link #withDocumentRelevanceOverrideConfigurations(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param documentRelevanceOverrideConfigurations
+     *        Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
+     *        <p>
+     *        If you use this API to override the relevance tuning configured at the index level, but there is no
+     *        relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured at the index level, but you do not use this API to override any
+     *        relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the
+     *        index level.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured for fields at the index level, but you use this API to override
+     *        only some of these fields, then for the fields you did not override, the importance is set to 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryRequest withDocumentRelevanceOverrideConfigurations(DocumentRelevanceConfiguration... documentRelevanceOverrideConfigurations) {
+        if (this.documentRelevanceOverrideConfigurations == null) {
+            setDocumentRelevanceOverrideConfigurations(new java.util.ArrayList<DocumentRelevanceConfiguration>(documentRelevanceOverrideConfigurations.length));
+        }
+        for (DocumentRelevanceConfiguration ele : documentRelevanceOverrideConfigurations) {
+            this.documentRelevanceOverrideConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Overrides relevance tuning configurations of fields or attributes set at the index level.
+     * </p>
+     * <p>
+     * If you use this API to override the relevance tuning configured at the index level, but there is no relevance
+     * tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured at the index level, but you do not use this API to override any relevance
+     * tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured for fields at the index level, but you use this API to override only some
+     * of these fields, then for the fields you did not override, the importance is set to 1.
+     * </p>
+     * 
+     * @param documentRelevanceOverrideConfigurations
+     *        Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
+     *        <p>
+     *        If you use this API to override the relevance tuning configured at the index level, but there is no
+     *        relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured at the index level, but you do not use this API to override any
+     *        relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the
+     *        index level.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured for fields at the index level, but you use this API to override
+     *        only some of these fields, then for the fields you did not override, the importance is set to 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryRequest withDocumentRelevanceOverrideConfigurations(java.util.Collection<DocumentRelevanceConfiguration> documentRelevanceOverrideConfigurations) {
+        setDocumentRelevanceOverrideConfigurations(documentRelevanceOverrideConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
      * Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra
      * returns the first page of results. Use this parameter to get result pages after the first one.
      * </p>
@@ -547,6 +762,171 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * Provides information that determines how the results of the query are sorted. You can set the field that Amazon
+     * Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending
+     * order. In the case of ties in sorting the results, the results are sorted by relevance.
+     * </p>
+     * <p>
+     * If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines
+     * for the result.
+     * </p>
+     * 
+     * @param sortingConfiguration
+     *        Provides information that determines how the results of the query are sorted. You can set the field that
+     *        Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or
+     *        descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+     *        <p>
+     *        If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra
+     *        determines for the result.
+     */
+
+    public void setSortingConfiguration(SortingConfiguration sortingConfiguration) {
+        this.sortingConfiguration = sortingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information that determines how the results of the query are sorted. You can set the field that Amazon
+     * Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending
+     * order. In the case of ties in sorting the results, the results are sorted by relevance.
+     * </p>
+     * <p>
+     * If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines
+     * for the result.
+     * </p>
+     * 
+     * @return Provides information that determines how the results of the query are sorted. You can set the field that
+     *         Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending
+     *         or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+     *         <p>
+     *         If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra
+     *         determines for the result.
+     */
+
+    public SortingConfiguration getSortingConfiguration() {
+        return this.sortingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information that determines how the results of the query are sorted. You can set the field that Amazon
+     * Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending
+     * order. In the case of ties in sorting the results, the results are sorted by relevance.
+     * </p>
+     * <p>
+     * If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines
+     * for the result.
+     * </p>
+     * 
+     * @param sortingConfiguration
+     *        Provides information that determines how the results of the query are sorted. You can set the field that
+     *        Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or
+     *        descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+     *        <p>
+     *        If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra
+     *        determines for the result.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryRequest withSortingConfiguration(SortingConfiguration sortingConfiguration) {
+        setSortingConfiguration(sortingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user context token.
+     * </p>
+     * 
+     * @param userContext
+     *        The user context token.
+     */
+
+    public void setUserContext(UserContext userContext) {
+        this.userContext = userContext;
+    }
+
+    /**
+     * <p>
+     * The user context token.
+     * </p>
+     * 
+     * @return The user context token.
+     */
+
+    public UserContext getUserContext() {
+        return this.userContext;
+    }
+
+    /**
+     * <p>
+     * The user context token.
+     * </p>
+     * 
+     * @param userContext
+     *        The user context token.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryRequest withUserContext(UserContext userContext) {
+        setUserContext(userContext);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a
+     * GUID. Don't use personally identifiable information, such as the user's email address, as the
+     * <code>VisitorId</code>.
+     * </p>
+     * 
+     * @param visitorId
+     *        Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such
+     *        as a GUID. Don't use personally identifiable information, such as the user's email address, as the
+     *        <code>VisitorId</code>.
+     */
+
+    public void setVisitorId(String visitorId) {
+        this.visitorId = visitorId;
+    }
+
+    /**
+     * <p>
+     * Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a
+     * GUID. Don't use personally identifiable information, such as the user's email address, as the
+     * <code>VisitorId</code>.
+     * </p>
+     * 
+     * @return Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier,
+     *         such as a GUID. Don't use personally identifiable information, such as the user's email address, as the
+     *         <code>VisitorId</code>.
+     */
+
+    public String getVisitorId() {
+        return this.visitorId;
+    }
+
+    /**
+     * <p>
+     * Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a
+     * GUID. Don't use personally identifiable information, such as the user's email address, as the
+     * <code>VisitorId</code>.
+     * </p>
+     * 
+     * @param visitorId
+     *        Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such
+     *        as a GUID. Don't use personally identifiable information, such as the user's email address, as the
+     *        <code>VisitorId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryRequest withVisitorId(String visitorId) {
+        setVisitorId(visitorId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -570,10 +950,18 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
             sb.append("RequestedDocumentAttributes: ").append(getRequestedDocumentAttributes()).append(",");
         if (getQueryResultTypeFilter() != null)
             sb.append("QueryResultTypeFilter: ").append(getQueryResultTypeFilter()).append(",");
+        if (getDocumentRelevanceOverrideConfigurations() != null)
+            sb.append("DocumentRelevanceOverrideConfigurations: ").append(getDocumentRelevanceOverrideConfigurations()).append(",");
         if (getPageNumber() != null)
             sb.append("PageNumber: ").append(getPageNumber()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: ").append(getPageSize());
+            sb.append("PageSize: ").append(getPageSize()).append(",");
+        if (getSortingConfiguration() != null)
+            sb.append("SortingConfiguration: ").append(getSortingConfiguration()).append(",");
+        if (getUserContext() != null)
+            sb.append("UserContext: ").append(getUserContext()).append(",");
+        if (getVisitorId() != null)
+            sb.append("VisitorId: ").append(getVisitorId());
         sb.append("}");
         return sb.toString();
     }
@@ -612,6 +1000,11 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
             return false;
         if (other.getQueryResultTypeFilter() != null && other.getQueryResultTypeFilter().equals(this.getQueryResultTypeFilter()) == false)
             return false;
+        if (other.getDocumentRelevanceOverrideConfigurations() == null ^ this.getDocumentRelevanceOverrideConfigurations() == null)
+            return false;
+        if (other.getDocumentRelevanceOverrideConfigurations() != null
+                && other.getDocumentRelevanceOverrideConfigurations().equals(this.getDocumentRelevanceOverrideConfigurations()) == false)
+            return false;
         if (other.getPageNumber() == null ^ this.getPageNumber() == null)
             return false;
         if (other.getPageNumber() != null && other.getPageNumber().equals(this.getPageNumber()) == false)
@@ -619,6 +1012,18 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         if (other.getPageSize() == null ^ this.getPageSize() == null)
             return false;
         if (other.getPageSize() != null && other.getPageSize().equals(this.getPageSize()) == false)
+            return false;
+        if (other.getSortingConfiguration() == null ^ this.getSortingConfiguration() == null)
+            return false;
+        if (other.getSortingConfiguration() != null && other.getSortingConfiguration().equals(this.getSortingConfiguration()) == false)
+            return false;
+        if (other.getUserContext() == null ^ this.getUserContext() == null)
+            return false;
+        if (other.getUserContext() != null && other.getUserContext().equals(this.getUserContext()) == false)
+            return false;
+        if (other.getVisitorId() == null ^ this.getVisitorId() == null)
+            return false;
+        if (other.getVisitorId() != null && other.getVisitorId().equals(this.getVisitorId()) == false)
             return false;
         return true;
     }
@@ -634,8 +1039,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         hashCode = prime * hashCode + ((getFacets() == null) ? 0 : getFacets().hashCode());
         hashCode = prime * hashCode + ((getRequestedDocumentAttributes() == null) ? 0 : getRequestedDocumentAttributes().hashCode());
         hashCode = prime * hashCode + ((getQueryResultTypeFilter() == null) ? 0 : getQueryResultTypeFilter().hashCode());
+        hashCode = prime * hashCode + ((getDocumentRelevanceOverrideConfigurations() == null) ? 0 : getDocumentRelevanceOverrideConfigurations().hashCode());
         hashCode = prime * hashCode + ((getPageNumber() == null) ? 0 : getPageNumber().hashCode());
         hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
+        hashCode = prime * hashCode + ((getSortingConfiguration() == null) ? 0 : getSortingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getUserContext() == null) ? 0 : getUserContext().hashCode());
+        hashCode = prime * hashCode + ((getVisitorId() == null) ? 0 : getVisitorId().hashCode());
         return hashCode;
     }
 

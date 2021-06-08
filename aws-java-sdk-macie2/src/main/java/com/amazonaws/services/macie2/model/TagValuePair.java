@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a tag key and value, as a pair, to use in a tag-based condition for a classification job.
+ * Specifies a tag key or tag key and value pair to use in a tag-based condition that determines whether an S3 object is
+ * included or excluded from a classification job. Tag keys and values are case sensitive. Also, Amazon Macie doesn't
+ * support use of partial values or wildcard characters in tag-based conditions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagValuePair" target="_top">AWS API
@@ -36,7 +38,8 @@ public class TagValuePair implements Serializable, Cloneable, StructuredPojo {
     private String key;
     /**
      * <p>
-     * The tag value, associated with the specified tag key, to use in the condition.
+     * The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag key
+     * for a condition, specify the tag key for the key property and set this value to an empty string.
      * </p>
      */
     private String value;
@@ -83,11 +86,13 @@ public class TagValuePair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag value, associated with the specified tag key, to use in the condition.
+     * The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag key
+     * for a condition, specify the tag key for the key property and set this value to an empty string.
      * </p>
      * 
      * @param value
-     *        The tag value, associated with the specified tag key, to use in the condition.
+     *        The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag
+     *        key for a condition, specify the tag key for the key property and set this value to an empty string.
      */
 
     public void setValue(String value) {
@@ -96,10 +101,12 @@ public class TagValuePair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag value, associated with the specified tag key, to use in the condition.
+     * The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag key
+     * for a condition, specify the tag key for the key property and set this value to an empty string.
      * </p>
      * 
-     * @return The tag value, associated with the specified tag key, to use in the condition.
+     * @return The tag value, associated with the specified tag key (key), to use in the condition. To specify only a
+     *         tag key for a condition, specify the tag key for the key property and set this value to an empty string.
      */
 
     public String getValue() {
@@ -108,11 +115,13 @@ public class TagValuePair implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag value, associated with the specified tag key, to use in the condition.
+     * The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag key
+     * for a condition, specify the tag key for the key property and set this value to an empty string.
      * </p>
      * 
      * @param value
-     *        The tag value, associated with the specified tag key, to use in the condition.
+     *        The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag
+     *        key for a condition, specify the tag key for the key property and set this value to an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

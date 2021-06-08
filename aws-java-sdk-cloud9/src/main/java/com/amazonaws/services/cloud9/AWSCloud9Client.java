@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -175,6 +175,9 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloud9.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentAccessException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloud9.model.transform.ConcurrentAccessExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.cloud9.model.AWSCloud9Exception.class));
 
     public static AWSCloud9ClientBuilder builder() {
@@ -270,6 +273,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request = new CreateEnvironmentEC2RequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEnvironmentEC2Request));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEnvironmentEC2");
@@ -338,6 +343,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                         .beforeMarshalling(createEnvironmentMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEnvironmentMembership");
@@ -407,6 +414,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request = new DeleteEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEnvironment");
@@ -475,6 +484,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                         .beforeMarshalling(deleteEnvironmentMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEnvironmentMembership");
@@ -544,6 +555,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                         .beforeMarshalling(describeEnvironmentMembershipsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironmentMemberships");
@@ -613,6 +626,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                         .beforeMarshalling(describeEnvironmentStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironmentStatus");
@@ -681,6 +696,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request = new DescribeEnvironmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEnvironmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEnvironments");
@@ -748,6 +765,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request = new ListEnvironmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEnvironmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEnvironments");
@@ -807,6 +826,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -847,6 +868,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
      *         An internal server error occurred.
      * @throws BadRequestException
      *         The target request is invalid.
+     * @throws ConcurrentAccessException
+     *         A concurrent access issue occurred.
      * @sample AWSCloud9.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -872,6 +895,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -906,6 +931,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
      *         An internal server error occurred.
      * @throws BadRequestException
      *         The target request is invalid.
+     * @throws ConcurrentAccessException
+     *         A concurrent access issue occurred.
      * @sample AWSCloud9.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -931,6 +958,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -998,6 +1027,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                 request = new UpdateEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEnvironment");
@@ -1066,6 +1097,8 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                         .beforeMarshalling(updateEnvironmentMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cloud9");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEnvironmentMembership");
@@ -1162,6 +1195,11 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

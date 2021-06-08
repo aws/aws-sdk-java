@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1877,6 +1877,39 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetThingRuntimeConfigurationResult> getThingRuntimeConfigurationAsync(GetThingRuntimeConfigurationRequest request) {
+
+        return getThingRuntimeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetThingRuntimeConfigurationResult> getThingRuntimeConfigurationAsync(final GetThingRuntimeConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetThingRuntimeConfigurationRequest, GetThingRuntimeConfigurationResult> asyncHandler) {
+        final GetThingRuntimeConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetThingRuntimeConfigurationResult>() {
+            @Override
+            public GetThingRuntimeConfigurationResult call() throws Exception {
+                GetThingRuntimeConfigurationResult result = null;
+
+                try {
+                    result = executeGetThingRuntimeConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBulkDeploymentDetailedReportsResult> listBulkDeploymentDetailedReportsAsync(
             ListBulkDeploymentDetailedReportsRequest request) {
 
@@ -3061,6 +3094,41 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
 
                 try {
                     result = executeUpdateSubscriptionDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThingRuntimeConfigurationResult> updateThingRuntimeConfigurationAsync(
+            UpdateThingRuntimeConfigurationRequest request) {
+
+        return updateThingRuntimeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThingRuntimeConfigurationResult> updateThingRuntimeConfigurationAsync(
+            final UpdateThingRuntimeConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateThingRuntimeConfigurationRequest, UpdateThingRuntimeConfigurationResult> asyncHandler) {
+        final UpdateThingRuntimeConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateThingRuntimeConfigurationResult>() {
+            @Override
+            public UpdateThingRuntimeConfigurationResult call() throws Exception {
+                UpdateThingRuntimeConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateThingRuntimeConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

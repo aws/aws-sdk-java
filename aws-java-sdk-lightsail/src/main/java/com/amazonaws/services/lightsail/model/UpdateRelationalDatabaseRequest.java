@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,25 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of your database to update.
+     * The name of your Lightsail database resource to update.
      * </p>
      */
     private String relationalDatabaseName;
     /**
      * <p>
-     * The password for the master user of your database. The password can include any printable ASCII character except
-     * "/", """, or "@".
+     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
-     * Constraints: Must contain 8 to 41 characters.
+     * My<b>SQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
      * </p>
      */
     private String masterUserPassword;
@@ -174,11 +182,11 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of your database to update.
+     * The name of your Lightsail database resource to update.
      * </p>
      * 
      * @param relationalDatabaseName
-     *        The name of your database to update.
+     *        The name of your Lightsail database resource to update.
      */
 
     public void setRelationalDatabaseName(String relationalDatabaseName) {
@@ -187,10 +195,10 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of your database to update.
+     * The name of your Lightsail database resource to update.
      * </p>
      * 
-     * @return The name of your database to update.
+     * @return The name of your Lightsail database resource to update.
      */
 
     public String getRelationalDatabaseName() {
@@ -199,11 +207,11 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of your database to update.
+     * The name of your Lightsail database resource to update.
      * </p>
      * 
      * @param relationalDatabaseName
-     *        The name of your database to update.
+     *        The name of your Lightsail database resource to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,18 +222,35 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The password for the master user of your database. The password can include any printable ASCII character except
-     * "/", """, or "@".
+     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
-     * Constraints: Must contain 8 to 41 characters.
+     * My<b>SQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
      * </p>
      * 
      * @param masterUserPassword
-     *        The password for the master user of your database. The password can include any printable ASCII character
-     *        except "/", """, or "@".</p>
+     *        The password for the master user. The password can include any printable ASCII character except "/",
+     *        """, or "@".</p>
      *        <p>
-     *        Constraints: Must contain 8 to 41 characters.
+     *        My<b>SQL</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 41 characters.
+     *        </p>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 128 characters.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -234,17 +259,34 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The password for the master user of your database. The password can include any printable ASCII character except
-     * "/", """, or "@".
+     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
-     * Constraints: Must contain 8 to 41 characters.
+     * My<b>SQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
      * </p>
      * 
-     * @return The password for the master user of your database. The password can include any printable ASCII character
-     *         except "/", """, or "@".</p>
+     * @return The password for the master user. The password can include any printable ASCII character except "/",
+     *         """, or "@".</p>
      *         <p>
-     *         Constraints: Must contain 8 to 41 characters.
+     *         My<b>SQL</b>
+     *         </p>
+     *         <p>
+     *         Constraints: Must contain from 8 to 41 characters.
+     *         </p>
+     *         <p>
+     *         <b>PostgreSQL</b>
+     *         </p>
+     *         <p>
+     *         Constraints: Must contain from 8 to 128 characters.
      */
 
     public String getMasterUserPassword() {
@@ -253,18 +295,35 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The password for the master user of your database. The password can include any printable ASCII character except
-     * "/", """, or "@".
+     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
-     * Constraints: Must contain 8 to 41 characters.
+     * My<b>SQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 41 characters.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Constraints: Must contain from 8 to 128 characters.
      * </p>
      * 
      * @param masterUserPassword
-     *        The password for the master user of your database. The password can include any printable ASCII character
-     *        except "/", """, or "@".</p>
+     *        The password for the master user. The password can include any printable ASCII character except "/",
+     *        """, or "@".</p>
      *        <p>
-     *        Constraints: Must contain 8 to 41 characters.
+     *        My<b>SQL</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 41 characters.
+     *        </p>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Constraints: Must contain from 8 to 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

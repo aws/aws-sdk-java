@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,8 +43,12 @@ public class CreateFileSystemFromBackupRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> WINDOWSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WindowsConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> LUSTRECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LustreConfiguration").build();
     private static final MarshallingInfo<String> STORAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageType").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
 
     private static final CreateFileSystemFromBackupRequestMarshaller instance = new CreateFileSystemFromBackupRequestMarshaller();
 
@@ -68,7 +72,9 @@ public class CreateFileSystemFromBackupRequestMarshaller {
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getWindowsConfiguration(), WINDOWSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createFileSystemFromBackupRequest.getLustreConfiguration(), LUSTRECONFIGURATION_BINDING);
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getStorageType(), STORAGETYPE_BINDING);
+            protocolMarshaller.marshall(createFileSystemFromBackupRequest.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

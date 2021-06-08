@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class IntegrationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationMethod").build();
     private static final MarshallingInfo<String> INTEGRATIONRESPONSESELECTIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationResponseSelectionExpression").build();
+    private static final MarshallingInfo<String> INTEGRATIONSUBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationSubtype").build();
     private static final MarshallingInfo<String> INTEGRATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationType").build();
     private static final MarshallingInfo<String> INTEGRATIONURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -59,6 +61,8 @@ public class IntegrationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestParameters").build();
     private static final MarshallingInfo<Map> REQUESTTEMPLATES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestTemplates").build();
+    private static final MarshallingInfo<Map> RESPONSEPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("responseParameters").build();
     private static final MarshallingInfo<String> TEMPLATESELECTIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("templateSelectionExpression").build();
     private static final MarshallingInfo<Integer> TIMEOUTINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -91,12 +95,14 @@ public class IntegrationMarshaller {
             protocolMarshaller.marshall(integration.getIntegrationId(), INTEGRATIONID_BINDING);
             protocolMarshaller.marshall(integration.getIntegrationMethod(), INTEGRATIONMETHOD_BINDING);
             protocolMarshaller.marshall(integration.getIntegrationResponseSelectionExpression(), INTEGRATIONRESPONSESELECTIONEXPRESSION_BINDING);
+            protocolMarshaller.marshall(integration.getIntegrationSubtype(), INTEGRATIONSUBTYPE_BINDING);
             protocolMarshaller.marshall(integration.getIntegrationType(), INTEGRATIONTYPE_BINDING);
             protocolMarshaller.marshall(integration.getIntegrationUri(), INTEGRATIONURI_BINDING);
             protocolMarshaller.marshall(integration.getPassthroughBehavior(), PASSTHROUGHBEHAVIOR_BINDING);
             protocolMarshaller.marshall(integration.getPayloadFormatVersion(), PAYLOADFORMATVERSION_BINDING);
             protocolMarshaller.marshall(integration.getRequestParameters(), REQUESTPARAMETERS_BINDING);
             protocolMarshaller.marshall(integration.getRequestTemplates(), REQUESTTEMPLATES_BINDING);
+            protocolMarshaller.marshall(integration.getResponseParameters(), RESPONSEPARAMETERS_BINDING);
             protocolMarshaller.marshall(integration.getTemplateSelectionExpression(), TEMPLATESELECTIONEXPRESSION_BINDING);
             protocolMarshaller.marshall(integration.getTimeoutInMillis(), TIMEOUTINMILLIS_BINDING);
             protocolMarshaller.marshall(integration.getTlsConfig(), TLSCONFIG_BINDING);

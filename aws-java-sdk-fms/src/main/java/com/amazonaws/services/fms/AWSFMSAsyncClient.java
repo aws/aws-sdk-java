@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,11 @@ import java.util.concurrent.ExecutorService;
  * about the AWS Firewall Manager API actions, data types, and errors. For detailed information about AWS Firewall
  * Manager features, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
  * Firewall Manager Developer Guide</a>.
+ * </p>
+ * <p>
+ * Some API actions require explicit resource permissions. For information, see the developer guide topic <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager required
+ * permissions for API actions</a>.
  * </p>
  */
 @ThreadSafe
@@ -95,6 +100,39 @@ public class AWSFMSAsyncClient extends AWSFMSClient implements AWSFMSAsync {
 
                 try {
                     result = executeAssociateAdminAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppsListResult> deleteAppsListAsync(DeleteAppsListRequest request) {
+
+        return deleteAppsListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppsListResult> deleteAppsListAsync(final DeleteAppsListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAppsListRequest, DeleteAppsListResult> asyncHandler) {
+        final DeleteAppsListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAppsListResult>() {
+            @Override
+            public DeleteAppsListResult call() throws Exception {
+                DeleteAppsListResult result = null;
+
+                try {
+                    result = executeDeleteAppsList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -177,6 +215,39 @@ public class AWSFMSAsyncClient extends AWSFMSClient implements AWSFMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteProtocolsListResult> deleteProtocolsListAsync(DeleteProtocolsListRequest request) {
+
+        return deleteProtocolsListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteProtocolsListResult> deleteProtocolsListAsync(final DeleteProtocolsListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteProtocolsListRequest, DeleteProtocolsListResult> asyncHandler) {
+        final DeleteProtocolsListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteProtocolsListResult>() {
+            @Override
+            public DeleteProtocolsListResult call() throws Exception {
+                DeleteProtocolsListResult result = null;
+
+                try {
+                    result = executeDeleteProtocolsList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateAdminAccountResult> disassociateAdminAccountAsync(DisassociateAdminAccountRequest request) {
 
         return disassociateAdminAccountAsync(request, null);
@@ -227,6 +298,39 @@ public class AWSFMSAsyncClient extends AWSFMSClient implements AWSFMSAsync {
 
                 try {
                     result = executeGetAdminAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppsListResult> getAppsListAsync(GetAppsListRequest request) {
+
+        return getAppsListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppsListResult> getAppsListAsync(final GetAppsListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAppsListRequest, GetAppsListResult> asyncHandler) {
+        final GetAppsListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAppsListResult>() {
+            @Override
+            public GetAppsListResult call() throws Exception {
+                GetAppsListResult result = null;
+
+                try {
+                    result = executeGetAppsList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -375,6 +479,105 @@ public class AWSFMSAsyncClient extends AWSFMSClient implements AWSFMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetProtocolsListResult> getProtocolsListAsync(GetProtocolsListRequest request) {
+
+        return getProtocolsListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProtocolsListResult> getProtocolsListAsync(final GetProtocolsListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetProtocolsListRequest, GetProtocolsListResult> asyncHandler) {
+        final GetProtocolsListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetProtocolsListResult>() {
+            @Override
+            public GetProtocolsListResult call() throws Exception {
+                GetProtocolsListResult result = null;
+
+                try {
+                    result = executeGetProtocolsList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetViolationDetailsResult> getViolationDetailsAsync(GetViolationDetailsRequest request) {
+
+        return getViolationDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetViolationDetailsResult> getViolationDetailsAsync(final GetViolationDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetViolationDetailsRequest, GetViolationDetailsResult> asyncHandler) {
+        final GetViolationDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetViolationDetailsResult>() {
+            @Override
+            public GetViolationDetailsResult call() throws Exception {
+                GetViolationDetailsResult result = null;
+
+                try {
+                    result = executeGetViolationDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppsListsResult> listAppsListsAsync(ListAppsListsRequest request) {
+
+        return listAppsListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAppsListsResult> listAppsListsAsync(final ListAppsListsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAppsListsRequest, ListAppsListsResult> asyncHandler) {
+        final ListAppsListsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAppsListsResult>() {
+            @Override
+            public ListAppsListsResult call() throws Exception {
+                ListAppsListsResult result = null;
+
+                try {
+                    result = executeListAppsLists(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListComplianceStatusResult> listComplianceStatusAsync(ListComplianceStatusRequest request) {
 
         return listComplianceStatusAsync(request, null);
@@ -474,6 +677,39 @@ public class AWSFMSAsyncClient extends AWSFMSClient implements AWSFMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListProtocolsListsResult> listProtocolsListsAsync(ListProtocolsListsRequest request) {
+
+        return listProtocolsListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProtocolsListsResult> listProtocolsListsAsync(final ListProtocolsListsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListProtocolsListsRequest, ListProtocolsListsResult> asyncHandler) {
+        final ListProtocolsListsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListProtocolsListsResult>() {
+            @Override
+            public ListProtocolsListsResult call() throws Exception {
+                ListProtocolsListsResult result = null;
+
+                try {
+                    result = executeListProtocolsLists(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -491,6 +727,39 @@ public class AWSFMSAsyncClient extends AWSFMSClient implements AWSFMSAsync {
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppsListResult> putAppsListAsync(PutAppsListRequest request) {
+
+        return putAppsListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppsListResult> putAppsListAsync(final PutAppsListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAppsListRequest, PutAppsListResult> asyncHandler) {
+        final PutAppsListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAppsListResult>() {
+            @Override
+            public PutAppsListResult call() throws Exception {
+                PutAppsListResult result = null;
+
+                try {
+                    result = executePutAppsList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -557,6 +826,39 @@ public class AWSFMSAsyncClient extends AWSFMSClient implements AWSFMSAsync {
 
                 try {
                     result = executePutPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutProtocolsListResult> putProtocolsListAsync(PutProtocolsListRequest request) {
+
+        return putProtocolsListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutProtocolsListResult> putProtocolsListAsync(final PutProtocolsListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutProtocolsListRequest, PutProtocolsListResult> asyncHandler) {
+        final PutProtocolsListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutProtocolsListResult>() {
+            @Override
+            public PutProtocolsListResult call() throws Exception {
+                PutProtocolsListResult result = null;
+
+                try {
+                    result = executePutProtocolsList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      */
@@ -42,8 +42,9 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The ID of one or more security groups that you want to use to control access to this VPC. The security group that
-     * you specify must include one or more inbound rules (for inbound resolver endpoints) or outbound rules (for
-     * outbound resolver endpoints).
+     * you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for
+     * outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open
+     * port 53. For outbound access, open the port that you're using for DNS queries on your network.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
@@ -54,13 +55,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network or another VPC
+     * <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network or another
-     * VPC
+     * <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network
      * </p>
      * </li>
      * </ul>
@@ -68,9 +68,8 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     private String direction;
     /**
      * <p>
-     * The subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your VPCs to
-     * your network (for outbound endpoints) or on the way from your network to your VPCs (for inbound resolver
-     * endpoints).
+     * The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you
+     * forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * </p>
      */
     private java.util.List<IpAddressRequest> ipAddresses;
@@ -84,13 +83,13 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
      *        date/time stamp.
      */
 
@@ -101,13 +100,13 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed requests to be retried without the
-     *         risk of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     *         example, a date/time stamp.
+     *         risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example,
+     *         a date/time stamp.
      */
 
     public String getCreatorRequestId() {
@@ -117,13 +116,13 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
      *        date/time stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -179,13 +178,16 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The ID of one or more security groups that you want to use to control access to this VPC. The security group that
-     * you specify must include one or more inbound rules (for inbound resolver endpoints) or outbound rules (for
-     * outbound resolver endpoints).
+     * you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for
+     * outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open
+     * port 53. For outbound access, open the port that you're using for DNS queries on your network.
      * </p>
      * 
      * @return The ID of one or more security groups that you want to use to control access to this VPC. The security
-     *         group that you specify must include one or more inbound rules (for inbound resolver endpoints) or
-     *         outbound rules (for outbound resolver endpoints).
+     *         group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or
+     *         outbound rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP
+     *         access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS
+     *         queries on your network.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -195,14 +197,17 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The ID of one or more security groups that you want to use to control access to this VPC. The security group that
-     * you specify must include one or more inbound rules (for inbound resolver endpoints) or outbound rules (for
-     * outbound resolver endpoints).
+     * you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for
+     * outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open
+     * port 53. For outbound access, open the port that you're using for DNS queries on your network.
      * </p>
      * 
      * @param securityGroupIds
      *        The ID of one or more security groups that you want to use to control access to this VPC. The security
-     *        group that you specify must include one or more inbound rules (for inbound resolver endpoints) or outbound
-     *        rules (for outbound resolver endpoints).
+     *        group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound
+     *        rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For
+     *        inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your
+     *        network.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -217,8 +222,9 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The ID of one or more security groups that you want to use to control access to this VPC. The security group that
-     * you specify must include one or more inbound rules (for inbound resolver endpoints) or outbound rules (for
-     * outbound resolver endpoints).
+     * you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for
+     * outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open
+     * port 53. For outbound access, open the port that you're using for DNS queries on your network.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -228,8 +234,10 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param securityGroupIds
      *        The ID of one or more security groups that you want to use to control access to this VPC. The security
-     *        group that you specify must include one or more inbound rules (for inbound resolver endpoints) or outbound
-     *        rules (for outbound resolver endpoints).
+     *        group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound
+     *        rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For
+     *        inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your
+     *        network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,14 +254,17 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The ID of one or more security groups that you want to use to control access to this VPC. The security group that
-     * you specify must include one or more inbound rules (for inbound resolver endpoints) or outbound rules (for
-     * outbound resolver endpoints).
+     * you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound rules (for
+     * outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open
+     * port 53. For outbound access, open the port that you're using for DNS queries on your network.
      * </p>
      * 
      * @param securityGroupIds
      *        The ID of one or more security groups that you want to use to control access to this VPC. The security
-     *        group that you specify must include one or more inbound rules (for inbound resolver endpoints) or outbound
-     *        rules (for outbound resolver endpoints).
+     *        group that you specify must include one or more inbound rules (for inbound Resolver endpoints) or outbound
+     *        rules (for outbound Resolver endpoints). Inbound and outbound rules must allow TCP and UDP access. For
+     *        inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your
+     *        network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,13 +280,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network or another VPC
+     * <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network or another
-     * VPC
+     * <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network
      * </p>
      * </li>
      * </ul>
@@ -285,14 +295,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network or
-     *        another VPC
+     *        <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network or
-     *        another VPC
+     *        <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network
      *        </p>
      *        </li>
      * @see ResolverEndpointDirection
@@ -309,13 +317,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network or another VPC
+     * <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network or another
-     * VPC
+     * <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network
      * </p>
      * </li>
      * </ul>
@@ -324,14 +331,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network or
-     *         another VPC
+     *         <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network or
-     *         another VPC
+     *         <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network
      *         </p>
      *         </li>
      * @see ResolverEndpointDirection
@@ -348,13 +353,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network or another VPC
+     * <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network or another
-     * VPC
+     * <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network
      * </p>
      * </li>
      * </ul>
@@ -364,14 +368,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network or
-     *        another VPC
+     *        <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network or
-     *        another VPC
+     *        <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -390,13 +392,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network or another VPC
+     * <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network or another
-     * VPC
+     * <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network
      * </p>
      * </li>
      * </ul>
@@ -406,14 +407,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network or
-     *        another VPC
+     *        <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network or
-     *        another VPC
+     *        <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -427,14 +426,12 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your VPCs to
-     * your network (for outbound endpoints) or on the way from your network to your VPCs (for inbound resolver
-     * endpoints).
+     * The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you
+     * forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * </p>
      * 
-     * @return The subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your
-     *         VPCs to your network (for outbound endpoints) or on the way from your network to your VPCs (for inbound
-     *         resolver endpoints).
+     * @return The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
+     *         you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      */
 
     public java.util.List<IpAddressRequest> getIpAddresses() {
@@ -443,15 +440,13 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your VPCs to
-     * your network (for outbound endpoints) or on the way from your network to your VPCs (for inbound resolver
-     * endpoints).
+     * The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you
+     * forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * </p>
      * 
      * @param ipAddresses
-     *        The subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your
-     *        VPCs to your network (for outbound endpoints) or on the way from your network to your VPCs (for inbound
-     *        resolver endpoints).
+     *        The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
+     *        you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      */
 
     public void setIpAddresses(java.util.Collection<IpAddressRequest> ipAddresses) {
@@ -465,9 +460,8 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your VPCs to
-     * your network (for outbound endpoints) or on the way from your network to your VPCs (for inbound resolver
-     * endpoints).
+     * The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you
+     * forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -476,9 +470,8 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param ipAddresses
-     *        The subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your
-     *        VPCs to your network (for outbound endpoints) or on the way from your network to your VPCs (for inbound
-     *        resolver endpoints).
+     *        The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
+     *        you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -494,15 +487,13 @@ public class CreateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your VPCs to
-     * your network (for outbound endpoints) or on the way from your network to your VPCs (for inbound resolver
-     * endpoints).
+     * The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you
+     * forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * </p>
      * 
      * @param ipAddresses
-     *        The subnets and IP addresses in your VPC that you want DNS queries to pass through on the way from your
-     *        VPCs to your network (for outbound endpoints) or on the way from your network to your VPCs (for inbound
-     *        resolver endpoints).
+     *        The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
+     *        you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

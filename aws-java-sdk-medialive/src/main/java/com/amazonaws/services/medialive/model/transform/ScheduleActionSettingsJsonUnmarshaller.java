@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,9 +58,23 @@ public class ScheduleActionSettingsJsonUnmarshaller implements Unmarshaller<Sche
                     scheduleActionSettings
                             .setHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("inputPrepareSettings", targetDepth)) {
+                    context.nextToken();
+                    scheduleActionSettings.setInputPrepareSettings(InputPrepareScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("inputSwitchSettings", targetDepth)) {
                     context.nextToken();
                     scheduleActionSettings.setInputSwitchSettings(InputSwitchScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("motionGraphicsImageActivateSettings", targetDepth)) {
+                    context.nextToken();
+                    scheduleActionSettings.setMotionGraphicsImageActivateSettings(MotionGraphicsActivateScheduleActionSettingsJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("motionGraphicsImageDeactivateSettings", targetDepth)) {
+                    context.nextToken();
+                    scheduleActionSettings.setMotionGraphicsImageDeactivateSettings(MotionGraphicsDeactivateScheduleActionSettingsJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pauseStateSettings", targetDepth)) {
                     context.nextToken();

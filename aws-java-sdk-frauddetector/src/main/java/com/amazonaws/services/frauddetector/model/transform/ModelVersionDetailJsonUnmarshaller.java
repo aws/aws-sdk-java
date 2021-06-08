@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,35 +60,25 @@ public class ModelVersionDetailJsonUnmarshaller implements Unmarshaller<ModelVer
                     context.nextToken();
                     modelVersionDetail.setModelVersionNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    modelVersionDetail.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     modelVersionDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("trainingDataSource", targetDepth)) {
                     context.nextToken();
-                    modelVersionDetail.setTrainingDataSource(TrainingDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                    modelVersionDetail.setTrainingDataSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("modelVariables", targetDepth)) {
+                if (context.testExpression("trainingDataSchema", targetDepth)) {
                     context.nextToken();
-                    modelVersionDetail.setModelVariables(new ListUnmarshaller<ModelVariable>(ModelVariableJsonUnmarshaller.getInstance()).unmarshall(context));
+                    modelVersionDetail.setTrainingDataSchema(TrainingDataSchemaJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("labelSchema", targetDepth)) {
+                if (context.testExpression("externalEventsDetail", targetDepth)) {
                     context.nextToken();
-                    modelVersionDetail.setLabelSchema(LabelSchemaJsonUnmarshaller.getInstance().unmarshall(context));
+                    modelVersionDetail.setExternalEventsDetail(ExternalEventsDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("validationMetrics", targetDepth)) {
+                if (context.testExpression("trainingResult", targetDepth)) {
                     context.nextToken();
-                    modelVersionDetail.setValidationMetrics(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
-                            .getUnmarshaller(String.class)).unmarshall(context));
-                }
-                if (context.testExpression("trainingMetrics", targetDepth)) {
-                    context.nextToken();
-                    modelVersionDetail.setTrainingMetrics(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
-                            .getUnmarshaller(String.class)).unmarshall(context));
+                    modelVersionDetail.setTrainingResult(TrainingResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
                     context.nextToken();
@@ -97,6 +87,10 @@ public class ModelVersionDetailJsonUnmarshaller implements Unmarshaller<ModelVer
                 if (context.testExpression("createdTime", targetDepth)) {
                     context.nextToken();
                     modelVersionDetail.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    modelVersionDetail.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

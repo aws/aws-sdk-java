@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,9 @@ public class TestAuthorizationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The principal.
+     * The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      */
     private String principal;
@@ -62,11 +64,16 @@ public class TestAuthorizationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The principal.
+     * The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
      * @param principal
-     *        The principal.
+     *        The principal. Valid principals are CertificateArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *        (<i>region</i>:<i>id</i>).
      */
 
     public void setPrincipal(String principal) {
@@ -75,10 +82,15 @@ public class TestAuthorizationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The principal.
+     * The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
-     * @return The principal.
+     * @return The principal. Valid principals are CertificateArn
+     *         (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *         (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *         (<i>region</i>:<i>id</i>).
      */
 
     public String getPrincipal() {
@@ -87,11 +99,16 @@ public class TestAuthorizationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The principal.
+     * The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
      * @param principal
-     *        The principal.
+     *        The principal. Valid principals are CertificateArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *        (<i>region</i>:<i>id</i>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

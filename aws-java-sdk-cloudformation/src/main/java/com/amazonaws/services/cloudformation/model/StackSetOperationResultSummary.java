@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account for this operation result.
+     * [Self-managed permissions] The name of the AWS account for this operation result.
      * </p>
      */
     private String account;
@@ -92,18 +92,20 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
     private AccountGateResult accountGateResult;
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      */
     private String organizationalUnitId;
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account for this operation result.
+     * [Self-managed permissions] The name of the AWS account for this operation result.
      * </p>
      * 
      * @param account
-     *        [<code>Self-managed</code> permissions] The name of the AWS account for this operation result.
+     *        [Self-managed permissions] The name of the AWS account for this operation result.
      */
 
     public void setAccount(String account) {
@@ -112,10 +114,10 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account for this operation result.
+     * [Self-managed permissions] The name of the AWS account for this operation result.
      * </p>
      * 
-     * @return [<code>Self-managed</code> permissions] The name of the AWS account for this operation result.
+     * @return [Self-managed permissions] The name of the AWS account for this operation result.
      */
 
     public String getAccount() {
@@ -124,11 +126,11 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account for this operation result.
+     * [Self-managed permissions] The name of the AWS account for this operation result.
      * </p>
      * 
      * @param account
-     *        [<code>Self-managed</code> permissions] The name of the AWS account for this operation result.
+     *        [Self-managed permissions] The name of the AWS account for this operation result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -663,11 +665,16 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitId
-     *        Reserved for internal use. No data returned.
+     *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *        for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     *        DeploymentTargets</a>.
      */
 
     public void setOrganizationalUnitId(String organizationalUnitId) {
@@ -676,10 +683,15 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
-     * @return Reserved for internal use. No data returned.
+     * @return [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *         for <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     *         >DeploymentTargets</a>.
      */
 
     public String getOrganizationalUnitId() {
@@ -688,11 +700,16 @@ public class StackSetOperationResultSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitId
-     *        Reserved for internal use. No data returned.
+     *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *        for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     *        DeploymentTargets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

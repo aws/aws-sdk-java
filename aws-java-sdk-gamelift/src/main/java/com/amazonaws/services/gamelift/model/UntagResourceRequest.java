@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift
      * resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or
-     * Describe action for the resource type.
+     * Describe operation for the resource type.
      * </p>
      */
     private String resourceARN;
@@ -47,15 +47,15 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift
      * resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or
-     * Describe action for the resource type.
+     * Describe operation for the resource type.
      * </p>
      * 
      * @param resourceARN
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
      *        uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are
-     *        included in the data object for the resource, which can be retrieved by calling a List or Describe action
-     *        for the resource type.
+     *        included in the data object for the resource, which can be retrieved by calling a List or Describe
+     *        operation for the resource type.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -67,14 +67,14 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift
      * resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or
-     * Describe action for the resource type.
+     * Describe operation for the resource type.
      * </p>
      * 
      * @return The Amazon Resource Name (<a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to
      *         and uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs
      *         are included in the data object for the resource, which can be retrieved by calling a List or Describe
-     *         action for the resource type.
+     *         operation for the resource type.
      */
 
     public String getResourceARN() {
@@ -86,15 +86,15 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to and uniquely identifies the GameLift resource that you want to remove tags from. GameLift
      * resource ARNs are included in the data object for the resource, which can be retrieved by calling a List or
-     * Describe action for the resource type.
+     * Describe operation for the resource type.
      * </p>
      * 
      * @param resourceARN
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to and
      *        uniquely identifies the GameLift resource that you want to remove tags from. GameLift resource ARNs are
-     *        included in the data object for the resource, which can be retrieved by calling a List or Describe action
-     *        for the resource type.
+     *        included in the data object for the resource, which can be retrieved by calling a List or Describe
+     *        operation for the resource type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

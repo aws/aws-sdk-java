@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,13 +68,13 @@ public class ContainerDependency implements Serializable, Cloneable, StructuredP
      * <p>
      * <code>COMPLETE</code> - This condition validates that a dependent container runs to completion (exits) before
      * permitting other containers to start. This can be useful for nonessential containers that run a script and then
-     * exit.
+     * exit. This condition cannot be set on an essential container.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the
-     * container exits with a <code>zero</code> status.
+     * container exits with a <code>zero</code> status. This condition cannot be set on an essential container.
      * </p>
      * </li>
      * <li>
@@ -143,13 +143,13 @@ public class ContainerDependency implements Serializable, Cloneable, StructuredP
      * <p>
      * <code>COMPLETE</code> - This condition validates that a dependent container runs to completion (exits) before
      * permitting other containers to start. This can be useful for nonessential containers that run a script and then
-     * exit.
+     * exit. This condition cannot be set on an essential container.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the
-     * container exits with a <code>zero</code> status.
+     * container exits with a <code>zero</code> status. This condition cannot be set on an essential container.
      * </p>
      * </li>
      * <li>
@@ -175,13 +175,13 @@ public class ContainerDependency implements Serializable, Cloneable, StructuredP
      *        <p>
      *        <code>COMPLETE</code> - This condition validates that a dependent container runs to completion (exits)
      *        before permitting other containers to start. This can be useful for nonessential containers that run a
-     *        script and then exit.
+     *        script and then exit. This condition cannot be set on an essential container.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the
-     *        container exits with a <code>zero</code> status.
+     *        container exits with a <code>zero</code> status. This condition cannot be set on an essential container.
      *        </p>
      *        </li>
      *        <li>
@@ -213,13 +213,13 @@ public class ContainerDependency implements Serializable, Cloneable, StructuredP
      * <p>
      * <code>COMPLETE</code> - This condition validates that a dependent container runs to completion (exits) before
      * permitting other containers to start. This can be useful for nonessential containers that run a script and then
-     * exit.
+     * exit. This condition cannot be set on an essential container.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the
-     * container exits with a <code>zero</code> status.
+     * container exits with a <code>zero</code> status. This condition cannot be set on an essential container.
      * </p>
      * </li>
      * <li>
@@ -244,13 +244,13 @@ public class ContainerDependency implements Serializable, Cloneable, StructuredP
      *         <p>
      *         <code>COMPLETE</code> - This condition validates that a dependent container runs to completion (exits)
      *         before permitting other containers to start. This can be useful for nonessential containers that run a
-     *         script and then exit.
+     *         script and then exit. This condition cannot be set on an essential container.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the
-     *         container exits with a <code>zero</code> status.
+     *         container exits with a <code>zero</code> status. This condition cannot be set on an essential container.
      *         </p>
      *         </li>
      *         <li>
@@ -282,13 +282,13 @@ public class ContainerDependency implements Serializable, Cloneable, StructuredP
      * <p>
      * <code>COMPLETE</code> - This condition validates that a dependent container runs to completion (exits) before
      * permitting other containers to start. This can be useful for nonessential containers that run a script and then
-     * exit.
+     * exit. This condition cannot be set on an essential container.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the
-     * container exits with a <code>zero</code> status.
+     * container exits with a <code>zero</code> status. This condition cannot be set on an essential container.
      * </p>
      * </li>
      * <li>
@@ -314,13 +314,13 @@ public class ContainerDependency implements Serializable, Cloneable, StructuredP
      *        <p>
      *        <code>COMPLETE</code> - This condition validates that a dependent container runs to completion (exits)
      *        before permitting other containers to start. This can be useful for nonessential containers that run a
-     *        script and then exit.
+     *        script and then exit. This condition cannot be set on an essential container.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the
-     *        container exits with a <code>zero</code> status.
+     *        container exits with a <code>zero</code> status. This condition cannot be set on an essential container.
      *        </p>
      *        </li>
      *        <li>
@@ -354,13 +354,13 @@ public class ContainerDependency implements Serializable, Cloneable, StructuredP
      * <p>
      * <code>COMPLETE</code> - This condition validates that a dependent container runs to completion (exits) before
      * permitting other containers to start. This can be useful for nonessential containers that run a script and then
-     * exit.
+     * exit. This condition cannot be set on an essential container.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the
-     * container exits with a <code>zero</code> status.
+     * container exits with a <code>zero</code> status. This condition cannot be set on an essential container.
      * </p>
      * </li>
      * <li>
@@ -386,13 +386,13 @@ public class ContainerDependency implements Serializable, Cloneable, StructuredP
      *        <p>
      *        <code>COMPLETE</code> - This condition validates that a dependent container runs to completion (exits)
      *        before permitting other containers to start. This can be useful for nonessential containers that run a
-     *        script and then exit.
+     *        script and then exit. This condition cannot be set on an essential container.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it also requires that the
-     *        container exits with a <code>zero</code> status.
+     *        container exits with a <code>zero</code> status. This condition cannot be set on an essential container.
      *        </p>
      *        </li>
      *        <li>

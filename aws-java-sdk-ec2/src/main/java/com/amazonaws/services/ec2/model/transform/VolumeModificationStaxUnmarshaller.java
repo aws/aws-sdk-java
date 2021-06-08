@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,16 @@ public class VolumeModificationStaxUnmarshaller implements Unmarshaller<VolumeMo
                     continue;
                 }
 
+                if (context.testExpression("targetThroughput", targetDepth)) {
+                    volumeModification.setTargetThroughput(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("targetMultiAttachEnabled", targetDepth)) {
+                    volumeModification.setTargetMultiAttachEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("originalSize", targetDepth)) {
                     volumeModification.setOriginalSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -85,6 +95,16 @@ public class VolumeModificationStaxUnmarshaller implements Unmarshaller<VolumeMo
 
                 if (context.testExpression("originalVolumeType", targetDepth)) {
                     volumeModification.setOriginalVolumeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("originalThroughput", targetDepth)) {
+                    volumeModification.setOriginalThroughput(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("originalMultiAttachEnabled", targetDepth)) {
+                    volumeModification.setOriginalMultiAttachEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

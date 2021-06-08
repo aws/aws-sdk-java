@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,13 @@ public class JourneyLimits implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer messagesPerSecond;
+    /**
+     * <p>
+     * Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601
+     * format, such as PT1H.
+     * </p>
+     */
+    private String endpointReentryInterval;
 
     /**
      * <p>
@@ -182,6 +189,52 @@ public class JourneyLimits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601
+     * format, such as PT1H.
+     * </p>
+     * 
+     * @param endpointReentryInterval
+     *        Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an
+     *        ISO 8601 format, such as PT1H.
+     */
+
+    public void setEndpointReentryInterval(String endpointReentryInterval) {
+        this.endpointReentryInterval = endpointReentryInterval;
+    }
+
+    /**
+     * <p>
+     * Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601
+     * format, such as PT1H.
+     * </p>
+     * 
+     * @return Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an
+     *         ISO 8601 format, such as PT1H.
+     */
+
+    public String getEndpointReentryInterval() {
+        return this.endpointReentryInterval;
+    }
+
+    /**
+     * <p>
+     * Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601
+     * format, such as PT1H.
+     * </p>
+     * 
+     * @param endpointReentryInterval
+     *        Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an
+     *        ISO 8601 format, such as PT1H.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JourneyLimits withEndpointReentryInterval(String endpointReentryInterval) {
+        setEndpointReentryInterval(endpointReentryInterval);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,7 +251,9 @@ public class JourneyLimits implements Serializable, Cloneable, StructuredPojo {
         if (getEndpointReentryCap() != null)
             sb.append("EndpointReentryCap: ").append(getEndpointReentryCap()).append(",");
         if (getMessagesPerSecond() != null)
-            sb.append("MessagesPerSecond: ").append(getMessagesPerSecond());
+            sb.append("MessagesPerSecond: ").append(getMessagesPerSecond()).append(",");
+        if (getEndpointReentryInterval() != null)
+            sb.append("EndpointReentryInterval: ").append(getEndpointReentryInterval());
         sb.append("}");
         return sb.toString();
     }
@@ -225,6 +280,10 @@ public class JourneyLimits implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMessagesPerSecond() != null && other.getMessagesPerSecond().equals(this.getMessagesPerSecond()) == false)
             return false;
+        if (other.getEndpointReentryInterval() == null ^ this.getEndpointReentryInterval() == null)
+            return false;
+        if (other.getEndpointReentryInterval() != null && other.getEndpointReentryInterval().equals(this.getEndpointReentryInterval()) == false)
+            return false;
         return true;
     }
 
@@ -236,6 +295,7 @@ public class JourneyLimits implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDailyCap() == null) ? 0 : getDailyCap().hashCode());
         hashCode = prime * hashCode + ((getEndpointReentryCap() == null) ? 0 : getEndpointReentryCap().hashCode());
         hashCode = prime * hashCode + ((getMessagesPerSecond() == null) ? 0 : getMessagesPerSecond().hashCode());
+        hashCode = prime * hashCode + ((getEndpointReentryInterval() == null) ? 0 : getEndpointReentryInterval().hashCode());
         return hashCode;
     }
 

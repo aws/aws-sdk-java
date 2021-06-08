@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,7 @@ public enum TrainingInstanceType {
     MlP38xlarge("ml.p3.8xlarge"),
     MlP316xlarge("ml.p3.16xlarge"),
     MlP3dn24xlarge("ml.p3dn.24xlarge"),
+    MlP4d24xlarge("ml.p4d.24xlarge"),
     MlC5Xlarge("ml.c5.xlarge"),
     MlC52xlarge("ml.c5.2xlarge"),
     MlC54xlarge("ml.c5.4xlarge"),

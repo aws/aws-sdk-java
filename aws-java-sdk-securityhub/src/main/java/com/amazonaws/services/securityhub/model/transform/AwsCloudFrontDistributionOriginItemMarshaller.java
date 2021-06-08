@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class AwsCloudFrontDistributionOriginItemMarshaller {
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<String> ORIGINPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OriginPath").build();
+    private static final MarshallingInfo<StructuredPojo> S3ORIGINCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3OriginConfig").build();
 
     private static final AwsCloudFrontDistributionOriginItemMarshaller instance = new AwsCloudFrontDistributionOriginItemMarshaller();
 
@@ -53,6 +55,7 @@ public class AwsCloudFrontDistributionOriginItemMarshaller {
             protocolMarshaller.marshall(awsCloudFrontDistributionOriginItem.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(awsCloudFrontDistributionOriginItem.getId(), ID_BINDING);
             protocolMarshaller.marshall(awsCloudFrontDistributionOriginItem.getOriginPath(), ORIGINPATH_BINDING);
+            protocolMarshaller.marshall(awsCloudFrontDistributionOriginItem.getS3OriginConfig(), S3ORIGINCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

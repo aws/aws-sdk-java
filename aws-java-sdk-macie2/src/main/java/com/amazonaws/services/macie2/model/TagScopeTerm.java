@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a tag-based condition that determines whether an object is included or excluded from a classification job.
+ * Specifies a tag-based condition that determines whether an S3 object is included or excluded from a classification
+ * job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagScopeTerm" target="_top">AWS API
@@ -30,19 +31,20 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).
      * </p>
      */
     private String comparator;
     /**
      * <p>
-     * The tag key to use in the condition.
+     * The object property to use in the condition. The only valid value is TAG.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The tag key and value pairs to use in the condition.
+     * The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify
+     * the keys in this array and set the value for each associated tag value to an empty string.
      * </p>
      */
     private java.util.List<TagValuePair> tagValues;
@@ -55,11 +57,11 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).
      * </p>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).
      * @see JobComparator
      */
 
@@ -69,10 +71,10 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).
      * </p>
      * 
-     * @return The operator to use in the condition.
+     * @return The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).
      * @see JobComparator
      */
 
@@ -82,11 +84,11 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).
      * </p>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobComparator
      */
@@ -98,11 +100,11 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).
      * </p>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobComparator
      */
@@ -114,11 +116,11 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key to use in the condition.
+     * The object property to use in the condition. The only valid value is TAG.
      * </p>
      * 
      * @param key
-     *        The tag key to use in the condition.
+     *        The object property to use in the condition. The only valid value is TAG.
      */
 
     public void setKey(String key) {
@@ -127,10 +129,10 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key to use in the condition.
+     * The object property to use in the condition. The only valid value is TAG.
      * </p>
      * 
-     * @return The tag key to use in the condition.
+     * @return The object property to use in the condition. The only valid value is TAG.
      */
 
     public String getKey() {
@@ -139,11 +141,11 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key to use in the condition.
+     * The object property to use in the condition. The only valid value is TAG.
      * </p>
      * 
      * @param key
-     *        The tag key to use in the condition.
+     *        The object property to use in the condition. The only valid value is TAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,10 +156,12 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key and value pairs to use in the condition.
+     * The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify
+     * the keys in this array and set the value for each associated tag value to an empty string.
      * </p>
      * 
-     * @return The tag key and value pairs to use in the condition.
+     * @return The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition,
+     *         specify the keys in this array and set the value for each associated tag value to an empty string.
      */
 
     public java.util.List<TagValuePair> getTagValues() {
@@ -166,11 +170,13 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key and value pairs to use in the condition.
+     * The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify
+     * the keys in this array and set the value for each associated tag value to an empty string.
      * </p>
      * 
      * @param tagValues
-     *        The tag key and value pairs to use in the condition.
+     *        The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition,
+     *        specify the keys in this array and set the value for each associated tag value to an empty string.
      */
 
     public void setTagValues(java.util.Collection<TagValuePair> tagValues) {
@@ -184,7 +190,8 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key and value pairs to use in the condition.
+     * The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify
+     * the keys in this array and set the value for each associated tag value to an empty string.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -193,7 +200,8 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tagValues
-     *        The tag key and value pairs to use in the condition.
+     *        The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition,
+     *        specify the keys in this array and set the value for each associated tag value to an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,11 +217,13 @@ public class TagScopeTerm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key and value pairs to use in the condition.
+     * The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify
+     * the keys in this array and set the value for each associated tag value to an empty string.
      * </p>
      * 
      * @param tagValues
-     *        The tag key and value pairs to use in the condition.
+     *        The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition,
+     *        specify the keys in this array and set the value for each associated tag value to an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

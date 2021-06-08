@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,9 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
+     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      */
     private String startUrl;
@@ -74,6 +76,8 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String roleArn;
+
+    private PortalStatus status;
 
     /**
      * <p>
@@ -197,11 +201,15 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
+     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
      * @param startUrl
-     *        The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     *        The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
+     *        for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console
+     *        to get a URL that you can use to access the portal.
      */
 
     public void setStartUrl(String startUrl) {
@@ -210,10 +218,14 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
+     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
-     * @return The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     * @return The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
+     *         for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise
+     *         console to get a URL that you can use to access the portal.
      */
 
     public String getStartUrl() {
@@ -222,11 +234,15 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
+     * authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console to get a
+     * URL that you can use to access the portal.
      * </p>
      * 
      * @param startUrl
-     *        The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     *        The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
+     *        for authentication. For portals that use IAM for authentication, you must use the AWS IoT SiteWise console
+     *        to get a URL that you can use to access the portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,6 +396,32 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param status
+     */
+
+    public void setStatus(PortalStatus status) {
+        this.status = status;
+    }
+
+    /**
+     * @return
+     */
+
+    public PortalStatus getStatus() {
+        return this.status;
+    }
+
+    /**
+     * @param status
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PortalSummary withStatus(PortalStatus status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -404,7 +446,9 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdateDate() != null)
             sb.append("LastUpdateDate: ").append(getLastUpdateDate()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -447,6 +491,10 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -462,6 +510,7 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateDate() == null) ? 0 : getLastUpdateDate().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

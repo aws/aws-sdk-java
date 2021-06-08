@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
-     * located in an Amazon S3 bucket. For more information, go to the <a
+     * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -215,9 +215,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -497,7 +496,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
-     * located in an Amazon S3 bucket. For more information, go to the <a
+     * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -508,7 +507,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param templateURL
      *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
-     *        that is located in an Amazon S3 bucket. For more information, go to the <a
+     *        that is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
@@ -523,7 +522,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
-     * located in an Amazon S3 bucket. For more information, go to the <a
+     * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -533,7 +532,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @return Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
-     *         that is located in an Amazon S3 bucket. For more information, go to the <a
+     *         that is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
@@ -548,7 +547,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
-     * located in an Amazon S3 bucket. For more information, go to the <a
+     * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -559,7 +558,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param templateURL
      *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
-     *        that is located in an Amazon S3 bucket. For more information, go to the <a
+     *        that is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to the <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
@@ -1031,9 +1030,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -1162,9 +1160,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *         </p>
      *         <p>
-     *         Change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     *         that contains macros <i>and</i> nested stacks, you must create the stack directly from the template using
-     *         this capability.
+     *         If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *         must create the stack directly from the template using this capability.
      *         </p>
      *         <important>
      *         <p>
@@ -1300,9 +1297,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -1432,9 +1428,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
-     *        Change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     *        that contains macros <i>and</i> nested stacks, you must create the stack directly from the template using
-     *        this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create the stack directly from the template using this capability.
      *        </p>
      *        <important>
      *        <p>
@@ -1572,9 +1567,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -1709,9 +1703,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
-     *        Change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     *        that contains macros <i>and</i> nested stacks, you must create the stack directly from the template using
-     *        this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create the stack directly from the template using this capability.
      *        </p>
      *        <important>
      *        <p>
@@ -1851,9 +1844,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -1983,9 +1975,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
-     *        Change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     *        that contains macros <i>and</i> nested stacks, you must create the stack directly from the template using
-     *        this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create the stack directly from the template using this capability.
      *        </p>
      *        <important>
      *        <p>
@@ -2120,9 +2111,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
-     * Change sets do not currently support nested stacks. If you want to create a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must create the stack directly from the template using this
-     * capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create the stack directly from the template using this capability.
      * </p>
      * <important>
      * <p>
@@ -2252,9 +2242,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
-     *        Change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     *        that contains macros <i>and</i> nested stacks, you must create the stack directly from the template using
-     *        this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create the stack directly from the template using this capability.
      *        </p>
      *        <important>
      *        <p>

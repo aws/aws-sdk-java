@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,16 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
                     if (ebs.getKmsKeyId() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId", StringUtils.fromString(ebs.getKmsKeyId()));
+                    }
+
+                    if (ebs.getThroughput() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Throughput",
+                                StringUtils.fromInteger(ebs.getThroughput()));
+                    }
+
+                    if (ebs.getOutpostArn() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.OutpostArn",
+                                StringUtils.fromString(ebs.getOutpostArn()));
                     }
 
                     if (ebs.getEncrypted() != null) {
@@ -359,9 +369,19 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                             StringUtils.fromString(runInstancesRequestNetworkInterfacesListValue.getSubnetId()));
                 }
 
+                if (runInstancesRequestNetworkInterfacesListValue.getAssociateCarrierIpAddress() != null) {
+                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".AssociateCarrierIpAddress",
+                            StringUtils.fromBoolean(runInstancesRequestNetworkInterfacesListValue.getAssociateCarrierIpAddress()));
+                }
+
                 if (runInstancesRequestNetworkInterfacesListValue.getInterfaceType() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".InterfaceType",
                             StringUtils.fromString(runInstancesRequestNetworkInterfacesListValue.getInterfaceType()));
+                }
+
+                if (runInstancesRequestNetworkInterfacesListValue.getNetworkCardIndex() != null) {
+                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".NetworkCardIndex",
+                            StringUtils.fromInteger(runInstancesRequestNetworkInterfacesListValue.getNetworkCardIndex()));
                 }
                 networkInterfacesListIndex++;
             }
@@ -526,6 +546,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     request.addParameter("CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId",
                             StringUtils.fromString(capacityReservationTarget.getCapacityReservationId()));
                 }
+
+                if (capacityReservationTarget.getCapacityReservationResourceGroupArn() != null) {
+                    request.addParameter("CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationResourceGroupArn",
+                            StringUtils.fromString(capacityReservationTarget.getCapacityReservationResourceGroupArn()));
+                }
             }
         }
 
@@ -565,6 +590,14 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
             if (metadataOptions.getHttpEndpoint() != null) {
                 request.addParameter("MetadataOptions.HttpEndpoint", StringUtils.fromString(metadataOptions.getHttpEndpoint()));
+            }
+        }
+
+        EnclaveOptionsRequest enclaveOptions = runInstancesRequest.getEnclaveOptions();
+        if (enclaveOptions != null) {
+
+            if (enclaveOptions.getEnabled() != null) {
+                request.addParameter("EnclaveOptions.Enabled", StringUtils.fromBoolean(enclaveOptions.getEnabled()));
             }
         }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,18 @@ public class OutputConfigJsonUnmarshaller implements Unmarshaller<OutputConfig, 
                 if (context.testExpression("TargetDevice", targetDepth)) {
                     context.nextToken();
                     outputConfig.setTargetDevice(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TargetPlatform", targetDepth)) {
+                    context.nextToken();
+                    outputConfig.setTargetPlatform(TargetPlatformJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CompilerOptions", targetDepth)) {
+                    context.nextToken();
+                    outputConfig.setCompilerOptions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("KmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    outputConfig.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

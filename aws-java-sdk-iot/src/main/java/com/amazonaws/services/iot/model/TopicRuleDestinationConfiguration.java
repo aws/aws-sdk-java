@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class TopicRuleDestinationConfiguration implements Serializable, Cloneabl
      * </p>
      */
     private HttpUrlDestinationConfiguration httpUrlConfiguration;
+    /**
+     * <p>
+     * Configuration of the virtual private cloud (VPC) connection.
+     * </p>
+     */
+    private VpcDestinationConfiguration vpcConfiguration;
 
     /**
      * <p>
@@ -73,6 +79,46 @@ public class TopicRuleDestinationConfiguration implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * Configuration of the virtual private cloud (VPC) connection.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        Configuration of the virtual private cloud (VPC) connection.
+     */
+
+    public void setVpcConfiguration(VpcDestinationConfiguration vpcConfiguration) {
+        this.vpcConfiguration = vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration of the virtual private cloud (VPC) connection.
+     * </p>
+     * 
+     * @return Configuration of the virtual private cloud (VPC) connection.
+     */
+
+    public VpcDestinationConfiguration getVpcConfiguration() {
+        return this.vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration of the virtual private cloud (VPC) connection.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        Configuration of the virtual private cloud (VPC) connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TopicRuleDestinationConfiguration withVpcConfiguration(VpcDestinationConfiguration vpcConfiguration) {
+        setVpcConfiguration(vpcConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +131,9 @@ public class TopicRuleDestinationConfiguration implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHttpUrlConfiguration() != null)
-            sb.append("HttpUrlConfiguration: ").append(getHttpUrlConfiguration());
+            sb.append("HttpUrlConfiguration: ").append(getHttpUrlConfiguration()).append(",");
+        if (getVpcConfiguration() != null)
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +152,10 @@ public class TopicRuleDestinationConfiguration implements Serializable, Cloneabl
             return false;
         if (other.getHttpUrlConfiguration() != null && other.getHttpUrlConfiguration().equals(this.getHttpUrlConfiguration()) == false)
             return false;
+        if (other.getVpcConfiguration() == null ^ this.getVpcConfiguration() == null)
+            return false;
+        if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +165,7 @@ public class TopicRuleDestinationConfiguration implements Serializable, Cloneabl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getHttpUrlConfiguration() == null) ? 0 : getHttpUrlConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         return hashCode;
     }
 

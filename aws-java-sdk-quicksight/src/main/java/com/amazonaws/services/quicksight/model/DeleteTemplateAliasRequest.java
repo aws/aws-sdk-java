@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,9 +39,9 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
     private String templateId;
     /**
      * <p>
-     * The name for the template alias. If you name a specific alias, you delete the version that the alias points to.
-     * You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter.
+     * The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You
+     * can specify the alias name, or specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
      * </p>
      */
     private String aliasName;
@@ -128,14 +128,14 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the template alias. If you name a specific alias, you delete the version that the alias points to.
-     * You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter.
+     * The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You
+     * can specify the alias name, or specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
      * </p>
      * 
      * @param aliasName
-     *        The name for the template alias. If you name a specific alias, you delete the version that the alias
-     *        points to. You can specify the latest version of the template by providing the keyword
+     *        The name for the template alias. To delete a specific alias, you delete the version that the alias points
+     *        to. You can specify the alias name, or specify the latest version of the template by providing the keyword
      *        <code>$LATEST</code> in the <code>AliasName</code> parameter.
      */
 
@@ -145,14 +145,14 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the template alias. If you name a specific alias, you delete the version that the alias points to.
-     * You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter.
+     * The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You
+     * can specify the alias name, or specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
      * </p>
      * 
-     * @return The name for the template alias. If you name a specific alias, you delete the version that the alias
-     *         points to. You can specify the latest version of the template by providing the keyword
-     *         <code>$LATEST</code> in the <code>AliasName</code> parameter.
+     * @return The name for the template alias. To delete a specific alias, you delete the version that the alias points
+     *         to. You can specify the alias name, or specify the latest version of the template by providing the
+     *         keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.
      */
 
     public String getAliasName() {
@@ -161,14 +161,14 @@ public class DeleteTemplateAliasRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name for the template alias. If you name a specific alias, you delete the version that the alias points to.
-     * You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the
-     * <code>AliasName</code> parameter.
+     * The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You
+     * can specify the alias name, or specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter.
      * </p>
      * 
      * @param aliasName
-     *        The name for the template alias. If you name a specific alias, you delete the version that the alias
-     *        points to. You can specify the latest version of the template by providing the keyword
+     *        The name for the template alias. To delete a specific alias, you delete the version that the alias points
+     *        to. You can specify the alias name, or specify the latest version of the template by providing the keyword
      *        <code>$LATEST</code> in the <code>AliasName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

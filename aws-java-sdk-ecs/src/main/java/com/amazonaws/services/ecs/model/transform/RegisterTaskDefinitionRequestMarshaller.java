@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,8 @@ public class RegisterTaskDefinitionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("proxyConfiguration").build();
     private static final MarshallingInfo<List> INFERENCEACCELERATORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inferenceAccelerators").build();
+    private static final MarshallingInfo<StructuredPojo> EPHEMERALSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ephemeralStorage").build();
 
     private static final RegisterTaskDefinitionRequestMarshaller instance = new RegisterTaskDefinitionRequestMarshaller();
 
@@ -90,6 +92,7 @@ public class RegisterTaskDefinitionRequestMarshaller {
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getIpcMode(), IPCMODE_BINDING);
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getProxyConfiguration(), PROXYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(registerTaskDefinitionRequest.getInferenceAccelerators(), INFERENCEACCELERATORS_BINDING);
+            protocolMarshaller.marshall(registerTaskDefinitionRequest.getEphemeralStorage(), EPHEMERALSTORAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

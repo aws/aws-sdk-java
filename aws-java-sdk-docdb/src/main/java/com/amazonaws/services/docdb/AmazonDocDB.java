@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,24 @@ public interface AmazonDocDB {
 
     /**
      * <p>
+     * Adds a source identifier to an existing event notification subscription.
+     * </p>
+     * 
+     * @param addSourceIdentifierToSubscriptionRequest
+     *        Represents the input to <a>AddSourceIdentifierToSubscription</a>.
+     * @return Result of the AddSourceIdentifierToSubscription operation returned by the service.
+     * @throws SubscriptionNotFoundException
+     *         The subscription name does not exist.
+     * @throws SourceNotFoundException
+     *         The requested source could not be found.
+     * @sample AmazonDocDB.AddSourceIdentifierToSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    EventSubscription addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest);
+
+    /**
+     * <p>
      * Adds metadata tags to an Amazon DocumentDB resource. You can use these tags with cost allocation reporting to
      * track costs that are associated with Amazon DocumentDB resources. or in a <code>Condition</code> statement in an
      * AWS Identity and Access Management (IAM) policy for Amazon DocumentDB.
@@ -66,7 +84,7 @@ public interface AmazonDocDB {
 
     /**
      * <p>
-     * Applies a pending maintenance action to a resource (for example, to a DB instance).
+     * Applies a pending maintenance action to a resource (for example, to an Amazon DocumentDB instance).
      * </p>
      * 
      * @param applyPendingMaintenanceActionRequest
@@ -110,11 +128,12 @@ public interface AmazonDocDB {
      * </p>
      * <p>
      * To copy a cluster snapshot from a shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
-     * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.
+     * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can only copy a shared DB cluster
+     * snapshot, whether encrypted or not, in the same AWS Region.
      * </p>
      * <p>
      * To cancel the copy operation after it is in progress, delete the target cluster snapshot identified by
-     * <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is in the <i>copying</i> status.
+     * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in the <i>copying</i> status.
      * </p>
      * 
      * @param copyDBClusterSnapshotRequest
@@ -180,6 +199,10 @@ public interface AmazonDocDB {
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonDocDB.CreateDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -191,24 +214,22 @@ public interface AmazonDocDB {
      * Creates a new cluster parameter group.
      * </p>
      * <p>
-     * Parameters in a cluster parameter group apply to all of the instances in a DB cluster.
+     * Parameters in a cluster parameter group apply to all of the instances in a cluster.
      * </p>
      * <p>
      * A cluster parameter group is initially created with the default parameters for the database engine used by
-     * instances in the cluster. To provide custom values for any of the parameters, you must modify the group after you
-     * create it. After you create a DB cluster parameter group, you must associate it with your cluster. For the new DB
+     * instances in the cluster. In Amazon DocumentDB, you cannot make modifications directly to the
+     * <code>default.docdb3.6</code> cluster parameter group. If your Amazon DocumentDB cluster is using the default
+     * cluster parameter group and you want to modify a value in it, you must first <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html"> create a
+     * new parameter group</a> or <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html"> copy an
+     * existing parameter group</a>, modify it, and then apply the modified parameter group to your cluster. For the new
      * cluster parameter group and associated settings to take effect, you must then reboot the instances in the cluster
-     * without failover.
+     * without failover. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-modify.html">
+     * Modifying Amazon DocumentDB Cluster Parameter Groups</a>.
      * </p>
-     * <important>
-     * <p>
-     * After you create a cluster parameter group, you should wait at least 5 minutes before creating your first cluster
-     * that uses that cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully
-     * complete the create action before the cluster parameter group is used as the default for a new cluster. This step
-     * is especially important for parameters that are critical when creating the default database for a cluster, such
-     * as the character set for the default database defined by the <code>character_set_database</code> parameter.
-     * </p>
-     * </important>
      * 
      * @param createDBClusterParameterGroupRequest
      *        Represents the input of <a>CreateDBClusterParameterGroup</a>.
@@ -322,6 +343,90 @@ public interface AmazonDocDB {
      *      Documentation</a>
      */
     DBSubnetGroup createDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon DocumentDB event notification subscription. This action requires a topic Amazon Resource Name
+     * (ARN) created by using the Amazon DocumentDB console, the Amazon SNS console, or the Amazon SNS API. To obtain an
+     * ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in
+     * the Amazon SNS console.
+     * </p>
+     * <p>
+     * You can specify the type of source (<code>SourceType</code>) that you want to be notified of. You can also
+     * provide a list of Amazon DocumentDB sources (<code>SourceIds</code>) that trigger the events, and you can provide
+     * a list of event categories (<code>EventCategories</code>) for events that you want to be notified of. For
+     * example, you can specify <code>SourceType = db-instance</code>,
+     * <code>SourceIds = mydbinstance1, mydbinstance2</code> and <code>EventCategories = Availability, Backup</code>.
+     * </p>
+     * <p>
+     * If you specify both the <code>SourceType</code> and <code>SourceIds</code> (such as
+     * <code>SourceType = db-instance</code> and <code>SourceIdentifier = myDBInstance1</code>), you are notified of all
+     * the <code>db-instance</code> events for the specified source. If you specify a <code>SourceType</code> but do not
+     * specify a <code>SourceIdentifier</code>, you receive notice of the events for that source type for all your
+     * Amazon DocumentDB sources. If you do not specify either the <code>SourceType</code> or the
+     * <code>SourceIdentifier</code>, you are notified of events generated from all Amazon DocumentDB sources belonging
+     * to your customer account.
+     * </p>
+     * 
+     * @param createEventSubscriptionRequest
+     *        Represents the input to <a>CreateEventSubscription</a>.
+     * @return Result of the CreateEventSubscription operation returned by the service.
+     * @throws EventSubscriptionQuotaExceededException
+     *         You have reached the maximum number of event subscriptions.
+     * @throws SubscriptionAlreadyExistException
+     *         The provided subscription name already exists.
+     * @throws SNSInvalidTopicException
+     *         Amazon SNS has responded that there is a problem with the specified topic.
+     * @throws SNSNoAuthorizationException
+     *         You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).
+     * @throws SNSTopicArnNotFoundException
+     *         The SNS topic Amazon Resource Name (ARN) does not exist.
+     * @throws SubscriptionCategoryNotFoundException
+     *         The provided category does not exist.
+     * @throws SourceNotFoundException
+     *         The requested source could not be found.
+     * @sample AmazonDocDB.CreateEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    EventSubscription createEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon DocumentDB global cluster that can span multiple multiple AWS Regions. The global cluster
+     * contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global
+     * clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated
+     * infrastructure with no impact to your workload’s performance.
+     * </p>
+     * <p/>
+     * <p>
+     * You can create a global cluster that is initially empty, and then add a primary and a secondary to it. Or you can
+     * specify an existing cluster during the create operation, and this cluster becomes the primary of the global
+     * cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param createGlobalClusterRequest
+     *        Represents the input to <a>CreateGlobalCluster</a>.
+     * @return Result of the CreateGlobalCluster operation returned by the service.
+     * @throws GlobalClusterAlreadyExistsException
+     *         The <code>GlobalClusterIdentifier</code> already exists. Choose a new global cluster identifier (unique
+     *         name) to create a new global cluster.
+     * @throws GlobalClusterQuotaExceededException
+     *         The number of global clusters for this account is already at the maximum allowed.
+     * @throws InvalidDBClusterStateException
+     *         The cluster isn't in a valid state.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
+     * @sample AmazonDocDB.CreateGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GlobalCluster createGlobalCluster(CreateGlobalClusterRequest createGlobalClusterRequest);
 
     /**
      * <p>
@@ -440,6 +545,48 @@ public interface AmazonDocDB {
      *      Documentation</a>
      */
     DeleteDBSubnetGroupResult deleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param deleteEventSubscriptionRequest
+     *        Represents the input to <a>DeleteEventSubscription</a>.
+     * @return Result of the DeleteEventSubscription operation returned by the service.
+     * @throws SubscriptionNotFoundException
+     *         The subscription name does not exist.
+     * @throws InvalidEventSubscriptionStateException
+     *         Someone else might be modifying a subscription. Wait a few seconds, and try again.
+     * @sample AmazonDocDB.DeleteEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Deletes a global cluster. The primary and secondary clusters must already be detached or deleted before
+     * attempting to delete a global cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param deleteGlobalClusterRequest
+     *        Represents the input to <a>DeleteGlobalCluster</a>.
+     * @return Result of the DeleteGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @sample AmazonDocDB.DeleteGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GlobalCluster deleteGlobalCluster(DeleteGlobalClusterRequest deleteGlobalClusterRequest);
 
     /**
      * <p>
@@ -624,6 +771,27 @@ public interface AmazonDocDB {
 
     /**
      * <p>
+     * Lists all the subscription descriptions for a customer account. The description for a subscription includes
+     * <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+     * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+     * </p>
+     * <p>
+     * If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
+     * </p>
+     * 
+     * @param describeEventSubscriptionsRequest
+     *        Represents the input to <a>DescribeEventSubscriptions</a>.
+     * @return Result of the DescribeEventSubscriptions operation returned by the service.
+     * @throws SubscriptionNotFoundException
+     *         The subscription name does not exist.
+     * @sample AmazonDocDB.DescribeEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest);
+
+    /**
+     * <p>
      * Returns events related to instances, security groups, snapshots, and DB parameter groups for the past 14 days.
      * You can obtain events specific to a particular DB instance, security group, snapshot, or parameter group by
      * providing the name as a parameter. By default, the events of the past hour are returned.
@@ -637,6 +805,26 @@ public interface AmazonDocDB {
      *      Documentation</a>
      */
     DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest);
+
+    /**
+     * <p>
+     * Returns information about Amazon DocumentDB global clusters. This API supports pagination.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param describeGlobalClustersRequest
+     * @return Result of the DescribeGlobalClusters operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @sample AmazonDocDB.DescribeGlobalClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeGlobalClusters" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeGlobalClustersResult describeGlobalClusters(DescribeGlobalClustersRequest describeGlobalClustersRequest);
 
     /**
      * <p>
@@ -894,6 +1082,57 @@ public interface AmazonDocDB {
 
     /**
      * <p>
+     * Modifies an existing Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param modifyEventSubscriptionRequest
+     *        Represents the input to <a>ModifyEventSubscription</a>.
+     * @return Result of the ModifyEventSubscription operation returned by the service.
+     * @throws EventSubscriptionQuotaExceededException
+     *         You have reached the maximum number of event subscriptions.
+     * @throws SubscriptionNotFoundException
+     *         The subscription name does not exist.
+     * @throws SNSInvalidTopicException
+     *         Amazon SNS has responded that there is a problem with the specified topic.
+     * @throws SNSNoAuthorizationException
+     *         You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).
+     * @throws SNSTopicArnNotFoundException
+     *         The SNS topic Amazon Resource Name (ARN) does not exist.
+     * @throws SubscriptionCategoryNotFoundException
+     *         The provided category does not exist.
+     * @sample AmazonDocDB.ModifyEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters
+     * (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new
+     * values in the request.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param modifyGlobalClusterRequest
+     *        Represents the input to <a>ModifyGlobalCluster</a>.
+     * @return Result of the ModifyGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @sample AmazonDocDB.ModifyGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GlobalCluster modifyGlobalCluster(ModifyGlobalClusterRequest modifyGlobalClusterRequest);
+
+    /**
+     * <p>
      * You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain
      * changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the
      * instance for the changes to take effect.
@@ -915,6 +1154,50 @@ public interface AmazonDocDB {
      *      Documentation</a>
      */
     DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest);
+
+    /**
+     * <p>
+     * Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster
+     * with read-write capability instead of being read-only and receiving data from a primary in a different region.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param removeFromGlobalClusterRequest
+     *        Represents the input to <a>RemoveFromGlobalCluster</a>.
+     * @return Result of the RemoveFromGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
+     * @sample AmazonDocDB.RemoveFromGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveFromGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GlobalCluster removeFromGlobalCluster(RemoveFromGlobalClusterRequest removeFromGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Removes a source identifier from an existing Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param removeSourceIdentifierFromSubscriptionRequest
+     *        Represents the input to <a>RemoveSourceIdentifierFromSubscription</a>.
+     * @return Result of the RemoveSourceIdentifierFromSubscription operation returned by the service.
+     * @throws SubscriptionNotFoundException
+     *         The subscription name does not exist.
+     * @throws SourceNotFoundException
+     *         The requested source could not be found.
+     * @sample AmazonDocDB.RemoveSourceIdentifierFromSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    EventSubscription removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest);
 
     /**
      * <p>

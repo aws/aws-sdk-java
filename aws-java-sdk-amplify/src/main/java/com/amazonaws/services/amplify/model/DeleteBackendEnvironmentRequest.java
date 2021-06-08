@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for delete backend environment request.
+ * The request structure for the delete backend environment request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment" target="_top">AWS
@@ -30,24 +30,24 @@ public class DeleteBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique Id of an Amplify App.
+     * The unique ID of an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name of a backend environment of an Amplify App.
+     * The name of a backend environment of an Amplify app.
      * </p>
      */
     private String environmentName;
 
     /**
      * <p>
-     * Unique Id of an Amplify App.
+     * The unique ID of an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id of an Amplify App.
+     *        The unique ID of an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -56,10 +56,10 @@ public class DeleteBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique Id of an Amplify App.
+     * The unique ID of an Amplify app.
      * </p>
      * 
-     * @return Unique Id of an Amplify App.
+     * @return The unique ID of an Amplify app.
      */
 
     public String getAppId() {
@@ -68,11 +68,11 @@ public class DeleteBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique Id of an Amplify App.
+     * The unique ID of an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id of an Amplify App.
+     *        The unique ID of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class DeleteBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Name of a backend environment of an Amplify App.
+     * The name of a backend environment of an Amplify app.
      * </p>
      * 
      * @param environmentName
-     *        Name of a backend environment of an Amplify App.
+     *        The name of a backend environment of an Amplify app.
      */
 
     public void setEnvironmentName(String environmentName) {
@@ -96,10 +96,10 @@ public class DeleteBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Name of a backend environment of an Amplify App.
+     * The name of a backend environment of an Amplify app.
      * </p>
      * 
-     * @return Name of a backend environment of an Amplify App.
+     * @return The name of a backend environment of an Amplify app.
      */
 
     public String getEnvironmentName() {
@@ -108,11 +108,11 @@ public class DeleteBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Name of a backend environment of an Amplify App.
+     * The name of a backend environment of an Amplify app.
      * </p>
      * 
      * @param environmentName
-     *        Name of a backend environment of an Amplify App.
+     *        The name of a backend environment of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

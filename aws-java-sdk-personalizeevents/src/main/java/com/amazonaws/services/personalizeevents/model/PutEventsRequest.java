@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,10 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String userId;
     /**
      * <p>
-     * The session ID associated with the user's visit.
+     * The session ID associated with the user's visit. Your application generates the sessionId when a user first
+     * visits your website or uses your application. Amazon Personalize uses the sessionId to associate events with the
+     * user before they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
      * </p>
      */
     private String sessionId;
@@ -142,11 +145,17 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The session ID associated with the user's visit.
+     * The session ID associated with the user's visit. Your application generates the sessionId when a user first
+     * visits your website or uses your application. Amazon Personalize uses the sessionId to associate events with the
+     * user before they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
      * </p>
      * 
      * @param sessionId
-     *        The session ID associated with the user's visit.
+     *        The session ID associated with the user's visit. Your application generates the sessionId when a user
+     *        first visits your website or uses your application. Amazon Personalize uses the sessionId to associate
+     *        events with the user before they log in. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
      */
 
     public void setSessionId(String sessionId) {
@@ -155,10 +164,16 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The session ID associated with the user's visit.
+     * The session ID associated with the user's visit. Your application generates the sessionId when a user first
+     * visits your website or uses your application. Amazon Personalize uses the sessionId to associate events with the
+     * user before they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
      * </p>
      * 
-     * @return The session ID associated with the user's visit.
+     * @return The session ID associated with the user's visit. Your application generates the sessionId when a user
+     *         first visits your website or uses your application. Amazon Personalize uses the sessionId to associate
+     *         events with the user before they log in. For more information, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
      */
 
     public String getSessionId() {
@@ -167,11 +182,17 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The session ID associated with the user's visit.
+     * The session ID associated with the user's visit. Your application generates the sessionId when a user first
+     * visits your website or uses your application. Amazon Personalize uses the sessionId to associate events with the
+     * user before they log in. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
      * </p>
      * 
      * @param sessionId
-     *        The session ID associated with the user's visit.
+     *        The session ID associated with the user's visit. Your application generates the sessionId when a user
+     *        first visits your website or uses your application. Amazon Personalize uses the sessionId to associate
+     *        events with the user before they log in. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

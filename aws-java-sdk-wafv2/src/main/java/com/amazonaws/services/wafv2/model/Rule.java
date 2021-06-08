@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,13 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
- * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
  * <p>
  * A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to
  * allow, block, or count. Each rule includes one top-level <a>Statement</a> that AWS WAF uses to identify matching web
@@ -113,6 +106,49 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private OverrideAction overrideAction;
+    /**
+     * <p>
+     * Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified labels to
+     * matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
+     * rule's rule group or web ACL defines the label namespace.
+     * </p>
+     * <p>
+     * Rules that run after this rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.
+     * </p>
+     * <p>
+     * For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the
+     * following guidelines:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Separate each component of the label with a colon.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each namespace or name can have up to 128 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can specify up to 5 namespaces in a label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>,
+     * <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
+     * </p>
+     */
+    private java.util.List<Label> ruleLabels;
     /**
      * <p>
      * Defines and enables Amazon CloudWatch metrics and web request sample collection.
@@ -609,6 +645,368 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified labels to
+     * matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
+     * rule's rule group or web ACL defines the label namespace.
+     * </p>
+     * <p>
+     * Rules that run after this rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.
+     * </p>
+     * <p>
+     * For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the
+     * following guidelines:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Separate each component of the label with a colon.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each namespace or name can have up to 128 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can specify up to 5 namespaces in a label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>,
+     * <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
+     * </p>
+     * 
+     * @return Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified
+     *         labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a
+     *         rule label. The rule's rule group or web ACL defines the label namespace. </p>
+     *         <p>
+     *         Rules that run after this rule in the web ACL can match against these labels using a
+     *         <code>LabelMatchStatement</code>.
+     *         </p>
+     *         <p>
+     *         For each label, provide a case-sensitive string containing optional namespaces and a label name,
+     *         according to the following guidelines:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Separate each component of the label with a colon.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Each namespace or name can have up to 128 characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You can specify up to 5 namespaces in a label.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>,
+     *         <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     *         <code>ipset</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
+     */
+
+    public java.util.List<Label> getRuleLabels() {
+        return ruleLabels;
+    }
+
+    /**
+     * <p>
+     * Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified labels to
+     * matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
+     * rule's rule group or web ACL defines the label namespace.
+     * </p>
+     * <p>
+     * Rules that run after this rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.
+     * </p>
+     * <p>
+     * For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the
+     * following guidelines:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Separate each component of the label with a colon.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each namespace or name can have up to 128 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can specify up to 5 namespaces in a label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>,
+     * <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
+     * </p>
+     * 
+     * @param ruleLabels
+     *        Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified
+     *        labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a
+     *        rule label. The rule's rule group or web ACL defines the label namespace. </p>
+     *        <p>
+     *        Rules that run after this rule in the web ACL can match against these labels using a
+     *        <code>LabelMatchStatement</code>.
+     *        </p>
+     *        <p>
+     *        For each label, provide a case-sensitive string containing optional namespaces and a label name, according
+     *        to the following guidelines:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Separate each component of the label with a colon.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Each namespace or name can have up to 128 characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can specify up to 5 namespaces in a label.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>,
+     *        <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     *        <code>ipset</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
+     */
+
+    public void setRuleLabels(java.util.Collection<Label> ruleLabels) {
+        if (ruleLabels == null) {
+            this.ruleLabels = null;
+            return;
+        }
+
+        this.ruleLabels = new java.util.ArrayList<Label>(ruleLabels);
+    }
+
+    /**
+     * <p>
+     * Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified labels to
+     * matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
+     * rule's rule group or web ACL defines the label namespace.
+     * </p>
+     * <p>
+     * Rules that run after this rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.
+     * </p>
+     * <p>
+     * For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the
+     * following guidelines:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Separate each component of the label with a colon.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each namespace or name can have up to 128 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can specify up to 5 namespaces in a label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>,
+     * <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRuleLabels(java.util.Collection)} or {@link #withRuleLabels(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ruleLabels
+     *        Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified
+     *        labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a
+     *        rule label. The rule's rule group or web ACL defines the label namespace. </p>
+     *        <p>
+     *        Rules that run after this rule in the web ACL can match against these labels using a
+     *        <code>LabelMatchStatement</code>.
+     *        </p>
+     *        <p>
+     *        For each label, provide a case-sensitive string containing optional namespaces and a label name, according
+     *        to the following guidelines:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Separate each component of the label with a colon.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Each namespace or name can have up to 128 characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can specify up to 5 namespaces in a label.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>,
+     *        <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     *        <code>ipset</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Rule withRuleLabels(Label... ruleLabels) {
+        if (this.ruleLabels == null) {
+            setRuleLabels(new java.util.ArrayList<Label>(ruleLabels.length));
+        }
+        for (Label ele : ruleLabels) {
+            this.ruleLabels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified labels to
+     * matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
+     * rule's rule group or web ACL defines the label namespace.
+     * </p>
+     * <p>
+     * Rules that run after this rule in the web ACL can match against these labels using a
+     * <code>LabelMatchStatement</code>.
+     * </p>
+     * <p>
+     * For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the
+     * following guidelines:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Separate each component of the label with a colon.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each namespace or name can have up to 128 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can specify up to 5 namespaces in a label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>,
+     * <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     * <code>ipset</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
+     * </p>
+     * 
+     * @param ruleLabels
+     *        Labels to apply to web requests that match the rule match statement. AWS WAF applies fully qualified
+     *        labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a
+     *        rule label. The rule's rule group or web ACL defines the label namespace. </p>
+     *        <p>
+     *        Rules that run after this rule in the web ACL can match against these labels using a
+     *        <code>LabelMatchStatement</code>.
+     *        </p>
+     *        <p>
+     *        For each label, provide a case-sensitive string containing optional namespaces and a label name, according
+     *        to the following guidelines:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Separate each component of the label with a colon.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Each namespace or name can have up to 128 characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can specify up to 5 namespaces in a label.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use the following reserved words in your label specification: <code>aws</code>, <code>waf</code>,
+     *        <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>, <code>regexpatternset</code>, or
+     *        <code>ipset</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Rule withRuleLabels(java.util.Collection<Label> ruleLabels) {
+        setRuleLabels(ruleLabels);
+        return this;
+    }
+
+    /**
+     * <p>
      * Defines and enables Amazon CloudWatch metrics and web request sample collection.
      * </p>
      * 
@@ -669,6 +1067,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
             sb.append("Action: ").append(getAction()).append(",");
         if (getOverrideAction() != null)
             sb.append("OverrideAction: ").append(getOverrideAction()).append(",");
+        if (getRuleLabels() != null)
+            sb.append("RuleLabels: ").append(getRuleLabels()).append(",");
         if (getVisibilityConfig() != null)
             sb.append("VisibilityConfig: ").append(getVisibilityConfig());
         sb.append("}");
@@ -705,6 +1105,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOverrideAction() != null && other.getOverrideAction().equals(this.getOverrideAction()) == false)
             return false;
+        if (other.getRuleLabels() == null ^ this.getRuleLabels() == null)
+            return false;
+        if (other.getRuleLabels() != null && other.getRuleLabels().equals(this.getRuleLabels()) == false)
+            return false;
         if (other.getVisibilityConfig() == null ^ this.getVisibilityConfig() == null)
             return false;
         if (other.getVisibilityConfig() != null && other.getVisibilityConfig().equals(this.getVisibilityConfig()) == false)
@@ -722,6 +1126,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatement() == null) ? 0 : getStatement().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getOverrideAction() == null) ? 0 : getOverrideAction().hashCode());
+        hashCode = prime * hashCode + ((getRuleLabels() == null) ? 0 : getRuleLabels().hashCode());
         hashCode = prime * hashCode + ((getVisibilityConfig() == null) ? 0 : getVisibilityConfig().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ImageSummaryMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("version").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -68,6 +70,7 @@ public class ImageSummaryMarshaller {
         try {
             protocolMarshaller.marshall(imageSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(imageSummary.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(imageSummary.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(imageSummary.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(imageSummary.getPlatform(), PLATFORM_BINDING);
             protocolMarshaller.marshall(imageSummary.getOsVersion(), OSVERSION_BINDING);

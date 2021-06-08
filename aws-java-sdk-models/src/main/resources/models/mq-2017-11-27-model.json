@@ -646,6 +646,11 @@
     }
   },
   "shapes" : {
+    "AuthenticationStrategy" : {
+      "type" : "string",
+      "documentation" : "The authentication strategy used to secure the broker.",
+      "enum" : [ "SIMPLE", "LDAP" ]
+    },
     "AvailabilityZone" : {
       "type" : "structure",
       "members" : {
@@ -720,7 +725,7 @@
         "ConsoleURL" : {
           "shape" : "__string",
           "locationName" : "consoleURL",
-          "documentation" : "The URL of the broker's ActiveMQ Web Console."
+          "documentation" : "The URL of the broker's Web Console."
         },
         "Endpoints" : {
           "shape" : "__listOf__string",
@@ -730,7 +735,7 @@
         "IpAddress" : {
           "shape" : "__string",
           "locationName" : "ipAddress",
-          "documentation" : "The IP address of the Elastic Network Interface (ENI) attached to the broker."
+          "documentation" : "The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers"
         }
       },
       "documentation" : "Returns information about all brokers."
@@ -799,7 +804,7 @@
     },
     "BrokerStorageType" : {
       "type" : "string",
-      "documentation" : "The storage type of the broker.",
+      "documentation" : "The broker's storage type. <important>EFS is currently not Supported for RabbitMQ engine type.</important>",
       "enum" : [ "EBS", "EFS" ]
     },
     "BrokerSummary" : {
@@ -835,6 +840,11 @@
           "locationName" : "deploymentMode",
           "documentation" : "Required. The deployment mode of the broker."
         },
+        "EngineType" : {
+          "shape" : "EngineType",
+          "locationName" : "engineType",
+          "documentation" : "Required. The type of broker engine."
+        },
         "HostInstanceType" : {
           "shape" : "__string",
           "locationName" : "hostInstanceType",
@@ -856,6 +866,11 @@
           "locationName" : "arn",
           "documentation" : "Required. The ARN of the configuration."
         },
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy associated with the configuration."
+        },
         "Created" : {
           "shape" : "__timestampIso8601",
           "locationName" : "created",
@@ -869,7 +884,7 @@
         "EngineType" : {
           "shape" : "EngineType",
           "locationName" : "engineType",
-          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ."
+          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ."
         },
         "EngineVersion" : {
           "shape" : "__string",
@@ -913,7 +928,7 @@
           "documentation" : "The revision number of the configuration."
         }
       },
-      "documentation" : "A list of information about the configuration."
+      "documentation" : "A list of information about the configuration. <important>Does not apply to RabbitMQ brokers.</important>"
     },
     "ConfigurationRevision" : {
       "type" : "structure",
@@ -980,6 +995,11 @@
     "CreateBrokerInput" : {
       "type" : "structure",
       "members" : {
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy used to secure the broker."
+        },
         "AutoMinorVersionUpgrade" : {
           "shape" : "__boolean",
           "locationName" : "autoMinorVersionUpgrade",
@@ -1014,7 +1034,7 @@
         "EngineType" : {
           "shape" : "EngineType",
           "locationName" : "engineType",
-          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ."
+          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ."
         },
         "EngineVersion" : {
           "shape" : "__string",
@@ -1025,6 +1045,11 @@
           "shape" : "__string",
           "locationName" : "hostInstanceType",
           "documentation" : "Required. The broker's instance type."
+        },
+        "LdapServerMetadata" : {
+          "shape" : "LdapServerMetadataInput",
+          "locationName" : "ldapServerMetadata",
+          "documentation" : "The metadata of the LDAP server used to authenticate and authorize connections to the broker."
         },
         "Logs" : {
           "shape" : "Logs",
@@ -1054,7 +1079,7 @@
         "SubnetIds" : {
           "shape" : "__listOf__string",
           "locationName" : "subnetIds",
-          "documentation" : "The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets."
+          "documentation" : "The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public accessibility requires at least one subnet."
         },
         "Tags" : {
           "shape" : "__mapOf__string",
@@ -1064,7 +1089,7 @@
         "Users" : {
           "shape" : "__listOfUser",
           "locationName" : "users",
-          "documentation" : "Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long."
+          "documentation" : "Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long."
         }
       },
       "documentation" : "Required. The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html"
@@ -1088,6 +1113,11 @@
     "CreateBrokerRequest" : {
       "type" : "structure",
       "members" : {
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy used to secure the broker."
+        },
         "AutoMinorVersionUpgrade" : {
           "shape" : "__boolean",
           "locationName" : "autoMinorVersionUpgrade",
@@ -1122,7 +1152,7 @@
         "EngineType" : {
           "shape" : "EngineType",
           "locationName" : "engineType",
-          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ."
+          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ."
         },
         "EngineVersion" : {
           "shape" : "__string",
@@ -1133,6 +1163,11 @@
           "shape" : "__string",
           "locationName" : "hostInstanceType",
           "documentation" : "Required. The broker's instance type."
+        },
+        "LdapServerMetadata" : {
+          "shape" : "LdapServerMetadataInput",
+          "locationName" : "ldapServerMetadata",
+          "documentation" : "The metadata of the LDAP server used to authenticate and authorize connections to the broker."
         },
         "Logs" : {
           "shape" : "Logs",
@@ -1162,7 +1197,7 @@
         "SubnetIds" : {
           "shape" : "__listOf__string",
           "locationName" : "subnetIds",
-          "documentation" : "The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets."
+          "documentation" : "The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public accessibility requires at least one subnet."
         },
         "Tags" : {
           "shape" : "__mapOf__string",
@@ -1172,7 +1207,7 @@
         "Users" : {
           "shape" : "__listOfUser",
           "locationName" : "users",
-          "documentation" : "Required. The list of ActiveMQ users (persons or applications) who can access queues and topics. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long."
+          "documentation" : "Required. The list of broker users (persons or applications) who can access queues and topics. For RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ Web Console. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long."
         }
       },
       "documentation" : "Creates a broker using the specified properties."
@@ -1195,10 +1230,15 @@
     "CreateConfigurationInput" : {
       "type" : "structure",
       "members" : {
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy associated with the configuration."
+        },
         "EngineType" : {
           "shape" : "EngineType",
           "locationName" : "engineType",
-          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ."
+          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ."
         },
         "EngineVersion" : {
           "shape" : "__string",
@@ -1226,6 +1266,11 @@
           "locationName" : "arn",
           "documentation" : "Required. The Amazon Resource Name (ARN) of the configuration."
         },
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy associated with the configuration."
+        },
         "Created" : {
           "shape" : "__timestampIso8601",
           "locationName" : "created",
@@ -1252,10 +1297,15 @@
     "CreateConfigurationRequest" : {
       "type" : "structure",
       "members" : {
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy associated with the configuration."
+        },
         "EngineType" : {
           "shape" : "EngineType",
           "locationName" : "engineType",
-          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ."
+          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ."
         },
         "EngineVersion" : {
           "shape" : "__string",
@@ -1282,6 +1332,11 @@
           "shape" : "__string",
           "locationName" : "arn",
           "documentation" : "Required. The Amazon Resource Name (ARN) of the configuration."
+        },
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy associated with the configuration."
         },
         "Created" : {
           "shape" : "__timestampIso8601",
@@ -1404,7 +1459,7 @@
           "shape" : "__string",
           "location" : "uri",
           "locationName" : "broker-id",
-          "documentation" : "The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or special characters."
+          "documentation" : "The unique ID that Amazon MQ generates for the broker."
         }
       },
       "required" : [ "BrokerId" ]
@@ -1462,7 +1517,7 @@
     "DeploymentMode" : {
       "type" : "string",
       "documentation" : "The deployment mode of the broker.",
-      "enum" : [ "SINGLE_INSTANCE", "ACTIVE_STANDBY_MULTI_AZ" ]
+      "enum" : [ "SINGLE_INSTANCE", "ACTIVE_STANDBY_MULTI_AZ", "CLUSTER_MULTI_AZ" ]
     },
     "DescribeBrokerEngineTypesRequest" : {
       "type" : "structure",
@@ -1565,6 +1620,11 @@
     "DescribeBrokerOutput" : {
       "type" : "structure",
       "members" : {
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy used to secure the broker."
+        },
         "AutoMinorVersionUpgrade" : {
           "shape" : "__boolean",
           "locationName" : "autoMinorVersionUpgrade",
@@ -1618,7 +1678,7 @@
         "EngineType" : {
           "shape" : "EngineType",
           "locationName" : "engineType",
-          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ."
+          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ."
         },
         "EngineVersion" : {
           "shape" : "__string",
@@ -1630,6 +1690,11 @@
           "locationName" : "hostInstanceType",
           "documentation" : "The broker's instance type."
         },
+        "LdapServerMetadata" : {
+          "shape" : "LdapServerMetadataOutput",
+          "locationName" : "ldapServerMetadata",
+          "documentation" : "The metadata of the LDAP server used to authenticate and authorize connections to the broker."
+        },
         "Logs" : {
           "shape" : "LogsSummary",
           "locationName" : "logs",
@@ -1640,6 +1705,11 @@
           "locationName" : "maintenanceWindowStartTime",
           "documentation" : "The parameters that determine the WeeklyStartTime."
         },
+        "PendingAuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "pendingAuthenticationStrategy",
+          "documentation" : "The authentication strategy that will be applied when the broker is rebooted."
+        },
         "PendingEngineVersion" : {
           "shape" : "__string",
           "locationName" : "pendingEngineVersion",
@@ -1649,6 +1719,11 @@
           "shape" : "__string",
           "locationName" : "pendingHostInstanceType",
           "documentation" : "The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types"
+        },
+        "PendingLdapServerMetadata" : {
+          "shape" : "LdapServerMetadataOutput",
+          "locationName" : "pendingLdapServerMetadata",
+          "documentation" : "The metadata of the LDAP server that will be used to authenticate and authorize connections to the broker once it is rebooted."
         },
         "PendingSecurityGroups" : {
           "shape" : "__listOf__string",
@@ -1673,7 +1748,7 @@
         "SubnetIds" : {
           "shape" : "__listOf__string",
           "locationName" : "subnetIds",
-          "documentation" : "The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets."
+          "documentation" : "The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public accessibility requires at least one subnet."
         },
         "Tags" : {
           "shape" : "__mapOf__string",
@@ -1683,7 +1758,7 @@
         "Users" : {
           "shape" : "__listOfUserSummary",
           "locationName" : "users",
-          "documentation" : "The list of all ActiveMQ usernames for the specified broker."
+          "documentation" : "The list of all broker usernames for the specified broker."
         }
       },
       "documentation" : "The version of the broker engine. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html"
@@ -1703,6 +1778,11 @@
     "DescribeBrokerResponse" : {
       "type" : "structure",
       "members" : {
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy used to secure the broker."
+        },
         "AutoMinorVersionUpgrade" : {
           "shape" : "__boolean",
           "locationName" : "autoMinorVersionUpgrade",
@@ -1756,7 +1836,7 @@
         "EngineType" : {
           "shape" : "EngineType",
           "locationName" : "engineType",
-          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ."
+          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ."
         },
         "EngineVersion" : {
           "shape" : "__string",
@@ -1768,6 +1848,11 @@
           "locationName" : "hostInstanceType",
           "documentation" : "The broker's instance type."
         },
+        "LdapServerMetadata" : {
+          "shape" : "LdapServerMetadataOutput",
+          "locationName" : "ldapServerMetadata",
+          "documentation" : "The metadata of the LDAP server used to authenticate and authorize connections to the broker."
+        },
         "Logs" : {
           "shape" : "LogsSummary",
           "locationName" : "logs",
@@ -1778,6 +1863,11 @@
           "locationName" : "maintenanceWindowStartTime",
           "documentation" : "The parameters that determine the WeeklyStartTime."
         },
+        "PendingAuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "pendingAuthenticationStrategy",
+          "documentation" : "The authentication strategy that will be applied when the broker is rebooted."
+        },
         "PendingEngineVersion" : {
           "shape" : "__string",
           "locationName" : "pendingEngineVersion",
@@ -1787,6 +1877,11 @@
           "shape" : "__string",
           "locationName" : "pendingHostInstanceType",
           "documentation" : "The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types"
+        },
+        "PendingLdapServerMetadata" : {
+          "shape" : "LdapServerMetadataOutput",
+          "locationName" : "pendingLdapServerMetadata",
+          "documentation" : "The metadata of the LDAP server that will be used to authenticate and authorize connections to the broker once it is rebooted."
         },
         "PendingSecurityGroups" : {
           "shape" : "__listOf__string",
@@ -1811,7 +1906,7 @@
         "SubnetIds" : {
           "shape" : "__listOf__string",
           "locationName" : "subnetIds",
-          "documentation" : "The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets."
+          "documentation" : "The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ) has no subnet requirements when deployed with public accessibility, deployment without public accessibility requires at least one subnet."
         },
         "Tags" : {
           "shape" : "__mapOf__string",
@@ -1821,7 +1916,7 @@
         "Users" : {
           "shape" : "__listOfUserSummary",
           "locationName" : "users",
-          "documentation" : "The list of all ActiveMQ usernames for the specified broker."
+          "documentation" : "The list of all broker usernames for the specified broker."
         }
       }
     },
@@ -1845,6 +1940,11 @@
           "locationName" : "arn",
           "documentation" : "Required. The ARN of the configuration."
         },
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy associated with the configuration."
+        },
         "Created" : {
           "shape" : "__timestampIso8601",
           "locationName" : "created",
@@ -1858,7 +1958,7 @@
         "EngineType" : {
           "shape" : "EngineType",
           "locationName" : "engineType",
-          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ."
+          "documentation" : "Required. The type of broker engine. Note: Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ."
         },
         "EngineVersion" : {
           "shape" : "__string",
@@ -2041,7 +2141,7 @@
         "KmsKeyId" : {
           "shape" : "__string",
           "locationName" : "kmsKeyId",
-          "documentation" : "The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data."
+          "documentation" : "The symmetric customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data."
         },
         "UseAwsOwnedKey" : {
           "shape" : "__boolean",
@@ -2054,8 +2154,8 @@
     },
     "EngineType" : {
       "type" : "string",
-      "documentation" : "The type of broker engine. Note: Currently, Amazon MQ supports only ActiveMQ.",
-      "enum" : [ "ACTIVEMQ" ]
+      "documentation" : "The type of broker engine. Note: Currently, Amazon MQ supports ActiveMQ and RabbitMQ.",
+      "enum" : [ "ACTIVEMQ", "RABBITMQ" ]
     },
     "EngineVersion" : {
       "type" : "structure",
@@ -2123,6 +2223,123 @@
       "error" : {
         "httpStatusCode" : 500
       }
+    },
+    "LdapServerMetadataInput" : {
+      "type" : "structure",
+      "members" : {
+        "Hosts" : {
+          "shape" : "__listOf__string",
+          "locationName" : "hosts",
+          "documentation" : "Fully qualified domain name of the LDAP server. Optional failover server."
+        },
+        "RoleBase" : {
+          "shape" : "__string",
+          "locationName" : "roleBase",
+          "documentation" : "Fully qualified name of the directory to search for a user’s groups."
+        },
+        "RoleName" : {
+          "shape" : "__string",
+          "locationName" : "roleName",
+          "documentation" : "Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query."
+        },
+        "RoleSearchMatching" : {
+          "shape" : "__string",
+          "locationName" : "roleSearchMatching",
+          "documentation" : "The search criteria for groups."
+        },
+        "RoleSearchSubtree" : {
+          "shape" : "__boolean",
+          "locationName" : "roleSearchSubtree",
+          "documentation" : "The directory search scope for the role. If set to true, scope is to search the entire sub-tree."
+        },
+        "ServiceAccountPassword" : {
+          "shape" : "__string",
+          "locationName" : "serviceAccountPassword",
+          "documentation" : "Service account password."
+        },
+        "ServiceAccountUsername" : {
+          "shape" : "__string",
+          "locationName" : "serviceAccountUsername",
+          "documentation" : "Service account username."
+        },
+        "UserBase" : {
+          "shape" : "__string",
+          "locationName" : "userBase",
+          "documentation" : "Fully qualified name of the directory where you want to search for users."
+        },
+        "UserRoleName" : {
+          "shape" : "__string",
+          "locationName" : "userRoleName",
+          "documentation" : "Specifies the name of the LDAP attribute for the user group membership."
+        },
+        "UserSearchMatching" : {
+          "shape" : "__string",
+          "locationName" : "userSearchMatching",
+          "documentation" : "The search criteria for users."
+        },
+        "UserSearchSubtree" : {
+          "shape" : "__boolean",
+          "locationName" : "userSearchSubtree",
+          "documentation" : "The directory search scope for the user. If set to true, scope is to search the entire sub-tree."
+        }
+      },
+      "documentation" : "The metadata of the LDAP server used to authenticate and authorize connections to the broker."
+    },
+    "LdapServerMetadataOutput" : {
+      "type" : "structure",
+      "members" : {
+        "Hosts" : {
+          "shape" : "__listOf__string",
+          "locationName" : "hosts",
+          "documentation" : "Fully qualified domain name of the LDAP server. Optional failover server."
+        },
+        "RoleBase" : {
+          "shape" : "__string",
+          "locationName" : "roleBase",
+          "documentation" : "Fully qualified name of the directory to search for a user’s groups."
+        },
+        "RoleName" : {
+          "shape" : "__string",
+          "locationName" : "roleName",
+          "documentation" : "Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query."
+        },
+        "RoleSearchMatching" : {
+          "shape" : "__string",
+          "locationName" : "roleSearchMatching",
+          "documentation" : "The search criteria for groups."
+        },
+        "RoleSearchSubtree" : {
+          "shape" : "__boolean",
+          "locationName" : "roleSearchSubtree",
+          "documentation" : "The directory search scope for the role. If set to true, scope is to search the entire sub-tree."
+        },
+        "ServiceAccountUsername" : {
+          "shape" : "__string",
+          "locationName" : "serviceAccountUsername",
+          "documentation" : "Service account username."
+        },
+        "UserBase" : {
+          "shape" : "__string",
+          "locationName" : "userBase",
+          "documentation" : "Fully qualified name of the directory where you want to search for users."
+        },
+        "UserRoleName" : {
+          "shape" : "__string",
+          "locationName" : "userRoleName",
+          "documentation" : "Specifies the name of the LDAP attribute for the user group membership."
+        },
+        "UserSearchMatching" : {
+          "shape" : "__string",
+          "locationName" : "userSearchMatching",
+          "documentation" : "The search criteria for users."
+        },
+        "UserSearchSubtree" : {
+          "shape" : "__boolean",
+          "locationName" : "userSearchSubtree",
+          "documentation" : "The directory search scope for the user. If set to true, scope is to search the entire sub-tree."
+        }
+      },
+      "documentation" : "The metadata of the LDAP server used to authenticate and authorize connections to the broker."
     },
     "ListBrokersOutput" : {
       "type" : "structure",
@@ -2408,7 +2625,7 @@
         "Audit" : {
           "shape" : "__boolean",
           "locationName" : "audit",
-          "documentation" : "Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged."
+          "documentation" : "Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers."
         },
         "General" : {
           "shape" : "__boolean",
@@ -2566,6 +2783,11 @@
     "UpdateBrokerInput" : {
       "type" : "structure",
       "members" : {
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy used to secure the broker."
+        },
         "AutoMinorVersionUpgrade" : {
           "shape" : "__boolean",
           "locationName" : "autoMinorVersionUpgrade",
@@ -2586,6 +2808,11 @@
           "locationName" : "hostInstanceType",
           "documentation" : "The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types"
         },
+        "LdapServerMetadata" : {
+          "shape" : "LdapServerMetadataInput",
+          "locationName" : "ldapServerMetadata",
+          "documentation" : "The metadata of the LDAP server used to authenticate and authorize connections to the broker."
+        },
         "Logs" : {
           "shape" : "Logs",
           "locationName" : "logs",
@@ -2602,6 +2829,11 @@
     "UpdateBrokerOutput" : {
       "type" : "structure",
       "members" : {
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy used to secure the broker."
+        },
         "AutoMinorVersionUpgrade" : {
           "shape" : "__boolean",
           "locationName" : "autoMinorVersionUpgrade",
@@ -2627,6 +2859,11 @@
           "locationName" : "hostInstanceType",
           "documentation" : "The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types"
         },
+        "LdapServerMetadata" : {
+          "shape" : "LdapServerMetadataOutput",
+          "locationName" : "ldapServerMetadata",
+          "documentation" : "The metadata of the LDAP server used to authenticate and authorize connections to the broker."
+        },
         "Logs" : {
           "shape" : "Logs",
           "locationName" : "logs",
@@ -2643,6 +2880,11 @@
     "UpdateBrokerRequest" : {
       "type" : "structure",
       "members" : {
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy used to secure the broker."
+        },
         "AutoMinorVersionUpgrade" : {
           "shape" : "__boolean",
           "locationName" : "autoMinorVersionUpgrade",
@@ -2652,7 +2894,7 @@
           "shape" : "__string",
           "location" : "uri",
           "locationName" : "broker-id",
-          "documentation" : "The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or special characters."
+          "documentation" : "The unique ID that Amazon MQ generates for the broker."
         },
         "Configuration" : {
           "shape" : "ConfigurationId",
@@ -2668,6 +2910,11 @@
           "shape" : "__string",
           "locationName" : "hostInstanceType",
           "documentation" : "The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types"
+        },
+        "LdapServerMetadata" : {
+          "shape" : "LdapServerMetadataInput",
+          "locationName" : "ldapServerMetadata",
+          "documentation" : "The metadata of the LDAP server used to authenticate and authorize connections to the broker."
         },
         "Logs" : {
           "shape" : "Logs",
@@ -2686,6 +2933,11 @@
     "UpdateBrokerResponse" : {
       "type" : "structure",
       "members" : {
+        "AuthenticationStrategy" : {
+          "shape" : "AuthenticationStrategy",
+          "locationName" : "authenticationStrategy",
+          "documentation" : "The authentication strategy used to secure the broker."
+        },
         "AutoMinorVersionUpgrade" : {
           "shape" : "__boolean",
           "locationName" : "autoMinorVersionUpgrade",
@@ -2710,6 +2962,11 @@
           "shape" : "__string",
           "locationName" : "hostInstanceType",
           "documentation" : "The host instance type of the broker to upgrade to. For a list of supported instance types, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types"
+        },
+        "LdapServerMetadata" : {
+          "shape" : "LdapServerMetadataOutput",
+          "locationName" : "ldapServerMetadata",
+          "documentation" : "The metadata of the LDAP server used to authenticate and authorize connections to the broker."
         },
         "Logs" : {
           "shape" : "Logs",
@@ -2898,7 +3155,7 @@
         "ConsoleAccess" : {
           "shape" : "__boolean",
           "locationName" : "consoleAccess",
-          "documentation" : "Enables access to the the ActiveMQ Web Console for the ActiveMQ user."
+          "documentation" : "Enables access to the ActiveMQ Web Console for the ActiveMQ user (Does not apply to RabbitMQ brokers)."
         },
         "Groups" : {
           "shape" : "__listOf__string",
@@ -2908,15 +3165,15 @@
         "Password" : {
           "shape" : "__string",
           "locationName" : "password",
-          "documentation" : "Required. The password of the ActiveMQ user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas."
+          "documentation" : "Required. The password of the broker user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas."
         },
         "Username" : {
           "shape" : "__string",
           "locationName" : "username",
-          "documentation" : "Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long."
+          "documentation" : "Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long."
         }
       },
-      "documentation" : "An ActiveMQ user associated with the broker."
+      "documentation" : "A user associated with the broker."
     },
     "UserPendingChanges" : {
       "type" : "structure",
@@ -2945,15 +3202,15 @@
         "PendingChange" : {
           "shape" : "ChangeType",
           "locationName" : "pendingChange",
-          "documentation" : "The type of change pending for the ActiveMQ user."
+          "documentation" : "The type of change pending for the broker user."
         },
         "Username" : {
           "shape" : "__string",
           "locationName" : "username",
-          "documentation" : "Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long."
+          "documentation" : "Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long."
         }
       },
-      "documentation" : "Returns a list of all ActiveMQ users."
+      "documentation" : "Returns a list of all broker users."
     },
     "WeeklyStartTime" : {
       "type" : "structure",
@@ -3108,5 +3365,5 @@
       }
     }
   },
-  "documentation" : "Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it easy to set up and operate message brokers in the cloud. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols."
+  "documentation" : "Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers in the cloud. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols."
 }

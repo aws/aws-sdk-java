@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -123,7 +123,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the
      * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * <note>
@@ -148,6 +148,17 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsToRemove;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If
+     * specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations role, you must have the
+     * <code>iam:PassRole</code> permission for the role. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     */
+    private String operationsRole;
 
     /**
      * Default constructor for CreateEnvironmentRequest object. Callers should use the setter or fluent setter (with...)
@@ -807,7 +818,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the
      * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * <note>
@@ -818,7 +829,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param platformArn
      *        The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information,
-     *        see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom
+     *        see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
      *        Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
      *        <p>
      *        If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
@@ -832,7 +843,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the
      * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * <note>
@@ -842,7 +853,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information,
-     *         see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom
+     *         see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
      *         Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
      *         <p>
      *         If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
@@ -856,7 +867,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the
      * <i>AWS Elastic Beanstalk Developer Guide</i>.
      * </p>
      * <note>
@@ -867,7 +878,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param platformArn
      *        The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information,
-     *        see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom
+     *        see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
      *        Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
      *        <p>
      *        If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
@@ -1051,6 +1062,76 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If
+     * specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations role, you must have the
+     * <code>iam:PassRole</code> permission for the role. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param operationsRole
+     *        The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If
+     *        specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this
+     *        call and during subsequent calls acting on this environment. To specify an operations role, you must have
+     *        the <code>iam:PassRole</code> permission for the role. For more information, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a>
+     *        in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     */
+
+    public void setOperationsRole(String operationsRole) {
+        this.operationsRole = operationsRole;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If
+     * specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations role, you must have the
+     * <code>iam:PassRole</code> permission for the role. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.
+     *         If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during
+     *         this call and during subsequent calls acting on this environment. To specify an operations role, you must
+     *         have the <code>iam:PassRole</code> permission for the role. For more information, see <a
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+     *         roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     */
+
+    public String getOperationsRole() {
+        return this.operationsRole;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If
+     * specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and
+     * during subsequent calls acting on this environment. To specify an operations role, you must have the
+     * <code>iam:PassRole</code> permission for the role. For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the
+     * <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * </p>
+     * 
+     * @param operationsRole
+     *        The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If
+     *        specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this
+     *        call and during subsequent calls acting on this environment. To specify an operations role, you must have
+     *        the <code>iam:PassRole</code> permission for the role. For more information, see <a
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a>
+     *        in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentRequest withOperationsRole(String operationsRole) {
+        setOperationsRole(operationsRole);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1087,7 +1168,9 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getOptionSettings() != null)
             sb.append("OptionSettings: ").append(getOptionSettings()).append(",");
         if (getOptionsToRemove() != null)
-            sb.append("OptionsToRemove: ").append(getOptionsToRemove());
+            sb.append("OptionsToRemove: ").append(getOptionsToRemove()).append(",");
+        if (getOperationsRole() != null)
+            sb.append("OperationsRole: ").append(getOperationsRole());
         sb.append("}");
         return sb.toString();
     }
@@ -1154,6 +1237,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getOptionsToRemove() != null && other.getOptionsToRemove().equals(this.getOptionsToRemove()) == false)
             return false;
+        if (other.getOperationsRole() == null ^ this.getOperationsRole() == null)
+            return false;
+        if (other.getOperationsRole() != null && other.getOperationsRole().equals(this.getOperationsRole()) == false)
+            return false;
         return true;
     }
 
@@ -1175,6 +1262,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getPlatformArn() == null) ? 0 : getPlatformArn().hashCode());
         hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode());
         hashCode = prime * hashCode + ((getOptionsToRemove() == null) ? 0 : getOptionsToRemove().hashCode());
+        hashCode = prime * hashCode + ((getOperationsRole() == null) ? 0 : getOperationsRole().hashCode());
         return hashCode;
     }
 

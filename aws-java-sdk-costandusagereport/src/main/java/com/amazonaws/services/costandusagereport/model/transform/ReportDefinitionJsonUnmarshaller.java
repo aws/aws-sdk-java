@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,9 @@ public class ReportDefinitionJsonUnmarshaller implements Unmarshaller<ReportDefi
                 }
                 if (context.testExpression("AdditionalSchemaElements", targetDepth)) {
                     context.nextToken();
-                    reportDefinition.setAdditionalSchemaElements(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    reportDefinition.setAdditionalSchemaElements(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("S3Bucket", targetDepth)) {
                     context.nextToken();
@@ -82,7 +84,9 @@ public class ReportDefinitionJsonUnmarshaller implements Unmarshaller<ReportDefi
                 }
                 if (context.testExpression("AdditionalArtifacts", targetDepth)) {
                     context.nextToken();
-                    reportDefinition.setAdditionalArtifacts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    reportDefinition.setAdditionalArtifacts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RefreshClosedReports", targetDepth)) {
                     context.nextToken();
@@ -91,6 +95,10 @@ public class ReportDefinitionJsonUnmarshaller implements Unmarshaller<ReportDefi
                 if (context.testExpression("ReportVersioning", targetDepth)) {
                     context.nextToken();
                     reportDefinition.setReportVersioning(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("BillingViewArn", targetDepth)) {
+                    context.nextToken();
+                    reportDefinition.setBillingViewArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

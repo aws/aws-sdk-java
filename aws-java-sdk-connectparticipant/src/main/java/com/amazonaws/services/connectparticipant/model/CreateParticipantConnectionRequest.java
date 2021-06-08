@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,12 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
     private java.util.List<String> type;
     /**
      * <p>
-     * Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html"
-     * >StartChatContact</a> API response.
+     * This is a header parameter.
+     * </p>
+     * <p>
+     * The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API
+     * response.
      * </p>
      */
     private String participantToken;
@@ -140,14 +143,19 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html"
-     * >StartChatContact</a> API response.
+     * This is a header parameter.
+     * </p>
+     * <p>
+     * The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API
+     * response.
      * </p>
      * 
      * @param participantToken
-     *        Participant Token as obtained from <a
-     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html"
+     *        This is a header parameter.</p>
+     *        <p>
+     *        The Participant Token as obtained from <a
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html"
      *        >StartChatContact</a> API response.
      */
 
@@ -157,13 +165,18 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html"
-     * >StartChatContact</a> API response.
+     * This is a header parameter.
+     * </p>
+     * <p>
+     * The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API
+     * response.
      * </p>
      * 
-     * @return Participant Token as obtained from <a
-     *         href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html"
+     * @return This is a header parameter.</p>
+     *         <p>
+     *         The Participant Token as obtained from <a
+     *         href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html"
      *         >StartChatContact</a> API response.
      */
 
@@ -173,14 +186,19 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Participant Token as obtained from <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html"
-     * >StartChatContact</a> API response.
+     * This is a header parameter.
+     * </p>
+     * <p>
+     * The Participant Token as obtained from <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API
+     * response.
      * </p>
      * 
      * @param participantToken
-     *        Participant Token as obtained from <a
-     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContactResponse.html"
+     *        This is a header parameter.</p>
+     *        <p>
+     *        The Participant Token as obtained from <a
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html"
      *        >StartChatContact</a> API response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

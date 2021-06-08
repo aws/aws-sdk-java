@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,12 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon Macie
+ * Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern
+ * matching to discover and protect your sensitive data in AWS. Macie automates the discovery of sensitive data, such as
+ * PII and intellectual property, to provide you with insight into the data that your organization stores in AWS. Macie
+ * also provides an inventory of your Amazon S3 buckets, which it continually monitors for you. If Macie detects
+ * sensitive data or potential data access issues, it generates detailed findings for you to review and act upon as
+ * necessary.
  * </p>
  */
 @ThreadSafe
@@ -91,39 +96,6 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeAcceptInvitation(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(ArchiveFindingsRequest request) {
-
-        return archiveFindingsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(final ArchiveFindingsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ArchiveFindingsRequest, ArchiveFindingsResult> asyncHandler) {
-        final ArchiveFindingsRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<ArchiveFindingsResult>() {
-            @Override
-            public ArchiveFindingsResult call() throws Exception {
-                ArchiveFindingsResult result = null;
-
-                try {
-                    result = executeArchiveFindings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -706,6 +678,41 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateFromAdministratorAccountResult> disassociateFromAdministratorAccountAsync(
+            DisassociateFromAdministratorAccountRequest request) {
+
+        return disassociateFromAdministratorAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateFromAdministratorAccountResult> disassociateFromAdministratorAccountAsync(
+            final DisassociateFromAdministratorAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateFromAdministratorAccountRequest, DisassociateFromAdministratorAccountResult> asyncHandler) {
+        final DisassociateFromAdministratorAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateFromAdministratorAccountResult>() {
+            @Override
+            public DisassociateFromAdministratorAccountResult call() throws Exception {
+                DisassociateFromAdministratorAccountResult result = null;
+
+                try {
+                    result = executeDisassociateFromAdministratorAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateFromMasterAccountResult> disassociateFromMasterAccountAsync(DisassociateFromMasterAccountRequest request) {
 
         return disassociateFromMasterAccountAsync(request, null);
@@ -824,6 +831,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeEnableOrganizationAdminAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdministratorAccountResult> getAdministratorAccountAsync(GetAdministratorAccountRequest request) {
+
+        return getAdministratorAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdministratorAccountResult> getAdministratorAccountAsync(final GetAdministratorAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAdministratorAccountRequest, GetAdministratorAccountResult> asyncHandler) {
+        final GetAdministratorAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAdministratorAccountResult>() {
+            @Override
+            public GetAdministratorAccountResult call() throws Exception {
+                GetAdministratorAccountResult result = null;
+
+                try {
+                    result = executeGetAdministratorAccount(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1024,6 +1064,41 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeGetFindingsFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFindingsPublicationConfigurationResult> getFindingsPublicationConfigurationAsync(
+            GetFindingsPublicationConfigurationRequest request) {
+
+        return getFindingsPublicationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFindingsPublicationConfigurationResult> getFindingsPublicationConfigurationAsync(
+            final GetFindingsPublicationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFindingsPublicationConfigurationRequest, GetFindingsPublicationConfigurationResult> asyncHandler) {
+        final GetFindingsPublicationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFindingsPublicationConfigurationResult>() {
+            @Override
+            public GetFindingsPublicationConfigurationResult call() throws Exception {
+                GetFindingsPublicationConfigurationResult result = null;
+
+                try {
+                    result = executeGetFindingsPublicationConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1538,6 +1613,74 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<PutFindingsPublicationConfigurationResult> putFindingsPublicationConfigurationAsync(
+            PutFindingsPublicationConfigurationRequest request) {
+
+        return putFindingsPublicationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutFindingsPublicationConfigurationResult> putFindingsPublicationConfigurationAsync(
+            final PutFindingsPublicationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutFindingsPublicationConfigurationRequest, PutFindingsPublicationConfigurationResult> asyncHandler) {
+        final PutFindingsPublicationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutFindingsPublicationConfigurationResult>() {
+            @Override
+            public PutFindingsPublicationConfigurationResult call() throws Exception {
+                PutFindingsPublicationConfigurationResult result = null;
+
+                try {
+                    result = executePutFindingsPublicationConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest request) {
+
+        return searchResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(final SearchResourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchResourcesRequest, SearchResourcesResult> asyncHandler) {
+        final SearchResourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchResourcesResult>() {
+            @Override
+            public SearchResourcesResult call() throws Exception {
+                SearchResourcesResult result = null;
+
+                try {
+                    result = executeSearchResources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1588,39 +1731,6 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeTestCustomDataIdentifier(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(UnarchiveFindingsRequest request) {
-
-        return unarchiveFindingsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(final UnarchiveFindingsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<UnarchiveFindingsRequest, UnarchiveFindingsResult> asyncHandler) {
-        final UnarchiveFindingsRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<UnarchiveFindingsResult>() {
-            @Override
-            public UnarchiveFindingsResult call() throws Exception {
-                UnarchiveFindingsResult result = null;
-
-                try {
-                    result = executeUnarchiveFindings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

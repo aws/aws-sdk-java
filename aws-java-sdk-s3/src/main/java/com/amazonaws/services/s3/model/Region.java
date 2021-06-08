@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -239,6 +239,12 @@ public enum Region {
     AP_Seoul("ap-northeast-2"),
 
     /**
+     * The Asia Pacific (Osaka) Region. This region uses Amazon S3 servers
+     * located in Osaka.
+     */
+    AP_Osaka("ap-northeast-3"),
+
+    /**
      * The Asia Pacific (Mumbai) Region. This region uses Amazon S3 servers
      * located in Mumbai.
      * <p>
@@ -312,7 +318,37 @@ public enum Region {
      * <code>s3.af-south-1.amazonaws.com</code>.
      * </p>
      */
-    AF_CapeTown("af-south-1")
+    AF_CapeTown("af-south-1"),
+
+    /**
+     * The US ISO East Region. This region uses Amazon S3 servers
+     * located in Virginia.
+     * <p>
+     * When using buckets in this region, you must set the client endpoint to
+     * <code>s3.us-iso-east-1.c2c.ic.gov</code>.
+     * </p>
+     */
+    US_ISO_EAST_1("us-iso-east-1"),
+
+    /**
+     * The US ISOB East (Ohio) Region. This region uses Amazon S3 servers
+     * located in Ohio.
+     * <p>
+     * When using buckets in this region, you must set the client endpoint to
+     * <code>s3.us-isob-east-1.sc2s.sgov.gov</code>.
+     * </p>
+     */
+    US_ISOB_EAST_1("us-isob-east-1"),
+
+    /**
+     * The US ISO West Region. This region uses Amazon S3 servers
+     * located in Colorado.
+     * <p>
+     * When using buckets in this region, you must set the client endpoint to
+     * <code>s3.us-iso-west-1.c2c.ic.gov</code>.
+     * </p>
+     */
+    US_ISO_WEST_1("us-iso-west-1")
     ;
 
    /**

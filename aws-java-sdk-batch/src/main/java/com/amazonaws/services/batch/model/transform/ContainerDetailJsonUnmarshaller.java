@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,23 +62,35 @@ public class ContainerDetailJsonUnmarshaller implements Unmarshaller<ContainerDe
                 }
                 if (context.testExpression("command", targetDepth)) {
                     context.nextToken();
-                    containerDetail.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    containerDetail.setCommand(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("jobRoleArn", targetDepth)) {
                     context.nextToken();
                     containerDetail.setJobRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("executionRoleArn", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("volumes", targetDepth)) {
                     context.nextToken();
-                    containerDetail.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDetail.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("environment", targetDepth)) {
                     context.nextToken();
-                    containerDetail.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDetail.setEnvironment(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("mountPoints", targetDepth)) {
                     context.nextToken();
-                    containerDetail.setMountPoints(new ListUnmarshaller<MountPoint>(MountPointJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDetail.setMountPoints(new ListUnmarshaller<MountPoint>(MountPointJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("readonlyRootFilesystem", targetDepth)) {
                     context.nextToken();
@@ -86,7 +98,9 @@ public class ContainerDetailJsonUnmarshaller implements Unmarshaller<ContainerDe
                 }
                 if (context.testExpression("ulimits", targetDepth)) {
                     context.nextToken();
-                    containerDetail.setUlimits(new ListUnmarshaller<Ulimit>(UlimitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    containerDetail.setUlimits(new ListUnmarshaller<Ulimit>(UlimitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("privileged", targetDepth)) {
                     context.nextToken();
@@ -123,16 +137,36 @@ public class ContainerDetailJsonUnmarshaller implements Unmarshaller<ContainerDe
                 if (context.testExpression("networkInterfaces", targetDepth)) {
                     context.nextToken();
                     containerDetail.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("resourceRequirements", targetDepth)) {
                     context.nextToken();
                     containerDetail.setResourceRequirements(new ListUnmarshaller<ResourceRequirement>(ResourceRequirementJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("linuxParameters", targetDepth)) {
                     context.nextToken();
                     containerDetail.setLinuxParameters(LinuxParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("logConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setLogConfiguration(LogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("secrets", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setSecrets(new ListUnmarshaller<Secret>(SecretJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("networkConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("fargatePlatformConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setFargatePlatformConfiguration(FargatePlatformConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

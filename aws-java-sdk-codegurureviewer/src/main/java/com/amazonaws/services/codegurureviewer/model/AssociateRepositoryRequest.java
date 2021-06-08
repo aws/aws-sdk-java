@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,29 +33,52 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
     private Repository repository;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-     * </p>
-     * <p>
-     * To add a new repository association, this parameter specifies a unique identifier for the new repository
-     * association that helps ensure idempotency.
-     * </p>
-     * <p>
-     * If you use the AWS CLI or one of the AWS SDKs to call this operation, you can leave this parameter empty. The CLI
-     * or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, you must generate a ClientRequestToken
-     * yourself for new versions and include that value in the request.
-     * </p>
-     * <p>
-     * You typically interact with this value if you implement your own retry logic and want to ensure that a given
-     * repository association is not created twice. We recommend that you generate a UUID-type value to ensure
-     * uniqueness within the specified repository association.
-     * </p>
-     * <p>
      * Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations
      * if there are failures and retries.
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two
+     * parts:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     * <code>Secret</code>). Tag keys are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>,
+     * or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case
+     * sensitive.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private KMSKeyDetails kMSKeyDetails;
 
     /**
      * <p>
@@ -99,46 +122,11 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-     * </p>
-     * <p>
-     * To add a new repository association, this parameter specifies a unique identifier for the new repository
-     * association that helps ensure idempotency.
-     * </p>
-     * <p>
-     * If you use the AWS CLI or one of the AWS SDKs to call this operation, you can leave this parameter empty. The CLI
-     * or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, you must generate a ClientRequestToken
-     * yourself for new versions and include that value in the request.
-     * </p>
-     * <p>
-     * You typically interact with this value if you implement your own retry logic and want to ensure that a given
-     * repository association is not created twice. We recommend that you generate a UUID-type value to ensure
-     * uniqueness within the specified repository association.
-     * </p>
-     * <p>
      * Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations
      * if there are failures and retries.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-     *        <p>
-     *        To add a new repository association, this parameter specifies a unique identifier for the new repository
-     *        association that helps ensure idempotency.
-     *        </p>
-     *        <p>
-     *        If you use the AWS CLI or one of the AWS SDKs to call this operation, you can leave this parameter empty.
-     *        The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK
-     *        and instead generate a raw HTTP request to the Secrets Manager service endpoint, you must generate a
-     *        ClientRequestToken yourself for new versions and include that value in the request.
-     *        </p>
-     *        <p>
-     *        You typically interact with this value if you implement your own retry logic and want to ensure that a
-     *        given repository association is not created twice. We recommend that you generate a UUID-type value to
-     *        ensure uniqueness within the specified repository association.
-     *        </p>
-     *        <p>
      *        Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
      *        associations if there are failures and retries.
      */
@@ -149,46 +137,11 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-     * </p>
-     * <p>
-     * To add a new repository association, this parameter specifies a unique identifier for the new repository
-     * association that helps ensure idempotency.
-     * </p>
-     * <p>
-     * If you use the AWS CLI or one of the AWS SDKs to call this operation, you can leave this parameter empty. The CLI
-     * or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, you must generate a ClientRequestToken
-     * yourself for new versions and include that value in the request.
-     * </p>
-     * <p>
-     * You typically interact with this value if you implement your own retry logic and want to ensure that a given
-     * repository association is not created twice. We recommend that you generate a UUID-type value to ensure
-     * uniqueness within the specified repository association.
-     * </p>
-     * <p>
      * Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations
      * if there are failures and retries.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-     *         <p>
-     *         To add a new repository association, this parameter specifies a unique identifier for the new repository
-     *         association that helps ensure idempotency.
-     *         </p>
-     *         <p>
-     *         If you use the AWS CLI or one of the AWS SDKs to call this operation, you can leave this parameter empty.
-     *         The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK
-     *         and instead generate a raw HTTP request to the Secrets Manager service endpoint, you must generate a
-     *         ClientRequestToken yourself for new versions and include that value in the request.
-     *         </p>
-     *         <p>
-     *         You typically interact with this value if you implement your own retry logic and want to ensure that a
-     *         given repository association is not created twice. We recommend that you generate a UUID-type value to
-     *         ensure uniqueness within the specified repository association.
-     *         </p>
-     *         <p>
-     *         Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
+     * @return Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
      *         associations if there are failures and retries.
      */
 
@@ -198,46 +151,11 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-     * </p>
-     * <p>
-     * To add a new repository association, this parameter specifies a unique identifier for the new repository
-     * association that helps ensure idempotency.
-     * </p>
-     * <p>
-     * If you use the AWS CLI or one of the AWS SDKs to call this operation, you can leave this parameter empty. The CLI
-     * or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the Secrets Manager service endpoint, you must generate a ClientRequestToken
-     * yourself for new versions and include that value in the request.
-     * </p>
-     * <p>
-     * You typically interact with this value if you implement your own retry logic and want to ensure that a given
-     * repository association is not created twice. We recommend that you generate a UUID-type value to ensure
-     * uniqueness within the specified repository association.
-     * </p>
-     * <p>
      * Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations
      * if there are failures and retries.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-     *        <p>
-     *        To add a new repository association, this parameter specifies a unique identifier for the new repository
-     *        association that helps ensure idempotency.
-     *        </p>
-     *        <p>
-     *        If you use the AWS CLI or one of the AWS SDKs to call this operation, you can leave this parameter empty.
-     *        The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK
-     *        and instead generate a raw HTTP request to the Secrets Manager service endpoint, you must generate a
-     *        ClientRequestToken yourself for new versions and include that value in the request.
-     *        </p>
-     *        <p>
-     *        You typically interact with this value if you implement your own retry logic and want to ensure that a
-     *        given repository association is not created twice. We recommend that you generate a UUID-type value to
-     *        ensure uniqueness within the specified repository association.
-     *        </p>
-     *        <p>
      *        Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
      *        associations if there are failures and retries.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -245,6 +163,282 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
 
     public AssociateRepositoryRequest withClientRequestToken(String clientRequestToken) {
         setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two
+     * parts:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     * <code>Secret</code>). Tag keys are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>,
+     * or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case
+     * sensitive.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
+     *         two parts: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>,
+     *         or <code>Secret</code>). Tag keys are case sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>,
+     *         <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string.
+     *         Like tag keys, tag values are case sensitive.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two
+     * parts:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     * <code>Secret</code>). Tag keys are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>,
+     * or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case
+     * sensitive.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
+     *        two parts: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     *        <code>Secret</code>). Tag keys are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>,
+     *        <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string.
+     *        Like tag keys, tag values are case sensitive.
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two
+     * parts:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     * <code>Secret</code>). Tag keys are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>,
+     * or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case
+     * sensitive.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with
+     *        two parts: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or
+     *        <code>Secret</code>). Tag keys are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>,
+     *        <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string.
+     *        Like tag keys, tag values are case sensitive.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateRepositoryRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see AssociateRepositoryRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateRepositoryRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateRepositoryRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kMSKeyDetails
+     *        A <code>KMSKeyDetails</code> object that contains:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *        (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ID of the AWS KMS key that is associated with this respository association.
+     *        </p>
+     *        </li>
+     */
+
+    public void setKMSKeyDetails(KMSKeyDetails kMSKeyDetails) {
+        this.kMSKeyDetails = kMSKeyDetails;
+    }
+
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A <code>KMSKeyDetails</code> object that contains:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *         (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The ID of the AWS KMS key that is associated with this respository association.
+     *         </p>
+     *         </li>
+     */
+
+    public KMSKeyDetails getKMSKeyDetails() {
+        return this.kMSKeyDetails;
+    }
+
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kMSKeyDetails
+     *        A <code>KMSKeyDetails</code> object that contains:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *        (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ID of the AWS KMS key that is associated with this respository association.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateRepositoryRequest withKMSKeyDetails(KMSKeyDetails kMSKeyDetails) {
+        setKMSKeyDetails(kMSKeyDetails);
         return this;
     }
 
@@ -263,7 +457,11 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
         if (getRepository() != null)
             sb.append("Repository: ").append(getRepository()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getKMSKeyDetails() != null)
+            sb.append("KMSKeyDetails: ").append(getKMSKeyDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -286,6 +484,14 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getKMSKeyDetails() == null ^ this.getKMSKeyDetails() == null)
+            return false;
+        if (other.getKMSKeyDetails() != null && other.getKMSKeyDetails().equals(this.getKMSKeyDetails()) == false)
+            return false;
         return true;
     }
 
@@ -296,6 +502,8 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getRepository() == null) ? 0 : getRepository().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getKMSKeyDetails() == null) ? 0 : getKMSKeyDetails().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class RunConfigurationDescriptionMarshaller {
     private static final MarshallingInfo<StructuredPojo> APPLICATIONRESTORECONFIGURATIONDESCRIPTION_BINDING = MarshallingInfo
             .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationRestoreConfigurationDescription")
             .build();
+    private static final MarshallingInfo<StructuredPojo> FLINKRUNCONFIGURATIONDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlinkRunConfigurationDescription").build();
 
     private static final RunConfigurationDescriptionMarshaller instance = new RunConfigurationDescriptionMarshaller();
 
@@ -49,6 +51,7 @@ public class RunConfigurationDescriptionMarshaller {
         try {
             protocolMarshaller.marshall(runConfigurationDescription.getApplicationRestoreConfigurationDescription(),
                     APPLICATIONRESTORECONFIGURATIONDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(runConfigurationDescription.getFlinkRunConfigurationDescription(), FLINKRUNCONFIGURATIONDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

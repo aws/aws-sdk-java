@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,7 @@ import javax.annotation.Generated;
  * threshold to execute.</li>
  * <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during
  * the operation of the service and can be useful for troubleshooting.</li>
+ * <li>AUDIT_LOGS: Audit logs contain records of user requests for access from the domain.</li>
  * </ul>
  * </p>
  */
@@ -32,7 +33,8 @@ public enum LogType {
 
     INDEX_SLOW_LOGS("INDEX_SLOW_LOGS"),
     SEARCH_SLOW_LOGS("SEARCH_SLOW_LOGS"),
-    ES_APPLICATION_LOGS("ES_APPLICATION_LOGS");
+    ES_APPLICATION_LOGS("ES_APPLICATION_LOGS"),
+    AUDIT_LOGS("AUDIT_LOGS");
 
     private String value;
 

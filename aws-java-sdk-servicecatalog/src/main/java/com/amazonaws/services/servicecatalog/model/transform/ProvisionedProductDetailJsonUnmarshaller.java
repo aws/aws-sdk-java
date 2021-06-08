@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,14 @@ public class ProvisionedProductDetailJsonUnmarshaller implements Unmarshaller<Pr
                     context.nextToken();
                     provisionedProductDetail.setLastRecordId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LastProvisioningRecordId", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductDetail.setLastProvisioningRecordId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastSuccessfulProvisioningRecordId", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductDetail.setLastSuccessfulProvisioningRecordId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ProductId", targetDepth)) {
                     context.nextToken();
                     provisionedProductDetail.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -91,6 +99,10 @@ public class ProvisionedProductDetailJsonUnmarshaller implements Unmarshaller<Pr
                 if (context.testExpression("ProvisioningArtifactId", targetDepth)) {
                     context.nextToken();
                     provisionedProductDetail.setProvisioningArtifactId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LaunchRoleArn", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductDetail.setLaunchRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

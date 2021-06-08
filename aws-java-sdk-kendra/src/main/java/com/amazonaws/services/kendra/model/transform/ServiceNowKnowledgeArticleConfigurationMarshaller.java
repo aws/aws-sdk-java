@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class ServiceNowKnowledgeArticleConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentTitleFieldName").build();
     private static final MarshallingInfo<List> FIELDMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FieldMappings").build();
+    private static final MarshallingInfo<String> FILTERQUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterQuery").build();
 
     private static final ServiceNowKnowledgeArticleConfigurationMarshaller instance = new ServiceNowKnowledgeArticleConfigurationMarshaller();
 
@@ -63,6 +65,7 @@ public class ServiceNowKnowledgeArticleConfigurationMarshaller {
             protocolMarshaller.marshall(serviceNowKnowledgeArticleConfiguration.getDocumentDataFieldName(), DOCUMENTDATAFIELDNAME_BINDING);
             protocolMarshaller.marshall(serviceNowKnowledgeArticleConfiguration.getDocumentTitleFieldName(), DOCUMENTTITLEFIELDNAME_BINDING);
             protocolMarshaller.marshall(serviceNowKnowledgeArticleConfiguration.getFieldMappings(), FIELDMAPPINGS_BINDING);
+            protocolMarshaller.marshall(serviceNowKnowledgeArticleConfiguration.getFilterQuery(), FILTERQUERY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

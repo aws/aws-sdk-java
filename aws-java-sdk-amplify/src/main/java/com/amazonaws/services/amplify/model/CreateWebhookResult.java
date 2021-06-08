@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for the create webhook request.
+ * The result structure for the create webhook request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateWebhook" target="_top">AWS API
@@ -28,18 +28,18 @@ public class CreateWebhookResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes a webhook that connects repository events to an Amplify app.
      * </p>
      */
     private Webhook webhook;
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes a webhook that connects repository events to an Amplify app.
      * </p>
      * 
      * @param webhook
-     *        Webhook structure.
+     *        Describes a webhook that connects repository events to an Amplify app.
      */
 
     public void setWebhook(Webhook webhook) {
@@ -48,10 +48,10 @@ public class CreateWebhookResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes a webhook that connects repository events to an Amplify app.
      * </p>
      * 
-     * @return Webhook structure.
+     * @return Describes a webhook that connects repository events to an Amplify app.
      */
 
     public Webhook getWebhook() {
@@ -60,11 +60,11 @@ public class CreateWebhookResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Webhook structure.
+     * Describes a webhook that connects repository events to an Amplify app.
      * </p>
      * 
      * @param webhook
-     *        Webhook structure.
+     *        Describes a webhook that connects repository events to an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

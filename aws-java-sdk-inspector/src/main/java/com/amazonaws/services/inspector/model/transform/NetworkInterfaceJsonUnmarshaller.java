@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,7 +70,9 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
                 }
                 if (context.testExpression("privateIpAddresses", targetDepth)) {
                     context.nextToken();
-                    networkInterface.setPrivateIpAddresses(new ListUnmarshaller<PrivateIp>(PrivateIpJsonUnmarshaller.getInstance()).unmarshall(context));
+                    networkInterface.setPrivateIpAddresses(new ListUnmarshaller<PrivateIp>(PrivateIpJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("publicDnsName", targetDepth)) {
                     context.nextToken();
@@ -82,11 +84,15 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
                 }
                 if (context.testExpression("ipv6Addresses", targetDepth)) {
                     context.nextToken();
-                    networkInterface.setIpv6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    networkInterface.setIpv6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
                     context.nextToken();
-                    networkInterface.setSecurityGroups(new ListUnmarshaller<SecurityGroup>(SecurityGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    networkInterface.setSecurityGroups(new ListUnmarshaller<SecurityGroup>(SecurityGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The data source for the AutoPilot job.
+ * The data source for the Autopilot job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLDataSource" target="_top">AWS API
@@ -34,7 +34,7 @@ public class AutoMLDataSource implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * The input data must be in CSV format and contain at least 1000 rows.
+     * The input data must be in CSV format and contain at least 500 rows.
      * </p>
      * </note>
      */
@@ -46,14 +46,14 @@ public class AutoMLDataSource implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * The input data must be in CSV format and contain at least 1000 rows.
+     * The input data must be in CSV format and contain at least 500 rows.
      * </p>
      * </note>
      * 
      * @param s3DataSource
      *        The Amazon S3 location of the input data.</p> <note>
      *        <p>
-     *        The input data must be in CSV format and contain at least 1000 rows.
+     *        The input data must be in CSV format and contain at least 500 rows.
      *        </p>
      */
 
@@ -67,13 +67,13 @@ public class AutoMLDataSource implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * The input data must be in CSV format and contain at least 1000 rows.
+     * The input data must be in CSV format and contain at least 500 rows.
      * </p>
      * </note>
      * 
      * @return The Amazon S3 location of the input data.</p> <note>
      *         <p>
-     *         The input data must be in CSV format and contain at least 1000 rows.
+     *         The input data must be in CSV format and contain at least 500 rows.
      *         </p>
      */
 
@@ -87,14 +87,14 @@ public class AutoMLDataSource implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * The input data must be in CSV format and contain at least 1000 rows.
+     * The input data must be in CSV format and contain at least 500 rows.
      * </p>
      * </note>
      * 
      * @param s3DataSource
      *        The Amazon S3 location of the input data.</p> <note>
      *        <p>
-     *        The input data must be in CSV format and contain at least 1000 rows.
+     *        The input data must be in CSV format and contain at least 500 rows.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

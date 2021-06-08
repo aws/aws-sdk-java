@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Subdomain for the Domain Association.
+ * The subdomain for the domain association.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/SubDomain" target="_top">AWS API
@@ -30,30 +30,30 @@ public class SubDomain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Setting structure for the Subdomain.
+     * Describes the settings for the subdomain.
      * </p>
      */
     private SubDomainSetting subDomainSetting;
     /**
      * <p>
-     * Verified status of the Subdomain
+     * The verified status of the subdomain
      * </p>
      */
     private Boolean verified;
     /**
      * <p>
-     * DNS record for the Subdomain.
+     * The DNS record for the subdomain.
      * </p>
      */
     private String dnsRecord;
 
     /**
      * <p>
-     * Setting structure for the Subdomain.
+     * Describes the settings for the subdomain.
      * </p>
      * 
      * @param subDomainSetting
-     *        Setting structure for the Subdomain.
+     *        Describes the settings for the subdomain.
      */
 
     public void setSubDomainSetting(SubDomainSetting subDomainSetting) {
@@ -62,10 +62,10 @@ public class SubDomain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Setting structure for the Subdomain.
+     * Describes the settings for the subdomain.
      * </p>
      * 
-     * @return Setting structure for the Subdomain.
+     * @return Describes the settings for the subdomain.
      */
 
     public SubDomainSetting getSubDomainSetting() {
@@ -74,11 +74,11 @@ public class SubDomain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Setting structure for the Subdomain.
+     * Describes the settings for the subdomain.
      * </p>
      * 
      * @param subDomainSetting
-     *        Setting structure for the Subdomain.
+     *        Describes the settings for the subdomain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class SubDomain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Verified status of the Subdomain
+     * The verified status of the subdomain
      * </p>
      * 
      * @param verified
-     *        Verified status of the Subdomain
+     *        The verified status of the subdomain
      */
 
     public void setVerified(Boolean verified) {
@@ -102,10 +102,10 @@ public class SubDomain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Verified status of the Subdomain
+     * The verified status of the subdomain
      * </p>
      * 
-     * @return Verified status of the Subdomain
+     * @return The verified status of the subdomain
      */
 
     public Boolean getVerified() {
@@ -114,11 +114,11 @@ public class SubDomain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Verified status of the Subdomain
+     * The verified status of the subdomain
      * </p>
      * 
      * @param verified
-     *        Verified status of the Subdomain
+     *        The verified status of the subdomain
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,10 +129,10 @@ public class SubDomain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Verified status of the Subdomain
+     * The verified status of the subdomain
      * </p>
      * 
-     * @return Verified status of the Subdomain
+     * @return The verified status of the subdomain
      */
 
     public Boolean isVerified() {
@@ -141,11 +141,11 @@ public class SubDomain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DNS record for the Subdomain.
+     * The DNS record for the subdomain.
      * </p>
      * 
      * @param dnsRecord
-     *        DNS record for the Subdomain.
+     *        The DNS record for the subdomain.
      */
 
     public void setDnsRecord(String dnsRecord) {
@@ -154,10 +154,10 @@ public class SubDomain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DNS record for the Subdomain.
+     * The DNS record for the subdomain.
      * </p>
      * 
-     * @return DNS record for the Subdomain.
+     * @return The DNS record for the subdomain.
      */
 
     public String getDnsRecord() {
@@ -166,11 +166,11 @@ public class SubDomain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DNS record for the Subdomain.
+     * The DNS record for the subdomain.
      * </p>
      * 
      * @param dnsRecord
-     *        DNS record for the Subdomain.
+     *        The DNS record for the subdomain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

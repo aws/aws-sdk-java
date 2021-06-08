@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -56,6 +56,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * returned, the model must set the custom attribute to be included on the way back.
      * </p>
      * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
      * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      */
@@ -67,7 +73,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -85,7 +91,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        <p>
      *        For information about the format of the response body, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
-     *        Formats—Inference</a>.
+     *        Formats-Inference</a>.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -98,7 +104,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -112,7 +118,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *         <p>
      *         For information about the format of the response body, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
-     *         Formats—Inference</a>.
+     *         Formats-Inference</a>.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -125,7 +131,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * For information about the format of the response body, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -143,7 +149,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        <p>
      *        For information about the format of the response body, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
-     *        Formats—Inference</a>.
+     *        Formats-Inference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,6 +249,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * returned, the model must set the custom attribute to be included on the way back.
      * </p>
      * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
      * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      * 
@@ -255,6 +267,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the
      *        Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute returned, the model
      *        must set the custom attribute to be included on the way back. </p>
+     *        <p>
+     *        The code in your model is responsible for setting or updating any custom attributes in the response. If
+     *        your code does not set this value in the response, an empty value is returned. For example, if a custom
+     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code>
+     *        in your post-processing function.
+     *        </p>
      *        <p>
      *        This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      */
@@ -274,6 +292,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * returned, the model must set the custom attribute to be included on the way back.
      * </p>
      * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
      * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      * 
@@ -285,6 +309,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *         href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the
      *         Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute returned, the model
      *         must set the custom attribute to be included on the way back. </p>
+     *         <p>
+     *         The code in your model is responsible for setting or updating any custom attributes in the response. If
+     *         your code does not set this value in the response, an empty value is returned. For example, if a custom
+     *         attribute represents the trace ID, your model can prepend the custom attribute with
+     *         <code>Trace ID:</code> in your post-processing function.
+     *         </p>
      *         <p>
      *         This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      */
@@ -304,6 +334,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * returned, the model must set the custom attribute to be included on the way back.
      * </p>
      * <p>
+     * The code in your model is responsible for setting or updating any custom attributes in the response. If your code
+     * does not set this value in the response, an empty value is returned. For example, if a custom attribute
+     * represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code> in your
+     * post-processing function.
+     * </p>
+     * <p>
      * This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * </p>
      * 
@@ -316,6 +352,12 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      *        href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value Components</a> of the
      *        Hypertext Transfer Protocol (HTTP/1.1). If the customer wants the custom attribute returned, the model
      *        must set the custom attribute to be included on the way back. </p>
+     *        <p>
+     *        The code in your model is responsible for setting or updating any custom attributes in the response. If
+     *        your code does not set this value in the response, an empty value is returned. For example, if a custom
+     *        attribute represents the trace ID, your model can prepend the custom attribute with <code>Trace ID:</code>
+     *        in your post-processing function.
+     *        </p>
      *        <p>
      *        This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK.
      * @return Returns a reference to this object so that method calls can be chained together.

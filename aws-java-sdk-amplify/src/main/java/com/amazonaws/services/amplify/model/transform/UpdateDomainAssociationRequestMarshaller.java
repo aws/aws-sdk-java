@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,10 @@ public class UpdateDomainAssociationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableAutoSubDomain").build();
     private static final MarshallingInfo<List> SUBDOMAINSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subDomainSettings").build();
+    private static final MarshallingInfo<List> AUTOSUBDOMAINCREATIONPATTERNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoSubDomainCreationPatterns").build();
+    private static final MarshallingInfo<String> AUTOSUBDOMAINIAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoSubDomainIAMRole").build();
 
     private static final UpdateDomainAssociationRequestMarshaller instance = new UpdateDomainAssociationRequestMarshaller();
 
@@ -57,6 +61,8 @@ public class UpdateDomainAssociationRequestMarshaller {
             protocolMarshaller.marshall(updateDomainAssociationRequest.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(updateDomainAssociationRequest.getEnableAutoSubDomain(), ENABLEAUTOSUBDOMAIN_BINDING);
             protocolMarshaller.marshall(updateDomainAssociationRequest.getSubDomainSettings(), SUBDOMAINSETTINGS_BINDING);
+            protocolMarshaller.marshall(updateDomainAssociationRequest.getAutoSubDomainCreationPatterns(), AUTOSUBDOMAINCREATIONPATTERNS_BINDING);
+            protocolMarshaller.marshall(updateDomainAssociationRequest.getAutoSubDomainIAMRole(), AUTOSUBDOMAINIAMROLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -75,7 +75,8 @@
         {"shape":"InvalidLayerException"},
         {"shape":"LayerPartTooSmallException"},
         {"shape":"LayerAlreadyExistsException"},
-        {"shape":"EmptyUploadException"}
+        {"shape":"EmptyUploadException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Informs Amazon ECR that the image layer upload has completed for a specified registry, repository name, and upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation purposes.</p> <p>When an image is pushed, the CompleteLayerUpload API is called once per each new image layer to verify that the upload has completed.</p> <note> <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"
     },
@@ -93,7 +94,8 @@
         {"shape":"InvalidTagParameterException"},
         {"shape":"TooManyTagsException"},
         {"shape":"RepositoryAlreadyExistsException"},
-        {"shape":"LimitExceededException"}
+        {"shape":"LimitExceededException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Creates a repository. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html\">Amazon ECR Repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>"
     },
@@ -113,6 +115,21 @@
       ],
       "documentation":"<p>Deletes the lifecycle policy associated with the specified repository.</p>"
     },
+    "DeleteRegistryPolicy":{
+      "name":"DeleteRegistryPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteRegistryPolicyRequest"},
+      "output":{"shape":"DeleteRegistryPolicyResponse"},
+      "errors":[
+        {"shape":"ServerException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"RegistryPolicyNotFoundException"}
+      ],
+      "documentation":"<p>Deletes the registry permissions policy.</p>"
+    },
     "DeleteRepository":{
       "name":"DeleteRepository",
       "http":{
@@ -125,7 +142,8 @@
         {"shape":"ServerException"},
         {"shape":"InvalidParameterException"},
         {"shape":"RepositoryNotFoundException"},
-        {"shape":"RepositoryNotEmptyException"}
+        {"shape":"RepositoryNotEmptyException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Deletes a repository. If the repository contains images, you must either delete all images in the repository or use the <code>force</code> option to delete the repository.</p>"
     },
@@ -177,6 +195,21 @@
         {"shape":"ImageNotFoundException"}
       ],
       "documentation":"<p>Returns metadata about the images in a repository.</p> <note> <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <a>DescribeImages</a>.</p> </note>"
+    },
+    "DescribeRegistry":{
+      "name":"DescribeRegistry",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeRegistryRequest"},
+      "output":{"shape":"DescribeRegistryResponse"},
+      "errors":[
+        {"shape":"ServerException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"<p>Describes the settings for a registry. The replication configuration for a repository can be created or updated with the <a>PutReplicationConfiguration</a> API action.</p>"
     },
     "DescribeRepositories":{
       "name":"DescribeRepositories",
@@ -256,6 +289,21 @@
       ],
       "documentation":"<p>Retrieves the results of the lifecycle policy preview request for the specified repository.</p>"
     },
+    "GetRegistryPolicy":{
+      "name":"GetRegistryPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetRegistryPolicyRequest"},
+      "output":{"shape":"GetRegistryPolicyResponse"},
+      "errors":[
+        {"shape":"ServerException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"RegistryPolicyNotFoundException"}
+      ],
+      "documentation":"<p>Retrieves the permissions policy for a registry.</p>"
+    },
     "GetRepositoryPolicy":{
       "name":"GetRepositoryPolicy",
       "http":{
@@ -283,7 +331,8 @@
       "errors":[
         {"shape":"ServerException"},
         {"shape":"InvalidParameterException"},
-        {"shape":"RepositoryNotFoundException"}
+        {"shape":"RepositoryNotFoundException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an image is pushed, the InitiateLayerUpload API is called once per image layer that has not already been uploaded. Whether or not an image layer has been uploaded is determined by the BatchCheckLayerAvailability API action.</p> <note> <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"
     },
@@ -333,7 +382,9 @@
         {"shape":"LayersNotFoundException"},
         {"shape":"ReferencedImagesNotFoundException"},
         {"shape":"LimitExceededException"},
-        {"shape":"ImageTagAlreadyExistsException"}
+        {"shape":"ImageTagAlreadyExistsException"},
+        {"shape":"ImageDigestDoesNotMatchException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Creates or updates the image manifest and tags associated with an image.</p> <p>When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or update the image manifest and the tags associated with the image.</p> <note> <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"
     },
@@ -381,6 +432,35 @@
         {"shape":"RepositoryNotFoundException"}
       ],
       "documentation":"<p>Creates or updates the lifecycle policy for the specified repository. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html\">Lifecycle Policy Template</a>.</p>"
+    },
+    "PutRegistryPolicy":{
+      "name":"PutRegistryPolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutRegistryPolicyRequest"},
+      "output":{"shape":"PutRegistryPolicyResponse"},
+      "errors":[
+        {"shape":"ServerException"},
+        {"shape":"InvalidParameterException"}
+      ],
+      "documentation":"<p>Creates or updates the permissions policy for your registry.</p> <p>A registry policy is used to specify permissions for another AWS account and is used when configuring cross-account replication. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html\">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>"
+    },
+    "PutReplicationConfiguration":{
+      "name":"PutReplicationConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutReplicationConfigurationRequest"},
+      "output":{"shape":"PutReplicationConfigurationResponse"},
+      "errors":[
+        {"shape":"ServerException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"<p>Creates or updates the replication configuration for a registry. The existing replication configuration for a repository can be retrieved with the <a>DescribeRegistry</a> API action. The first time the PutReplicationConfiguration API is called, a service-linked IAM role is created in your account for the replication process. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html\">Using Service-Linked Roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p> <note> <p>When configuring cross-account replication, the destination account must grant the source account permission to replicate. This permission is controlled using a registry permissions policy. For more information, see <a>PutRegistryPolicy</a>.</p> </note>"
     },
     "SetRepositoryPolicy":{
       "name":"SetRepositoryPolicy",
@@ -480,7 +560,8 @@
         {"shape":"InvalidLayerPartException"},
         {"shape":"RepositoryNotFoundException"},
         {"shape":"UploadNotFoundException"},
-        {"shape":"LimitExceededException"}
+        {"shape":"LimitExceededException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each new image layer part.</p> <note> <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"
     }
@@ -727,7 +808,11 @@
         },
         "imageScanningConfiguration":{
           "shape":"ImageScanningConfiguration",
-          "documentation":"<p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>"
+          "documentation":"<p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>"
+        },
+        "encryptionConfiguration":{
+          "shape":"EncryptionConfiguration",
+          "documentation":"<p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>"
         }
       }
     },
@@ -773,6 +858,24 @@
         "lastEvaluatedAt":{
           "shape":"EvaluationTimestamp",
           "documentation":"<p>The time stamp of the last time that the lifecycle policy was run.</p>"
+        }
+      }
+    },
+    "DeleteRegistryPolicyRequest":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteRegistryPolicyResponse":{
+      "type":"structure",
+      "members":{
+        "registryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>The registry ID associated with the request.</p>"
+        },
+        "policyText":{
+          "shape":"RegistryPolicyText",
+          "documentation":"<p>The contents of the registry permissions policy that was deleted.</p>"
         }
       }
     },
@@ -939,6 +1042,24 @@
         }
       }
     },
+    "DescribeRegistryRequest":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DescribeRegistryResponse":{
+      "type":"structure",
+      "members":{
+        "registryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>The ID of the registry.</p>"
+        },
+        "replicationConfiguration":{
+          "shape":"ReplicationConfiguration",
+          "documentation":"<p>The replication configuration for the registry.</p>"
+        }
+      }
+    },
     "DescribeRepositoriesRequest":{
       "type":"structure",
       "members":{
@@ -984,6 +1105,28 @@
       "documentation":"<p>The specified layer upload does not contain any layer parts.</p>",
       "exception":true
     },
+    "EncryptionConfiguration":{
+      "type":"structure",
+      "required":["encryptionType"],
+      "members":{
+        "encryptionType":{
+          "shape":"EncryptionType",
+          "documentation":"<p>The encryption type to use.</p> <p>If you use the <code>KMS</code> encryption type, the contents of the repository will be encrypted using server-side encryption with customer master keys (CMKs) stored in AWS KMS. When you use AWS KMS to encrypt your data, you can either use the default AWS managed CMK for Amazon ECR, or specify your own CMK, which you already created. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html\">Protecting Data Using Server-Side Encryption with CMKs Stored in AWS Key Management Service (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts the images in the repository using an AES-256 encryption algorithm. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html\">Protecting Data Using Server-Side Encryption with Amazon S3-Managed Encryption Keys (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>"
+        },
+        "kmsKey":{
+          "shape":"KmsKey",
+          "documentation":"<p>If you use the <code>KMS</code> encryption type, specify the CMK to use for encryption. The alias, key ID, or full ARN of the CMK can be specified. The key must exist in the same Region as the repository. If no key is specified, the default AWS managed CMK for Amazon ECR will be used.</p>"
+        }
+      },
+      "documentation":"<p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p> <p>By default, when no encryption configuration is set or the <code>AES256</code> encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES-256 encryption algorithm. This does not require any action on your part.</p> <p>For more control over the encryption of the contents of your repository, you can use server-side encryption with customer master keys (CMKs) stored in AWS Key Management Service (AWS KMS) to encrypt your images. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html\">Amazon ECR encryption at rest</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>"
+    },
+    "EncryptionType":{
+      "type":"string",
+      "enum":[
+        "AES256",
+        "KMS"
+      ]
+    },
     "EvaluationTimestamp":{"type":"timestamp"},
     "ExceptionMessage":{"type":"string"},
     "ExpirationTimestamp":{"type":"timestamp"},
@@ -1017,7 +1160,9 @@
       "members":{
         "registryIds":{
           "shape":"GetAuthorizationTokenRegistryIdList",
-          "documentation":"<p>A list of AWS account IDs that are associated with the registries for which to get AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>"
+          "documentation":"<p>A list of AWS account IDs that are associated with the registries for which to get AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>",
+          "deprecated":true,
+          "deprecatedMessage":"This field is deprecated. The returned authorization token can be used to access any Amazon ECR registry that the IAM principal has access to, specifying a registry ID doesn't change the permissions scope of the authorization token."
         }
       }
     },
@@ -1162,6 +1307,24 @@
         }
       }
     },
+    "GetRegistryPolicyRequest":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "GetRegistryPolicyResponse":{
+      "type":"structure",
+      "members":{
+        "registryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>The ID of the registry.</p>"
+        },
+        "policyText":{
+          "shape":"RegistryPolicyText",
+          "documentation":"<p>The JSON text of the permissions policy for a registry.</p>"
+        }
+      }
+    },
     "GetRepositoryPolicyRequest":{
       "type":"structure",
       "required":["repositoryName"],
@@ -1214,7 +1377,7 @@
         },
         "imageManifestMediaType":{
           "shape":"MediaType",
-          "documentation":"<p>The media type associated with the image manifest.</p>"
+          "documentation":"<p>The manifest media type of the image.</p>"
         }
       },
       "documentation":"<p>An object representing an Amazon ECR image.</p>"
@@ -1272,6 +1435,14 @@
         "imageScanFindingsSummary":{
           "shape":"ImageScanFindingsSummary",
           "documentation":"<p>A summary of the last completed image scan.</p>"
+        },
+        "imageManifestMediaType":{
+          "shape":"MediaType",
+          "documentation":"<p>The media type of the image manifest.</p>"
+        },
+        "artifactMediaType":{
+          "shape":"MediaType",
+          "documentation":"<p>The artifact media type of the image.</p>"
         }
       },
       "documentation":"<p>An object that describes an image returned by a <a>DescribeImages</a> operation.</p>"
@@ -1281,6 +1452,14 @@
       "member":{"shape":"ImageDetail"}
     },
     "ImageDigest":{"type":"string"},
+    "ImageDigestDoesNotMatchException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>The specified image digest does not match the digest that Amazon ECR calculated for the image.</p>",
+      "exception":true
+    },
     "ImageFailure":{
       "type":"structure",
       "members":{
@@ -1307,7 +1486,8 @@
         "ImageTagDoesNotMatchDigest",
         "ImageNotFound",
         "MissingDigestAndTag",
-        "ImageReferencedByManifestList"
+        "ImageReferencedByManifestList",
+        "KmsError"
       ]
     },
     "ImageFailureList":{
@@ -1555,6 +1735,24 @@
       "documentation":"<p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>",
       "exception":true
     },
+    "KmsError":{"type":"string"},
+    "KmsException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"},
+        "kmsError":{
+          "shape":"KmsError",
+          "documentation":"<p>The error code returned by AWS KMS.</p>"
+        }
+      },
+      "documentation":"<p>The operation failed due to a KMS exception.</p>",
+      "exception":true
+    },
+    "KmsKey":{
+      "type":"string",
+      "max":2048,
+      "min":1
+    },
     "Layer":{
       "type":"structure",
       "members":{
@@ -1701,7 +1899,7 @@
       "members":{
         "message":{"shape":"ExceptionMessage"}
       },
-      "documentation":"<p>The previous lifecycle policy preview request has not completed. Please try again later.</p>",
+      "documentation":"<p>The previous lifecycle policy preview request has not completed. Wait and try again.</p>",
       "exception":true
     },
     "LifecyclePolicyPreviewNotFoundException":{
@@ -1908,7 +2106,11 @@
         },
         "imageTag":{
           "shape":"ImageTag",
-          "documentation":"<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>"
+          "documentation":"<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>"
+        },
+        "imageDigest":{
+          "shape":"ImageDigest",
+          "documentation":"<p>The image digest of the image manifest corresponding to the image.</p>"
         }
       }
     },
@@ -2035,6 +2237,48 @@
         }
       }
     },
+    "PutRegistryPolicyRequest":{
+      "type":"structure",
+      "required":["policyText"],
+      "members":{
+        "policyText":{
+          "shape":"RegistryPolicyText",
+          "documentation":"<p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html\">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>"
+        }
+      }
+    },
+    "PutRegistryPolicyResponse":{
+      "type":"structure",
+      "members":{
+        "registryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>The registry ID.</p>"
+        },
+        "policyText":{
+          "shape":"RegistryPolicyText",
+          "documentation":"<p>The JSON policy text for your registry.</p>"
+        }
+      }
+    },
+    "PutReplicationConfigurationRequest":{
+      "type":"structure",
+      "required":["replicationConfiguration"],
+      "members":{
+        "replicationConfiguration":{
+          "shape":"ReplicationConfiguration",
+          "documentation":"<p>An object representing the replication configuration for a registry.</p>"
+        }
+      }
+    },
+    "PutReplicationConfigurationResponse":{
+      "type":"structure",
+      "members":{
+        "replicationConfiguration":{
+          "shape":"ReplicationConfiguration",
+          "documentation":"<p>The contents of the replication configuration for the registry.</p>"
+        }
+      }
+    },
     "ReferencedImagesNotFoundException":{
       "type":"structure",
       "members":{
@@ -2043,9 +2287,80 @@
       "documentation":"<p>The manifest list is referencing an image that does not exist.</p>",
       "exception":true
     },
+    "Region":{
+      "type":"string",
+      "max":25,
+      "min":2,
+      "pattern":"[0-9a-z-]{2,25}"
+    },
     "RegistryId":{
       "type":"string",
       "pattern":"[0-9]{12}"
+    },
+    "RegistryPolicyNotFoundException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>The registry doesn't have an associated registry policy.</p>",
+      "exception":true
+    },
+    "RegistryPolicyText":{
+      "type":"string",
+      "max":10240,
+      "min":0
+    },
+    "ReplicationConfiguration":{
+      "type":"structure",
+      "required":["rules"],
+      "members":{
+        "rules":{
+          "shape":"ReplicationRuleList",
+          "documentation":"<p>An array of objects representing the replication rules for a replication configuration. A replication configuration may contain only one replication rule but the rule may contain one or more replication destinations.</p>"
+        }
+      },
+      "documentation":"<p>The replication configuration for a registry.</p>"
+    },
+    "ReplicationDestination":{
+      "type":"structure",
+      "required":[
+        "region",
+        "registryId"
+      ],
+      "members":{
+        "region":{
+          "shape":"Region",
+          "documentation":"<p>A Region to replicate to.</p>"
+        },
+        "registryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>The account ID of the destination registry to replicate to.</p>"
+        }
+      },
+      "documentation":"<p>An array of objects representing the details of a replication destination.</p>"
+    },
+    "ReplicationDestinationList":{
+      "type":"list",
+      "member":{"shape":"ReplicationDestination"},
+      "max":25,
+      "min":0
+    },
+    "ReplicationRule":{
+      "type":"structure",
+      "required":["destinations"],
+      "members":{
+        "destinations":{
+          "shape":"ReplicationDestinationList",
+          "documentation":"<p>An array of objects representing the details of a replication destination.</p>"
+        }
+      },
+      "documentation":"<p>An array of objects representing the replication destinations for a replication configuration. A replication configuration may contain only one replication rule but the rule may contain one or more replication destinations.</p>"
+    },
+    "ReplicationRuleList":{
+      "type":"list",
+      "member":{"shape":"ReplicationRule"},
+      "max":1,
+      "min":0
     },
     "Repository":{
       "type":"structure",
@@ -2064,7 +2379,7 @@
         },
         "repositoryUri":{
           "shape":"Url",
-          "documentation":"<p>The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.</p>"
+          "documentation":"<p>The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code> operations.</p>"
         },
         "createdAt":{
           "shape":"CreationTimestamp",
@@ -2074,7 +2389,11 @@
           "shape":"ImageTagMutability",
           "documentation":"<p>The tag mutability setting for the repository.</p>"
         },
-        "imageScanningConfiguration":{"shape":"ImageScanningConfiguration"}
+        "imageScanningConfiguration":{"shape":"ImageScanningConfiguration"},
+        "encryptionConfiguration":{
+          "shape":"EncryptionConfiguration",
+          "documentation":"<p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>"
+        }
       },
       "documentation":"<p>An object representing a repository.</p>"
     },
@@ -2456,11 +2775,19 @@
           "documentation":"<p>The error message associated with the exception.</p>"
         }
       },
-      "documentation":"<p>The upload could not be found, or the specified upload id is not valid for this repository.</p>",
+      "documentation":"<p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>",
       "exception":true
     },
     "Url":{"type":"string"},
+    "ValidationException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>There was an exception validating this request.</p>",
+      "exception":true
+    },
     "VulnerabilitySourceUpdateTimestamp":{"type":"timestamp"}
   },
-  "documentation":"<fullname>Amazon Elastic Container Registry</fullname> <p>Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon ECR supports private Docker repositories with resource-based permissions using IAM so that specific users or Amazon EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage images.</p>"
+  "documentation":"<fullname>Amazon Elastic Container Registry</fullname> <p>Amazon Elastic Container Registry (Amazon ECR) is a managed container image registry service. Customers can use the familiar Docker CLI, or their preferred client, to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry for your Docker or Open Container Initiative (OCI) images. Amazon ECR supports private repositories with resource-based permissions using IAM so that specific users or Amazon EC2 instances can access repositories and images.</p>"
 }

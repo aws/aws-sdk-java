@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The AWSMediaTailor configuration.
+ * Creates a playback configuration. For information about MediaTailor configurations, see <a
+ * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS
+ * Elemental MediaTailor</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PlaybackConfiguration" target="_top">AWS
@@ -32,18 +34,26 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
-     * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
+     * needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is
      * 25,000 characters.
      * </p>
      */
     private String adDecisionServerUrl;
     /**
      * <p>
-     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
-     * manifest, or if a viewer joins mid-break.
+     * The configuration for avail suppression, also known as ad suppression. For more information about ad suppression,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.
      * </p>
      */
     private AvailSuppression availSuppression;
+    /**
+     * <p>
+     * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
+     * an ad break. To learn more about bumpers, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
+     * </p>
+     */
+    private Bumper bumper;
     /**
      * <p>
      * The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment
@@ -53,7 +63,14 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
     private CdnConfiguration cdnConfiguration;
     /**
      * <p>
-     * The configuration for DASH content.
+     * The player parameters and aliases used as dynamic variables during session initialization. For more information,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.
+     * </p>
+     */
+    private java.util.Map<String, java.util.Map<String, String>> configurationAliases;
+    /**
+     * <p>
+     * The configuration for a DASH source.
      * </p>
      */
     private DashConfiguration dashConfiguration;
@@ -65,10 +82,35 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
     private HlsConfiguration hlsConfiguration;
     /**
      * <p>
+     * The configuration for pre-roll ad insertion.
+     * </p>
+     */
+    private LivePreRollConfiguration livePreRollConfiguration;
+    /**
+     * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     */
+    private ManifestProcessingRules manifestProcessingRules;
+    /**
+     * <p>
      * The identifier for the playback configuration.
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of
+     * underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned
+     * and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams,
+     * rather than ad insertion, because it relies on an underlying content stream. For more information about ad break
+     * behavior, including ad replacement and insertion, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     * MediaTailor</a>.
+     * </p>
+     */
+    private Integer personalizationThresholdSeconds;
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the playback configuration.
@@ -77,8 +119,7 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
     private String playbackConfigurationArn;
     /**
      * <p>
-     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     * server-side reporting.
+     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
      * </p>
      */
     private String playbackEndpointPrefix;
@@ -90,16 +131,16 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
     private String sessionInitializationEndpointPrefix;
     /**
      * <p>
-     * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
-     * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
-     * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
+     * The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor
+     * shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback
+     * configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for
+     * dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      */
     private String slateAdUrl;
     /**
      * <p>
-     * The tags assigned to the playback configuration.
+     * The tags to assign to the playback configuration.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -113,13 +154,7 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
     private String transcodeProfileName;
     /**
      * <p>
-     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
-     * </p>
-     */
-    private Integer personalizationThresholdSeconds;
-    /**
-     * <p>
-     * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
+     * The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      */
     private String videoContentSourceUrl;
@@ -128,14 +163,14 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
-     * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
+     * needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is
      * 25,000 characters.
      * </p>
      * 
      * @param adDecisionServerUrl
      *        The URL for the ad decision server (ADS). This includes the specification of static parameters and
      *        placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and
-     *        session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a
+     *        session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a
      *        static VAST URL. The maximum length is 25,000 characters.
      */
 
@@ -147,13 +182,13 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
-     * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
+     * needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is
      * 25,000 characters.
      * </p>
      * 
      * @return The URL for the ad decision server (ADS). This includes the specification of static parameters and
      *         placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and
-     *         session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a
+     *         session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a
      *         static VAST URL. The maximum length is 25,000 characters.
      */
 
@@ -165,14 +200,14 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
-     * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
+     * needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is
      * 25,000 characters.
      * </p>
      * 
      * @param adDecisionServerUrl
      *        The URL for the ad decision server (ADS). This includes the specification of static parameters and
      *        placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and
-     *        session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a
+     *        session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a
      *        static VAST URL. The maximum length is 25,000 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -184,13 +219,14 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
-     * manifest, or if a viewer joins mid-break.
+     * The configuration for avail suppression, also known as ad suppression. For more information about ad suppression,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.
      * </p>
      * 
      * @param availSuppression
-     *        The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a
-     *        long manifest, or if a viewer joins mid-break.
+     *        The configuration for avail suppression, also known as ad suppression. For more information about ad
+     *        suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     *        Suppression</a>.
      */
 
     public void setAvailSuppression(AvailSuppression availSuppression) {
@@ -199,12 +235,13 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
-     * manifest, or if a viewer joins mid-break.
+     * The configuration for avail suppression, also known as ad suppression. For more information about ad suppression,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.
      * </p>
      * 
-     * @return The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a
-     *         long manifest, or if a viewer joins mid-break.
+     * @return The configuration for avail suppression, also known as ad suppression. For more information about ad
+     *         suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     *         Suppression</a>.
      */
 
     public AvailSuppression getAvailSuppression() {
@@ -213,18 +250,71 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
-     * manifest, or if a viewer joins mid-break.
+     * The configuration for avail suppression, also known as ad suppression. For more information about ad suppression,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.
      * </p>
      * 
      * @param availSuppression
-     *        The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a
-     *        long manifest, or if a viewer joins mid-break.
+     *        The configuration for avail suppression, also known as ad suppression. For more information about ad
+     *        suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     *        Suppression</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PlaybackConfiguration withAvailSuppression(AvailSuppression availSuppression) {
         setAvailSuppression(availSuppression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
+     * an ad break. To learn more about bumpers, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
+     * </p>
+     * 
+     * @param bumper
+     *        The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the
+     *        end of an ad break. To learn more about bumpers, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
+     */
+
+    public void setBumper(Bumper bumper) {
+        this.bumper = bumper;
+    }
+
+    /**
+     * <p>
+     * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
+     * an ad break. To learn more about bumpers, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
+     * </p>
+     * 
+     * @return The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before
+     *         the end of an ad break. To learn more about bumpers, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
+     */
+
+    public Bumper getBumper() {
+        return this.bumper;
+    }
+
+    /**
+     * <p>
+     * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
+     * an ad break. To learn more about bumpers, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
+     * </p>
+     * 
+     * @param bumper
+     *        The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the
+     *        end of an ad break. To learn more about bumpers, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlaybackConfiguration withBumper(Bumper bumper) {
+        setBumper(bumper);
         return this;
     }
 
@@ -276,11 +366,88 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The configuration for DASH content.
+     * The player parameters and aliases used as dynamic variables during session initialization. For more information,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.
+     * </p>
+     * 
+     * @return The player parameters and aliases used as dynamic variables during session initialization. For more
+     *         information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     *         Variables</a>.
+     */
+
+    public java.util.Map<String, java.util.Map<String, String>> getConfigurationAliases() {
+        return configurationAliases;
+    }
+
+    /**
+     * <p>
+     * The player parameters and aliases used as dynamic variables during session initialization. For more information,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.
+     * </p>
+     * 
+     * @param configurationAliases
+     *        The player parameters and aliases used as dynamic variables during session initialization. For more
+     *        information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     *        Variables</a>.
+     */
+
+    public void setConfigurationAliases(java.util.Map<String, java.util.Map<String, String>> configurationAliases) {
+        this.configurationAliases = configurationAliases;
+    }
+
+    /**
+     * <p>
+     * The player parameters and aliases used as dynamic variables during session initialization. For more information,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.
+     * </p>
+     * 
+     * @param configurationAliases
+     *        The player parameters and aliases used as dynamic variables during session initialization. For more
+     *        information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     *        Variables</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlaybackConfiguration withConfigurationAliases(java.util.Map<String, java.util.Map<String, String>> configurationAliases) {
+        setConfigurationAliases(configurationAliases);
+        return this;
+    }
+
+    /**
+     * Add a single ConfigurationAliases entry
+     *
+     * @see PlaybackConfiguration#withConfigurationAliases
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlaybackConfiguration addConfigurationAliasesEntry(String key, java.util.Map<String, String> value) {
+        if (null == this.configurationAliases) {
+            this.configurationAliases = new java.util.HashMap<String, java.util.Map<String, String>>();
+        }
+        if (this.configurationAliases.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.configurationAliases.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ConfigurationAliases.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlaybackConfiguration clearConfigurationAliasesEntries() {
+        this.configurationAliases = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for a DASH source.
      * </p>
      * 
      * @param dashConfiguration
-     *        The configuration for DASH content.
+     *        The configuration for a DASH source.
      */
 
     public void setDashConfiguration(DashConfiguration dashConfiguration) {
@@ -289,10 +456,10 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The configuration for DASH content.
+     * The configuration for a DASH source.
      * </p>
      * 
-     * @return The configuration for DASH content.
+     * @return The configuration for a DASH source.
      */
 
     public DashConfiguration getDashConfiguration() {
@@ -301,11 +468,11 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The configuration for DASH content.
+     * The configuration for a DASH source.
      * </p>
      * 
      * @param dashConfiguration
-     *        The configuration for DASH content.
+     *        The configuration for a DASH source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,6 +523,92 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The configuration for pre-roll ad insertion.
+     * </p>
+     * 
+     * @param livePreRollConfiguration
+     *        The configuration for pre-roll ad insertion.
+     */
+
+    public void setLivePreRollConfiguration(LivePreRollConfiguration livePreRollConfiguration) {
+        this.livePreRollConfiguration = livePreRollConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for pre-roll ad insertion.
+     * </p>
+     * 
+     * @return The configuration for pre-roll ad insertion.
+     */
+
+    public LivePreRollConfiguration getLivePreRollConfiguration() {
+        return this.livePreRollConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for pre-roll ad insertion.
+     * </p>
+     * 
+     * @param livePreRollConfiguration
+     *        The configuration for pre-roll ad insertion.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlaybackConfiguration withLivePreRollConfiguration(LivePreRollConfiguration livePreRollConfiguration) {
+        setLivePreRollConfiguration(livePreRollConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     * 
+     * @param manifestProcessingRules
+     *        The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     *        personalized manifests created by MediaTailor.
+     */
+
+    public void setManifestProcessingRules(ManifestProcessingRules manifestProcessingRules) {
+        this.manifestProcessingRules = manifestProcessingRules;
+    }
+
+    /**
+     * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     * 
+     * @return The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     *         personalized manifests created by MediaTailor.
+     */
+
+    public ManifestProcessingRules getManifestProcessingRules() {
+        return this.manifestProcessingRules;
+    }
+
+    /**
+     * <p>
+     * The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     * personalized manifests created by MediaTailor.
+     * </p>
+     * 
+     * @param manifestProcessingRules
+     *        The configuration for manifest processing rules. Manifest processing rules enable customization of the
+     *        personalized manifests created by MediaTailor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlaybackConfiguration withManifestProcessingRules(ManifestProcessingRules manifestProcessingRules) {
+        setManifestProcessingRules(manifestProcessingRules);
+        return this;
+    }
+
+    /**
+     * <p>
      * The identifier for the playback configuration.
      * </p>
      * 
@@ -391,6 +644,82 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     public PlaybackConfiguration withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of
+     * underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned
+     * and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams,
+     * rather than ad insertion, because it relies on an underlying content stream. For more information about ad break
+     * behavior, including ad replacement and insertion, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     * MediaTailor</a>.
+     * </p>
+     * 
+     * @param personalizationThresholdSeconds
+     *        Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration
+     *        of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is
+     *        abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and
+     *        VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more
+     *        information about ad break behavior, including ad replacement and insertion, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     *        MediaTailor</a>.
+     */
+
+    public void setPersonalizationThresholdSeconds(Integer personalizationThresholdSeconds) {
+        this.personalizationThresholdSeconds = personalizationThresholdSeconds;
+    }
+
+    /**
+     * <p>
+     * Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of
+     * underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned
+     * and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams,
+     * rather than ad insertion, because it relies on an underlying content stream. For more information about ad break
+     * behavior, including ad replacement and insertion, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     * MediaTailor</a>.
+     * </p>
+     * 
+     * @return Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration
+     *         of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is
+     *         abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and
+     *         VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more
+     *         information about ad break behavior, including ad replacement and insertion, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     *         MediaTailor</a>.
+     */
+
+    public Integer getPersonalizationThresholdSeconds() {
+        return this.personalizationThresholdSeconds;
+    }
+
+    /**
+     * <p>
+     * Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of
+     * underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned
+     * and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams,
+     * rather than ad insertion, because it relies on an underlying content stream. For more information about ad break
+     * behavior, including ad replacement and insertion, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     * MediaTailor</a>.
+     * </p>
+     * 
+     * @param personalizationThresholdSeconds
+     *        Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration
+     *        of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is
+     *        abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and
+     *        VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more
+     *        information about ad break behavior, including ad replacement and insertion, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     *        MediaTailor</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlaybackConfiguration withPersonalizationThresholdSeconds(Integer personalizationThresholdSeconds) {
+        setPersonalizationThresholdSeconds(personalizationThresholdSeconds);
         return this;
     }
 
@@ -436,13 +765,11 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     * server-side reporting.
+     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
      * </p>
      * 
      * @param playbackEndpointPrefix
-     *        The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     *        server-side reporting.
+     *        The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
      */
 
     public void setPlaybackEndpointPrefix(String playbackEndpointPrefix) {
@@ -451,12 +778,10 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     * server-side reporting.
+     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
      * </p>
      * 
-     * @return The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     *         server-side reporting.
+     * @return The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
      */
 
     public String getPlaybackEndpointPrefix() {
@@ -465,13 +790,11 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     * server-side reporting.
+     * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
      * </p>
      * 
      * @param playbackEndpointPrefix
-     *        The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
-     *        server-side reporting.
+     *        The URL that the player accesses to get a manifest from AWS Elemental MediaTailor.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -522,18 +845,18 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
-     * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
-     * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
+     * The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor
+     * shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback
+     * configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for
+     * dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      * 
      * @param slateAdUrl
-     *        The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
-     *        Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional
-     *        for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in
-     *        the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both
-     *        audio and video.
+     *        The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
+     *        MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for
+     *        non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the
+     *        slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio
+     *        and video.
      */
 
     public void setSlateAdUrl(String slateAdUrl) {
@@ -542,16 +865,16 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
-     * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
-     * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
+     * The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor
+     * shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback
+     * configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for
+     * dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      * 
-     * @return The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
-     *         Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional
-     *         for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it
-     *         in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both
+     * @return The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
+     *         MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for
+     *         non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in
+     *         the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both
      *         audio and video.
      */
 
@@ -561,18 +884,18 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
-     * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
-     * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
+     * The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor
+     * shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID playback
+     * configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated for
+     * dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      * 
      * @param slateAdUrl
-     *        The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
-     *        Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional
-     *        for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in
-     *        the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both
-     *        audio and video.
+     *        The URL for a video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
+     *        MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for
+     *        non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in the
+     *        slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio
+     *        and video.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -583,10 +906,10 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The tags assigned to the playback configuration.
+     * The tags to assign to the playback configuration.
      * </p>
      * 
-     * @return The tags assigned to the playback configuration.
+     * @return The tags to assign to the playback configuration.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -595,11 +918,11 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The tags assigned to the playback configuration.
+     * The tags to assign to the playback configuration.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the playback configuration.
+     *        The tags to assign to the playback configuration.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -608,11 +931,11 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The tags assigned to the playback configuration.
+     * The tags to assign to the playback configuration.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the playback configuration.
+     *        The tags to assign to the playback configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -703,51 +1026,11 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
-     * </p>
-     * 
-     * @param personalizationThresholdSeconds
-     *        The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
-     */
-
-    public void setPersonalizationThresholdSeconds(Integer personalizationThresholdSeconds) {
-        this.personalizationThresholdSeconds = personalizationThresholdSeconds;
-    }
-
-    /**
-     * <p>
-     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
-     * </p>
-     * 
-     * @return The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
-     */
-
-    public Integer getPersonalizationThresholdSeconds() {
-        return this.personalizationThresholdSeconds;
-    }
-
-    /**
-     * <p>
-     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
-     * </p>
-     * 
-     * @param personalizationThresholdSeconds
-     *        The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PlaybackConfiguration withPersonalizationThresholdSeconds(Integer personalizationThresholdSeconds) {
-        setPersonalizationThresholdSeconds(personalizationThresholdSeconds);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
+     * The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      * 
      * @param videoContentSourceUrl
-     *        The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512
+     *        The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512
      *        characters.
      */
 
@@ -757,10 +1040,10 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
+     * The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      * 
-     * @return The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512
+     * @return The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512
      *         characters.
      */
 
@@ -770,11 +1053,11 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
+     * The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      * 
      * @param videoContentSourceUrl
-     *        The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512
+     *        The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512
      *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -800,14 +1083,24 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
             sb.append("AdDecisionServerUrl: ").append(getAdDecisionServerUrl()).append(",");
         if (getAvailSuppression() != null)
             sb.append("AvailSuppression: ").append(getAvailSuppression()).append(",");
+        if (getBumper() != null)
+            sb.append("Bumper: ").append(getBumper()).append(",");
         if (getCdnConfiguration() != null)
             sb.append("CdnConfiguration: ").append(getCdnConfiguration()).append(",");
+        if (getConfigurationAliases() != null)
+            sb.append("ConfigurationAliases: ").append(getConfigurationAliases()).append(",");
         if (getDashConfiguration() != null)
             sb.append("DashConfiguration: ").append(getDashConfiguration()).append(",");
         if (getHlsConfiguration() != null)
             sb.append("HlsConfiguration: ").append(getHlsConfiguration()).append(",");
+        if (getLivePreRollConfiguration() != null)
+            sb.append("LivePreRollConfiguration: ").append(getLivePreRollConfiguration()).append(",");
+        if (getManifestProcessingRules() != null)
+            sb.append("ManifestProcessingRules: ").append(getManifestProcessingRules()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPersonalizationThresholdSeconds() != null)
+            sb.append("PersonalizationThresholdSeconds: ").append(getPersonalizationThresholdSeconds()).append(",");
         if (getPlaybackConfigurationArn() != null)
             sb.append("PlaybackConfigurationArn: ").append(getPlaybackConfigurationArn()).append(",");
         if (getPlaybackEndpointPrefix() != null)
@@ -820,8 +1113,6 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTranscodeProfileName() != null)
             sb.append("TranscodeProfileName: ").append(getTranscodeProfileName()).append(",");
-        if (getPersonalizationThresholdSeconds() != null)
-            sb.append("PersonalizationThresholdSeconds: ").append(getPersonalizationThresholdSeconds()).append(",");
         if (getVideoContentSourceUrl() != null)
             sb.append("VideoContentSourceUrl: ").append(getVideoContentSourceUrl());
         sb.append("}");
@@ -846,9 +1137,17 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getAvailSuppression() != null && other.getAvailSuppression().equals(this.getAvailSuppression()) == false)
             return false;
+        if (other.getBumper() == null ^ this.getBumper() == null)
+            return false;
+        if (other.getBumper() != null && other.getBumper().equals(this.getBumper()) == false)
+            return false;
         if (other.getCdnConfiguration() == null ^ this.getCdnConfiguration() == null)
             return false;
         if (other.getCdnConfiguration() != null && other.getCdnConfiguration().equals(this.getCdnConfiguration()) == false)
+            return false;
+        if (other.getConfigurationAliases() == null ^ this.getConfigurationAliases() == null)
+            return false;
+        if (other.getConfigurationAliases() != null && other.getConfigurationAliases().equals(this.getConfigurationAliases()) == false)
             return false;
         if (other.getDashConfiguration() == null ^ this.getDashConfiguration() == null)
             return false;
@@ -858,9 +1157,22 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getHlsConfiguration() != null && other.getHlsConfiguration().equals(this.getHlsConfiguration()) == false)
             return false;
+        if (other.getLivePreRollConfiguration() == null ^ this.getLivePreRollConfiguration() == null)
+            return false;
+        if (other.getLivePreRollConfiguration() != null && other.getLivePreRollConfiguration().equals(this.getLivePreRollConfiguration()) == false)
+            return false;
+        if (other.getManifestProcessingRules() == null ^ this.getManifestProcessingRules() == null)
+            return false;
+        if (other.getManifestProcessingRules() != null && other.getManifestProcessingRules().equals(this.getManifestProcessingRules()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getPersonalizationThresholdSeconds() == null ^ this.getPersonalizationThresholdSeconds() == null)
+            return false;
+        if (other.getPersonalizationThresholdSeconds() != null
+                && other.getPersonalizationThresholdSeconds().equals(this.getPersonalizationThresholdSeconds()) == false)
             return false;
         if (other.getPlaybackConfigurationArn() == null ^ this.getPlaybackConfigurationArn() == null)
             return false;
@@ -887,11 +1199,6 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getTranscodeProfileName() != null && other.getTranscodeProfileName().equals(this.getTranscodeProfileName()) == false)
             return false;
-        if (other.getPersonalizationThresholdSeconds() == null ^ this.getPersonalizationThresholdSeconds() == null)
-            return false;
-        if (other.getPersonalizationThresholdSeconds() != null
-                && other.getPersonalizationThresholdSeconds().equals(this.getPersonalizationThresholdSeconds()) == false)
-            return false;
         if (other.getVideoContentSourceUrl() == null ^ this.getVideoContentSourceUrl() == null)
             return false;
         if (other.getVideoContentSourceUrl() != null && other.getVideoContentSourceUrl().equals(this.getVideoContentSourceUrl()) == false)
@@ -906,17 +1213,21 @@ public class PlaybackConfiguration implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getAdDecisionServerUrl() == null) ? 0 : getAdDecisionServerUrl().hashCode());
         hashCode = prime * hashCode + ((getAvailSuppression() == null) ? 0 : getAvailSuppression().hashCode());
+        hashCode = prime * hashCode + ((getBumper() == null) ? 0 : getBumper().hashCode());
         hashCode = prime * hashCode + ((getCdnConfiguration() == null) ? 0 : getCdnConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationAliases() == null) ? 0 : getConfigurationAliases().hashCode());
         hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHlsConfiguration() == null) ? 0 : getHlsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLivePreRollConfiguration() == null) ? 0 : getLivePreRollConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getManifestProcessingRules() == null) ? 0 : getManifestProcessingRules().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPersonalizationThresholdSeconds() == null) ? 0 : getPersonalizationThresholdSeconds().hashCode());
         hashCode = prime * hashCode + ((getPlaybackConfigurationArn() == null) ? 0 : getPlaybackConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getPlaybackEndpointPrefix() == null) ? 0 : getPlaybackEndpointPrefix().hashCode());
         hashCode = prime * hashCode + ((getSessionInitializationEndpointPrefix() == null) ? 0 : getSessionInitializationEndpointPrefix().hashCode());
         hashCode = prime * hashCode + ((getSlateAdUrl() == null) ? 0 : getSlateAdUrl().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTranscodeProfileName() == null) ? 0 : getTranscodeProfileName().hashCode());
-        hashCode = prime * hashCode + ((getPersonalizationThresholdSeconds() == null) ? 0 : getPersonalizationThresholdSeconds().hashCode());
         hashCode = prime * hashCode + ((getVideoContentSourceUrl() == null) ? 0 : getVideoContentSourceUrl().hashCode());
         return hashCode;
     }

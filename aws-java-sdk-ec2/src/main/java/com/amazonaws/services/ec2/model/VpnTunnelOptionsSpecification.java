@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     * The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
      * connections that use the same virtual private gateway.
      * </p>
      * <p>
@@ -74,6 +74,16 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </ul>
      */
     private String tunnelInsideCidr;
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     * connections that use the same transit gateway.
+     * </p>
+     * <p>
+     * Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.
+     * </p>
+     */
+    private String tunnelInsideIpv6Cidr;
     /**
      * <p>
      * The pre-shared key (PSK) to establish initial authentication between the virtual private gateway and customer
@@ -163,10 +173,23 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
     private Integer dPDTimeoutSeconds;
     /**
      * <p>
+     * The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify
+     * <code>clear</code> to end the IKE session.
+     * </p>
+     * <p>
+     * Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     * </p>
+     * <p>
+     * Default: <code>clear</code>
+     * </p>
+     */
+    private String dPDTimeoutAction;
+    /**
+     * <p>
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>AES128</code> | <code>AES256</code>
+     * Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Phase1EncryptionAlgorithmsRequestListValue> phase1EncryptionAlgorithms;
@@ -175,7 +198,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>AES128</code> | <code>AES256</code>
+     * Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Phase2EncryptionAlgorithmsRequestListValue> phase2EncryptionAlgorithms;
@@ -184,7 +207,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     * Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Phase1IntegrityAlgorithmsRequestListValue> phase1IntegrityAlgorithms;
@@ -193,7 +216,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     * Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Phase2IntegrityAlgorithmsRequestListValue> phase2IntegrityAlgorithms;
@@ -203,7 +226,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> |
+     * <code>24</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Phase1DHGroupNumbersRequestListValue> phase1DHGroupNumbers;
@@ -213,7 +237,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> |
+     * <code>23</code> | <code>24</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Phase2DHGroupNumbersRequestListValue> phase2DHGroupNumbers;
@@ -226,10 +251,24 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IKEVersionsRequestListValue> iKEVersions;
+    /**
+     * <p>
+     * The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway
+     * device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate
+     * the IKE negotiation.
+     * </p>
+     * <p>
+     * Valid Values: <code>add</code> | <code>start</code>
+     * </p>
+     * <p>
+     * Default: <code>add</code>
+     * </p>
+     */
+    private String startupAction;
 
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     * The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
      * connections that use the same virtual private gateway.
      * </p>
      * <p>
@@ -275,7 +314,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </ul>
      * 
      * @param tunnelInsideCidr
-     *        The range of inside IP addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     *        The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
      *        connections that use the same virtual private gateway. </p>
      *        <p>
      *        Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The following CIDR blocks
@@ -325,7 +364,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     * The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
      * connections that use the same virtual private gateway.
      * </p>
      * <p>
@@ -370,8 +409,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return The range of inside IP addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
-     *         connections that use the same virtual private gateway. </p>
+     * @return The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all
+     *         VPN connections that use the same virtual private gateway. </p>
      *         <p>
      *         Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The following CIDR blocks
      *         are reserved and cannot be used:
@@ -420,7 +459,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     * The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
      * connections that use the same virtual private gateway.
      * </p>
      * <p>
@@ -466,7 +505,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </ul>
      * 
      * @param tunnelInsideCidr
-     *        The range of inside IP addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     *        The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
      *        connections that use the same virtual private gateway. </p>
      *        <p>
      *        Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The following CIDR blocks
@@ -513,6 +552,67 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
 
     public VpnTunnelOptionsSpecification withTunnelInsideCidr(String tunnelInsideCidr) {
         setTunnelInsideCidr(tunnelInsideCidr);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     * connections that use the same transit gateway.
+     * </p>
+     * <p>
+     * Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.
+     * </p>
+     * 
+     * @param tunnelInsideIpv6Cidr
+     *        The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     *        connections that use the same transit gateway.</p>
+     *        <p>
+     *        Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.
+     */
+
+    public void setTunnelInsideIpv6Cidr(String tunnelInsideIpv6Cidr) {
+        this.tunnelInsideIpv6Cidr = tunnelInsideIpv6Cidr;
+    }
+
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     * connections that use the same transit gateway.
+     * </p>
+     * <p>
+     * Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.
+     * </p>
+     * 
+     * @return The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all
+     *         VPN connections that use the same transit gateway.</p>
+     *         <p>
+     *         Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.
+     */
+
+    public String getTunnelInsideIpv6Cidr() {
+        return this.tunnelInsideIpv6Cidr;
+    }
+
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     * connections that use the same transit gateway.
+     * </p>
+     * <p>
+     * Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.
+     * </p>
+     * 
+     * @param tunnelInsideIpv6Cidr
+     *        The range of inside IPv6 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN
+     *        connections that use the same transit gateway.</p>
+     *        <p>
+     *        Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnTunnelOptionsSpecification withTunnelInsideIpv6Cidr(String tunnelInsideIpv6Cidr) {
+        setTunnelInsideIpv6Cidr(tunnelInsideIpv6Cidr);
         return this;
     }
 
@@ -1047,15 +1147,95 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify
+     * <code>clear</code> to end the IKE session.
+     * </p>
+     * <p>
+     * Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     * </p>
+     * <p>
+     * Default: <code>clear</code>
+     * </p>
+     * 
+     * @param dPDTimeoutAction
+     *        The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation.
+     *        Specify <code>clear</code> to end the IKE session.</p>
+     *        <p>
+     *        Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>clear</code>
+     */
+
+    public void setDPDTimeoutAction(String dPDTimeoutAction) {
+        this.dPDTimeoutAction = dPDTimeoutAction;
+    }
+
+    /**
+     * <p>
+     * The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify
+     * <code>clear</code> to end the IKE session.
+     * </p>
+     * <p>
+     * Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     * </p>
+     * <p>
+     * Default: <code>clear</code>
+     * </p>
+     * 
+     * @return The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation.
+     *         Specify <code>clear</code> to end the IKE session.</p>
+     *         <p>
+     *         Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>clear</code>
+     */
+
+    public String getDPDTimeoutAction() {
+        return this.dPDTimeoutAction;
+    }
+
+    /**
+     * <p>
+     * The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify
+     * <code>clear</code> to end the IKE session.
+     * </p>
+     * <p>
+     * Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     * </p>
+     * <p>
+     * Default: <code>clear</code>
+     * </p>
+     * 
+     * @param dPDTimeoutAction
+     *        The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation.
+     *        Specify <code>clear</code> to end the IKE session.</p>
+     *        <p>
+     *        Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>clear</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnTunnelOptionsSpecification withDPDTimeoutAction(String dPDTimeoutAction) {
+        setDPDTimeoutAction(dPDTimeoutAction);
+        return this;
+    }
+
+    /**
+     * <p>
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>AES128</code> | <code>AES256</code>
+     * Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
      * </p>
      * 
      * @return One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
      *         <p>
-     *         Valid values: <code>AES128</code> | <code>AES256</code>
+     *         Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+     *         <code>AES256-GCM-16</code>
      */
 
     public java.util.List<Phase1EncryptionAlgorithmsRequestListValue> getPhase1EncryptionAlgorithms() {
@@ -1070,13 +1250,14 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>AES128</code> | <code>AES256</code>
+     * Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
      * </p>
      * 
      * @param phase1EncryptionAlgorithms
      *        One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>AES128</code> | <code>AES256</code>
+     *        Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+     *        <code>AES256-GCM-16</code>
      */
 
     public void setPhase1EncryptionAlgorithms(java.util.Collection<Phase1EncryptionAlgorithmsRequestListValue> phase1EncryptionAlgorithms) {
@@ -1093,7 +1274,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>AES128</code> | <code>AES256</code>
+     * Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1104,7 +1285,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * @param phase1EncryptionAlgorithms
      *        One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>AES128</code> | <code>AES256</code>
+     *        Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+     *        <code>AES256-GCM-16</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1124,13 +1306,14 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>AES128</code> | <code>AES256</code>
+     * Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
      * </p>
      * 
      * @param phase1EncryptionAlgorithms
      *        One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>AES128</code> | <code>AES256</code>
+     *        Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+     *        <code>AES256-GCM-16</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1145,12 +1328,13 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>AES128</code> | <code>AES256</code>
+     * Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
      * </p>
      * 
      * @return One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
      *         <p>
-     *         Valid values: <code>AES128</code> | <code>AES256</code>
+     *         Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+     *         <code>AES256-GCM-16</code>
      */
 
     public java.util.List<Phase2EncryptionAlgorithmsRequestListValue> getPhase2EncryptionAlgorithms() {
@@ -1165,13 +1349,14 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>AES128</code> | <code>AES256</code>
+     * Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
      * </p>
      * 
      * @param phase2EncryptionAlgorithms
      *        One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>AES128</code> | <code>AES256</code>
+     *        Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+     *        <code>AES256-GCM-16</code>
      */
 
     public void setPhase2EncryptionAlgorithms(java.util.Collection<Phase2EncryptionAlgorithmsRequestListValue> phase2EncryptionAlgorithms) {
@@ -1188,7 +1373,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>AES128</code> | <code>AES256</code>
+     * Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1199,7 +1384,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * @param phase2EncryptionAlgorithms
      *        One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>AES128</code> | <code>AES256</code>
+     *        Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+     *        <code>AES256-GCM-16</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1219,13 +1405,14 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>AES128</code> | <code>AES256</code>
+     * Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> | <code>AES256-GCM-16</code>
      * </p>
      * 
      * @param phase2EncryptionAlgorithms
      *        One or more encryption algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>AES128</code> | <code>AES256</code>
+     *        Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code> |
+     *        <code>AES256-GCM-16</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1240,12 +1427,12 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     * Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * </p>
      * 
      * @return One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
      *         <p>
-     *         Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     *         Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      */
 
     public java.util.List<Phase1IntegrityAlgorithmsRequestListValue> getPhase1IntegrityAlgorithms() {
@@ -1260,13 +1447,13 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     * Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * </p>
      * 
      * @param phase1IntegrityAlgorithms
      *        One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      */
 
     public void setPhase1IntegrityAlgorithms(java.util.Collection<Phase1IntegrityAlgorithmsRequestListValue> phase1IntegrityAlgorithms) {
@@ -1283,7 +1470,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     * Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1294,7 +1481,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * @param phase1IntegrityAlgorithms
      *        One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1313,13 +1500,13 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     * Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * </p>
      * 
      * @param phase1IntegrityAlgorithms
      *        One or more integrity algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1333,12 +1520,12 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     * Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * </p>
      * 
      * @return One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
      *         <p>
-     *         Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     *         Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      */
 
     public java.util.List<Phase2IntegrityAlgorithmsRequestListValue> getPhase2IntegrityAlgorithms() {
@@ -1353,13 +1540,13 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     * Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * </p>
      * 
      * @param phase2IntegrityAlgorithms
      *        One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      */
 
     public void setPhase2IntegrityAlgorithms(java.util.Collection<Phase2IntegrityAlgorithmsRequestListValue> phase2IntegrityAlgorithms) {
@@ -1376,7 +1563,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     * Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1387,7 +1574,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * @param phase2IntegrityAlgorithms
      *        One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1406,13 +1593,13 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.
      * </p>
      * <p>
-     * Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     * Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * </p>
      * 
      * @param phase2IntegrityAlgorithms
      *        One or more integrity algorithms that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
      *        <p>
-     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code>
+     *        Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1427,14 +1614,16 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> |
+     * <code>24</code>
      * </p>
      * 
      * @return One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE
      *         negotiations.</p>
      *         <p>
      *         Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     *         <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     *         <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code>
+     *         | <code>24</code>
      */
 
     public java.util.List<Phase1DHGroupNumbersRequestListValue> getPhase1DHGroupNumbers() {
@@ -1450,7 +1639,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> |
+     * <code>24</code>
      * </p>
      * 
      * @param phase1DHGroupNumbers
@@ -1458,7 +1648,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      *        negotiations.</p>
      *        <p>
      *        Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     *        <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     *        <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code>
+     *        | <code>24</code>
      */
 
     public void setPhase1DHGroupNumbers(java.util.Collection<Phase1DHGroupNumbersRequestListValue> phase1DHGroupNumbers) {
@@ -1476,7 +1667,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> |
+     * <code>24</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1489,7 +1681,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      *        negotiations.</p>
      *        <p>
      *        Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     *        <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     *        <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code>
+     *        | <code>24</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1509,7 +1702,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     * <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     * <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> |
+     * <code>24</code>
      * </p>
      * 
      * @param phase1DHGroupNumbers
@@ -1517,7 +1711,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      *        negotiations.</p>
      *        <p>
      *        Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> |
-     *        <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     *        <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code>
+     *        | <code>24</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1532,14 +1727,16 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> |
+     * <code>23</code> | <code>24</code>
      * </p>
      * 
      * @return One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE
      *         negotiations.</p>
      *         <p>
      *         Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     *         <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     *         <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code>
+     *         | <code>23</code> | <code>24</code>
      */
 
     public java.util.List<Phase2DHGroupNumbersRequestListValue> getPhase2DHGroupNumbers() {
@@ -1555,7 +1752,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> |
+     * <code>23</code> | <code>24</code>
      * </p>
      * 
      * @param phase2DHGroupNumbers
@@ -1563,7 +1761,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      *        negotiations.</p>
      *        <p>
      *        Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     *        <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     *        <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code>
+     *        | <code>23</code> | <code>24</code>
      */
 
     public void setPhase2DHGroupNumbers(java.util.Collection<Phase2DHGroupNumbersRequestListValue> phase2DHGroupNumbers) {
@@ -1581,7 +1780,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> |
+     * <code>23</code> | <code>24</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1594,7 +1794,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      *        negotiations.</p>
      *        <p>
      *        Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     *        <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     *        <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code>
+     *        | <code>23</code> | <code>24</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1614,7 +1815,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      * </p>
      * <p>
      * Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     * <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     * <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> |
+     * <code>23</code> | <code>24</code>
      * </p>
      * 
      * @param phase2DHGroupNumbers
@@ -1622,7 +1824,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
      *        negotiations.</p>
      *        <p>
      *        Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> |
-     *        <code>17</code> | <code>18</code> | <code>22</code> | <code>23</code> | <code>24</code>
+     *        <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code>
+     *        | <code>23</code> | <code>24</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1725,6 +1928,91 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway
+     * device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate
+     * the IKE negotiation.
+     * </p>
+     * <p>
+     * Valid Values: <code>add</code> | <code>start</code>
+     * </p>
+     * <p>
+     * Default: <code>add</code>
+     * </p>
+     * 
+     * @param startupAction
+     *        The action to take when the establishing the tunnel for the VPN connection. By default, your customer
+     *        gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for
+     *        AWS to initiate the IKE negotiation.</p>
+     *        <p>
+     *        Valid Values: <code>add</code> | <code>start</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>add</code>
+     */
+
+    public void setStartupAction(String startupAction) {
+        this.startupAction = startupAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway
+     * device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate
+     * the IKE negotiation.
+     * </p>
+     * <p>
+     * Valid Values: <code>add</code> | <code>start</code>
+     * </p>
+     * <p>
+     * Default: <code>add</code>
+     * </p>
+     * 
+     * @return The action to take when the establishing the tunnel for the VPN connection. By default, your customer
+     *         gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for
+     *         AWS to initiate the IKE negotiation.</p>
+     *         <p>
+     *         Valid Values: <code>add</code> | <code>start</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>add</code>
+     */
+
+    public String getStartupAction() {
+        return this.startupAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway
+     * device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate
+     * the IKE negotiation.
+     * </p>
+     * <p>
+     * Valid Values: <code>add</code> | <code>start</code>
+     * </p>
+     * <p>
+     * Default: <code>add</code>
+     * </p>
+     * 
+     * @param startupAction
+     *        The action to take when the establishing the tunnel for the VPN connection. By default, your customer
+     *        gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for
+     *        AWS to initiate the IKE negotiation.</p>
+     *        <p>
+     *        Valid Values: <code>add</code> | <code>start</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>add</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnTunnelOptionsSpecification withStartupAction(String startupAction) {
+        setStartupAction(startupAction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1738,6 +2026,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
         sb.append("{");
         if (getTunnelInsideCidr() != null)
             sb.append("TunnelInsideCidr: ").append(getTunnelInsideCidr()).append(",");
+        if (getTunnelInsideIpv6Cidr() != null)
+            sb.append("TunnelInsideIpv6Cidr: ").append(getTunnelInsideIpv6Cidr()).append(",");
         if (getPreSharedKey() != null)
             sb.append("PreSharedKey: ").append(getPreSharedKey()).append(",");
         if (getPhase1LifetimeSeconds() != null)
@@ -1752,6 +2042,8 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
             sb.append("ReplayWindowSize: ").append(getReplayWindowSize()).append(",");
         if (getDPDTimeoutSeconds() != null)
             sb.append("DPDTimeoutSeconds: ").append(getDPDTimeoutSeconds()).append(",");
+        if (getDPDTimeoutAction() != null)
+            sb.append("DPDTimeoutAction: ").append(getDPDTimeoutAction()).append(",");
         if (getPhase1EncryptionAlgorithms() != null)
             sb.append("Phase1EncryptionAlgorithms: ").append(getPhase1EncryptionAlgorithms()).append(",");
         if (getPhase2EncryptionAlgorithms() != null)
@@ -1765,7 +2057,9 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
         if (getPhase2DHGroupNumbers() != null)
             sb.append("Phase2DHGroupNumbers: ").append(getPhase2DHGroupNumbers()).append(",");
         if (getIKEVersions() != null)
-            sb.append("IKEVersions: ").append(getIKEVersions());
+            sb.append("IKEVersions: ").append(getIKEVersions()).append(",");
+        if (getStartupAction() != null)
+            sb.append("StartupAction: ").append(getStartupAction());
         sb.append("}");
         return sb.toString();
     }
@@ -1783,6 +2077,10 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
         if (other.getTunnelInsideCidr() == null ^ this.getTunnelInsideCidr() == null)
             return false;
         if (other.getTunnelInsideCidr() != null && other.getTunnelInsideCidr().equals(this.getTunnelInsideCidr()) == false)
+            return false;
+        if (other.getTunnelInsideIpv6Cidr() == null ^ this.getTunnelInsideIpv6Cidr() == null)
+            return false;
+        if (other.getTunnelInsideIpv6Cidr() != null && other.getTunnelInsideIpv6Cidr().equals(this.getTunnelInsideIpv6Cidr()) == false)
             return false;
         if (other.getPreSharedKey() == null ^ this.getPreSharedKey() == null)
             return false;
@@ -1812,6 +2110,10 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
             return false;
         if (other.getDPDTimeoutSeconds() != null && other.getDPDTimeoutSeconds().equals(this.getDPDTimeoutSeconds()) == false)
             return false;
+        if (other.getDPDTimeoutAction() == null ^ this.getDPDTimeoutAction() == null)
+            return false;
+        if (other.getDPDTimeoutAction() != null && other.getDPDTimeoutAction().equals(this.getDPDTimeoutAction()) == false)
+            return false;
         if (other.getPhase1EncryptionAlgorithms() == null ^ this.getPhase1EncryptionAlgorithms() == null)
             return false;
         if (other.getPhase1EncryptionAlgorithms() != null && other.getPhase1EncryptionAlgorithms().equals(this.getPhase1EncryptionAlgorithms()) == false)
@@ -1840,6 +2142,10 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
             return false;
         if (other.getIKEVersions() != null && other.getIKEVersions().equals(this.getIKEVersions()) == false)
             return false;
+        if (other.getStartupAction() == null ^ this.getStartupAction() == null)
+            return false;
+        if (other.getStartupAction() != null && other.getStartupAction().equals(this.getStartupAction()) == false)
+            return false;
         return true;
     }
 
@@ -1849,6 +2155,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTunnelInsideCidr() == null) ? 0 : getTunnelInsideCidr().hashCode());
+        hashCode = prime * hashCode + ((getTunnelInsideIpv6Cidr() == null) ? 0 : getTunnelInsideIpv6Cidr().hashCode());
         hashCode = prime * hashCode + ((getPreSharedKey() == null) ? 0 : getPreSharedKey().hashCode());
         hashCode = prime * hashCode + ((getPhase1LifetimeSeconds() == null) ? 0 : getPhase1LifetimeSeconds().hashCode());
         hashCode = prime * hashCode + ((getPhase2LifetimeSeconds() == null) ? 0 : getPhase2LifetimeSeconds().hashCode());
@@ -1856,6 +2163,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRekeyFuzzPercentage() == null) ? 0 : getRekeyFuzzPercentage().hashCode());
         hashCode = prime * hashCode + ((getReplayWindowSize() == null) ? 0 : getReplayWindowSize().hashCode());
         hashCode = prime * hashCode + ((getDPDTimeoutSeconds() == null) ? 0 : getDPDTimeoutSeconds().hashCode());
+        hashCode = prime * hashCode + ((getDPDTimeoutAction() == null) ? 0 : getDPDTimeoutAction().hashCode());
         hashCode = prime * hashCode + ((getPhase1EncryptionAlgorithms() == null) ? 0 : getPhase1EncryptionAlgorithms().hashCode());
         hashCode = prime * hashCode + ((getPhase2EncryptionAlgorithms() == null) ? 0 : getPhase2EncryptionAlgorithms().hashCode());
         hashCode = prime * hashCode + ((getPhase1IntegrityAlgorithms() == null) ? 0 : getPhase1IntegrityAlgorithms().hashCode());
@@ -1863,6 +2171,7 @@ public class VpnTunnelOptionsSpecification implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPhase1DHGroupNumbers() == null) ? 0 : getPhase1DHGroupNumbers().hashCode());
         hashCode = prime * hashCode + ((getPhase2DHGroupNumbers() == null) ? 0 : getPhase2DHGroupNumbers().hashCode());
         hashCode = prime * hashCode + ((getIKEVersions() == null) ? 0 : getIKEVersions().hashCode());
+        hashCode = prime * hashCode + ((getStartupAction() == null) ? 0 : getStartupAction().hashCode());
         return hashCode;
     }
 

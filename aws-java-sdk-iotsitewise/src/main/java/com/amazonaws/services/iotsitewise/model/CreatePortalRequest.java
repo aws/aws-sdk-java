@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,56 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The service to use to authenticate users to the portal. Choose from the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions. Before
+     * you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
+     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than the
+     * China Regions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
+     * permissions. This option is only available in the China Regions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't change this value after you create a portal.
+     * </p>
+     * <p>
+     * Default: <code>SSO</code>
+     * </p>
+     */
+    private String portalAuthMode;
+    /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     * <important>
+     * <p>
+     * If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
+     * address in Amazon SES</a>.
+     * </p>
+     * </important>
+     */
+    private String notificationSenderEmail;
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+     * For more information, see .
+     * </p>
+     */
+    private Alarms alarms;
 
     /**
      * <p>
@@ -433,6 +483,376 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The service to use to authenticate users to the portal. Choose from the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions. Before
+     * you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
+     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than the
+     * China Regions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
+     * permissions. This option is only available in the China Regions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't change this value after you create a portal.
+     * </p>
+     * <p>
+     * Default: <code>SSO</code>
+     * </p>
+     * 
+     * @param portalAuthMode
+     *        The service to use to authenticate users to the portal. Choose from the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions.
+     *        Before you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
+     *        href
+     *        ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     *        AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other
+     *        than the China Regions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
+     *        manage user permissions. This option is only available in the China Regions.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can't change this value after you create a portal.
+     *        </p>
+     *        <p>
+     *        Default: <code>SSO</code>
+     * @see AuthMode
+     */
+
+    public void setPortalAuthMode(String portalAuthMode) {
+        this.portalAuthMode = portalAuthMode;
+    }
+
+    /**
+     * <p>
+     * The service to use to authenticate users to the portal. Choose from the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions. Before
+     * you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
+     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than the
+     * China Regions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
+     * permissions. This option is only available in the China Regions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't change this value after you create a portal.
+     * </p>
+     * <p>
+     * Default: <code>SSO</code>
+     * </p>
+     * 
+     * @return The service to use to authenticate users to the portal. Choose from the following options:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions.
+     *         Before you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">
+     *         Enabling AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS
+     *         Regions other than the China Regions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
+     *         manage user permissions. This option is only available in the China Regions.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can't change this value after you create a portal.
+     *         </p>
+     *         <p>
+     *         Default: <code>SSO</code>
+     * @see AuthMode
+     */
+
+    public String getPortalAuthMode() {
+        return this.portalAuthMode;
+    }
+
+    /**
+     * <p>
+     * The service to use to authenticate users to the portal. Choose from the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions. Before
+     * you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
+     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than the
+     * China Regions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
+     * permissions. This option is only available in the China Regions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't change this value after you create a portal.
+     * </p>
+     * <p>
+     * Default: <code>SSO</code>
+     * </p>
+     * 
+     * @param portalAuthMode
+     *        The service to use to authenticate users to the portal. Choose from the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions.
+     *        Before you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
+     *        href
+     *        ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     *        AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other
+     *        than the China Regions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
+     *        manage user permissions. This option is only available in the China Regions.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can't change this value after you create a portal.
+     *        </p>
+     *        <p>
+     *        Default: <code>SSO</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthMode
+     */
+
+    public CreatePortalRequest withPortalAuthMode(String portalAuthMode) {
+        setPortalAuthMode(portalAuthMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The service to use to authenticate users to the portal. Choose from the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions. Before
+     * you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
+     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than the
+     * China Regions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage user
+     * permissions. This option is only available in the China Regions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't change this value after you create a portal.
+     * </p>
+     * <p>
+     * Default: <code>SSO</code>
+     * </p>
+     * 
+     * @param portalAuthMode
+     *        The service to use to authenticate users to the portal. Choose from the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage user permissions.
+     *        Before you can create a portal that uses AWS SSO, you must enable AWS SSO. For more information, see <a
+     *        href
+     *        ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+     *        AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other
+     *        than the China Regions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and
+     *        manage user permissions. This option is only available in the China Regions.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can't change this value after you create a portal.
+     *        </p>
+     *        <p>
+     *        Default: <code>SSO</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthMode
+     */
+
+    public CreatePortalRequest withPortalAuthMode(AuthMode portalAuthMode) {
+        this.portalAuthMode = portalAuthMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     * <important>
+     * <p>
+     * If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
+     * address in Amazon SES</a>.
+     * </p>
+     * </important>
+     * 
+     * @param notificationSenderEmail
+     *        The email address that sends alarm notifications.</p> <important>
+     *        <p>
+     *        If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender
+     *        email address in Amazon SES</a>.
+     *        </p>
+     */
+
+    public void setNotificationSenderEmail(String notificationSenderEmail) {
+        this.notificationSenderEmail = notificationSenderEmail;
+    }
+
+    /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     * <important>
+     * <p>
+     * If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
+     * address in Amazon SES</a>.
+     * </p>
+     * </important>
+     * 
+     * @return The email address that sends alarm notifications.</p> <important>
+     *         <p>
+     *         If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the
+     *         sender email address in Amazon SES</a>.
+     *         </p>
+     */
+
+    public String getNotificationSenderEmail() {
+        return this.notificationSenderEmail;
+    }
+
+    /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     * <important>
+     * <p>
+     * If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
+     * address in Amazon SES</a>.
+     * </p>
+     * </important>
+     * 
+     * @param notificationSenderEmail
+     *        The email address that sends alarm notifications.</p> <important>
+     *        <p>
+     *        If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender
+     *        email address in Amazon SES</a>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePortalRequest withNotificationSenderEmail(String notificationSenderEmail) {
+        setNotificationSenderEmail(notificationSenderEmail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+     * For more information, see .
+     * </p>
+     * 
+     * @param alarms
+     *        Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
+     *        use the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *        specified range. For more information, see .
+     */
+
+    public void setAlarms(Alarms alarms) {
+        this.alarms = alarms;
+    }
+
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+     * For more information, see .
+     * </p>
+     * 
+     * @return Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
+     *         use the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *         specified range. For more information, see .
+     */
+
+    public Alarms getAlarms() {
+        return this.alarms;
+    }
+
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+     * For more information, see .
+     * </p>
+     * 
+     * @param alarms
+     *        Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
+     *        use the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *        specified range. For more information, see .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePortalRequest withAlarms(Alarms alarms) {
+        setAlarms(alarms);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -457,7 +877,13 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPortalAuthMode() != null)
+            sb.append("PortalAuthMode: ").append(getPortalAuthMode()).append(",");
+        if (getNotificationSenderEmail() != null)
+            sb.append("NotificationSenderEmail: ").append(getNotificationSenderEmail()).append(",");
+        if (getAlarms() != null)
+            sb.append("Alarms: ").append(getAlarms());
         sb.append("}");
         return sb.toString();
     }
@@ -500,6 +926,18 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPortalAuthMode() == null ^ this.getPortalAuthMode() == null)
+            return false;
+        if (other.getPortalAuthMode() != null && other.getPortalAuthMode().equals(this.getPortalAuthMode()) == false)
+            return false;
+        if (other.getNotificationSenderEmail() == null ^ this.getNotificationSenderEmail() == null)
+            return false;
+        if (other.getNotificationSenderEmail() != null && other.getNotificationSenderEmail().equals(this.getNotificationSenderEmail()) == false)
+            return false;
+        if (other.getAlarms() == null ^ this.getAlarms() == null)
+            return false;
+        if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false)
+            return false;
         return true;
     }
 
@@ -515,6 +953,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getPortalLogoImageFile() == null) ? 0 : getPortalLogoImageFile().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPortalAuthMode() == null) ? 0 : getPortalAuthMode().hashCode());
+        hashCode = prime * hashCode + ((getNotificationSenderEmail() == null) ? 0 : getNotificationSenderEmail().hashCode());
+        hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
         return hashCode;
     }
 

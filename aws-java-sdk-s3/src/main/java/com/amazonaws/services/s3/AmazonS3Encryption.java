@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,6 +17,10 @@ package com.amazonaws.services.s3;
 /**
  * A marker interface used to check if an instance of S3 client is
  * an S3 encryption client.
+ *
+ * @deprecated This feature is in maintenance mode, no new updates will be released.
+ * Please see https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html for more information.
  */
+@Deprecated
 public interface AmazonS3Encryption extends AmazonS3 {
 }

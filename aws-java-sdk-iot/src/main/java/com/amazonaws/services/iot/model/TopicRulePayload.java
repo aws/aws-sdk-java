@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,8 @@ public class TopicRulePayload implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The SQL statement used to query the topic. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS IoT SQL
-     * Reference</a> in the <i>AWS IoT Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">AWS IoT SQL Reference</a> in
+     * the <i>AWS IoT Developer Guide</i>.
      * </p>
      */
     private String sql;
@@ -67,14 +67,14 @@ public class TopicRulePayload implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The SQL statement used to query the topic. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS IoT SQL
-     * Reference</a> in the <i>AWS IoT Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">AWS IoT SQL Reference</a> in
+     * the <i>AWS IoT Developer Guide</i>.
      * </p>
      * 
      * @param sql
      *        The SQL statement used to query the topic. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS IoT
-     *        SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">AWS IoT SQL
+     *        Reference</a> in the <i>AWS IoT Developer Guide</i>.
      */
 
     public void setSql(String sql) {
@@ -84,13 +84,13 @@ public class TopicRulePayload implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The SQL statement used to query the topic. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS IoT SQL
-     * Reference</a> in the <i>AWS IoT Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">AWS IoT SQL Reference</a> in
+     * the <i>AWS IoT Developer Guide</i>.
      * </p>
      * 
      * @return The SQL statement used to query the topic. For more information, see <a
-     *         href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS IoT
-     *         SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">AWS IoT SQL
+     *         Reference</a> in the <i>AWS IoT Developer Guide</i>.
      */
 
     public String getSql() {
@@ -100,14 +100,14 @@ public class TopicRulePayload implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The SQL statement used to query the topic. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS IoT SQL
-     * Reference</a> in the <i>AWS IoT Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">AWS IoT SQL Reference</a> in
+     * the <i>AWS IoT Developer Guide</i>.
      * </p>
      * 
      * @param sql
      *        The SQL statement used to query the topic. For more information, see <a
-     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS IoT
-     *        SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">AWS IoT SQL
+     *        Reference</a> in the <i>AWS IoT Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

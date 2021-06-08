@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the returned data in response to a request action.
+ * Represents the returned data in response to a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy" target="_top">AWS API
@@ -28,18 +28,19 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     *        A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be
+     *        unique.
      */
 
     public void setName(String name) {
@@ -48,10 +49,11 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.
      * </p>
      * 
-     * @return A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * @return A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be
+     *         unique.
      */
 
     public String getName() {
@@ -60,11 +62,12 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        A descriptive label that is associated with a scaling policy. Policy names do not need to be unique.
+     *        A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be
+     *        unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

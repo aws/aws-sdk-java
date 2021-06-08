@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies either the application code, or the location of the application code, for a Java-based Amazon Kinesis Data
+ * Specifies either the application code, or the location of the application code, for a Flink-based Kinesis Data
  * Analytics application.
  * </p>
  * 
@@ -31,30 +31,30 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text-format code for a Java-based Kinesis Data Analytics application.
+     * The text-format code for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private String textContent;
     /**
      * <p>
-     * The zip-format code for a Java-based Kinesis Data Analytics application.
+     * The zip-format code for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private java.nio.ByteBuffer zipFileContent;
     /**
      * <p>
-     * Information about the Amazon S3 bucket containing the application code.
+     * Information about the Amazon S3 bucket that contains the application code.
      * </p>
      */
     private S3ContentLocation s3ContentLocation;
 
     /**
      * <p>
-     * The text-format code for a Java-based Kinesis Data Analytics application.
+     * The text-format code for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param textContent
-     *        The text-format code for a Java-based Kinesis Data Analytics application.
+     *        The text-format code for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setTextContent(String textContent) {
@@ -63,10 +63,10 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text-format code for a Java-based Kinesis Data Analytics application.
+     * The text-format code for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return The text-format code for a Java-based Kinesis Data Analytics application.
+     * @return The text-format code for a Flink-based Kinesis Data Analytics application.
      */
 
     public String getTextContent() {
@@ -75,11 +75,11 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The text-format code for a Java-based Kinesis Data Analytics application.
+     * The text-format code for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param textContent
-     *        The text-format code for a Java-based Kinesis Data Analytics application.
+     *        The text-format code for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +90,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zip-format code for a Java-based Kinesis Data Analytics application.
+     * The zip-format code for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -104,7 +104,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFileContent
-     *        The zip-format code for a Java-based Kinesis Data Analytics application.
+     *        The zip-format code for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setZipFileContent(java.nio.ByteBuffer zipFileContent) {
@@ -113,7 +113,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zip-format code for a Java-based Kinesis Data Analytics application.
+     * The zip-format code for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -123,7 +123,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return The zip-format code for a Java-based Kinesis Data Analytics application.
+     * @return The zip-format code for a Flink-based Kinesis Data Analytics application.
      */
 
     public java.nio.ByteBuffer getZipFileContent() {
@@ -132,7 +132,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zip-format code for a Java-based Kinesis Data Analytics application.
+     * The zip-format code for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -146,7 +146,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFileContent
-     *        The zip-format code for a Java-based Kinesis Data Analytics application.
+     *        The zip-format code for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,11 +157,11 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Amazon S3 bucket containing the application code.
+     * Information about the Amazon S3 bucket that contains the application code.
      * </p>
      * 
      * @param s3ContentLocation
-     *        Information about the Amazon S3 bucket containing the application code.
+     *        Information about the Amazon S3 bucket that contains the application code.
      */
 
     public void setS3ContentLocation(S3ContentLocation s3ContentLocation) {
@@ -170,10 +170,10 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Amazon S3 bucket containing the application code.
+     * Information about the Amazon S3 bucket that contains the application code.
      * </p>
      * 
-     * @return Information about the Amazon S3 bucket containing the application code.
+     * @return Information about the Amazon S3 bucket that contains the application code.
      */
 
     public S3ContentLocation getS3ContentLocation() {
@@ -182,11 +182,11 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Amazon S3 bucket containing the application code.
+     * Information about the Amazon S3 bucket that contains the application code.
      * </p>
      * 
      * @param s3ContentLocation
-     *        Information about the Amazon S3 bucket containing the application code.
+     *        Information about the Amazon S3 bucket that contains the application code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

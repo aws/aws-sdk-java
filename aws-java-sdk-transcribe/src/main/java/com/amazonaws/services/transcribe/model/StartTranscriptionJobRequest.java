@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,15 +27,19 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job
+     * name. The name must also be unique within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code> error.
      * </p>
      */
     private String transcriptionJobName;
     /**
      * <p>
      * The language code for the language used in the input media file.
+     * </p>
+     * <p>
+     * To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate
+     * of 16000 Hz or higher.
      * </p>
      */
     private String languageCode;
@@ -90,6 +94,26 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private String outputBucketName;
     /**
      * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the Amazon
+     * S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     */
+    private String outputKey;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key used to encrypt the output of the
      * transcription job. The user calling the <code>StartTranscriptionJob</code> operation must have permission to use
      * the specified KMS key.
@@ -142,6 +166,12 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private Settings settings;
     /**
      * <p>
+     * Choose the custom language model you use for your transcription job in this parameter.
+     * </p>
+     */
+    private ModelSettings modelSettings;
+    /**
+     * <p>
      * Provides information about how a transcription job is executed. Use this field to indicate that the job can be
      * queued for deferred execution if the concurrency limit is reached and there are no slots available to immediately
      * run the job.
@@ -154,18 +184,33 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private ContentRedaction contentRedaction;
+    /**
+     * <p>
+     * Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     * identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value
+     * for a <code>LanguageCode</code>.
+     * </p>
+     */
+    private Boolean identifyLanguage;
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     */
+    private java.util.List<String> languageOptions;
 
     /**
      * <p>
-     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job
+     * name. The name must also be unique within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code> error.
      * </p>
      * 
      * @param transcriptionJobName
-     *        The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
-     *        name must also be unique within an AWS account. If you try to create a transcription job with the same
-     *        name as a previous transcription job you will receive a <code>ConflictException</code> error.
+     *        The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the
+     *        job name. The name must also be unique within an AWS account. If you try to create a transcription job
+     *        with the same name as a previous transcription job, you get a <code>ConflictException</code> error.
      */
 
     public void setTranscriptionJobName(String transcriptionJobName) {
@@ -174,14 +219,14 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job
+     * name. The name must also be unique within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
-     *         name must also be unique within an AWS account. If you try to create a transcription job with the same
-     *         name as a previous transcription job you will receive a <code>ConflictException</code> error.
+     * @return The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the
+     *         job name. The name must also be unique within an AWS account. If you try to create a transcription job
+     *         with the same name as a previous transcription job, you get a <code>ConflictException</code> error.
      */
 
     public String getTranscriptionJobName() {
@@ -190,15 +235,15 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job
+     * name. The name must also be unique within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code> error.
      * </p>
      * 
      * @param transcriptionJobName
-     *        The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
-     *        name must also be unique within an AWS account. If you try to create a transcription job with the same
-     *        name as a previous transcription job you will receive a <code>ConflictException</code> error.
+     *        The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the
+     *        job name. The name must also be unique within an AWS account. If you try to create a transcription job
+     *        with the same name as a previous transcription job, you get a <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,9 +256,16 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The language code for the language used in the input media file.
      * </p>
+     * <p>
+     * To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate
+     * of 16000 Hz or higher.
+     * </p>
      * 
      * @param languageCode
-     *        The language code for the language used in the input media file.
+     *        The language code for the language used in the input media file.</p>
+     *        <p>
+     *        To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
+     *        sample rate of 16000 Hz or higher.
      * @see LanguageCode
      */
 
@@ -225,8 +277,15 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The language code for the language used in the input media file.
      * </p>
+     * <p>
+     * To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate
+     * of 16000 Hz or higher.
+     * </p>
      * 
-     * @return The language code for the language used in the input media file.
+     * @return The language code for the language used in the input media file.</p>
+     *         <p>
+     *         To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
+     *         sample rate of 16000 Hz or higher.
      * @see LanguageCode
      */
 
@@ -238,9 +297,16 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The language code for the language used in the input media file.
      * </p>
+     * <p>
+     * To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate
+     * of 16000 Hz or higher.
+     * </p>
      * 
      * @param languageCode
-     *        The language code for the language used in the input media file.
+     *        The language code for the language used in the input media file.</p>
+     *        <p>
+     *        To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
+     *        sample rate of 16000 Hz or higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -254,9 +320,16 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The language code for the language used in the input media file.
      * </p>
+     * <p>
+     * To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate
+     * of 16000 Hz or higher.
+     * </p>
      * 
      * @param languageCode
-     *        The language code for the language used in the input media file.
+     *        The language code for the language used in the input media file.</p>
+     *        <p>
+     *        To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
+     *        sample rate of 16000 Hz or higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -600,6 +673,133 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the Amazon
+     * S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     * 
+     * @param outputKey
+     *        You can specify a location in an Amazon S3 bucket to store the output of your transcription job.</p>
+     *        <p>
+     *        If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the
+     *        Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *        </p>
+     *        <p>
+     *        You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
+     *        example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
+     *        being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
+     *        "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You can
+     *        use an output key to change both the prefix and the file name, for example
+     *        "folder/my-other-job-name.json".
+     *        </p>
+     *        <p>
+     *        If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+     *        parameter.
+     */
+
+    public void setOutputKey(String outputKey) {
+        this.outputKey = outputKey;
+    }
+
+    /**
+     * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the Amazon
+     * S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     * 
+     * @return You can specify a location in an Amazon S3 bucket to store the output of your transcription job.</p>
+     *         <p>
+     *         If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the
+     *         Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *         </p>
+     *         <p>
+     *         You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
+     *         example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
+     *         being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
+     *         "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You
+     *         can use an output key to change both the prefix and the file name, for example
+     *         "folder/my-other-job-name.json".
+     *         </p>
+     *         <p>
+     *         If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+     *         parameter.
+     */
+
+    public String getOutputKey() {
+        return this.outputKey;
+    }
+
+    /**
+     * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the Amazon
+     * S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     * 
+     * @param outputKey
+     *        You can specify a location in an Amazon S3 bucket to store the output of your transcription job.</p>
+     *        <p>
+     *        If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the
+     *        Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *        </p>
+     *        <p>
+     *        You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
+     *        example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
+     *        being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
+     *        "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You can
+     *        use an output key to change both the prefix and the file name, for example
+     *        "folder/my-other-job-name.json".
+     *        </p>
+     *        <p>
+     *        If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+     *        parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTranscriptionJobRequest withOutputKey(String outputKey) {
+        setOutputKey(outputKey);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key used to encrypt the output of the
      * transcription job. The user calling the <code>StartTranscriptionJob</code> operation must have permission to use
      * the specified KMS key.
@@ -920,6 +1120,46 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * Choose the custom language model you use for your transcription job in this parameter.
+     * </p>
+     * 
+     * @param modelSettings
+     *        Choose the custom language model you use for your transcription job in this parameter.
+     */
+
+    public void setModelSettings(ModelSettings modelSettings) {
+        this.modelSettings = modelSettings;
+    }
+
+    /**
+     * <p>
+     * Choose the custom language model you use for your transcription job in this parameter.
+     * </p>
+     * 
+     * @return Choose the custom language model you use for your transcription job in this parameter.
+     */
+
+    public ModelSettings getModelSettings() {
+        return this.modelSettings;
+    }
+
+    /**
+     * <p>
+     * Choose the custom language model you use for your transcription job in this parameter.
+     * </p>
+     * 
+     * @param modelSettings
+     *        Choose the custom language model you use for your transcription job in this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTranscriptionJobRequest withModelSettings(ModelSettings modelSettings) {
+        setModelSettings(modelSettings);
+        return this;
+    }
+
+    /**
+     * <p>
      * Provides information about how a transcription job is executed. Use this field to indicate that the job can be
      * queued for deferred execution if the concurrency limit is reached and there are no slots available to immediately
      * run the job.
@@ -1011,6 +1251,182 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     * identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value
+     * for a <code>LanguageCode</code>.
+     * </p>
+     * 
+     * @param identifyLanguage
+     *        Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     *        identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a
+     *        value for a <code>LanguageCode</code>.
+     */
+
+    public void setIdentifyLanguage(Boolean identifyLanguage) {
+        this.identifyLanguage = identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     * identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value
+     * for a <code>LanguageCode</code>.
+     * </p>
+     * 
+     * @return Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     *         identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter
+     *         a value for a <code>LanguageCode</code>.
+     */
+
+    public Boolean getIdentifyLanguage() {
+        return this.identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     * identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value
+     * for a <code>LanguageCode</code>.
+     * </p>
+     * 
+     * @param identifyLanguage
+     *        Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     *        identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a
+     *        value for a <code>LanguageCode</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTranscriptionJobRequest withIdentifyLanguage(Boolean identifyLanguage) {
+        setIdentifyLanguage(identifyLanguage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     * identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value
+     * for a <code>LanguageCode</code>.
+     * </p>
+     * 
+     * @return Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     *         identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter
+     *         a value for a <code>LanguageCode</code>.
+     */
+
+    public Boolean isIdentifyLanguage() {
+        return this.identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     * 
+     * @return An object containing a list of languages that might be present in your collection of audio files.
+     *         Automatic language identification chooses a language that best matches the source audio from that list.
+     * @see LanguageCode
+     */
+
+    public java.util.List<String> getLanguageOptions() {
+        return languageOptions;
+    }
+
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object containing a list of languages that might be present in your collection of audio files.
+     *        Automatic language identification chooses a language that best matches the source audio from that list.
+     * @see LanguageCode
+     */
+
+    public void setLanguageOptions(java.util.Collection<String> languageOptions) {
+        if (languageOptions == null) {
+            this.languageOptions = null;
+            return;
+        }
+
+        this.languageOptions = new java.util.ArrayList<String>(languageOptions);
+    }
+
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLanguageOptions(java.util.Collection)} or {@link #withLanguageOptions(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object containing a list of languages that might be present in your collection of audio files.
+     *        Automatic language identification chooses a language that best matches the source audio from that list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public StartTranscriptionJobRequest withLanguageOptions(String... languageOptions) {
+        if (this.languageOptions == null) {
+            setLanguageOptions(new java.util.ArrayList<String>(languageOptions.length));
+        }
+        for (String ele : languageOptions) {
+            this.languageOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object containing a list of languages that might be present in your collection of audio files.
+     *        Automatic language identification chooses a language that best matches the source audio from that list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public StartTranscriptionJobRequest withLanguageOptions(java.util.Collection<String> languageOptions) {
+        setLanguageOptions(languageOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object containing a list of languages that might be present in your collection of audio files.
+     *        Automatic language identification chooses a language that best matches the source audio from that list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public StartTranscriptionJobRequest withLanguageOptions(LanguageCode... languageOptions) {
+        java.util.ArrayList<String> languageOptionsCopy = new java.util.ArrayList<String>(languageOptions.length);
+        for (LanguageCode value : languageOptions) {
+            languageOptionsCopy.add(value.toString());
+        }
+        if (getLanguageOptions() == null) {
+            setLanguageOptions(languageOptionsCopy);
+        } else {
+            getLanguageOptions().addAll(languageOptionsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1034,14 +1450,22 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             sb.append("Media: ").append(getMedia()).append(",");
         if (getOutputBucketName() != null)
             sb.append("OutputBucketName: ").append(getOutputBucketName()).append(",");
+        if (getOutputKey() != null)
+            sb.append("OutputKey: ").append(getOutputKey()).append(",");
         if (getOutputEncryptionKMSKeyId() != null)
             sb.append("OutputEncryptionKMSKeyId: ").append(getOutputEncryptionKMSKeyId()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getModelSettings() != null)
+            sb.append("ModelSettings: ").append(getModelSettings()).append(",");
         if (getJobExecutionSettings() != null)
             sb.append("JobExecutionSettings: ").append(getJobExecutionSettings()).append(",");
         if (getContentRedaction() != null)
-            sb.append("ContentRedaction: ").append(getContentRedaction());
+            sb.append("ContentRedaction: ").append(getContentRedaction()).append(",");
+        if (getIdentifyLanguage() != null)
+            sb.append("IdentifyLanguage: ").append(getIdentifyLanguage()).append(",");
+        if (getLanguageOptions() != null)
+            sb.append("LanguageOptions: ").append(getLanguageOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1080,6 +1504,10 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getOutputBucketName() != null && other.getOutputBucketName().equals(this.getOutputBucketName()) == false)
             return false;
+        if (other.getOutputKey() == null ^ this.getOutputKey() == null)
+            return false;
+        if (other.getOutputKey() != null && other.getOutputKey().equals(this.getOutputKey()) == false)
+            return false;
         if (other.getOutputEncryptionKMSKeyId() == null ^ this.getOutputEncryptionKMSKeyId() == null)
             return false;
         if (other.getOutputEncryptionKMSKeyId() != null && other.getOutputEncryptionKMSKeyId().equals(this.getOutputEncryptionKMSKeyId()) == false)
@@ -1088,6 +1516,10 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getModelSettings() == null ^ this.getModelSettings() == null)
+            return false;
+        if (other.getModelSettings() != null && other.getModelSettings().equals(this.getModelSettings()) == false)
+            return false;
         if (other.getJobExecutionSettings() == null ^ this.getJobExecutionSettings() == null)
             return false;
         if (other.getJobExecutionSettings() != null && other.getJobExecutionSettings().equals(this.getJobExecutionSettings()) == false)
@@ -1095,6 +1527,14 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         if (other.getContentRedaction() == null ^ this.getContentRedaction() == null)
             return false;
         if (other.getContentRedaction() != null && other.getContentRedaction().equals(this.getContentRedaction()) == false)
+            return false;
+        if (other.getIdentifyLanguage() == null ^ this.getIdentifyLanguage() == null)
+            return false;
+        if (other.getIdentifyLanguage() != null && other.getIdentifyLanguage().equals(this.getIdentifyLanguage()) == false)
+            return false;
+        if (other.getLanguageOptions() == null ^ this.getLanguageOptions() == null)
+            return false;
+        if (other.getLanguageOptions() != null && other.getLanguageOptions().equals(this.getLanguageOptions()) == false)
             return false;
         return true;
     }
@@ -1110,10 +1550,14 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getMediaFormat() == null) ? 0 : getMediaFormat().hashCode());
         hashCode = prime * hashCode + ((getMedia() == null) ? 0 : getMedia().hashCode());
         hashCode = prime * hashCode + ((getOutputBucketName() == null) ? 0 : getOutputBucketName().hashCode());
+        hashCode = prime * hashCode + ((getOutputKey() == null) ? 0 : getOutputKey().hashCode());
         hashCode = prime * hashCode + ((getOutputEncryptionKMSKeyId() == null) ? 0 : getOutputEncryptionKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getModelSettings() == null) ? 0 : getModelSettings().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionSettings() == null) ? 0 : getJobExecutionSettings().hashCode());
         hashCode = prime * hashCode + ((getContentRedaction() == null) ? 0 : getContentRedaction().hashCode());
+        hashCode = prime * hashCode + ((getIdentifyLanguage() == null) ? 0 : getIdentifyLanguage().hashCode());
+        hashCode = prime * hashCode + ((getLanguageOptions() == null) ? 0 : getLanguageOptions().hashCode());
         return hashCode;
     }
 

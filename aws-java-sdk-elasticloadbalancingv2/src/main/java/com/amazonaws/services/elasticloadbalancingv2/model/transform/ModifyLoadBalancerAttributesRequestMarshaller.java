@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,13 +56,15 @@ public class ModifyLoadBalancerAttributesRequestMarshaller implements
                 int attributesListIndex = 1;
 
                 for (LoadBalancerAttribute attributesListValue : attributesList) {
+                    if (attributesListValue != null) {
 
-                    if (attributesListValue.getKey() != null) {
-                        request.addParameter("Attributes.member." + attributesListIndex + ".Key", StringUtils.fromString(attributesListValue.getKey()));
-                    }
+                        if (attributesListValue.getKey() != null) {
+                            request.addParameter("Attributes.member." + attributesListIndex + ".Key", StringUtils.fromString(attributesListValue.getKey()));
+                        }
 
-                    if (attributesListValue.getValue() != null) {
-                        request.addParameter("Attributes.member." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
+                        if (attributesListValue.getValue() != null) {
+                            request.addParameter("Attributes.member." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
+                        }
                     }
                     attributesListIndex++;
                 }

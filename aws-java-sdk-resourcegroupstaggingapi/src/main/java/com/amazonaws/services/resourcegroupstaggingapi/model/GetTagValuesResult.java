@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,28 +25,31 @@ public class GetTagValuesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      */
     private String paginationToken;
     /**
      * <p>
-     * A list of all tag values for the specified key in the AWS account.
+     * A list of all tag values for the specified key currently used in the specified AWS Region for the calling AWS
+     * account.
      * </p>
      */
     private java.util.List<String> tagValues;
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      * 
      * @param paginationToken
-     *        A string that indicates that the response contains more data than can be returned in a single response. To
-     *        receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent
-     *        request.
+     *        A string that indicates that there is more data available than this response contains. To receive the next
+     *        part of the response, specify this response value as the <code>PaginationToken</code> value in the request
+     *        for the next page.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -55,13 +58,14 @@ public class GetTagValuesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      * 
-     * @return A string that indicates that the response contains more data than can be returned in a single response.
-     *         To receive additional data, specify this string for the <code>PaginationToken</code> value in a
-     *         subsequent request.
+     * @return A string that indicates that there is more data available than this response contains. To receive the
+     *         next part of the response, specify this response value as the <code>PaginationToken</code> value in the
+     *         request for the next page.
      */
 
     public String getPaginationToken() {
@@ -70,14 +74,15 @@ public class GetTagValuesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      * 
      * @param paginationToken
-     *        A string that indicates that the response contains more data than can be returned in a single response. To
-     *        receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent
-     *        request.
+     *        A string that indicates that there is more data available than this response contains. To receive the next
+     *        part of the response, specify this response value as the <code>PaginationToken</code> value in the request
+     *        for the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,10 +93,12 @@ public class GetTagValuesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all tag values for the specified key in the AWS account.
+     * A list of all tag values for the specified key currently used in the specified AWS Region for the calling AWS
+     * account.
      * </p>
      * 
-     * @return A list of all tag values for the specified key in the AWS account.
+     * @return A list of all tag values for the specified key currently used in the specified AWS Region for the calling
+     *         AWS account.
      */
 
     public java.util.List<String> getTagValues() {
@@ -100,11 +107,13 @@ public class GetTagValuesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all tag values for the specified key in the AWS account.
+     * A list of all tag values for the specified key currently used in the specified AWS Region for the calling AWS
+     * account.
      * </p>
      * 
      * @param tagValues
-     *        A list of all tag values for the specified key in the AWS account.
+     *        A list of all tag values for the specified key currently used in the specified AWS Region for the calling
+     *        AWS account.
      */
 
     public void setTagValues(java.util.Collection<String> tagValues) {
@@ -118,7 +127,8 @@ public class GetTagValuesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all tag values for the specified key in the AWS account.
+     * A list of all tag values for the specified key currently used in the specified AWS Region for the calling AWS
+     * account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +137,8 @@ public class GetTagValuesResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param tagValues
-     *        A list of all tag values for the specified key in the AWS account.
+     *        A list of all tag values for the specified key currently used in the specified AWS Region for the calling
+     *        AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +154,13 @@ public class GetTagValuesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of all tag values for the specified key in the AWS account.
+     * A list of all tag values for the specified key currently used in the specified AWS Region for the calling AWS
+     * account.
      * </p>
      * 
      * @param tagValues
-     *        A list of all tag values for the specified key in the AWS account.
+     *        A list of all tag values for the specified key currently used in the specified AWS Region for the calling
+     *        AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

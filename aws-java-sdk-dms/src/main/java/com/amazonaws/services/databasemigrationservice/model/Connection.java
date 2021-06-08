@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,8 +43,30 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     private String endpointArn;
     /**
      * <p>
-     * The connection status.
+     * The connection status. This parameter can return one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"successful"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"testing"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"failed"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleting"</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
@@ -149,11 +171,54 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The connection status.
+     * The connection status. This parameter can return one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"successful"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"testing"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"failed"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleting"</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The connection status.
+     *        The connection status. This parameter can return one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"successful"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"testing"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"failed"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"deleting"</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -162,10 +227,53 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The connection status.
+     * The connection status. This parameter can return one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"successful"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"testing"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"failed"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleting"</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The connection status.
+     * @return The connection status. This parameter can return one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"successful"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"testing"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"failed"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"deleting"</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -174,11 +282,54 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The connection status.
+     * The connection status. This parameter can return one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"successful"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"testing"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"failed"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"deleting"</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The connection status.
+     *        The connection status. This parameter can return one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"successful"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"testing"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"failed"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"deleting"</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

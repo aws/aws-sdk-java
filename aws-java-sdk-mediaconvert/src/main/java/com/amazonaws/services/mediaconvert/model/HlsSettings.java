@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Specifies the group to which the audio Rendition belongs. */
+    /** Specifies the group to which the audio rendition belongs. */
     private String audioGroupId;
     /**
      * Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream (M2TS) to create a file in an
@@ -51,7 +51,21 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
      * AUTOSELECT=NO
      */
     private String audioTrackType;
-    /** When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest */
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+     * choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in
+     * the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert
+     * leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see
+     * the Apple documentation.
+     */
+    private String descriptiveVideoServiceFlag;
+    /**
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for this
+     * rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a
+     * workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and
+     * the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the
+     * default value Exclude (EXCLUDE).
+     */
     private String iFrameOnlyManifest;
     /**
      * Use this setting to add an identifying string to the filename of each segment. The service adds this string
@@ -61,10 +75,10 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     private String segmentModifier;
 
     /**
-     * Specifies the group to which the audio Rendition belongs.
+     * Specifies the group to which the audio rendition belongs.
      * 
      * @param audioGroupId
-     *        Specifies the group to which the audio Rendition belongs.
+     *        Specifies the group to which the audio rendition belongs.
      */
 
     public void setAudioGroupId(String audioGroupId) {
@@ -72,9 +86,9 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies the group to which the audio Rendition belongs.
+     * Specifies the group to which the audio rendition belongs.
      * 
-     * @return Specifies the group to which the audio Rendition belongs.
+     * @return Specifies the group to which the audio rendition belongs.
      */
 
     public String getAudioGroupId() {
@@ -82,10 +96,10 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies the group to which the audio Rendition belongs.
+     * Specifies the group to which the audio rendition belongs.
      * 
      * @param audioGroupId
-     *        Specifies the group to which the audio Rendition belongs.
+     *        Specifies the group to which the audio rendition belongs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,10 +331,101 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     * Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+     * choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in
+     * the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert
+     * leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see
+     * the Apple documentation.
+     * 
+     * @param descriptiveVideoServiceFlag
+     *        Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest.
+     *        When you choose Flag (FLAG), MediaConvert includes the parameter
+     *        CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you
+     *        keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can
+     *        help with accessibility on Apple devices. For more information, see the Apple documentation.
+     * @see HlsDescriptiveVideoServiceFlag
+     */
+
+    public void setDescriptiveVideoServiceFlag(String descriptiveVideoServiceFlag) {
+        this.descriptiveVideoServiceFlag = descriptiveVideoServiceFlag;
+    }
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+     * choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in
+     * the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert
+     * leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see
+     * the Apple documentation.
+     * 
+     * @return Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest.
+     *         When you choose Flag (FLAG), MediaConvert includes the parameter
+     *         CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you
+     *         keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can
+     *         help with accessibility on Apple devices. For more information, see the Apple documentation.
+     * @see HlsDescriptiveVideoServiceFlag
+     */
+
+    public String getDescriptiveVideoServiceFlag() {
+        return this.descriptiveVideoServiceFlag;
+    }
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+     * choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in
+     * the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert
+     * leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see
+     * the Apple documentation.
+     * 
+     * @param descriptiveVideoServiceFlag
+     *        Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest.
+     *        When you choose Flag (FLAG), MediaConvert includes the parameter
+     *        CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you
+     *        keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can
+     *        help with accessibility on Apple devices. For more information, see the Apple documentation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsDescriptiveVideoServiceFlag
+     */
+
+    public HlsSettings withDescriptiveVideoServiceFlag(String descriptiveVideoServiceFlag) {
+        setDescriptiveVideoServiceFlag(descriptiveVideoServiceFlag);
+        return this;
+    }
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+     * choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in
+     * the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert
+     * leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see
+     * the Apple documentation.
+     * 
+     * @param descriptiveVideoServiceFlag
+     *        Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest.
+     *        When you choose Flag (FLAG), MediaConvert includes the parameter
+     *        CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you
+     *        keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can
+     *        help with accessibility on Apple devices. For more information, see the Apple documentation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsDescriptiveVideoServiceFlag
+     */
+
+    public HlsSettings withDescriptiveVideoServiceFlag(HlsDescriptiveVideoServiceFlag descriptiveVideoServiceFlag) {
+        this.descriptiveVideoServiceFlag = descriptiveVideoServiceFlag.toString();
+        return this;
+    }
+
+    /**
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for this
+     * rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a
+     * workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and
+     * the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the
+     * default value Exclude (EXCLUDE).
      * 
      * @param iFrameOnlyManifest
-     *        When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     *        Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for
+     *        this rendition, in addition to your regular manifest for this rendition. You might use this manifest as
+     *        part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only
+     *        child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only
+     *        child manifest, keep the default value Exclude (EXCLUDE).
      * @see HlsIFrameOnlyManifest
      */
 
@@ -329,9 +434,17 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for this
+     * rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a
+     * workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and
+     * the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the
+     * default value Exclude (EXCLUDE).
      * 
-     * @return When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     * @return Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for
+     *         this rendition, in addition to your regular manifest for this rendition. You might use this manifest as
+     *         part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only
+     *         child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame
+     *         only child manifest, keep the default value Exclude (EXCLUDE).
      * @see HlsIFrameOnlyManifest
      */
 
@@ -340,10 +453,18 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for this
+     * rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a
+     * workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and
+     * the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the
+     * default value Exclude (EXCLUDE).
      * 
      * @param iFrameOnlyManifest
-     *        When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     *        Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for
+     *        this rendition, in addition to your regular manifest for this rendition. You might use this manifest as
+     *        part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only
+     *        child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only
+     *        child manifest, keep the default value Exclude (EXCLUDE).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsIFrameOnlyManifest
      */
@@ -354,10 +475,18 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     * Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for this
+     * rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a
+     * workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and
+     * the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the
+     * default value Exclude (EXCLUDE).
      * 
      * @param iFrameOnlyManifest
-     *        When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     *        Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for
+     *        this rendition, in addition to your regular manifest for this rendition. You might use this manifest as
+     *        part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only
+     *        child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only
+     *        child manifest, keep the default value Exclude (EXCLUDE).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsIFrameOnlyManifest
      */
@@ -436,6 +565,8 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("AudioRenditionSets: ").append(getAudioRenditionSets()).append(",");
         if (getAudioTrackType() != null)
             sb.append("AudioTrackType: ").append(getAudioTrackType()).append(",");
+        if (getDescriptiveVideoServiceFlag() != null)
+            sb.append("DescriptiveVideoServiceFlag: ").append(getDescriptiveVideoServiceFlag()).append(",");
         if (getIFrameOnlyManifest() != null)
             sb.append("IFrameOnlyManifest: ").append(getIFrameOnlyManifest()).append(",");
         if (getSegmentModifier() != null)
@@ -470,6 +601,10 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAudioTrackType() != null && other.getAudioTrackType().equals(this.getAudioTrackType()) == false)
             return false;
+        if (other.getDescriptiveVideoServiceFlag() == null ^ this.getDescriptiveVideoServiceFlag() == null)
+            return false;
+        if (other.getDescriptiveVideoServiceFlag() != null && other.getDescriptiveVideoServiceFlag().equals(this.getDescriptiveVideoServiceFlag()) == false)
+            return false;
         if (other.getIFrameOnlyManifest() == null ^ this.getIFrameOnlyManifest() == null)
             return false;
         if (other.getIFrameOnlyManifest() != null && other.getIFrameOnlyManifest().equals(this.getIFrameOnlyManifest()) == false)
@@ -490,6 +625,7 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAudioOnlyContainer() == null) ? 0 : getAudioOnlyContainer().hashCode());
         hashCode = prime * hashCode + ((getAudioRenditionSets() == null) ? 0 : getAudioRenditionSets().hashCode());
         hashCode = prime * hashCode + ((getAudioTrackType() == null) ? 0 : getAudioTrackType().hashCode());
+        hashCode = prime * hashCode + ((getDescriptiveVideoServiceFlag() == null) ? 0 : getDescriptiveVideoServiceFlag().hashCode());
         hashCode = prime * hashCode + ((getIFrameOnlyManifest() == null) ? 0 : getIFrameOnlyManifest().hashCode());
         hashCode = prime * hashCode + ((getSegmentModifier() == null) ? 0 : getSegmentModifier().hashCode());
         return hashCode;

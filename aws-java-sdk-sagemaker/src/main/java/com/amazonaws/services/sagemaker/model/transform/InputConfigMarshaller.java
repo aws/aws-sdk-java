@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class InputConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataInputConfig").build();
     private static final MarshallingInfo<String> FRAMEWORK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Framework").build();
+    private static final MarshallingInfo<String> FRAMEWORKVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FrameworkVersion").build();
 
     private static final InputConfigMarshaller instance = new InputConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class InputConfigMarshaller {
             protocolMarshaller.marshall(inputConfig.getS3Uri(), S3URI_BINDING);
             protocolMarshaller.marshall(inputConfig.getDataInputConfig(), DATAINPUTCONFIG_BINDING);
             protocolMarshaller.marshall(inputConfig.getFramework(), FRAMEWORK_BINDING);
+            protocolMarshaller.marshall(inputConfig.getFrameworkVersion(), FRAMEWORKVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

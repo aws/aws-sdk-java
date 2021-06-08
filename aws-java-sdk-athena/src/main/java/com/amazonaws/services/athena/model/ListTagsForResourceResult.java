@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tags associated with this workgroup.
+     * The list of tags associated with the specified resource.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -38,10 +38,10 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tags associated with this workgroup.
+     * The list of tags associated with the specified resource.
      * </p>
      * 
-     * @return The list of tags associated with this workgroup.
+     * @return The list of tags associated with the specified resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -50,11 +50,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tags associated with this workgroup.
+     * The list of tags associated with the specified resource.
      * </p>
      * 
      * @param tags
-     *        The list of tags associated with this workgroup.
+     *        The list of tags associated with the specified resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -68,7 +68,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tags associated with this workgroup.
+     * The list of tags associated with the specified resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param tags
-     *        The list of tags associated with this workgroup.
+     *        The list of tags associated with the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The list of tags associated with this workgroup.
+     * The list of tags associated with the specified resource.
      * </p>
      * 
      * @param tags
-     *        The list of tags associated with this workgroup.
+     *        The list of tags associated with the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

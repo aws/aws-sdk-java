@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,11 +50,15 @@ public class TargetInstancesJsonUnmarshaller implements Unmarshaller<TargetInsta
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("tagFilters", targetDepth)) {
                     context.nextToken();
-                    targetInstances.setTagFilters(new ListUnmarshaller<EC2TagFilter>(EC2TagFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    targetInstances.setTagFilters(new ListUnmarshaller<EC2TagFilter>(EC2TagFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroups", targetDepth)) {
                     context.nextToken();
-                    targetInstances.setAutoScalingGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    targetInstances.setAutoScalingGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ec2TagSet", targetDepth)) {
                     context.nextToken();

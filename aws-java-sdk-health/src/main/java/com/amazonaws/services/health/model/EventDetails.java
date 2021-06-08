@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and
- * additional metadata about the event. Returned by the <a>DescribeEventDetails</a> operation.
+ * Detailed information about an event. A combination of an <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a> object, an <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html">EventDescription</a> object,
+ * and additional metadata about the event. Returned by the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a>
+ * operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventDetails" target="_top">AWS API

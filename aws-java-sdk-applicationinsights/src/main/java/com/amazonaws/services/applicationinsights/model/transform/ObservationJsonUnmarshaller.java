@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -155,6 +155,50 @@ public class ObservationJsonUnmarshaller implements Unmarshaller<Observation, Js
                 if (context.testExpression("Ec2State", targetDepth)) {
                     context.nextToken();
                     observation.setEc2State(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RdsEventCategories", targetDepth)) {
+                    context.nextToken();
+                    observation.setRdsEventCategories(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RdsEventMessage", targetDepth)) {
+                    context.nextToken();
+                    observation.setRdsEventMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("S3EventName", targetDepth)) {
+                    context.nextToken();
+                    observation.setS3EventName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StatesExecutionArn", targetDepth)) {
+                    context.nextToken();
+                    observation.setStatesExecutionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StatesArn", targetDepth)) {
+                    context.nextToken();
+                    observation.setStatesArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StatesStatus", targetDepth)) {
+                    context.nextToken();
+                    observation.setStatesStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StatesInput", targetDepth)) {
+                    context.nextToken();
+                    observation.setStatesInput(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EbsEvent", targetDepth)) {
+                    context.nextToken();
+                    observation.setEbsEvent(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EbsResult", targetDepth)) {
+                    context.nextToken();
+                    observation.setEbsResult(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EbsCause", targetDepth)) {
+                    context.nextToken();
+                    observation.setEbsCause(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EbsRequestId", targetDepth)) {
+                    context.nextToken();
+                    observation.setEbsRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("XRayFaultPercent", targetDepth)) {
                     context.nextToken();

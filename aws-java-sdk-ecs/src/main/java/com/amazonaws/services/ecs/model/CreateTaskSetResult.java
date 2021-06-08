@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateTaskSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. A
+     * task set includes details such as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.
+     * </p>
+     */
     private TaskSet taskSet;
 
     /**
+     * <p>
+     * Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. A
+     * task set includes details such as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.
+     * </p>
+     * 
      * @param taskSet
+     *        Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code>
+     *        deployment. A task set includes details such as the desired number of tasks, how many tasks are running,
+     *        and whether the task set serves production traffic.
      */
 
     public void setTaskSet(TaskSet taskSet) {
@@ -34,7 +50,15 @@ public class CreateTaskSetResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. A
+     * task set includes details such as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.
+     * </p>
+     * 
+     * @return Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code>
+     *         deployment. A task set includes details such as the desired number of tasks, how many tasks are running,
+     *         and whether the task set serves production traffic.
      */
 
     public TaskSet getTaskSet() {
@@ -42,7 +66,16 @@ public class CreateTaskSetResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. A
+     * task set includes details such as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.
+     * </p>
+     * 
      * @param taskSet
+     *        Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code>
+     *        deployment. A task set includes details such as the desired number of tasks, how many tasks are running,
+     *        and whether the task set serves production traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

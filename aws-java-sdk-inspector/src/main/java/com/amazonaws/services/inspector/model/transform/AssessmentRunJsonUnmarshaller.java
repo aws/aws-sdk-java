@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,11 +70,15 @@ public class AssessmentRunJsonUnmarshaller implements Unmarshaller<AssessmentRun
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    assessmentRun.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("userAttributesForFindings", targetDepth)) {
                     context.nextToken();
-                    assessmentRun.setUserAttributesForFindings(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    assessmentRun.setUserAttributesForFindings(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
@@ -99,12 +103,14 @@ public class AssessmentRunJsonUnmarshaller implements Unmarshaller<AssessmentRun
                 if (context.testExpression("stateChanges", targetDepth)) {
                     context.nextToken();
                     assessmentRun.setStateChanges(new ListUnmarshaller<AssessmentRunStateChange>(AssessmentRunStateChangeJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("notifications", targetDepth)) {
                     context.nextToken();
                     assessmentRun.setNotifications(new ListUnmarshaller<AssessmentRunNotification>(AssessmentRunNotificationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("findingCounts", targetDepth)) {
                     context.nextToken();

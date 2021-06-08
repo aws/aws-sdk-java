@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Returns the account ID that owns the backup job.
+     * </p>
+     */
+    private String accountId;
     /**
      * <p>
      * Uniquely identifies a request to AWS Backup to back up a resource.
@@ -68,8 +74,8 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal Time
-     * (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
-     * represents Friday, January 26, 2018 12:11:30.087 AM.
+     * (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
+     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      */
     private java.util.Date completionDate;
@@ -143,6 +149,60 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.Date startBy;
+    /**
+     * <p>
+     * Represents the options specified as part of backup plan or on-demand backup job.
+     * </p>
+     */
+    private java.util.Map<String, String> backupOptions;
+    /**
+     * <p>
+     * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
+     * taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then the backup type
+     * that was is a regular backup.
+     * </p>
+     */
+    private String backupType;
+
+    /**
+     * <p>
+     * Returns the account ID that owns the backup job.
+     * </p>
+     * 
+     * @param accountId
+     *        Returns the account ID that owns the backup job.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * Returns the account ID that owns the backup job.
+     * </p>
+     * 
+     * @return Returns the account ID that owns the backup job.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * Returns the account ID that owns the backup job.
+     * </p>
+     * 
+     * @param accountId
+     *        Returns the account ID that owns the backup job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBackupJobResult withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
 
     /**
      * <p>
@@ -423,13 +483,13 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal Time
-     * (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
-     * represents Friday, January 26, 2018 12:11:30.087 AM.
+     * (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
+     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param completionDate
      *        The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal
-     *        Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value
+     *        Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
      *        1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
@@ -440,12 +500,12 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal Time
-     * (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
-     * represents Friday, January 26, 2018 12:11:30.087 AM.
+     * (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
+     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @return The date and time that a job to create a backup job is completed, in Unix format and Coordinated
-     *         Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example,
+     *         Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example,
      *         the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
@@ -456,13 +516,13 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal Time
-     * (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
-     * represents Friday, January 26, 2018 12:11:30.087 AM.
+     * (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
+     * 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param completionDate
      *        The date and time that a job to create a backup job is completed, in Unix format and Coordinated Universal
-     *        Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value
+     *        Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example, the value
      *        1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -952,6 +1012,126 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Represents the options specified as part of backup plan or on-demand backup job.
+     * </p>
+     * 
+     * @return Represents the options specified as part of backup plan or on-demand backup job.
+     */
+
+    public java.util.Map<String, String> getBackupOptions() {
+        return backupOptions;
+    }
+
+    /**
+     * <p>
+     * Represents the options specified as part of backup plan or on-demand backup job.
+     * </p>
+     * 
+     * @param backupOptions
+     *        Represents the options specified as part of backup plan or on-demand backup job.
+     */
+
+    public void setBackupOptions(java.util.Map<String, String> backupOptions) {
+        this.backupOptions = backupOptions;
+    }
+
+    /**
+     * <p>
+     * Represents the options specified as part of backup plan or on-demand backup job.
+     * </p>
+     * 
+     * @param backupOptions
+     *        Represents the options specified as part of backup plan or on-demand backup job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBackupJobResult withBackupOptions(java.util.Map<String, String> backupOptions) {
+        setBackupOptions(backupOptions);
+        return this;
+    }
+
+    /**
+     * Add a single BackupOptions entry
+     *
+     * @see DescribeBackupJobResult#withBackupOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBackupJobResult addBackupOptionsEntry(String key, String value) {
+        if (null == this.backupOptions) {
+            this.backupOptions = new java.util.HashMap<String, String>();
+        }
+        if (this.backupOptions.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.backupOptions.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into BackupOptions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBackupJobResult clearBackupOptionsEntries() {
+        this.backupOptions = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
+     * taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then the backup type
+     * that was is a regular backup.
+     * </p>
+     * 
+     * @param backupType
+     *        Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS
+     *        backup was taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then
+     *        the backup type that was is a regular backup.
+     */
+
+    public void setBackupType(String backupType) {
+        this.backupType = backupType;
+    }
+
+    /**
+     * <p>
+     * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
+     * taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then the backup type
+     * that was is a regular backup.
+     * </p>
+     * 
+     * @return Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS
+     *         backup was taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then
+     *         the backup type that was is a regular backup.
+     */
+
+    public String getBackupType() {
+        return this.backupType;
+    }
+
+    /**
+     * <p>
+     * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
+     * taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then the backup type
+     * that was is a regular backup.
+     * </p>
+     * 
+     * @param backupType
+     *        Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS
+     *        backup was taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code> is empty, then
+     *        the backup type that was is a regular backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBackupJobResult withBackupType(String backupType) {
+        setBackupType(backupType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -963,6 +1143,8 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getBackupJobId() != null)
             sb.append("BackupJobId: ").append(getBackupJobId()).append(",");
         if (getBackupVaultName() != null)
@@ -996,7 +1178,11 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
         if (getExpectedCompletionDate() != null)
             sb.append("ExpectedCompletionDate: ").append(getExpectedCompletionDate()).append(",");
         if (getStartBy() != null)
-            sb.append("StartBy: ").append(getStartBy());
+            sb.append("StartBy: ").append(getStartBy()).append(",");
+        if (getBackupOptions() != null)
+            sb.append("BackupOptions: ").append(getBackupOptions()).append(",");
+        if (getBackupType() != null)
+            sb.append("BackupType: ").append(getBackupType());
         sb.append("}");
         return sb.toString();
     }
@@ -1011,6 +1197,10 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
         if (obj instanceof DescribeBackupJobResult == false)
             return false;
         DescribeBackupJobResult other = (DescribeBackupJobResult) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getBackupJobId() == null ^ this.getBackupJobId() == null)
             return false;
         if (other.getBackupJobId() != null && other.getBackupJobId().equals(this.getBackupJobId()) == false)
@@ -1079,6 +1269,14 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getStartBy() != null && other.getStartBy().equals(this.getStartBy()) == false)
             return false;
+        if (other.getBackupOptions() == null ^ this.getBackupOptions() == null)
+            return false;
+        if (other.getBackupOptions() != null && other.getBackupOptions().equals(this.getBackupOptions()) == false)
+            return false;
+        if (other.getBackupType() == null ^ this.getBackupType() == null)
+            return false;
+        if (other.getBackupType() != null && other.getBackupType().equals(this.getBackupType()) == false)
+            return false;
         return true;
     }
 
@@ -1087,6 +1285,7 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getBackupJobId() == null) ? 0 : getBackupJobId().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultArn() == null) ? 0 : getBackupVaultArn().hashCode());
@@ -1104,6 +1303,8 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getBytesTransferred() == null) ? 0 : getBytesTransferred().hashCode());
         hashCode = prime * hashCode + ((getExpectedCompletionDate() == null) ? 0 : getExpectedCompletionDate().hashCode());
         hashCode = prime * hashCode + ((getStartBy() == null) ? 0 : getStartBy().hashCode());
+        hashCode = prime * hashCode + ((getBackupOptions() == null) ? 0 : getBackupOptions().hashCode());
+        hashCode = prime * hashCode + ((getBackupType() == null) ? 0 : getBackupType().hashCode());
         return hashCode;
     }
 

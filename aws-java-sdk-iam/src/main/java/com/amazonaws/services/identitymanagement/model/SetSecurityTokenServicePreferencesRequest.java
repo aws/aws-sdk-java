@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      * <p>
      * For information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+     * deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private String globalEndpointTokenVersion;
@@ -50,7 +50,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      * <p>
      * For information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+     * deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param globalEndpointTokenVersion
@@ -61,7 +61,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      *        <p>
      *        For information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *        and Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+     *        and deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
      * @see GlobalEndpointTokenVersion
      */
 
@@ -79,7 +79,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      * <p>
      * For information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+     * deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The version of the global endpoint token. Version 1 tokens are valid only in AWS Regions that are
@@ -89,7 +89,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      *         <p>
      *         For information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html"
-     *         >Activating and Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+     *         >Activating and deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
      * @see GlobalEndpointTokenVersion
      */
 
@@ -107,7 +107,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      * <p>
      * For information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+     * deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param globalEndpointTokenVersion
@@ -118,7 +118,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      *        <p>
      *        For information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *        and Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+     *        and deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GlobalEndpointTokenVersion
      */
@@ -138,7 +138,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      * <p>
      * For information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+     * deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param globalEndpointTokenVersion
@@ -149,7 +149,7 @@ public class SetSecurityTokenServicePreferencesRequest extends com.amazonaws.Ama
      *        <p>
      *        For information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     *        and Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+     *        and deactivating STS in an AWS region</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GlobalEndpointTokenVersion
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * manage content delivery.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Distribution" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Distribution" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -67,16 +67,27 @@ public class Distribution implements Serializable, Cloneable {
      */
     private String domainName;
     /**
+     * <important>
      * <p>
-     * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer (or an empty
-     * <code>Self</code> element if the signer is you). The <code>Signer</code> element also includes the IDs of any
-     * active key pairs associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears
-     * for a <code>Signer</code>, that signer can't create working signed URLs.
+     * We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     * </p>
+     * </important>
+     * <p>
+     * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     * distribution to serve private content using trusted signers. This field contains a list of AWS account IDs and
+     * the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs
+     * or signed cookies.
      * </p>
      */
     private ActiveTrustedSigners activeTrustedSigners;
+    /**
+     * <p>
+     * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     * distribution to serve private content using key groups. This field contains a list of key groups and the public
+     * keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.
+     * </p>
+     */
+    private ActiveTrustedKeyGroups activeTrustedKeyGroups;
     /**
      * <p>
      * The current configuration information for the distribution. Send a <code>GET</code> request to the
@@ -390,23 +401,28 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer (or an empty
-     * <code>Self</code> element if the signer is you). The <code>Signer</code> element also includes the IDs of any
-     * active key pairs associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears
-     * for a <code>Signer</code>, that signer can't create working signed URLs.
+     * We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     * </p>
+     * </important>
+     * <p>
+     * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     * distribution to serve private content using trusted signers. This field contains a list of AWS account IDs and
+     * the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs
+     * or signed cookies.
      * </p>
      * 
      * @param activeTrustedSigners
-     *        CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     *        private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each
-     *        trusted signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer
-     *        (or an empty <code>Self</code> element if the signer is you). The <code>Signer</code> element also
-     *        includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no
-     *        <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create working signed
-     *        URLs.
+     *        <p>
+     *        We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     *        distribution to serve private content using trusted signers. This field contains a list of AWS account IDs
+     *        and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of
+     *        signed URLs or signed cookies.
      */
 
     public void setActiveTrustedSigners(ActiveTrustedSigners activeTrustedSigners) {
@@ -414,22 +430,27 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer (or an empty
-     * <code>Self</code> element if the signer is you). The <code>Signer</code> element also includes the IDs of any
-     * active key pairs associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears
-     * for a <code>Signer</code>, that signer can't create working signed URLs.
+     * We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     * </p>
+     * </important>
+     * <p>
+     * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     * distribution to serve private content using trusted signers. This field contains a list of AWS account IDs and
+     * the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs
+     * or signed cookies.
      * </p>
      * 
-     * @return CloudFront automatically adds this element to the response only if you've set up the distribution to
-     *         serve private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of
-     *         for each trusted signer. The <code>Signer</code> child element lists the AWS account number of the
-     *         trusted signer (or an empty <code>Self</code> element if the signer is you). The <code>Signer</code>
-     *         element also includes the IDs of any active key pairs associated with the trusted signer's AWS account.
-     *         If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create working
-     *         signed URLs.
+     * @return <p>
+     *         We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     *         distribution to serve private content using trusted signers. This field contains a list of AWS account
+     *         IDs and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures
+     *         of signed URLs or signed cookies.
      */
 
     public ActiveTrustedSigners getActiveTrustedSigners() {
@@ -437,28 +458,88 @@ public class Distribution implements Serializable, Cloneable {
     }
 
     /**
+     * <important>
      * <p>
-     * CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     * private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each trusted
-     * signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer (or an empty
-     * <code>Self</code> element if the signer is you). The <code>Signer</code> element also includes the IDs of any
-     * active key pairs associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element appears
-     * for a <code>Signer</code>, that signer can't create working signed URLs.
+     * We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     * </p>
+     * </important>
+     * <p>
+     * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     * distribution to serve private content using trusted signers. This field contains a list of AWS account IDs and
+     * the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs
+     * or signed cookies.
      * </p>
      * 
      * @param activeTrustedSigners
-     *        CloudFront automatically adds this element to the response only if you've set up the distribution to serve
-     *        private content with signed URLs. The element lists the key pair IDs that CloudFront is aware of for each
-     *        trusted signer. The <code>Signer</code> child element lists the AWS account number of the trusted signer
-     *        (or an empty <code>Self</code> element if the signer is you). The <code>Signer</code> element also
-     *        includes the IDs of any active key pairs associated with the trusted signer's AWS account. If no
-     *        <code>KeyPairId</code> element appears for a <code>Signer</code>, that signer can't create working signed
-     *        URLs.
+     *        <p>
+     *        We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     *        distribution to serve private content using trusted signers. This field contains a list of AWS account IDs
+     *        and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of
+     *        signed URLs or signed cookies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Distribution withActiveTrustedSigners(ActiveTrustedSigners activeTrustedSigners) {
         setActiveTrustedSigners(activeTrustedSigners);
+        return this;
+    }
+
+    /**
+     * <p>
+     * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     * distribution to serve private content using key groups. This field contains a list of key groups and the public
+     * keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.
+     * </p>
+     * 
+     * @param activeTrustedKeyGroups
+     *        CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     *        distribution to serve private content using key groups. This field contains a list of key groups and the
+     *        public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed
+     *        cookies.
+     */
+
+    public void setActiveTrustedKeyGroups(ActiveTrustedKeyGroups activeTrustedKeyGroups) {
+        this.activeTrustedKeyGroups = activeTrustedKeyGroups;
+    }
+
+    /**
+     * <p>
+     * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     * distribution to serve private content using key groups. This field contains a list of key groups and the public
+     * keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.
+     * </p>
+     * 
+     * @return CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     *         distribution to serve private content using key groups. This field contains a list of key groups and the
+     *         public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed
+     *         cookies.
+     */
+
+    public ActiveTrustedKeyGroups getActiveTrustedKeyGroups() {
+        return this.activeTrustedKeyGroups;
+    }
+
+    /**
+     * <p>
+     * CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     * distribution to serve private content using key groups. This field contains a list of key groups and the public
+     * keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed cookies.
+     * </p>
+     * 
+     * @param activeTrustedKeyGroups
+     *        CloudFront automatically adds this field to the response if you’ve configured a cache behavior in this
+     *        distribution to serve private content using key groups. This field contains a list of key groups and the
+     *        public keys in each key group that CloudFront can use to verify the signatures of signed URLs or signed
+     *        cookies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Distribution withActiveTrustedKeyGroups(ActiveTrustedKeyGroups activeTrustedKeyGroups) {
+        setActiveTrustedKeyGroups(activeTrustedKeyGroups);
         return this;
     }
 
@@ -663,6 +744,8 @@ public class Distribution implements Serializable, Cloneable {
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getActiveTrustedSigners() != null)
             sb.append("ActiveTrustedSigners: ").append(getActiveTrustedSigners()).append(",");
+        if (getActiveTrustedKeyGroups() != null)
+            sb.append("ActiveTrustedKeyGroups: ").append(getActiveTrustedKeyGroups()).append(",");
         if (getDistributionConfig() != null)
             sb.append("DistributionConfig: ").append(getDistributionConfig()).append(",");
         if (getAliasICPRecordals() != null)
@@ -710,6 +793,10 @@ public class Distribution implements Serializable, Cloneable {
             return false;
         if (other.getActiveTrustedSigners() != null && other.getActiveTrustedSigners().equals(this.getActiveTrustedSigners()) == false)
             return false;
+        if (other.getActiveTrustedKeyGroups() == null ^ this.getActiveTrustedKeyGroups() == null)
+            return false;
+        if (other.getActiveTrustedKeyGroups() != null && other.getActiveTrustedKeyGroups().equals(this.getActiveTrustedKeyGroups()) == false)
+            return false;
         if (other.getDistributionConfig() == null ^ this.getDistributionConfig() == null)
             return false;
         if (other.getDistributionConfig() != null && other.getDistributionConfig().equals(this.getDistributionConfig()) == false)
@@ -733,6 +820,7 @@ public class Distribution implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInProgressInvalidationBatches() == null) ? 0 : getInProgressInvalidationBatches().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getActiveTrustedSigners() == null) ? 0 : getActiveTrustedSigners().hashCode());
+        hashCode = prime * hashCode + ((getActiveTrustedKeyGroups() == null) ? 0 : getActiveTrustedKeyGroups().hashCode());
         hashCode = prime * hashCode + ((getDistributionConfig() == null) ? 0 : getDistributionConfig().hashCode());
         hashCode = prime * hashCode + ((getAliasICPRecordals() == null) ? 0 : getAliasICPRecordals().hashCode());
         return hashCode;

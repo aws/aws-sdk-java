@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidConfigurationExceptionUnmarshaller() {
-        super(com.amazonaws.services.cognitosync.model.InvalidConfigurationException.class, "InvalidConfiguration");
+        super(com.amazonaws.services.cognitosync.model.InvalidConfigurationException.class, "InvalidConfigurationException");
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,12 @@ public class EC2ResourceUtilizationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxMemoryUtilizationPercentage").build();
     private static final MarshallingInfo<String> MAXSTORAGEUTILIZATIONPERCENTAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxStorageUtilizationPercentage").build();
+    private static final MarshallingInfo<StructuredPojo> EBSRESOURCEUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EBSResourceUtilization").build();
+    private static final MarshallingInfo<StructuredPojo> DISKRESOURCEUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiskResourceUtilization").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKRESOURCEUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkResourceUtilization").build();
 
     private static final EC2ResourceUtilizationMarshaller instance = new EC2ResourceUtilizationMarshaller();
 
@@ -53,6 +59,9 @@ public class EC2ResourceUtilizationMarshaller {
             protocolMarshaller.marshall(eC2ResourceUtilization.getMaxCpuUtilizationPercentage(), MAXCPUUTILIZATIONPERCENTAGE_BINDING);
             protocolMarshaller.marshall(eC2ResourceUtilization.getMaxMemoryUtilizationPercentage(), MAXMEMORYUTILIZATIONPERCENTAGE_BINDING);
             protocolMarshaller.marshall(eC2ResourceUtilization.getMaxStorageUtilizationPercentage(), MAXSTORAGEUTILIZATIONPERCENTAGE_BINDING);
+            protocolMarshaller.marshall(eC2ResourceUtilization.getEBSResourceUtilization(), EBSRESOURCEUTILIZATION_BINDING);
+            protocolMarshaller.marshall(eC2ResourceUtilization.getDiskResourceUtilization(), DISKRESOURCEUTILIZATION_BINDING);
+            protocolMarshaller.marshall(eC2ResourceUtilization.getNetworkResourceUtilization(), NETWORKRESOURCEUTILIZATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

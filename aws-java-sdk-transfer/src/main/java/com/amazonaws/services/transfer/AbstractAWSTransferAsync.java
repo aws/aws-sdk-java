@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,19 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAccessResult> createAccessAsync(CreateAccessRequest request) {
+
+        return createAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessResult> createAccessAsync(CreateAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessRequest, CreateAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateServerResult> createServerAsync(CreateServerRequest request) {
 
         return createServerAsync(request, null);
@@ -49,6 +62,19 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     @Override
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessResult> deleteAccessAsync(DeleteAccessRequest request) {
+
+        return deleteAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessResult> deleteAccessAsync(DeleteAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessRequest, DeleteAccessResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -93,6 +119,32 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccessResult> describeAccessAsync(DescribeAccessRequest request) {
+
+        return describeAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccessResult> describeAccessAsync(DescribeAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccessRequest, DescribeAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityPolicyResult> describeSecurityPolicyAsync(DescribeSecurityPolicyRequest request) {
+
+        return describeSecurityPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityPolicyResult> describeSecurityPolicyAsync(DescribeSecurityPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeSecurityPolicyRequest, DescribeSecurityPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeServerResult> describeServerAsync(DescribeServerRequest request) {
 
         return describeServerAsync(request, null);
@@ -127,6 +179,32 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     @Override
     public java.util.concurrent.Future<ImportSshPublicKeyResult> importSshPublicKeyAsync(ImportSshPublicKeyRequest request,
             com.amazonaws.handlers.AsyncHandler<ImportSshPublicKeyRequest, ImportSshPublicKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessesResult> listAccessesAsync(ListAccessesRequest request) {
+
+        return listAccessesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessesResult> listAccessesAsync(ListAccessesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAccessesRequest, ListAccessesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPoliciesResult> listSecurityPoliciesAsync(ListSecurityPoliciesRequest request) {
+
+        return listSecurityPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPoliciesResult> listSecurityPoliciesAsync(ListSecurityPoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSecurityPoliciesRequest, ListSecurityPoliciesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -231,6 +309,19 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccessResult> updateAccessAsync(UpdateAccessRequest request) {
+
+        return updateAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccessResult> updateAccessAsync(UpdateAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAccessRequest, UpdateAccessResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

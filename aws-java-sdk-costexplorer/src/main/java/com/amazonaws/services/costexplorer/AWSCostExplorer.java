@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,40 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Creates a new cost anomaly detection monitor with the requested type and monitor specification.
+     * </p>
+     * 
+     * @param createAnomalyMonitorRequest
+     * @return Result of the CreateAnomalyMonitor operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.CreateAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateAnomalyMonitorResult createAnomalyMonitor(CreateAnomalyMonitorRequest createAnomalyMonitorRequest);
+
+    /**
+     * <p>
+     * Adds a subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with
+     * email or SNS notifications. Email subscribers can set a dollar threshold and a time frequency for receiving
+     * notifications.
+     * </p>
+     * 
+     * @param createAnomalySubscriptionRequest
+     * @return Result of the CreateAnomalySubscription operation returned by the service.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.CreateAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateAnomalySubscriptionResult createAnomalySubscription(CreateAnomalySubscriptionRequest createAnomalySubscriptionRequest);
+
+    /**
+     * <p>
      * Creates a new Cost Category with the requested name and rules.
      * </p>
      * 
@@ -69,7 +103,7 @@ public interface AWSCostExplorer {
      * @return Result of the CreateCostCategoryDefinition operation returned by the service.
      * @throws ServiceQuotaExceededException
      *         You've reached the limit on the number of resources you can create, or exceeded the size of an individual
-     *         resources.
+     *         resource.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
      * @sample AWSCostExplorer.CreateCostCategoryDefinition
@@ -77,6 +111,40 @@ public interface AWSCostExplorer {
      *      target="_top">AWS API Documentation</a>
      */
     CreateCostCategoryDefinitionResult createCostCategoryDefinition(CreateCostCategoryDefinitionRequest createCostCategoryDefinitionRequest);
+
+    /**
+     * <p>
+     * Deletes a cost anomaly monitor.
+     * </p>
+     * 
+     * @param deleteAnomalyMonitorRequest
+     * @return Result of the DeleteAnomalyMonitor operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @sample AWSCostExplorer.DeleteAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAnomalyMonitorResult deleteAnomalyMonitor(DeleteAnomalyMonitorRequest deleteAnomalyMonitorRequest);
+
+    /**
+     * <p>
+     * Deletes a cost anomaly subscription.
+     * </p>
+     * 
+     * @param deleteAnomalySubscriptionRequest
+     * @return Result of the DeleteAnomalySubscription operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownSubscriptionException
+     *         The cost anomaly subscription does not exist for the account.
+     * @sample AWSCostExplorer.DeleteAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteAnomalySubscriptionResult deleteAnomalySubscription(DeleteAnomalySubscriptionRequest deleteAnomalySubscriptionRequest);
 
     /**
      * <p>
@@ -120,13 +188,76 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves all of the cost anomalies detected on your account, during the time period specified by the
+     * <code>DateInterval</code> object.
+     * </p>
+     * 
+     * @param getAnomaliesRequest
+     * @return Result of the GetAnomalies operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetAnomalies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAnomaliesResult getAnomalies(GetAnomaliesRequest getAnomaliesRequest);
+
+    /**
+     * <p>
+     * Retrieves the cost anomaly monitor definitions for your account. You can filter using a list of cost anomaly
+     * monitor Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param getAnomalyMonitorsRequest
+     * @return Result of the GetAnomalyMonitors operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetAnomalyMonitors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalyMonitors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAnomalyMonitorsResult getAnomalyMonitors(GetAnomalyMonitorsRequest getAnomalyMonitorsRequest);
+
+    /**
+     * <p>
+     * Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly
+     * monitor Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param getAnomalySubscriptionsRequest
+     * @return Result of the GetAnomalySubscriptions operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownSubscriptionException
+     *         The cost anomaly subscription does not exist for the account.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetAnomalySubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalySubscriptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAnomalySubscriptionsResult getAnomalySubscriptions(GetAnomalySubscriptionsRequest getAnomalySubscriptionsRequest);
+
+    /**
+     * <p>
      * Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric, such as
      * <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter
      * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
      * range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Management account in an organization in AWS Organizations have access to all
      * member accounts.
+     * </p>
+     * <p>
+     * For information about filter limitations, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-limits.html">Quotas and
+     * restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param getCostAndUsageRequest
@@ -155,7 +286,7 @@ public interface AWSCostExplorer {
      * can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a
      * specific time range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
-     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * >GetDimensionValues</a> operation. Management account in an organization in AWS Organizations have access to all
      * member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.
      * </p>
      * <note>
@@ -185,6 +316,35 @@ public interface AWSCostExplorer {
      *      target="_top">AWS API Documentation</a>
      */
     GetCostAndUsageWithResourcesResult getCostAndUsageWithResources(GetCostAndUsageWithResourcesRequest getCostAndUsageWithResourcesRequest);
+
+    /**
+     * <p>
+     * Retrieves an array of Cost Category names and values incurred cost.
+     * </p>
+     * <note>
+     * <p>
+     * If some Cost Category names and values are not associated with any cost, they will not be returned by this API.
+     * </p>
+     * </note>
+     * 
+     * @param getCostCategoriesRequest
+     * @return Result of the GetCostCategories operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws BillExpirationException
+     *         The requested report expired. Update the date interval and try again.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @throws RequestChangedException
+     *         Your request parameters changed between pages. Try again with the old parameters or without a pagination
+     *         token.
+     * @sample AWSCostExplorer.GetCostCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCostCategoriesResult getCostCategories(GetCostCategoriesRequest getCostCategoriesRequest);
 
     /**
      * <p>
@@ -233,7 +393,7 @@ public interface AWSCostExplorer {
      * <p>
      * Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic
      * Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a
-     * reservation. An organization's master account can see the coverage of the associated member accounts. This
+     * reservation. An organization's management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about
      * reservation usage by the following dimensions:
      * </p>
@@ -356,9 +516,9 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves the reservation utilization for your account. Master accounts in an organization have access to member
-     * accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to
-     * determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
+     * Retrieves the reservation utilization for your account. Management account in an organization have access to
+     * member accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code>
+     * to determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
      * </p>
      * 
      * @param getReservationUtilizationRequest
@@ -377,13 +537,13 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * Creates recommendations that helps you save cost by identifying idle and underutilized Amazon EC2 instances.
+     * Creates recommendations that help you save cost by identifying idle and underutilized Amazon EC2 instances.
      * </p>
      * <p>
      * Recommendations are generated to either downsize or terminate instances, along with providing savings detail and
      * metrics. For details on calculation and function, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Optimizing Your Cost with
-     * Rightsizing Recommendations</a>.
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing Your Cost with
+     * Rightsizing Recommendations</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param getRightsizingRecommendationRequest
@@ -401,7 +561,7 @@ public interface AWSCostExplorer {
     /**
      * <p>
      * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
-     * a Savings Plan. An organization’s master account can see the coverage of the associated member accounts. This
+     * a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for
      * Savings Plans usage with the following dimensions:
      * </p>
@@ -466,8 +626,8 @@ public interface AWSCostExplorer {
     /**
      * <p>
      * Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity.
-     * Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in
-     * <code>SAVINGS_PLANS</code> to determine the possible dimension values.
+     * Management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code>
+     * in <code>SAVINGS_PLANS</code> to determine the possible dimension values.
      * </p>
      * <note>
      * <p>
@@ -583,6 +743,58 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Modifies the feedback property of a given cost anomaly.
+     * </p>
+     * 
+     * @param provideAnomalyFeedbackRequest
+     * @return Result of the ProvideAnomalyFeedback operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.ProvideAnomalyFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ProvideAnomalyFeedbackResult provideAnomalyFeedback(ProvideAnomalyFeedbackRequest provideAnomalyFeedbackRequest);
+
+    /**
+     * <p>
+     * Updates an existing cost anomaly monitor. The changes made are applied going forward, and does not change
+     * anomalies detected in the past.
+     * </p>
+     * 
+     * @param updateAnomalyMonitorRequest
+     * @return Result of the UpdateAnomalyMonitor operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @sample AWSCostExplorer.UpdateAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAnomalyMonitorResult updateAnomalyMonitor(UpdateAnomalyMonitorRequest updateAnomalyMonitorRequest);
+
+    /**
+     * <p>
+     * Updates an existing cost anomaly monitor subscription.
+     * </p>
+     * 
+     * @param updateAnomalySubscriptionRequest
+     * @return Result of the UpdateAnomalySubscription operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @throws UnknownSubscriptionException
+     *         The cost anomaly subscription does not exist for the account.
+     * @sample AWSCostExplorer.UpdateAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateAnomalySubscriptionResult updateAnomalySubscription(UpdateAnomalySubscriptionRequest updateAnomalySubscriptionRequest);
+
+    /**
+     * <p>
      * Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current
      * month’s expenses and future expenses. This won’t change categorization for the previous months.
      * </p>
@@ -593,7 +805,7 @@ public interface AWSCostExplorer {
      *         The specified ARN in the request doesn't exist.
      * @throws ServiceQuotaExceededException
      *         You've reached the limit on the number of resources you can create, or exceeded the size of an individual
-     *         resources.
+     *         resource.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
      * @sample AWSCostExplorer.UpdateCostCategoryDefinition

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,9 @@ public class ListAnalyzedResourcesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve a list of analyzed resources from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve a list of analyzed resources from.
      * </p>
      */
     private String analyzerArn;
@@ -55,11 +57,15 @@ public class ListAnalyzedResourcesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve a list of analyzed resources from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve a list of analyzed resources from.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer to retrieve a list of analyzed resources from.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> to retrieve a list of analyzed resources from.
      */
 
     public void setAnalyzerArn(String analyzerArn) {
@@ -68,10 +74,14 @@ public class ListAnalyzedResourcesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve a list of analyzed resources from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve a list of analyzed resources from.
      * </p>
      * 
-     * @return The ARN of the analyzer to retrieve a list of analyzed resources from.
+     * @return The <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *         >ARN of the analyzer</a> to retrieve a list of analyzed resources from.
      */
 
     public String getAnalyzerArn() {
@@ -80,11 +90,15 @@ public class ListAnalyzedResourcesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve a list of analyzed resources from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve a list of analyzed resources from.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer to retrieve a list of analyzed resources from.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> to retrieve a list of analyzed resources from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

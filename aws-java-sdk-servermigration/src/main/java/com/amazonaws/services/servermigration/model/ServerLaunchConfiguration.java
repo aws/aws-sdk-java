@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,37 +30,37 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the server the launch configuration is associated with.
+     * The ID of the server with which the launch configuration is associated.
      * </p>
      */
     private Server server;
     /**
      * <p>
-     * Logical ID of the server in the Amazon CloudFormation template.
+     * The logical ID of the server in the AWS CloudFormation template.
      * </p>
      */
     private String logicalId;
     /**
      * <p>
-     * Identifier of the VPC the server should be launched into.
+     * The ID of the VPC into which the server should be launched.
      * </p>
      */
     private String vpc;
     /**
      * <p>
-     * Identifier of the subnet the server should be launched into.
+     * The ID of the subnet the server should be launched into.
      * </p>
      */
     private String subnet;
     /**
      * <p>
-     * Identifier of the security group that applies to the launched server.
+     * The ID of the security group that applies to the launched server.
      * </p>
      */
     private String securityGroup;
     /**
      * <p>
-     * Name of the EC2 SSH Key to be used for connecting to the launched server.
+     * The name of the Amazon EC2 SSH key to be used for connecting to the launched server.
      * </p>
      */
     private String ec2KeyName;
@@ -72,24 +72,38 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
     private UserData userData;
     /**
      * <p>
-     * Instance type to be used for launching the server.
+     * The instance type to use when launching the server.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * If true, a publicly accessible IP address is created when launching the server.
+     * Indicates whether a publicly accessible IP address is created when launching the server.
      * </p>
      */
     private Boolean associatePublicIpAddress;
+    /**
+     * <p>
+     * The name of the IAM instance profile.
+     * </p>
+     */
+    private String iamInstanceProfileName;
+
+    private S3Location configureScript;
+    /**
+     * <p>
+     * The type of configuration script.
+     * </p>
+     */
+    private String configureScriptType;
 
     /**
      * <p>
-     * Identifier of the server the launch configuration is associated with.
+     * The ID of the server with which the launch configuration is associated.
      * </p>
      * 
      * @param server
-     *        Identifier of the server the launch configuration is associated with.
+     *        The ID of the server with which the launch configuration is associated.
      */
 
     public void setServer(Server server) {
@@ -98,10 +112,10 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the server the launch configuration is associated with.
+     * The ID of the server with which the launch configuration is associated.
      * </p>
      * 
-     * @return Identifier of the server the launch configuration is associated with.
+     * @return The ID of the server with which the launch configuration is associated.
      */
 
     public Server getServer() {
@@ -110,11 +124,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the server the launch configuration is associated with.
+     * The ID of the server with which the launch configuration is associated.
      * </p>
      * 
      * @param server
-     *        Identifier of the server the launch configuration is associated with.
+     *        The ID of the server with which the launch configuration is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,11 +139,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Logical ID of the server in the Amazon CloudFormation template.
+     * The logical ID of the server in the AWS CloudFormation template.
      * </p>
      * 
      * @param logicalId
-     *        Logical ID of the server in the Amazon CloudFormation template.
+     *        The logical ID of the server in the AWS CloudFormation template.
      */
 
     public void setLogicalId(String logicalId) {
@@ -138,10 +152,10 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Logical ID of the server in the Amazon CloudFormation template.
+     * The logical ID of the server in the AWS CloudFormation template.
      * </p>
      * 
-     * @return Logical ID of the server in the Amazon CloudFormation template.
+     * @return The logical ID of the server in the AWS CloudFormation template.
      */
 
     public String getLogicalId() {
@@ -150,11 +164,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Logical ID of the server in the Amazon CloudFormation template.
+     * The logical ID of the server in the AWS CloudFormation template.
      * </p>
      * 
      * @param logicalId
-     *        Logical ID of the server in the Amazon CloudFormation template.
+     *        The logical ID of the server in the AWS CloudFormation template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,11 +179,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the VPC the server should be launched into.
+     * The ID of the VPC into which the server should be launched.
      * </p>
      * 
      * @param vpc
-     *        Identifier of the VPC the server should be launched into.
+     *        The ID of the VPC into which the server should be launched.
      */
 
     public void setVpc(String vpc) {
@@ -178,10 +192,10 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the VPC the server should be launched into.
+     * The ID of the VPC into which the server should be launched.
      * </p>
      * 
-     * @return Identifier of the VPC the server should be launched into.
+     * @return The ID of the VPC into which the server should be launched.
      */
 
     public String getVpc() {
@@ -190,11 +204,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the VPC the server should be launched into.
+     * The ID of the VPC into which the server should be launched.
      * </p>
      * 
      * @param vpc
-     *        Identifier of the VPC the server should be launched into.
+     *        The ID of the VPC into which the server should be launched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,11 +219,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the subnet the server should be launched into.
+     * The ID of the subnet the server should be launched into.
      * </p>
      * 
      * @param subnet
-     *        Identifier of the subnet the server should be launched into.
+     *        The ID of the subnet the server should be launched into.
      */
 
     public void setSubnet(String subnet) {
@@ -218,10 +232,10 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the subnet the server should be launched into.
+     * The ID of the subnet the server should be launched into.
      * </p>
      * 
-     * @return Identifier of the subnet the server should be launched into.
+     * @return The ID of the subnet the server should be launched into.
      */
 
     public String getSubnet() {
@@ -230,11 +244,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the subnet the server should be launched into.
+     * The ID of the subnet the server should be launched into.
      * </p>
      * 
      * @param subnet
-     *        Identifier of the subnet the server should be launched into.
+     *        The ID of the subnet the server should be launched into.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +259,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the security group that applies to the launched server.
+     * The ID of the security group that applies to the launched server.
      * </p>
      * 
      * @param securityGroup
-     *        Identifier of the security group that applies to the launched server.
+     *        The ID of the security group that applies to the launched server.
      */
 
     public void setSecurityGroup(String securityGroup) {
@@ -258,10 +272,10 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the security group that applies to the launched server.
+     * The ID of the security group that applies to the launched server.
      * </p>
      * 
-     * @return Identifier of the security group that applies to the launched server.
+     * @return The ID of the security group that applies to the launched server.
      */
 
     public String getSecurityGroup() {
@@ -270,11 +284,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Identifier of the security group that applies to the launched server.
+     * The ID of the security group that applies to the launched server.
      * </p>
      * 
      * @param securityGroup
-     *        Identifier of the security group that applies to the launched server.
+     *        The ID of the security group that applies to the launched server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,11 +299,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Name of the EC2 SSH Key to be used for connecting to the launched server.
+     * The name of the Amazon EC2 SSH key to be used for connecting to the launched server.
      * </p>
      * 
      * @param ec2KeyName
-     *        Name of the EC2 SSH Key to be used for connecting to the launched server.
+     *        The name of the Amazon EC2 SSH key to be used for connecting to the launched server.
      */
 
     public void setEc2KeyName(String ec2KeyName) {
@@ -298,10 +312,10 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Name of the EC2 SSH Key to be used for connecting to the launched server.
+     * The name of the Amazon EC2 SSH key to be used for connecting to the launched server.
      * </p>
      * 
-     * @return Name of the EC2 SSH Key to be used for connecting to the launched server.
+     * @return The name of the Amazon EC2 SSH key to be used for connecting to the launched server.
      */
 
     public String getEc2KeyName() {
@@ -310,11 +324,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Name of the EC2 SSH Key to be used for connecting to the launched server.
+     * The name of the Amazon EC2 SSH key to be used for connecting to the launched server.
      * </p>
      * 
      * @param ec2KeyName
-     *        Name of the EC2 SSH Key to be used for connecting to the launched server.
+     *        The name of the Amazon EC2 SSH key to be used for connecting to the launched server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -365,11 +379,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Instance type to be used for launching the server.
+     * The instance type to use when launching the server.
      * </p>
      * 
      * @param instanceType
-     *        Instance type to be used for launching the server.
+     *        The instance type to use when launching the server.
      */
 
     public void setInstanceType(String instanceType) {
@@ -378,10 +392,10 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Instance type to be used for launching the server.
+     * The instance type to use when launching the server.
      * </p>
      * 
-     * @return Instance type to be used for launching the server.
+     * @return The instance type to use when launching the server.
      */
 
     public String getInstanceType() {
@@ -390,11 +404,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Instance type to be used for launching the server.
+     * The instance type to use when launching the server.
      * </p>
      * 
      * @param instanceType
-     *        Instance type to be used for launching the server.
+     *        The instance type to use when launching the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,11 +419,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * If true, a publicly accessible IP address is created when launching the server.
+     * Indicates whether a publicly accessible IP address is created when launching the server.
      * </p>
      * 
      * @param associatePublicIpAddress
-     *        If true, a publicly accessible IP address is created when launching the server.
+     *        Indicates whether a publicly accessible IP address is created when launching the server.
      */
 
     public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
@@ -418,10 +432,10 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * If true, a publicly accessible IP address is created when launching the server.
+     * Indicates whether a publicly accessible IP address is created when launching the server.
      * </p>
      * 
-     * @return If true, a publicly accessible IP address is created when launching the server.
+     * @return Indicates whether a publicly accessible IP address is created when launching the server.
      */
 
     public Boolean getAssociatePublicIpAddress() {
@@ -430,11 +444,11 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * If true, a publicly accessible IP address is created when launching the server.
+     * Indicates whether a publicly accessible IP address is created when launching the server.
      * </p>
      * 
      * @param associatePublicIpAddress
-     *        If true, a publicly accessible IP address is created when launching the server.
+     *        Indicates whether a publicly accessible IP address is created when launching the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -445,14 +459,139 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * If true, a publicly accessible IP address is created when launching the server.
+     * Indicates whether a publicly accessible IP address is created when launching the server.
      * </p>
      * 
-     * @return If true, a publicly accessible IP address is created when launching the server.
+     * @return Indicates whether a publicly accessible IP address is created when launching the server.
      */
 
     public Boolean isAssociatePublicIpAddress() {
         return this.associatePublicIpAddress;
+    }
+
+    /**
+     * <p>
+     * The name of the IAM instance profile.
+     * </p>
+     * 
+     * @param iamInstanceProfileName
+     *        The name of the IAM instance profile.
+     */
+
+    public void setIamInstanceProfileName(String iamInstanceProfileName) {
+        this.iamInstanceProfileName = iamInstanceProfileName;
+    }
+
+    /**
+     * <p>
+     * The name of the IAM instance profile.
+     * </p>
+     * 
+     * @return The name of the IAM instance profile.
+     */
+
+    public String getIamInstanceProfileName() {
+        return this.iamInstanceProfileName;
+    }
+
+    /**
+     * <p>
+     * The name of the IAM instance profile.
+     * </p>
+     * 
+     * @param iamInstanceProfileName
+     *        The name of the IAM instance profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServerLaunchConfiguration withIamInstanceProfileName(String iamInstanceProfileName) {
+        setIamInstanceProfileName(iamInstanceProfileName);
+        return this;
+    }
+
+    /**
+     * @param configureScript
+     */
+
+    public void setConfigureScript(S3Location configureScript) {
+        this.configureScript = configureScript;
+    }
+
+    /**
+     * @return
+     */
+
+    public S3Location getConfigureScript() {
+        return this.configureScript;
+    }
+
+    /**
+     * @param configureScript
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServerLaunchConfiguration withConfigureScript(S3Location configureScript) {
+        setConfigureScript(configureScript);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of configuration script.
+     * </p>
+     * 
+     * @param configureScriptType
+     *        The type of configuration script.
+     * @see ScriptType
+     */
+
+    public void setConfigureScriptType(String configureScriptType) {
+        this.configureScriptType = configureScriptType;
+    }
+
+    /**
+     * <p>
+     * The type of configuration script.
+     * </p>
+     * 
+     * @return The type of configuration script.
+     * @see ScriptType
+     */
+
+    public String getConfigureScriptType() {
+        return this.configureScriptType;
+    }
+
+    /**
+     * <p>
+     * The type of configuration script.
+     * </p>
+     * 
+     * @param configureScriptType
+     *        The type of configuration script.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScriptType
+     */
+
+    public ServerLaunchConfiguration withConfigureScriptType(String configureScriptType) {
+        setConfigureScriptType(configureScriptType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of configuration script.
+     * </p>
+     * 
+     * @param configureScriptType
+     *        The type of configuration script.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ScriptType
+     */
+
+    public ServerLaunchConfiguration withConfigureScriptType(ScriptType configureScriptType) {
+        this.configureScriptType = configureScriptType.toString();
+        return this;
     }
 
     /**
@@ -484,7 +623,13 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getAssociatePublicIpAddress() != null)
-            sb.append("AssociatePublicIpAddress: ").append(getAssociatePublicIpAddress());
+            sb.append("AssociatePublicIpAddress: ").append(getAssociatePublicIpAddress()).append(",");
+        if (getIamInstanceProfileName() != null)
+            sb.append("IamInstanceProfileName: ").append(getIamInstanceProfileName()).append(",");
+        if (getConfigureScript() != null)
+            sb.append("ConfigureScript: ").append(getConfigureScript()).append(",");
+        if (getConfigureScriptType() != null)
+            sb.append("ConfigureScriptType: ").append(getConfigureScriptType());
         sb.append("}");
         return sb.toString();
     }
@@ -535,6 +680,18 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
             return false;
         if (other.getAssociatePublicIpAddress() != null && other.getAssociatePublicIpAddress().equals(this.getAssociatePublicIpAddress()) == false)
             return false;
+        if (other.getIamInstanceProfileName() == null ^ this.getIamInstanceProfileName() == null)
+            return false;
+        if (other.getIamInstanceProfileName() != null && other.getIamInstanceProfileName().equals(this.getIamInstanceProfileName()) == false)
+            return false;
+        if (other.getConfigureScript() == null ^ this.getConfigureScript() == null)
+            return false;
+        if (other.getConfigureScript() != null && other.getConfigureScript().equals(this.getConfigureScript()) == false)
+            return false;
+        if (other.getConfigureScriptType() == null ^ this.getConfigureScriptType() == null)
+            return false;
+        if (other.getConfigureScriptType() != null && other.getConfigureScriptType().equals(this.getConfigureScriptType()) == false)
+            return false;
         return true;
     }
 
@@ -552,6 +709,9 @@ public class ServerLaunchConfiguration implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getAssociatePublicIpAddress() == null) ? 0 : getAssociatePublicIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getIamInstanceProfileName() == null) ? 0 : getIamInstanceProfileName().hashCode());
+        hashCode = prime * hashCode + ((getConfigureScript() == null) ? 0 : getConfigureScript().hashCode());
+        hashCode = prime * hashCode + ((getConfigureScriptType() == null) ? 0 : getConfigureScriptType().hashCode());
         return hashCode;
     }
 

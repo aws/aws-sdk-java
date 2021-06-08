@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private AccessKeyDetails accessKeyDetails;
+    /**
+     * <p>
+     * Contains information on the S3 bucket.
+     * </p>
+     */
+    private java.util.List<S3BucketDetail> s3BucketDetails;
     /**
      * <p>
      * The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a
@@ -93,6 +99,76 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     public Resource withAccessKeyDetails(AccessKeyDetails accessKeyDetails) {
         setAccessKeyDetails(accessKeyDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information on the S3 bucket.
+     * </p>
+     * 
+     * @return Contains information on the S3 bucket.
+     */
+
+    public java.util.List<S3BucketDetail> getS3BucketDetails() {
+        return s3BucketDetails;
+    }
+
+    /**
+     * <p>
+     * Contains information on the S3 bucket.
+     * </p>
+     * 
+     * @param s3BucketDetails
+     *        Contains information on the S3 bucket.
+     */
+
+    public void setS3BucketDetails(java.util.Collection<S3BucketDetail> s3BucketDetails) {
+        if (s3BucketDetails == null) {
+            this.s3BucketDetails = null;
+            return;
+        }
+
+        this.s3BucketDetails = new java.util.ArrayList<S3BucketDetail>(s3BucketDetails);
+    }
+
+    /**
+     * <p>
+     * Contains information on the S3 bucket.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setS3BucketDetails(java.util.Collection)} or {@link #withS3BucketDetails(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param s3BucketDetails
+     *        Contains information on the S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withS3BucketDetails(S3BucketDetail... s3BucketDetails) {
+        if (this.s3BucketDetails == null) {
+            setS3BucketDetails(new java.util.ArrayList<S3BucketDetail>(s3BucketDetails.length));
+        }
+        for (S3BucketDetail ele : s3BucketDetails) {
+            this.s3BucketDetails.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information on the S3 bucket.
+     * </p>
+     * 
+     * @param s3BucketDetails
+     *        Contains information on the S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withS3BucketDetails(java.util.Collection<S3BucketDetail> s3BucketDetails) {
+        setS3BucketDetails(s3BucketDetails);
         return this;
     }
 
@@ -196,6 +272,8 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAccessKeyDetails() != null)
             sb.append("AccessKeyDetails: ").append(getAccessKeyDetails()).append(",");
+        if (getS3BucketDetails() != null)
+            sb.append("S3BucketDetails: ").append(getS3BucketDetails()).append(",");
         if (getInstanceDetails() != null)
             sb.append("InstanceDetails: ").append(getInstanceDetails()).append(",");
         if (getResourceType() != null)
@@ -218,6 +296,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAccessKeyDetails() != null && other.getAccessKeyDetails().equals(this.getAccessKeyDetails()) == false)
             return false;
+        if (other.getS3BucketDetails() == null ^ this.getS3BucketDetails() == null)
+            return false;
+        if (other.getS3BucketDetails() != null && other.getS3BucketDetails().equals(this.getS3BucketDetails()) == false)
+            return false;
         if (other.getInstanceDetails() == null ^ this.getInstanceDetails() == null)
             return false;
         if (other.getInstanceDetails() != null && other.getInstanceDetails().equals(this.getInstanceDetails()) == false)
@@ -235,6 +317,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccessKeyDetails() == null) ? 0 : getAccessKeyDetails().hashCode());
+        hashCode = prime * hashCode + ((getS3BucketDetails() == null) ? 0 : getS3BucketDetails().hashCode());
         hashCode = prime * hashCode + ((getInstanceDetails() == null) ? 0 : getInstanceDetails().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         return hashCode;

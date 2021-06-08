@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class ContainerPropertiesMarshaller {
             .marshallLocationName("command").build();
     private static final MarshallingInfo<String> JOBROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobRoleArn").build();
+    private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionRoleArn").build();
     private static final MarshallingInfo<List> VOLUMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("volumes").build();
     private static final MarshallingInfo<List> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,14 @@ public class ContainerPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceRequirements").build();
     private static final MarshallingInfo<StructuredPojo> LINUXPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("linuxParameters").build();
+    private static final MarshallingInfo<StructuredPojo> LOGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logConfiguration").build();
+    private static final MarshallingInfo<List> SECRETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("secrets").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> FARGATEPLATFORMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fargatePlatformConfiguration").build();
 
     private static final ContainerPropertiesMarshaller instance = new ContainerPropertiesMarshaller();
 
@@ -80,6 +90,7 @@ public class ContainerPropertiesMarshaller {
             protocolMarshaller.marshall(containerProperties.getMemory(), MEMORY_BINDING);
             protocolMarshaller.marshall(containerProperties.getCommand(), COMMAND_BINDING);
             protocolMarshaller.marshall(containerProperties.getJobRoleArn(), JOBROLEARN_BINDING);
+            protocolMarshaller.marshall(containerProperties.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(containerProperties.getVolumes(), VOLUMES_BINDING);
             protocolMarshaller.marshall(containerProperties.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(containerProperties.getMountPoints(), MOUNTPOINTS_BINDING);
@@ -90,6 +101,10 @@ public class ContainerPropertiesMarshaller {
             protocolMarshaller.marshall(containerProperties.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(containerProperties.getResourceRequirements(), RESOURCEREQUIREMENTS_BINDING);
             protocolMarshaller.marshall(containerProperties.getLinuxParameters(), LINUXPARAMETERS_BINDING);
+            protocolMarshaller.marshall(containerProperties.getLogConfiguration(), LOGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(containerProperties.getSecrets(), SECRETS_BINDING);
+            protocolMarshaller.marshall(containerProperties.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(containerProperties.getFargatePlatformConfiguration(), FARGATEPLATFORMCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * </p>
      */
     private String subnetId;
+    /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the Outpost.
+     * </p>
+     */
+    private String outpostId;
     /**
      * <p>
      * [Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP
@@ -124,6 +130,46 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     public AvailabilityZone withSubnetId(String subnetId) {
         setSubnetId(subnetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the Outpost.
+     * </p>
+     * 
+     * @param outpostId
+     *        [Application Load Balancers on Outposts] The ID of the Outpost.
+     */
+
+    public void setOutpostId(String outpostId) {
+        this.outpostId = outpostId;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the Outpost.
+     * </p>
+     * 
+     * @return [Application Load Balancers on Outposts] The ID of the Outpost.
+     */
+
+    public String getOutpostId() {
+        return this.outpostId;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the Outpost.
+     * </p>
+     * 
+     * @param outpostId
+     *        [Application Load Balancers on Outposts] The ID of the Outpost.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AvailabilityZone withOutpostId(String outpostId) {
+        setOutpostId(outpostId);
         return this;
     }
 
@@ -229,6 +275,8 @@ public class AvailabilityZone implements Serializable, Cloneable {
             sb.append("ZoneName: ").append(getZoneName()).append(",");
         if (getSubnetId() != null)
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getOutpostId() != null)
+            sb.append("OutpostId: ").append(getOutpostId()).append(",");
         if (getLoadBalancerAddresses() != null)
             sb.append("LoadBalancerAddresses: ").append(getLoadBalancerAddresses());
         sb.append("}");
@@ -253,6 +301,10 @@ public class AvailabilityZone implements Serializable, Cloneable {
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getOutpostId() == null ^ this.getOutpostId() == null)
+            return false;
+        if (other.getOutpostId() != null && other.getOutpostId().equals(this.getOutpostId()) == false)
+            return false;
         if (other.getLoadBalancerAddresses() == null ^ this.getLoadBalancerAddresses() == null)
             return false;
         if (other.getLoadBalancerAddresses() != null && other.getLoadBalancerAddresses().equals(this.getLoadBalancerAddresses()) == false)
@@ -267,6 +319,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getZoneName() == null) ? 0 : getZoneName().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getOutpostId() == null) ? 0 : getOutpostId().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerAddresses() == null) ? 0 : getLoadBalancerAddresses().hashCode());
         return hashCode;
     }

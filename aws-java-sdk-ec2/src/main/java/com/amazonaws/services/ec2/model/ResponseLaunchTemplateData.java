@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -190,6 +190,12 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      */
     private LaunchTemplateInstanceMetadataOptions metadataOptions;
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * </p>
+     */
+    private LaunchTemplateEnclaveOptions enclaveOptions;
 
     /**
      * <p>
@@ -1614,6 +1620,46 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * </p>
+     * 
+     * @param enclaveOptions
+     *        Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     */
+
+    public void setEnclaveOptions(LaunchTemplateEnclaveOptions enclaveOptions) {
+        this.enclaveOptions = enclaveOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * </p>
+     * 
+     * @return Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     */
+
+    public LaunchTemplateEnclaveOptions getEnclaveOptions() {
+        return this.enclaveOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * </p>
+     * 
+     * @param enclaveOptions
+     *        Indicates whether the instance is enabled for AWS Nitro Enclaves.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseLaunchTemplateData withEnclaveOptions(LaunchTemplateEnclaveOptions enclaveOptions) {
+        setEnclaveOptions(enclaveOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1676,7 +1722,9 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         if (getHibernationOptions() != null)
             sb.append("HibernationOptions: ").append(getHibernationOptions()).append(",");
         if (getMetadataOptions() != null)
-            sb.append("MetadataOptions: ").append(getMetadataOptions());
+            sb.append("MetadataOptions: ").append(getMetadataOptions()).append(",");
+        if (getEnclaveOptions() != null)
+            sb.append("EnclaveOptions: ").append(getEnclaveOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1797,6 +1845,10 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
             return false;
         if (other.getMetadataOptions() != null && other.getMetadataOptions().equals(this.getMetadataOptions()) == false)
             return false;
+        if (other.getEnclaveOptions() == null ^ this.getEnclaveOptions() == null)
+            return false;
+        if (other.getEnclaveOptions() != null && other.getEnclaveOptions().equals(this.getEnclaveOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1831,6 +1883,7 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLicenseSpecifications() == null) ? 0 : getLicenseSpecifications().hashCode());
         hashCode = prime * hashCode + ((getHibernationOptions() == null) ? 0 : getHibernationOptions().hashCode());
         hashCode = prime * hashCode + ((getMetadataOptions() == null) ? 0 : getMetadataOptions().hashCode());
+        hashCode = prime * hashCode + ((getEnclaveOptions() == null) ? 0 : getEnclaveOptions().hashCode());
         return hashCode;
     }
 

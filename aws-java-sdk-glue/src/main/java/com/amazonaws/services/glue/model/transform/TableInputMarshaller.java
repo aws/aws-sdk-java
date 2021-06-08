@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,8 @@ public class TableInputMarshaller {
             .marshallLocationName("TableType").build();
     private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Parameters").build();
+    private static final MarshallingInfo<StructuredPojo> TARGETTABLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetTable").build();
 
     private static final TableInputMarshaller instance = new TableInputMarshaller();
 
@@ -82,6 +84,7 @@ public class TableInputMarshaller {
             protocolMarshaller.marshall(tableInput.getViewExpandedText(), VIEWEXPANDEDTEXT_BINDING);
             protocolMarshaller.marshall(tableInput.getTableType(), TABLETYPE_BINDING);
             protocolMarshaller.marshall(tableInput.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(tableInput.getTargetTable(), TARGETTABLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

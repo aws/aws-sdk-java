@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class ListAuditFindingsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Boolean> LISTSUPPRESSEDFINDINGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("listSuppressedFindings").build();
 
     private static final ListAuditFindingsRequestMarshaller instance = new ListAuditFindingsRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class ListAuditFindingsRequestMarshaller {
             protocolMarshaller.marshall(listAuditFindingsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listAuditFindingsRequest.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(listAuditFindingsRequest.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(listAuditFindingsRequest.getListSuppressedFindings(), LISTSUPPRESSEDFINDINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

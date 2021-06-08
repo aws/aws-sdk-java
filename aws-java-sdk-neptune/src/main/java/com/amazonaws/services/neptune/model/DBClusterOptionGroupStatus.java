@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains status information for a DB cluster option group.
+ * Not supported by Neptune.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DBClusterOptionGroupStatus" target="_top">AWS
@@ -28,24 +28,24 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the DB cluster option group.
+     * Not supported by Neptune.
      * </p>
      */
     private String dBClusterOptionGroupName;
     /**
      * <p>
-     * Specifies the status of the DB cluster option group.
+     * Not supported by Neptune.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * Specifies the name of the DB cluster option group.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param dBClusterOptionGroupName
-     *        Specifies the name of the DB cluster option group.
+     *        Not supported by Neptune.
      */
 
     public void setDBClusterOptionGroupName(String dBClusterOptionGroupName) {
@@ -54,10 +54,10 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the DB cluster option group.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return Specifies the name of the DB cluster option group.
+     * @return Not supported by Neptune.
      */
 
     public String getDBClusterOptionGroupName() {
@@ -66,11 +66,11 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the DB cluster option group.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param dBClusterOptionGroupName
-     *        Specifies the name of the DB cluster option group.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +81,11 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the DB cluster option group.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param status
-     *        Specifies the status of the DB cluster option group.
+     *        Not supported by Neptune.
      */
 
     public void setStatus(String status) {
@@ -94,10 +94,10 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the DB cluster option group.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return Specifies the status of the DB cluster option group.
+     * @return Not supported by Neptune.
      */
 
     public String getStatus() {
@@ -106,11 +106,11 @@ public class DBClusterOptionGroupStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the status of the DB cluster option group.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param status
-     *        Specifies the status of the DB cluster option group.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,10 +54,17 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private Long applicationVersionId;
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application.
      * </p>
      */
     private String runtimeEnvironment;
+    /**
+     * <p>
+     * For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data
+     * Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * </p>
+     */
+    private String applicationMode;
 
     /**
      * <p>
@@ -240,11 +247,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application.
      * @see RuntimeEnvironment
      */
 
@@ -254,10 +261,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application.
      * </p>
      * 
-     * @return The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * @return The runtime environment for the application.
      * @see RuntimeEnvironment
      */
 
@@ -267,11 +274,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -283,17 +290,84 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
 
     public ApplicationSummary withRuntimeEnvironment(RuntimeEnvironment runtimeEnvironment) {
         this.runtimeEnvironment = runtimeEnvironment.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data
+     * Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * </p>
+     * 
+     * @param applicationMode
+     *        For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a
+     *        Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * @see ApplicationMode
+     */
+
+    public void setApplicationMode(String applicationMode) {
+        this.applicationMode = applicationMode;
+    }
+
+    /**
+     * <p>
+     * For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data
+     * Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * </p>
+     * 
+     * @return For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a
+     *         Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * @see ApplicationMode
+     */
+
+    public String getApplicationMode() {
+        return this.applicationMode;
+    }
+
+    /**
+     * <p>
+     * For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data
+     * Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * </p>
+     * 
+     * @param applicationMode
+     *        For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a
+     *        Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationMode
+     */
+
+    public ApplicationSummary withApplicationMode(String applicationMode) {
+        setApplicationMode(applicationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a Kinesis Data
+     * Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * </p>
+     * 
+     * @param applicationMode
+     *        For a Kinesis Data Analytics for Apache Flink application, the mode is <code>STREAMING</code>. For a
+     *        Kinesis Data Analytics Studio notebook, it is <code>INTERACTIVE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationMode
+     */
+
+    public ApplicationSummary withApplicationMode(ApplicationMode applicationMode) {
+        this.applicationMode = applicationMode.toString();
         return this;
     }
 
@@ -318,7 +392,9 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
         if (getApplicationVersionId() != null)
             sb.append("ApplicationVersionId: ").append(getApplicationVersionId()).append(",");
         if (getRuntimeEnvironment() != null)
-            sb.append("RuntimeEnvironment: ").append(getRuntimeEnvironment());
+            sb.append("RuntimeEnvironment: ").append(getRuntimeEnvironment()).append(",");
+        if (getApplicationMode() != null)
+            sb.append("ApplicationMode: ").append(getApplicationMode());
         sb.append("}");
         return sb.toString();
     }
@@ -353,6 +429,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRuntimeEnvironment() != null && other.getRuntimeEnvironment().equals(this.getRuntimeEnvironment()) == false)
             return false;
+        if (other.getApplicationMode() == null ^ this.getApplicationMode() == null)
+            return false;
+        if (other.getApplicationMode() != null && other.getApplicationMode().equals(this.getApplicationMode()) == false)
+            return false;
         return true;
     }
 
@@ -366,6 +446,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getApplicationStatus() == null) ? 0 : getApplicationStatus().hashCode());
         hashCode = prime * hashCode + ((getApplicationVersionId() == null) ? 0 : getApplicationVersionId().hashCode());
         hashCode = prime * hashCode + ((getRuntimeEnvironment() == null) ? 0 : getRuntimeEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getApplicationMode() == null) ? 0 : getApplicationMode().hashCode());
         return hashCode;
     }
 

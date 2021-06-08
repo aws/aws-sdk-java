@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -129,6 +129,39 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all
+     * users of the same AWS account.
+     * </p>
+     * 
+     * @param createDataCatalogRequest
+     * @return A Java Future containing the result of the CreateDataCatalog operation returned by the service.
+     * @sample AmazonAthenaAsync.CreateDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDataCatalogResult> createDataCatalogAsync(CreateDataCatalogRequest createDataCatalogRequest);
+
+    /**
+     * <p>
+     * Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all
+     * users of the same AWS account.
+     * </p>
+     * 
+     * @param createDataCatalogRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDataCatalog operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.CreateDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDataCatalogResult> createDataCatalogAsync(CreateDataCatalogRequest createDataCatalogRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDataCatalogRequest, CreateDataCatalogResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a named query in the specified workgroup. Requires that you have access to the workgroup.
      * </p>
      * <p>
@@ -170,6 +203,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Creates a prepared statement for use with SQL queries in Athena.
+     * </p>
+     * 
+     * @param createPreparedStatementRequest
+     * @return A Java Future containing the result of the CreatePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsync.CreatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePreparedStatementResult> createPreparedStatementAsync(CreatePreparedStatementRequest createPreparedStatementRequest);
+
+    /**
+     * <p>
+     * Creates a prepared statement for use with SQL queries in Athena.
+     * </p>
+     * 
+     * @param createPreparedStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.CreatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePreparedStatementResult> createPreparedStatementAsync(CreatePreparedStatementRequest createPreparedStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePreparedStatementRequest, CreatePreparedStatementResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a workgroup with the specified name.
      * </p>
      * 
@@ -198,6 +262,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<CreateWorkGroupResult> createWorkGroupAsync(CreateWorkGroupRequest createWorkGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateWorkGroupRequest, CreateWorkGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a data catalog.
+     * </p>
+     * 
+     * @param deleteDataCatalogRequest
+     * @return A Java Future containing the result of the DeleteDataCatalog operation returned by the service.
+     * @sample AmazonAthenaAsync.DeleteDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataCatalogResult> deleteDataCatalogAsync(DeleteDataCatalogRequest deleteDataCatalogRequest);
+
+    /**
+     * <p>
+     * Deletes a data catalog.
+     * </p>
+     * 
+     * @param deleteDataCatalogRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDataCatalog operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.DeleteDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataCatalogResult> deleteDataCatalogAsync(DeleteDataCatalogRequest deleteDataCatalogRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataCatalogRequest, DeleteDataCatalogResult> asyncHandler);
 
     /**
      * <p>
@@ -242,6 +337,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Deletes the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param deletePreparedStatementRequest
+     * @return A Java Future containing the result of the DeletePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsync.DeletePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePreparedStatementResult> deletePreparedStatementAsync(DeletePreparedStatementRequest deletePreparedStatementRequest);
+
+    /**
+     * <p>
+     * Deletes the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param deletePreparedStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.DeletePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePreparedStatementResult> deletePreparedStatementAsync(DeletePreparedStatementRequest deletePreparedStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePreparedStatementRequest, DeletePreparedStatementResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the workgroup with the specified name. The primary workgroup cannot be deleted.
      * </p>
      * 
@@ -270,6 +396,68 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<DeleteWorkGroupResult> deleteWorkGroupAsync(DeleteWorkGroupRequest deleteWorkGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteWorkGroupRequest, DeleteWorkGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the specified data catalog.
+     * </p>
+     * 
+     * @param getDataCatalogRequest
+     * @return A Java Future containing the result of the GetDataCatalog operation returned by the service.
+     * @sample AmazonAthenaAsync.GetDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataCatalogResult> getDataCatalogAsync(GetDataCatalogRequest getDataCatalogRequest);
+
+    /**
+     * <p>
+     * Returns the specified data catalog.
+     * </p>
+     * 
+     * @param getDataCatalogRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataCatalog operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.GetDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataCatalogResult> getDataCatalogAsync(GetDataCatalogRequest getDataCatalogRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataCatalogRequest, GetDataCatalogResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a database object for the specified database and data catalog.
+     * </p>
+     * 
+     * @param getDatabaseRequest
+     * @return A Java Future containing the result of the GetDatabase operation returned by the service.
+     * @sample AmazonAthenaAsync.GetDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDatabaseResult> getDatabaseAsync(GetDatabaseRequest getDatabaseRequest);
+
+    /**
+     * <p>
+     * Returns a database object for the specified database and data catalog.
+     * </p>
+     * 
+     * @param getDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDatabase operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.GetDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDatabaseResult> getDatabaseAsync(GetDatabaseRequest getDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDatabaseRequest, GetDatabaseResult> asyncHandler);
 
     /**
      * <p>
@@ -303,6 +491,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<GetNamedQueryResult> getNamedQueryAsync(GetNamedQueryRequest getNamedQueryRequest,
             com.amazonaws.handlers.AsyncHandler<GetNamedQueryRequest, GetNamedQueryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param getPreparedStatementRequest
+     * @return A Java Future containing the result of the GetPreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsync.GetPreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPreparedStatementResult> getPreparedStatementAsync(GetPreparedStatementRequest getPreparedStatementRequest);
+
+    /**
+     * <p>
+     * Retrieves the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param getPreparedStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.GetPreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPreparedStatementResult> getPreparedStatementAsync(GetPreparedStatementRequest getPreparedStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPreparedStatementRequest, GetPreparedStatementResult> asyncHandler);
 
     /**
      * <p>
@@ -402,6 +621,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Returns table metadata for the specified catalog, database, and table.
+     * </p>
+     * 
+     * @param getTableMetadataRequest
+     * @return A Java Future containing the result of the GetTableMetadata operation returned by the service.
+     * @sample AmazonAthenaAsync.GetTableMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetTableMetadataResult> getTableMetadataAsync(GetTableMetadataRequest getTableMetadataRequest);
+
+    /**
+     * <p>
+     * Returns table metadata for the specified catalog, database, and table.
+     * </p>
+     * 
+     * @param getTableMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTableMetadata operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.GetTableMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetTableMetadataResult> getTableMetadataAsync(GetTableMetadataRequest getTableMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTableMetadataRequest, GetTableMetadataResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about the workgroup with the specified name.
      * </p>
      * 
@@ -433,8 +683,102 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Lists the data catalogs in the current AWS account.
+     * </p>
+     * 
+     * @param listDataCatalogsRequest
+     * @return A Java Future containing the result of the ListDataCatalogs operation returned by the service.
+     * @sample AmazonAthenaAsync.ListDataCatalogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataCatalogsResult> listDataCatalogsAsync(ListDataCatalogsRequest listDataCatalogsRequest);
+
+    /**
+     * <p>
+     * Lists the data catalogs in the current AWS account.
+     * </p>
+     * 
+     * @param listDataCatalogsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDataCatalogs operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListDataCatalogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataCatalogsResult> listDataCatalogsAsync(ListDataCatalogsRequest listDataCatalogsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDataCatalogsRequest, ListDataCatalogsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the databases in the specified data catalog.
+     * </p>
+     * 
+     * @param listDatabasesRequest
+     * @return A Java Future containing the result of the ListDatabases operation returned by the service.
+     * @sample AmazonAthenaAsync.ListDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDatabases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDatabasesResult> listDatabasesAsync(ListDatabasesRequest listDatabasesRequest);
+
+    /**
+     * <p>
+     * Lists the databases in the specified data catalog.
+     * </p>
+     * 
+     * @param listDatabasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDatabases operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDatabases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDatabasesResult> listDatabasesAsync(ListDatabasesRequest listDatabasesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDatabasesRequest, ListDatabasesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of engine versions that are available to choose from, including the Auto option.
+     * </p>
+     * 
+     * @param listEngineVersionsRequest
+     * @return A Java Future containing the result of the ListEngineVersions operation returned by the service.
+     * @sample AmazonAthenaAsync.ListEngineVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListEngineVersionsResult> listEngineVersionsAsync(ListEngineVersionsRequest listEngineVersionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of engine versions that are available to choose from, including the Auto option.
+     * </p>
+     * 
+     * @param listEngineVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEngineVersions operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListEngineVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListEngineVersionsResult> listEngineVersionsAsync(ListEngineVersionsRequest listEngineVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEngineVersionsRequest, ListEngineVersionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have
-     * access to the workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.
+     * access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary
+     * workgroup.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -453,7 +797,8 @@ public interface AmazonAthenaAsync extends AmazonAthena {
     /**
      * <p>
      * Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have
-     * access to the workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.
+     * access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary
+     * workgroup.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -473,6 +818,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<ListNamedQueriesResult> listNamedQueriesAsync(ListNamedQueriesRequest listNamedQueriesRequest,
             com.amazonaws.handlers.AsyncHandler<ListNamedQueriesRequest, ListNamedQueriesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the prepared statements in the specfied workgroup.
+     * </p>
+     * 
+     * @param listPreparedStatementsRequest
+     * @return A Java Future containing the result of the ListPreparedStatements operation returned by the service.
+     * @sample AmazonAthenaAsync.ListPreparedStatements
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPreparedStatementsResult> listPreparedStatementsAsync(ListPreparedStatementsRequest listPreparedStatementsRequest);
+
+    /**
+     * <p>
+     * Lists the prepared statements in the specfied workgroup.
+     * </p>
+     * 
+     * @param listPreparedStatementsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPreparedStatements operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListPreparedStatements
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPreparedStatementsResult> listPreparedStatementsAsync(ListPreparedStatementsRequest listPreparedStatementsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPreparedStatementsRequest, ListPreparedStatementsResult> asyncHandler);
 
     /**
      * <p>
@@ -521,7 +897,38 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Lists the tags associated with this workgroup.
+     * Lists the metadata for the tables in the specified data catalog database.
+     * </p>
+     * 
+     * @param listTableMetadataRequest
+     * @return A Java Future containing the result of the ListTableMetadata operation returned by the service.
+     * @sample AmazonAthenaAsync.ListTableMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTableMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTableMetadataResult> listTableMetadataAsync(ListTableMetadataRequest listTableMetadataRequest);
+
+    /**
+     * <p>
+     * Lists the metadata for the tables in the specified data catalog database.
+     * </p>
+     * 
+     * @param listTableMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTableMetadata operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListTableMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTableMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTableMetadataResult> listTableMetadataAsync(ListTableMetadataRequest listTableMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTableMetadataRequest, ListTableMetadataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the tags associated with an Athena workgroup or data catalog resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -534,7 +941,7 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Lists the tags associated with this workgroup.
+     * Lists the tags associated with an Athena workgroup or data catalog resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -584,10 +991,8 @@ public interface AmazonAthenaAsync extends AmazonAthena {
     /**
      * <p>
      * Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup
-     * in which the query ran.
-     * </p>
-     * <p>
-     * For code samples using the AWS SDK for Java, see <a
+     * in which the query ran. Running queries against an external catalog requires <a>GetDataCatalog</a> permission to
+     * the catalog. For code samples using the AWS SDK for Java, see <a
      * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
      * <i>Amazon Athena User Guide</i>.
      * </p>
@@ -603,10 +1008,8 @@ public interface AmazonAthenaAsync extends AmazonAthena {
     /**
      * <p>
      * Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup
-     * in which the query ran.
-     * </p>
-     * <p>
-     * For code samples using the AWS SDK for Java, see <a
+     * in which the query ran. Running queries against an external catalog requires <a>GetDataCatalog</a> permission to
+     * the catalog. For code samples using the AWS SDK for Java, see <a
      * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
      * <i>Amazon Athena User Guide</i>.
      * </p>
@@ -667,15 +1070,16 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Adds one or more tags to the resource, such as a workgroup. A tag is a label that you assign to an AWS Athena
-     * resource (a workgroup). Each tag consists of a key and an optional value, both of which you define. Tags enable
-     * you to categorize resources (workgroups) in Athena, for example, by purpose, owner, or environment. Use a
-     * consistent set of tag keys to make it easier to search and filter workgroups in your account. For best practices,
-     * see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-     * Strategies</a>. The key length is from 1 (minimum) to 128 (maximum) Unicode characters in UTF-8. The tag value
-     * length is from 0 (minimum) to 256 (maximum) Unicode characters in UTF-8. You can use letters and numbers
-     * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive.
-     * Tag keys must be unique per resource. If you specify more than one, separate them by commas.
+     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a
+     * resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you
+     * define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or
+     * environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs
+     * in your account. For best practices, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag
+     * keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters.
+     * Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys
+     * and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate
+     * them by commas.
      * </p>
      * 
      * @param tagResourceRequest
@@ -688,15 +1092,16 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Adds one or more tags to the resource, such as a workgroup. A tag is a label that you assign to an AWS Athena
-     * resource (a workgroup). Each tag consists of a key and an optional value, both of which you define. Tags enable
-     * you to categorize resources (workgroups) in Athena, for example, by purpose, owner, or environment. Use a
-     * consistent set of tag keys to make it easier to search and filter workgroups in your account. For best practices,
-     * see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-     * Strategies</a>. The key length is from 1 (minimum) to 128 (maximum) Unicode characters in UTF-8. The tag value
-     * length is from 0 (minimum) to 256 (maximum) Unicode characters in UTF-8. You can use letters and numbers
-     * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive.
-     * Tag keys must be unique per resource. If you specify more than one, separate them by commas.
+     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a
+     * resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you
+     * define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or
+     * environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs
+     * in your account. For best practices, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag
+     * keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters.
+     * Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys
+     * and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate
+     * them by commas.
      * </p>
      * 
      * @param tagResourceRequest
@@ -714,8 +1119,7 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Removes one or more tags from the workgroup resource. Takes as an input a list of TagKey Strings separated by
-     * commas, and removes their tags at the same time.
+     * Removes one or more tags from a data catalog or workgroup resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -728,8 +1132,7 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Removes one or more tags from the workgroup resource. Takes as an input a list of TagKey Strings separated by
-     * commas, and removes their tags at the same time.
+     * Removes one or more tags from a data catalog or workgroup resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -744,6 +1147,68 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the data catalog that has the specified name.
+     * </p>
+     * 
+     * @param updateDataCatalogRequest
+     * @return A Java Future containing the result of the UpdateDataCatalog operation returned by the service.
+     * @sample AmazonAthenaAsync.UpdateDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDataCatalogResult> updateDataCatalogAsync(UpdateDataCatalogRequest updateDataCatalogRequest);
+
+    /**
+     * <p>
+     * Updates the data catalog that has the specified name.
+     * </p>
+     * 
+     * @param updateDataCatalogRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDataCatalog operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.UpdateDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDataCatalogResult> updateDataCatalogAsync(UpdateDataCatalogRequest updateDataCatalogRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDataCatalogRequest, UpdateDataCatalogResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a prepared statement.
+     * </p>
+     * 
+     * @param updatePreparedStatementRequest
+     * @return A Java Future containing the result of the UpdatePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsync.UpdatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePreparedStatementResult> updatePreparedStatementAsync(UpdatePreparedStatementRequest updatePreparedStatementRequest);
+
+    /**
+     * <p>
+     * Updates a prepared statement.
+     * </p>
+     * 
+     * @param updatePreparedStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.UpdatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePreparedStatementResult> updatePreparedStatementAsync(UpdatePreparedStatementRequest updatePreparedStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePreparedStatementRequest, UpdatePreparedStatementResult> asyncHandler);
 
     /**
      * <p>

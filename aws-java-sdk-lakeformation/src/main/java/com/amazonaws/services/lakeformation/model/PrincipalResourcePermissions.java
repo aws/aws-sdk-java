@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,13 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
      * </p>
      */
     private java.util.List<String> permissionsWithGrantOption;
+    /**
+     * <p>
+     * This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
+     * Currently returns only as a RAM resource share ARN.
+     * </p>
+     */
+    private DetailsMap additionalDetails;
 
     /**
      * <p>
@@ -330,6 +337,52 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
+     * Currently returns only as a RAM resource share ARN.
+     * </p>
+     * 
+     * @param additionalDetails
+     *        This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
+     *        Currently returns only as a RAM resource share ARN.
+     */
+
+    public void setAdditionalDetails(DetailsMap additionalDetails) {
+        this.additionalDetails = additionalDetails;
+    }
+
+    /**
+     * <p>
+     * This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
+     * Currently returns only as a RAM resource share ARN.
+     * </p>
+     * 
+     * @return This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
+     *         Currently returns only as a RAM resource share ARN.
+     */
+
+    public DetailsMap getAdditionalDetails() {
+        return this.additionalDetails;
+    }
+
+    /**
+     * <p>
+     * This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
+     * Currently returns only as a RAM resource share ARN.
+     * </p>
+     * 
+     * @param additionalDetails
+     *        This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
+     *        Currently returns only as a RAM resource share ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PrincipalResourcePermissions withAdditionalDetails(DetailsMap additionalDetails) {
+        setAdditionalDetails(additionalDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -348,7 +401,9 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
         if (getPermissions() != null)
             sb.append("Permissions: ").append(getPermissions()).append(",");
         if (getPermissionsWithGrantOption() != null)
-            sb.append("PermissionsWithGrantOption: ").append(getPermissionsWithGrantOption());
+            sb.append("PermissionsWithGrantOption: ").append(getPermissionsWithGrantOption()).append(",");
+        if (getAdditionalDetails() != null)
+            sb.append("AdditionalDetails: ").append(getAdditionalDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -379,6 +434,10 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
             return false;
         if (other.getPermissionsWithGrantOption() != null && other.getPermissionsWithGrantOption().equals(this.getPermissionsWithGrantOption()) == false)
             return false;
+        if (other.getAdditionalDetails() == null ^ this.getAdditionalDetails() == null)
+            return false;
+        if (other.getAdditionalDetails() != null && other.getAdditionalDetails().equals(this.getAdditionalDetails()) == false)
+            return false;
         return true;
     }
 
@@ -391,6 +450,7 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
         hashCode = prime * hashCode + ((getPermissions() == null) ? 0 : getPermissions().hashCode());
         hashCode = prime * hashCode + ((getPermissionsWithGrantOption() == null) ? 0 : getPermissionsWithGrantOption().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalDetails() == null) ? 0 : getAdditionalDetails().hashCode());
         return hashCode;
     }
 

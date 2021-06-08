@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class ApplicationSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationVersionId").build();
     private static final MarshallingInfo<String> RUNTIMEENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuntimeEnvironment").build();
+    private static final MarshallingInfo<String> APPLICATIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationMode").build();
 
     private static final ApplicationSummaryMarshaller instance = new ApplicationSummaryMarshaller();
 
@@ -59,6 +61,7 @@ public class ApplicationSummaryMarshaller {
             protocolMarshaller.marshall(applicationSummary.getApplicationStatus(), APPLICATIONSTATUS_BINDING);
             protocolMarshaller.marshall(applicationSummary.getApplicationVersionId(), APPLICATIONVERSIONID_BINDING);
             protocolMarshaller.marshall(applicationSummary.getRuntimeEnvironment(), RUNTIMEENVIRONMENT_BINDING);
+            protocolMarshaller.marshall(applicationSummary.getApplicationMode(), APPLICATIONMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

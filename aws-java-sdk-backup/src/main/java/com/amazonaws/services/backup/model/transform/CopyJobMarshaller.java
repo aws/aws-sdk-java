@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CopyJobMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<String> COPYJOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("CopyJobId").build();
     private static final MarshallingInfo<String> SOURCEBACKUPVAULTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -72,6 +74,7 @@ public class CopyJobMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(copyJob.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(copyJob.getCopyJobId(), COPYJOBID_BINDING);
             protocolMarshaller.marshall(copyJob.getSourceBackupVaultArn(), SOURCEBACKUPVAULTARN_BINDING);
             protocolMarshaller.marshall(copyJob.getSourceRecoveryPointArn(), SOURCERECOVERYPOINTARN_BINDING);

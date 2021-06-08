@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,124 @@ import com.amazonaws.services.medialive.model.*;
 public interface AWSMediaLiveAsync extends AWSMediaLive {
 
     /**
+     * Accept an incoming input device transfer. The ownership of the device will transfer to your AWS account.
+     * 
+     * @param acceptInputDeviceTransferRequest
+     *        Placeholder documentation for AcceptInputDeviceTransferRequest
+     * @return A Java Future containing the result of the AcceptInputDeviceTransfer operation returned by the service.
+     * @sample AWSMediaLiveAsync.AcceptInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AcceptInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptInputDeviceTransferResult> acceptInputDeviceTransferAsync(
+            AcceptInputDeviceTransferRequest acceptInputDeviceTransferRequest);
+
+    /**
+     * Accept an incoming input device transfer. The ownership of the device will transfer to your AWS account.
+     * 
+     * @param acceptInputDeviceTransferRequest
+     *        Placeholder documentation for AcceptInputDeviceTransferRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AcceptInputDeviceTransfer operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.AcceptInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AcceptInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptInputDeviceTransferResult> acceptInputDeviceTransferAsync(
+            AcceptInputDeviceTransferRequest acceptInputDeviceTransferRequest,
+            com.amazonaws.handlers.AsyncHandler<AcceptInputDeviceTransferRequest, AcceptInputDeviceTransferResult> asyncHandler);
+
+    /**
+     * Starts delete of resources.
+     * 
+     * @param batchDeleteRequest
+     *        A request to delete resources
+     * @return A Java Future containing the result of the BatchDelete operation returned by the service.
+     * @sample AWSMediaLiveAsync.BatchDelete
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteResult> batchDeleteAsync(BatchDeleteRequest batchDeleteRequest);
+
+    /**
+     * Starts delete of resources.
+     * 
+     * @param batchDeleteRequest
+     *        A request to delete resources
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDelete operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.BatchDelete
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteResult> batchDeleteAsync(BatchDeleteRequest batchDeleteRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteRequest, BatchDeleteResult> asyncHandler);
+
+    /**
+     * Starts existing resources
+     * 
+     * @param batchStartRequest
+     *        A request to start resources
+     * @return A Java Future containing the result of the BatchStart operation returned by the service.
+     * @sample AWSMediaLiveAsync.BatchStart
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStartResult> batchStartAsync(BatchStartRequest batchStartRequest);
+
+    /**
+     * Starts existing resources
+     * 
+     * @param batchStartRequest
+     *        A request to start resources
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchStart operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.BatchStart
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStartResult> batchStartAsync(BatchStartRequest batchStartRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchStartRequest, BatchStartResult> asyncHandler);
+
+    /**
+     * Stops running resources
+     * 
+     * @param batchStopRequest
+     *        A request to stop resources
+     * @return A Java Future containing the result of the BatchStop operation returned by the service.
+     * @sample AWSMediaLiveAsync.BatchStop
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStopResult> batchStopAsync(BatchStopRequest batchStopRequest);
+
+    /**
+     * Stops running resources
+     * 
+     * @param batchStopRequest
+     *        A request to stop resources
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchStop operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.BatchStop
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStopResult> batchStopAsync(BatchStopRequest batchStopRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchStopRequest, BatchStopResult> asyncHandler);
+
+    /**
      * Update a channel schedule
      * 
      * @param batchUpdateScheduleRequest
@@ -58,6 +176,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<BatchUpdateScheduleResult> batchUpdateScheduleAsync(BatchUpdateScheduleRequest batchUpdateScheduleRequest,
             com.amazonaws.handlers.AsyncHandler<BatchUpdateScheduleRequest, BatchUpdateScheduleResult> asyncHandler);
+
+    /**
+     * Cancel an input device transfer that you have requested.
+     * 
+     * @param cancelInputDeviceTransferRequest
+     *        Placeholder documentation for CancelInputDeviceTransferRequest
+     * @return A Java Future containing the result of the CancelInputDeviceTransfer operation returned by the service.
+     * @sample AWSMediaLiveAsync.CancelInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CancelInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelInputDeviceTransferResult> cancelInputDeviceTransferAsync(
+            CancelInputDeviceTransferRequest cancelInputDeviceTransferRequest);
+
+    /**
+     * Cancel an input device transfer that you have requested.
+     * 
+     * @param cancelInputDeviceTransferRequest
+     *        Placeholder documentation for CancelInputDeviceTransferRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelInputDeviceTransfer operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.CancelInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CancelInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelInputDeviceTransferResult> cancelInputDeviceTransferAsync(
+            CancelInputDeviceTransferRequest cancelInputDeviceTransferRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelInputDeviceTransferRequest, CancelInputDeviceTransferResult> asyncHandler);
 
     /**
      * Creates a new channel
@@ -203,6 +352,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<CreateMultiplexProgramResult> createMultiplexProgramAsync(CreateMultiplexProgramRequest createMultiplexProgramRequest,
             com.amazonaws.handlers.AsyncHandler<CreateMultiplexProgramRequest, CreateMultiplexProgramResult> asyncHandler);
+
+    /**
+     * Create a partner input
+     * 
+     * @param createPartnerInputRequest
+     *        A request to create a partner input
+     * @return A Java Future containing the result of the CreatePartnerInput operation returned by the service.
+     * @sample AWSMediaLiveAsync.CreatePartnerInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePartnerInputResult> createPartnerInputAsync(CreatePartnerInputRequest createPartnerInputRequest);
+
+    /**
+     * Create a partner input
+     * 
+     * @param createPartnerInputRequest
+     *        A request to create a partner input
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePartnerInput operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.CreatePartnerInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePartnerInputResult> createPartnerInputAsync(CreatePartnerInputRequest createPartnerInputRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePartnerInputRequest, CreatePartnerInputResult> asyncHandler);
 
     /**
      * Create tags for a resource
@@ -553,6 +731,39 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<DescribeInputDeviceRequest, DescribeInputDeviceResult> asyncHandler);
 
     /**
+     * Get the latest thumbnail data for the input device.
+     * 
+     * @param describeInputDeviceThumbnailRequest
+     *        Placeholder documentation for DescribeInputDeviceThumbnailRequest
+     * @return A Java Future containing the result of the DescribeInputDeviceThumbnail operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.DescribeInputDeviceThumbnail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDeviceThumbnail"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInputDeviceThumbnailResult> describeInputDeviceThumbnailAsync(
+            DescribeInputDeviceThumbnailRequest describeInputDeviceThumbnailRequest);
+
+    /**
+     * Get the latest thumbnail data for the input device.
+     * 
+     * @param describeInputDeviceThumbnailRequest
+     *        Placeholder documentation for DescribeInputDeviceThumbnailRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInputDeviceThumbnail operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.DescribeInputDeviceThumbnail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDeviceThumbnail"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInputDeviceThumbnailResult> describeInputDeviceThumbnailAsync(
+            DescribeInputDeviceThumbnailRequest describeInputDeviceThumbnailRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInputDeviceThumbnailRequest, DescribeInputDeviceThumbnailResult> asyncHandler);
+
+    /**
      * Produces a summary of an Input Security Group
      * 
      * @param describeInputSecurityGroupRequest
@@ -756,6 +967,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest listChannelsRequest,
             com.amazonaws.handlers.AsyncHandler<ListChannelsRequest, ListChannelsResult> asyncHandler);
+
+    /**
+     * List input devices that are currently being transferred. List input devices that you are transferring from your
+     * AWS account or input devices that another AWS account is transferring to you.
+     * 
+     * @param listInputDeviceTransfersRequest
+     *        Placeholder documentation for ListInputDeviceTransfersRequest
+     * @return A Java Future containing the result of the ListInputDeviceTransfers operation returned by the service.
+     * @sample AWSMediaLiveAsync.ListInputDeviceTransfers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDeviceTransfers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInputDeviceTransfersResult> listInputDeviceTransfersAsync(ListInputDeviceTransfersRequest listInputDeviceTransfersRequest);
+
+    /**
+     * List input devices that are currently being transferred. List input devices that you are transferring from your
+     * AWS account or input devices that another AWS account is transferring to you.
+     * 
+     * @param listInputDeviceTransfersRequest
+     *        Placeholder documentation for ListInputDeviceTransfersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInputDeviceTransfers operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.ListInputDeviceTransfers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDeviceTransfers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInputDeviceTransfersResult> listInputDeviceTransfersAsync(ListInputDeviceTransfersRequest listInputDeviceTransfersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInputDeviceTransfersRequest, ListInputDeviceTransfersResult> asyncHandler);
 
     /**
      * List input devices
@@ -1019,6 +1261,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<PurchaseOfferingRequest, PurchaseOfferingResult> asyncHandler);
 
     /**
+     * Reject the transfer of the specified input device to your AWS account.
+     * 
+     * @param rejectInputDeviceTransferRequest
+     *        Placeholder documentation for RejectInputDeviceTransferRequest
+     * @return A Java Future containing the result of the RejectInputDeviceTransfer operation returned by the service.
+     * @sample AWSMediaLiveAsync.RejectInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectInputDeviceTransferResult> rejectInputDeviceTransferAsync(
+            RejectInputDeviceTransferRequest rejectInputDeviceTransferRequest);
+
+    /**
+     * Reject the transfer of the specified input device to your AWS account.
+     * 
+     * @param rejectInputDeviceTransferRequest
+     *        Placeholder documentation for RejectInputDeviceTransferRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RejectInputDeviceTransfer operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.RejectInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectInputDeviceTransferResult> rejectInputDeviceTransferAsync(
+            RejectInputDeviceTransferRequest rejectInputDeviceTransferRequest,
+            com.amazonaws.handlers.AsyncHandler<RejectInputDeviceTransferRequest, RejectInputDeviceTransferResult> asyncHandler);
+
+    /**
      * Starts an existing channel
      * 
      * @param startChannelRequest
@@ -1135,6 +1408,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<StopMultiplexResult> stopMultiplexAsync(StopMultiplexRequest stopMultiplexRequest,
             com.amazonaws.handlers.AsyncHandler<StopMultiplexRequest, StopMultiplexResult> asyncHandler);
+
+    /**
+     * Start an input device transfer to another AWS account. After you make the request, the other account must accept
+     * or reject the transfer.
+     * 
+     * @param transferInputDeviceRequest
+     *        A request to transfer an input device.
+     * @return A Java Future containing the result of the TransferInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsync.TransferInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TransferInputDeviceResult> transferInputDeviceAsync(TransferInputDeviceRequest transferInputDeviceRequest);
+
+    /**
+     * Start an input device transfer to another AWS account. After you make the request, the other account must accept
+     * or reject the transfer.
+     * 
+     * @param transferInputDeviceRequest
+     *        A request to transfer an input device.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TransferInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.TransferInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TransferInputDeviceResult> transferInputDeviceAsync(TransferInputDeviceRequest transferInputDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<TransferInputDeviceRequest, TransferInputDeviceResult> asyncHandler);
 
     /**
      * Updates a channel.

@@ -1,0 +1,747 @@
+/*
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.globalaccelerator.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Attributes of a custom routing accelerator.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CustomRoutingAccelerator"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CustomRoutingAccelerator implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the custom routing accelerator.
+     * </p>
+     */
+    private String acceleratorArn;
+    /**
+     * <p>
+     * The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not
+     * begin or end with a hyphen.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The value for the address type must be IPv4.
+     * </p>
+     */
+    private String ipAddressType;
+    /**
+     * <p>
+     * Indicates whether the accelerator is enabled. The value is true or false. The default value is true.
+     * </p>
+     * <p>
+     * If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.
+     * </p>
+     */
+    private Boolean enabled;
+    /**
+     * <p>
+     * The static IP addresses that Global Accelerator associates with the accelerator.
+     * </p>
+     */
+    private java.util.List<IpSet> ipSets;
+    /**
+     * <p>
+     * The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP
+     * addresses.
+     * </p>
+     * <p>
+     * The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
+     * string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * </p>
+     * <p>
+     * For more information about the default DNS name, see <a href=
+     * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     * > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     */
+    private String dnsName;
+    /**
+     * <p>
+     * Describes the deployment status of the accelerator.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The date and time that the accelerator was created.
+     * </p>
+     */
+    private java.util.Date createdTime;
+    /**
+     * <p>
+     * The date and time that the accelerator was last modified.
+     * </p>
+     */
+    private java.util.Date lastModifiedTime;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the custom routing accelerator.
+     * </p>
+     * 
+     * @param acceleratorArn
+     *        The Amazon Resource Name (ARN) of the custom routing accelerator.
+     */
+
+    public void setAcceleratorArn(String acceleratorArn) {
+        this.acceleratorArn = acceleratorArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the custom routing accelerator.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the custom routing accelerator.
+     */
+
+    public String getAcceleratorArn() {
+        return this.acceleratorArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the custom routing accelerator.
+     * </p>
+     * 
+     * @param acceleratorArn
+     *        The Amazon Resource Name (ARN) of the custom routing accelerator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomRoutingAccelerator withAcceleratorArn(String acceleratorArn) {
+        setAcceleratorArn(acceleratorArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not
+     * begin or end with a hyphen.
+     * </p>
+     * 
+     * @param name
+     *        The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must
+     *        not begin or end with a hyphen.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not
+     * begin or end with a hyphen.
+     * </p>
+     * 
+     * @return The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must
+     *         not begin or end with a hyphen.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not
+     * begin or end with a hyphen.
+     * </p>
+     * 
+     * @param name
+     *        The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must
+     *        not begin or end with a hyphen.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomRoutingAccelerator withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value for the address type must be IPv4.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The value for the address type must be IPv4.
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The value for the address type must be IPv4.
+     * </p>
+     * 
+     * @return The value for the address type must be IPv4.
+     * @see IpAddressType
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The value for the address type must be IPv4.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The value for the address type must be IPv4.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public CustomRoutingAccelerator withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value for the address type must be IPv4.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The value for the address type must be IPv4.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public CustomRoutingAccelerator withIpAddressType(IpAddressType ipAddressType) {
+        this.ipAddressType = ipAddressType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the accelerator is enabled. The value is true or false. The default value is true.
+     * </p>
+     * <p>
+     * If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.
+     * </p>
+     * 
+     * @param enabled
+     *        Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
+     *        <p>
+     *        If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be
+     *        deleted.
+     */
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the accelerator is enabled. The value is true or false. The default value is true.
+     * </p>
+     * <p>
+     * If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.
+     * </p>
+     * 
+     * @return Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
+     *         <p>
+     *         If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be
+     *         deleted.
+     */
+
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the accelerator is enabled. The value is true or false. The default value is true.
+     * </p>
+     * <p>
+     * If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.
+     * </p>
+     * 
+     * @param enabled
+     *        Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
+     *        <p>
+     *        If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be
+     *        deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomRoutingAccelerator withEnabled(Boolean enabled) {
+        setEnabled(enabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the accelerator is enabled. The value is true or false. The default value is true.
+     * </p>
+     * <p>
+     * If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.
+     * </p>
+     * 
+     * @return Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
+     *         <p>
+     *         If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be
+     *         deleted.
+     */
+
+    public Boolean isEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * <p>
+     * The static IP addresses that Global Accelerator associates with the accelerator.
+     * </p>
+     * 
+     * @return The static IP addresses that Global Accelerator associates with the accelerator.
+     */
+
+    public java.util.List<IpSet> getIpSets() {
+        return ipSets;
+    }
+
+    /**
+     * <p>
+     * The static IP addresses that Global Accelerator associates with the accelerator.
+     * </p>
+     * 
+     * @param ipSets
+     *        The static IP addresses that Global Accelerator associates with the accelerator.
+     */
+
+    public void setIpSets(java.util.Collection<IpSet> ipSets) {
+        if (ipSets == null) {
+            this.ipSets = null;
+            return;
+        }
+
+        this.ipSets = new java.util.ArrayList<IpSet>(ipSets);
+    }
+
+    /**
+     * <p>
+     * The static IP addresses that Global Accelerator associates with the accelerator.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpSets(java.util.Collection)} or {@link #withIpSets(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param ipSets
+     *        The static IP addresses that Global Accelerator associates with the accelerator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomRoutingAccelerator withIpSets(IpSet... ipSets) {
+        if (this.ipSets == null) {
+            setIpSets(new java.util.ArrayList<IpSet>(ipSets.length));
+        }
+        for (IpSet ele : ipSets) {
+            this.ipSets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The static IP addresses that Global Accelerator associates with the accelerator.
+     * </p>
+     * 
+     * @param ipSets
+     *        The static IP addresses that Global Accelerator associates with the accelerator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomRoutingAccelerator withIpSets(java.util.Collection<IpSet> ipSets) {
+        setIpSets(ipSets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP
+     * addresses.
+     * </p>
+     * <p>
+     * The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
+     * string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * </p>
+     * <p>
+     * For more information about the default DNS name, see <a href=
+     * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     * > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param dnsName
+     *        The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static
+     *        IP addresses. </p>
+     *        <p>
+     *        The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random
+     *        hex string, followed by .awsglobalaccelerator.com. For example:
+     *        a1234567890abcdef.awsglobalaccelerator.com.
+     *        </p>
+     *        <p>
+     *        For more information about the default DNS name, see <a href=
+     *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     *        > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     *        Guide</i>.
+     */
+
+    public void setDnsName(String dnsName) {
+        this.dnsName = dnsName;
+    }
+
+    /**
+     * <p>
+     * The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP
+     * addresses.
+     * </p>
+     * <p>
+     * The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
+     * string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * </p>
+     * <p>
+     * For more information about the default DNS name, see <a href=
+     * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     * > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @return The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's
+     *         static IP addresses. </p>
+     *         <p>
+     *         The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit
+     *         random hex string, followed by .awsglobalaccelerator.com. For example:
+     *         a1234567890abcdef.awsglobalaccelerator.com.
+     *         </p>
+     *         <p>
+     *         For more information about the default DNS name, see <a href=
+     *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     *         > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     *         Guide</i>.
+     */
+
+    public String getDnsName() {
+        return this.dnsName;
+    }
+
+    /**
+     * <p>
+     * The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static IP
+     * addresses.
+     * </p>
+     * <p>
+     * The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random hex
+     * string, followed by .awsglobalaccelerator.com. For example: a1234567890abcdef.awsglobalaccelerator.com.
+     * </p>
+     * <p>
+     * For more information about the default DNS name, see <a href=
+     * "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     * > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+     * </p>
+     * 
+     * @param dnsName
+     *        The Domain Name System (DNS) name that Global Accelerator creates that points to your accelerator's static
+     *        IP addresses. </p>
+     *        <p>
+     *        The naming convention for the DNS name is the following: A lowercase letter a, followed by a 16-bit random
+     *        hex string, followed by .awsglobalaccelerator.com. For example:
+     *        a1234567890abcdef.awsglobalaccelerator.com.
+     *        </p>
+     *        <p>
+     *        For more information about the default DNS name, see <a href=
+     *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/about-accelerators.html#about-accelerators.dns-addressing"
+     *        > Support for DNS Addressing in Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     *        Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomRoutingAccelerator withDnsName(String dnsName) {
+        setDnsName(dnsName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the deployment status of the accelerator.
+     * </p>
+     * 
+     * @param status
+     *        Describes the deployment status of the accelerator.
+     * @see CustomRoutingAcceleratorStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * Describes the deployment status of the accelerator.
+     * </p>
+     * 
+     * @return Describes the deployment status of the accelerator.
+     * @see CustomRoutingAcceleratorStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * Describes the deployment status of the accelerator.
+     * </p>
+     * 
+     * @param status
+     *        Describes the deployment status of the accelerator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CustomRoutingAcceleratorStatus
+     */
+
+    public CustomRoutingAccelerator withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the deployment status of the accelerator.
+     * </p>
+     * 
+     * @param status
+     *        Describes the deployment status of the accelerator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CustomRoutingAcceleratorStatus
+     */
+
+    public CustomRoutingAccelerator withStatus(CustomRoutingAcceleratorStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time that the accelerator was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        The date and time that the accelerator was created.
+     */
+
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    /**
+     * <p>
+     * The date and time that the accelerator was created.
+     * </p>
+     * 
+     * @return The date and time that the accelerator was created.
+     */
+
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
+    }
+
+    /**
+     * <p>
+     * The date and time that the accelerator was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        The date and time that the accelerator was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomRoutingAccelerator withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time that the accelerator was last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The date and time that the accelerator was last modified.
+     */
+
+    public void setLastModifiedTime(java.util.Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The date and time that the accelerator was last modified.
+     * </p>
+     * 
+     * @return The date and time that the accelerator was last modified.
+     */
+
+    public java.util.Date getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The date and time that the accelerator was last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The date and time that the accelerator was last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomRoutingAccelerator withLastModifiedTime(java.util.Date lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAcceleratorArn() != null)
+            sb.append("AcceleratorArn: ").append(getAcceleratorArn()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getEnabled() != null)
+            sb.append("Enabled: ").append(getEnabled()).append(",");
+        if (getIpSets() != null)
+            sb.append("IpSets: ").append(getIpSets()).append(",");
+        if (getDnsName() != null)
+            sb.append("DnsName: ").append(getDnsName()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getLastModifiedTime() != null)
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CustomRoutingAccelerator == false)
+            return false;
+        CustomRoutingAccelerator other = (CustomRoutingAccelerator) obj;
+        if (other.getAcceleratorArn() == null ^ this.getAcceleratorArn() == null)
+            return false;
+        if (other.getAcceleratorArn() != null && other.getAcceleratorArn().equals(this.getAcceleratorArn()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
+        if (other.getEnabled() == null ^ this.getEnabled() == null)
+            return false;
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
+        if (other.getIpSets() == null ^ this.getIpSets() == null)
+            return false;
+        if (other.getIpSets() != null && other.getIpSets().equals(this.getIpSets()) == false)
+            return false;
+        if (other.getDnsName() == null ^ this.getDnsName() == null)
+            return false;
+        if (other.getDnsName() != null && other.getDnsName().equals(this.getDnsName()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+            return false;
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
+            return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAcceleratorArn() == null) ? 0 : getAcceleratorArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getIpSets() == null) ? 0 : getIpSets().hashCode());
+        hashCode = prime * hashCode + ((getDnsName() == null) ? 0 : getDnsName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public CustomRoutingAccelerator clone() {
+        try {
+            return (CustomRoutingAccelerator) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.globalaccelerator.model.transform.CustomRoutingAcceleratorMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

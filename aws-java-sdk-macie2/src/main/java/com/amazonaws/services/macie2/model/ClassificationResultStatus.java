@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,27 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the finding, such as COMPLETE.
+     * The status of the finding. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * object is an archive file that contains files in an unsupported format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
+     * malformed file or a file that uses an unsupported format.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String code;
     /**
@@ -44,11 +63,51 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the finding, such as COMPLETE.
+     * The status of the finding. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * object is an archive file that contains files in an unsupported format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
+     * malformed file or a file that uses an unsupported format.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param code
-     *        The status of the finding, such as COMPLETE.
+     *        <p>
+     *        The status of the finding. Possible values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example,
+     *        the object is an archive file that contains files in an unsupported format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is
+     *        a malformed file or a file that uses an unsupported format.
+     *        </p>
+     *        </li>
+     *        </ul>
      */
 
     public void setCode(String code) {
@@ -57,10 +116,50 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the finding, such as COMPLETE.
+     * The status of the finding. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * object is an archive file that contains files in an unsupported format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
+     * malformed file or a file that uses an unsupported format.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the finding, such as COMPLETE.
+     * @return <p>
+     *         The status of the finding. Possible values are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For
+     *         example, the object is an archive file that contains files in an unsupported format.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is
+     *         a malformed file or a file that uses an unsupported format.
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public String getCode() {
@@ -69,11 +168,51 @@ public class ClassificationResultStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the finding, such as COMPLETE.
+     * The status of the finding. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the
+     * object is an archive file that contains files in an unsupported format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a
+     * malformed file or a file that uses an unsupported format.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param code
-     *        The status of the finding, such as COMPLETE.
+     *        <p>
+     *        The status of the finding. Possible values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example,
+     *        the object is an archive file that contains files in an unsupported format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is
+     *        a malformed file or a file that uses an unsupported format.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

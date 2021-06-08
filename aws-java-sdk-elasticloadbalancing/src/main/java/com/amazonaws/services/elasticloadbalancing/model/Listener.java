@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For information about the protocols and the ports supported by Elastic Load Balancing, see <a
- * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
+ * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
  * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
  * </p>
  * 
@@ -49,8 +49,8 @@ public class Listener implements Serializable, Cloneable {
      * The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.
      * </p>
      * <p>
-     * If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same
-     * protocol.
+     * If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is
+     * HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.
      * </p>
      * <p>
      * If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is
@@ -195,8 +195,8 @@ public class Listener implements Serializable, Cloneable {
      * The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.
      * </p>
      * <p>
-     * If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same
-     * protocol.
+     * If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is
+     * HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.
      * </p>
      * <p>
      * If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is
@@ -210,8 +210,8 @@ public class Listener implements Serializable, Cloneable {
      * @param instanceProtocol
      *        The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
      *        <p>
-     *        If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same
-     *        protocol.
+     *        If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end
+     *        protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.
      *        </p>
      *        <p>
      *        If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code>
@@ -231,8 +231,8 @@ public class Listener implements Serializable, Cloneable {
      * The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.
      * </p>
      * <p>
-     * If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same
-     * protocol.
+     * If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is
+     * HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.
      * </p>
      * <p>
      * If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is
@@ -245,8 +245,8 @@ public class Listener implements Serializable, Cloneable {
      * 
      * @return The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
      *         <p>
-     *         If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same
-     *         protocol.
+     *         If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end
+     *         protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.
      *         </p>
      *         <p>
      *         If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code>
@@ -266,8 +266,8 @@ public class Listener implements Serializable, Cloneable {
      * The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.
      * </p>
      * <p>
-     * If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same
-     * protocol.
+     * If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end protocol is
+     * HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.
      * </p>
      * <p>
      * If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code> is
@@ -281,8 +281,8 @@ public class Listener implements Serializable, Cloneable {
      * @param instanceProtocol
      *        The protocol to use for routing traffic to instances: HTTP, HTTPS, TCP, or SSL.</p>
      *        <p>
-     *        If the front-end protocol is HTTP, HTTPS, TCP, or SSL, <code>InstanceProtocol</code> must be at the same
-     *        protocol.
+     *        If the front-end protocol is TCP or SSL, the back-end protocol must be TCP or SSL. If the front-end
+     *        protocol is HTTP or HTTPS, the back-end protocol must be HTTP or HTTPS.
      *        </p>
      *        <p>
      *        If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,36 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier of the network that the node belongs to.
+     * The unique identifier of the network that the node is on.
      * </p>
+     * <p>
+     * Ethereum public networks have the following <code>NetworkId</code>s:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>n-ethereum-mainnet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-rinkeby</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-ropsten</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String networkId;
     /**
      * <p>
      * The unique identifier of the member that owns this node.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      * </p>
      */
     private String memberId;
@@ -46,11 +69,50 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier of the network that the node belongs to.
+     * The unique identifier of the network that the node is on.
      * </p>
+     * <p>
+     * Ethereum public networks have the following <code>NetworkId</code>s:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>n-ethereum-mainnet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-rinkeby</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-ropsten</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param networkId
-     *        The unique identifier of the network that the node belongs to.
+     *        The unique identifier of the network that the node is on.</p>
+     *        <p>
+     *        Ethereum public networks have the following <code>NetworkId</code>s:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-mainnet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-rinkeby</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-ropsten</code>
+     *        </p>
+     *        </li>
      */
 
     public void setNetworkId(String networkId) {
@@ -59,10 +121,49 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier of the network that the node belongs to.
+     * The unique identifier of the network that the node is on.
      * </p>
+     * <p>
+     * Ethereum public networks have the following <code>NetworkId</code>s:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>n-ethereum-mainnet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-rinkeby</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-ropsten</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The unique identifier of the network that the node belongs to.
+     * @return The unique identifier of the network that the node is on.</p>
+     *         <p>
+     *         Ethereum public networks have the following <code>NetworkId</code>s:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>n-ethereum-mainnet</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>n-ethereum-rinkeby</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>n-ethereum-ropsten</code>
+     *         </p>
+     *         </li>
      */
 
     public String getNetworkId() {
@@ -71,11 +172,50 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique identifier of the network that the node belongs to.
+     * The unique identifier of the network that the node is on.
      * </p>
+     * <p>
+     * Ethereum public networks have the following <code>NetworkId</code>s:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>n-ethereum-mainnet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-rinkeby</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-ropsten</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param networkId
-     *        The unique identifier of the network that the node belongs to.
+     *        The unique identifier of the network that the node is on.</p>
+     *        <p>
+     *        Ethereum public networks have the following <code>NetworkId</code>s:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-mainnet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-rinkeby</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-ropsten</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,9 +228,14 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The unique identifier of the member that owns this node.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member that owns this node.
+     *        The unique identifier of the member that owns this node.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      */
 
     public void setMemberId(String memberId) {
@@ -101,8 +246,13 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The unique identifier of the member that owns this node.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+     * </p>
      * 
-     * @return The unique identifier of the member that owns this node.
+     * @return The unique identifier of the member that owns this node.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      */
 
     public String getMemberId() {
@@ -113,9 +263,14 @@ public class DeleteNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The unique identifier of the member that owns this node.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member that owns this node.
+     *        The unique identifier of the member that owns this node.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

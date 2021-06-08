@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -232,8 +232,9 @@ public interface IDynamoDBMapper {
      * as if SaveBehavior is set as CLOBBER.</b>
      * </p>
      * <p>
-     * <b>This method does not support versioning annotations. It throws {@link com.amazonaws.SdkClientException} exception if
-     * class of any input object is annotated with {@link DynamoDBVersionAttribute} or {@link DynamoDBVersioned}</b>
+     * <b>This method supports versioning annotations, but not in conjunction with condition expressions. It throws
+     * {@link com.amazonaws.SdkClientException} exception if class of any input object is annotated with
+     * {@link DynamoDBVersionAttribute} or {@link DynamoDBVersioned} and a condition expression is also present</b>
      * </p>
      * <p>
      * Any exceptions from underlying API are thrown as is. For more information, please refer
@@ -256,8 +257,9 @@ public interface IDynamoDBMapper {
      * as if SaveBehavior is set as CLOBBER.</b>
      * </p>
      * <p>
-     * <b>This method does not support versioning annotations. It throws {@link com.amazonaws.SdkClientException} exception if
-     * class of any input object is annotated with {@link DynamoDBVersionAttribute} or {@link DynamoDBVersioned}</b>
+     * <b>This method supports versioning annotations, but not in conjunction with condition expressions. It throws
+     * {@link com.amazonaws.SdkClientException} exception if class of any input object is annotated with
+     * {@link DynamoDBVersionAttribute} or {@link DynamoDBVersioned} and a condition expression is also present</b>
      * </p>
      * <p>
      * Any exceptions from underlying API are thrown as is. For more information, please refer
@@ -719,7 +721,7 @@ public interface IDynamoDBMapper {
      * @param clazz
      *            The class mapped to a DynamoDB table.
      * @param queryExpression
-     *            The parameters for running the scan.
+     *            The parameters for running the query.
      * @param config
      *            The mapper configuration to use for the query, which overrides the default
      *            provided at object construction.

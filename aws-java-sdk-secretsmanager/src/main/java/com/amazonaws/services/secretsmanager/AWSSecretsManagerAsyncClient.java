@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <fullname>AWS Secrets Manager API Reference</fullname>
  * <p>
- * AWS Secrets Manager is a web service that enables you to store, manage, and retrieve, secrets.
+ * AWS Secrets Manager provides a service to enable you to store, manage, and retrieve, secrets.
  * </p>
  * <p>
  * This guide provides descriptions of the Secrets Manager API. For more information about using this service, see the
@@ -42,24 +42,23 @@ import java.util.concurrent.ExecutorService;
  * </p>
  * <note>
  * <p>
- * As an alternative to using the API directly, you can use one of the AWS SDKs, which consist of libraries and sample
- * code for various programming languages and platforms (such as Java, Ruby, .NET, iOS, and Android). The SDKs provide a
- * convenient way to create programmatic access to AWS Secrets Manager. For example, the SDKs take care of
- * cryptographically signing requests, managing errors, and retrying requests automatically. For more information about
- * the AWS SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon
- * Web Services</a>.
+ * As an alternative to using the API, you can use one of the AWS SDKs, which consist of libraries and sample code for
+ * various programming languages and platforms such as Java, Ruby, .NET, iOS, and Android. The SDKs provide a convenient
+ * way to create programmatic access to AWS Secrets Manager. For example, the SDKs provide cryptographically signing
+ * requests, managing errors, and retrying requests automatically. For more information about the AWS SDKs, including
+ * downloading and installing them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  * </note>
  * <p>
- * We recommend that you use the AWS SDKs to make programmatic API calls to Secrets Manager. However, you also can use
- * the Secrets Manager HTTP Query API to make direct calls to the Secrets Manager web service. To learn more about the
+ * We recommend you use the AWS SDKs to make programmatic API calls to Secrets Manager. However, you also can use the
+ * Secrets Manager HTTP Query API to make direct calls to the Secrets Manager web service. To learn more about the
  * Secrets Manager HTTP Query API, see <a
  * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/query-requests.html">Making Query Requests</a> in
  * the <i>AWS Secrets Manager User Guide</i>.
  * </p>
  * <p>
- * Secrets Manager supports GET and POST requests for all actions. That is, the API doesn't require you to use GET for
- * some actions and POST for others. However, GET requests are subject to the limitation size of a URL. Therefore, for
+ * Secrets Manager API supports GET and POST requests for all actions, and doesn't require you to use GET for some
+ * actions and POST for others. However, GET requests are subject to the limitation size of a URL. Therefore, for
  * operations that require larger sizes, use a POST request.
  * </p>
  * <p>
@@ -76,23 +75,23 @@ import java.util.concurrent.ExecutorService;
  * <b>How examples are presented</b>
  * </p>
  * <p>
- * The JSON that AWS Secrets Manager expects as your request parameters and that the service returns as a response to
- * HTTP query requests are single, long strings without line breaks or white space formatting. The JSON shown in the
- * examples is formatted with both line breaks and white space to improve readability. When example input parameters
- * would also result in long strings that extend beyond the screen, we insert line breaks to enhance readability. You
- * should always submit the input as a single JSON text string.
+ * The JSON that AWS Secrets Manager expects as your request parameters and the service returns as a response to HTTP
+ * query requests contain single, long strings without line breaks or white space formatting. The JSON shown in the
+ * examples displays the code formatted with both line breaks and white space to improve readability. When example input
+ * parameters can also cause long strings extending beyond the screen, you can insert line breaks to enhance
+ * readability. You should always submit the input as a single JSON text string.
  * </p>
  * <p>
  * <b>Logging API Requests</b>
  * </p>
  * <p>
  * AWS Secrets Manager supports AWS CloudTrail, a service that records AWS API calls for your AWS account and delivers
- * log files to an Amazon S3 bucket. By using information that's collected by AWS CloudTrail, you can determine which
- * requests were successfully made to Secrets Manager, who made the request, when it was made, and so on. For more about
- * AWS Secrets Manager and its support for AWS CloudTrail, see <a
+ * log files to an Amazon S3 bucket. By using information that's collected by AWS CloudTrail, you can determine the
+ * requests successfully made to Secrets Manager, who made the request, when it was made, and so on. For more about AWS
+ * Secrets Manager and support for AWS CloudTrail, see <a
  * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring.html#monitoring_cloudtrail">Logging AWS
  * Secrets Manager Events with AWS CloudTrail</a> in the <i>AWS Secrets Manager User Guide</i>. To learn more about
- * CloudTrail, including how to turn it on and find your log files, see the <a
+ * CloudTrail, including enabling it and find your log files, see the <a
  * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS CloudTrail
  * User Guide</a>.
  * </p>
@@ -540,6 +539,72 @@ public class AWSSecretsManagerAsyncClient extends AWSSecretsManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveRegionsFromReplicationResult> removeRegionsFromReplicationAsync(RemoveRegionsFromReplicationRequest request) {
+
+        return removeRegionsFromReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveRegionsFromReplicationResult> removeRegionsFromReplicationAsync(final RemoveRegionsFromReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveRegionsFromReplicationRequest, RemoveRegionsFromReplicationResult> asyncHandler) {
+        final RemoveRegionsFromReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveRegionsFromReplicationResult>() {
+            @Override
+            public RemoveRegionsFromReplicationResult call() throws Exception {
+                RemoveRegionsFromReplicationResult result = null;
+
+                try {
+                    result = executeRemoveRegionsFromReplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicateSecretToRegionsResult> replicateSecretToRegionsAsync(ReplicateSecretToRegionsRequest request) {
+
+        return replicateSecretToRegionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicateSecretToRegionsResult> replicateSecretToRegionsAsync(final ReplicateSecretToRegionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ReplicateSecretToRegionsRequest, ReplicateSecretToRegionsResult> asyncHandler) {
+        final ReplicateSecretToRegionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ReplicateSecretToRegionsResult>() {
+            @Override
+            public ReplicateSecretToRegionsResult call() throws Exception {
+                ReplicateSecretToRegionsResult result = null;
+
+                try {
+                    result = executeReplicateSecretToRegions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RestoreSecretResult> restoreSecretAsync(RestoreSecretRequest request) {
 
         return restoreSecretAsync(request, null);
@@ -590,6 +655,39 @@ public class AWSSecretsManagerAsyncClient extends AWSSecretsManagerClient implem
 
                 try {
                     result = executeRotateSecret(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationToReplicaResult> stopReplicationToReplicaAsync(StopReplicationToReplicaRequest request) {
+
+        return stopReplicationToReplicaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationToReplicaResult> stopReplicationToReplicaAsync(final StopReplicationToReplicaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopReplicationToReplicaRequest, StopReplicationToReplicaResult> asyncHandler) {
+        final StopReplicationToReplicaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopReplicationToReplicaResult>() {
+            @Override
+            public StopReplicationToReplicaResult call() throws Exception {
+                StopReplicationToReplicaResult result = null;
+
+                try {
+                    result = executeStopReplicationToReplica(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -722,6 +820,39 @@ public class AWSSecretsManagerAsyncClient extends AWSSecretsManagerClient implem
 
                 try {
                     result = executeUpdateSecretVersionStage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateResourcePolicyResult> validateResourcePolicyAsync(ValidateResourcePolicyRequest request) {
+
+        return validateResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateResourcePolicyResult> validateResourcePolicyAsync(final ValidateResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ValidateResourcePolicyRequest, ValidateResourcePolicyResult> asyncHandler) {
+        final ValidateResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ValidateResourcePolicyResult>() {
+            @Override
+            public ValidateResourcePolicyResult call() throws Exception {
+                ValidateResourcePolicyResult result = null;
+
+                try {
+                    result = executeValidateResourcePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

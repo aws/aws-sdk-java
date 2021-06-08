@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The number of physical connections initially provisioned and bundled by the LAG.
+     * The number of physical dedicated connections initially provisioned and bundled by the LAG.
      * </p>
      */
     private Integer numberOfConnections;
@@ -39,8 +39,8 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String location;
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
-     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
+     * The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps
+     * and 10Gbps.
      * </p>
      */
     private String connectionsBandwidth;
@@ -52,7 +52,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String lagName;
     /**
      * <p>
-     * The ID of an existing connection to migrate to the LAG.
+     * The ID of an existing dedicated connection to migrate to the LAG.
      * </p>
      */
     private String connectionId;
@@ -74,14 +74,28 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String providerName;
+    /**
+     * <p>
+     * Indicates whether the connection will support MAC Security (MACsec).
+     * </p>
+     * <note>
+     * <p>
+     * All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
+     * Security (MACsec) prerequisties, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
+     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
+     * </note>
+     */
+    private Boolean requestMACSec;
 
     /**
      * <p>
-     * The number of physical connections initially provisioned and bundled by the LAG.
+     * The number of physical dedicated connections initially provisioned and bundled by the LAG.
      * </p>
      * 
      * @param numberOfConnections
-     *        The number of physical connections initially provisioned and bundled by the LAG.
+     *        The number of physical dedicated connections initially provisioned and bundled by the LAG.
      */
 
     public void setNumberOfConnections(Integer numberOfConnections) {
@@ -90,10 +104,10 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The number of physical connections initially provisioned and bundled by the LAG.
+     * The number of physical dedicated connections initially provisioned and bundled by the LAG.
      * </p>
      * 
-     * @return The number of physical connections initially provisioned and bundled by the LAG.
+     * @return The number of physical dedicated connections initially provisioned and bundled by the LAG.
      */
 
     public Integer getNumberOfConnections() {
@@ -102,11 +116,11 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The number of physical connections initially provisioned and bundled by the LAG.
+     * The number of physical dedicated connections initially provisioned and bundled by the LAG.
      * </p>
      * 
      * @param numberOfConnections
-     *        The number of physical connections initially provisioned and bundled by the LAG.
+     *        The number of physical dedicated connections initially provisioned and bundled by the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,13 +171,13 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
-     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
+     * The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps
+     * and 10Gbps.
      * </p>
      * 
      * @param connectionsBandwidth
-     *        The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps,
-     *        100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
+     *        The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are
+     *        1Gbps and 10Gbps.
      */
 
     public void setConnectionsBandwidth(String connectionsBandwidth) {
@@ -172,12 +186,12 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
-     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
+     * The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps
+     * and 10Gbps.
      * </p>
      * 
-     * @return The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps,
-     *         100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
+     * @return The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values
+     *         are 1Gbps and 10Gbps.
      */
 
     public String getConnectionsBandwidth() {
@@ -186,13 +200,13 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
-     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
+     * The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps
+     * and 10Gbps.
      * </p>
      * 
      * @param connectionsBandwidth
-     *        The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps,
-     *        100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
+     *        The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are
+     *        1Gbps and 10Gbps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +257,11 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of an existing connection to migrate to the LAG.
+     * The ID of an existing dedicated connection to migrate to the LAG.
      * </p>
      * 
      * @param connectionId
-     *        The ID of an existing connection to migrate to the LAG.
+     *        The ID of an existing dedicated connection to migrate to the LAG.
      */
 
     public void setConnectionId(String connectionId) {
@@ -256,10 +270,10 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of an existing connection to migrate to the LAG.
+     * The ID of an existing dedicated connection to migrate to the LAG.
      * </p>
      * 
-     * @return The ID of an existing connection to migrate to the LAG.
+     * @return The ID of an existing dedicated connection to migrate to the LAG.
      */
 
     public String getConnectionId() {
@@ -268,11 +282,11 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of an existing connection to migrate to the LAG.
+     * The ID of an existing dedicated connection to migrate to the LAG.
      * </p>
      * 
      * @param connectionId
-     *        The ID of an existing connection to migrate to the LAG.
+     *        The ID of an existing dedicated connection to migrate to the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -468,6 +482,114 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Indicates whether the connection will support MAC Security (MACsec).
+     * </p>
+     * <note>
+     * <p>
+     * All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
+     * Security (MACsec) prerequisties, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
+     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param requestMACSec
+     *        Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+     *        <p>
+     *        All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
+     *        Security (MACsec) prerequisties, see <a href=
+     *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
+     *        >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *        </p>
+     */
+
+    public void setRequestMACSec(Boolean requestMACSec) {
+        this.requestMACSec = requestMACSec;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the connection will support MAC Security (MACsec).
+     * </p>
+     * <note>
+     * <p>
+     * All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
+     * Security (MACsec) prerequisties, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
+     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @return Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+     *         <p>
+     *         All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
+     *         Security (MACsec) prerequisties, see <a href=
+     *         "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
+     *         >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *         </p>
+     */
+
+    public Boolean getRequestMACSec() {
+        return this.requestMACSec;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the connection will support MAC Security (MACsec).
+     * </p>
+     * <note>
+     * <p>
+     * All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
+     * Security (MACsec) prerequisties, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
+     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param requestMACSec
+     *        Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+     *        <p>
+     *        All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
+     *        Security (MACsec) prerequisties, see <a href=
+     *        "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
+     *        >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLagRequest withRequestMACSec(Boolean requestMACSec) {
+        setRequestMACSec(requestMACSec);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the connection will support MAC Security (MACsec).
+     * </p>
+     * <note>
+     * <p>
+     * All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
+     * Security (MACsec) prerequisties, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
+     * >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @return Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+     *         <p>
+     *         All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC
+     *         Security (MACsec) prerequisties, see <a href=
+     *         "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites"
+     *         >MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.
+     *         </p>
+     */
+
+    public Boolean isRequestMACSec() {
+        return this.requestMACSec;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -494,7 +616,9 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getChildConnectionTags() != null)
             sb.append("ChildConnectionTags: ").append(getChildConnectionTags()).append(",");
         if (getProviderName() != null)
-            sb.append("ProviderName: ").append(getProviderName());
+            sb.append("ProviderName: ").append(getProviderName()).append(",");
+        if (getRequestMACSec() != null)
+            sb.append("RequestMACSec: ").append(getRequestMACSec());
         sb.append("}");
         return sb.toString();
     }
@@ -541,6 +665,10 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getProviderName() != null && other.getProviderName().equals(this.getProviderName()) == false)
             return false;
+        if (other.getRequestMACSec() == null ^ this.getRequestMACSec() == null)
+            return false;
+        if (other.getRequestMACSec() != null && other.getRequestMACSec().equals(this.getRequestMACSec()) == false)
+            return false;
         return true;
     }
 
@@ -557,6 +685,7 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getChildConnectionTags() == null) ? 0 : getChildConnectionTags().hashCode());
         hashCode = prime * hashCode + ((getProviderName() == null) ? 0 : getProviderName().hashCode());
+        hashCode = prime * hashCode + ((getRequestMACSec() == null) ? 0 : getRequestMACSec().hashCode());
         return hashCode;
     }
 

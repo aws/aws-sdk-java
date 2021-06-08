@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class StackInstance implements Serializable, Cloneable {
     private String region;
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      */
     private String account;
@@ -101,13 +101,21 @@ public class StackInstance implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     */
+    private StackInstanceComprehensiveStatus stackInstanceStatus;
+    /**
+     * <p>
      * The explanation for the specific status code that is assigned to this stack instance.
      * </p>
      */
     private String statusReason;
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      */
     private String organizationalUnitId;
@@ -233,12 +241,11 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
      * @param account
-     *        [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated
-     *        with.
+     *        [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      */
 
     public void setAccount(String account) {
@@ -247,11 +254,10 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
-     * @return [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated
-     *         with.
+     * @return [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      */
 
     public String getAccount() {
@@ -260,12 +266,11 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated with.
+     * [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * </p>
      * 
      * @param account
-     *        [<code>Self-managed</code> permissions] The name of the AWS account that the stack instance is associated
-     *        with.
+     *        [Self-managed permissions] The name of the AWS account that the stack instance is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -789,6 +794,46 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     * 
+     * @param stackInstanceStatus
+     *        The detailed status of the stack instance.
+     */
+
+    public void setStackInstanceStatus(StackInstanceComprehensiveStatus stackInstanceStatus) {
+        this.stackInstanceStatus = stackInstanceStatus;
+    }
+
+    /**
+     * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     * 
+     * @return The detailed status of the stack instance.
+     */
+
+    public StackInstanceComprehensiveStatus getStackInstanceStatus() {
+        return this.stackInstanceStatus;
+    }
+
+    /**
+     * <p>
+     * The detailed status of the stack instance.
+     * </p>
+     * 
+     * @param stackInstanceStatus
+     *        The detailed status of the stack instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackInstance withStackInstanceStatus(StackInstanceComprehensiveStatus stackInstanceStatus) {
+        setStackInstanceStatus(stackInstanceStatus);
+        return this;
+    }
+
+    /**
+     * <p>
      * The explanation for the specific status code that is assigned to this stack instance.
      * </p>
      * 
@@ -829,11 +874,16 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitId
-     *        Reserved for internal use. No data returned.
+     *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *        for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     *        DeploymentTargets</a>.
      */
 
     public void setOrganizationalUnitId(String organizationalUnitId) {
@@ -842,10 +892,15 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
-     * @return Reserved for internal use. No data returned.
+     * @return [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *         for <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html"
+     *         >DeploymentTargets</a>.
      */
 
     public String getOrganizationalUnitId() {
@@ -854,11 +909,16 @@ public class StackInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Reserved for internal use. No data returned.
+     * [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * DeploymentTargets</a>.
      * </p>
      * 
      * @param organizationalUnitId
-     *        Reserved for internal use. No data returned.
+     *        [Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified
+     *        for <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     *        DeploymentTargets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1273,6 +1333,8 @@ public class StackInstance implements Serializable, Cloneable {
             sb.append("ParameterOverrides: ").append(getParameterOverrides()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getStackInstanceStatus() != null)
+            sb.append("StackInstanceStatus: ").append(getStackInstanceStatus()).append(",");
         if (getStatusReason() != null)
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getOrganizationalUnitId() != null)
@@ -1319,6 +1381,10 @@ public class StackInstance implements Serializable, Cloneable {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getStackInstanceStatus() == null ^ this.getStackInstanceStatus() == null)
+            return false;
+        if (other.getStackInstanceStatus() != null && other.getStackInstanceStatus().equals(this.getStackInstanceStatus()) == false)
+            return false;
         if (other.getStatusReason() == null ^ this.getStatusReason() == null)
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
@@ -1349,6 +1415,7 @@ public class StackInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
         hashCode = prime * hashCode + ((getParameterOverrides() == null) ? 0 : getParameterOverrides().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStackInstanceStatus() == null) ? 0 : getStackInstanceStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnitId() == null) ? 0 : getOrganizationalUnitId().hashCode());
         hashCode = prime * hashCode + ((getDriftStatus() == null) ? 0 : getDriftStatus().hashCode());

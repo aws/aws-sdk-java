@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific
-     * match.
+     * match. We modify the specified CIDR block to its canonical form; for example, if you specify
+     * <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
      * </p>
      */
     private String destinationCidrBlock;
@@ -38,6 +39,18 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      */
     private String destinationIpv6CidrBlock;
+    /**
+     * <p>
+     * The ID of a prefix list used for the destination match.
+     * </p>
+     */
+    private String destinationPrefixListId;
+    /**
+     * <p>
+     * The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     * </p>
+     */
+    private String vpcEndpointId;
     /**
      * <p>
      * [IPv6 traffic only] The ID of an egress-only internet gateway.
@@ -77,6 +90,15 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     private String localGatewayId;
     /**
      * <p>
+     * The ID of the carrier gateway.
+     * </p>
+     * <p>
+     * You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     * </p>
+     */
+    private String carrierGatewayId;
+    /**
+     * <p>
      * The ID of a network interface.
      * </p>
      */
@@ -97,12 +119,14 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific
-     * match.
+     * match. We modify the specified CIDR block to its canonical form; for example, if you specify
+     * <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
      * </p>
      * 
      * @param destinationCidrBlock
      *        The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most
-     *        specific match.
+     *        specific match. We modify the specified CIDR block to its canonical form; for example, if you specify
+     *        <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
      */
 
     public void setDestinationCidrBlock(String destinationCidrBlock) {
@@ -112,11 +136,13 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific
-     * match.
+     * match. We modify the specified CIDR block to its canonical form; for example, if you specify
+     * <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
      * </p>
      * 
      * @return The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most
-     *         specific match.
+     *         specific match. We modify the specified CIDR block to its canonical form; for example, if you specify
+     *         <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
      */
 
     public String getDestinationCidrBlock() {
@@ -126,12 +152,14 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific
-     * match.
+     * match. We modify the specified CIDR block to its canonical form; for example, if you specify
+     * <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
      * </p>
      * 
      * @param destinationCidrBlock
      *        The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most
-     *        specific match.
+     *        specific match. We modify the specified CIDR block to its canonical form; for example, if you specify
+     *        <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,6 +208,86 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     public CreateRouteRequest withDestinationIpv6CidrBlock(String destinationIpv6CidrBlock) {
         setDestinationIpv6CidrBlock(destinationIpv6CidrBlock);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of a prefix list used for the destination match.
+     * </p>
+     * 
+     * @param destinationPrefixListId
+     *        The ID of a prefix list used for the destination match.
+     */
+
+    public void setDestinationPrefixListId(String destinationPrefixListId) {
+        this.destinationPrefixListId = destinationPrefixListId;
+    }
+
+    /**
+     * <p>
+     * The ID of a prefix list used for the destination match.
+     * </p>
+     * 
+     * @return The ID of a prefix list used for the destination match.
+     */
+
+    public String getDestinationPrefixListId() {
+        return this.destinationPrefixListId;
+    }
+
+    /**
+     * <p>
+     * The ID of a prefix list used for the destination match.
+     * </p>
+     * 
+     * @param destinationPrefixListId
+     *        The ID of a prefix list used for the destination match.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withDestinationPrefixListId(String destinationPrefixListId) {
+        setDestinationPrefixListId(destinationPrefixListId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     */
+
+    public void setVpcEndpointId(String vpcEndpointId) {
+        this.vpcEndpointId = vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     * </p>
+     * 
+     * @return The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     */
+
+    public String getVpcEndpointId() {
+        return this.vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withVpcEndpointId(String vpcEndpointId) {
+        setVpcEndpointId(vpcEndpointId);
         return this;
     }
 
@@ -431,6 +539,61 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
+     * The ID of the carrier gateway.
+     * </p>
+     * <p>
+     * You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     * </p>
+     * 
+     * @param carrierGatewayId
+     *        The ID of the carrier gateway.</p>
+     *        <p>
+     *        You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     */
+
+    public void setCarrierGatewayId(String carrierGatewayId) {
+        this.carrierGatewayId = carrierGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the carrier gateway.
+     * </p>
+     * <p>
+     * You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     * </p>
+     * 
+     * @return The ID of the carrier gateway.</p>
+     *         <p>
+     *         You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     */
+
+    public String getCarrierGatewayId() {
+        return this.carrierGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the carrier gateway.
+     * </p>
+     * <p>
+     * You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     * </p>
+     * 
+     * @param carrierGatewayId
+     *        The ID of the carrier gateway.</p>
+     *        <p>
+     *        You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withCarrierGatewayId(String carrierGatewayId) {
+        setCarrierGatewayId(carrierGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of a network interface.
      * </p>
      * 
@@ -576,6 +739,10 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock()).append(",");
         if (getDestinationIpv6CidrBlock() != null)
             sb.append("DestinationIpv6CidrBlock: ").append(getDestinationIpv6CidrBlock()).append(",");
+        if (getDestinationPrefixListId() != null)
+            sb.append("DestinationPrefixListId: ").append(getDestinationPrefixListId()).append(",");
+        if (getVpcEndpointId() != null)
+            sb.append("VpcEndpointId: ").append(getVpcEndpointId()).append(",");
         if (getEgressOnlyInternetGatewayId() != null)
             sb.append("EgressOnlyInternetGatewayId: ").append(getEgressOnlyInternetGatewayId()).append(",");
         if (getGatewayId() != null)
@@ -588,6 +755,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
         if (getLocalGatewayId() != null)
             sb.append("LocalGatewayId: ").append(getLocalGatewayId()).append(",");
+        if (getCarrierGatewayId() != null)
+            sb.append("CarrierGatewayId: ").append(getCarrierGatewayId()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getRouteTableId() != null)
@@ -616,6 +785,14 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getDestinationIpv6CidrBlock() != null && other.getDestinationIpv6CidrBlock().equals(this.getDestinationIpv6CidrBlock()) == false)
             return false;
+        if (other.getDestinationPrefixListId() == null ^ this.getDestinationPrefixListId() == null)
+            return false;
+        if (other.getDestinationPrefixListId() != null && other.getDestinationPrefixListId().equals(this.getDestinationPrefixListId()) == false)
+            return false;
+        if (other.getVpcEndpointId() == null ^ this.getVpcEndpointId() == null)
+            return false;
+        if (other.getVpcEndpointId() != null && other.getVpcEndpointId().equals(this.getVpcEndpointId()) == false)
+            return false;
         if (other.getEgressOnlyInternetGatewayId() == null ^ this.getEgressOnlyInternetGatewayId() == null)
             return false;
         if (other.getEgressOnlyInternetGatewayId() != null && other.getEgressOnlyInternetGatewayId().equals(this.getEgressOnlyInternetGatewayId()) == false)
@@ -640,6 +817,10 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getLocalGatewayId() != null && other.getLocalGatewayId().equals(this.getLocalGatewayId()) == false)
             return false;
+        if (other.getCarrierGatewayId() == null ^ this.getCarrierGatewayId() == null)
+            return false;
+        if (other.getCarrierGatewayId() != null && other.getCarrierGatewayId().equals(this.getCarrierGatewayId()) == false)
+            return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
@@ -662,12 +843,15 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getDestinationIpv6CidrBlock() == null) ? 0 : getDestinationIpv6CidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getDestinationPrefixListId() == null) ? 0 : getDestinationPrefixListId().hashCode());
+        hashCode = prime * hashCode + ((getVpcEndpointId() == null) ? 0 : getVpcEndpointId().hashCode());
         hashCode = prime * hashCode + ((getEgressOnlyInternetGatewayId() == null) ? 0 : getEgressOnlyInternetGatewayId().hashCode());
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayId() == null) ? 0 : getLocalGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getCarrierGatewayId() == null) ? 0 : getCarrierGatewayId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());

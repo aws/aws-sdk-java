@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -111,6 +111,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -120,6 +126,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
      * </p>
      * </li>
      * </ul>
@@ -198,6 +210,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -209,6 +227,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
      * </p>
      * </li>
      * </ul>
@@ -441,6 +465,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -450,6 +480,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
      * </p>
      * </li>
      * </ul>
@@ -523,6 +559,13 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
+     *        Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using
+     *        the endpoint ARN. Example:
+     *        <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *        the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *        <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -532,6 +575,13 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
      *        name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     *        <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>
+     *        .
      *        </p>
      *        </li>
      */
@@ -611,6 +661,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -620,6 +676,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
      * </p>
      * </li>
      * </ul>
@@ -693,6 +755,13 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
+     *         Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified
+     *         using the endpoint ARN. Example:
+     *         <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *         the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *         <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -702,6 +771,14 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
      *         name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
+     *         Example:
+     *         <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>
+     *         .
      *         </p>
      *         </li>
      */
@@ -781,6 +858,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -790,6 +873,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
      * </p>
      * </li>
      * </ul>
@@ -863,6 +952,13 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
+     *        Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using
+     *        the endpoint ARN. Example:
+     *        <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is
      *        the function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      *        <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -872,6 +968,13 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
      *        name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     *        <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>
+     *        .
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -955,6 +1058,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -966,6 +1075,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
      * </p>
      * </li>
      * </ul>
@@ -1042,6 +1157,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
+     *        <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend entity recognizer endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
@@ -1055,6 +1176,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *        Amazon MSK cluster.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1137,6 +1264,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1148,6 +1281,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
      * </p>
      * </li>
      * </ul>
@@ -1223,6 +1362,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
+     *         <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *         for an Amazon Comprehend entity recognizer endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *         </p>
      *         </li>
@@ -1236,6 +1381,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *         table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *         Amazon MSK cluster.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1318,6 +1469,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1329,6 +1486,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
      * </p>
      * </li>
      * </ul>
@@ -1405,6 +1568,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
+     *        <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend entity recognizer endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
@@ -1418,6 +1587,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *        Amazon MSK cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1502,6 +1677,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1513,6 +1694,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
      * </p>
      * </li>
      * </ul>
@@ -1589,6 +1776,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
+     *        <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend entity recognizer endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
@@ -1602,6 +1795,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *        Amazon MSK cluster.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1684,6 +1883,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1695,6 +1900,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
      * </p>
      * </li>
      * </ul>
@@ -1771,6 +1982,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
+     *        <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend entity recognizer endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      *        </p>
      *        </li>
@@ -1784,6 +2001,12 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *        Amazon MSK cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

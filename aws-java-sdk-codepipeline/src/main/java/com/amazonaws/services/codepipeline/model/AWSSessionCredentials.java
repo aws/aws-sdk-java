@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -182,11 +182,11 @@ public class AWSSessionCredentials implements Serializable, Cloneable, Structure
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessKeyId() != null)
-            sb.append("AccessKeyId: ").append(getAccessKeyId()).append(",");
+            sb.append("AccessKeyId: ").append("***Sensitive Data Redacted***").append(",");
         if (getSecretAccessKey() != null)
-            sb.append("SecretAccessKey: ").append(getSecretAccessKey()).append(",");
+            sb.append("SecretAccessKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getSessionToken() != null)
-            sb.append("SessionToken: ").append(getSessionToken());
+            sb.append("SessionToken: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

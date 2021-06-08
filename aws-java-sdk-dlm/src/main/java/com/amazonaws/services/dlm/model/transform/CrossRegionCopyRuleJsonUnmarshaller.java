@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,10 @@ public class CrossRegionCopyRuleJsonUnmarshaller implements Unmarshaller<CrossRe
                 if (context.testExpression("TargetRegion", targetDepth)) {
                     context.nextToken();
                     crossRegionCopyRule.setTargetRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Target", targetDepth)) {
+                    context.nextToken();
+                    crossRegionCopyRule.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Encrypted", targetDepth)) {
                     context.nextToken();

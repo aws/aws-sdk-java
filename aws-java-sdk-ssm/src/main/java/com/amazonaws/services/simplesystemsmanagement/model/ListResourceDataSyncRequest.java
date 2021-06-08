@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
-     * resource data syncs that synchronize data to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view
+     * resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view
      * resource data syncs from AWS Organizations or from multiple AWS Regions.
      * </p>
      */
@@ -50,15 +50,14 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
-     * resource data syncs that synchronize data to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view
+     * resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view
      * resource data syncs from AWS Organizations or from multiple AWS Regions.
      * </p>
      * 
      * @param syncType
      *        View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to
-     *        view resource data syncs that synchronize data to an Amazon S3 buckets. Specify
-     *        <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from multiple AWS
-     *        Regions.
+     *        view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code>
+     *        to view resource data syncs from AWS Organizations or from multiple AWS Regions.
      */
 
     public void setSyncType(String syncType) {
@@ -68,12 +67,12 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
-     * resource data syncs that synchronize data to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view
+     * resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view
      * resource data syncs from AWS Organizations or from multiple AWS Regions.
      * </p>
      * 
      * @return View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to
-     *         view resource data syncs that synchronize data to an Amazon S3 buckets. Specify
+     *         view resource data syncs that synchronize data to an Amazon S3 bucket. Specify
      *         <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from multiple AWS
      *         Regions.
      */
@@ -85,15 +84,14 @@ public class ListResourceDataSyncRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view
-     * resource data syncs that synchronize data to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view
+     * resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view
      * resource data syncs from AWS Organizations or from multiple AWS Regions.
      * </p>
      * 
      * @param syncType
      *        View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to
-     *        view resource data syncs that synchronize data to an Amazon S3 buckets. Specify
-     *        <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from multiple AWS
-     *        Regions.
+     *        view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code>
+     *        to view resource data syncs from AWS Organizations or from multiple AWS Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

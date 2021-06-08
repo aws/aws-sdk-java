@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,12 @@ public class ContainerDetails implements Serializable, Cloneable, StructuredPojo
     private String imageName;
     /**
      * <p>
-     * The date and time when the container started.
+     * Indicates when the container started.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String launchedAt;
@@ -175,11 +180,20 @@ public class ContainerDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date and time when the container started.
+     * Indicates when the container started.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param launchedAt
-     *        The date and time when the container started.
+     *        Indicates when the container started.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setLaunchedAt(String launchedAt) {
@@ -188,10 +202,19 @@ public class ContainerDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date and time when the container started.
+     * Indicates when the container started.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return The date and time when the container started.
+     * @return Indicates when the container started.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getLaunchedAt() {
@@ -200,11 +223,20 @@ public class ContainerDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date and time when the container started.
+     * Indicates when the container started.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param launchedAt
-     *        The date and time when the container started.
+     *        Indicates when the container started.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

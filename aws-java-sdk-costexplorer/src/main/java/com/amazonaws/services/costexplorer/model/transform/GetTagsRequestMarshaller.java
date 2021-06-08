@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.costexplorer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,12 @@ public class GetTagsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimePeriod").build();
     private static final MarshallingInfo<String> TAGKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TagKey").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filter").build();
+    private static final MarshallingInfo<List> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortBy").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTPAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextPageToken").build();
 
@@ -55,6 +62,9 @@ public class GetTagsRequestMarshaller {
             protocolMarshaller.marshall(getTagsRequest.getSearchString(), SEARCHSTRING_BINDING);
             protocolMarshaller.marshall(getTagsRequest.getTimePeriod(), TIMEPERIOD_BINDING);
             protocolMarshaller.marshall(getTagsRequest.getTagKey(), TAGKEY_BINDING);
+            protocolMarshaller.marshall(getTagsRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(getTagsRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(getTagsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(getTagsRequest.getNextPageToken(), NEXTPAGETOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

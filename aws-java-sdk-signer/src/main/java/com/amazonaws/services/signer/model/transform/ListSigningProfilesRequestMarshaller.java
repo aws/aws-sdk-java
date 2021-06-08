@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.signer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,10 @@ public class ListSigningProfilesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<String> PLATFORMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("platformId").build();
+    private static final MarshallingInfo<List> STATUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("statuses").build();
 
     private static final ListSigningProfilesRequestMarshaller instance = new ListSigningProfilesRequestMarshaller();
 
@@ -53,6 +58,8 @@ public class ListSigningProfilesRequestMarshaller {
             protocolMarshaller.marshall(listSigningProfilesRequest.getIncludeCanceled(), INCLUDECANCELED_BINDING);
             protocolMarshaller.marshall(listSigningProfilesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listSigningProfilesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listSigningProfilesRequest.getPlatformId(), PLATFORMID_BINDING);
+            protocolMarshaller.marshall(listSigningProfilesRequest.getStatuses(), STATUSES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

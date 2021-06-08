@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS.
+ * Settings related to your HLS output package. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
+ * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
+ * HLS_GROUP_SETTINGS.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HlsGroupSettings" target="_top">AWS API
  *      Documentation</a>
@@ -38,6 +41,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private java.util.List<HlsAdditionalManifest> additionalManifests;
     /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
+     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
+     * headers from your audio segments.
+     */
+    private String audioOnlyHeader;
+    /**
      * A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest
      * is delivered from a different URL than the main .m3u8 file.
      */
@@ -54,8 +63,9 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String captionLanguageSetting;
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
-     * replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
+     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
+     * http header.
      */
     private String clientCache;
     /** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
@@ -303,6 +313,73 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
+     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
+     * headers from your audio segments.
+     * 
+     * @param audioOnlyHeader
+     *        Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
+     *        Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
+     *        remove the audio-only headers from your audio segments.
+     * @see HlsAudioOnlyHeader
+     */
+
+    public void setAudioOnlyHeader(String audioOnlyHeader) {
+        this.audioOnlyHeader = audioOnlyHeader;
+    }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
+     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
+     * headers from your audio segments.
+     * 
+     * @return Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
+     *         Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
+     *         remove the audio-only headers from your audio segments.
+     * @see HlsAudioOnlyHeader
+     */
+
+    public String getAudioOnlyHeader() {
+        return this.audioOnlyHeader;
+    }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
+     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
+     * headers from your audio segments.
+     * 
+     * @param audioOnlyHeader
+     *        Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
+     *        Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
+     *        remove the audio-only headers from your audio segments.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsAudioOnlyHeader
+     */
+
+    public HlsGroupSettings withAudioOnlyHeader(String audioOnlyHeader) {
+        setAudioOnlyHeader(audioOnlyHeader);
+        return this;
+    }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
+     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
+     * headers from your audio segments.
+     * 
+     * @param audioOnlyHeader
+     *        Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
+     *        Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
+     *        remove the audio-only headers from your audio segments.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsAudioOnlyHeader
+     */
+
+    public HlsGroupSettings withAudioOnlyHeader(HlsAudioOnlyHeader audioOnlyHeader) {
+        this.audioOnlyHeader = audioOnlyHeader.toString();
+        return this;
+    }
+
+    /**
      * A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest
      * is delivered from a different URL than the main .m3u8 file.
      * 
@@ -500,12 +577,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
-     * replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
+     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
+     * http header.
      * 
      * @param clientCache
-     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
-     *        later replay.
+     *        Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
+     *        default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
+     *        the Cache-Control http header.
      * @see HlsClientCache
      */
 
@@ -514,11 +593,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
-     * replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
+     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
+     * http header.
      * 
-     * @return When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
-     *         later replay.
+     * @return Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
+     *         default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
+     *         the Cache-Control http header.
      * @see HlsClientCache
      */
 
@@ -527,12 +608,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
-     * replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
+     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
+     * http header.
      * 
      * @param clientCache
-     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
-     *        later replay.
+     *        Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
+     *        default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
+     *        the Cache-Control http header.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsClientCache
      */
@@ -543,12 +626,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
-     * replay.
+     * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
+     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
+     * http header.
      * 
      * @param clientCache
-     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
-     *        later replay.
+     *        Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
+     *        default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
+     *        the Cache-Control http header.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsClientCache
      */
@@ -1472,6 +1557,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("AdMarkers: ").append(getAdMarkers()).append(",");
         if (getAdditionalManifests() != null)
             sb.append("AdditionalManifests: ").append(getAdditionalManifests()).append(",");
+        if (getAudioOnlyHeader() != null)
+            sb.append("AudioOnlyHeader: ").append(getAudioOnlyHeader()).append(",");
         if (getBaseUrl() != null)
             sb.append("BaseUrl: ").append(getBaseUrl()).append(",");
         if (getCaptionLanguageMappings() != null)
@@ -1539,6 +1626,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getAdditionalManifests() == null ^ this.getAdditionalManifests() == null)
             return false;
         if (other.getAdditionalManifests() != null && other.getAdditionalManifests().equals(this.getAdditionalManifests()) == false)
+            return false;
+        if (other.getAudioOnlyHeader() == null ^ this.getAudioOnlyHeader() == null)
+            return false;
+        if (other.getAudioOnlyHeader() != null && other.getAudioOnlyHeader().equals(this.getAudioOnlyHeader()) == false)
             return false;
         if (other.getBaseUrl() == null ^ this.getBaseUrl() == null)
             return false;
@@ -1642,6 +1733,7 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getAdMarkers() == null) ? 0 : getAdMarkers().hashCode());
         hashCode = prime * hashCode + ((getAdditionalManifests() == null) ? 0 : getAdditionalManifests().hashCode());
+        hashCode = prime * hashCode + ((getAudioOnlyHeader() == null) ? 0 : getAudioOnlyHeader().hashCode());
         hashCode = prime * hashCode + ((getBaseUrl() == null) ? 0 : getBaseUrl().hashCode());
         hashCode = prime * hashCode + ((getCaptionLanguageMappings() == null) ? 0 : getCaptionLanguageMappings().hashCode());
         hashCode = prime * hashCode + ((getCaptionLanguageSetting() == null) ? 0 : getCaptionLanguageSetting().hashCode());

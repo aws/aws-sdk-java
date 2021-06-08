@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -149,6 +149,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public CreateDBProxyEndpointResult createDBProxyEndpoint(CreateDBProxyEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBSecurityGroup createDBSecurityGroup(CreateDBSecurityGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -220,6 +225,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DeleteDBProxyResult deleteDBProxy(DeleteDBProxyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDBProxyEndpointResult deleteDBProxyEndpoint(DeleteDBProxyEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -385,6 +395,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DescribeDBProxiesResult describeDBProxies(DescribeDBProxiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDBProxyEndpointsResult describeDBProxyEndpoints(DescribeDBProxyEndpointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -569,6 +584,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public GlobalCluster failoverGlobalCluster(FailoverGlobalClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportInstallationMediaResult importInstallationMedia(ImportInstallationMediaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -620,6 +640,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public ModifyDBProxyResult modifyDBProxy(ModifyDBProxyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyDBProxyEndpointResult modifyDBProxyEndpoint(ModifyDBProxyEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -769,6 +794,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBInstanceAutomatedBackup startDBInstanceAutomatedBackupsReplication(StartDBInstanceAutomatedBackupsReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartExportTaskResult startExportTask(StartExportTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -785,6 +815,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DBInstance stopDBInstance(StopDBInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DBInstanceAutomatedBackup stopDBInstanceAutomatedBackupsReplication(StopDBInstanceAutomatedBackupsReplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

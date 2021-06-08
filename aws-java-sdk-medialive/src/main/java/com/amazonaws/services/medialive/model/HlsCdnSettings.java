@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class HlsCdnSettings implements Serializable, Cloneable, StructuredPojo {
     private HlsBasicPutSettings hlsBasicPutSettings;
 
     private HlsMediaStoreSettings hlsMediaStoreSettings;
+
+    private HlsS3Settings hlsS3Settings;
 
     private HlsWebdavSettings hlsWebdavSettings;
 
@@ -113,6 +115,32 @@ public class HlsCdnSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param hlsS3Settings
+     */
+
+    public void setHlsS3Settings(HlsS3Settings hlsS3Settings) {
+        this.hlsS3Settings = hlsS3Settings;
+    }
+
+    /**
+     * @return
+     */
+
+    public HlsS3Settings getHlsS3Settings() {
+        return this.hlsS3Settings;
+    }
+
+    /**
+     * @param hlsS3Settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HlsCdnSettings withHlsS3Settings(HlsS3Settings hlsS3Settings) {
+        setHlsS3Settings(hlsS3Settings);
+        return this;
+    }
+
+    /**
      * @param hlsWebdavSettings
      */
 
@@ -156,6 +184,8 @@ public class HlsCdnSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("HlsBasicPutSettings: ").append(getHlsBasicPutSettings()).append(",");
         if (getHlsMediaStoreSettings() != null)
             sb.append("HlsMediaStoreSettings: ").append(getHlsMediaStoreSettings()).append(",");
+        if (getHlsS3Settings() != null)
+            sb.append("HlsS3Settings: ").append(getHlsS3Settings()).append(",");
         if (getHlsWebdavSettings() != null)
             sb.append("HlsWebdavSettings: ").append(getHlsWebdavSettings());
         sb.append("}");
@@ -184,6 +214,10 @@ public class HlsCdnSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHlsMediaStoreSettings() != null && other.getHlsMediaStoreSettings().equals(this.getHlsMediaStoreSettings()) == false)
             return false;
+        if (other.getHlsS3Settings() == null ^ this.getHlsS3Settings() == null)
+            return false;
+        if (other.getHlsS3Settings() != null && other.getHlsS3Settings().equals(this.getHlsS3Settings()) == false)
+            return false;
         if (other.getHlsWebdavSettings() == null ^ this.getHlsWebdavSettings() == null)
             return false;
         if (other.getHlsWebdavSettings() != null && other.getHlsWebdavSettings().equals(this.getHlsWebdavSettings()) == false)
@@ -199,6 +233,7 @@ public class HlsCdnSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getHlsAkamaiSettings() == null) ? 0 : getHlsAkamaiSettings().hashCode());
         hashCode = prime * hashCode + ((getHlsBasicPutSettings() == null) ? 0 : getHlsBasicPutSettings().hashCode());
         hashCode = prime * hashCode + ((getHlsMediaStoreSettings() == null) ? 0 : getHlsMediaStoreSettings().hashCode());
+        hashCode = prime * hashCode + ((getHlsS3Settings() == null) ? 0 : getHlsS3Settings().hashCode());
         hashCode = prime * hashCode + ((getHlsWebdavSettings() == null) ? 0 : getHlsWebdavSettings().hashCode());
         return hashCode;
     }

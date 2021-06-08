@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String topicArn;
     /**
      * <p>
-     * The protocol you want to use. Supported protocols include:
+     * The protocol that you want to use. Supported protocols include:
      * </p>
      * <ul>
      * <li>
@@ -71,12 +71,17 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
+     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.
      * </p>
      * </li>
      * </ul>
@@ -89,32 +94,32 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
+     * For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
+     * For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>email</code> protocol, the endpoint is an email address
+     * For the <code>email</code> protocol, the endpoint is an email address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>email-json</code> protocol, the endpoint is an email address
+     * For the <code>email-json</code> protocol, the endpoint is an email address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device
+     * For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue
+     * For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.
      * </p>
      * </li>
      * <li>
@@ -124,7 +129,13 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery
+     * stream.
      * </p>
      * </li>
      * </ul>
@@ -167,6 +178,34 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Permission to write to the Kinesis Data Firehose delivery stream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SNS listed as a trusted entity
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose
+     * delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
     /**
@@ -174,25 +213,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
      * subscription is not yet confirmed.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * If you have the subscription ARN returned, the response includes the ARN in all cases, even if the subscription
-     * is not yet confirmed.
+     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     * subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes
+     * the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription
+     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
+     * token.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the response
-     * also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-     * subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
-     * confirmation token.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you set this parameter to <code>true</code>, .
-     * </p>
+     * <p/>
      * <p>
      * The default value is <code>false</code>.
      * </p>
@@ -213,7 +241,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @param topicArn
      *        The ARN of the topic you want to subscribe to.
      * @param protocol
-     *        The protocol you want to use. Supported protocols include:</p>
+     *        The protocol that you want to use. Supported protocols include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -247,12 +275,18 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
+     *        <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
+     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery
+     *        stream.
      *        </p>
      *        </li>
      * @param endpoint
@@ -260,32 +294,32 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
+     *        For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
+     *        For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>email</code> protocol, the endpoint is an email address
+     *        For the <code>email</code> protocol, the endpoint is an email address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>email-json</code> protocol, the endpoint is an email address
+     *        For the <code>email-json</code> protocol, the endpoint is an email address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device
+     *        For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue
+     *        For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.
      *        </p>
      *        </li>
      *        <li>
@@ -295,7 +329,13 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
+     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose
+     *        delivery stream.
      *        </p>
      *        </li>
      */
@@ -347,7 +387,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The protocol you want to use. Supported protocols include:
+     * The protocol that you want to use. Supported protocols include:
      * </p>
      * <ul>
      * <li>
@@ -382,18 +422,23 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
+     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.
      * </p>
      * </li>
      * </ul>
      * 
      * @param protocol
-     *        The protocol you want to use. Supported protocols include:</p>
+     *        The protocol that you want to use. Supported protocols include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -427,12 +472,18 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
+     *        <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
+     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery
+     *        stream.
      *        </p>
      *        </li>
      */
@@ -443,7 +494,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The protocol you want to use. Supported protocols include:
+     * The protocol that you want to use. Supported protocols include:
      * </p>
      * <ul>
      * <li>
@@ -478,17 +529,22 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
+     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The protocol you want to use. Supported protocols include:</p>
+     * @return The protocol that you want to use. Supported protocols include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -522,13 +578,18 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and
-     *         device.
+     *         <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
+     *         <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery
+     *         stream.
      *         </p>
      *         </li>
      */
@@ -539,7 +600,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The protocol you want to use. Supported protocols include:
+     * The protocol that you want to use. Supported protocols include:
      * </p>
      * <ul>
      * <li>
@@ -574,18 +635,23 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
+     * <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.
      * </p>
      * </li>
      * </ul>
      * 
      * @param protocol
-     *        The protocol you want to use. Supported protocols include:</p>
+     *        The protocol that you want to use. Supported protocols include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -619,12 +685,18 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device.
+     *        <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
+     *        <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery
+     *        stream.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -642,32 +714,32 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
+     * For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
+     * For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>email</code> protocol, the endpoint is an email address
+     * For the <code>email</code> protocol, the endpoint is an email address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>email-json</code> protocol, the endpoint is an email address
+     * For the <code>email-json</code> protocol, the endpoint is an email address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device
+     * For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue
+     * For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.
      * </p>
      * </li>
      * <li>
@@ -677,7 +749,13 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery
+     * stream.
      * </p>
      * </li>
      * </ul>
@@ -687,32 +765,32 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
+     *        For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
+     *        For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>email</code> protocol, the endpoint is an email address
+     *        For the <code>email</code> protocol, the endpoint is an email address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>email-json</code> protocol, the endpoint is an email address
+     *        For the <code>email-json</code> protocol, the endpoint is an email address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device
+     *        For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue
+     *        For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.
      *        </p>
      *        </li>
      *        <li>
@@ -722,7 +800,13 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
+     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose
+     *        delivery stream.
      *        </p>
      *        </li>
      */
@@ -738,32 +822,32 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
+     * For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
+     * For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>email</code> protocol, the endpoint is an email address
+     * For the <code>email</code> protocol, the endpoint is an email address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>email-json</code> protocol, the endpoint is an email address
+     * For the <code>email-json</code> protocol, the endpoint is an email address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device
+     * For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue
+     * For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.
      * </p>
      * </li>
      * <li>
@@ -773,7 +857,13 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery
+     * stream.
      * </p>
      * </li>
      * </ul>
@@ -782,32 +872,32 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <ul>
      *         <li>
      *         <p>
-     *         For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
+     *         For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
+     *         For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>email</code> protocol, the endpoint is an email address
+     *         For the <code>email</code> protocol, the endpoint is an email address.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>email-json</code> protocol, the endpoint is an email address
+     *         For the <code>email-json</code> protocol, the endpoint is an email address.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device
+     *         For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue
+     *         For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.
      *         </p>
      *         </li>
      *         <li>
@@ -817,7 +907,13 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
+     *         For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose
+     *         delivery stream.
      *         </p>
      *         </li>
      */
@@ -833,32 +929,32 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
+     * For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
+     * For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>email</code> protocol, the endpoint is an email address
+     * For the <code>email</code> protocol, the endpoint is an email address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>email-json</code> protocol, the endpoint is an email address
+     * For the <code>email-json</code> protocol, the endpoint is an email address.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device
+     * For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue
+     * For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.
      * </p>
      * </li>
      * <li>
@@ -868,7 +964,13 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
+     * For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery
+     * stream.
      * </p>
      * </li>
      * </ul>
@@ -878,32 +980,32 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>http</code> protocol, the endpoint is an URL beginning with <code>http://</code>
+     *        For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>https</code> protocol, the endpoint is a URL beginning with <code>https://</code>
+     *        For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>email</code> protocol, the endpoint is an email address
+     *        For the <code>email</code> protocol, the endpoint is an email address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>email-json</code> protocol, the endpoint is an email address
+     *        For the <code>email-json</code> protocol, the endpoint is an email address.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device
+     *        For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue
+     *        For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.
      *        </p>
      *        </li>
      *        <li>
@@ -913,7 +1015,13 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function.
+     *        For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose
+     *        delivery stream.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -961,6 +1069,34 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Permission to write to the Kinesis Data Firehose delivery stream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SNS listed as a trusted entity
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose
+     * delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A map of attributes with their corresponding values.</p>
      *         <p>
@@ -994,6 +1130,34 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         subscribed endpoint is unreachable) or server errors (for example, when the service that powers the
      *         subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or
      *         reprocessing.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Permission to write to the Kinesis Data Firehose delivery stream
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon SNS listed as a trusted entity
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream
+     *         subscriptions. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data
+     *         Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
      *         </p>
      *         </li>
      */
@@ -1042,6 +1206,34 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Permission to write to the Kinesis Data Firehose delivery stream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SNS listed as a trusted entity
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose
+     * delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
@@ -1075,6 +1267,34 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed
      *        endpoint is unreachable) or server errors (for example, when the service that powers the subscribed
      *        endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Permission to write to the Kinesis Data Firehose delivery stream
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon SNS listed as a trusted entity
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream
+     *        subscriptions. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data
+     *        Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
      *        </p>
      *        </li>
      */
@@ -1120,6 +1340,34 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Permission to write to the Kinesis Data Firehose delivery stream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SNS listed as a trusted entity
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose
+     * delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributes
      *        A map of attributes with their corresponding values.</p>
@@ -1153,6 +1401,34 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed
      *        endpoint is unreachable) or server errors (for example, when the service that powers the subscribed
      *        endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Permission to write to the Kinesis Data Firehose delivery stream
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon SNS listed as a trusted entity
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream
+     *        subscriptions. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data
+     *        Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1196,25 +1472,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
      * subscription is not yet confirmed.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * If you have the subscription ARN returned, the response includes the ARN in all cases, even if the subscription
-     * is not yet confirmed.
+     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     * subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes
+     * the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription
+     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
+     * token.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the response
-     * also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-     * subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
-     * confirmation token.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you set this parameter to <code>true</code>, .
-     * </p>
+     * <p/>
      * <p>
      * The default value is <code>false</code>.
      * </p>
@@ -1222,25 +1487,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @param returnSubscriptionArn
      *        Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
      *        the subscription is not yet confirmed.</p>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        If you have the subscription ARN returned, the response includes the ARN in all cases, even if the
-     *        subscription is not yet confirmed.
+     *        If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     *        subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also
+     *        includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     *        subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with
+     *        a confirmation token.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the
-     *        response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet
-     *        confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code>
-     *        action with a confirmation token.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If you set this parameter to <code>true</code>, .
-     *        </p>
+     *        <p/>
      *        <p>
      *        The default value is <code>false</code>.
      */
@@ -1254,50 +1508,28 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
      * subscription is not yet confirmed.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * If you have the subscription ARN returned, the response includes the ARN in all cases, even if the subscription
-     * is not yet confirmed.
+     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     * subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes
+     * the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription
+     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
+     * token.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the response
-     * also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-     * subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
-     * confirmation token.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you set this parameter to <code>true</code>, .
-     * </p>
+     * <p/>
      * <p>
      * The default value is <code>false</code>.
      * </p>
      * 
      * @return Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
      *         the subscription is not yet confirmed.</p>
-     *         <ul>
-     *         <li>
      *         <p>
-     *         If you have the subscription ARN returned, the response includes the ARN in all cases, even if the
-     *         subscription is not yet confirmed.
+     *         If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     *         subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also
+     *         includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     *         subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with
+     *         a confirmation token.
      *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the
-     *         response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet
-     *         confirmed. A subscription becomes confirmed when the subscriber calls the
-     *         <code>ConfirmSubscription</code> action with a confirmation token.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If you set this parameter to <code>true</code>, .
-     *         </p>
+     *         <p/>
      *         <p>
      *         The default value is <code>false</code>.
      */
@@ -1311,25 +1543,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
      * subscription is not yet confirmed.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * If you have the subscription ARN returned, the response includes the ARN in all cases, even if the subscription
-     * is not yet confirmed.
+     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     * subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes
+     * the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription
+     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
+     * token.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the response
-     * also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-     * subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
-     * confirmation token.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you set this parameter to <code>true</code>, .
-     * </p>
+     * <p/>
      * <p>
      * The default value is <code>false</code>.
      * </p>
@@ -1337,25 +1558,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * @param returnSubscriptionArn
      *        Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
      *        the subscription is not yet confirmed.</p>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        If you have the subscription ARN returned, the response includes the ARN in all cases, even if the
-     *        subscription is not yet confirmed.
+     *        If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     *        subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also
+     *        includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     *        subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with
+     *        a confirmation token.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the
-     *        response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet
-     *        confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code>
-     *        action with a confirmation token.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If you set this parameter to <code>true</code>, .
-     *        </p>
+     *        <p/>
      *        <p>
      *        The default value is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1371,50 +1581,28 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
      * subscription is not yet confirmed.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * If you have the subscription ARN returned, the response includes the ARN in all cases, even if the subscription
-     * is not yet confirmed.
+     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     * subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes
+     * the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription
+     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
+     * token.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the response
-     * also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
-     * subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a
-     * confirmation token.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you set this parameter to <code>true</code>, .
-     * </p>
+     * <p/>
      * <p>
      * The default value is <code>false</code>.
      * </p>
      * 
      * @return Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
      *         the subscription is not yet confirmed.</p>
-     *         <ul>
-     *         <li>
      *         <p>
-     *         If you have the subscription ARN returned, the response includes the ARN in all cases, even if the
-     *         subscription is not yet confirmed.
+     *         If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     *         subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also
+     *         includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     *         subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with
+     *         a confirmation token.
      *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If you don't have the subscription ARN returned, in addition to the ARN for confirmed subscriptions, the
-     *         response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet
-     *         confirmed. A subscription becomes confirmed when the subscriber calls the
-     *         <code>ConfirmSubscription</code> action with a confirmation token.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If you set this parameter to <code>true</code>, .
-     *         </p>
+     *         <p/>
      *         <p>
      *         The default value is <code>false</code>.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class CreateAddressResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which
-     * address you want the Snowball for that job shipped to.
+     * address you want the Snow device for that job shipped to.
      * </p>
      */
     private String addressId;
@@ -34,12 +34,12 @@ public class CreateAddressResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which
-     * address you want the Snowball for that job shipped to.
+     * address you want the Snow device for that job shipped to.
      * </p>
      * 
      * @param addressId
      *        The automatically generated ID for a specific address. You'll use this ID when you create a job to specify
-     *        which address you want the Snowball for that job shipped to.
+     *        which address you want the Snow device for that job shipped to.
      */
 
     public void setAddressId(String addressId) {
@@ -49,11 +49,11 @@ public class CreateAddressResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which
-     * address you want the Snowball for that job shipped to.
+     * address you want the Snow device for that job shipped to.
      * </p>
      * 
      * @return The automatically generated ID for a specific address. You'll use this ID when you create a job to
-     *         specify which address you want the Snowball for that job shipped to.
+     *         specify which address you want the Snow device for that job shipped to.
      */
 
     public String getAddressId() {
@@ -63,12 +63,12 @@ public class CreateAddressResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which
-     * address you want the Snowball for that job shipped to.
+     * address you want the Snow device for that job shipped to.
      * </p>
      * 
      * @param addressId
      *        The automatically generated ID for a specific address. You'll use this ID when you create a job to specify
-     *        which address you want the Snowball for that job shipped to.
+     *        which address you want the Snow device for that job shipped to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

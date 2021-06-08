@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,7 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS
      * RoboMaker will configure a connection so you can interact with your application as it is running in the
-     * simulation. You must configure and luanch the component. It must have a graphical user interface.
+     * simulation. You must configure and launch the component. It must have a graphical user interface.
      * </p>
      */
     private Boolean streamUI;
@@ -253,13 +253,13 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS
      * RoboMaker will configure a connection so you can interact with your application as it is running in the
-     * simulation. You must configure and luanch the component. It must have a graphical user interface.
+     * simulation. You must configure and launch the component. It must have a graphical user interface.
      * </p>
      * 
      * @param streamUI
      *        Boolean indicating whether a streaming session will be configured for the application. If
      *        <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as
-     *        it is running in the simulation. You must configure and luanch the component. It must have a graphical
+     *        it is running in the simulation. You must configure and launch the component. It must have a graphical
      *        user interface.
      */
 
@@ -271,12 +271,12 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS
      * RoboMaker will configure a connection so you can interact with your application as it is running in the
-     * simulation. You must configure and luanch the component. It must have a graphical user interface.
+     * simulation. You must configure and launch the component. It must have a graphical user interface.
      * </p>
      * 
      * @return Boolean indicating whether a streaming session will be configured for the application. If
      *         <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as
-     *         it is running in the simulation. You must configure and luanch the component. It must have a graphical
+     *         it is running in the simulation. You must configure and launch the component. It must have a graphical
      *         user interface.
      */
 
@@ -288,13 +288,13 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS
      * RoboMaker will configure a connection so you can interact with your application as it is running in the
-     * simulation. You must configure and luanch the component. It must have a graphical user interface.
+     * simulation. You must configure and launch the component. It must have a graphical user interface.
      * </p>
      * 
      * @param streamUI
      *        Boolean indicating whether a streaming session will be configured for the application. If
      *        <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as
-     *        it is running in the simulation. You must configure and luanch the component. It must have a graphical
+     *        it is running in the simulation. You must configure and launch the component. It must have a graphical
      *        user interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -308,12 +308,12 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Boolean indicating whether a streaming session will be configured for the application. If <code>True</code>, AWS
      * RoboMaker will configure a connection so you can interact with your application as it is running in the
-     * simulation. You must configure and luanch the component. It must have a graphical user interface.
+     * simulation. You must configure and launch the component. It must have a graphical user interface.
      * </p>
      * 
      * @return Boolean indicating whether a streaming session will be configured for the application. If
      *         <code>True</code>, AWS RoboMaker will configure a connection so you can interact with your application as
-     *         it is running in the simulation. You must configure and luanch the component. It must have a graphical
+     *         it is running in the simulation. You must configure and launch the component. It must have a graphical
      *         user interface.
      */
 

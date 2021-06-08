@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,11 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
- * encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each
- * codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings
- * object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3,
- * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+ * Settings related to audio encoding. The settings in this group vary depending on the value that you choose for your
+ * audio codec.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioCodecSettings" target="_top">AWS
  *      API Documentation</a>
@@ -42,7 +39,17 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     private Ac3Settings ac3Settings;
     /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AIFF. */
     private AiffSettings aiffSettings;
-    /** Type of Audio codec. */
+    /**
+     * Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH) applies only
+     * to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with
+     * your output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference
+     * -codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output
+     * audio codec are supported for audio-only workflows. For more information, see:
+     * https://docs.aws.amazon.com/mediaconvert
+     * /latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
+     */
     private String codec;
     /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS. */
     private Eac3AtmosSettings eac3AtmosSettings;
@@ -52,6 +59,10 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     private Mp2Settings mp2Settings;
     /** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3. */
     private Mp3Settings mp3Settings;
+    /** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS. */
+    private OpusSettings opusSettings;
+    /** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis. */
+    private VorbisSettings vorbisSettings;
     /** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV. */
     private WavSettings wavSettings;
 
@@ -182,10 +193,27 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH) applies only
+     * to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with
+     * your output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference
+     * -codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output
+     * audio codec are supported for audio-only workflows. For more information, see:
+     * https://docs.aws.amazon.com/mediaconvert
+     * /latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      * 
      * @param codec
-     *        Type of Audio codec.
+     *        Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH)
+     *        applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec
+     *        that's supported with your output container:
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs
+     *        -containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your
+     *        input audio codec and your output audio codec are supported for audio-only workflows. For more
+     *        information, see:
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html
+     *        #reference-codecs-containers-input-audio-only and
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      * @see AudioCodec
      */
 
@@ -194,9 +222,26 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH) applies only
+     * to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with
+     * your output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference
+     * -codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output
+     * audio codec are supported for audio-only workflows. For more information, see:
+     * https://docs.aws.amazon.com/mediaconvert
+     * /latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      * 
-     * @return Type of Audio codec.
+     * @return Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH)
+     *         applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec
+     *         that's supported with your output container:
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-
+     *         codecs-containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that
+     *         both your input audio codec and your output audio codec are supported for audio-only workflows. For more
+     *         information, see:
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html
+     *         #reference-codecs-containers-input-audio-only and
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      * @see AudioCodec
      */
 
@@ -205,10 +250,27 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH) applies only
+     * to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with
+     * your output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference
+     * -codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output
+     * audio codec are supported for audio-only workflows. For more information, see:
+     * https://docs.aws.amazon.com/mediaconvert
+     * /latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      * 
      * @param codec
-     *        Type of Audio codec.
+     *        Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH)
+     *        applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec
+     *        that's supported with your output container:
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs
+     *        -containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your
+     *        input audio codec and your output audio codec are supported for audio-only workflows. For more
+     *        information, see:
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html
+     *        #reference-codecs-containers-input-audio-only and
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioCodec
      */
@@ -219,10 +281,27 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH) applies only
+     * to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with
+     * your output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference
+     * -codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output
+     * audio codec are supported for audio-only workflows. For more information, see:
+     * https://docs.aws.amazon.com/mediaconvert
+     * /latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      * 
      * @param codec
-     *        Type of Audio codec.
+     *        Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH)
+     *        applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec
+     *        that's supported with your output container:
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs
+     *        -containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your
+     *        input audio codec and your output audio codec are supported for audio-only workflows. For more
+     *        information, see:
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html
+     *        #reference-codecs-containers-input-audio-only and
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioCodec
      */
@@ -369,6 +448,74 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     * 
+     * @param opusSettings
+     *        Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     */
+
+    public void setOpusSettings(OpusSettings opusSettings) {
+        this.opusSettings = opusSettings;
+    }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     * 
+     * @return Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     */
+
+    public OpusSettings getOpusSettings() {
+        return this.opusSettings;
+    }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     * 
+     * @param opusSettings
+     *        Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioCodecSettings withOpusSettings(OpusSettings opusSettings) {
+        setOpusSettings(opusSettings);
+        return this;
+    }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     * 
+     * @param vorbisSettings
+     *        Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     */
+
+    public void setVorbisSettings(VorbisSettings vorbisSettings) {
+        this.vorbisSettings = vorbisSettings;
+    }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     * 
+     * @return Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     */
+
+    public VorbisSettings getVorbisSettings() {
+        return this.vorbisSettings;
+    }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     * 
+     * @param vorbisSettings
+     *        Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioCodecSettings withVorbisSettings(VorbisSettings vorbisSettings) {
+        setVorbisSettings(vorbisSettings);
+        return this;
+    }
+
+    /**
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV.
      * 
      * @param wavSettings
@@ -430,6 +577,10 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
             sb.append("Mp2Settings: ").append(getMp2Settings()).append(",");
         if (getMp3Settings() != null)
             sb.append("Mp3Settings: ").append(getMp3Settings()).append(",");
+        if (getOpusSettings() != null)
+            sb.append("OpusSettings: ").append(getOpusSettings()).append(",");
+        if (getVorbisSettings() != null)
+            sb.append("VorbisSettings: ").append(getVorbisSettings()).append(",");
         if (getWavSettings() != null)
             sb.append("WavSettings: ").append(getWavSettings());
         sb.append("}");
@@ -478,6 +629,14 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getMp3Settings() != null && other.getMp3Settings().equals(this.getMp3Settings()) == false)
             return false;
+        if (other.getOpusSettings() == null ^ this.getOpusSettings() == null)
+            return false;
+        if (other.getOpusSettings() != null && other.getOpusSettings().equals(this.getOpusSettings()) == false)
+            return false;
+        if (other.getVorbisSettings() == null ^ this.getVorbisSettings() == null)
+            return false;
+        if (other.getVorbisSettings() != null && other.getVorbisSettings().equals(this.getVorbisSettings()) == false)
+            return false;
         if (other.getWavSettings() == null ^ this.getWavSettings() == null)
             return false;
         if (other.getWavSettings() != null && other.getWavSettings().equals(this.getWavSettings()) == false)
@@ -498,6 +657,8 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getEac3Settings() == null) ? 0 : getEac3Settings().hashCode());
         hashCode = prime * hashCode + ((getMp2Settings() == null) ? 0 : getMp2Settings().hashCode());
         hashCode = prime * hashCode + ((getMp3Settings() == null) ? 0 : getMp3Settings().hashCode());
+        hashCode = prime * hashCode + ((getOpusSettings() == null) ? 0 : getOpusSettings().hashCode());
+        hashCode = prime * hashCode + ((getVorbisSettings() == null) ? 0 : getVorbisSettings().hashCode());
         hashCode = prime * hashCode + ((getWavSettings() == null) ? 0 : getWavSettings().hashCode());
         return hashCode;
     }

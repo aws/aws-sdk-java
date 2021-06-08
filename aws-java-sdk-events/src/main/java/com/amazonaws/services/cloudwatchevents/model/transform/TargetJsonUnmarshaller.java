@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,26 @@ public class TargetJsonUnmarshaller implements Unmarshaller<Target, JsonUnmarsha
                 if (context.testExpression("SqsParameters", targetDepth)) {
                     context.nextToken();
                     target.setSqsParameters(SqsParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("HttpParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setHttpParameters(HttpParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RedshiftDataParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setRedshiftDataParameters(RedshiftDataParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SageMakerPipelineParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setSageMakerPipelineParameters(SageMakerPipelineParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DeadLetterConfig", targetDepth)) {
+                    context.nextToken();
+                    target.setDeadLetterConfig(DeadLetterConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RetryPolicy", targetDepth)) {
+                    context.nextToken();
+                    target.setRetryPolicy(RetryPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

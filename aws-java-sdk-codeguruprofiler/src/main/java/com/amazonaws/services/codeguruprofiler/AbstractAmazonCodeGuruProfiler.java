@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,16 @@ public class AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfiler {
     }
 
     @Override
+    public AddNotificationChannelsResult addNotificationChannels(AddNotificationChannelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetFrameMetricDataResult batchGetFrameMetricData(BatchGetFrameMetricDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ConfigureAgentResult configureAgent(ConfigureAgentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -48,12 +58,32 @@ public class AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfiler {
     }
 
     @Override
+    public GetFindingsReportAccountSummaryResult getFindingsReportAccountSummary(GetFindingsReportAccountSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetNotificationConfigurationResult getNotificationConfiguration(GetNotificationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPolicyResult getPolicy(GetPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetProfileResult getProfile(GetProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRecommendationsResult getRecommendations(GetRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFindingsReportsResult listFindingsReports(ListFindingsReportsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,6 +98,11 @@ public class AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfiler {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PostAgentProfileResult postAgentProfile(PostAgentProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -78,7 +113,27 @@ public class AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfiler {
     }
 
     @Override
+    public RemoveNotificationChannelResult removeNotificationChannel(RemoveNotificationChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RemovePermissionResult removePermission(RemovePermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SubmitFeedbackResult submitFeedback(SubmitFeedbackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

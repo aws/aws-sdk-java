@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,22 +63,30 @@ public class AwsEc2SecurityGroupIpPermissionJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("UserIdGroupPairs", targetDepth)) {
                     context.nextToken();
                     awsEc2SecurityGroupIpPermission.setUserIdGroupPairs(new ListUnmarshaller<AwsEc2SecurityGroupUserIdGroupPair>(
-                            AwsEc2SecurityGroupUserIdGroupPairJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsEc2SecurityGroupUserIdGroupPairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IpRanges", targetDepth)) {
                     context.nextToken();
                     awsEc2SecurityGroupIpPermission.setIpRanges(new ListUnmarshaller<AwsEc2SecurityGroupIpRange>(AwsEc2SecurityGroupIpRangeJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Ipv6Ranges", targetDepth)) {
                     context.nextToken();
                     awsEc2SecurityGroupIpPermission.setIpv6Ranges(new ListUnmarshaller<AwsEc2SecurityGroupIpv6Range>(
-                            AwsEc2SecurityGroupIpv6RangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsEc2SecurityGroupIpv6RangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PrefixListIds", targetDepth)) {
                     context.nextToken();
                     awsEc2SecurityGroupIpPermission.setPrefixListIds(new ListUnmarshaller<AwsEc2SecurityGroupPrefixListId>(
-                            AwsEc2SecurityGroupPrefixListIdJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsEc2SecurityGroupPrefixListIdJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

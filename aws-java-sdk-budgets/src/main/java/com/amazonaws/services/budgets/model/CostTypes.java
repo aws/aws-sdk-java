@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,8 +22,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions.
  * </p>
  * <p>
- * <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets do not have
- * <code>CostTypes</code>.
+ * <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>,
+ * and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon Technologies, Inc.
+ * Copyright 2011-2021 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,5 +32,9 @@ public class ServerSideEncryptionHeaderHandler <T extends ServerSideEncryptionRe
         result.setSSEAlgorithm(response.getHeaders().get(Headers.SERVER_SIDE_ENCRYPTION));
         result.setSSECustomerAlgorithm(response.getHeaders().get(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM));
         result.setSSECustomerKeyMd5(response.getHeaders().get(Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5));
+        String bucketKeyEnabled = response.getHeaders().get(Headers.SERVER_SIDE_ENCRYPTION_BUCKET_KEY_ENABLED);
+        if (bucketKeyEnabled != null) {
+            result.setBucketKeyEnabled("true".equals(bucketKeyEnabled));
+        }
     }
 }

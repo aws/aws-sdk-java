@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,7 +82,9 @@ public class ResolverRuleJsonUnmarshaller implements Unmarshaller<ResolverRule, 
                 }
                 if (context.testExpression("TargetIps", targetDepth)) {
                     context.nextToken();
-                    resolverRule.setTargetIps(new ListUnmarshaller<TargetAddress>(TargetAddressJsonUnmarshaller.getInstance()).unmarshall(context));
+                    resolverRule.setTargetIps(new ListUnmarshaller<TargetAddress>(TargetAddressJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResolverEndpointId", targetDepth)) {
                     context.nextToken();
@@ -95,6 +97,14 @@ public class ResolverRuleJsonUnmarshaller implements Unmarshaller<ResolverRule, 
                 if (context.testExpression("ShareStatus", targetDepth)) {
                     context.nextToken();
                     resolverRule.setShareStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CreationTime", targetDepth)) {
+                    context.nextToken();
+                    resolverRule.setCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ModificationTime", targetDepth)) {
+                    context.nextToken();
+                    resolverRule.setModificationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

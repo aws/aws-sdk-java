@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,35 +95,47 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
+     * Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK
+     * status to <code>ACTIVE</code>.
+     * </p>
+     * 
+     * @param activateKeySigningKeyRequest
+     * @return Result of the ActivateKeySigningKey operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws NoSuchKeySigningKeyException
+     *         The specified key-signing key (KSK) doesn't exist.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @sample AmazonRoute53.ActivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ActivateKeySigningKeyResult activateKeySigningKey(ActivateKeySigningKeyRequest activateKeySigningKeyRequest);
+
+    /**
+     * <p>
      * Associates an Amazon VPC with a private hosted zone.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * To perform the association, the VPC and the private hosted zone must already exist. Also, you can't convert a
-     * public hosted zone into a private hosted zone.
+     * To perform the association, the VPC and the private hosted zone must already exist. You can't convert a public
+     * hosted zone into a private hosted zone.
      * </p>
-     * </note>
+     * </important> <note>
      * <p>
-     * If you want to associate a VPC that was created by one AWS account with a private hosted zone that was created by
-     * a different account, do one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the AWS account that created the private hosted zone to submit a <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html"
-     * >CreateVPCAssociationAuthorization</a> request. Then use the account that created the VPC to submit an
+     * If you want to associate a VPC that was created by using one AWS account with a private hosted zone that was
+     * created by using a different account, the AWS account that created the private hosted zone must first submit a
+     * <code>CreateVPCAssociationAuthorization</code> request. Then the account that created the VPC must submit an
      * <code>AssociateVPCWithHostedZone</code> request.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a subnet in the VPC was shared with another account, you can use the account that the subnet was shared with
-     * to submit an <code>AssociateVPCWithHostedZone</code> request. For more information about sharing subnets, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working with Shared VPCs</a>.
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param associateVPCWithHostedZoneRequest
      *        A complex type that contains information about the request to associate a VPC with a private hosted zone.
@@ -177,6 +189,11 @@ public interface AmazonRoute53 {
      *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHostedZoneLimit.html"
      *         >GetHostedZoneLimit</a>. To request a higher limit, <a
      *         href="http://aws.amazon.com/route53-request">create a case</a> with the AWS Support Center.
+     * @throws PriorRequestNotCompleteException
+     *         If Amazon Route 53 can't process a request before the next request arrives, it will reject subsequent
+     *         requests for the same hosted zone and return an <code>HTTP 400 error</code> (<code>Bad request</code>).
+     *         If Route 53 returns this error repeatedly for the same request, we recommend that you wait, in intervals
+     *         of increasing duration, before you try the request again.
      * @sample AmazonRoute53.AssociateVPCWithHostedZone
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone"
      *      target="_top">AWS API Documentation</a>
@@ -494,6 +511,10 @@ public interface AmazonRoute53 {
      * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
      * <code>INSYNC</code>.
      * </p>
+     * <p>
+     * The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code>
+     * permission.
+     * </p>
      * 
      * @param createHostedZoneRequest
      *        A complex type that contains information about the request to create a public or private hosted zone.
@@ -571,6 +592,43 @@ public interface AmazonRoute53 {
      *      Documentation</a>
      */
     CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest);
+
+    /**
+     * <p>
+     * Creates a new key-signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.
+     * </p>
+     * 
+     * @param createKeySigningKeyRequest
+     * @return Result of the CreateKeySigningKey operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws InvalidKeySigningKeyNameException
+     *         The key-signing key (KSK) name that you specified isn't a valid name.
+     * @throws KeySigningKeyAlreadyExistsException
+     *         You've already created a key-signing key (KSK) with this name or with the same customer managed customer
+     *         master key (CMK) ARN.
+     * @throws TooManyKeySigningKeysException
+     *         You've reached the limit for the number of key-signing keys (KSKs). Remove at least one KSK, and then try
+     *         again.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @sample AmazonRoute53.CreateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateKeySigningKeyResult createKeySigningKey(CreateKeySigningKeyRequest createKeySigningKeyRequest);
 
     /**
      * <p>
@@ -879,7 +937,7 @@ public interface AmazonRoute53 {
      * @throws HostedZoneNotFoundException
      *         The specified HostedZone can't be found.
      * @throws InvalidArgumentException
-     *         Parameter name is invalid.
+     *         Parameter name is not valid.
      * @throws InvalidInputException
      *         The input is not valid.
      * @throws DelegationSetNotAvailableException
@@ -925,8 +983,8 @@ public interface AmazonRoute53 {
      * @throws TrafficPolicyAlreadyExistsException
      *         A traffic policy that has the same value for <code>Name</code> already exists.
      * @throws InvalidTrafficPolicyDocumentException
-     *         The format of the traffic policy document that you specified in the <code>Document</code> element is
-     *         invalid.
+     *         The format of the traffic policy document that you specified in the <code>Document</code> element is not
+     *         valid.
      * @sample AmazonRoute53.CreateTrafficPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy" target="_top">AWS
      *      API Documentation</a>
@@ -1007,8 +1065,8 @@ public interface AmazonRoute53 {
      *         Another user submitted a request to create, update, or delete the object at the same time that you did.
      *         Retry the request.
      * @throws InvalidTrafficPolicyDocumentException
-     *         The format of the traffic policy document that you specified in the <code>Document</code> element is
-     *         invalid.
+     *         The format of the traffic policy document that you specified in the <code>Document</code> element is not
+     *         valid.
      * @sample AmazonRoute53.CreateTrafficPolicyVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion"
      *      target="_top">AWS API Documentation</a>
@@ -1055,6 +1113,35 @@ public interface AmazonRoute53 {
      *      target="_top">AWS API Documentation</a>
      */
     CreateVPCAssociationAuthorizationResult createVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest createVPCAssociationAuthorizationRequest);
+
+    /**
+     * <p>
+     * Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
+     * KSK status to <code>INACTIVE</code>.
+     * </p>
+     * 
+     * @param deactivateKeySigningKeyRequest
+     * @return Result of the DeactivateKeySigningKey operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws NoSuchKeySigningKeyException
+     *         The specified key-signing key (KSK) doesn't exist.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws KeySigningKeyInUseException
+     *         The key-signing key (KSK) that you specified can't be deactivated because it's the only KSK for a
+     *         currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable another KSK.
+     * @throws KeySigningKeyInParentDSRecordException
+     *         The key-signing key (KSK) is specified in a parent DS record.
+     * @sample AmazonRoute53.DeactivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeactivateKeySigningKeyResult deactivateKeySigningKey(DeactivateKeySigningKeyRequest deactivateKeySigningKeyRequest);
 
     /**
      * <p>
@@ -1176,6 +1263,32 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
+     * Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactivated
+     * before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.
+     * </p>
+     * 
+     * @param deleteKeySigningKeyRequest
+     * @return Result of the DeleteKeySigningKey operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws NoSuchKeySigningKeyException
+     *         The specified key-signing key (KSK) doesn't exist.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidSigningStatusException
+     *         Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable
+     *         <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @sample AmazonRoute53.DeleteKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteKeySigningKeyResult deleteKeySigningKey(DeleteKeySigningKeyRequest deleteKeySigningKeyRequest);
+
+    /**
+     * <p>
      * Deletes a configuration for DNS query logging. If you delete a configuration, Amazon Route 53 stops sending query
      * logs to CloudWatch Logs. Route 53 doesn't delete any logs that are already in CloudWatch Logs.
      * </p>
@@ -1237,6 +1350,31 @@ public interface AmazonRoute53 {
      * <p>
      * Deletes a traffic policy.
      * </p>
+     * <p>
+     * When you delete a traffic policy, Route 53 sets a flag on the policy to indicate that it has been deleted.
+     * However, Route 53 never fully deletes the traffic policy. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Deleted traffic policies aren't listed if you run <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html"
+     * >ListTrafficPolicies</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There's no way to get a list of deleted policies.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you retain the ID of the policy, you can get information about the policy, including the traffic policy
+     * document, by running <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteTrafficPolicyRequest
      *        A request to delete a specified traffic policy version.
@@ -1324,12 +1462,42 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
-     * Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the following:
+     * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key-signing keys (KSKs)
+     * that are active in the hosted zone.
+     * </p>
+     * 
+     * @param disableHostedZoneDNSSECRequest
+     * @return Result of the DisableHostedZoneDNSSEC operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws KeySigningKeyInParentDSRecordException
+     *         The key-signing key (KSK) is specified in a parent DS record.
+     * @throws DNSSECNotFoundException
+     *         The hosted zone doesn't have any DNSSEC resources.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @sample AmazonRoute53.DisableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisableHostedZoneDNSSECResult disableHostedZoneDNSSEC(DisableHostedZoneDNSSECRequest disableHostedZoneDNSSECRequest);
+
+    /**
+     * <p>
+     * Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon Route 53 private hosted zone. Note the
+     * following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You can't disassociate the last VPC from a private hosted zone.
+     * You can't disassociate the last Amazon VPC from a private hosted zone.
      * </p>
      * </li>
      * <li>
@@ -1340,7 +1508,21 @@ public interface AmazonRoute53 {
      * <li>
      * <p>
      * You can submit a <code>DisassociateVPCFromHostedZone</code> request using either the account that created the
-     * hosted zone or the account that created the VPC.
+     * hosted zone or the account that created the Amazon VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Some services, such as AWS Cloud Map and Amazon Elastic File System (Amazon EFS) automatically create hosted
+     * zones and associate VPCs with the hosted zones. A service can create a hosted zone using your account or using
+     * its own account. You can disassociate a VPC from a hosted zone only if the service created the hosted zone using
+     * your account.
+     * </p>
+     * <p>
+     * When you run <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">
+     * DisassociateVPCFromHostedZone</a>, if the hosted zone has a value for <code>OwningAccount</code>, you can use
+     * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for <code>OwningService</code>, you
+     * can't use <code>DisassociateVPCFromHostedZone</code>.
      * </p>
      * </li>
      * </ul>
@@ -1367,6 +1549,37 @@ public interface AmazonRoute53 {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest);
+
+    /**
+     * <p>
+     * Enables DNSSEC signing in a specific hosted zone.
+     * </p>
+     * 
+     * @param enableHostedZoneDNSSECRequest
+     * @return Result of the EnableHostedZoneDNSSEC operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to create, update, or delete the object at the same time that you did.
+     *         Retry the request.
+     * @throws KeySigningKeyWithActiveStatusNotFoundException
+     *         A key-signing key (KSK) with <code>ACTIVE</code> status wasn't found.
+     * @throws InvalidKMSArnException
+     *         The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+     * @throws HostedZonePartiallyDelegatedException
+     *         The hosted zone nameservers don't match the parent nameservers. The hosted zone and parent must have the
+     *         same nameservers.
+     * @throws DNSSECNotFoundException
+     *         The hosted zone doesn't have any DNSSEC resources.
+     * @throws InvalidKeySigningKeyStatusException
+     *         The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+     * @sample AmazonRoute53.EnableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC" target="_top">AWS
+     *      API Documentation</a>
+     */
+    EnableHostedZoneDNSSECResult enableHostedZoneDNSSEC(EnableHostedZoneDNSSECRequest enableHostedZoneDNSSECRequest);
 
     /**
      * <p>
@@ -1432,6 +1645,10 @@ public interface AmazonRoute53 {
     GetChangeResult getChange(GetChangeRequest getChangeRequest);
 
     /**
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
+     * </p>
      * <important>
      * <p>
      * <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json, which includes IP
@@ -1459,8 +1676,30 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
+     * Returns information about DNSSEC for a specific hosted zone, including the key-signing keys (KSKs) in the hosted
+     * zone.
+     * </p>
+     * 
+     * @param getDNSSECRequest
+     * @return Result of the GetDNSSEC operation returned by the service.
+     * @throws NoSuchHostedZoneException
+     *         No hosted zone exists with the ID that you specified.
+     * @throws InvalidArgumentException
+     *         Parameter name is not valid.
+     * @sample AmazonRoute53.GetDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDNSSECResult getDNSSEC(GetDNSSECRequest getDNSSECRequest);
+
+    /**
+     * <p>
      * Gets information about whether a specified geographic location is supported for Amazon Route 53 geolocation
      * resource record sets.
+     * </p>
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
      * </p>
      * <p>
      * Use the following syntax to determine whether a continent is supported for geolocation:
@@ -1724,6 +1963,12 @@ public interface AmazonRoute53 {
      * <p>
      * Gets information about a specific traffic policy version.
      * </p>
+     * <p>
+     * For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy
+     * </a>.
+     * </p>
      * 
      * @param getTrafficPolicyRequest
      *        Gets information about a specific traffic policy version.
@@ -1796,6 +2041,10 @@ public interface AmazonRoute53 {
      * Countries are listed first, and continents are listed last. If Amazon Route 53 supports subdivisions for a
      * country (for example, states or provinces), the subdivisions for that country are listed in alphabetical order
      * immediately after the corresponding country.
+     * </p>
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
      * </p>
      * <p>
      * For a list of supported geolocation codes, see the <a
@@ -1972,6 +2221,42 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
+     * Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS account or
+     * AWS service owns the hosted zones. The <code>HostedZoneOwner</code> structure in the response contains one of the
+     * following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An <code>OwningAccount</code> element, which contains the account number of either the current AWS account or
+     * another AWS account. Some services, such as AWS Cloud Map, create hosted zones using the current account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <code>OwningService</code> element, which identifies the AWS service that created and owns the hosted zone.
+     * For example, if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the value of
+     * <code>Owner</code> is <code>efs.amazonaws.com</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listHostedZonesByVPCRequest
+     *        Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS
+     *        account created the hosted zones.
+     * @return Result of the ListHostedZonesByVPC operation returned by the service.
+     * @throws InvalidInputException
+     *         The input is not valid.
+     * @throws InvalidPaginationTokenException
+     *         The value that you specified to get the second or subsequent page of results is invalid.
+     * @sample AmazonRoute53.ListHostedZonesByVPC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListHostedZonesByVPCResult listHostedZonesByVPC(ListHostedZonesByVPCRequest listHostedZonesByVPCRequest);
+
+    /**
+     * <p>
      * Lists the configurations for DNS query logging that are associated with the current AWS account or the
      * configuration that is associated with a specified hosted zone.
      * </p>
@@ -2002,7 +2287,7 @@ public interface AmazonRoute53 {
      * Lists the resource record sets in a specified hosted zone.
      * </p>
      * <p>
-     * <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a time in ASCII order, beginning at
+     * <code>ListResourceRecordSets</code> returns up to 300 resource record sets at a time in ASCII order, beginning at
      * a position specified by the <code>name</code> and <code>type</code> elements.
      * </p>
      * <p>
@@ -2191,6 +2476,12 @@ public interface AmazonRoute53 {
      * Gets information about the latest version for every traffic policy that is associated with the current AWS
      * account. Policies are listed in the order that they were created in.
      * </p>
+     * <p>
+     * For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>
+     * , see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy
+     * </a>.
+     * </p>
      * 
      * @param listTrafficPoliciesRequest
      *        A complex type that contains the information about the request to list the traffic policies that are
@@ -2363,6 +2654,9 @@ public interface AmazonRoute53 {
      * Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type.
      * You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet
      * mask.
+     * </p>
+     * <p>
+     * This call only supports querying public hosted zones.
      * </p>
      * 
      * @param testDNSAnswerRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,8 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell
-     * job, it must be <code>pythonshell</code>.
+     * job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
+     * <code>gluestreaming</code>.
      * </p>
      */
     private String name;
@@ -51,12 +52,14 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell
-     * job, it must be <code>pythonshell</code>.
+     * job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
+     * <code>gluestreaming</code>.
      * </p>
      * 
      * @param name
      *        The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python
-     *        shell job, it must be <code>pythonshell</code>.
+     *        shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
+     *        <code>gluestreaming</code>.
      */
 
     public void setName(String name) {
@@ -66,11 +69,13 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell
-     * job, it must be <code>pythonshell</code>.
+     * job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
+     * <code>gluestreaming</code>.
      * </p>
      * 
      * @return The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python
-     *         shell job, it must be <code>pythonshell</code>.
+     *         shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
+     *         <code>gluestreaming</code>.
      */
 
     public String getName() {
@@ -80,12 +85,14 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell
-     * job, it must be <code>pythonshell</code>.
+     * job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
+     * <code>gluestreaming</code>.
      * </p>
      * 
      * @param name
      *        The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python
-     *        shell job, it must be <code>pythonshell</code>.
+     *        shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
+     *        <code>gluestreaming</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

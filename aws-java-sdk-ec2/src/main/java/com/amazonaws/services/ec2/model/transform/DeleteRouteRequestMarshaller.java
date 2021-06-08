@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,10 @@ public class DeleteRouteRequestMarshaller implements Marshaller<Request<DeleteRo
 
         if (deleteRouteRequest.getDestinationIpv6CidrBlock() != null) {
             request.addParameter("DestinationIpv6CidrBlock", StringUtils.fromString(deleteRouteRequest.getDestinationIpv6CidrBlock()));
+        }
+
+        if (deleteRouteRequest.getDestinationPrefixListId() != null) {
+            request.addParameter("DestinationPrefixListId", StringUtils.fromString(deleteRouteRequest.getDestinationPrefixListId()));
         }
 
         if (deleteRouteRequest.getRouteTableId() != null) {

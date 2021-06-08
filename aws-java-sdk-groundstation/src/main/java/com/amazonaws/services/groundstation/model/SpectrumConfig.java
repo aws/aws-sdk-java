@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,30 +30,85 @@ public class SpectrumConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Bandwidth of a spectral <code>Config</code>.
+     * Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth
+     * limitations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * </ul>
      */
     private FrequencyBandwidth bandwidth;
     /**
      * <p>
-     * Center frequency of a spectral <code>Config</code>.
+     * Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400
+     * MHz for downlink and 2025 to 2120 MHz for uplink.
      * </p>
      */
     private Frequency centerFrequency;
     /**
      * <p>
-     * Polarization of a spectral <code>Config</code>.
+     * Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     * <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * </p>
      */
     private String polarization;
 
     /**
      * <p>
-     * Bandwidth of a spectral <code>Config</code>.
+     * Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth
+     * limitations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param bandwidth
-     *        Bandwidth of a spectral <code>Config</code>.
+     *        Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth
+     *        limitations:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     *        </p>
+     *        </li>
      */
 
     public void setBandwidth(FrequencyBandwidth bandwidth) {
@@ -62,10 +117,45 @@ public class SpectrumConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Bandwidth of a spectral <code>Config</code>.
+     * Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth
+     * limitations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Bandwidth of a spectral <code>Config</code>.
+     * @return Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth
+     *         limitations:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     *         </p>
+     *         </li>
      */
 
     public FrequencyBandwidth getBandwidth() {
@@ -74,11 +164,46 @@ public class SpectrumConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Bandwidth of a spectral <code>Config</code>.
+     * Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth
+     * limitations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param bandwidth
-     *        Bandwidth of a spectral <code>Config</code>.
+     *        Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth
+     *        limitations:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +214,13 @@ public class SpectrumConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Center frequency of a spectral <code>Config</code>.
+     * Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400
+     * MHz for downlink and 2025 to 2120 MHz for uplink.
      * </p>
      * 
      * @param centerFrequency
-     *        Center frequency of a spectral <code>Config</code>.
+     *        Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to
+     *        8400 MHz for downlink and 2025 to 2120 MHz for uplink.
      */
 
     public void setCenterFrequency(Frequency centerFrequency) {
@@ -102,10 +229,12 @@ public class SpectrumConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Center frequency of a spectral <code>Config</code>.
+     * Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400
+     * MHz for downlink and 2025 to 2120 MHz for uplink.
      * </p>
      * 
-     * @return Center frequency of a spectral <code>Config</code>.
+     * @return Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to
+     *         8400 MHz for downlink and 2025 to 2120 MHz for uplink.
      */
 
     public Frequency getCenterFrequency() {
@@ -114,11 +243,13 @@ public class SpectrumConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Center frequency of a spectral <code>Config</code>.
+     * Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400
+     * MHz for downlink and 2025 to 2120 MHz for uplink.
      * </p>
      * 
      * @param centerFrequency
-     *        Center frequency of a spectral <code>Config</code>.
+     *        Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to
+     *        8400 MHz for downlink and 2025 to 2120 MHz for uplink.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +260,13 @@ public class SpectrumConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Polarization of a spectral <code>Config</code>.
+     * Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     * <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * </p>
      * 
      * @param polarization
-     *        Polarization of a spectral <code>Config</code>.
+     *        Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     *        <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * @see Polarization
      */
 
@@ -143,10 +276,12 @@ public class SpectrumConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Polarization of a spectral <code>Config</code>.
+     * Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     * <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * </p>
      * 
-     * @return Polarization of a spectral <code>Config</code>.
+     * @return Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     *         <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * @see Polarization
      */
 
@@ -156,11 +291,13 @@ public class SpectrumConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Polarization of a spectral <code>Config</code>.
+     * Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     * <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * </p>
      * 
      * @param polarization
-     *        Polarization of a spectral <code>Config</code>.
+     *        Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     *        <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Polarization
      */
@@ -172,11 +309,13 @@ public class SpectrumConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Polarization of a spectral <code>Config</code>.
+     * Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     * <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * </p>
      * 
      * @param polarization
-     *        Polarization of a spectral <code>Config</code>.
+     *        Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     *        <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Polarization
      */

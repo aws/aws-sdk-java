@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * newly created log stream does not require a sequence token. You can also get the sequence token using <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html"
      * >DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same
-     * value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
+     * value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.
      * </p>
      */
     private String sequenceToken;
@@ -237,7 +237,7 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * newly created log stream does not require a sequence token. You can also get the sequence token using <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html"
      * >DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same
-     * value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
+     * value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.
      * </p>
      * 
      * @param sequenceToken
@@ -245,7 +245,7 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        a newly created log stream does not require a sequence token. You can also get the sequence token using <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">
      *        DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the
-     *        same value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
+     *        same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.
      */
 
     public void setSequenceToken(String sequenceToken) {
@@ -258,7 +258,7 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * newly created log stream does not require a sequence token. You can also get the sequence token using <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html"
      * >DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same
-     * value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
+     * value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.
      * </p>
      * 
      * @return The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload
@@ -266,7 +266,7 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         using <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html"
      *         >DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using
-     *         the same value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
+     *         the same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.
      */
 
     public String getSequenceToken() {
@@ -279,7 +279,7 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * newly created log stream does not require a sequence token. You can also get the sequence token using <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html"
      * >DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same
-     * value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
+     * value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.
      * </p>
      * 
      * @param sequenceToken
@@ -287,7 +287,7 @@ public class PutLogEventsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        a newly created log stream does not require a sequence token. You can also get the sequence token using <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">
      *        DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the
-     *        same value for <code>sequenceToken</code>, both calls may be successful, or one may be rejected.
+     *        same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

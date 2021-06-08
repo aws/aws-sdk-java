@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies criteria for filtering the results of a query for account quotas and usage data.
+ * Specifies a condition for filtering the results of a query for quota and usage data for one or more Amazon Macie
+ * accounts.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageStatisticsFilter" target="_top">AWS API
@@ -30,24 +31,141 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The field to use to filter the results. The only supported value is accountId.
+     * The operator to use in the condition. If the value for the key property is accountId, this value must be
+     * CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE,
+     * or NE.
+     * </p>
+     */
+    private String comparator;
+    /**
+     * <p>
+     * The field to use in the condition.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * An array that lists the AWS account ID for each account to include in the results.
+     * An array that lists values to use in the condition, based on the value for the field specified by the key
+     * property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this
+     * array can specify only one value.
      * </p>
+     * <p>
+     * Valid values for each supported field are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * accountId - The unique identifier for an AWS account.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * total - A string that represents the current estimated cost for an account.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> values;
 
     /**
      * <p>
-     * The field to use to filter the results. The only supported value is accountId.
+     * The operator to use in the condition. If the value for the key property is accountId, this value must be
+     * CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE,
+     * or NE.
+     * </p>
+     * 
+     * @param comparator
+     *        The operator to use in the condition. If the value for the key property is accountId, this value must be
+     *        CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE,
+     *        LT, LTE, or NE.
+     * @see UsageStatisticsFilterComparator
+     */
+
+    public void setComparator(String comparator) {
+        this.comparator = comparator;
+    }
+
+    /**
+     * <p>
+     * The operator to use in the condition. If the value for the key property is accountId, this value must be
+     * CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE,
+     * or NE.
+     * </p>
+     * 
+     * @return The operator to use in the condition. If the value for the key property is accountId, this value must be
+     *         CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE,
+     *         LT, LTE, or NE.
+     * @see UsageStatisticsFilterComparator
+     */
+
+    public String getComparator() {
+        return this.comparator;
+    }
+
+    /**
+     * <p>
+     * The operator to use in the condition. If the value for the key property is accountId, this value must be
+     * CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE,
+     * or NE.
+     * </p>
+     * 
+     * @param comparator
+     *        The operator to use in the condition. If the value for the key property is accountId, this value must be
+     *        CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE,
+     *        LT, LTE, or NE.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UsageStatisticsFilterComparator
+     */
+
+    public UsageStatisticsFilter withComparator(String comparator) {
+        setComparator(comparator);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operator to use in the condition. If the value for the key property is accountId, this value must be
+     * CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE,
+     * or NE.
+     * </p>
+     * 
+     * @param comparator
+     *        The operator to use in the condition. If the value for the key property is accountId, this value must be
+     *        CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE,
+     *        LT, LTE, or NE.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UsageStatisticsFilterComparator
+     */
+
+    public UsageStatisticsFilter withComparator(UsageStatisticsFilterComparator comparator) {
+        this.comparator = comparator.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The field to use in the condition.
      * </p>
      * 
      * @param key
-     *        The field to use to filter the results. The only supported value is accountId.
+     *        The field to use in the condition.
      * @see UsageStatisticsFilterKey
      */
 
@@ -57,10 +175,10 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The field to use to filter the results. The only supported value is accountId.
+     * The field to use in the condition.
      * </p>
      * 
-     * @return The field to use to filter the results. The only supported value is accountId.
+     * @return The field to use in the condition.
      * @see UsageStatisticsFilterKey
      */
 
@@ -70,11 +188,11 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The field to use to filter the results. The only supported value is accountId.
+     * The field to use in the condition.
      * </p>
      * 
      * @param key
-     *        The field to use to filter the results. The only supported value is accountId.
+     *        The field to use in the condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UsageStatisticsFilterKey
      */
@@ -86,11 +204,11 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The field to use to filter the results. The only supported value is accountId.
+     * The field to use in the condition.
      * </p>
      * 
      * @param key
-     *        The field to use to filter the results. The only supported value is accountId.
+     *        The field to use in the condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UsageStatisticsFilterKey
      */
@@ -102,10 +220,78 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An array that lists the AWS account ID for each account to include in the results.
+     * An array that lists values to use in the condition, based on the value for the field specified by the key
+     * property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this
+     * array can specify only one value.
      * </p>
+     * <p>
+     * Valid values for each supported field are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * accountId - The unique identifier for an AWS account.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * total - A string that represents the current estimated cost for an account.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return An array that lists the AWS account ID for each account to include in the results.
+     * @return An array that lists values to use in the condition, based on the value for the field specified by the key
+     *         property. If the value for the key property is accountId, this array can specify multiple values.
+     *         Otherwise, this array can specify only one value.</p>
+     *         <p>
+     *         Valid values for each supported field are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         accountId - The unique identifier for an AWS account.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started
+     *         for an account.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly
+     *         quota.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         total - A string that represents the current estimated cost for an account.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getValues() {
@@ -114,11 +300,79 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An array that lists the AWS account ID for each account to include in the results.
+     * An array that lists values to use in the condition, based on the value for the field specified by the key
+     * property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this
+     * array can specify only one value.
      * </p>
+     * <p>
+     * Valid values for each supported field are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * accountId - The unique identifier for an AWS account.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * total - A string that represents the current estimated cost for an account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
-     *        An array that lists the AWS account ID for each account to include in the results.
+     *        An array that lists values to use in the condition, based on the value for the field specified by the key
+     *        property. If the value for the key property is accountId, this array can specify multiple values.
+     *        Otherwise, this array can specify only one value.</p>
+     *        <p>
+     *        Valid values for each supported field are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        accountId - The unique identifier for an AWS account.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started
+     *        for an account.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly
+     *        quota.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        total - A string that represents the current estimated cost for an account.
+     *        </p>
+     *        </li>
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -132,8 +386,42 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An array that lists the AWS account ID for each account to include in the results.
+     * An array that lists values to use in the condition, based on the value for the field specified by the key
+     * property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this
+     * array can specify only one value.
      * </p>
+     * <p>
+     * Valid values for each supported field are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * accountId - The unique identifier for an AWS account.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * total - A string that represents the current estimated cost for an account.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
@@ -141,7 +429,41 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param values
-     *        An array that lists the AWS account ID for each account to include in the results.
+     *        An array that lists values to use in the condition, based on the value for the field specified by the key
+     *        property. If the value for the key property is accountId, this array can specify multiple values.
+     *        Otherwise, this array can specify only one value.</p>
+     *        <p>
+     *        Valid values for each supported field are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        accountId - The unique identifier for an AWS account.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started
+     *        for an account.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly
+     *        quota.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        total - A string that represents the current estimated cost for an account.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,11 +479,79 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An array that lists the AWS account ID for each account to include in the results.
+     * An array that lists values to use in the condition, based on the value for the field specified by the key
+     * property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this
+     * array can specify only one value.
      * </p>
+     * <p>
+     * Valid values for each supported field are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * accountId - The unique identifier for an AWS account.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * total - A string that represents the current estimated cost for an account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param values
-     *        An array that lists the AWS account ID for each account to include in the results.
+     *        An array that lists values to use in the condition, based on the value for the field specified by the key
+     *        property. If the value for the key property is accountId, this array can specify multiple values.
+     *        Otherwise, this array can specify only one value.</p>
+     *        <p>
+     *        Valid values for each supported field are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        accountId - The unique identifier for an AWS account.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started
+     *        for an account.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly
+     *        quota.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        total - A string that represents the current estimated cost for an account.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,6 +572,8 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getComparator() != null)
+            sb.append("Comparator: ").append(getComparator()).append(",");
         if (getKey() != null)
             sb.append("Key: ").append(getKey()).append(",");
         if (getValues() != null)
@@ -200,6 +592,10 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
         if (obj instanceof UsageStatisticsFilter == false)
             return false;
         UsageStatisticsFilter other = (UsageStatisticsFilter) obj;
+        if (other.getComparator() == null ^ this.getComparator() == null)
+            return false;
+        if (other.getComparator() != null && other.getComparator().equals(this.getComparator()) == false)
+            return false;
         if (other.getKey() == null ^ this.getKey() == null)
             return false;
         if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
@@ -216,6 +612,7 @@ public class UsageStatisticsFilter implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getComparator() == null) ? 0 : getComparator().hashCode());
         hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode());
         return hashCode;

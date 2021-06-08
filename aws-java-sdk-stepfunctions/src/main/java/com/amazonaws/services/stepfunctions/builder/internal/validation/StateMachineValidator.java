@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -272,7 +272,6 @@ public class StateMachineValidator {
 
         @Override
         public Void visit(FailState failState) {
-            currentContext.assertStringNotEmpty(failState.getCause(), PropertyNames.CAUSE);
             return null;
         }
 
@@ -356,6 +355,19 @@ public class StateMachineValidator {
                                                                                      PropertyNames.TIMEOUT_SECONDS)));
                 }
             }
+
+            if (taskState.getTimeoutSecondsPath() != null && taskState.getTimeoutSeconds() != null) {
+                problemReporter.report(new Problem(currentContext, String.format("Only one of %s or %s should be defined",
+                        PropertyNames.TIMEOUT_SECONDS,
+                        PropertyNames.TIMEOUT_SECONDS_PATH)));
+            }
+
+            if (taskState.getHeartbeatSecondsPath() != null && taskState.getHeartbeatSeconds() != null) {
+                problemReporter.report(new Problem(currentContext, String.format("Only one of %s or %s should be defined",
+                        PropertyNames.HEARTBEAT_SECONDS,
+                        PropertyNames.HEARTBEAT_SECONDS_PATH)));
+            }
+
 
             currentContext.assertStringNotEmpty(taskState.getResource(), PropertyNames.RESOURCE);
             validateRetriers(taskState.getRetriers());

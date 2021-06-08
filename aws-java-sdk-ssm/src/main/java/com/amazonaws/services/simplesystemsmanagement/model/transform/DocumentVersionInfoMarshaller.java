@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class DocumentVersionInfoMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
     private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -43,6 +45,8 @@ public class DocumentVersionInfoMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> STATUSINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusInformation").build();
+    private static final MarshallingInfo<String> REVIEWSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReviewStatus").build();
 
     private static final DocumentVersionInfoMarshaller instance = new DocumentVersionInfoMarshaller();
 
@@ -61,6 +65,7 @@ public class DocumentVersionInfoMarshaller {
 
         try {
             protocolMarshaller.marshall(documentVersionInfo.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(documentVersionInfo.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getCreatedDate(), CREATEDDATE_BINDING);
@@ -68,6 +73,7 @@ public class DocumentVersionInfoMarshaller {
             protocolMarshaller.marshall(documentVersionInfo.getDocumentFormat(), DOCUMENTFORMAT_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getStatusInformation(), STATUSINFORMATION_BINDING);
+            protocolMarshaller.marshall(documentVersionInfo.getReviewStatus(), REVIEWSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

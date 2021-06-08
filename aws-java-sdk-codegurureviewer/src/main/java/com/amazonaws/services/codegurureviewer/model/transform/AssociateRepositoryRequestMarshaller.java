@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.codegurureviewer.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -34,6 +36,10 @@ public class AssociateRepositoryRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> KMSKEYDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSKeyDetails").build();
 
     private static final AssociateRepositoryRequestMarshaller instance = new AssociateRepositoryRequestMarshaller();
 
@@ -53,6 +59,8 @@ public class AssociateRepositoryRequestMarshaller {
         try {
             protocolMarshaller.marshall(associateRepositoryRequest.getRepository(), REPOSITORY_BINDING);
             protocolMarshaller.marshall(associateRepositoryRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(associateRepositoryRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(associateRepositoryRequest.getKMSKeyDetails(), KMSKEYDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

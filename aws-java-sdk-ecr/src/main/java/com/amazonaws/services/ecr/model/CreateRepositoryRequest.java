@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,11 +51,18 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
     private String imageTagMutability;
     /**
      * <p>
-     * The image scanning configuration for the repository. This setting determines whether images are scanned for known
+     * The image scanning configuration for the repository. This determines whether images are scanned for known
      * vulnerabilities after being pushed to the repository.
      * </p>
      */
     private ImageScanningConfiguration imageScanningConfiguration;
+    /**
+     * <p>
+     * The encryption configuration for the repository. This determines how the contents of your repository are
+     * encrypted at rest.
+     * </p>
+     */
+    private EncryptionConfiguration encryptionConfiguration;
 
     /**
      * <p>
@@ -276,13 +283,13 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The image scanning configuration for the repository. This setting determines whether images are scanned for known
+     * The image scanning configuration for the repository. This determines whether images are scanned for known
      * vulnerabilities after being pushed to the repository.
      * </p>
      * 
      * @param imageScanningConfiguration
-     *        The image scanning configuration for the repository. This setting determines whether images are scanned
-     *        for known vulnerabilities after being pushed to the repository.
+     *        The image scanning configuration for the repository. This determines whether images are scanned for known
+     *        vulnerabilities after being pushed to the repository.
      */
 
     public void setImageScanningConfiguration(ImageScanningConfiguration imageScanningConfiguration) {
@@ -291,12 +298,12 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The image scanning configuration for the repository. This setting determines whether images are scanned for known
+     * The image scanning configuration for the repository. This determines whether images are scanned for known
      * vulnerabilities after being pushed to the repository.
      * </p>
      * 
-     * @return The image scanning configuration for the repository. This setting determines whether images are scanned
-     *         for known vulnerabilities after being pushed to the repository.
+     * @return The image scanning configuration for the repository. This determines whether images are scanned for known
+     *         vulnerabilities after being pushed to the repository.
      */
 
     public ImageScanningConfiguration getImageScanningConfiguration() {
@@ -305,18 +312,64 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The image scanning configuration for the repository. This setting determines whether images are scanned for known
+     * The image scanning configuration for the repository. This determines whether images are scanned for known
      * vulnerabilities after being pushed to the repository.
      * </p>
      * 
      * @param imageScanningConfiguration
-     *        The image scanning configuration for the repository. This setting determines whether images are scanned
-     *        for known vulnerabilities after being pushed to the repository.
+     *        The image scanning configuration for the repository. This determines whether images are scanned for known
+     *        vulnerabilities after being pushed to the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateRepositoryRequest withImageScanningConfiguration(ImageScanningConfiguration imageScanningConfiguration) {
         setImageScanningConfiguration(imageScanningConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The encryption configuration for the repository. This determines how the contents of your repository are
+     * encrypted at rest.
+     * </p>
+     * 
+     * @param encryptionConfiguration
+     *        The encryption configuration for the repository. This determines how the contents of your repository are
+     *        encrypted at rest.
+     */
+
+    public void setEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
+        this.encryptionConfiguration = encryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The encryption configuration for the repository. This determines how the contents of your repository are
+     * encrypted at rest.
+     * </p>
+     * 
+     * @return The encryption configuration for the repository. This determines how the contents of your repository are
+     *         encrypted at rest.
+     */
+
+    public EncryptionConfiguration getEncryptionConfiguration() {
+        return this.encryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The encryption configuration for the repository. This determines how the contents of your repository are
+     * encrypted at rest.
+     * </p>
+     * 
+     * @param encryptionConfiguration
+     *        The encryption configuration for the repository. This determines how the contents of your repository are
+     *        encrypted at rest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRepositoryRequest withEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
+        setEncryptionConfiguration(encryptionConfiguration);
         return this;
     }
 
@@ -339,7 +392,9 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
         if (getImageTagMutability() != null)
             sb.append("ImageTagMutability: ").append(getImageTagMutability()).append(",");
         if (getImageScanningConfiguration() != null)
-            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration());
+            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration()).append(",");
+        if (getEncryptionConfiguration() != null)
+            sb.append("EncryptionConfiguration: ").append(getEncryptionConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -370,6 +425,10 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getImageScanningConfiguration() != null && other.getImageScanningConfiguration().equals(this.getImageScanningConfiguration()) == false)
             return false;
+        if (other.getEncryptionConfiguration() == null ^ this.getEncryptionConfiguration() == null)
+            return false;
+        if (other.getEncryptionConfiguration() != null && other.getEncryptionConfiguration().equals(this.getEncryptionConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -382,6 +441,7 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getImageTagMutability() == null) ? 0 : getImageTagMutability().hashCode());
         hashCode = prime * hashCode + ((getImageScanningConfiguration() == null) ? 0 : getImageScanningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionConfiguration() == null) ? 0 : getEncryptionConfiguration().hashCode());
         return hashCode;
     }
 

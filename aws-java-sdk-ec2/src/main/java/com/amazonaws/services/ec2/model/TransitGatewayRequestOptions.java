@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,39 +29,37 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
     /**
      * <p>
      * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for
-     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs. The default is <code>64512</code>.
      * </p>
      */
     private Long amazonSideAsn;
     /**
      * <p>
-     * Enable or disable automatic acceptance of attachment requests. The default is <code>disable</code>.
+     * Enable or disable automatic acceptance of attachment requests. Disabled by default.
      * </p>
      */
     private String autoAcceptSharedAttachments;
     /**
      * <p>
-     * Enable or disable automatic association with the default association route table. The default is
-     * <code>enable</code>.
+     * Enable or disable automatic association with the default association route table. Enabled by default.
      * </p>
      */
     private String defaultRouteTableAssociation;
     /**
      * <p>
-     * Enable or disable automatic propagation of routes to the default propagation route table. The default is
-     * <code>enable</code>.
+     * Enable or disable automatic propagation of routes to the default propagation route table. Enabled by default.
      * </p>
      */
     private String defaultRouteTablePropagation;
     /**
      * <p>
-     * Enable or disable Equal Cost Multipath Protocol support.
+     * Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
      * </p>
      */
     private String vpnEcmpSupport;
     /**
      * <p>
-     * Enable or disable DNS support.
+     * Enable or disable DNS support. Enabled by default.
      * </p>
      */
     private String dnsSupport;
@@ -71,16 +69,23 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
      * </p>
      */
     private String multicastSupport;
+    /**
+     * <p>
+     * One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4,
+     * or a size /64 CIDR block or larger for IPv6.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> transitGatewayCidrBlocks;
 
     /**
      * <p>
      * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for
-     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs. The default is <code>64512</code>.
      * </p>
      * 
      * @param amazonSideAsn
      *        A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534
-     *        for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+     *        for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs. The default is <code>64512</code>.
      */
 
     public void setAmazonSideAsn(Long amazonSideAsn) {
@@ -90,11 +95,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
     /**
      * <p>
      * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for
-     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs. The default is <code>64512</code>.
      * </p>
      * 
      * @return A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to
-     *         65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+     *         65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs. The default is <code>64512</code>.
      */
 
     public Long getAmazonSideAsn() {
@@ -104,12 +109,12 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
     /**
      * <p>
      * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534 for
-     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+     * 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs. The default is <code>64512</code>.
      * </p>
      * 
      * @param amazonSideAsn
      *        A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is 64512 to 65534
-     *        for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
+     *        for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs. The default is <code>64512</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,11 +125,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic acceptance of attachment requests. The default is <code>disable</code>.
+     * Enable or disable automatic acceptance of attachment requests. Disabled by default.
      * </p>
      * 
      * @param autoAcceptSharedAttachments
-     *        Enable or disable automatic acceptance of attachment requests. The default is <code>disable</code>.
+     *        Enable or disable automatic acceptance of attachment requests. Disabled by default.
      * @see AutoAcceptSharedAttachmentsValue
      */
 
@@ -134,10 +139,10 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic acceptance of attachment requests. The default is <code>disable</code>.
+     * Enable or disable automatic acceptance of attachment requests. Disabled by default.
      * </p>
      * 
-     * @return Enable or disable automatic acceptance of attachment requests. The default is <code>disable</code>.
+     * @return Enable or disable automatic acceptance of attachment requests. Disabled by default.
      * @see AutoAcceptSharedAttachmentsValue
      */
 
@@ -147,11 +152,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic acceptance of attachment requests. The default is <code>disable</code>.
+     * Enable or disable automatic acceptance of attachment requests. Disabled by default.
      * </p>
      * 
      * @param autoAcceptSharedAttachments
-     *        Enable or disable automatic acceptance of attachment requests. The default is <code>disable</code>.
+     *        Enable or disable automatic acceptance of attachment requests. Disabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoAcceptSharedAttachmentsValue
      */
@@ -163,11 +168,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic acceptance of attachment requests. The default is <code>disable</code>.
+     * Enable or disable automatic acceptance of attachment requests. Disabled by default.
      * </p>
      * 
      * @param autoAcceptSharedAttachments
-     *        Enable or disable automatic acceptance of attachment requests. The default is <code>disable</code>.
+     *        Enable or disable automatic acceptance of attachment requests. Disabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoAcceptSharedAttachmentsValue
      */
@@ -179,13 +184,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic association with the default association route table. The default is
-     * <code>enable</code>.
+     * Enable or disable automatic association with the default association route table. Enabled by default.
      * </p>
      * 
      * @param defaultRouteTableAssociation
-     *        Enable or disable automatic association with the default association route table. The default is
-     *        <code>enable</code>.
+     *        Enable or disable automatic association with the default association route table. Enabled by default.
      * @see DefaultRouteTableAssociationValue
      */
 
@@ -195,12 +198,10 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic association with the default association route table. The default is
-     * <code>enable</code>.
+     * Enable or disable automatic association with the default association route table. Enabled by default.
      * </p>
      * 
-     * @return Enable or disable automatic association with the default association route table. The default is
-     *         <code>enable</code>.
+     * @return Enable or disable automatic association with the default association route table. Enabled by default.
      * @see DefaultRouteTableAssociationValue
      */
 
@@ -210,13 +211,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic association with the default association route table. The default is
-     * <code>enable</code>.
+     * Enable or disable automatic association with the default association route table. Enabled by default.
      * </p>
      * 
      * @param defaultRouteTableAssociation
-     *        Enable or disable automatic association with the default association route table. The default is
-     *        <code>enable</code>.
+     *        Enable or disable automatic association with the default association route table. Enabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DefaultRouteTableAssociationValue
      */
@@ -228,13 +227,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic association with the default association route table. The default is
-     * <code>enable</code>.
+     * Enable or disable automatic association with the default association route table. Enabled by default.
      * </p>
      * 
      * @param defaultRouteTableAssociation
-     *        Enable or disable automatic association with the default association route table. The default is
-     *        <code>enable</code>.
+     *        Enable or disable automatic association with the default association route table. Enabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DefaultRouteTableAssociationValue
      */
@@ -246,13 +243,12 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic propagation of routes to the default propagation route table. The default is
-     * <code>enable</code>.
+     * Enable or disable automatic propagation of routes to the default propagation route table. Enabled by default.
      * </p>
      * 
      * @param defaultRouteTablePropagation
-     *        Enable or disable automatic propagation of routes to the default propagation route table. The default is
-     *        <code>enable</code>.
+     *        Enable or disable automatic propagation of routes to the default propagation route table. Enabled by
+     *        default.
      * @see DefaultRouteTablePropagationValue
      */
 
@@ -262,12 +258,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic propagation of routes to the default propagation route table. The default is
-     * <code>enable</code>.
+     * Enable or disable automatic propagation of routes to the default propagation route table. Enabled by default.
      * </p>
      * 
-     * @return Enable or disable automatic propagation of routes to the default propagation route table. The default is
-     *         <code>enable</code>.
+     * @return Enable or disable automatic propagation of routes to the default propagation route table. Enabled by
+     *         default.
      * @see DefaultRouteTablePropagationValue
      */
 
@@ -277,13 +272,12 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic propagation of routes to the default propagation route table. The default is
-     * <code>enable</code>.
+     * Enable or disable automatic propagation of routes to the default propagation route table. Enabled by default.
      * </p>
      * 
      * @param defaultRouteTablePropagation
-     *        Enable or disable automatic propagation of routes to the default propagation route table. The default is
-     *        <code>enable</code>.
+     *        Enable or disable automatic propagation of routes to the default propagation route table. Enabled by
+     *        default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DefaultRouteTablePropagationValue
      */
@@ -295,13 +289,12 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable automatic propagation of routes to the default propagation route table. The default is
-     * <code>enable</code>.
+     * Enable or disable automatic propagation of routes to the default propagation route table. Enabled by default.
      * </p>
      * 
      * @param defaultRouteTablePropagation
-     *        Enable or disable automatic propagation of routes to the default propagation route table. The default is
-     *        <code>enable</code>.
+     *        Enable or disable automatic propagation of routes to the default propagation route table. Enabled by
+     *        default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DefaultRouteTablePropagationValue
      */
@@ -313,11 +306,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable Equal Cost Multipath Protocol support.
+     * Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
      * </p>
      * 
      * @param vpnEcmpSupport
-     *        Enable or disable Equal Cost Multipath Protocol support.
+     *        Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
      * @see VpnEcmpSupportValue
      */
 
@@ -327,10 +320,10 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable Equal Cost Multipath Protocol support.
+     * Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
      * </p>
      * 
-     * @return Enable or disable Equal Cost Multipath Protocol support.
+     * @return Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
      * @see VpnEcmpSupportValue
      */
 
@@ -340,11 +333,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable Equal Cost Multipath Protocol support.
+     * Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
      * </p>
      * 
      * @param vpnEcmpSupport
-     *        Enable or disable Equal Cost Multipath Protocol support.
+     *        Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VpnEcmpSupportValue
      */
@@ -356,11 +349,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable Equal Cost Multipath Protocol support.
+     * Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
      * </p>
      * 
      * @param vpnEcmpSupport
-     *        Enable or disable Equal Cost Multipath Protocol support.
+     *        Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VpnEcmpSupportValue
      */
@@ -372,11 +365,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable DNS support.
+     * Enable or disable DNS support. Enabled by default.
      * </p>
      * 
      * @param dnsSupport
-     *        Enable or disable DNS support.
+     *        Enable or disable DNS support. Enabled by default.
      * @see DnsSupportValue
      */
 
@@ -386,10 +379,10 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable DNS support.
+     * Enable or disable DNS support. Enabled by default.
      * </p>
      * 
-     * @return Enable or disable DNS support.
+     * @return Enable or disable DNS support. Enabled by default.
      * @see DnsSupportValue
      */
 
@@ -399,11 +392,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable DNS support.
+     * Enable or disable DNS support. Enabled by default.
      * </p>
      * 
      * @param dnsSupport
-     *        Enable or disable DNS support.
+     *        Enable or disable DNS support. Enabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DnsSupportValue
      */
@@ -415,11 +408,11 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Enable or disable DNS support.
+     * Enable or disable DNS support. Enabled by default.
      * </p>
      * 
      * @param dnsSupport
-     *        Enable or disable DNS support.
+     *        Enable or disable DNS support. Enabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DnsSupportValue
      */
@@ -489,6 +482,87 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4,
+     * or a size /64 CIDR block or larger for IPv6.
+     * </p>
+     * 
+     * @return One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for
+     *         IPv4, or a size /64 CIDR block or larger for IPv6.
+     */
+
+    public java.util.List<String> getTransitGatewayCidrBlocks() {
+        if (transitGatewayCidrBlocks == null) {
+            transitGatewayCidrBlocks = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return transitGatewayCidrBlocks;
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4,
+     * or a size /64 CIDR block or larger for IPv6.
+     * </p>
+     * 
+     * @param transitGatewayCidrBlocks
+     *        One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for
+     *        IPv4, or a size /64 CIDR block or larger for IPv6.
+     */
+
+    public void setTransitGatewayCidrBlocks(java.util.Collection<String> transitGatewayCidrBlocks) {
+        if (transitGatewayCidrBlocks == null) {
+            this.transitGatewayCidrBlocks = null;
+            return;
+        }
+
+        this.transitGatewayCidrBlocks = new com.amazonaws.internal.SdkInternalList<String>(transitGatewayCidrBlocks);
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4,
+     * or a size /64 CIDR block or larger for IPv6.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTransitGatewayCidrBlocks(java.util.Collection)} or
+     * {@link #withTransitGatewayCidrBlocks(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param transitGatewayCidrBlocks
+     *        One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for
+     *        IPv4, or a size /64 CIDR block or larger for IPv6.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayRequestOptions withTransitGatewayCidrBlocks(String... transitGatewayCidrBlocks) {
+        if (this.transitGatewayCidrBlocks == null) {
+            setTransitGatewayCidrBlocks(new com.amazonaws.internal.SdkInternalList<String>(transitGatewayCidrBlocks.length));
+        }
+        for (String ele : transitGatewayCidrBlocks) {
+            this.transitGatewayCidrBlocks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for IPv4,
+     * or a size /64 CIDR block or larger for IPv6.
+     * </p>
+     * 
+     * @param transitGatewayCidrBlocks
+     *        One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block or larger for
+     *        IPv4, or a size /64 CIDR block or larger for IPv6.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayRequestOptions withTransitGatewayCidrBlocks(java.util.Collection<String> transitGatewayCidrBlocks) {
+        setTransitGatewayCidrBlocks(transitGatewayCidrBlocks);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -513,7 +587,9 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
         if (getDnsSupport() != null)
             sb.append("DnsSupport: ").append(getDnsSupport()).append(",");
         if (getMulticastSupport() != null)
-            sb.append("MulticastSupport: ").append(getMulticastSupport());
+            sb.append("MulticastSupport: ").append(getMulticastSupport()).append(",");
+        if (getTransitGatewayCidrBlocks() != null)
+            sb.append("TransitGatewayCidrBlocks: ").append(getTransitGatewayCidrBlocks());
         sb.append("}");
         return sb.toString();
     }
@@ -556,6 +632,10 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
             return false;
         if (other.getMulticastSupport() != null && other.getMulticastSupport().equals(this.getMulticastSupport()) == false)
             return false;
+        if (other.getTransitGatewayCidrBlocks() == null ^ this.getTransitGatewayCidrBlocks() == null)
+            return false;
+        if (other.getTransitGatewayCidrBlocks() != null && other.getTransitGatewayCidrBlocks().equals(this.getTransitGatewayCidrBlocks()) == false)
+            return false;
         return true;
     }
 
@@ -571,6 +651,7 @@ public class TransitGatewayRequestOptions implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getVpnEcmpSupport() == null) ? 0 : getVpnEcmpSupport().hashCode());
         hashCode = prime * hashCode + ((getDnsSupport() == null) ? 0 : getDnsSupport().hashCode());
         hashCode = prime * hashCode + ((getMulticastSupport() == null) ? 0 : getMulticastSupport().hashCode());
+        hashCode = prime * hashCode + ((getTransitGatewayCidrBlocks() == null) ? 0 : getTransitGatewayCidrBlocks().hashCode());
         return hashCode;
     }
 

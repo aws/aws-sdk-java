@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     * </p>
+     * <p>
+     * In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      * </p>
      * </li>
      * <li>
@@ -69,8 +73,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <p>
      * For additional information about valid values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -100,22 +104,34 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
      * parameters have a value limit of 8 KB.
      * </p>
+     * <note>
+     * <p>
+     * Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code>
+     * or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     * </p>
+     * </note>
      */
     private String value;
     /**
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
+     * <note>
+     * <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
+     * </p>
+     * </note>
      * <p>
      * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
      * character to escape items in the list. If you have a parameter value that requires a comma, then use the
      * <code>String</code> data type.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
      * </p>
-     * </note>
+     * </important>
      */
     private String type;
     /**
@@ -145,7 +161,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String keyId;
     /**
      * <p>
-     * Overwrite an existing parameter. If not specified, will default to "false".
+     * Overwrite an existing parameter. The default value is 'false'.
      * </p>
      */
     private Boolean overwrite;
@@ -329,7 +345,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
      * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
      * AMI is available in your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
@@ -363,7 +379,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     * </p>
+     * <p>
+     * In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      * </p>
      * </li>
      * <li>
@@ -379,8 +399,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <p>
      * For additional information about valid values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -419,7 +439,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     *        Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     *        </p>
+     *        <p>
+     *        In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     *        <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      *        </p>
      *        </li>
      *        <li>
@@ -434,9 +458,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        For additional information about valid values for parameter names, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html"
-     *        >About requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        For additional information about valid values for parameter names, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html"
+     *        >Creating Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -482,7 +506,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     * </p>
+     * <p>
+     * In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      * </p>
      * </li>
      * <li>
@@ -498,8 +526,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <p>
      * For additional information about valid values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -537,7 +565,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     *         Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     *         </p>
+     *         <p>
+     *         In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     *         <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      *         </p>
      *         </li>
      *         <li>
@@ -552,9 +584,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         </ul>
      *         <p>
-     *         For additional information about valid values for parameter names, see <a href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html"
-     *         >About requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         For additional information about valid values for parameter names, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html"
+     *         >Creating Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      *         </p>
      *         <note>
      *         <p>
@@ -600,7 +632,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     * Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     * </p>
+     * <p>
+     * In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      * </p>
      * </li>
      * <li>
@@ -616,8 +652,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * <p>
      * For additional information about valid values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -656,7 +692,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-/</code>
+     *        Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+     *        </p>
+     *        <p>
+     *        In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example:
+     *        <code>/Dev/Production/East/Project-ABC/MyParameter</code>
      *        </p>
      *        </li>
      *        <li>
@@ -671,9 +711,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        For additional information about valid values for parameter names, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html"
-     *        >About requirements and constraints for parameter names</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        For additional information about valid values for parameter names, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html"
+     *        >Creating Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -765,10 +805,20 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
      * parameters have a value limit of 8 KB.
      * </p>
+     * <note>
+     * <p>
+     * Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code>
+     * or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     * </p>
+     * </note>
      * 
      * @param value
      *        The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB.
-     *        Advanced parameters have a value limit of 8 KB.
+     *        Advanced parameters have a value limit of 8 KB.</p> <note>
+     *        <p>
+     *        Parameters can't be referenced or nested in the values of other parameters. You can't include
+     *        <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     *        </p>
      */
 
     public void setValue(String value) {
@@ -780,9 +830,19 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
      * parameters have a value limit of 8 KB.
      * </p>
+     * <note>
+     * <p>
+     * Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code>
+     * or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     * </p>
+     * </note>
      * 
      * @return The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB.
-     *         Advanced parameters have a value limit of 8 KB.
+     *         Advanced parameters have a value limit of 8 KB.</p> <note>
+     *         <p>
+     *         Parameters can't be referenced or nested in the values of other parameters. You can't include
+     *         <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     *         </p>
      */
 
     public String getValue() {
@@ -794,10 +854,20 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
      * parameters have a value limit of 8 KB.
      * </p>
+     * <note>
+     * <p>
+     * Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code>
+     * or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     * </p>
+     * </note>
      * 
      * @param value
      *        The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB.
-     *        Advanced parameters have a value limit of 8 KB.
+     *        Advanced parameters have a value limit of 8 KB.</p> <note>
+     *        <p>
+     *        Parameters can't be referenced or nested in the values of other parameters. You can't include
+     *        <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -810,28 +880,38 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
+     * <note>
+     * <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
+     * </p>
+     * </note>
      * <p>
      * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
      * character to escape items in the list. If you have a parameter value that requires a comma, then use the
      * <code>String</code> data type.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
      * </p>
-     * </note>
+     * </important>
      * 
      * @param type
-     *        The type of parameter that you want to add to the system.</p>
+     *        The type of parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
+     *        </p>
+     *        </note>
      *        <p>
      *        Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or
      *        special character to escape items in the list. If you have a parameter value that requires a comma, then
      *        use the <code>String</code> data type.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        Specifying a parameter type is not required when updating a parameter. You must specify a parameter type
+     *        when creating a parameter.
      *        </p>
      * @see ParameterType
      */
@@ -844,27 +924,37 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
+     * <note>
+     * <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
+     * </p>
+     * </note>
      * <p>
      * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
      * character to escape items in the list. If you have a parameter value that requires a comma, then use the
      * <code>String</code> data type.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
      * </p>
-     * </note>
+     * </important>
      * 
-     * @return The type of parameter that you want to add to the system.</p>
+     * @return The type of parameter that you want to add to the system.</p> <note>
+     *         <p>
+     *         <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
+     *         </p>
+     *         </note>
      *         <p>
      *         Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or
      *         special character to escape items in the list. If you have a parameter value that requires a comma, then
      *         use the <code>String</code> data type.
      *         </p>
-     *         <note>
+     *         <important>
      *         <p>
-     *         <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *         Regions.
+     *         Specifying a parameter type is not required when updating a parameter. You must specify a parameter type
+     *         when creating a parameter.
      *         </p>
      * @see ParameterType
      */
@@ -877,28 +967,38 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
+     * <note>
+     * <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
+     * </p>
+     * </note>
      * <p>
      * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
      * character to escape items in the list. If you have a parameter value that requires a comma, then use the
      * <code>String</code> data type.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
      * </p>
-     * </note>
+     * </important>
      * 
      * @param type
-     *        The type of parameter that you want to add to the system.</p>
+     *        The type of parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
+     *        </p>
+     *        </note>
      *        <p>
      *        Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or
      *        special character to escape items in the list. If you have a parameter value that requires a comma, then
      *        use the <code>String</code> data type.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        Specifying a parameter type is not required when updating a parameter. You must specify a parameter type
+     *        when creating a parameter.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterType
@@ -913,28 +1013,38 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
+     * <note>
+     * <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
+     * </p>
+     * </note>
      * <p>
      * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
      * character to escape items in the list. If you have a parameter value that requires a comma, then use the
      * <code>String</code> data type.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
      * </p>
-     * </note>
+     * </important>
      * 
      * @param type
-     *        The type of parameter that you want to add to the system.</p>
+     *        The type of parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
+     *        </p>
+     *        </note>
      *        <p>
      *        Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or
      *        special character to escape items in the list. If you have a parameter value that requires a comma, then
      *        use the <code>String</code> data type.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        Specifying a parameter type is not required when updating a parameter. You must specify a parameter type
+     *        when creating a parameter.
      *        </p>
      * @see ParameterType
      */
@@ -947,28 +1057,38 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The type of parameter that you want to add to the system.
      * </p>
+     * <note>
+     * <p>
+     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
+     * </p>
+     * </note>
      * <p>
      * Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special
      * character to escape items in the list. If you have a parameter value that requires a comma, then use the
      * <code>String</code> data type.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.
+     * Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when
+     * creating a parameter.
      * </p>
-     * </note>
+     * </important>
      * 
      * @param type
-     *        The type of parameter that you want to add to the system.</p>
+     *        The type of parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates.
+     *        </p>
+     *        </note>
      *        <p>
      *        Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or
      *        special character to escape items in the list. If you have a parameter value that requires a comma, then
      *        use the <code>String</code> data type.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China
-     *        Regions.
+     *        Specifying a parameter type is not required when updating a parameter. You must specify a parameter type
+     *        when creating a parameter.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterType
@@ -1135,11 +1255,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter. If not specified, will default to "false".
+     * Overwrite an existing parameter. The default value is 'false'.
      * </p>
      * 
      * @param overwrite
-     *        Overwrite an existing parameter. If not specified, will default to "false".
+     *        Overwrite an existing parameter. The default value is 'false'.
      */
 
     public void setOverwrite(Boolean overwrite) {
@@ -1148,10 +1268,10 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter. If not specified, will default to "false".
+     * Overwrite an existing parameter. The default value is 'false'.
      * </p>
      * 
-     * @return Overwrite an existing parameter. If not specified, will default to "false".
+     * @return Overwrite an existing parameter. The default value is 'false'.
      */
 
     public Boolean getOverwrite() {
@@ -1160,11 +1280,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter. If not specified, will default to "false".
+     * Overwrite an existing parameter. The default value is 'false'.
      * </p>
      * 
      * @param overwrite
-     *        Overwrite an existing parameter. If not specified, will default to "false".
+     *        Overwrite an existing parameter. The default value is 'false'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1175,10 +1295,10 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter. If not specified, will default to "false".
+     * Overwrite an existing parameter. The default value is 'false'.
      * </p>
      * 
-     * @return Overwrite an existing parameter. If not specified, will default to "false".
+     * @return Overwrite an existing parameter. The default value is 'false'.
      */
 
     public Boolean isOverwrite() {
@@ -2606,7 +2726,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
      * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
      * AMI is available in your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -2632,8 +2752,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager
      *        validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and
      *        that the specified AMI is available in your AWS account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     *        parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
+     *        >Native parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setDataType(String dataType) {
@@ -2664,7 +2784,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
      * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
      * AMI is available in your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -2689,7 +2809,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager
      *         validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and
      *         that the specified AMI is available in your AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
      *         >Native parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
@@ -2721,7 +2841,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager validates
      * the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified
      * AMI is available in your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
@@ -2747,8 +2867,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Systems Manager
      *        validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and
      *        that the specified AMI is available in your AWS account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     *        parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
+     *        >Native parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

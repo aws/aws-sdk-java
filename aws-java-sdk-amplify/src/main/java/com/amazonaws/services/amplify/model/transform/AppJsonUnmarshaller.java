@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -102,6 +102,10 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                     context.nextToken();
                     app.setEnableBranchAutoBuild(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("enableBranchAutoDeletion", targetDepth)) {
+                    context.nextToken();
+                    app.setEnableBranchAutoDeletion(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("enableBasicAuth", targetDepth)) {
                     context.nextToken();
                     app.setEnableBasicAuth(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -112,7 +116,9 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                 }
                 if (context.testExpression("customRules", targetDepth)) {
                     context.nextToken();
-                    app.setCustomRules(new ListUnmarshaller<CustomRule>(CustomRuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    app.setCustomRules(new ListUnmarshaller<CustomRule>(CustomRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("productionBranch", targetDepth)) {
                     context.nextToken();
@@ -122,13 +128,19 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                     context.nextToken();
                     app.setBuildSpec(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("customHeaders", targetDepth)) {
+                    context.nextToken();
+                    app.setCustomHeaders(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("enableAutoBranchCreation", targetDepth)) {
                     context.nextToken();
                     app.setEnableAutoBranchCreation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("autoBranchCreationPatterns", targetDepth)) {
                     context.nextToken();
-                    app.setAutoBranchCreationPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    app.setAutoBranchCreationPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("autoBranchCreationConfig", targetDepth)) {
                     context.nextToken();

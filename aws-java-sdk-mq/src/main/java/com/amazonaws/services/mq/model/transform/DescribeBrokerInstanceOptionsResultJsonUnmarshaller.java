@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,9 @@ public class DescribeBrokerInstanceOptionsResultJsonUnmarshaller implements Unma
                 if (context.testExpression("brokerInstanceOptions", targetDepth)) {
                     context.nextToken();
                     describeBrokerInstanceOptionsResult.setBrokerInstanceOptions(new ListUnmarshaller<BrokerInstanceOption>(
-                            BrokerInstanceOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BrokerInstanceOptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("maxResults", targetDepth)) {
                     context.nextToken();

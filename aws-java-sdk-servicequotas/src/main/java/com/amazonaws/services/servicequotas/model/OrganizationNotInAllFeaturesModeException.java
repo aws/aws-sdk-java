@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The organization that your account belongs to, is not in All Features mode. To enable all features mode, see <a
- * href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAllFeatures.html"
- * >EnableAllFeatures</a>.
+ * The organization that your account belongs to is not in All Features mode.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

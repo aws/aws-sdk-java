@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,31 +30,30 @@ public class JobScheduleFrequency implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Run the job once a day, every day. If specified, this is an empty object.
+     * Specifies a daily recurrence pattern for running the job.
      * </p>
      */
     private DailySchedule dailySchedule;
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * Specifies a monthly recurrence pattern for running the job.
      * </p>
      */
     private MonthlySchedule monthlySchedule;
     /**
      * <p>
-     * Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY, THURSDAY,
-     * FRIDAY, SATURDAY, and SUNDAY.
+     * Specifies a weekly recurrence pattern for running the job.
      * </p>
      */
     private WeeklySchedule weeklySchedule;
 
     /**
      * <p>
-     * Run the job once a day, every day. If specified, this is an empty object.
+     * Specifies a daily recurrence pattern for running the job.
      * </p>
      * 
      * @param dailySchedule
-     *        Run the job once a day, every day. If specified, this is an empty object.
+     *        Specifies a daily recurrence pattern for running the job.
      */
 
     public void setDailySchedule(DailySchedule dailySchedule) {
@@ -63,10 +62,10 @@ public class JobScheduleFrequency implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Run the job once a day, every day. If specified, this is an empty object.
+     * Specifies a daily recurrence pattern for running the job.
      * </p>
      * 
-     * @return Run the job once a day, every day. If specified, this is an empty object.
+     * @return Specifies a daily recurrence pattern for running the job.
      */
 
     public DailySchedule getDailySchedule() {
@@ -75,11 +74,11 @@ public class JobScheduleFrequency implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Run the job once a day, every day. If specified, this is an empty object.
+     * Specifies a daily recurrence pattern for running the job.
      * </p>
      * 
      * @param dailySchedule
-     *        Run the job once a day, every day. If specified, this is an empty object.
+     *        Specifies a daily recurrence pattern for running the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +89,11 @@ public class JobScheduleFrequency implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * Specifies a monthly recurrence pattern for running the job.
      * </p>
      * 
      * @param monthlySchedule
-     *        Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     *        Specifies a monthly recurrence pattern for running the job.
      */
 
     public void setMonthlySchedule(MonthlySchedule monthlySchedule) {
@@ -103,10 +102,10 @@ public class JobScheduleFrequency implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * Specifies a monthly recurrence pattern for running the job.
      * </p>
      * 
-     * @return Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * @return Specifies a monthly recurrence pattern for running the job.
      */
 
     public MonthlySchedule getMonthlySchedule() {
@@ -115,11 +114,11 @@ public class JobScheduleFrequency implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * Specifies a monthly recurrence pattern for running the job.
      * </p>
      * 
      * @param monthlySchedule
-     *        Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     *        Specifies a monthly recurrence pattern for running the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,13 +129,11 @@ public class JobScheduleFrequency implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY, THURSDAY,
-     * FRIDAY, SATURDAY, and SUNDAY.
+     * Specifies a weekly recurrence pattern for running the job.
      * </p>
      * 
      * @param weeklySchedule
-     *        Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY,
-     *        THURSDAY, FRIDAY, SATURDAY, and SUNDAY.
+     *        Specifies a weekly recurrence pattern for running the job.
      */
 
     public void setWeeklySchedule(WeeklySchedule weeklySchedule) {
@@ -145,12 +142,10 @@ public class JobScheduleFrequency implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY, THURSDAY,
-     * FRIDAY, SATURDAY, and SUNDAY.
+     * Specifies a weekly recurrence pattern for running the job.
      * </p>
      * 
-     * @return Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY,
-     *         THURSDAY, FRIDAY, SATURDAY, and SUNDAY.
+     * @return Specifies a weekly recurrence pattern for running the job.
      */
 
     public WeeklySchedule getWeeklySchedule() {
@@ -159,13 +154,11 @@ public class JobScheduleFrequency implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY, THURSDAY,
-     * FRIDAY, SATURDAY, and SUNDAY.
+     * Specifies a weekly recurrence pattern for running the job.
      * </p>
      * 
      * @param weeklySchedule
-     *        Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY,
-     *        THURSDAY, FRIDAY, SATURDAY, and SUNDAY.
+     *        Specifies a weekly recurrence pattern for running the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

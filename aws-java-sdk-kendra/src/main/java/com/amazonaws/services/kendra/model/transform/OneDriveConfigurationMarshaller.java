@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class OneDriveConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusionPatterns").build();
     private static final MarshallingInfo<List> FIELDMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FieldMappings").build();
+    private static final MarshallingInfo<Boolean> DISABLELOCALGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableLocalGroups").build();
 
     private static final OneDriveConfigurationMarshaller instance = new OneDriveConfigurationMarshaller();
 
@@ -63,6 +65,7 @@ public class OneDriveConfigurationMarshaller {
             protocolMarshaller.marshall(oneDriveConfiguration.getInclusionPatterns(), INCLUSIONPATTERNS_BINDING);
             protocolMarshaller.marshall(oneDriveConfiguration.getExclusionPatterns(), EXCLUSIONPATTERNS_BINDING);
             protocolMarshaller.marshall(oneDriveConfiguration.getFieldMappings(), FIELDMAPPINGS_BINDING);
+            protocolMarshaller.marshall(oneDriveConfiguration.getDisableLocalGroups(), DISABLELOCALGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

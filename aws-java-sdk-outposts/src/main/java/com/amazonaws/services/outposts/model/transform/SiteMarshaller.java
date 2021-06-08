@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.outposts.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -35,6 +37,10 @@ public class SiteMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> SITEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SiteArn").build();
 
     private static final SiteMarshaller instance = new SiteMarshaller();
 
@@ -56,6 +62,8 @@ public class SiteMarshaller {
             protocolMarshaller.marshall(site.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(site.getName(), NAME_BINDING);
             protocolMarshaller.marshall(site.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(site.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(site.getSiteArn(), SITEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import java.io.Serializable;
  * @see RestoreObjectRequest#RestoreObjectRequest(String, String, int)
  * @see RestoreObjectRequest#RestoreObjectRequest(String, String)
  */
-public class RestoreObjectRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class RestoreObjectRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, ExpectedBucketOwnerRequest {
 
     /**
      * Lifetime of the active copy in days. Do not use with restores that specify OutputLocation.
@@ -51,7 +51,7 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest implements Ser
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      */
     private String bucketName;
@@ -110,6 +110,8 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest implements Ser
      */
     private OutputLocation outputLocation;
 
+    private String expectedBucketOwner;
+
     /**
      * <p>
      * Constructs a new RestoreObjectRequest.
@@ -124,7 +126,7 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest implements Ser
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -154,7 +156,7 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest implements Ser
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -173,6 +175,20 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest implements Ser
         this.bucketName = bucketName;
         this.key = key;
         this.expirationInDays = expirationInDays;
+    }
+
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public RestoreObjectRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**
@@ -200,7 +216,7 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest implements Ser
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @see RestoreObjectRequest#setBucketName(String)
@@ -224,7 +240,7 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest implements Ser
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @see RestoreObjectRequest#getBucketName()
@@ -293,28 +309,28 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Sets the time, in days, between when an object is uploaded to the bucket
-     * and when it expires.
-     *
-     * <p>Do not use with restores that specify OutputLocation.</p>
+     * Set the lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.
+     * <p>
+     * The Days element is required for regular restores, and must not be provided for select requests.
      */
     public void setExpirationInDays(int expirationInDays) {
         this.expirationInDays = expirationInDays;
     }
 
     /**
-     * Returns the time in days from an object's creation to its expiration.
+     * Returns the lifetime of the active copy in days. Do not use with restores that specify
+     * <code>OutputLocation</code>.
+     * <p>
+     * The Days element is required for regular restores, and must not be provided for select requests.
      */
     public int getExpirationInDays() {
         return expirationInDays;
     }
 
     /**
-     * Sets the time, in days, between when an object is uploaded to the bucket
-     * and when it expires, and returns a reference to this object(RestoreObjectRequest) for method
-     * chaining.
-     *
-     * <p>Do not use with restores that specify OutputLocation.</p>
+     * Set the lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.
+     * <p>
+     * The Days element is required for regular restores, and must not be provided for select requests.
      */
     public RestoreObjectRequest withExpirationInDays(int expirationInDays) {
         this.expirationInDays = expirationInDays;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,7 +61,7 @@ public class DescribeDashboardResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The dashboard's definition JSON literal. For detailed information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      */
     private String dashboardDefinition;
@@ -303,13 +303,13 @@ public class DescribeDashboardResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The dashboard's definition JSON literal. For detailed information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param dashboardDefinition
      *        The dashboard's definition JSON literal. For detailed information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html"
-     *        >Creating Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        >Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
      */
 
     public void setDashboardDefinition(String dashboardDefinition) {
@@ -320,12 +320,12 @@ public class DescribeDashboardResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The dashboard's definition JSON literal. For detailed information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The dashboard's definition JSON literal. For detailed information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html"
-     *         >Creating Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         >Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
      */
 
     public String getDashboardDefinition() {
@@ -336,13 +336,13 @@ public class DescribeDashboardResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The dashboard's definition JSON literal. For detailed information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param dashboardDefinition
      *        The dashboard's definition JSON literal. For detailed information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html"
-     *        >Creating Dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        >Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

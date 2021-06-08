@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      * <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one
      * or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the
      * <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>,
-     * <code>creating</code>, <code>deleting</code>, <code>modifying</code>.
+     * <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
@@ -173,7 +173,7 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      * <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one
      * or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the
      * <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>,
-     * <code>creating</code>, <code>deleting</code>, <code>modifying</code>.
+     * <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>.
      * </p>
      * 
      * @return A set of name-value pairs that define which endpoints to include in the output. The filters are specified
@@ -186,7 +186,8 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      *         <code>writer</code>, <code>custom</code>. <code>Values</code> for the
      *         <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>,
      *         <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one
-     *         or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>modifying</code>.
+     *         or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>,
+     *         <code>modifying</code>.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -207,7 +208,7 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      * <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one
      * or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the
      * <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>,
-     * <code>creating</code>, <code>deleting</code>, <code>modifying</code>.
+     * <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>.
      * </p>
      * 
      * @param filters
@@ -221,7 +222,8 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      *        <code>writer</code>, <code>custom</code>. <code>Values</code> for the
      *        <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>,
      *        <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or
-     *        more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>modifying</code>.
+     *        more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>,
+     *        <code>modifying</code>.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -244,7 +246,7 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      * <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one
      * or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the
      * <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>,
-     * <code>creating</code>, <code>deleting</code>, <code>modifying</code>.
+     * <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -263,7 +265,8 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      *        <code>writer</code>, <code>custom</code>. <code>Values</code> for the
      *        <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>,
      *        <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or
-     *        more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>modifying</code>.
+     *        more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>,
+     *        <code>modifying</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,7 +291,7 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      * <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one
      * or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the
      * <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>,
-     * <code>creating</code>, <code>deleting</code>, <code>modifying</code>.
+     * <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>.
      * </p>
      * 
      * @param filters
@@ -302,7 +305,8 @@ public class DescribeDBClusterEndpointsRequest extends com.amazonaws.AmazonWebSe
      *        <code>writer</code>, <code>custom</code>. <code>Values</code> for the
      *        <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>,
      *        <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or
-     *        more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>modifying</code>.
+     *        more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>,
+     *        <code>modifying</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

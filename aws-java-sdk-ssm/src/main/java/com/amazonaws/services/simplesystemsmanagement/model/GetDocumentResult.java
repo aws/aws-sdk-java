@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,19 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     */
+    private java.util.Date createdDate;
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     */
+    private String displayName;
     /**
      * <p>
      * The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is
@@ -88,6 +101,20 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AttachmentContent> attachmentsContent;
+    /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     */
+    private String reviewStatus;
 
     /**
      * <p>
@@ -126,6 +153,92 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public GetDocumentResult withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date the Systems Manager document was created.
+     */
+
+    public void setCreatedDate(java.util.Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @return The date the Systems Manager document was created.
+     */
+
+    public java.util.Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date the Systems Manager document was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult withCreatedDate(java.util.Date createdDate) {
+        setCreatedDate(createdDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
+     *        If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @return The friendly name of the Systems Manager document. This value can differ for each version of the
+     *         document. If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
+     *        If you want to update this value, see <a>UpdateDocument</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -691,6 +804,154 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current review status of a new custom Systems Manager document (SSM document) created by a member of
+     *        your organization, or of the latest version of an existing SSM document.</p>
+     *        <p>
+     *        Only one version of an SSM document can be in the APPROVED state at a time. When a new version is
+     *        approved, the status of the previous version changes to REJECTED.
+     *        </p>
+     *        <p>
+     *        Only one version of an SSM document can be in review, or PENDING, at a time.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(String reviewStatus) {
+        this.reviewStatus = reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     * 
+     * @return The current review status of a new custom Systems Manager document (SSM document) created by a member of
+     *         your organization, or of the latest version of an existing SSM document.</p>
+     *         <p>
+     *         Only one version of an SSM document can be in the APPROVED state at a time. When a new version is
+     *         approved, the status of the previous version changes to REJECTED.
+     *         </p>
+     *         <p>
+     *         Only one version of an SSM document can be in review, or PENDING, at a time.
+     * @see ReviewStatus
+     */
+
+    public String getReviewStatus() {
+        return this.reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current review status of a new custom Systems Manager document (SSM document) created by a member of
+     *        your organization, or of the latest version of an existing SSM document.</p>
+     *        <p>
+     *        Only one version of an SSM document can be in the APPROVED state at a time. When a new version is
+     *        approved, the status of the previous version changes to REJECTED.
+     *        </p>
+     *        <p>
+     *        Only one version of an SSM document can be in review, or PENDING, at a time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public GetDocumentResult withReviewStatus(String reviewStatus) {
+        setReviewStatus(reviewStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current review status of a new custom Systems Manager document (SSM document) created by a member of
+     *        your organization, or of the latest version of an existing SSM document.</p>
+     *        <p>
+     *        Only one version of an SSM document can be in the APPROVED state at a time. When a new version is
+     *        approved, the status of the previous version changes to REJECTED.
+     *        </p>
+     *        <p>
+     *        Only one version of an SSM document can be in review, or PENDING, at a time.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(ReviewStatus reviewStatus) {
+        withReviewStatus(reviewStatus);
+    }
+
+    /**
+     * <p>
+     * The current review status of a new custom Systems Manager document (SSM document) created by a member of your
+     * organization, or of the latest version of an existing SSM document.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the
+     * status of the previous version changes to REJECTED.
+     * </p>
+     * <p>
+     * Only one version of an SSM document can be in review, or PENDING, at a time.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current review status of a new custom Systems Manager document (SSM document) created by a member of
+     *        your organization, or of the latest version of an existing SSM document.</p>
+     *        <p>
+     *        Only one version of an SSM document can be in the APPROVED state at a time. When a new version is
+     *        approved, the status of the previous version changes to REJECTED.
+     *        </p>
+     *        <p>
+     *        Only one version of an SSM document can be in review, or PENDING, at a time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public GetDocumentResult withReviewStatus(ReviewStatus reviewStatus) {
+        this.reviewStatus = reviewStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -704,6 +965,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getCreatedDate() != null)
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getVersionName() != null)
             sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getDocumentVersion() != null)
@@ -721,7 +986,9 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getRequires() != null)
             sb.append("Requires: ").append(getRequires()).append(",");
         if (getAttachmentsContent() != null)
-            sb.append("AttachmentsContent: ").append(getAttachmentsContent());
+            sb.append("AttachmentsContent: ").append(getAttachmentsContent()).append(",");
+        if (getReviewStatus() != null)
+            sb.append("ReviewStatus: ").append(getReviewStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -739,6 +1006,14 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
+            return false;
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+            return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
         if (other.getVersionName() == null ^ this.getVersionName() == null)
             return false;
@@ -776,6 +1051,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getAttachmentsContent() != null && other.getAttachmentsContent().equals(this.getAttachmentsContent()) == false)
             return false;
+        if (other.getReviewStatus() == null ^ this.getReviewStatus() == null)
+            return false;
+        if (other.getReviewStatus() != null && other.getReviewStatus().equals(this.getReviewStatus()) == false)
+            return false;
         return true;
     }
 
@@ -785,6 +1064,8 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
@@ -794,6 +1075,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
         hashCode = prime * hashCode + ((getRequires() == null) ? 0 : getRequires().hashCode());
         hashCode = prime * hashCode + ((getAttachmentsContent() == null) ? 0 : getAttachmentsContent().hashCode());
+        hashCode = prime * hashCode + ((getReviewStatus() == null) ? 0 : getReviewStatus().hashCode());
         return hashCode;
     }
 

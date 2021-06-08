@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,6 +90,21 @@ public class AbstractAWSServerMigrationAsync extends AbstractAWSServerMigration 
     public java.util.concurrent.Future<DeleteAppReplicationConfigurationResult> deleteAppReplicationConfigurationAsync(
             DeleteAppReplicationConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAppReplicationConfigurationRequest, DeleteAppReplicationConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppValidationConfigurationResult> deleteAppValidationConfigurationAsync(
+            DeleteAppValidationConfigurationRequest request) {
+
+        return deleteAppValidationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppValidationConfigurationResult> deleteAppValidationConfigurationAsync(
+            DeleteAppValidationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppValidationConfigurationRequest, DeleteAppValidationConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -199,6 +214,32 @@ public class AbstractAWSServerMigrationAsync extends AbstractAWSServerMigration 
     }
 
     @Override
+    public java.util.concurrent.Future<GetAppValidationConfigurationResult> getAppValidationConfigurationAsync(GetAppValidationConfigurationRequest request) {
+
+        return getAppValidationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppValidationConfigurationResult> getAppValidationConfigurationAsync(GetAppValidationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAppValidationConfigurationRequest, GetAppValidationConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppValidationOutputResult> getAppValidationOutputAsync(GetAppValidationOutputRequest request) {
+
+        return getAppValidationOutputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppValidationOutputResult> getAppValidationOutputAsync(GetAppValidationOutputRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAppValidationOutputRequest, GetAppValidationOutputResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectorsResult> getConnectorsAsync(GetConnectorsRequest request) {
 
         return getConnectorsAsync(request, null);
@@ -251,6 +292,19 @@ public class AbstractAWSServerMigrationAsync extends AbstractAWSServerMigration 
     }
 
     @Override
+    public java.util.concurrent.Future<ImportAppCatalogResult> importAppCatalogAsync(ImportAppCatalogRequest request) {
+
+        return importAppCatalogAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportAppCatalogResult> importAppCatalogAsync(ImportAppCatalogRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportAppCatalogRequest, ImportAppCatalogResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportServerCatalogResult> importServerCatalogAsync(ImportServerCatalogRequest request) {
 
         return importServerCatalogAsync(request, null);
@@ -290,6 +344,19 @@ public class AbstractAWSServerMigrationAsync extends AbstractAWSServerMigration 
     }
 
     @Override
+    public java.util.concurrent.Future<NotifyAppValidationOutputResult> notifyAppValidationOutputAsync(NotifyAppValidationOutputRequest request) {
+
+        return notifyAppValidationOutputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyAppValidationOutputResult> notifyAppValidationOutputAsync(NotifyAppValidationOutputRequest request,
+            com.amazonaws.handlers.AsyncHandler<NotifyAppValidationOutputRequest, NotifyAppValidationOutputResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutAppLaunchConfigurationResult> putAppLaunchConfigurationAsync(PutAppLaunchConfigurationRequest request) {
 
         return putAppLaunchConfigurationAsync(request, null);
@@ -316,6 +383,19 @@ public class AbstractAWSServerMigrationAsync extends AbstractAWSServerMigration 
     }
 
     @Override
+    public java.util.concurrent.Future<PutAppValidationConfigurationResult> putAppValidationConfigurationAsync(PutAppValidationConfigurationRequest request) {
+
+        return putAppValidationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAppValidationConfigurationResult> putAppValidationConfigurationAsync(PutAppValidationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAppValidationConfigurationRequest, PutAppValidationConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartAppReplicationResult> startAppReplicationAsync(StartAppReplicationRequest request) {
 
         return startAppReplicationAsync(request, null);
@@ -324,6 +404,19 @@ public class AbstractAWSServerMigrationAsync extends AbstractAWSServerMigration 
     @Override
     public java.util.concurrent.Future<StartAppReplicationResult> startAppReplicationAsync(StartAppReplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<StartAppReplicationRequest, StartAppReplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartOnDemandAppReplicationResult> startOnDemandAppReplicationAsync(StartOnDemandAppReplicationRequest request) {
+
+        return startOnDemandAppReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartOnDemandAppReplicationResult> startOnDemandAppReplicationAsync(StartOnDemandAppReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartOnDemandAppReplicationRequest, StartOnDemandAppReplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

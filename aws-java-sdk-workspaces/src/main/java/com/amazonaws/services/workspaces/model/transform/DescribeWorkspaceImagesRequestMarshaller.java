@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class DescribeWorkspaceImagesRequestMarshaller {
 
     private static final MarshallingInfo<List> IMAGEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageIds").build();
+    private static final MarshallingInfo<String> IMAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ImageType").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -52,6 +54,7 @@ public class DescribeWorkspaceImagesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeWorkspaceImagesRequest.getImageIds(), IMAGEIDS_BINDING);
+            protocolMarshaller.marshall(describeWorkspaceImagesRequest.getImageType(), IMAGETYPE_BINDING);
             protocolMarshaller.marshall(describeWorkspaceImagesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(describeWorkspaceImagesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

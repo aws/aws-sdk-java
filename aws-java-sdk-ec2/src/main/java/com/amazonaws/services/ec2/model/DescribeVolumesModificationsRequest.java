@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,17 +28,72 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of the volumes for which in-progress modifications will be described.
+     * The IDs of the volumes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> volumeIds;
     /**
      * <p>
-     * The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
-     * <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
-     * <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * The filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-iops</code> - The original IOPS rate of the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-size</code> - The original size of the volume, in GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     * st1).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start-time</code> - The modification start time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-iops</code> - The target IOPS rate of the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-size</code> - The target size of the volume, in GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>volume-id</code> - The ID of the volume.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
@@ -56,10 +111,10 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of the volumes for which in-progress modifications will be described.
+     * The IDs of the volumes.
      * </p>
      * 
-     * @return The IDs of the volumes for which in-progress modifications will be described.
+     * @return The IDs of the volumes.
      */
 
     public java.util.List<String> getVolumeIds() {
@@ -71,11 +126,11 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of the volumes for which in-progress modifications will be described.
+     * The IDs of the volumes.
      * </p>
      * 
      * @param volumeIds
-     *        The IDs of the volumes for which in-progress modifications will be described.
+     *        The IDs of the volumes.
      */
 
     public void setVolumeIds(java.util.Collection<String> volumeIds) {
@@ -89,7 +144,7 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of the volumes for which in-progress modifications will be described.
+     * The IDs of the volumes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -98,7 +153,7 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param volumeIds
-     *        The IDs of the volumes for which in-progress modifications will be described.
+     *        The IDs of the volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +169,11 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The IDs of the volumes for which in-progress modifications will be described.
+     * The IDs of the volumes.
      * </p>
      * 
      * @param volumeIds
-     *        The IDs of the volumes for which in-progress modifications will be described.
+     *        The IDs of the volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,17 +184,129 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
-     * <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
-     * <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * The filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-iops</code> - The original IOPS rate of the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-size</code> - The original size of the volume, in GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     * st1).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start-time</code> - The modification start time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-iops</code> - The target IOPS rate of the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-size</code> - The target size of the volume, in GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>volume-id</code> - The ID of the volume.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
-     *         <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
-     *         <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
-     *         <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>
-     *         .
+     * @return The filters.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>modification-state</code> - The current modification state (modifying | optimizing | completed |
+     *         failed).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>original-iops</code> - The original IOPS rate of the volume.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>original-size</code> - The original size of the volume, in GiB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 |
+     *         sc1 | st1).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true |
+     *         false).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>start-time</code> - The modification start time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>target-iops</code> - The target IOPS rate of the volume.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>target-size</code> - The target size of the volume, in GiB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1
+     *         | st1).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true |
+     *         false).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>volume-id</code> - The ID of the volume.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -151,17 +318,130 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
-     * <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
-     * <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * The filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-iops</code> - The original IOPS rate of the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-size</code> - The original size of the volume, in GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     * st1).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start-time</code> - The modification start time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-iops</code> - The target IOPS rate of the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-size</code> - The target size of the volume, in GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>volume-id</code> - The ID of the volume.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
-     *        <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
-     *        <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
-     *        <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>modification-state</code> - The current modification state (modifying | optimizing | completed |
+     *        failed).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>original-iops</code> - The original IOPS rate of the volume.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>original-size</code> - The original size of the volume, in GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 |
+     *        sc1 | st1).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true |
+     *        false).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start-time</code> - The modification start time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-iops</code> - The target IOPS rate of the volume.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-size</code> - The target size of the volume, in GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     *        st1).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true |
+     *        false).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>volume-id</code> - The ID of the volume.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -175,11 +455,66 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
-     * <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
-     * <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * The filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-iops</code> - The original IOPS rate of the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-size</code> - The original size of the volume, in GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     * st1).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start-time</code> - The modification start time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-iops</code> - The target IOPS rate of the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-size</code> - The target size of the volume, in GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>volume-id</code> - The ID of the volume.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -187,10 +522,68 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param filters
-     *        The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
-     *        <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
-     *        <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
-     *        <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>modification-state</code> - The current modification state (modifying | optimizing | completed |
+     *        failed).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>original-iops</code> - The original IOPS rate of the volume.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>original-size</code> - The original size of the volume, in GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 |
+     *        sc1 | st1).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true |
+     *        false).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start-time</code> - The modification start time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-iops</code> - The target IOPS rate of the volume.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-size</code> - The target size of the volume, in GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     *        st1).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true |
+     *        false).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>volume-id</code> - The ID of the volume.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,17 +599,130 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
-     * <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
-     * <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
-     * <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * The filters.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>modification-state</code> - The current modification state (modifying | optimizing | completed | failed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-iops</code> - The original IOPS rate of the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-size</code> - The original size of the volume, in GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     * st1).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true | false).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start-time</code> - The modification start time.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-iops</code> - The target IOPS rate of the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-size</code> - The target size of the volume, in GiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true | false).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>volume-id</code> - The ID of the volume.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        The filters. Supported filters: <code>volume-id</code> | <code>modification-state</code> |
-     *        <code>target-size</code> | <code>target-iops</code> | <code>target-volume-type</code> |
-     *        <code>original-size</code> | <code>original-iops</code> | <code>original-volume-type</code> |
-     *        <code>start-time</code> | <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     *        The filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>modification-state</code> - The current modification state (modifying | optimizing | completed |
+     *        failed).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>original-iops</code> - The original IOPS rate of the volume.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>original-size</code> - The original size of the volume, in GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 |
+     *        sc1 | st1).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>originalMultiAttachEnabled</code> - Indicates whether Multi-Attach support was enabled (true |
+     *        false).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start-time</code> - The modification start time.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-iops</code> - The target IOPS rate of the volume.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-size</code> - The target size of the volume, in GiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     *        st1).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>targetMultiAttachEnabled</code> - Indicates whether Multi-Attach support is to be enabled (true |
+     *        false).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>volume-id</code> - The ID of the volume.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

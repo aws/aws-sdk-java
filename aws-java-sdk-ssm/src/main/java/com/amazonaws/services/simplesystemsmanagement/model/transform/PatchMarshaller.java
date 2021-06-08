@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -53,6 +54,26 @@ public class PatchMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MsrcNumber").build();
     private static final MarshallingInfo<String> LANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Language").build();
+    private static final MarshallingInfo<List> ADVISORYIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AdvisoryIds").build();
+    private static final MarshallingInfo<List> BUGZILLAIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("BugzillaIds").build();
+    private static final MarshallingInfo<List> CVEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CVEIds").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<Integer> EPOCH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Epoch").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Version").build();
+    private static final MarshallingInfo<String> RELEASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Release").build();
+    private static final MarshallingInfo<String> ARCH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arch").build();
+    private static final MarshallingInfo<String> SEVERITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Severity").build();
+    private static final MarshallingInfo<String> REPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Repository").build();
 
     private static final PatchMarshaller instance = new PatchMarshaller();
 
@@ -83,6 +104,16 @@ public class PatchMarshaller {
             protocolMarshaller.marshall(patch.getKbNumber(), KBNUMBER_BINDING);
             protocolMarshaller.marshall(patch.getMsrcNumber(), MSRCNUMBER_BINDING);
             protocolMarshaller.marshall(patch.getLanguage(), LANGUAGE_BINDING);
+            protocolMarshaller.marshall(patch.getAdvisoryIds(), ADVISORYIDS_BINDING);
+            protocolMarshaller.marshall(patch.getBugzillaIds(), BUGZILLAIDS_BINDING);
+            protocolMarshaller.marshall(patch.getCVEIds(), CVEIDS_BINDING);
+            protocolMarshaller.marshall(patch.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(patch.getEpoch(), EPOCH_BINDING);
+            protocolMarshaller.marshall(patch.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(patch.getRelease(), RELEASE_BINDING);
+            protocolMarshaller.marshall(patch.getArch(), ARCH_BINDING);
+            protocolMarshaller.marshall(patch.getSeverity(), SEVERITY_BINDING);
+            protocolMarshaller.marshall(patch.getRepository(), REPOSITORY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

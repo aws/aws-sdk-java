@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -202,6 +202,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request = new CreateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
@@ -267,6 +269,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request = new DeleteProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
@@ -335,6 +339,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request = new DescribeBundleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBundleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBundle");
@@ -403,6 +409,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request = new DescribeProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProject");
@@ -473,6 +481,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request = new ExportBundleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportBundleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportBundle");
@@ -543,6 +553,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request = new ExportProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportProject");
@@ -609,6 +621,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request = new ListBundlesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBundlesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBundles");
@@ -675,6 +689,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request = new ListProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
@@ -749,6 +765,8 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                 request = new UpdateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Mobile");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");
@@ -844,6 +862,11 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

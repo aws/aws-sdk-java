@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
     private String savingsPlansType;
     /**
      * <p>
-     * The savings plan recommendation term used to generated these recommendations.
+     * The savings plan recommendation term used to generate these recommendations.
      * </p>
      */
     private String termInYears;
@@ -46,8 +46,8 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
     /**
      * <p>
      * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
-     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * </p>
      */
     private String accountScope;
@@ -147,11 +147,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generated these recommendations.
+     * The savings plan recommendation term used to generate these recommendations.
      * </p>
      * 
      * @param termInYears
-     *        The savings plan recommendation term used to generated these recommendations.
+     *        The savings plan recommendation term used to generate these recommendations.
      * @see TermInYears
      */
 
@@ -161,10 +161,10 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generated these recommendations.
+     * The savings plan recommendation term used to generate these recommendations.
      * </p>
      * 
-     * @return The savings plan recommendation term used to generated these recommendations.
+     * @return The savings plan recommendation term used to generate these recommendations.
      * @see TermInYears
      */
 
@@ -174,11 +174,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generated these recommendations.
+     * The savings plan recommendation term used to generate these recommendations.
      * </p>
      * 
      * @param termInYears
-     *        The savings plan recommendation term used to generated these recommendations.
+     *        The savings plan recommendation term used to generate these recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TermInYears
      */
@@ -190,11 +190,11 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The savings plan recommendation term used to generated these recommendations.
+     * The savings plan recommendation term used to generate these recommendations.
      * </p>
      * 
      * @param termInYears
-     *        The savings plan recommendation term used to generated these recommendations.
+     *        The savings plan recommendation term used to generate these recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TermInYears
      */
@@ -266,14 +266,14 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
     /**
      * <p>
      * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
-     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * </p>
      * 
      * @param accountScope
      *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
-     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     *        including the management account and member accounts if the value is set to <code>PAYER</code>. If the
+     *        value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * @see AccountScope
      */
 
@@ -284,13 +284,13 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
     /**
      * <p>
      * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
-     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * </p>
      * 
      * @return The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     *         including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value
-     *         is <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     *         including the management account and member accounts if the value is set to <code>PAYER</code>. If the
+     *         value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * @see AccountScope
      */
 
@@ -301,14 +301,14 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
     /**
      * <p>
      * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
-     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * </p>
      * 
      * @param accountScope
      *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
-     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     *        including the management account and member accounts if the value is set to <code>PAYER</code>. If the
+     *        value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountScope
      */
@@ -321,14 +321,14 @@ public class GetSavingsPlansPurchaseRecommendationRequest extends com.amazonaws.
     /**
      * <p>
      * The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     * including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
-     * <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     * including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is
+     * <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * </p>
      * 
      * @param accountScope
      *        The account scope that you want your recommendations for. Amazon Web Services calculates recommendations
-     *        including the payer account and linked accounts if the value is set to <code>PAYER</code>. If the value is
-     *        <code>LINKED</code>, recommendations are calculated for individual linked accounts only.
+     *        including the management account and member accounts if the value is set to <code>PAYER</code>. If the
+     *        value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountScope
      */

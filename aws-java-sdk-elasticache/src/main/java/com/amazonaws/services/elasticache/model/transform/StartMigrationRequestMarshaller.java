@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,15 +51,17 @@ public class StartMigrationRequestMarshaller implements Marshaller<Request<Start
             int customerNodeEndpointListListIndex = 1;
 
             for (CustomerNodeEndpoint customerNodeEndpointListListValue : customerNodeEndpointListList) {
+                if (customerNodeEndpointListListValue != null) {
 
-                if (customerNodeEndpointListListValue.getAddress() != null) {
-                    request.addParameter("CustomerNodeEndpointList.member." + customerNodeEndpointListListIndex + ".Address",
-                            StringUtils.fromString(customerNodeEndpointListListValue.getAddress()));
-                }
+                    if (customerNodeEndpointListListValue.getAddress() != null) {
+                        request.addParameter("CustomerNodeEndpointList.member." + customerNodeEndpointListListIndex + ".Address",
+                                StringUtils.fromString(customerNodeEndpointListListValue.getAddress()));
+                    }
 
-                if (customerNodeEndpointListListValue.getPort() != null) {
-                    request.addParameter("CustomerNodeEndpointList.member." + customerNodeEndpointListListIndex + ".Port",
-                            StringUtils.fromInteger(customerNodeEndpointListListValue.getPort()));
+                    if (customerNodeEndpointListListValue.getPort() != null) {
+                        request.addParameter("CustomerNodeEndpointList.member." + customerNodeEndpointListListIndex + ".Port",
+                                StringUtils.fromInteger(customerNodeEndpointListListValue.getPort()));
+                    }
                 }
                 customerNodeEndpointListListIndex++;
             }

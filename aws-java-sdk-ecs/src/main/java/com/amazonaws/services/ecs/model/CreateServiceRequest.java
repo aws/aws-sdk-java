@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,9 +34,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String cluster;
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      */
     private String serviceName;
@@ -47,7 +47,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * revision is used.
      * </p>
      * <p>
-     * A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
+     * A task definition must be specified if the service is using either the <code>ECS</code> or
+     * <code>CODE_DEPLOY</code> deployment controllers.
      * </p>
      */
     private String taskDefinition;
@@ -59,11 +60,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
-     * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
-     * service. The service-linked role is required for services that make use of multiple target groups. For more
+     * Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach to
+     * the service. The service-linked role is required for services that make use of multiple target groups. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -82,13 +83,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
      * group ARN, the container name (as it appears in a container definition), and the container port to access from
-     * the load balancer. When a task from this service is placed on a container instance, the container instance and
-     * port combination is registered as a target in the target group specified here.
+     * the load balancer. The load balancer name parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as a target in the target group
+     * specified here.
      * </p>
      * <p>
      * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
-     * a container definition), and the container port to access from the load balancer. When a task from this service
-     * is placed on a container instance, the container instance is registered with the load balancer specified here.
+     * a container definition), and the container port to access from the load balancer. The target group ARN parameter
+     * must be omitted. When a task from this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
@@ -101,14 +104,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * The details of the service discovery registry to associate with this service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.
+     * Each service may be associated with one service registry. Multiple service registries per service isn't
+     * supported.
      * </p>
      * </note>
      */
@@ -132,12 +134,31 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String clientToken;
     /**
      * <p>
-     * The launch type on which to run your service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which to run your service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+     * The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
+     * </p>
+     * <p>
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.
+     * </p>
+     * <p>
+     * A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     * specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * </p>
      */
     private String launchType;
@@ -146,28 +167,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The capacity provider strategy to use for the service.
      * </p>
      * <p>
-     * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
-     * <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a
-     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider
-     * with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.
-     * </p>
-     * <p>
      * If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted.
      * If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.
-     * </p>
-     * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
-     * New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     * </p>
-     * <p>
-     * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
-     * capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be
-     * associated with a cluster to be used.
-     * </p>
-     * <p>
-     * The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity providers
-     * for a cluster after the cluster is created.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> capacityProviderStrategy;
@@ -176,8 +178,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The platform version that your tasks in the service are running on. A platform version is specified only for
      * tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
-     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String platformVersion;
@@ -196,7 +198,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * controller, multiple target groups, or Elastic Inference accelerators in which case you should not specify a role
      * here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
@@ -205,7 +207,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
-     * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
+     * >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private String role;
@@ -235,7 +237,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -291,7 +293,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String schedulingStrategy;
     /**
      * <p>
-     * The deployment controller to use for the service.
+     * The deployment controller to use for the service. If no deployment controller is specified, the default value of
+     * <code>ECS</code> is used.
      * </p>
      */
     private DeploymentController deploymentController;
@@ -362,6 +365,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String propagateTags;
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, this enables
+     * execute command functionality on all containers in the service tasks.
+     * </p>
+     */
+    private Boolean enableExecuteCommand;
 
     /**
      * <p>
@@ -411,15 +421,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
-     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *        Service names must be unique within a cluster, but you can have similarly named services in multiple
-     *        clusters within a Region or across multiple Regions.
+     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
+     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
+     *        multiple clusters within a Region or across multiple Regions.
      */
 
     public void setServiceName(String serviceName) {
@@ -428,14 +438,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
-     * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *         Service names must be unique within a cluster, but you can have similarly named services in multiple
-     *         clusters within a Region or across multiple Regions.
+     * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
+     *         are allowed. Service names must be unique within a cluster, but you can have similarly named services in
+     *         multiple clusters within a Region or across multiple Regions.
      */
 
     public String getServiceName() {
@@ -444,15 +454,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
-     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *        Service names must be unique within a cluster, but you can have similarly named services in multiple
-     *        clusters within a Region or across multiple Regions.
+     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
+     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
+     *        multiple clusters within a Region or across multiple Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -468,7 +478,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * revision is used.
      * </p>
      * <p>
-     * A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
+     * A task definition must be specified if the service is using either the <code>ECS</code> or
+     * <code>CODE_DEPLOY</code> deployment controllers.
      * </p>
      * 
      * @param taskDefinition
@@ -476,7 +487,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        definition to run in your service. If a <code>revision</code> is not specified, the latest
      *        <code>ACTIVE</code> revision is used.</p>
      *        <p>
-     *        A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
+     *        A task definition must be specified if the service is using either the <code>ECS</code> or
+     *        <code>CODE_DEPLOY</code> deployment controllers.
      */
 
     public void setTaskDefinition(String taskDefinition) {
@@ -490,14 +502,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * revision is used.
      * </p>
      * <p>
-     * A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
+     * A task definition must be specified if the service is using either the <code>ECS</code> or
+     * <code>CODE_DEPLOY</code> deployment controllers.
      * </p>
      * 
      * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
      *         definition to run in your service. If a <code>revision</code> is not specified, the latest
      *         <code>ACTIVE</code> revision is used.</p>
      *         <p>
-     *         A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
+     *         A task definition must be specified if the service is using either the <code>ECS</code> or
+     *         <code>CODE_DEPLOY</code> deployment controllers.
      */
 
     public String getTaskDefinition() {
@@ -511,7 +525,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * revision is used.
      * </p>
      * <p>
-     * A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
+     * A task definition must be specified if the service is using either the <code>ECS</code> or
+     * <code>CODE_DEPLOY</code> deployment controllers.
      * </p>
      * 
      * @param taskDefinition
@@ -519,7 +534,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        definition to run in your service. If a <code>revision</code> is not specified, the latest
      *        <code>ACTIVE</code> revision is used.</p>
      *        <p>
-     *        A task definition must be specified if the service is using the <code>ECS</code> deployment controller.
+     *        A task definition must be specified if the service is using either the <code>ECS</code> or
+     *        <code>CODE_DEPLOY</code> deployment controllers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -536,11 +552,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
-     * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
-     * service. The service-linked role is required for services that make use of multiple target groups. For more
+     * Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach to
+     * the service. The service-linked role is required for services that make use of multiple target groups. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -559,13 +575,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
      * group ARN, the container name (as it appears in a container definition), and the container port to access from
-     * the load balancer. When a task from this service is placed on a container instance, the container instance and
-     * port combination is registered as a target in the target group specified here.
+     * the load balancer. The load balancer name parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as a target in the target group
+     * specified here.
      * </p>
      * <p>
      * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
-     * a container definition), and the container port to access from the load balancer. When a task from this service
-     * is placed on a container instance, the container instance is registered with the load balancer specified here.
+     * a container definition), and the container port to access from the load balancer. The target group ARN parameter
+     * must be omitted. When a task from this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
@@ -581,11 +599,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *         <p>
      *         If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
-     *         Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
-     *         the service. The service-linked role is required for services that make use of multiple target groups.
-     *         For more information, see <a
+     *         Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
+     *         attach to the service. The service-linked role is required for services that make use of multiple target
+     *         groups. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     *         Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         <p>
      *         If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to
@@ -606,14 +624,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
      *         target group ARN, the container name (as it appears in a container definition), and the container port to
-     *         access from the load balancer. When a task from this service is placed on a container instance, the
-     *         container instance and port combination is registered as a target in the target group specified here.
+     *         access from the load balancer. The load balancer name parameter must be omitted. When a task from this
+     *         service is placed on a container instance, the container instance and port combination is registered as a
+     *         target in the target group specified here.
      *         </p>
      *         <p>
      *         For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-     *         appears in a container definition), and the container port to access from the load balancer. When a task
-     *         from this service is placed on a container instance, the container instance is registered with the load
-     *         balancer specified here.
+     *         appears in a container definition), and the container port to access from the load balancer. The target
+     *         group ARN parameter must be omitted. When a task from this service is placed on a container instance, the
+     *         container instance is registered with the load balancer specified here.
      *         </p>
      *         <p>
      *         Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
@@ -639,11 +658,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
-     * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
-     * service. The service-linked role is required for services that make use of multiple target groups. For more
+     * Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach to
+     * the service. The service-linked role is required for services that make use of multiple target groups. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -662,13 +681,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
      * group ARN, the container name (as it appears in a container definition), and the container port to access from
-     * the load balancer. When a task from this service is placed on a container instance, the container instance and
-     * port combination is registered as a target in the target group specified here.
+     * the load balancer. The load balancer name parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as a target in the target group
+     * specified here.
      * </p>
      * <p>
      * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
-     * a container definition), and the container port to access from the load balancer. When a task from this service
-     * is placed on a container instance, the container instance is registered with the load balancer specified here.
+     * a container definition), and the container port to access from the load balancer. The target group ARN parameter
+     * must be omitted. When a task from this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
@@ -684,11 +705,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
-     *        Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
-     *        the service. The service-linked role is required for services that make use of multiple target groups. For
-     *        more information, see <a
+     *        Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
+     *        attach to the service. The service-linked role is required for services that make use of multiple target
+     *        groups. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
@@ -709,14 +730,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
      *        target group ARN, the container name (as it appears in a container definition), and the container port to
-     *        access from the load balancer. When a task from this service is placed on a container instance, the
-     *        container instance and port combination is registered as a target in the target group specified here.
+     *        access from the load balancer. The load balancer name parameter must be omitted. When a task from this
+     *        service is placed on a container instance, the container instance and port combination is registered as a
+     *        target in the target group specified here.
      *        </p>
      *        <p>
      *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-     *        appears in a container definition), and the container port to access from the load balancer. When a task
-     *        from this service is placed on a container instance, the container instance is registered with the load
-     *        balancer specified here.
+     *        appears in a container definition), and the container port to access from the load balancer. The target
+     *        group ARN parameter must be omitted. When a task from this service is placed on a container instance, the
+     *        container instance is registered with the load balancer specified here.
      *        </p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
@@ -744,11 +766,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
-     * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
-     * service. The service-linked role is required for services that make use of multiple target groups. For more
+     * Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach to
+     * the service. The service-linked role is required for services that make use of multiple target groups. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -767,13 +789,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
      * group ARN, the container name (as it appears in a container definition), and the container port to access from
-     * the load balancer. When a task from this service is placed on a container instance, the container instance and
-     * port combination is registered as a target in the target group specified here.
+     * the load balancer. The load balancer name parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as a target in the target group
+     * specified here.
      * </p>
      * <p>
      * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
-     * a container definition), and the container port to access from the load balancer. When a task from this service
-     * is placed on a container instance, the container instance is registered with the load balancer specified here.
+     * a container definition), and the container port to access from the load balancer. The target group ARN parameter
+     * must be omitted. When a task from this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
@@ -794,11 +818,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
-     *        Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
-     *        the service. The service-linked role is required for services that make use of multiple target groups. For
-     *        more information, see <a
+     *        Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
+     *        attach to the service. The service-linked role is required for services that make use of multiple target
+     *        groups. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
@@ -819,14 +843,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
      *        target group ARN, the container name (as it appears in a container definition), and the container port to
-     *        access from the load balancer. When a task from this service is placed on a container instance, the
-     *        container instance and port combination is registered as a target in the target group specified here.
+     *        access from the load balancer. The load balancer name parameter must be omitted. When a task from this
+     *        service is placed on a container instance, the container instance and port combination is registered as a
+     *        target in the target group specified here.
      *        </p>
      *        <p>
      *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-     *        appears in a container definition), and the container port to access from the load balancer. When a task
-     *        from this service is placed on a container instance, the container instance is registered with the load
-     *        balancer specified here.
+     *        appears in a container definition), and the container port to access from the load balancer. The target
+     *        group ARN parameter must be omitted. When a task from this service is placed on a container instance, the
+     *        container instance is registered with the load balancer specified here.
      *        </p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
@@ -856,11 +881,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
-     * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
-     * service. The service-linked role is required for services that make use of multiple target groups. For more
+     * Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to attach to
+     * the service. The service-linked role is required for services that make use of multiple target groups. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -879,13 +904,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
      * group ARN, the container name (as it appears in a container definition), and the container port to access from
-     * the load balancer. When a task from this service is placed on a container instance, the container instance and
-     * port combination is registered as a target in the target group specified here.
+     * the load balancer. The load balancer name parameter must be omitted. When a task from this service is placed on a
+     * container instance, the container instance and port combination is registered as a target in the target group
+     * specified here.
      * </p>
      * <p>
      * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
-     * a container definition), and the container port to access from the load balancer. When a task from this service
-     * is placed on a container instance, the container instance is registered with the load balancer specified here.
+     * a container definition), and the container port to access from the load balancer. The target group ARN parameter
+     * must be omitted. When a task from this service is placed on a container instance, the container instance is
+     * registered with the load balancer specified here.
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
@@ -901,11 +928,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
-     *        Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
-     *        the service. The service-linked role is required for services that make use of multiple target groups. For
-     *        more information, see <a
+     *        Application Load Balancer or Network Load Balancer, you must specify one or more target group ARNs to
+     *        attach to the service. The service-linked role is required for services that make use of multiple target
+     *        groups. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        <p>
      *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
@@ -926,14 +953,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
      *        target group ARN, the container name (as it appears in a container definition), and the container port to
-     *        access from the load balancer. When a task from this service is placed on a container instance, the
-     *        container instance and port combination is registered as a target in the target group specified here.
+     *        access from the load balancer. The load balancer name parameter must be omitted. When a task from this
+     *        service is placed on a container instance, the container instance and port combination is registered as a
+     *        target in the target group specified here.
      *        </p>
      *        <p>
      *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-     *        appears in a container definition), and the container port to access from the load balancer. When a task
-     *        from this service is placed on a container instance, the container instance is registered with the load
-     *        balancer specified here.
+     *        appears in a container definition), and the container port to access from the load balancer. The target
+     *        group ARN parameter must be omitted. When a task from this service is placed on a container instance, the
+     *        container instance is registered with the load balancer specified here.
      *        </p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
@@ -952,25 +980,22 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * The details of the service discovery registry to associate with this service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.
+     * Each service may be associated with one service registry. Multiple service registries per service isn't
+     * supported.
      * </p>
      * </note>
      * 
-     * @return The details of the service discovery registries to assign to this service. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *         Discovery</a>.</p> <note>
+     * @return The details of the service discovery registry to associate with this service. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *         discovery</a>.</p> <note>
      *         <p>
-     *         Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
-     *         more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *         Platform Versions</a>.
+     *         Each service may be associated with one service registry. Multiple service registries per service isn't
+     *         supported.
      *         </p>
      */
 
@@ -983,26 +1008,23 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * The details of the service discovery registry to associate with this service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.
+     * Each service may be associated with one service registry. Multiple service registries per service isn't
+     * supported.
      * </p>
      * </note>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        The details of the service discovery registry to associate with this service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *        Discovery</a>.</p> <note>
+     *        discovery</a>.</p> <note>
      *        <p>
-     *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        Platform Versions</a>.
+     *        Each service may be associated with one service registry. Multiple service registries per service isn't
+     *        supported.
      *        </p>
      */
 
@@ -1017,14 +1039,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * The details of the service discovery registry to associate with this service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.
+     * Each service may be associated with one service registry. Multiple service registries per service isn't
+     * supported.
      * </p>
      * </note>
      * <p>
@@ -1034,14 +1055,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        The details of the service discovery registry to associate with this service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *        Discovery</a>.</p> <note>
+     *        discovery</a>.</p> <note>
      *        <p>
-     *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        Platform Versions</a>.
+     *        Each service may be associated with one service registry. Multiple service registries per service isn't
+     *        supported.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1058,26 +1077,23 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * The details of the service discovery registry to associate with this service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.
+     * Each service may be associated with one service registry. Multiple service registries per service isn't
+     * supported.
      * </p>
      * </note>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        The details of the service discovery registry to associate with this service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *        Discovery</a>.</p> <note>
+     *        discovery</a>.</p> <note>
      *        <p>
-     *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        Platform Versions</a>.
+     *        Each service may be associated with one service registry. Multiple service registries per service isn't
+     *        supported.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1199,21 +1215,58 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type on which to run your service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which to run your service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+     * The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
+     * </p>
+     * <p>
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.
+     * </p>
+     * <p>
+     * A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     * specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which to run your service. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        The infrastructure on which to run your service. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
-     *        If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
-     *        omitted.
+     *        The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     *        capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
+     *        </p>
+     *        <p>
+     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *        capacity registered to your cluster.
+     *        </p>
+     *        <p>
+     *        A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     *        specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * @see LaunchType
      */
 
@@ -1223,20 +1276,57 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type on which to run your service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which to run your service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+     * The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
+     * </p>
+     * <p>
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.
+     * </p>
+     * <p>
+     * A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     * specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * </p>
      * 
-     * @return The launch type on which to run your service. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     * @return The infrastructure on which to run your service. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *         types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *         <p>
-     *         If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
-     *         omitted.
+     *         The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     *         capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
+     *         </p>
+     *         <p>
+     *         The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *         capacity registered to your cluster.
+     *         </p>
+     *         <p>
+     *         A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     *         specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * @see LaunchType
      */
 
@@ -1246,21 +1336,58 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type on which to run your service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which to run your service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+     * The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
+     * </p>
+     * <p>
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.
+     * </p>
+     * <p>
+     * A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     * specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which to run your service. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        The infrastructure on which to run your service. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
-     *        If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
-     *        omitted.
+     *        The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     *        capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
+     *        </p>
+     *        <p>
+     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *        capacity registered to your cluster.
+     *        </p>
+     *        <p>
+     *        A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     *        specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -1272,21 +1399,58 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The launch type on which to run your service. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which to run your service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+     * The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
+     * </p>
+     * <p>
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.
+     * </p>
+     * <p>
+     * A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     * specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which to run your service. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        The infrastructure on which to run your service. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
-     *        If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
-     *        omitted.
+     *        The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     *        capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
+     *        </p>
+     *        <p>
+     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *        capacity registered to your cluster.
+     *        </p>
+     *        <p>
+     *        A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     *        specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -1301,55 +1465,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The capacity provider strategy to use for the service.
      * </p>
      * <p>
-     * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
-     * <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a
-     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider
-     * with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.
-     * </p>
-     * <p>
      * If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted.
      * If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.
      * </p>
-     * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
-     * New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     * </p>
-     * <p>
-     * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
-     * capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be
-     * associated with a cluster to be used.
-     * </p>
-     * <p>
-     * The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity providers
-     * for a cluster after the cluster is created.
-     * </p>
      * 
      * @return The capacity provider strategy to use for the service.</p>
-     *         <p>
-     *         A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
-     *         and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be
-     *         used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a
-     *         capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     *         <code>UPDATING</code> status can be used.
-     *         </p>
      *         <p>
      *         If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be
      *         omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the
      *         <code>defaultCapacityProviderStrategy</code> for the cluster is used.
-     *         </p>
-     *         <p>
-     *         If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *         created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     *         </p>
-     *         <p>
-     *         To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-     *         <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are available to all
-     *         accounts and only need to be associated with a cluster to be used.
-     *         </p>
-     *         <p>
-     *         The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity
-     *         providers for a cluster after the cluster is created.
      */
 
     public java.util.List<CapacityProviderStrategyItem> getCapacityProviderStrategy() {
@@ -1364,56 +1489,17 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The capacity provider strategy to use for the service.
      * </p>
      * <p>
-     * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
-     * <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a
-     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider
-     * with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.
-     * </p>
-     * <p>
      * If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted.
      * If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.
-     * </p>
-     * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
-     * New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     * </p>
-     * <p>
-     * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
-     * capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be
-     * associated with a cluster to be used.
-     * </p>
-     * <p>
-     * The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity providers
-     * for a cluster after the cluster is created.
      * </p>
      * 
      * @param capacityProviderStrategy
      *        The capacity provider strategy to use for the service.</p>
      *        <p>
-     *        A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
-     *        and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be
-     *        used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a
-     *        capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     *        <code>UPDATING</code> status can be used.
-     *        </p>
-     *        <p>
      *        If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be
      *        omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the
      *        <code>defaultCapacityProviderStrategy</code> for the cluster is used.
-     *        </p>
-     *        <p>
-     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     *        </p>
-     *        <p>
-     *        To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-     *        <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are available to all
-     *        accounts and only need to be associated with a cluster to be used.
-     *        </p>
-     *        <p>
-     *        The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity
-     *        providers for a cluster after the cluster is created.
      */
 
     public void setCapacityProviderStrategy(java.util.Collection<CapacityProviderStrategyItem> capacityProviderStrategy) {
@@ -1430,28 +1516,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The capacity provider strategy to use for the service.
      * </p>
      * <p>
-     * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
-     * <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a
-     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider
-     * with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.
-     * </p>
-     * <p>
      * If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted.
      * If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.
-     * </p>
-     * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
-     * New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     * </p>
-     * <p>
-     * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
-     * capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be
-     * associated with a cluster to be used.
-     * </p>
-     * <p>
-     * The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity providers
-     * for a cluster after the cluster is created.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1462,29 +1529,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param capacityProviderStrategy
      *        The capacity provider strategy to use for the service.</p>
      *        <p>
-     *        A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
-     *        and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be
-     *        used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a
-     *        capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     *        <code>UPDATING</code> status can be used.
-     *        </p>
-     *        <p>
      *        If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be
      *        omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the
      *        <code>defaultCapacityProviderStrategy</code> for the cluster is used.
-     *        </p>
-     *        <p>
-     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     *        </p>
-     *        <p>
-     *        To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-     *        <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are available to all
-     *        accounts and only need to be associated with a cluster to be used.
-     *        </p>
-     *        <p>
-     *        The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity
-     *        providers for a cluster after the cluster is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1503,56 +1550,17 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The capacity provider strategy to use for the service.
      * </p>
      * <p>
-     * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
-     * <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a
-     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider
-     * with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.
-     * </p>
-     * <p>
      * If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted.
      * If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.
-     * </p>
-     * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
-     * New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     * </p>
-     * <p>
-     * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
-     * capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be
-     * associated with a cluster to be used.
-     * </p>
-     * <p>
-     * The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity providers
-     * for a cluster after the cluster is created.
      * </p>
      * 
      * @param capacityProviderStrategy
      *        The capacity provider strategy to use for the service.</p>
      *        <p>
-     *        A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
-     *        and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be
-     *        used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a
-     *        capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     *        <code>UPDATING</code> status can be used.
-     *        </p>
-     *        <p>
      *        If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be
      *        omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code> is specified, the
      *        <code>defaultCapacityProviderStrategy</code> for the cluster is used.
-     *        </p>
-     *        <p>
-     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     *        </p>
-     *        <p>
-     *        To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-     *        <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are available to all
-     *        accounts and only need to be associated with a cluster to be used.
-     *        </p>
-     *        <p>
-     *        The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity
-     *        providers for a cluster after the cluster is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1566,8 +1574,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The platform version that your tasks in the service are running on. A platform version is specified only for
      * tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
-     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
@@ -1575,7 +1583,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version
      *        is used by default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setPlatformVersion(String platformVersion) {
@@ -1587,15 +1595,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The platform version that your tasks in the service are running on. A platform version is specified only for
      * tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
-     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The platform version that your tasks in the service are running on. A platform version is specified only
      *         for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version
      *         is used by default. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getPlatformVersion() {
@@ -1607,8 +1615,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The platform version that your tasks in the service are running on. A platform version is specified only for
      * tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
-     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
@@ -1616,7 +1624,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version
      *        is used by default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1640,7 +1648,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * controller, multiple target groups, or Elastic Inference accelerators in which case you should not specify a role
      * here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
@@ -1649,7 +1657,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
-     * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
+     * >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param role
@@ -1665,7 +1673,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        external deployment controller, multiple target groups, or Elastic Inference accelerators in which case
      *        you should not specify a role here. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        </important>
      *        <p>
@@ -1674,7 +1682,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role
      *        name. For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
-     *        >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
+     *        >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      */
 
     public void setRole(String role) {
@@ -1696,7 +1704,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * controller, multiple target groups, or Elastic Inference accelerators in which case you should not specify a role
      * here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
@@ -1705,7 +1713,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
-     * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
+     * >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your
@@ -1720,7 +1728,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         external deployment controller, multiple target groups, or Elastic Inference accelerators in which case
      *         you should not specify a role here. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     *         Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *         </p>
      *         </important>
      *         <p>
@@ -1729,7 +1737,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the
      *         role name. For more information, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
-     *         >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
+     *         >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      */
 
     public String getRole() {
@@ -1751,7 +1759,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * controller, multiple target groups, or Elastic Inference accelerators in which case you should not specify a role
      * here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
@@ -1760,7 +1768,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
-     * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
+     * >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param role
@@ -1776,7 +1784,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        external deployment controller, multiple target groups, or Elastic Inference accelerators in which case
      *        you should not specify a role here. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     *        Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      *        </p>
      *        </important>
      *        <p>
@@ -1785,7 +1793,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role
      *        name. For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
-     *        >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
+     *        >Friendly names and paths</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2011,7 +2019,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -2020,7 +2028,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *        for other network modes. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -2032,7 +2040,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -2040,7 +2048,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *         for other network modes. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -2052,7 +2060,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The network configuration for the service. This parameter is required for task definitions that use the
      * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -2061,7 +2069,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *        for other network modes. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     *        Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2446,11 +2454,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The deployment controller to use for the service.
+     * The deployment controller to use for the service. If no deployment controller is specified, the default value of
+     * <code>ECS</code> is used.
      * </p>
      * 
      * @param deploymentController
-     *        The deployment controller to use for the service.
+     *        The deployment controller to use for the service. If no deployment controller is specified, the default
+     *        value of <code>ECS</code> is used.
      */
 
     public void setDeploymentController(DeploymentController deploymentController) {
@@ -2459,10 +2469,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The deployment controller to use for the service.
+     * The deployment controller to use for the service. If no deployment controller is specified, the default value of
+     * <code>ECS</code> is used.
      * </p>
      * 
-     * @return The deployment controller to use for the service.
+     * @return The deployment controller to use for the service. If no deployment controller is specified, the default
+     *         value of <code>ECS</code> is used.
      */
 
     public DeploymentController getDeploymentController() {
@@ -2471,11 +2483,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The deployment controller to use for the service.
+     * The deployment controller to use for the service. If no deployment controller is specified, the default value of
+     * <code>ECS</code> is used.
      * </p>
      * 
      * @param deploymentController
-     *        The deployment controller to use for the service.
+     *        The deployment controller to use for the service. If no deployment controller is specified, the default
+     *        value of <code>ECS</code> is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3069,6 +3083,66 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, this enables
+     * execute command functionality on all containers in the service tasks.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not the execute command functionality is enabled for the service. If <code>true</code>, this
+     *        enables execute command functionality on all containers in the service tasks.
+     */
+
+    public void setEnableExecuteCommand(Boolean enableExecuteCommand) {
+        this.enableExecuteCommand = enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, this enables
+     * execute command functionality on all containers in the service tasks.
+     * </p>
+     * 
+     * @return Whether or not the execute command functionality is enabled for the service. If <code>true</code>, this
+     *         enables execute command functionality on all containers in the service tasks.
+     */
+
+    public Boolean getEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, this enables
+     * execute command functionality on all containers in the service tasks.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not the execute command functionality is enabled for the service. If <code>true</code>, this
+     *        enables execute command functionality on all containers in the service tasks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withEnableExecuteCommand(Boolean enableExecuteCommand) {
+        setEnableExecuteCommand(enableExecuteCommand);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, this enables
+     * execute command functionality on all containers in the service tasks.
+     * </p>
+     * 
+     * @return Whether or not the execute command functionality is enabled for the service. If <code>true</code>, this
+     *         enables execute command functionality on all containers in the service tasks.
+     */
+
+    public Boolean isEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3121,7 +3195,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getEnableECSManagedTags() != null)
             sb.append("EnableECSManagedTags: ").append(getEnableECSManagedTags()).append(",");
         if (getPropagateTags() != null)
-            sb.append("PropagateTags: ").append(getPropagateTags());
+            sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
+        if (getEnableExecuteCommand() != null)
+            sb.append("EnableExecuteCommand: ").append(getEnableExecuteCommand());
         sb.append("}");
         return sb.toString();
     }
@@ -3221,6 +3297,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getPropagateTags() != null && other.getPropagateTags().equals(this.getPropagateTags()) == false)
             return false;
+        if (other.getEnableExecuteCommand() == null ^ this.getEnableExecuteCommand() == null)
+            return false;
+        if (other.getEnableExecuteCommand() != null && other.getEnableExecuteCommand().equals(this.getEnableExecuteCommand()) == false)
+            return false;
         return true;
     }
 
@@ -3250,6 +3330,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());
         hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
+        hashCode = prime * hashCode + ((getEnableExecuteCommand() == null) ? 0 : getEnableExecuteCommand().hashCode());
         return hashCode;
     }
 

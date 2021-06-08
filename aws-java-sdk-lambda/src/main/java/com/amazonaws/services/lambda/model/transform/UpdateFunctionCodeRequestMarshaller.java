@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class UpdateFunctionCodeRequestMarshaller {
             .marshallLocationName("S3Key").build();
     private static final MarshallingInfo<String> S3OBJECTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3ObjectVersion").build();
+    private static final MarshallingInfo<String> IMAGEURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ImageUri").build();
     private static final MarshallingInfo<Boolean> PUBLISH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Publish").build();
     private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
@@ -65,6 +67,7 @@ public class UpdateFunctionCodeRequestMarshaller {
             protocolMarshaller.marshall(updateFunctionCodeRequest.getS3Bucket(), S3BUCKET_BINDING);
             protocolMarshaller.marshall(updateFunctionCodeRequest.getS3Key(), S3KEY_BINDING);
             protocolMarshaller.marshall(updateFunctionCodeRequest.getS3ObjectVersion(), S3OBJECTVERSION_BINDING);
+            protocolMarshaller.marshall(updateFunctionCodeRequest.getImageUri(), IMAGEURI_BINDING);
             protocolMarshaller.marshall(updateFunctionCodeRequest.getPublish(), PUBLISH_BINDING);
             protocolMarshaller.marshall(updateFunctionCodeRequest.getDryRun(), DRYRUN_BINDING);
             protocolMarshaller.marshall(updateFunctionCodeRequest.getRevisionId(), REVISIONID_BINDING);

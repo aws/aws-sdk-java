@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A map of key-value pairs that specifies the tags to associate with the resource.
      * </p>
      * <p>
-     * A resource can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value.
-     * The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -94,15 +94,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A map of key-value pairs that specifies the tags to associate with the resource.
      * </p>
      * <p>
-     * A resource can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value.
-     * The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @return A map of key-value pairs that specifies the tags to associate with the resource.</p>
      *         <p>
-     *         A resource can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag
-     *         value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
-     *         characters.
+     *         A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     *         maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -114,16 +113,15 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A map of key-value pairs that specifies the tags to associate with the resource.
      * </p>
      * <p>
-     * A resource can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value.
-     * The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the resource.</p>
      *        <p>
-     *        A resource can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag
-     *        value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
-     *        characters.
+     *        A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     *        maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -135,16 +133,15 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A map of key-value pairs that specifies the tags to associate with the resource.
      * </p>
      * <p>
-     * A resource can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value.
-     * The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the resource.</p>
      *        <p>
-     *        A resource can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag
-     *        value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
-     *        characters.
+     *        A resource can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     *        maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

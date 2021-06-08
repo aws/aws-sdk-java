@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,6 +16,8 @@ import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.macie2.model.*;
+
+import com.amazonaws.util.IdempotentUtils;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
@@ -39,6 +41,9 @@ public class UpdateFindingsFilterRequestMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Integer> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("position").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
     private static final UpdateFindingsFilterRequestMarshaller instance = new UpdateFindingsFilterRequestMarshaller();
 
@@ -62,6 +67,7 @@ public class UpdateFindingsFilterRequestMarshaller {
             protocolMarshaller.marshall(updateFindingsFilterRequest.getId(), ID_BINDING);
             protocolMarshaller.marshall(updateFindingsFilterRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateFindingsFilterRequest.getPosition(), POSITION_BINDING);
+            protocolMarshaller.marshall(updateFindingsFilterRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

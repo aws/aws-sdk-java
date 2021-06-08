@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,8 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The UTC time that you want to begin your weekly maintenance window.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      */
     private String weeklyMaintenanceStartTime;
@@ -38,7 +39,19 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
     private DataRepositoryConfiguration dataRepositoryConfiguration;
     /**
      * <p>
-     * The deployment type of the FSX for Lustre file system.
+     * The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary
+     * storage and shorter-term processing of data.
+     * </p>
+     * <p>
+     * <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary
+     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * </p>
+     * <p>
+     * The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption of
+     * data in transit. To learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre Deployment
+     * Options</a>. (Default = <code>SCRATCH_1</code>)
      * </p>
      */
     private String deploymentType;
@@ -47,7 +60,9 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
      * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
-     * Valid values are 50, 100, 200.
+     * </p>
+     * <p>
+     * Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      * </p>
      */
     private Integer perUnitStorageThroughput;
@@ -63,13 +78,63 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      */
     private String mountName;
 
+    private String dailyAutomaticBackupStartTime;
+
+    private Integer automaticBackupRetentionDays;
     /**
      * <p>
-     * The UTC time that you want to begin your weekly maintenance window.
+     * A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to true, all
+     * tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't
+     * specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to
+     * backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value. (Default = false)
+     * </p>
+     */
+    private Boolean copyTagsToBackups;
+    /**
+     * <p>
+     * The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices. This
+     * parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     * </p>
+     * <p>
+     * This parameter is required when <code>StorageType</code> is set to HDD.
+     * </p>
+     */
+    private String driveCacheType;
+    /**
+     * <p>
+     * The data compression configuration for the file system. <code>DataCompressionType</code> can have the following
+     * values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Data compression is turned off for the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.
+     * </p>
+     */
+    private String dataCompressionType;
+
+    /**
+     * <p>
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The UTC time that you want to begin your weekly maintenance window.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the
+     *        weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public void setWeeklyMaintenanceStartTime(String weeklyMaintenanceStartTime) {
@@ -78,10 +143,12 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The UTC time that you want to begin your weekly maintenance window.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
-     * @return The UTC time that you want to begin your weekly maintenance window.
+     * @return The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the
+     *         weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public String getWeeklyMaintenanceStartTime() {
@@ -90,11 +157,13 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The UTC time that you want to begin your weekly maintenance window.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the weekday
+     * number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The UTC time that you want to begin your weekly maintenance window.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. d is the
+     *        weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +200,34 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The deployment type of the FSX for Lustre file system.
+     * The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary
+     * storage and shorter-term processing of data.
+     * </p>
+     * <p>
+     * <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary
+     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * </p>
+     * <p>
+     * The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption of
+     * data in transit. To learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre Deployment
+     * Options</a>. (Default = <code>SCRATCH_1</code>)
      * </p>
      * 
      * @param deploymentType
-     *        The deployment type of the FSX for Lustre file system.
+     *        The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for
+     *        temporary storage and shorter-term processing of data.</p>
+     *        <p>
+     *        <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need
+     *        temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides
+     *        in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     *        </p>
+     *        <p>
+     *        The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption
+     *        of data in transit. To learn more about deployment types, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre
+     *        Deployment Options</a>. (Default = <code>SCRATCH_1</code>)
      * @see LustreDeploymentType
      */
 
@@ -145,10 +237,33 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The deployment type of the FSX for Lustre file system.
+     * The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary
+     * storage and shorter-term processing of data.
+     * </p>
+     * <p>
+     * <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary
+     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * </p>
+     * <p>
+     * The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption of
+     * data in transit. To learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre Deployment
+     * Options</a>. (Default = <code>SCRATCH_1</code>)
      * </p>
      * 
-     * @return The deployment type of the FSX for Lustre file system.
+     * @return The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for
+     *         temporary storage and shorter-term processing of data.</p>
+     *         <p>
+     *         <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need
+     *         temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type
+     *         provides in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     *         </p>
+     *         <p>
+     *         The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and
+     *         encryption of data in transit. To learn more about deployment types, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre
+     *         Deployment Options</a>. (Default = <code>SCRATCH_1</code>)
      * @see LustreDeploymentType
      */
 
@@ -158,11 +273,34 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The deployment type of the FSX for Lustre file system.
+     * The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary
+     * storage and shorter-term processing of data.
+     * </p>
+     * <p>
+     * <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary
+     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * </p>
+     * <p>
+     * The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption of
+     * data in transit. To learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre Deployment
+     * Options</a>. (Default = <code>SCRATCH_1</code>)
      * </p>
      * 
      * @param deploymentType
-     *        The deployment type of the FSX for Lustre file system.
+     *        The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for
+     *        temporary storage and shorter-term processing of data.</p>
+     *        <p>
+     *        <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need
+     *        temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides
+     *        in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     *        </p>
+     *        <p>
+     *        The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption
+     *        of data in transit. To learn more about deployment types, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre
+     *        Deployment Options</a>. (Default = <code>SCRATCH_1</code>)
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LustreDeploymentType
      */
@@ -174,11 +312,34 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The deployment type of the FSX for Lustre file system.
+     * The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for temporary
+     * storage and shorter-term processing of data.
+     * </p>
+     * <p>
+     * <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need temporary
+     * storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
+     * encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     * </p>
+     * <p>
+     * The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption of
+     * data in transit. To learn more about deployment types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre Deployment
+     * Options</a>. (Default = <code>SCRATCH_1</code>)
      * </p>
      * 
      * @param deploymentType
-     *        The deployment type of the FSX for Lustre file system.
+     *        The deployment type of the FSX for Lustre file system. <i>Scratch deployment type</i> is designed for
+     *        temporary storage and shorter-term processing of data.</p>
+     *        <p>
+     *        <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types are best suited for when you need
+     *        temporary storage and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides
+     *        in-transit encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.
+     *        </p>
+     *        <p>
+     *        The <code>PERSISTENT_1</code> deployment type is used for longer-term storage and workloads and encryption
+     *        of data in transit. To learn more about deployment types, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html"> FSx for Lustre
+     *        Deployment Options</a>. (Default = <code>SCRATCH_1</code>)
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LustreDeploymentType
      */
@@ -193,14 +354,18 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
      * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
-     * Valid values are 50, 100, 200.
+     * </p>
+     * <p>
+     * Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      * </p>
      * 
      * @param perUnitStorageThroughput
      *        Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte
      *        of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      *        PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
-     *        types. Valid values are 50, 100, 200.
+     *        types. </p>
+     *        <p>
+     *        Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      */
 
     public void setPerUnitStorageThroughput(Integer perUnitStorageThroughput) {
@@ -212,13 +377,17 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
      * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
-     * Valid values are 50, 100, 200.
+     * </p>
+     * <p>
+     * Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      * </p>
      * 
      * @return Per unit storage throughput represents the megabytes per second of read or write throughput per 1
      *         tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      *         PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
-     *         types. Valid values are 50, 100, 200.
+     *         types. </p>
+     *         <p>
+     *         Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      */
 
     public Integer getPerUnitStorageThroughput() {
@@ -230,14 +399,18 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
      * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
-     * Valid values are 50, 100, 200.
+     * </p>
+     * <p>
+     * Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      * </p>
      * 
      * @param perUnitStorageThroughput
      *        Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte
      *        of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      *        PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
-     *        types. Valid values are 50, 100, 200.
+     *        types. </p>
+     *        <p>
+     *        Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,6 +487,436 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
     }
 
     /**
+     * @param dailyAutomaticBackupStartTime
+     */
+
+    public void setDailyAutomaticBackupStartTime(String dailyAutomaticBackupStartTime) {
+        this.dailyAutomaticBackupStartTime = dailyAutomaticBackupStartTime;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDailyAutomaticBackupStartTime() {
+        return this.dailyAutomaticBackupStartTime;
+    }
+
+    /**
+     * @param dailyAutomaticBackupStartTime
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LustreFileSystemConfiguration withDailyAutomaticBackupStartTime(String dailyAutomaticBackupStartTime) {
+        setDailyAutomaticBackupStartTime(dailyAutomaticBackupStartTime);
+        return this;
+    }
+
+    /**
+     * @param automaticBackupRetentionDays
+     */
+
+    public void setAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
+        this.automaticBackupRetentionDays = automaticBackupRetentionDays;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getAutomaticBackupRetentionDays() {
+        return this.automaticBackupRetentionDays;
+    }
+
+    /**
+     * @param automaticBackupRetentionDays
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LustreFileSystemConfiguration withAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
+        setAutomaticBackupRetentionDays(automaticBackupRetentionDays);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to true, all
+     * tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't
+     * specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to
+     * backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value. (Default = false)
+     * </p>
+     * 
+     * @param copyTagsToBackups
+     *        A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to
+     *        true, all tags on the file system are copied to all automatic backups and any user-initiated backups where
+     *        the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the
+     *        specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *        backup, no tags are copied from the file system, regardless of this value. (Default = false)
+     */
+
+    public void setCopyTagsToBackups(Boolean copyTagsToBackups) {
+        this.copyTagsToBackups = copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to true, all
+     * tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't
+     * specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to
+     * backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value. (Default = false)
+     * </p>
+     * 
+     * @return A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to
+     *         true, all tags on the file system are copied to all automatic backups and any user-initiated backups
+     *         where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only
+     *         the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *         backup, no tags are copied from the file system, regardless of this value. (Default = false)
+     */
+
+    public Boolean getCopyTagsToBackups() {
+        return this.copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to true, all
+     * tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't
+     * specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to
+     * backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value. (Default = false)
+     * </p>
+     * 
+     * @param copyTagsToBackups
+     *        A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to
+     *        true, all tags on the file system are copied to all automatic backups and any user-initiated backups where
+     *        the user doesn't specify any tags. If this value is true, and you specify one or more tags, only the
+     *        specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *        backup, no tags are copied from the file system, regardless of this value. (Default = false)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LustreFileSystemConfiguration withCopyTagsToBackups(Boolean copyTagsToBackups) {
+        setCopyTagsToBackups(copyTagsToBackups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to true, all
+     * tags on the file system are copied to all automatic backups and any user-initiated backups where the user doesn't
+     * specify any tags. If this value is true, and you specify one or more tags, only the specified tags are copied to
+     * backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the file
+     * system, regardless of this value. (Default = false)
+     * </p>
+     * 
+     * @return A boolean flag indicating whether tags on the file system should be copied to backups. If it's set to
+     *         true, all tags on the file system are copied to all automatic backups and any user-initiated backups
+     *         where the user doesn't specify any tags. If this value is true, and you specify one or more tags, only
+     *         the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *         backup, no tags are copied from the file system, regardless of this value. (Default = false)
+     */
+
+    public Boolean isCopyTagsToBackups() {
+        return this.copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices. This
+     * parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     * </p>
+     * <p>
+     * This parameter is required when <code>StorageType</code> is set to HDD.
+     * </p>
+     * 
+     * @param driveCacheType
+     *        The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices.
+     *        This parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for
+     *        frequently accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     *        </p>
+     *        <p>
+     *        This parameter is required when <code>StorageType</code> is set to HDD.
+     * @see DriveCacheType
+     */
+
+    public void setDriveCacheType(String driveCacheType) {
+        this.driveCacheType = driveCacheType;
+    }
+
+    /**
+     * <p>
+     * The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices. This
+     * parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     * </p>
+     * <p>
+     * This parameter is required when <code>StorageType</code> is set to HDD.
+     * </p>
+     * 
+     * @return The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices.
+     *         This parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance
+     *         for frequently accessed files and allows 20% of the total storage capacity of the file system to be
+     *         cached. </p>
+     *         <p>
+     *         This parameter is required when <code>StorageType</code> is set to HDD.
+     * @see DriveCacheType
+     */
+
+    public String getDriveCacheType() {
+        return this.driveCacheType;
+    }
+
+    /**
+     * <p>
+     * The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices. This
+     * parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     * </p>
+     * <p>
+     * This parameter is required when <code>StorageType</code> is set to HDD.
+     * </p>
+     * 
+     * @param driveCacheType
+     *        The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices.
+     *        This parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for
+     *        frequently accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     *        </p>
+     *        <p>
+     *        This parameter is required when <code>StorageType</code> is set to HDD.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DriveCacheType
+     */
+
+    public LustreFileSystemConfiguration withDriveCacheType(String driveCacheType) {
+        setDriveCacheType(driveCacheType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices. This
+     * parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     * </p>
+     * <p>
+     * This parameter is required when <code>StorageType</code> is set to HDD.
+     * </p>
+     * 
+     * @param driveCacheType
+     *        The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices.
+     *        This parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for
+     *        frequently accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     *        </p>
+     *        <p>
+     *        This parameter is required when <code>StorageType</code> is set to HDD.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DriveCacheType
+     */
+
+    public LustreFileSystemConfiguration withDriveCacheType(DriveCacheType driveCacheType) {
+        this.driveCacheType = driveCacheType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data compression configuration for the file system. <code>DataCompressionType</code> can have the following
+     * values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Data compression is turned off for the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.
+     * </p>
+     * 
+     * @param dataCompressionType
+     *        The data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     *        following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - Data compression is turned off for the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data
+     *        compression</a>.
+     * @see DataCompressionType
+     */
+
+    public void setDataCompressionType(String dataCompressionType) {
+        this.dataCompressionType = dataCompressionType;
+    }
+
+    /**
+     * <p>
+     * The data compression configuration for the file system. <code>DataCompressionType</code> can have the following
+     * values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Data compression is turned off for the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.
+     * </p>
+     * 
+     * @return The data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     *         following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code> - Data compression is turned off for the file system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data
+     *         compression</a>.
+     * @see DataCompressionType
+     */
+
+    public String getDataCompressionType() {
+        return this.dataCompressionType;
+    }
+
+    /**
+     * <p>
+     * The data compression configuration for the file system. <code>DataCompressionType</code> can have the following
+     * values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Data compression is turned off for the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.
+     * </p>
+     * 
+     * @param dataCompressionType
+     *        The data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     *        following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - Data compression is turned off for the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data
+     *        compression</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataCompressionType
+     */
+
+    public LustreFileSystemConfiguration withDataCompressionType(String dataCompressionType) {
+        setDataCompressionType(dataCompressionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data compression configuration for the file system. <code>DataCompressionType</code> can have the following
+     * values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Data compression is turned off for the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.
+     * </p>
+     * 
+     * @param dataCompressionType
+     *        The data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     *        following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - Data compression is turned off for the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data
+     *        compression</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataCompressionType
+     */
+
+    public LustreFileSystemConfiguration withDataCompressionType(DataCompressionType dataCompressionType) {
+        this.dataCompressionType = dataCompressionType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -334,7 +937,17 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
         if (getPerUnitStorageThroughput() != null)
             sb.append("PerUnitStorageThroughput: ").append(getPerUnitStorageThroughput()).append(",");
         if (getMountName() != null)
-            sb.append("MountName: ").append(getMountName());
+            sb.append("MountName: ").append(getMountName()).append(",");
+        if (getDailyAutomaticBackupStartTime() != null)
+            sb.append("DailyAutomaticBackupStartTime: ").append(getDailyAutomaticBackupStartTime()).append(",");
+        if (getAutomaticBackupRetentionDays() != null)
+            sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays()).append(",");
+        if (getCopyTagsToBackups() != null)
+            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups()).append(",");
+        if (getDriveCacheType() != null)
+            sb.append("DriveCacheType: ").append(getDriveCacheType()).append(",");
+        if (getDataCompressionType() != null)
+            sb.append("DataCompressionType: ").append(getDataCompressionType());
         sb.append("}");
         return sb.toString();
     }
@@ -369,6 +982,27 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
             return false;
         if (other.getMountName() != null && other.getMountName().equals(this.getMountName()) == false)
             return false;
+        if (other.getDailyAutomaticBackupStartTime() == null ^ this.getDailyAutomaticBackupStartTime() == null)
+            return false;
+        if (other.getDailyAutomaticBackupStartTime() != null
+                && other.getDailyAutomaticBackupStartTime().equals(this.getDailyAutomaticBackupStartTime()) == false)
+            return false;
+        if (other.getAutomaticBackupRetentionDays() == null ^ this.getAutomaticBackupRetentionDays() == null)
+            return false;
+        if (other.getAutomaticBackupRetentionDays() != null && other.getAutomaticBackupRetentionDays().equals(this.getAutomaticBackupRetentionDays()) == false)
+            return false;
+        if (other.getCopyTagsToBackups() == null ^ this.getCopyTagsToBackups() == null)
+            return false;
+        if (other.getCopyTagsToBackups() != null && other.getCopyTagsToBackups().equals(this.getCopyTagsToBackups()) == false)
+            return false;
+        if (other.getDriveCacheType() == null ^ this.getDriveCacheType() == null)
+            return false;
+        if (other.getDriveCacheType() != null && other.getDriveCacheType().equals(this.getDriveCacheType()) == false)
+            return false;
+        if (other.getDataCompressionType() == null ^ this.getDataCompressionType() == null)
+            return false;
+        if (other.getDataCompressionType() != null && other.getDataCompressionType().equals(this.getDataCompressionType()) == false)
+            return false;
         return true;
     }
 
@@ -382,6 +1016,11 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getDeploymentType() == null) ? 0 : getDeploymentType().hashCode());
         hashCode = prime * hashCode + ((getPerUnitStorageThroughput() == null) ? 0 : getPerUnitStorageThroughput().hashCode());
         hashCode = prime * hashCode + ((getMountName() == null) ? 0 : getMountName().hashCode());
+        hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());
+        hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
+        hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
+        hashCode = prime * hashCode + ((getDriveCacheType() == null) ? 0 : getDriveCacheType().hashCode());
+        hashCode = prime * hashCode + ((getDataCompressionType() == null) ? 0 : getDataCompressionType().hashCode());
         return hashCode;
     }
 

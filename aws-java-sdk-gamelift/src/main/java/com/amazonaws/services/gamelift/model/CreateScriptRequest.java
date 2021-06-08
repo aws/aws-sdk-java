@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String name;
     /**
      * <p>
-     * The version that is associated with a build or script. Version strings do not need to be unique. You can use
-     * <a>UpdateScript</a> to change this value later.
+     * Version information that is associated with a build or script. Version strings do not need to be unique. You can
+     * use <a>UpdateScript</a> to change this value later.
      * </p>
      */
     private String version;
@@ -121,13 +121,13 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The version that is associated with a build or script. Version strings do not need to be unique. You can use
-     * <a>UpdateScript</a> to change this value later.
+     * Version information that is associated with a build or script. Version strings do not need to be unique. You can
+     * use <a>UpdateScript</a> to change this value later.
      * </p>
      * 
      * @param version
-     *        The version that is associated with a build or script. Version strings do not need to be unique. You can
-     *        use <a>UpdateScript</a> to change this value later.
+     *        Version information that is associated with a build or script. Version strings do not need to be unique.
+     *        You can use <a>UpdateScript</a> to change this value later.
      */
 
     public void setVersion(String version) {
@@ -136,12 +136,12 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The version that is associated with a build or script. Version strings do not need to be unique. You can use
-     * <a>UpdateScript</a> to change this value later.
+     * Version information that is associated with a build or script. Version strings do not need to be unique. You can
+     * use <a>UpdateScript</a> to change this value later.
      * </p>
      * 
-     * @return The version that is associated with a build or script. Version strings do not need to be unique. You can
-     *         use <a>UpdateScript</a> to change this value later.
+     * @return Version information that is associated with a build or script. Version strings do not need to be unique.
+     *         You can use <a>UpdateScript</a> to change this value later.
      */
 
     public String getVersion() {
@@ -150,13 +150,13 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The version that is associated with a build or script. Version strings do not need to be unique. You can use
-     * <a>UpdateScript</a> to change this value later.
+     * Version information that is associated with a build or script. Version strings do not need to be unique. You can
+     * use <a>UpdateScript</a> to change this value later.
      * </p>
      * 
      * @param version
-     *        The version that is associated with a build or script. Version strings do not need to be unique. You can
-     *        use <a>UpdateScript</a> to change this value later.
+     *        Version information that is associated with a build or script. Version strings do not need to be unique.
+     *        You can use <a>UpdateScript</a> to change this value later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

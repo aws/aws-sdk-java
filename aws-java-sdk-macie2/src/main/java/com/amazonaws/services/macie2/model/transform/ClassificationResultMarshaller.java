@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ClassificationResultMarshaller {
 
+    private static final MarshallingInfo<Boolean> ADDITIONALOCCURRENCES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalOccurrences").build();
     private static final MarshallingInfo<StructuredPojo> CUSTOMDATAIDENTIFIERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customDataIdentifiers").build();
     private static final MarshallingInfo<String> MIMETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class ClassificationResultMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(classificationResult.getAdditionalOccurrences(), ADDITIONALOCCURRENCES_BINDING);
             protocolMarshaller.marshall(classificationResult.getCustomDataIdentifiers(), CUSTOMDATAIDENTIFIERS_BINDING);
             protocolMarshaller.marshall(classificationResult.getMimeType(), MIMETYPE_BINDING);
             protocolMarshaller.marshall(classificationResult.getSensitiveData(), SENSITIVEDATA_BINDING);

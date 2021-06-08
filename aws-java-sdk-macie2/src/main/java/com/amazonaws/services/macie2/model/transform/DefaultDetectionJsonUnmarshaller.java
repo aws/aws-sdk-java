@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,10 @@ public class DefaultDetectionJsonUnmarshaller implements Unmarshaller<DefaultDet
                 if (context.testExpression("count", targetDepth)) {
                     context.nextToken();
                     defaultDetection.setCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("occurrences", targetDepth)) {
+                    context.nextToken();
+                    defaultDetection.setOccurrences(OccurrencesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();

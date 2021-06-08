@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The values to use to filter results from the <a>DescribeAffectedEntities</a> operation.
+ * The values to use to filter results from the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EntityFilter" target="_top">AWS API
@@ -57,6 +58,11 @@ public class EntityFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      */
     private java.util.List<java.util.Map<String, String>> tags;
     /**
@@ -358,8 +364,16 @@ public class EntityFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
-     * @return A map of entity tags attached to the affected entity.
+     * @return A map of entity tags attached to the affected entity.</p> <note>
+     *         <p>
+     *         Currently, the <code>tags</code> property isn't supported.
+     *         </p>
      */
 
     public java.util.List<java.util.Map<String, String>> getTags() {
@@ -370,9 +384,17 @@ public class EntityFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        A map of entity tags attached to the affected entity.
+     *        A map of entity tags attached to the affected entity.</p> <note>
+     *        <p>
+     *        Currently, the <code>tags</code> property isn't supported.
+     *        </p>
      */
 
     public void setTags(java.util.Collection<java.util.Map<String, String>> tags) {
@@ -388,6 +410,11 @@ public class EntityFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -395,7 +422,10 @@ public class EntityFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tags
-     *        A map of entity tags attached to the affected entity.
+     *        A map of entity tags attached to the affected entity.</p> <note>
+     *        <p>
+     *        Currently, the <code>tags</code> property isn't supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,9 +443,17 @@ public class EntityFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        A map of entity tags attached to the affected entity.
+     *        A map of entity tags attached to the affected entity.</p> <note>
+     *        <p>
+     *        Currently, the <code>tags</code> property isn't supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,0 +1,12 @@
+{
+    "StartAt": "InitialState",
+    "States": {
+        "InitialState": {
+            "Type": "Task",
+            "Resource": "resource-arn",
+            "TimeoutSecondsPath": "$.timeout",
+            "HeartbeatSecondsPath": "$.heartbeat",
+            "End": true
+        }
+    }
+}

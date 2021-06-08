@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * The name of the Global datastore and role of this replication group in the Global datastore.
      * </p>
      */
     private GlobalReplicationGroupInfo globalReplicationGroupInfo;
@@ -80,30 +80,18 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private String snapshottingClusterId;
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String automaticFailover;
+    /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     */
+    private String multiAZ;
     /**
      * <p>
      * The configuration endpoint for this replication group. Use the configuration endpoint to connect to this
@@ -210,6 +198,12 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private Boolean atRestEncryptionEnabled;
     /**
      * <p>
+     * The outpost ARNs of the replication group's member clusters.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> memberClustersOutpostArns;
+    /**
+     * <p>
      * The ID of the KMS key used to encrypt the disk in the cluster.
      * </p>
      */
@@ -220,6 +214,18 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      */
     private String aRN;
+    /**
+     * <p>
+     * The list of user group IDs that have access to the replication group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> userGroupIds;
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration> logDeliveryConfigurations;
 
     /**
      * <p>
@@ -303,11 +309,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * The name of the Global datastore and role of this replication group in the Global datastore.
      * </p>
      * 
      * @param globalReplicationGroupInfo
-     *        The name of the Global Datastore and role of this replication group in the Global Datastore.
+     *        The name of the Global datastore and role of this replication group in the Global datastore.
      */
 
     public void setGlobalReplicationGroupInfo(GlobalReplicationGroupInfo globalReplicationGroupInfo) {
@@ -316,10 +322,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * The name of the Global datastore and role of this replication group in the Global datastore.
      * </p>
      * 
-     * @return The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * @return The name of the Global datastore and role of this replication group in the Global datastore.
      */
 
     public GlobalReplicationGroupInfo getGlobalReplicationGroupInfo() {
@@ -328,11 +334,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * The name of the Global datastore and role of this replication group in the Global datastore.
      * </p>
      * 
      * @param globalReplicationGroupInfo
-     *        The name of the Global Datastore and role of this replication group in the Global Datastore.
+     *        The name of the Global datastore and role of this replication group in the Global datastore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -637,50 +643,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailover
-     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
+     *        Indicates the status of automatic failover for this Redis replication group.
      * @see AutomaticFailoverStatus
      */
 
@@ -690,49 +657,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
-     *         <p>
-     *         Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Redis versions earlier than 2.8.6.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode disabled): T1 node types.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode enabled): T1 node types.
-     *         </p>
-     *         </li>
+     * @return Indicates the status of automatic failover for this Redis replication group.
      * @see AutomaticFailoverStatus
      */
 
@@ -742,50 +670,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailover
-     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
+     *        Indicates the status of automatic failover for this Redis replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutomaticFailoverStatus
      */
@@ -797,50 +686,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailover
-     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
+     *        Indicates the status of automatic failover for this Redis replication group.
      * @see AutomaticFailoverStatus
      */
 
@@ -850,56 +700,110 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailover
-     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
+     *        Indicates the status of automatic failover for this Redis replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutomaticFailoverStatus
      */
 
     public ReplicationGroup withAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
         this.automaticFailover = automaticFailover.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     * 
+     * @param multiAZ
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>
+     * @see MultiAZStatus
+     */
+
+    public void setMultiAZ(String multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+
+    /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     * 
+     * @return A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *         Multi-AZ</a>
+     * @see MultiAZStatus
+     */
+
+    public String getMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     * 
+     * @param multiAZ
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MultiAZStatus
+     */
+
+    public ReplicationGroup withMultiAZ(String multiAZ) {
+        setMultiAZ(multiAZ);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     * 
+     * @param multiAZ
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>
+     * @see MultiAZStatus
+     */
+
+    public void setMultiAZ(MultiAZStatus multiAZ) {
+        withMultiAZ(multiAZ);
+    }
+
+    /**
+     * <p>
+     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     * Multi-AZ</a>
+     * </p>
+     * 
+     * @param multiAZ
+     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
+     *        Multi-AZ</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MultiAZStatus
+     */
+
+    public ReplicationGroup withMultiAZ(MultiAZStatus multiAZ) {
+        this.multiAZ = multiAZ.toString();
         return this;
     }
 
@@ -1653,6 +1557,79 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The outpost ARNs of the replication group's member clusters.
+     * </p>
+     * 
+     * @return The outpost ARNs of the replication group's member clusters.
+     */
+
+    public java.util.List<String> getMemberClustersOutpostArns() {
+        if (memberClustersOutpostArns == null) {
+            memberClustersOutpostArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return memberClustersOutpostArns;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs of the replication group's member clusters.
+     * </p>
+     * 
+     * @param memberClustersOutpostArns
+     *        The outpost ARNs of the replication group's member clusters.
+     */
+
+    public void setMemberClustersOutpostArns(java.util.Collection<String> memberClustersOutpostArns) {
+        if (memberClustersOutpostArns == null) {
+            this.memberClustersOutpostArns = null;
+            return;
+        }
+
+        this.memberClustersOutpostArns = new com.amazonaws.internal.SdkInternalList<String>(memberClustersOutpostArns);
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs of the replication group's member clusters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMemberClustersOutpostArns(java.util.Collection)} or
+     * {@link #withMemberClustersOutpostArns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param memberClustersOutpostArns
+     *        The outpost ARNs of the replication group's member clusters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withMemberClustersOutpostArns(String... memberClustersOutpostArns) {
+        if (this.memberClustersOutpostArns == null) {
+            setMemberClustersOutpostArns(new com.amazonaws.internal.SdkInternalList<String>(memberClustersOutpostArns.length));
+        }
+        for (String ele : memberClustersOutpostArns) {
+            this.memberClustersOutpostArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs of the replication group's member clusters.
+     * </p>
+     * 
+     * @param memberClustersOutpostArns
+     *        The outpost ARNs of the replication group's member clusters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withMemberClustersOutpostArns(java.util.Collection<String> memberClustersOutpostArns) {
+        setMemberClustersOutpostArns(memberClustersOutpostArns);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of the KMS key used to encrypt the disk in the cluster.
      * </p>
      * 
@@ -1732,6 +1709,152 @@ public class ReplicationGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The list of user group IDs that have access to the replication group.
+     * </p>
+     * 
+     * @return The list of user group IDs that have access to the replication group.
+     */
+
+    public java.util.List<String> getUserGroupIds() {
+        if (userGroupIds == null) {
+            userGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return userGroupIds;
+    }
+
+    /**
+     * <p>
+     * The list of user group IDs that have access to the replication group.
+     * </p>
+     * 
+     * @param userGroupIds
+     *        The list of user group IDs that have access to the replication group.
+     */
+
+    public void setUserGroupIds(java.util.Collection<String> userGroupIds) {
+        if (userGroupIds == null) {
+            this.userGroupIds = null;
+            return;
+        }
+
+        this.userGroupIds = new com.amazonaws.internal.SdkInternalList<String>(userGroupIds);
+    }
+
+    /**
+     * <p>
+     * The list of user group IDs that have access to the replication group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserGroupIds(java.util.Collection)} or {@link #withUserGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param userGroupIds
+     *        The list of user group IDs that have access to the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withUserGroupIds(String... userGroupIds) {
+        if (this.userGroupIds == null) {
+            setUserGroupIds(new com.amazonaws.internal.SdkInternalList<String>(userGroupIds.length));
+        }
+        for (String ele : userGroupIds) {
+            this.userGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of user group IDs that have access to the replication group.
+     * </p>
+     * 
+     * @param userGroupIds
+     *        The list of user group IDs that have access to the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withUserGroupIds(java.util.Collection<String> userGroupIds) {
+        setUserGroupIds(userGroupIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * 
+     * @return Returns the destination, format and type of the logs.
+     */
+
+    public java.util.List<LogDeliveryConfiguration> getLogDeliveryConfigurations() {
+        if (logDeliveryConfigurations == null) {
+            logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration>();
+        }
+        return logDeliveryConfigurations;
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Returns the destination, format and type of the logs.
+     */
+
+    public void setLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfiguration> logDeliveryConfigurations) {
+        if (logDeliveryConfigurations == null) {
+            this.logDeliveryConfigurations = null;
+            return;
+        }
+
+        this.logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration>(logDeliveryConfigurations);
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLogDeliveryConfigurations(java.util.Collection)} or
+     * {@link #withLogDeliveryConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Returns the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withLogDeliveryConfigurations(LogDeliveryConfiguration... logDeliveryConfigurations) {
+        if (this.logDeliveryConfigurations == null) {
+            setLogDeliveryConfigurations(new com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration>(logDeliveryConfigurations.length));
+        }
+        for (LogDeliveryConfiguration ele : logDeliveryConfigurations) {
+            this.logDeliveryConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Returns the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfiguration> logDeliveryConfigurations) {
+        setLogDeliveryConfigurations(logDeliveryConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1761,6 +1884,8 @@ public class ReplicationGroup implements Serializable, Cloneable {
             sb.append("SnapshottingClusterId: ").append(getSnapshottingClusterId()).append(",");
         if (getAutomaticFailover() != null)
             sb.append("AutomaticFailover: ").append(getAutomaticFailover()).append(",");
+        if (getMultiAZ() != null)
+            sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getConfigurationEndpoint() != null)
             sb.append("ConfigurationEndpoint: ").append(getConfigurationEndpoint()).append(",");
         if (getSnapshotRetentionLimit() != null)
@@ -1779,10 +1904,16 @@ public class ReplicationGroup implements Serializable, Cloneable {
             sb.append("TransitEncryptionEnabled: ").append(getTransitEncryptionEnabled()).append(",");
         if (getAtRestEncryptionEnabled() != null)
             sb.append("AtRestEncryptionEnabled: ").append(getAtRestEncryptionEnabled()).append(",");
+        if (getMemberClustersOutpostArns() != null)
+            sb.append("MemberClustersOutpostArns: ").append(getMemberClustersOutpostArns()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getARN() != null)
-            sb.append("ARN: ").append(getARN());
+            sb.append("ARN: ").append(getARN()).append(",");
+        if (getUserGroupIds() != null)
+            sb.append("UserGroupIds: ").append(getUserGroupIds()).append(",");
+        if (getLogDeliveryConfigurations() != null)
+            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -1833,6 +1964,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
             return false;
         if (other.getAutomaticFailover() != null && other.getAutomaticFailover().equals(this.getAutomaticFailover()) == false)
             return false;
+        if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
+            return false;
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+            return false;
         if (other.getConfigurationEndpoint() == null ^ this.getConfigurationEndpoint() == null)
             return false;
         if (other.getConfigurationEndpoint() != null && other.getConfigurationEndpoint().equals(this.getConfigurationEndpoint()) == false)
@@ -1869,6 +2004,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
             return false;
         if (other.getAtRestEncryptionEnabled() != null && other.getAtRestEncryptionEnabled().equals(this.getAtRestEncryptionEnabled()) == false)
             return false;
+        if (other.getMemberClustersOutpostArns() == null ^ this.getMemberClustersOutpostArns() == null)
+            return false;
+        if (other.getMemberClustersOutpostArns() != null && other.getMemberClustersOutpostArns().equals(this.getMemberClustersOutpostArns()) == false)
+            return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
@@ -1876,6 +2015,14 @@ public class ReplicationGroup implements Serializable, Cloneable {
         if (other.getARN() == null ^ this.getARN() == null)
             return false;
         if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
+            return false;
+        if (other.getUserGroupIds() == null ^ this.getUserGroupIds() == null)
+            return false;
+        if (other.getUserGroupIds() != null && other.getUserGroupIds().equals(this.getUserGroupIds()) == false)
+            return false;
+        if (other.getLogDeliveryConfigurations() == null ^ this.getLogDeliveryConfigurations() == null)
+            return false;
+        if (other.getLogDeliveryConfigurations() != null && other.getLogDeliveryConfigurations().equals(this.getLogDeliveryConfigurations()) == false)
             return false;
         return true;
     }
@@ -1894,6 +2041,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNodeGroups() == null) ? 0 : getNodeGroups().hashCode());
         hashCode = prime * hashCode + ((getSnapshottingClusterId() == null) ? 0 : getSnapshottingClusterId().hashCode());
         hashCode = prime * hashCode + ((getAutomaticFailover() == null) ? 0 : getAutomaticFailover().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
         hashCode = prime * hashCode + ((getConfigurationEndpoint() == null) ? 0 : getConfigurationEndpoint().hashCode());
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
@@ -1903,8 +2051,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAuthTokenLastModifiedDate() == null) ? 0 : getAuthTokenLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getAtRestEncryptionEnabled() == null) ? 0 : getAtRestEncryptionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getMemberClustersOutpostArns() == null) ? 0 : getMemberClustersOutpostArns().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
+        hashCode = prime * hashCode + ((getUserGroupIds() == null) ? 0 : getUserGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         return hashCode;
     }
 

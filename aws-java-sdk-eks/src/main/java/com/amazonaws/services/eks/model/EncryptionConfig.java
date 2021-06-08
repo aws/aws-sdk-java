@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
     private java.util.List<String> resources;
     /**
      * <p>
-     * AWS Key Management Service (AWS KMS) customer master key (CMK). Either the ARN or the alias can be used.
+     * AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
      * </p>
      */
     private Provider provider;
@@ -113,11 +113,11 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS Key Management Service (AWS KMS) customer master key (CMK). Either the ARN or the alias can be used.
+     * AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
      * </p>
      * 
      * @param provider
-     *        AWS Key Management Service (AWS KMS) customer master key (CMK). Either the ARN or the alias can be used.
+     *        AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
      */
 
     public void setProvider(Provider provider) {
@@ -126,10 +126,10 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS Key Management Service (AWS KMS) customer master key (CMK). Either the ARN or the alias can be used.
+     * AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
      * </p>
      * 
-     * @return AWS Key Management Service (AWS KMS) customer master key (CMK). Either the ARN or the alias can be used.
+     * @return AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
      */
 
     public Provider getProvider() {
@@ -138,11 +138,11 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * AWS Key Management Service (AWS KMS) customer master key (CMK). Either the ARN or the alias can be used.
+     * AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
      * </p>
      * 
      * @param provider
-     *        AWS Key Management Service (AWS KMS) customer master key (CMK). Either the ARN or the alias can be used.
+     *        AWS Key Management Service (AWS KMS) key. Either the ARN or the alias can be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -133,8 +133,8 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -152,6 +152,12 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </ul>
      */
     private String state;
+    /**
+     * <p>
+     * The date and time at which the Capacity Reservation was started.
+     * </p>
+     */
+    private java.util.Date startDate;
     /**
      * <p>
      * The date and time at which the Capacity Reservation expires. When a Capacity Reservation expires, the reserved
@@ -213,6 +219,12 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was created.
+     * </p>
+     */
+    private String outpostArn;
 
     /**
      * <p>
@@ -913,8 +925,8 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -948,8 +960,8 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *        longer available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *        available for your use.
      *        </p>
      *        </li>
      *        <li>
@@ -990,8 +1002,8 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -1024,8 +1036,8 @@ public class CapacityReservation implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *         longer available for your use.
+     *         <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *         available for your use.
      *         </p>
      *         </li>
      *         <li>
@@ -1066,8 +1078,8 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -1101,8 +1113,8 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *        longer available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *        available for your use.
      *        </p>
      *        </li>
      *        <li>
@@ -1145,8 +1157,8 @@ public class CapacityReservation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -1180,8 +1192,8 @@ public class CapacityReservation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *        longer available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *        available for your use.
      *        </p>
      *        </li>
      *        <li>
@@ -1203,6 +1215,46 @@ public class CapacityReservation implements Serializable, Cloneable {
 
     public CapacityReservation withState(CapacityReservationState state) {
         this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time at which the Capacity Reservation was started.
+     * </p>
+     * 
+     * @param startDate
+     *        The date and time at which the Capacity Reservation was started.
+     */
+
+    public void setStartDate(java.util.Date startDate) {
+        this.startDate = startDate;
+    }
+
+    /**
+     * <p>
+     * The date and time at which the Capacity Reservation was started.
+     * </p>
+     * 
+     * @return The date and time at which the Capacity Reservation was started.
+     */
+
+    public java.util.Date getStartDate() {
+        return this.startDate;
+    }
+
+    /**
+     * <p>
+     * The date and time at which the Capacity Reservation was started.
+     * </p>
+     * 
+     * @param startDate
+     *        The date and time at which the Capacity Reservation was started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CapacityReservation withStartDate(java.util.Date startDate) {
+        setStartDate(startDate);
         return this;
     }
 
@@ -1714,6 +1766,46 @@ public class CapacityReservation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was created.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was created.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was created.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was created.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was created.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CapacityReservation withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1751,6 +1843,8 @@ public class CapacityReservation implements Serializable, Cloneable {
             sb.append("EphemeralStorage: ").append(getEphemeralStorage()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getStartDate() != null)
+            sb.append("StartDate: ").append(getStartDate()).append(",");
         if (getEndDate() != null)
             sb.append("EndDate: ").append(getEndDate()).append(",");
         if (getEndDateType() != null)
@@ -1760,7 +1854,9 @@ public class CapacityReservation implements Serializable, Cloneable {
         if (getCreateDate() != null)
             sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1827,6 +1923,10 @@ public class CapacityReservation implements Serializable, Cloneable {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getStartDate() == null ^ this.getStartDate() == null)
+            return false;
+        if (other.getStartDate() != null && other.getStartDate().equals(this.getStartDate()) == false)
+            return false;
         if (other.getEndDate() == null ^ this.getEndDate() == null)
             return false;
         if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false)
@@ -1846,6 +1946,10 @@ public class CapacityReservation implements Serializable, Cloneable {
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
             return false;
         return true;
     }
@@ -1868,11 +1972,13 @@ public class CapacityReservation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
         hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
         hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         hashCode = prime * hashCode + ((getEndDateType() == null) ? 0 : getEndDateType().hashCode());
         hashCode = prime * hashCode + ((getInstanceMatchCriteria() == null) ? 0 : getInstanceMatchCriteria().hashCode());
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         return hashCode;
     }
 

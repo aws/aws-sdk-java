@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,23 +36,24 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is
-     * validated to ensure that it contains the necessary permissions for game server groups.
+     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * The minimum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
+     * The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift
      * FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at
-     * least 1.
+     * least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the
+     * AWS console or APIs.
      * </p>
      */
     private Integer minSize;
     /**
      * <p>
-     * The maximum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
-     * FleetIQ and EC2 do not scale up the group above this maximum.
+     * The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift
+     * FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
      */
     private Integer maxSize;
@@ -62,47 +63,65 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * in the game server group. You can specify the template using either the template name or ID. For help with
      * creating a launch template, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-     * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling
+     * group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
+     * <note>
+     * <p>
+     * If you specify network interfaces in your launch template, you must explicitly set the property
+     * <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template,
+     * GameLift FleetIQ uses your account's default VPC.
+     * </p>
+     * </note>
      */
     private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
-     * A set of EC2 instance types to use when creating instances in the group. The instance definitions must specify at
-     * least two different instance types that are supported by GameLift FleetIQ. For more information on instance
-     * types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-     * Types</a> in the <i>Amazon EC2 User Guide</i>.
+     * The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least
+     * two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
+     * <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight
+     * value is specified for an instance type, it is set to the default value "1". For more information about capacity
+     * weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
      * </p>
      */
     private java.util.List<InstanceDefinition> instanceDefinitions;
     /**
      * <p>
      * Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting.
-     * The scaling policy uses the metric "PercentUtilizedGameServers" to maintain a buffer of idle game servers that
-     * can immediately accommodate new games and players. Once the game server and Auto Scaling groups are created, you
-     * can update the scaling policy settings directly in Auto Scaling Groups.
+     * The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game
+     * servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
      */
     private GameServerGroupAutoScalingPolicy autoScalingPolicy;
     /**
      * <p>
-     * The fallback balancing method to use for the game server group when Spot instances in a Region become unavailable
-     * or are not viable for game hosting. Once triggered, this method remains active until Spot instances can once
-     * again be used. Method options include:
+     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
+     * group. Method options include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * not replaced.
+     * <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again
+     * be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated
+     * (after current gameplay ends) and are not replaced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting capacity
-     * by using On-Demand instances. Existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * replaced with new On-Demand instances.
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server
+     * group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling
+     * back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and
+     * are replaced with new On-Demand Instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.
      * </p>
      * </li>
      * </ul>
@@ -111,29 +130,32 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A flag that indicates whether instances in the game server group are protected from early termination.
-     * Unprotected instances that have active game servers running may by terminated during a scale-down event, causing
-     * players to be dropped from the game. Protected instances cannot be terminated while there are active game servers
-     * running. An exception to this is Spot Instances, which may be terminated by AWS regardless of protection status.
-     * This property is set to NO_PROTECTION by default.
+     * Unprotected instances that have active game servers running might be terminated during a scale-down event,
+     * causing players to be dropped from the game. Protected instances cannot be terminated while there are active game
+     * servers running except in the event of a forced game server group deletion (see ). An exception to this is with
+     * Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to
+     * <code>NO_PROTECTION</code> by default.
      * </p>
      */
     private String gameServerProtectionPolicy;
     /**
      * <p>
      * A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all
-     * GameLift FleetIQ-supported availability zones are used; this parameter allows you to specify VPCs that you've set
-     * up.
+     * GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've
+     * set up. This property cannot be updated after the game server group is created, and the corresponding Auto
+     * Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is
+     * updated directly.
      * </p>
      */
     private java.util.List<String> vpcSubnets;
     /**
      * <p>
      * A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs.
-     * Tagging AWS resources are useful for resource management, access management, and cost allocation. For more
+     * Tagging AWS resources is useful for resource management, access management, and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
      * Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be
-     * lower than stated. See the AWS General Reference for actual tagging limits.
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags, respectively. The maximum tag
+     * limit may be lower than stated. See the AWS General Reference for actual tagging limits.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -193,15 +215,13 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is
-     * validated to ensure that it contains the necessary permissions for game server groups.
+     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-     *        allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is validated to ensure
-     *        that it contains the necessary permissions for game server groups.
+     *        allows Amazon GameLift to access your EC2 Auto Scaling groups.
      */
 
     public void setRoleArn(String roleArn) {
@@ -211,14 +231,12 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is
-     * validated to ensure that it contains the necessary permissions for game server groups.
+     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
      * </p>
      * 
      * @return The Amazon Resource Name (<a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-     *         allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is validated to ensure
-     *         that it contains the necessary permissions for game server groups.
+     *         allows Amazon GameLift to access your EC2 Auto Scaling groups.
      */
 
     public String getRoleArn() {
@@ -228,15 +246,13 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is
-     * validated to ensure that it contains the necessary permissions for game server groups.
+     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-     *        allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is validated to ensure
-     *        that it contains the necessary permissions for game server groups.
+     *        allows Amazon GameLift to access your EC2 Auto Scaling groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,15 +263,17 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The minimum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
+     * The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift
      * FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at
-     * least 1.
+     * least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the
+     * AWS console or APIs.
      * </p>
      * 
      * @param minSize
-     *        The minimum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
-     *        FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to
-     *        at least 1.
+     *        The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events,
+     *        GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should
+     *        be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto
+     *        Scaling group using the AWS console or APIs.
      */
 
     public void setMinSize(Integer minSize) {
@@ -264,14 +282,16 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The minimum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
+     * The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift
      * FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at
-     * least 1.
+     * least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the
+     * AWS console or APIs.
      * </p>
      * 
-     * @return The minimum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events,
+     * @return The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events,
      *         GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should
-     *         be set to at least 1.
+     *         be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto
+     *         Scaling group using the AWS console or APIs.
      */
 
     public Integer getMinSize() {
@@ -280,15 +300,17 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The minimum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
+     * The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift
      * FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to at
-     * least 1.
+     * least 1. After the Auto Scaling group is created, update this value directly in the Auto Scaling group using the
+     * AWS console or APIs.
      * </p>
      * 
      * @param minSize
-     *        The minimum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
-     *        FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should be set to
-     *        at least 1.
+     *        The minimum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events,
+     *        GameLift FleetIQ and EC2 do not scale down the group below this minimum. In production, this value should
+     *        be set to at least 1. After the Auto Scaling group is created, update this value directly in the Auto
+     *        Scaling group using the AWS console or APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,13 +321,15 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
-     * FleetIQ and EC2 do not scale up the group above this maximum.
+     * The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift
+     * FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
      * 
      * @param maxSize
-     *        The maximum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
-     *        FleetIQ and EC2 do not scale up the group above this maximum.
+     *        The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events,
+     *        GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is
+     *        created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      */
 
     public void setMaxSize(Integer maxSize) {
@@ -314,12 +338,14 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
-     * FleetIQ and EC2 do not scale up the group above this maximum.
+     * The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift
+     * FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
      * 
-     * @return The maximum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events,
-     *         GameLift FleetIQ and EC2 do not scale up the group above this maximum.
+     * @return The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events,
+     *         GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is
+     *         created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      */
 
     public Integer getMaxSize() {
@@ -328,13 +354,15 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
-     * FleetIQ and EC2 do not scale up the group above this maximum.
+     * The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events, GameLift
+     * FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
      * 
      * @param maxSize
-     *        The maximum number of instances allowed in the EC2 Auto Scaling group. During autoscaling events, GameLift
-     *        FleetIQ and EC2 do not scale up the group above this maximum.
+     *        The maximum number of instances allowed in the EC2 Auto Scaling group. During automatic scaling events,
+     *        GameLift FleetIQ and EC2 do not scale up the group above this maximum. After the Auto Scaling group is
+     *        created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,15 +377,30 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * in the game server group. You can specify the template using either the template name or ID. For help with
      * creating a launch template, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-     * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling
+     * group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
+     * <note>
+     * <p>
+     * If you specify network interfaces in your launch template, you must explicitly set the property
+     * <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template,
+     * GameLift FleetIQ uses your account's default VPC.
+     * </p>
+     * </note>
      * 
      * @param launchTemplate
      *        The EC2 launch template that contains configuration settings and game server code to be deployed to all
      *        instances in the game server group. You can specify the template using either the template name or ID. For
      *        help with creating a launch template, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-     *        Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto
+     *        Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or
+     *        APIs.</p> <note>
+     *        <p>
+     *        If you specify network interfaces in your launch template, you must explicitly set the property
+     *        <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch
+     *        template, GameLift FleetIQ uses your account's default VPC.
+     *        </p>
      */
 
     public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
@@ -370,14 +413,29 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * in the game server group. You can specify the template using either the template name or ID. For help with
      * creating a launch template, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-     * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling
+     * group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
+     * <note>
+     * <p>
+     * If you specify network interfaces in your launch template, you must explicitly set the property
+     * <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template,
+     * GameLift FleetIQ uses your account's default VPC.
+     * </p>
+     * </note>
      * 
      * @return The EC2 launch template that contains configuration settings and game server code to be deployed to all
      *         instances in the game server group. You can specify the template using either the template name or ID.
      *         For help with creating a launch template, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a
-     *         Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the
+     *         Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console
+     *         or APIs.</p> <note>
+     *         <p>
+     *         If you specify network interfaces in your launch template, you must explicitly set the property
+     *         <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch
+     *         template, GameLift FleetIQ uses your account's default VPC.
+     *         </p>
      */
 
     public LaunchTemplateSpecification getLaunchTemplate() {
@@ -390,15 +448,30 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * in the game server group. You can specify the template using either the template name or ID. For help with
      * creating a launch template, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-     * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling
+     * group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
+     * <note>
+     * <p>
+     * If you specify network interfaces in your launch template, you must explicitly set the property
+     * <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template,
+     * GameLift FleetIQ uses your account's default VPC.
+     * </p>
+     * </note>
      * 
      * @param launchTemplate
      *        The EC2 launch template that contains configuration settings and game server code to be deployed to all
      *        instances in the game server group. You can specify the template using either the template name or ID. For
      *        help with creating a launch template, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
-     *        Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto
+     *        Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or
+     *        APIs.</p> <note>
+     *        <p>
+     *        If you specify network interfaces in your launch template, you must explicitly set the property
+     *        <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch
+     *        template, GameLift FleetIQ uses your account's default VPC.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,17 +482,23 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A set of EC2 instance types to use when creating instances in the group. The instance definitions must specify at
-     * least two different instance types that are supported by GameLift FleetIQ. For more information on instance
-     * types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-     * Types</a> in the <i>Amazon EC2 User Guide</i>.
+     * The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least
+     * two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
+     * <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight
+     * value is specified for an instance type, it is set to the default value "1". For more information about capacity
+     * weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
      * </p>
      * 
-     * @return A set of EC2 instance types to use when creating instances in the group. The instance definitions must
-     *         specify at least two different instance types that are supported by GameLift FleetIQ. For more
-     *         information on instance types, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in
-     *         the <i>Amazon EC2 User Guide</i>.
+     * @return The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify
+     *         at least two different instance types that are supported by GameLift FleetIQ. For more information on
+     *         instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+     *         Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for
+     *         each instance type. If no weight value is specified for an instance type, it is set to the default value
+     *         "1". For more information about capacity weighting, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance
+     *         Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
      */
 
     public java.util.List<InstanceDefinition> getInstanceDefinitions() {
@@ -428,18 +507,24 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A set of EC2 instance types to use when creating instances in the group. The instance definitions must specify at
-     * least two different instance types that are supported by GameLift FleetIQ. For more information on instance
-     * types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-     * Types</a> in the <i>Amazon EC2 User Guide</i>.
+     * The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least
+     * two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
+     * <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight
+     * value is specified for an instance type, it is set to the default value "1". For more information about capacity
+     * weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
      * </p>
      * 
      * @param instanceDefinitions
-     *        A set of EC2 instance types to use when creating instances in the group. The instance definitions must
-     *        specify at least two different instance types that are supported by GameLift FleetIQ. For more information
-     *        on instance types, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in
-     *        the <i>Amazon EC2 User Guide</i>.
+     *        The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify
+     *        at least two different instance types that are supported by GameLift FleetIQ. For more information on
+     *        instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+     *        Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for
+     *        each instance type. If no weight value is specified for an instance type, it is set to the default value
+     *        "1". For more information about capacity weighting, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance
+     *        Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
      */
 
     public void setInstanceDefinitions(java.util.Collection<InstanceDefinition> instanceDefinitions) {
@@ -453,10 +538,13 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A set of EC2 instance types to use when creating instances in the group. The instance definitions must specify at
-     * least two different instance types that are supported by GameLift FleetIQ. For more information on instance
-     * types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-     * Types</a> in the <i>Amazon EC2 User Guide</i>.
+     * The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least
+     * two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
+     * <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight
+     * value is specified for an instance type, it is set to the default value "1". For more information about capacity
+     * weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -465,11 +553,14 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param instanceDefinitions
-     *        A set of EC2 instance types to use when creating instances in the group. The instance definitions must
-     *        specify at least two different instance types that are supported by GameLift FleetIQ. For more information
-     *        on instance types, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in
-     *        the <i>Amazon EC2 User Guide</i>.
+     *        The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify
+     *        at least two different instance types that are supported by GameLift FleetIQ. For more information on
+     *        instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+     *        Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for
+     *        each instance type. If no weight value is specified for an instance type, it is set to the default value
+     *        "1". For more information about capacity weighting, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance
+     *        Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -485,18 +576,24 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A set of EC2 instance types to use when creating instances in the group. The instance definitions must specify at
-     * least two different instance types that are supported by GameLift FleetIQ. For more information on instance
-     * types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-     * Types</a> in the <i>Amazon EC2 User Guide</i>.
+     * The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify at least
+     * two different instance types that are supported by GameLift FleetIQ. For more information on instance types, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in the
+     * <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If no weight
+     * value is specified for an instance type, it is set to the default value "1". For more information about capacity
+     * weighting, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">
+     * Instance Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
      * </p>
      * 
      * @param instanceDefinitions
-     *        A set of EC2 instance types to use when creating instances in the group. The instance definitions must
-     *        specify at least two different instance types that are supported by GameLift FleetIQ. For more information
-     *        on instance types, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in
-     *        the <i>Amazon EC2 User Guide</i>.
+     *        The EC2 instance types and sizes to use in the Auto Scaling group. The instance definitions must specify
+     *        at least two different instance types that are supported by GameLift FleetIQ. For more information on
+     *        instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+     *        Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for
+     *        each instance type. If no weight value is specified for an instance type, it is set to the default value
+     *        "1". For more information about capacity weighting, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance
+     *        Weighting for Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,16 +605,16 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting.
-     * The scaling policy uses the metric "PercentUtilizedGameServers" to maintain a buffer of idle game servers that
-     * can immediately accommodate new games and players. Once the game server and Auto Scaling groups are created, you
-     * can update the scaling policy settings directly in Auto Scaling Groups.
+     * The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game
+     * servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
      * 
      * @param autoScalingPolicy
      *        Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game
-     *        hosting. The scaling policy uses the metric "PercentUtilizedGameServers" to maintain a buffer of idle game
-     *        servers that can immediately accommodate new games and players. Once the game server and Auto Scaling
-     *        groups are created, you can update the scaling policy settings directly in Auto Scaling Groups.
+     *        hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer
+     *        of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group
+     *        is created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      */
 
     public void setAutoScalingPolicy(GameServerGroupAutoScalingPolicy autoScalingPolicy) {
@@ -527,15 +624,16 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting.
-     * The scaling policy uses the metric "PercentUtilizedGameServers" to maintain a buffer of idle game servers that
-     * can immediately accommodate new games and players. Once the game server and Auto Scaling groups are created, you
-     * can update the scaling policy settings directly in Auto Scaling Groups.
+     * The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game
+     * servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
      * 
      * @return Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game
-     *         hosting. The scaling policy uses the metric "PercentUtilizedGameServers" to maintain a buffer of idle
-     *         game servers that can immediately accommodate new games and players. Once the game server and Auto
-     *         Scaling groups are created, you can update the scaling policy settings directly in Auto Scaling Groups.
+     *         hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a
+     *         buffer of idle game servers that can immediately accommodate new games and players. After the Auto
+     *         Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or
+     *         APIs.
      */
 
     public GameServerGroupAutoScalingPolicy getAutoScalingPolicy() {
@@ -545,16 +643,16 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game hosting.
-     * The scaling policy uses the metric "PercentUtilizedGameServers" to maintain a buffer of idle game servers that
-     * can immediately accommodate new games and players. Once the game server and Auto Scaling groups are created, you
-     * can update the scaling policy settings directly in Auto Scaling Groups.
+     * The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer of idle game
+     * servers that can immediately accommodate new games and players. After the Auto Scaling group is created, update
+     * this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
      * 
      * @param autoScalingPolicy
      *        Configuration settings to define a scaling policy for the Auto Scaling group that is optimized for game
-     *        hosting. The scaling policy uses the metric "PercentUtilizedGameServers" to maintain a buffer of idle game
-     *        servers that can immediately accommodate new games and players. Once the game server and Auto Scaling
-     *        groups are created, you can update the scaling policy settings directly in Auto Scaling Groups.
+     *        hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code> to maintain a buffer
+     *        of idle game servers that can immediately accommodate new games and players. After the Auto Scaling group
+     *        is created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -565,44 +663,58 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The fallback balancing method to use for the game server group when Spot instances in a Region become unavailable
-     * or are not viable for game hosting. Once triggered, this method remains active until Spot instances can once
-     * again be used. Method options include:
+     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
+     * group. Method options include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * not replaced.
+     * <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again
+     * be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated
+     * (after current gameplay ends) and are not replaced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting capacity
-     * by using On-Demand instances. Existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * replaced with new On-Demand instances.
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server
+     * group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling
+     * back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and
+     * are replaced with new On-Demand Instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.
      * </p>
      * </li>
      * </ul>
      * 
      * @param balancingStrategy
-     *        The fallback balancing method to use for the game server group when Spot instances in a Region become
-     *        unavailable or are not viable for game hosting. Once triggered, this method remains active until Spot
-     *        instances can once again be used. Method options include:</p>
+     *        Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     *        server group. Method options include the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     *        instances are started, and the existing nonviable Spot instances are terminated (once current gameplay
-     *        ends) and not replaced.
+     *        <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are
+     *        unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot
+     *        Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot
+     *        Instances are terminated (after current gameplay ends) and are not replaced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting
-     *        capacity by using On-Demand instances. Existing nonviable Spot instances are terminated (once current
-     *        gameplay ends) and replaced with new On-Demand instances.
+     *        <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game
+     *        server group. If Spot Instances are unavailable, the game server group continues to provide hosting
+     *        capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after
+     *        current gameplay ends) and are replaced with new On-Demand Instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot
+     *        Instances are used, even when available, while this balancing strategy is in force.
      *        </p>
      *        </li>
      * @see BalancingStrategy
@@ -614,43 +726,57 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The fallback balancing method to use for the game server group when Spot instances in a Region become unavailable
-     * or are not viable for game hosting. Once triggered, this method remains active until Spot instances can once
-     * again be used. Method options include:
+     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
+     * group. Method options include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * not replaced.
+     * <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again
+     * be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated
+     * (after current gameplay ends) and are not replaced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting capacity
-     * by using On-Demand instances. Existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * replaced with new On-Demand instances.
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server
+     * group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling
+     * back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and
+     * are replaced with new On-Demand Instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The fallback balancing method to use for the game server group when Spot instances in a Region become
-     *         unavailable or are not viable for game hosting. Once triggered, this method remains active until Spot
-     *         instances can once again be used. Method options include:</p>
+     * @return Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     *         server group. Method options include the following:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No
-     *         new instances are started, and the existing nonviable Spot instances are terminated (once current
-     *         gameplay ends) and not replaced.
+     *         <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are
+     *         unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot
+     *         Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot
+     *         Instances are terminated (after current gameplay ends) and are not replaced.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting
-     *         capacity by using On-Demand instances. Existing nonviable Spot instances are terminated (once current
-     *         gameplay ends) and replaced with new On-Demand instances.
+     *         <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game
+     *         server group. If Spot Instances are unavailable, the game server group continues to provide hosting
+     *         capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after
+     *         current gameplay ends) and are replaced with new On-Demand Instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot
+     *         Instances are used, even when available, while this balancing strategy is in force.
      *         </p>
      *         </li>
      * @see BalancingStrategy
@@ -662,44 +788,58 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The fallback balancing method to use for the game server group when Spot instances in a Region become unavailable
-     * or are not viable for game hosting. Once triggered, this method remains active until Spot instances can once
-     * again be used. Method options include:
+     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
+     * group. Method options include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * not replaced.
+     * <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again
+     * be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated
+     * (after current gameplay ends) and are not replaced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting capacity
-     * by using On-Demand instances. Existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * replaced with new On-Demand instances.
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server
+     * group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling
+     * back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and
+     * are replaced with new On-Demand Instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.
      * </p>
      * </li>
      * </ul>
      * 
      * @param balancingStrategy
-     *        The fallback balancing method to use for the game server group when Spot instances in a Region become
-     *        unavailable or are not viable for game hosting. Once triggered, this method remains active until Spot
-     *        instances can once again be used. Method options include:</p>
+     *        Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     *        server group. Method options include the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     *        instances are started, and the existing nonviable Spot instances are terminated (once current gameplay
-     *        ends) and not replaced.
+     *        <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are
+     *        unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot
+     *        Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot
+     *        Instances are terminated (after current gameplay ends) and are not replaced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting
-     *        capacity by using On-Demand instances. Existing nonviable Spot instances are terminated (once current
-     *        gameplay ends) and replaced with new On-Demand instances.
+     *        <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game
+     *        server group. If Spot Instances are unavailable, the game server group continues to provide hosting
+     *        capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after
+     *        current gameplay ends) and are replaced with new On-Demand Instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot
+     *        Instances are used, even when available, while this balancing strategy is in force.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -713,44 +853,58 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The fallback balancing method to use for the game server group when Spot instances in a Region become unavailable
-     * or are not viable for game hosting. Once triggered, this method remains active until Spot instances can once
-     * again be used. Method options include:
+     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
+     * group. Method options include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * not replaced.
+     * <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again
+     * be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated
+     * (after current gameplay ends) and are not replaced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting capacity
-     * by using On-Demand instances. Existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * replaced with new On-Demand instances.
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server
+     * group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling
+     * back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and
+     * are replaced with new On-Demand Instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.
      * </p>
      * </li>
      * </ul>
      * 
      * @param balancingStrategy
-     *        The fallback balancing method to use for the game server group when Spot instances in a Region become
-     *        unavailable or are not viable for game hosting. Once triggered, this method remains active until Spot
-     *        instances can once again be used. Method options include:</p>
+     *        Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     *        server group. Method options include the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     *        instances are started, and the existing nonviable Spot instances are terminated (once current gameplay
-     *        ends) and not replaced.
+     *        <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are
+     *        unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot
+     *        Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot
+     *        Instances are terminated (after current gameplay ends) and are not replaced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting
-     *        capacity by using On-Demand instances. Existing nonviable Spot instances are terminated (once current
-     *        gameplay ends) and replaced with new On-Demand instances.
+     *        <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game
+     *        server group. If Spot Instances are unavailable, the game server group continues to provide hosting
+     *        capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after
+     *        current gameplay ends) and are replaced with new On-Demand Instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot
+     *        Instances are used, even when available, while this balancing strategy is in force.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -765,18 +919,20 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A flag that indicates whether instances in the game server group are protected from early termination.
-     * Unprotected instances that have active game servers running may by terminated during a scale-down event, causing
-     * players to be dropped from the game. Protected instances cannot be terminated while there are active game servers
-     * running. An exception to this is Spot Instances, which may be terminated by AWS regardless of protection status.
-     * This property is set to NO_PROTECTION by default.
+     * Unprotected instances that have active game servers running might be terminated during a scale-down event,
+     * causing players to be dropped from the game. Protected instances cannot be terminated while there are active game
+     * servers running except in the event of a forced game server group deletion (see ). An exception to this is with
+     * Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to
+     * <code>NO_PROTECTION</code> by default.
      * </p>
      * 
      * @param gameServerProtectionPolicy
      *        A flag that indicates whether instances in the game server group are protected from early termination.
-     *        Unprotected instances that have active game servers running may by terminated during a scale-down event,
+     *        Unprotected instances that have active game servers running might be terminated during a scale-down event,
      *        causing players to be dropped from the game. Protected instances cannot be terminated while there are
-     *        active game servers running. An exception to this is Spot Instances, which may be terminated by AWS
-     *        regardless of protection status. This property is set to NO_PROTECTION by default.
+     *        active game servers running except in the event of a forced game server group deletion (see ). An
+     *        exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status.
+     *        This property is set to <code>NO_PROTECTION</code> by default.
      * @see GameServerProtectionPolicy
      */
 
@@ -787,17 +943,19 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A flag that indicates whether instances in the game server group are protected from early termination.
-     * Unprotected instances that have active game servers running may by terminated during a scale-down event, causing
-     * players to be dropped from the game. Protected instances cannot be terminated while there are active game servers
-     * running. An exception to this is Spot Instances, which may be terminated by AWS regardless of protection status.
-     * This property is set to NO_PROTECTION by default.
+     * Unprotected instances that have active game servers running might be terminated during a scale-down event,
+     * causing players to be dropped from the game. Protected instances cannot be terminated while there are active game
+     * servers running except in the event of a forced game server group deletion (see ). An exception to this is with
+     * Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to
+     * <code>NO_PROTECTION</code> by default.
      * </p>
      * 
      * @return A flag that indicates whether instances in the game server group are protected from early termination.
-     *         Unprotected instances that have active game servers running may by terminated during a scale-down event,
-     *         causing players to be dropped from the game. Protected instances cannot be terminated while there are
-     *         active game servers running. An exception to this is Spot Instances, which may be terminated by AWS
-     *         regardless of protection status. This property is set to NO_PROTECTION by default.
+     *         Unprotected instances that have active game servers running might be terminated during a scale-down
+     *         event, causing players to be dropped from the game. Protected instances cannot be terminated while there
+     *         are active game servers running except in the event of a forced game server group deletion (see ). An
+     *         exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status.
+     *         This property is set to <code>NO_PROTECTION</code> by default.
      * @see GameServerProtectionPolicy
      */
 
@@ -808,18 +966,20 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A flag that indicates whether instances in the game server group are protected from early termination.
-     * Unprotected instances that have active game servers running may by terminated during a scale-down event, causing
-     * players to be dropped from the game. Protected instances cannot be terminated while there are active game servers
-     * running. An exception to this is Spot Instances, which may be terminated by AWS regardless of protection status.
-     * This property is set to NO_PROTECTION by default.
+     * Unprotected instances that have active game servers running might be terminated during a scale-down event,
+     * causing players to be dropped from the game. Protected instances cannot be terminated while there are active game
+     * servers running except in the event of a forced game server group deletion (see ). An exception to this is with
+     * Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to
+     * <code>NO_PROTECTION</code> by default.
      * </p>
      * 
      * @param gameServerProtectionPolicy
      *        A flag that indicates whether instances in the game server group are protected from early termination.
-     *        Unprotected instances that have active game servers running may by terminated during a scale-down event,
+     *        Unprotected instances that have active game servers running might be terminated during a scale-down event,
      *        causing players to be dropped from the game. Protected instances cannot be terminated while there are
-     *        active game servers running. An exception to this is Spot Instances, which may be terminated by AWS
-     *        regardless of protection status. This property is set to NO_PROTECTION by default.
+     *        active game servers running except in the event of a forced game server group deletion (see ). An
+     *        exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status.
+     *        This property is set to <code>NO_PROTECTION</code> by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerProtectionPolicy
      */
@@ -832,18 +992,20 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A flag that indicates whether instances in the game server group are protected from early termination.
-     * Unprotected instances that have active game servers running may by terminated during a scale-down event, causing
-     * players to be dropped from the game. Protected instances cannot be terminated while there are active game servers
-     * running. An exception to this is Spot Instances, which may be terminated by AWS regardless of protection status.
-     * This property is set to NO_PROTECTION by default.
+     * Unprotected instances that have active game servers running might be terminated during a scale-down event,
+     * causing players to be dropped from the game. Protected instances cannot be terminated while there are active game
+     * servers running except in the event of a forced game server group deletion (see ). An exception to this is with
+     * Spot Instances, which can be terminated by AWS regardless of protection status. This property is set to
+     * <code>NO_PROTECTION</code> by default.
      * </p>
      * 
      * @param gameServerProtectionPolicy
      *        A flag that indicates whether instances in the game server group are protected from early termination.
-     *        Unprotected instances that have active game servers running may by terminated during a scale-down event,
+     *        Unprotected instances that have active game servers running might be terminated during a scale-down event,
      *        causing players to be dropped from the game. Protected instances cannot be terminated while there are
-     *        active game servers running. An exception to this is Spot Instances, which may be terminated by AWS
-     *        regardless of protection status. This property is set to NO_PROTECTION by default.
+     *        active game servers running except in the event of a forced game server group deletion (see ). An
+     *        exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status.
+     *        This property is set to <code>NO_PROTECTION</code> by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerProtectionPolicy
      */
@@ -856,13 +1018,17 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all
-     * GameLift FleetIQ-supported availability zones are used; this parameter allows you to specify VPCs that you've set
-     * up.
+     * GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've
+     * set up. This property cannot be updated after the game server group is created, and the corresponding Auto
+     * Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is
+     * updated directly.
      * </p>
      * 
      * @return A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default,
-     *         all GameLift FleetIQ-supported availability zones are used; this parameter allows you to specify VPCs
-     *         that you've set up.
+     *         all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs
+     *         that you've set up. This property cannot be updated after the game server group is created, and the
+     *         corresponding Auto Scaling group will always use the property value that is set with this request, even
+     *         if the Auto Scaling group is updated directly.
      */
 
     public java.util.List<String> getVpcSubnets() {
@@ -872,14 +1038,18 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all
-     * GameLift FleetIQ-supported availability zones are used; this parameter allows you to specify VPCs that you've set
-     * up.
+     * GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've
+     * set up. This property cannot be updated after the game server group is created, and the corresponding Auto
+     * Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is
+     * updated directly.
      * </p>
      * 
      * @param vpcSubnets
      *        A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default,
-     *        all GameLift FleetIQ-supported availability zones are used; this parameter allows you to specify VPCs that
-     *        you've set up.
+     *        all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs
+     *        that you've set up. This property cannot be updated after the game server group is created, and the
+     *        corresponding Auto Scaling group will always use the property value that is set with this request, even if
+     *        the Auto Scaling group is updated directly.
      */
 
     public void setVpcSubnets(java.util.Collection<String> vpcSubnets) {
@@ -894,8 +1064,10 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all
-     * GameLift FleetIQ-supported availability zones are used; this parameter allows you to specify VPCs that you've set
-     * up.
+     * GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've
+     * set up. This property cannot be updated after the game server group is created, and the corresponding Auto
+     * Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is
+     * updated directly.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -905,8 +1077,10 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param vpcSubnets
      *        A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default,
-     *        all GameLift FleetIQ-supported availability zones are used; this parameter allows you to specify VPCs that
-     *        you've set up.
+     *        all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs
+     *        that you've set up. This property cannot be updated after the game server group is created, and the
+     *        corresponding Auto Scaling group will always use the property value that is set with this request, even if
+     *        the Auto Scaling group is updated directly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -923,14 +1097,18 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default, all
-     * GameLift FleetIQ-supported availability zones are used; this parameter allows you to specify VPCs that you've set
-     * up.
+     * GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs that you've
+     * set up. This property cannot be updated after the game server group is created, and the corresponding Auto
+     * Scaling group will always use the property value that is set with this request, even if the Auto Scaling group is
+     * updated directly.
      * </p>
      * 
      * @param vpcSubnets
      *        A list of virtual private cloud (VPC) subnets to use with instances in the game server group. By default,
-     *        all GameLift FleetIQ-supported availability zones are used; this parameter allows you to specify VPCs that
-     *        you've set up.
+     *        all GameLift FleetIQ-supported Availability Zones are used. You can use this parameter to specify VPCs
+     *        that you've set up. This property cannot be updated after the game server group is created, and the
+     *        corresponding Auto Scaling group will always use the property value that is set with this request, even if
+     *        the Auto Scaling group is updated directly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -942,19 +1120,20 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs.
-     * Tagging AWS resources are useful for resource management, access management, and cost allocation. For more
+     * Tagging AWS resources is useful for resource management, access management, and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
      * Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be
-     * lower than stated. See the AWS General Reference for actual tagging limits.
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags, respectively. The maximum tag
+     * limit may be lower than stated. See the AWS General Reference for actual tagging limits.
      * </p>
      * 
      * @return A list of labels to assign to the new game server group resource. Tags are developer-defined key-value
-     *         pairs. Tagging AWS resources are useful for resource management, access management, and cost allocation.
+     *         pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation.
      *         For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
      *         Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
-     *         <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
-     *         The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     *         <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags,
+     *         respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual
+     *         tagging limits.
      */
 
     public java.util.List<Tag> getTags() {
@@ -964,20 +1143,21 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs.
-     * Tagging AWS resources are useful for resource management, access management, and cost allocation. For more
+     * Tagging AWS resources is useful for resource management, access management, and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
      * Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be
-     * lower than stated. See the AWS General Reference for actual tagging limits.
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags, respectively. The maximum tag
+     * limit may be lower than stated. See the AWS General Reference for actual tagging limits.
      * </p>
      * 
      * @param tags
      *        A list of labels to assign to the new game server group resource. Tags are developer-defined key-value
-     *        pairs. Tagging AWS resources are useful for resource management, access management, and cost allocation.
+     *        pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
      *        Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
-     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
-     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags,
+     *        respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual
+     *        tagging limits.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -992,11 +1172,11 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs.
-     * Tagging AWS resources are useful for resource management, access management, and cost allocation. For more
+     * Tagging AWS resources is useful for resource management, access management, and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
      * Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be
-     * lower than stated. See the AWS General Reference for actual tagging limits.
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags, respectively. The maximum tag
+     * limit may be lower than stated. See the AWS General Reference for actual tagging limits.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1006,11 +1186,12 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param tags
      *        A list of labels to assign to the new game server group resource. Tags are developer-defined key-value
-     *        pairs. Tagging AWS resources are useful for resource management, access management, and cost allocation.
+     *        pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
      *        Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
-     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
-     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags,
+     *        respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual
+     *        tagging limits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1027,20 +1208,21 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of labels to assign to the new game server group resource. Tags are developer-defined key-value pairs.
-     * Tagging AWS resources are useful for resource management, access management, and cost allocation. For more
+     * Tagging AWS resources is useful for resource management, access management, and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
      * Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>,
-     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be
-     * lower than stated. See the AWS General Reference for actual tagging limits.
+     * <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags, respectively. The maximum tag
+     * limit may be lower than stated. See the AWS General Reference for actual tagging limits.
      * </p>
      * 
      * @param tags
      *        A list of labels to assign to the new game server group resource. Tags are developer-defined key-value
-     *        pairs. Tagging AWS resources are useful for resource management, access management, and cost allocation.
+     *        pairs. Tagging AWS resources is useful for resource management, access management, and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
      *        Tagging AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
-     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
-     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
+     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags,
+     *        respectively. The maximum tag limit may be lower than stated. See the AWS General Reference for actual
+     *        tagging limits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

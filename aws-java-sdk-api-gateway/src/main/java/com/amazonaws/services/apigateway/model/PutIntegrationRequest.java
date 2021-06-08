@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,7 +63,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
      * specification</a>, for either standard integration, where <code>connectionType</code> is not
      * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing.
@@ -161,13 +161,17 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     private String passthroughBehavior;
     /**
      * <p>
-     * A list of request parameters whose values are to be cached.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      */
     private String cacheNamespace;
     /**
      * <p>
-     * An API-specific tag group of related cached parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      */
     private java.util.List<String> cacheKeyParameters;
@@ -202,6 +206,8 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private Integer timeoutInMillis;
+
+    private TlsConfig tlsConfig;
 
     /**
      * <p>
@@ -445,7 +451,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
      * specification</a>, for either standard integration, where <code>connectionType</code> is not
      * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing.
@@ -477,11 +483,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded
-     *        HTTP(S) URL according to the <a target="_blank"
-     *        href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either
-     *        standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
-     *        integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration,
-     *        the URI is not used for routing.
+     *        HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     *        target="_blank">RFC-3986 specification</a>, for either standard integration, where
+     *        <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where
+     *        <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
+     *        for routing.
      *        </p>
      *        </li>
      *        <li>
@@ -517,7 +523,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
      * specification</a>, for either standard integration, where <code>connectionType</code> is not
      * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing.
@@ -548,11 +554,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded
-     *         HTTP(S) URL according to the <a target="_blank"
-     *         href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either
-     *         standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
-     *         integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration,
-     *         the URI is not used for routing.
+     *         HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     *         target="_blank">RFC-3986 specification</a>, for either standard integration, where
+     *         <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where
+     *         <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
+     *         for routing.
      *         </p>
      *         </li>
      *         <li>
@@ -588,7 +594,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
      * specification</a>, for either standard integration, where <code>connectionType</code> is not
      * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing.
@@ -620,11 +626,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded
-     *        HTTP(S) URL according to the <a target="_blank"
-     *        href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either
-     *        standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
-     *        integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration,
-     *        the URI is not used for routing.
+     *        HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     *        target="_blank">RFC-3986 specification</a>, for either standard integration, where
+     *        <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where
+     *        <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
+     *        for routing.
      *        </p>
      *        </li>
      *        <li>
@@ -1192,11 +1198,15 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of request parameters whose values are to be cached.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
      * @param cacheNamespace
-     *        A list of request parameters whose values are to be cached.
+     *        Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *        <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *        return the same cached data for requests to different resources.
      */
 
     public void setCacheNamespace(String cacheNamespace) {
@@ -1205,10 +1215,14 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of request parameters whose values are to be cached.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
-     * @return A list of request parameters whose values are to be cached.
+     * @return Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *         <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *         return the same cached data for requests to different resources.
      */
 
     public String getCacheNamespace() {
@@ -1217,11 +1231,15 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of request parameters whose values are to be cached.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
      * @param cacheNamespace
-     *        A list of request parameters whose values are to be cached.
+     *        Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *        <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *        return the same cached data for requests to different resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1232,10 +1250,14 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * 
-     * @return An API-specific tag group of related cached parameters.
+     * @return A list of request parameters whose values API Gateway caches. To be valid values for
+     *         <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *         <code>requestParameters</code>.
      */
 
     public java.util.List<String> getCacheKeyParameters() {
@@ -1244,11 +1266,15 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * 
      * @param cacheKeyParameters
-     *        An API-specific tag group of related cached parameters.
+     *        A list of request parameters whose values API Gateway caches. To be valid values for
+     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *        <code>requestParameters</code>.
      */
 
     public void setCacheKeyParameters(java.util.Collection<String> cacheKeyParameters) {
@@ -1262,7 +1288,9 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1271,7 +1299,9 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param cacheKeyParameters
-     *        An API-specific tag group of related cached parameters.
+     *        A list of request parameters whose values API Gateway caches. To be valid values for
+     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *        <code>requestParameters</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1287,11 +1317,15 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters.
+     * A list of request parameters whose values API Gateway caches. To be valid values for
+     * <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     * <code>requestParameters</code>.
      * </p>
      * 
      * @param cacheKeyParameters
-     *        An API-specific tag group of related cached parameters.
+     *        A list of request parameters whose values API Gateway caches. To be valid values for
+     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
+     *        <code>requestParameters</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1600,6 +1634,32 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * @param tlsConfig
+     */
+
+    public void setTlsConfig(TlsConfig tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public TlsConfig getTlsConfig() {
+        return this.tlsConfig;
+    }
+
+    /**
+     * @param tlsConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntegrationRequest withTlsConfig(TlsConfig tlsConfig) {
+        setTlsConfig(tlsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1642,7 +1702,9 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getContentHandling() != null)
             sb.append("ContentHandling: ").append(getContentHandling()).append(",");
         if (getTimeoutInMillis() != null)
-            sb.append("TimeoutInMillis: ").append(getTimeoutInMillis());
+            sb.append("TimeoutInMillis: ").append(getTimeoutInMillis()).append(",");
+        if (getTlsConfig() != null)
+            sb.append("TlsConfig: ").append(getTlsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1721,6 +1783,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTimeoutInMillis() != null && other.getTimeoutInMillis().equals(this.getTimeoutInMillis()) == false)
             return false;
+        if (other.getTlsConfig() == null ^ this.getTlsConfig() == null)
+            return false;
+        if (other.getTlsConfig() != null && other.getTlsConfig().equals(this.getTlsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1745,6 +1811,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCacheKeyParameters() == null) ? 0 : getCacheKeyParameters().hashCode());
         hashCode = prime * hashCode + ((getContentHandling() == null) ? 0 : getContentHandling().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMillis() == null) ? 0 : getTimeoutInMillis().hashCode());
+        hashCode = prime * hashCode + ((getTlsConfig() == null) ? 0 : getTlsConfig().hashCode());
         return hashCode;
     }
 

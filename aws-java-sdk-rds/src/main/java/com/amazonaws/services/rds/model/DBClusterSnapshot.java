@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,10 +55,16 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private java.util.Date snapshotCreateTime;
     /**
      * <p>
-     * Specifies the name of the database engine.
+     * Specifies the name of the database engine for this DB cluster snapshot.
      * </p>
      */
     private String engine;
+    /**
+     * <p>
+     * Provides the engine mode of the database engine for this DB cluster snapshot.
+     * </p>
+     */
+    private String engineMode;
     /**
      * <p>
      * Specifies the allocated storage size in gibibytes (GiB).
@@ -91,7 +97,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private java.util.Date clusterCreateTime;
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Provides the master username for this DB cluster snapshot.
      * </p>
      */
     private String masterUsername;
@@ -129,6 +135,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      */
     private String kmsKeyId;
     /**
@@ -151,6 +161,8 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
+
+    private com.amazonaws.internal.SdkInternalList<Tag> tagList;
 
     /**
      * <p>
@@ -347,11 +359,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the database engine.
+     * Specifies the name of the database engine for this DB cluster snapshot.
      * </p>
      * 
      * @param engine
-     *        Specifies the name of the database engine.
+     *        Specifies the name of the database engine for this DB cluster snapshot.
      */
 
     public void setEngine(String engine) {
@@ -360,10 +372,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the database engine.
+     * Specifies the name of the database engine for this DB cluster snapshot.
      * </p>
      * 
-     * @return Specifies the name of the database engine.
+     * @return Specifies the name of the database engine for this DB cluster snapshot.
      */
 
     public String getEngine() {
@@ -372,16 +384,56 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the name of the database engine.
+     * Specifies the name of the database engine for this DB cluster snapshot.
      * </p>
      * 
      * @param engine
-     *        Specifies the name of the database engine.
+     *        Specifies the name of the database engine for this DB cluster snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBClusterSnapshot withEngine(String engine) {
         setEngine(engine);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides the engine mode of the database engine for this DB cluster snapshot.
+     * </p>
+     * 
+     * @param engineMode
+     *        Provides the engine mode of the database engine for this DB cluster snapshot.
+     */
+
+    public void setEngineMode(String engineMode) {
+        this.engineMode = engineMode;
+    }
+
+    /**
+     * <p>
+     * Provides the engine mode of the database engine for this DB cluster snapshot.
+     * </p>
+     * 
+     * @return Provides the engine mode of the database engine for this DB cluster snapshot.
+     */
+
+    public String getEngineMode() {
+        return this.engineMode;
+    }
+
+    /**
+     * <p>
+     * Provides the engine mode of the database engine for this DB cluster snapshot.
+     * </p>
+     * 
+     * @param engineMode
+     *        Provides the engine mode of the database engine for this DB cluster snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBClusterSnapshot withEngineMode(String engineMode) {
+        setEngineMode(engineMode);
         return this;
     }
 
@@ -587,11 +639,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Provides the master username for this DB cluster snapshot.
      * </p>
      * 
      * @param masterUsername
-     *        Provides the master username for the DB cluster snapshot.
+     *        Provides the master username for this DB cluster snapshot.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -600,10 +652,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Provides the master username for this DB cluster snapshot.
      * </p>
      * 
-     * @return Provides the master username for the DB cluster snapshot.
+     * @return Provides the master username for this DB cluster snapshot.
      */
 
     public String getMasterUsername() {
@@ -612,11 +664,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Provides the master username for this DB cluster snapshot.
      * </p>
      * 
      * @param masterUsername
-     *        Provides the master username for the DB cluster snapshot.
+     *        Provides the master username for this DB cluster snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -841,10 +893,17 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
      *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
-     *        snapshot.
+     *        snapshot.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -855,9 +914,16 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
-     *         snapshot.
+     *         snapshot.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -868,10 +934,17 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
      *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
-     *        snapshot.
+     *        snapshot.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1027,6 +1100,61 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTagList() {
+        if (tagList == null) {
+            tagList = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tagList;
+    }
+
+    /**
+     * @param tagList
+     */
+
+    public void setTagList(java.util.Collection<Tag> tagList) {
+        if (tagList == null) {
+            this.tagList = null;
+            return;
+        }
+
+        this.tagList = new com.amazonaws.internal.SdkInternalList<Tag>(tagList);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBClusterSnapshot withTagList(Tag... tagList) {
+        if (this.tagList == null) {
+            setTagList(new com.amazonaws.internal.SdkInternalList<Tag>(tagList.length));
+        }
+        for (Tag ele : tagList) {
+            this.tagList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBClusterSnapshot withTagList(java.util.Collection<Tag> tagList) {
+        setTagList(tagList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1048,6 +1176,8 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
             sb.append("SnapshotCreateTime: ").append(getSnapshotCreateTime()).append(",");
         if (getEngine() != null)
             sb.append("Engine: ").append(getEngine()).append(",");
+        if (getEngineMode() != null)
+            sb.append("EngineMode: ").append(getEngineMode()).append(",");
         if (getAllocatedStorage() != null)
             sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
         if (getStatus() != null)
@@ -1077,7 +1207,9 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (getSourceDBClusterSnapshotArn() != null)
             sb.append("SourceDBClusterSnapshotArn: ").append(getSourceDBClusterSnapshotArn()).append(",");
         if (getIAMDatabaseAuthenticationEnabled() != null)
-            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled());
+            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
+        if (getTagList() != null)
+            sb.append("TagList: ").append(getTagList());
         sb.append("}");
         return sb.toString();
     }
@@ -1111,6 +1243,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (other.getEngine() == null ^ this.getEngine() == null)
             return false;
         if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false)
+            return false;
+        if (other.getEngineMode() == null ^ this.getEngineMode() == null)
+            return false;
+        if (other.getEngineMode() != null && other.getEngineMode().equals(this.getEngineMode()) == false)
             return false;
         if (other.getAllocatedStorage() == null ^ this.getAllocatedStorage() == null)
             return false;
@@ -1173,6 +1309,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (other.getIAMDatabaseAuthenticationEnabled() != null
                 && other.getIAMDatabaseAuthenticationEnabled().equals(this.getIAMDatabaseAuthenticationEnabled()) == false)
             return false;
+        if (other.getTagList() == null ^ this.getTagList() == null)
+            return false;
+        if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
+            return false;
         return true;
     }
 
@@ -1186,6 +1326,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getSnapshotCreateTime() == null) ? 0 : getSnapshotCreateTime().hashCode());
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
+        hashCode = prime * hashCode + ((getEngineMode() == null) ? 0 : getEngineMode().hashCode());
         hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
@@ -1201,6 +1342,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBClusterSnapshotArn() == null) ? 0 : getDBClusterSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getSourceDBClusterSnapshotArn() == null) ? 0 : getSourceDBClusterSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         return hashCode;
     }
 

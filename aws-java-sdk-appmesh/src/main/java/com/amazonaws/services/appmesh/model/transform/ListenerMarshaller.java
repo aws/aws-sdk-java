@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListenerMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CONNECTIONPOOL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionPool").build();
     private static final MarshallingInfo<StructuredPojo> HEALTHCHECK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthCheck").build();
+    private static final MarshallingInfo<StructuredPojo> OUTLIERDETECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outlierDetection").build();
     private static final MarshallingInfo<StructuredPojo> PORTMAPPING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("portMapping").build();
+    private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeout").build();
     private static final MarshallingInfo<StructuredPojo> TLS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tls").build();
 
@@ -50,8 +56,11 @@ public class ListenerMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listener.getConnectionPool(), CONNECTIONPOOL_BINDING);
             protocolMarshaller.marshall(listener.getHealthCheck(), HEALTHCHECK_BINDING);
+            protocolMarshaller.marshall(listener.getOutlierDetection(), OUTLIERDETECTION_BINDING);
             protocolMarshaller.marshall(listener.getPortMapping(), PORTMAPPING_BINDING);
+            protocolMarshaller.marshall(listener.getTimeout(), TIMEOUT_BINDING);
             protocolMarshaller.marshall(listener.getTls(), TLS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

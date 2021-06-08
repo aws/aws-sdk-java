@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,11 +35,21 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A CloudFormation stack or set of tags. You can create one scaling plan per application source.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     * >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      */
     private ApplicationSource applicationSource;
     /**
      * <p>
      * The scaling instructions.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     * >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
      * </p>
      */
     private java.util.List<ScalingInstruction> scalingInstructions;
@@ -88,9 +98,18 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A CloudFormation stack or set of tags. You can create one scaling plan per application source.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     * >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
      * @param applicationSource
-     *        A CloudFormation stack or set of tags. You can create one scaling plan per application source.
+     *        A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     *        >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
      */
 
     public void setApplicationSource(ApplicationSource applicationSource) {
@@ -101,8 +120,17 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A CloudFormation stack or set of tags. You can create one scaling plan per application source.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     * >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
-     * @return A CloudFormation stack or set of tags. You can create one scaling plan per application source.
+     * @return A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     *         >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
      */
 
     public ApplicationSource getApplicationSource() {
@@ -113,9 +141,18 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A CloudFormation stack or set of tags. You can create one scaling plan per application source.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     * >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
      * @param applicationSource
-     *        A CloudFormation stack or set of tags. You can create one scaling plan per application source.
+     *        A CloudFormation stack or set of tags. You can create one scaling plan per application source.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html"
+     *        >ApplicationSource</a> in the <i>AWS Auto Scaling API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,8 +165,17 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The scaling instructions.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     * >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
-     * @return The scaling instructions.
+     * @return The scaling instructions.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     *         >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
      */
 
     public java.util.List<ScalingInstruction> getScalingInstructions() {
@@ -140,9 +186,18 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The scaling instructions.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     * >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
      * @param scalingInstructions
-     *        The scaling instructions.
+     *        The scaling instructions.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     *        >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
      */
 
     public void setScalingInstructions(java.util.Collection<ScalingInstruction> scalingInstructions) {
@@ -159,13 +214,22 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * The scaling instructions.
      * </p>
      * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     * >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setScalingInstructions(java.util.Collection)} or {@link #withScalingInstructions(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param scalingInstructions
-     *        The scaling instructions.
+     *        The scaling instructions.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     *        >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,9 +247,18 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The scaling instructions.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     * >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
+     * </p>
      * 
      * @param scalingInstructions
-     *        The scaling instructions.
+     *        The scaling instructions.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html"
+     *        >ScalingInstruction</a> in the <i>AWS Auto Scaling API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

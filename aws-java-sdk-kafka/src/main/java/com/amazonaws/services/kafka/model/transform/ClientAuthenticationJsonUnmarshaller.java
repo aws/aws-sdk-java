@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class ClientAuthenticationJsonUnmarshaller implements Unmarshaller<Client
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("sasl", targetDepth)) {
+                    context.nextToken();
+                    clientAuthentication.setSasl(SaslJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("tls", targetDepth)) {
                     context.nextToken();
                     clientAuthentication.setTls(TlsJsonUnmarshaller.getInstance().unmarshall(context));

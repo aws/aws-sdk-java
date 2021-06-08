@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -377,6 +377,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new CreateDevicePoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDevicePool");
@@ -438,6 +440,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new CreateInstanceProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInstanceProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstanceProfile");
@@ -500,6 +504,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new CreateNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkProfile");
@@ -564,6 +570,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new CreateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
@@ -627,6 +635,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(createRemoteAccessSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRemoteAccessSession");
@@ -656,6 +666,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * 
      * @param createTestGridProjectRequest
      * @return Result of the CreateTestGridProject operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
      * @throws InternalServiceException
      *         An internal exception was raised in the service. Contact <a
      *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
@@ -685,6 +699,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new CreateTestGridProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTestGridProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTestGridProject");
@@ -747,6 +763,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new CreateTestGridUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTestGridUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTestGridUrl");
@@ -809,6 +827,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new CreateUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUpload");
@@ -869,6 +889,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(createVPCEConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVPCEConfiguration");
@@ -932,6 +954,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteDevicePoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDevicePool");
@@ -993,6 +1017,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteInstanceProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInstanceProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstanceProfile");
@@ -1055,6 +1081,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkProfile");
@@ -1120,6 +1148,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
@@ -1183,6 +1213,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(deleteRemoteAccessSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRemoteAccessSession");
@@ -1249,6 +1281,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRun");
@@ -1321,6 +1355,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteTestGridProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTestGridProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTestGridProject");
@@ -1384,6 +1420,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUpload");
@@ -1447,6 +1485,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(deleteVPCEConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVPCEConfiguration");
@@ -1510,6 +1550,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSettings");
@@ -1572,6 +1614,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevice");
@@ -1633,6 +1677,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetDeviceInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceInstance");
@@ -1695,6 +1741,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetDevicePoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevicePool");
@@ -1758,6 +1806,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(getDevicePoolCompatibilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevicePoolCompatibility");
@@ -1820,6 +1870,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetInstanceProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceProfile");
@@ -1882,6 +1934,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJob");
@@ -1943,6 +1997,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNetworkProfile");
@@ -2011,6 +2067,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetOfferingStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOfferingStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOfferingStatus");
@@ -2073,6 +2131,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProject");
@@ -2135,6 +2195,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetRemoteAccessSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRemoteAccessSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRemoteAccessSession");
@@ -2198,6 +2260,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRun");
@@ -2260,6 +2324,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetSuiteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSuiteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSuite");
@@ -2322,6 +2388,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetTestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTest");
@@ -2383,6 +2451,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetTestGridProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTestGridProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTestGridProject");
@@ -2459,6 +2529,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetTestGridSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTestGridSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTestGridSession");
@@ -2521,6 +2593,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUpload");
@@ -2580,6 +2654,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetVPCEConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVPCEConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVPCEConfiguration");
@@ -2645,6 +2721,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(installToRemoteAccessSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InstallToRemoteAccessSession");
@@ -2708,6 +2786,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListArtifactsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listArtifactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListArtifacts");
@@ -2769,6 +2849,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListDeviceInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeviceInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceInstances");
@@ -2831,6 +2913,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListDevicePoolsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevicePoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevicePools");
@@ -2893,6 +2977,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
@@ -2954,6 +3040,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListInstanceProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInstanceProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstanceProfiles");
@@ -3016,6 +3104,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
@@ -3077,6 +3167,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListNetworkProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNetworkProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNetworkProfiles");
@@ -3143,6 +3235,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListOfferingPromotionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOfferingPromotionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferingPromotions");
@@ -3213,6 +3307,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(listOfferingTransactionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferingTransactions");
@@ -3281,6 +3377,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListOfferingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferings");
@@ -3343,6 +3441,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
@@ -3406,6 +3506,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(listRemoteAccessSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRemoteAccessSessions");
@@ -3469,6 +3571,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListRunsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuns");
@@ -3531,6 +3635,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListSamplesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSamplesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSamples");
@@ -3593,6 +3699,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListSuitesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSuitesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSuites");
@@ -3652,6 +3760,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -3711,6 +3821,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListTestGridProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTestGridProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestGridProjects");
@@ -3773,6 +3885,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(listTestGridSessionActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestGridSessionActions");
@@ -3836,6 +3950,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(listTestGridSessionArtifactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestGridSessionArtifacts");
@@ -3898,6 +4014,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListTestGridSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTestGridSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestGridSessions");
@@ -3960,6 +4078,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListTestsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTests");
@@ -4027,6 +4147,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListUniqueProblemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUniqueProblemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUniqueProblems");
@@ -4089,6 +4211,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListUploadsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUploadsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUploads");
@@ -4146,6 +4270,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListVPCEConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVPCEConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVPCEConfigurations");
@@ -4214,6 +4340,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new PurchaseOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(purchaseOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseOffering");
@@ -4281,6 +4409,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new RenewOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(renewOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RenewOffering");
@@ -4345,6 +4475,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ScheduleRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(scheduleRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ScheduleRun");
@@ -4409,6 +4541,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new StopJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopJob");
@@ -4472,6 +4606,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(stopRemoteAccessSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopRemoteAccessSession");
@@ -4538,6 +4674,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new StopRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopRun");
@@ -4605,6 +4743,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -4664,6 +4804,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -4725,6 +4867,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new UpdateDeviceInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeviceInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceInstance");
@@ -4788,6 +4932,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new UpdateDevicePoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDevicePool");
@@ -4849,6 +4995,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new UpdateInstanceProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInstanceProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInstanceProfile");
@@ -4911,6 +5059,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new UpdateNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNetworkProfile");
@@ -4973,6 +5123,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new UpdateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");
@@ -5005,6 +5157,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *         The specified entity was not found.
      * @throws ArgumentException
      *         An invalid argument was specified.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
      * @throws InternalServiceException
      *         An internal exception was raised in the service. Contact <a
      *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
@@ -5034,6 +5188,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new UpdateTestGridProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTestGridProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTestGridProject");
@@ -5096,6 +5252,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new UpdateUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUpload");
@@ -5159,6 +5317,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(updateVPCEConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Device Farm");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVPCEConfiguration");
@@ -5255,6 +5415,11 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

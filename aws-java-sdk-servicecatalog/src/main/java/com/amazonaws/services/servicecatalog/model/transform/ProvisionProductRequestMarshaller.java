@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,10 +34,16 @@ public class ProvisionProductRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
     private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<String> PRODUCTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductName").build();
     private static final MarshallingInfo<String> PROVISIONINGARTIFACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactId").build();
+    private static final MarshallingInfo<String> PROVISIONINGARTIFACTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactName").build();
     private static final MarshallingInfo<String> PATHID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PathId").build();
+    private static final MarshallingInfo<String> PATHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PathName").build();
     private static final MarshallingInfo<String> PROVISIONEDPRODUCTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedProductName").build();
     private static final MarshallingInfo<List> PROVISIONINGPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -70,8 +76,11 @@ public class ProvisionProductRequestMarshaller {
         try {
             protocolMarshaller.marshall(provisionProductRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
             protocolMarshaller.marshall(provisionProductRequest.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getProductName(), PRODUCTNAME_BINDING);
             protocolMarshaller.marshall(provisionProductRequest.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getProvisioningArtifactName(), PROVISIONINGARTIFACTNAME_BINDING);
             protocolMarshaller.marshall(provisionProductRequest.getPathId(), PATHID_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getPathName(), PATHNAME_BINDING);
             protocolMarshaller.marshall(provisionProductRequest.getProvisionedProductName(), PROVISIONEDPRODUCTNAME_BINDING);
             protocolMarshaller.marshall(provisionProductRequest.getProvisioningParameters(), PROVISIONINGPARAMETERS_BINDING);
             protocolMarshaller.marshall(provisionProductRequest.getProvisioningPreferences(), PROVISIONINGPREFERENCES_BINDING);

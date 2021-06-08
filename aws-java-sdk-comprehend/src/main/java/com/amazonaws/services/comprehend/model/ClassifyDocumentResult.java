@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The labels used the document being analyzed. These are used for multi-label trained models. Individual labels
-     * represent different categories that are related in some manner and are not multually exclusive. For example, a
+     * represent different categories that are related in some manner and are not mutually exclusive. For example, a
      * movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at
      * the same time.
      * </p>
@@ -130,15 +130,15 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The labels used the document being analyzed. These are used for multi-label trained models. Individual labels
-     * represent different categories that are related in some manner and are not multually exclusive. For example, a
+     * represent different categories that are related in some manner and are not mutually exclusive. For example, a
      * movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at
      * the same time.
      * </p>
      * 
      * @return The labels used the document being analyzed. These are used for multi-label trained models. Individual
-     *         labels represent different categories that are related in some manner and are not multually exclusive.
-     *         For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie,
-     *         and a comedy, all at the same time.
+     *         labels represent different categories that are related in some manner and are not mutually exclusive. For
+     *         example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and
+     *         a comedy, all at the same time.
      */
 
     public java.util.List<DocumentLabel> getLabels() {
@@ -148,14 +148,14 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The labels used the document being analyzed. These are used for multi-label trained models. Individual labels
-     * represent different categories that are related in some manner and are not multually exclusive. For example, a
+     * represent different categories that are related in some manner and are not mutually exclusive. For example, a
      * movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at
      * the same time.
      * </p>
      * 
      * @param labels
      *        The labels used the document being analyzed. These are used for multi-label trained models. Individual
-     *        labels represent different categories that are related in some manner and are not multually exclusive. For
+     *        labels represent different categories that are related in some manner and are not mutually exclusive. For
      *        example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a
      *        comedy, all at the same time.
      */
@@ -172,7 +172,7 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The labels used the document being analyzed. These are used for multi-label trained models. Individual labels
-     * represent different categories that are related in some manner and are not multually exclusive. For example, a
+     * represent different categories that are related in some manner and are not mutually exclusive. For example, a
      * movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at
      * the same time.
      * </p>
@@ -184,7 +184,7 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
      * 
      * @param labels
      *        The labels used the document being analyzed. These are used for multi-label trained models. Individual
-     *        labels represent different categories that are related in some manner and are not multually exclusive. For
+     *        labels represent different categories that are related in some manner and are not mutually exclusive. For
      *        example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a
      *        comedy, all at the same time.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -203,14 +203,14 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The labels used the document being analyzed. These are used for multi-label trained models. Individual labels
-     * represent different categories that are related in some manner and are not multually exclusive. For example, a
+     * represent different categories that are related in some manner and are not mutually exclusive. For example, a
      * movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at
      * the same time.
      * </p>
      * 
      * @param labels
      *        The labels used the document being analyzed. These are used for multi-label trained models. Individual
-     *        labels represent different categories that are related in some manner and are not multually exclusive. For
+     *        labels represent different categories that are related in some manner and are not mutually exclusive. For
      *        example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a
      *        comedy, all at the same time.
      * @return Returns a reference to this object so that method calls can be chained together.

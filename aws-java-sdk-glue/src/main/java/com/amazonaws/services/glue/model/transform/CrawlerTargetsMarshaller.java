@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class CrawlerTargetsMarshaller {
             .marshallLocationName("S3Targets").build();
     private static final MarshallingInfo<List> JDBCTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("JdbcTargets").build();
+    private static final MarshallingInfo<List> MONGODBTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MongoDBTargets").build();
     private static final MarshallingInfo<List> DYNAMODBTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DynamoDBTargets").build();
     private static final MarshallingInfo<List> CATALOGTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -55,6 +57,7 @@ public class CrawlerTargetsMarshaller {
         try {
             protocolMarshaller.marshall(crawlerTargets.getS3Targets(), S3TARGETS_BINDING);
             protocolMarshaller.marshall(crawlerTargets.getJdbcTargets(), JDBCTARGETS_BINDING);
+            protocolMarshaller.marshall(crawlerTargets.getMongoDBTargets(), MONGODBTARGETS_BINDING);
             protocolMarshaller.marshall(crawlerTargets.getDynamoDBTargets(), DYNAMODBTARGETS_BINDING);
             protocolMarshaller.marshall(crawlerTargets.getCatalogTargets(), CATALOGTARGETS_BINDING);
         } catch (Exception e) {

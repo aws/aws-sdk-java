@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -42,6 +42,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
@@ -50,8 +55,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
-     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and
+     * <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -71,7 +76,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
-     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
+     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
      * <li>
@@ -98,9 +117,24 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only by Network Load Balancers:
+     * The following attributes are supported only by Network Load Balancers:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the
+     * target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled
+     * for UDP and TCP_UDP target groups.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
@@ -122,7 +156,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -133,6 +167,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
@@ -141,8 +180,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
-     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and
+     * <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -162,7 +201,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
-     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
+     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
      * <li>
@@ -189,9 +242,24 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only by Network Load Balancers:
+     * The following attributes are supported only by Network Load Balancers:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the
+     * target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled
+     * for UDP and TCP_UDP target groups.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
@@ -203,7 +271,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        The following attribute is supported by all load balancers:
      *        </p>
      *        <ul>
      *        <li>
@@ -214,6 +282,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        Lambda function, this attribute is not supported.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
      *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
@@ -223,7 +296,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code>
-     *        for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     *        and <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load
+     *        Balancers.
      *        </p>
      *        </li>
      *        </ul>
@@ -243,8 +317,23 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
      *        target receives an increasing share of the traffic to the target group. After this time period ends, the
-     *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     *        disabled by default.
+     *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     *        seconds (disabled).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names
+     *        that start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     *        <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests
+     *        from a client should be routed to the same target. After this time period expires, the application-based
+     *        cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day
+     *        (86400 seconds).
      *        </p>
      *        </li>
      *        <li>
@@ -272,9 +361,24 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attribute is supported only by Network Load Balancers:
+     *        The following attributes are supported only by Network Load Balancers:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer
+     *        terminates connections at the end of the deregistration timeout. The value is <code>true</code> or
+     *        <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value
+     *        is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address
+     *        and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation
+     *        cannot be disabled for UDP and TCP_UDP target groups.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value
@@ -292,7 +396,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -303,6 +407,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
@@ -311,8 +420,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
-     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and
+     * <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -332,7 +441,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
-     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
+     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
      * <li>
@@ -359,9 +482,24 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only by Network Load Balancers:
+     * The following attributes are supported only by Network Load Balancers:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the
+     * target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled
+     * for UDP and TCP_UDP target groups.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
@@ -372,7 +510,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * 
      * @return The name of the attribute.</p>
      *         <p>
-     *         The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *         The following attribute is supported by all load balancers:
      *         </p>
      *         <ul>
      *         <li>
@@ -383,6 +521,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         Lambda function, this attribute is not supported.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *         </p>
+     *         <ul>
      *         <li>
      *         <p>
      *         <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
@@ -392,8 +535,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>stickiness.type</code> - The type of sticky sessions. The possible values are
-     *         <code>lb_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load
-     *         Balancers.
+     *         <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers or
+     *         <code>source_ip</code> for Network Load Balancers.
      *         </p>
      *         </li>
      *         </ul>
@@ -413,8 +556,23 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <p>
      *         <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
      *         target receives an increasing share of the traffic to the target group. After this time period ends, the
-     *         target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     *         disabled by default.
+     *         target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     *         seconds (disabled).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie.
+     *         Names that start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>,
+     *         and <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests
+     *         from a client should be routed to the same target. After this time period expires, the application-based
+     *         cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day
+     *         (86400 seconds).
      *         </p>
      *         </li>
      *         <li>
@@ -442,9 +600,24 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         The following attribute is supported only by Network Load Balancers:
+     *         The following attributes are supported only by Network Load Balancers:
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer
+     *         terminates connections at the end of the deregistration timeout. The value is <code>true</code> or
+     *         <code>false</code>. The default is <code>false</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value
+     *         is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP
+     *         address and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP
+     *         preservation cannot be disabled for UDP and TCP_UDP target groups.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value
@@ -462,7 +635,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * The following attribute is supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -473,6 +646,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
@@ -481,8 +659,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> for
-     * Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code> and
+     * <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * </ul>
@@ -502,7 +680,21 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
-     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names that
+     * start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     * <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the application-based cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
      * <li>
@@ -529,9 +721,24 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * The following attribute is supported only by Network Load Balancers:
+     * The following attributes are supported only by Network Load Balancers:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer terminates
+     * connections at the end of the deregistration timeout. The value is <code>true</code> or <code>false</code>. The
+     * default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address and the
+     * target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation cannot be disabled
+     * for UDP and TCP_UDP target groups.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
@@ -543,7 +750,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        The following attribute is supported by all load balancers:
      *        </p>
      *        <ul>
      *        <li>
@@ -554,6 +761,11 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        Lambda function, this attribute is not supported.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
      *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
@@ -563,7 +775,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>stickiness.type</code> - The type of sticky sessions. The possible values are <code>lb_cookie</code>
-     *        for Application Load Balancers or <code>source_ip</code> for Network Load Balancers.
+     *        and <code>app_cookie</code> for Application Load Balancers or <code>source_ip</code> for Network Load
+     *        Balancers.
      *        </p>
      *        </li>
      *        </ul>
@@ -583,8 +796,23 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
      *        target receives an increasing share of the traffic to the target group. After this time period ends, the
-     *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     *        disabled by default.
+     *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     *        seconds (disabled).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based cookie. Names
+     *        that start with the following names are not allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and
+     *        <code>AWSALBTG</code>. They're reserved for use by the load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds, during which requests
+     *        from a client should be routed to the same target. After this time period expires, the application-based
+     *        cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day
+     *        (86400 seconds).
      *        </p>
      *        </li>
      *        <li>
@@ -612,9 +840,24 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        The following attribute is supported only by Network Load Balancers:
+     *        The following attributes are supported only by Network Load Balancers:
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether the load balancer
+     *        terminates connections at the end of the deregistration timeout. The value is <code>true</code> or
+     *        <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation is enabled. The value
+     *        is <code>true</code> or <code>false</code>. The default is disabled if the target group type is IP address
+     *        and the target group protocol is TCP or TLS. Otherwise, the default is enabled. Client IP preservation
+     *        cannot be disabled for UDP and TCP_UDP target groups.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved for future use.
+ * Provides information about the registered owner of an IP address.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpOwner" target="_top">AWS API
@@ -30,36 +30,37 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The autonomous system number (ASN) for the autonomous system that included the IP address.
      * </p>
      */
     private String asn;
     /**
      * <p>
-     * Reserved for future use.
+     * The organization identifier that's associated with the autonomous system number (ASN) for the autonomous system
+     * that included the IP address.
      * </p>
      */
     private String asnOrg;
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the internet service provider (ISP) that owned the IP address.
      * </p>
      */
     private String isp;
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the organization that owned the IP address.
      * </p>
      */
     private String org;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The autonomous system number (ASN) for the autonomous system that included the IP address.
      * </p>
      * 
      * @param asn
-     *        Reserved for future use.
+     *        The autonomous system number (ASN) for the autonomous system that included the IP address.
      */
 
     public void setAsn(String asn) {
@@ -68,10 +69,10 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The autonomous system number (ASN) for the autonomous system that included the IP address.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The autonomous system number (ASN) for the autonomous system that included the IP address.
      */
 
     public String getAsn() {
@@ -80,11 +81,11 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The autonomous system number (ASN) for the autonomous system that included the IP address.
      * </p>
      * 
      * @param asn
-     *        Reserved for future use.
+     *        The autonomous system number (ASN) for the autonomous system that included the IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +96,13 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The organization identifier that's associated with the autonomous system number (ASN) for the autonomous system
+     * that included the IP address.
      * </p>
      * 
      * @param asnOrg
-     *        Reserved for future use.
+     *        The organization identifier that's associated with the autonomous system number (ASN) for the autonomous
+     *        system that included the IP address.
      */
 
     public void setAsnOrg(String asnOrg) {
@@ -108,10 +111,12 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The organization identifier that's associated with the autonomous system number (ASN) for the autonomous system
+     * that included the IP address.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The organization identifier that's associated with the autonomous system number (ASN) for the autonomous
+     *         system that included the IP address.
      */
 
     public String getAsnOrg() {
@@ -120,11 +125,13 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The organization identifier that's associated with the autonomous system number (ASN) for the autonomous system
+     * that included the IP address.
      * </p>
      * 
      * @param asnOrg
-     *        Reserved for future use.
+     *        The organization identifier that's associated with the autonomous system number (ASN) for the autonomous
+     *        system that included the IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +142,11 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the internet service provider (ISP) that owned the IP address.
      * </p>
      * 
      * @param isp
-     *        Reserved for future use.
+     *        The name of the internet service provider (ISP) that owned the IP address.
      */
 
     public void setIsp(String isp) {
@@ -148,10 +155,10 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the internet service provider (ISP) that owned the IP address.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The name of the internet service provider (ISP) that owned the IP address.
      */
 
     public String getIsp() {
@@ -160,11 +167,11 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the internet service provider (ISP) that owned the IP address.
      * </p>
      * 
      * @param isp
-     *        Reserved for future use.
+     *        The name of the internet service provider (ISP) that owned the IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +182,11 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the organization that owned the IP address.
      * </p>
      * 
      * @param org
-     *        Reserved for future use.
+     *        The name of the organization that owned the IP address.
      */
 
     public void setOrg(String org) {
@@ -188,10 +195,10 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the organization that owned the IP address.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The name of the organization that owned the IP address.
      */
 
     public String getOrg() {
@@ -200,11 +207,11 @@ public class IpOwner implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the organization that owned the IP address.
      * </p>
      * 
      * @param org
-     *        Reserved for future use.
+     *        The name of the organization that owned the IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,8 +41,11 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      * <important>
      * <p>
      * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
-     * input solution using the <code>FULL</code> option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.
+     * input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.
      * </p>
      * </important>
      */
@@ -98,8 +101,11 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      * <important>
      * <p>
      * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
-     * input solution using the <code>FULL</code> option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.
+     * input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.
      * </p>
      * </important>
      * 
@@ -111,8 +117,11 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      *        an entirely new one.</p> <important>
      *        <p>
      *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
-     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the
-     *        <a>native-recipe-hrnn-coldstart</a> recipe.
+     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
+     *        User-Personalization</a> recipe or the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
+     *        >HRNN-Coldstart</a> recipe.
      *        </p>
      * @see TrainingMode
      */
@@ -131,8 +140,11 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      * <important>
      * <p>
      * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
-     * input solution using the <code>FULL</code> option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.
+     * input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.
      * </p>
      * </important>
      * 
@@ -143,8 +155,12 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      *         creating an entirely new one.</p> <important>
      *         <p>
      *         The <code>UPDATE</code> option can only be used when you already have an active solution version created
-     *         from the input solution using the <code>FULL</code> option and the input solution was trained with the
-     *         <a>native-recipe-hrnn-coldstart</a> recipe.
+     *         from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     *         href
+     *         ="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
+     *         User-Personalization</a> recipe or the <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
+     *         >HRNN-Coldstart</a> recipe.
      *         </p>
      * @see TrainingMode
      */
@@ -163,8 +179,11 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      * <important>
      * <p>
      * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
-     * input solution using the <code>FULL</code> option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.
+     * input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.
      * </p>
      * </important>
      * 
@@ -176,8 +195,11 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      *        an entirely new one.</p> <important>
      *        <p>
      *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
-     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the
-     *        <a>native-recipe-hrnn-coldstart</a> recipe.
+     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
+     *        User-Personalization</a> recipe or the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
+     *        >HRNN-Coldstart</a> recipe.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingMode
@@ -198,8 +220,11 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      * <important>
      * <p>
      * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
-     * input solution using the <code>FULL</code> option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.
+     * input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.
      * </p>
      * </important>
      * 
@@ -211,8 +236,11 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      *        an entirely new one.</p> <important>
      *        <p>
      *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
-     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the
-     *        <a>native-recipe-hrnn-coldstart</a> recipe.
+     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
+     *        User-Personalization</a> recipe or the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
+     *        >HRNN-Coldstart</a> recipe.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingMode

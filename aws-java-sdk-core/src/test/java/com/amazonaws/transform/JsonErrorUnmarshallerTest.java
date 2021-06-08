@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.fasterxml.jackson.databind.node.NullNode;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -37,6 +38,8 @@ public class JsonErrorUnmarshallerTest {
             .put("message", "Some error message").put("__type", "apiVersion#" + ERROR_TYPE)
             .put("customField", "This is a customField").put("customInt", 42);
 
+    private static final JsonNode EMPTY_JSON = new ObjectMapper().createObjectNode();
+
     private JsonErrorUnmarshaller unmarshaller;
 
     @Before
@@ -51,6 +54,27 @@ public class JsonErrorUnmarshallerTest {
         assertEquals("This is a customField", ase.getCustomField());
         assertEquals(Integer.valueOf(42), ase.getCustomInt());
     }
+
+    @Test
+    public void unmarshall_EmptyJsonContent_returnsEmptyException() throws Exception {
+        CustomException ase = (CustomException) unmarshaller.unmarshall(EMPTY_JSON);
+        assertNull(ase.getErrorMessage());
+        assertNull(ase.getCustomField());
+        assertNull(ase.getCustomInt());
+    }
+
+    @Test
+    public void unmarshall_NullNodeJsonContent_returnsNull() throws Exception {
+        CustomException ase = (CustomException) unmarshaller.unmarshall(NullNode.instance);
+        assertNull(ase);
+    }
+
+    @Test
+    public void unmarshall_NullJsonContent_returnsNull() throws Exception {
+        CustomException ase = (CustomException) unmarshaller.unmarshall(null);
+        assertNull(ase);
+    }
+
 
     @Test
     public void unmarshall_InvalidCaseJsonContent_DoesNotUnmarshallCustomFields() throws Exception {

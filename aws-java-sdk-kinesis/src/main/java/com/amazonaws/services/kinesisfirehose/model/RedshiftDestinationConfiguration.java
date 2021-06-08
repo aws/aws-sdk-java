@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,7 +87,8 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
     private ProcessingConfiguration processingConfiguration;
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3 backup if it
+     * is disabled. If backup is enabled, you can't update the delivery stream to disable it.
      * </p>
      */
     private String s3BackupMode;
@@ -477,11 +478,13 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3 backup if it
+     * is disabled. If backup is enabled, you can't update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        The Amazon S3 backup mode.
+     *        The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3
+     *        backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it.
      * @see RedshiftS3BackupMode
      */
 
@@ -491,10 +494,12 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3 backup if it
+     * is disabled. If backup is enabled, you can't update the delivery stream to disable it.
      * </p>
      * 
-     * @return The Amazon S3 backup mode.
+     * @return The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3
+     *         backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it.
      * @see RedshiftS3BackupMode
      */
 
@@ -504,11 +509,13 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3 backup if it
+     * is disabled. If backup is enabled, you can't update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        The Amazon S3 backup mode.
+     *        The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3
+     *        backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedshiftS3BackupMode
      */
@@ -520,11 +527,13 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3 backup if it
+     * is disabled. If backup is enabled, you can't update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        The Amazon S3 backup mode.
+     *        The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3
+     *        backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it.
      * @see RedshiftS3BackupMode
      */
 
@@ -534,11 +543,13 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3 backup if it
+     * is disabled. If backup is enabled, you can't update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        The Amazon S3 backup mode.
+     *        The Amazon S3 backup mode. After you create a delivery stream, you can update it to enable Amazon S3
+     *        backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedshiftS3BackupMode
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class UpdateWorkforceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkforceName").build();
     private static final MarshallingInfo<StructuredPojo> SOURCEIPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceIpConfig").build();
+    private static final MarshallingInfo<StructuredPojo> OIDCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OidcConfig").build();
 
     private static final UpdateWorkforceRequestMarshaller instance = new UpdateWorkforceRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class UpdateWorkforceRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateWorkforceRequest.getWorkforceName(), WORKFORCENAME_BINDING);
             protocolMarshaller.marshall(updateWorkforceRequest.getSourceIpConfig(), SOURCEIPCONFIG_BINDING);
+            protocolMarshaller.marshall(updateWorkforceRequest.getOidcConfig(), OIDCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved for future use.
+ * Provides information about an AWS account and entity that performed an action on an affected resource. The action was
+ * performed using the credentials for your AWS account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UserIdentityRoot" target="_top">AWS API
@@ -30,30 +31,31 @@ public class UserIdentityRoot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains
+     * the name of the user or role that performed the action.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that performed the action.
      * </p>
      */
     private String principalId;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account.
      * </p>
      * 
      * @param accountId
-     *        Reserved for future use.
+     *        The unique identifier for the AWS account.
      */
 
     public void setAccountId(String accountId) {
@@ -62,10 +64,10 @@ public class UserIdentityRoot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The unique identifier for the AWS account.
      */
 
     public String getAccountId() {
@@ -74,11 +76,11 @@ public class UserIdentityRoot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the AWS account.
      * </p>
      * 
      * @param accountId
-     *        Reserved for future use.
+     *        The unique identifier for the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +91,13 @@ public class UserIdentityRoot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains
+     * the name of the user or role that performed the action.
      * </p>
      * 
      * @param arn
-     *        Reserved for future use.
+     *        The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN
+     *        contains the name of the user or role that performed the action.
      */
 
     public void setArn(String arn) {
@@ -102,10 +106,12 @@ public class UserIdentityRoot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains
+     * the name of the user or role that performed the action.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN
+     *         contains the name of the user or role that performed the action.
      */
 
     public String getArn() {
@@ -114,11 +120,13 @@ public class UserIdentityRoot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains
+     * the name of the user or role that performed the action.
      * </p>
      * 
      * @param arn
-     *        Reserved for future use.
+     *        The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN
+     *        contains the name of the user or role that performed the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +137,11 @@ public class UserIdentityRoot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that performed the action.
      * </p>
      * 
      * @param principalId
-     *        Reserved for future use.
+     *        The unique identifier for the entity that performed the action.
      */
 
     public void setPrincipalId(String principalId) {
@@ -142,10 +150,10 @@ public class UserIdentityRoot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that performed the action.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The unique identifier for the entity that performed the action.
      */
 
     public String getPrincipalId() {
@@ -154,11 +162,11 @@ public class UserIdentityRoot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The unique identifier for the entity that performed the action.
      * </p>
      * 
      * @param principalId
-     *        Reserved for future use.
+     *        The unique identifier for the entity that performed the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

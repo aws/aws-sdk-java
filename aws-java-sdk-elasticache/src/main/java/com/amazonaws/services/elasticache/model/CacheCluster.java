@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,9 +34,8 @@ public class CacheCluster implements Serializable, Cloneable {
     private String cacheClusterId;
     /**
      * <p>
-     * Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be used by
-     * an application to connect to any node in the cluster. The configuration endpoint will always have
-     * <code>.cfg</code> in it.
+     * Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     * cluster. The configuration endpoint will always have <code>.cfg</code> in it.
      * </p>
      * <p>
      * Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
@@ -68,6 +67,22 @@ public class CacheCluster implements Serializable, Cloneable {
      * <p>
      * Current generation:
      * </p>
+     * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
      * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -125,6 +140,22 @@ public class CacheCluster implements Serializable, Cloneable {
      * <p>
      * Current generation:
      * </p>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -203,7 +234,7 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      */
     private Integer numCacheNodes;
@@ -214,6 +245,12 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      */
     private String preferredAvailabilityZone;
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     */
+    private String preferredOutpostArn;
     /**
      * <p>
      * The date and time when the cluster was created.
@@ -401,6 +438,18 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      */
     private String aRN;
+    /**
+     * <p>
+     * A boolean value indicating whether log delivery is enabled for the replication group.
+     * </p>
+     */
+    private Boolean replicationGroupLogDeliveryEnabled;
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration> logDeliveryConfigurations;
 
     /**
      * <p>
@@ -444,18 +493,16 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be used by
-     * an application to connect to any node in the cluster. The configuration endpoint will always have
-     * <code>.cfg</code> in it.
+     * Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     * cluster. The configuration endpoint will always have <code>.cfg</code> in it.
      * </p>
      * <p>
      * Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      * </p>
      * 
      * @param configurationEndpoint
-     *        Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be
-     *        used by an application to connect to any node in the cluster. The configuration endpoint will always have
-     *        <code>.cfg</code> in it.</p>
+     *        Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     *        cluster. The configuration endpoint will always have <code>.cfg</code> in it.</p>
      *        <p>
      *        Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      */
@@ -466,17 +513,15 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be used by
-     * an application to connect to any node in the cluster. The configuration endpoint will always have
-     * <code>.cfg</code> in it.
+     * Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     * cluster. The configuration endpoint will always have <code>.cfg</code> in it.
      * </p>
      * <p>
      * Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      * </p>
      * 
-     * @return Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be
-     *         used by an application to connect to any node in the cluster. The configuration endpoint will always have
-     *         <code>.cfg</code> in it.</p>
+     * @return Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     *         cluster. The configuration endpoint will always have <code>.cfg</code> in it.</p>
      *         <p>
      *         Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      */
@@ -487,18 +532,16 @@ public class CacheCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be used by
-     * an application to connect to any node in the cluster. The configuration endpoint will always have
-     * <code>.cfg</code> in it.
+     * Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     * cluster. The configuration endpoint will always have <code>.cfg</code> in it.
      * </p>
      * <p>
      * Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      * </p>
      * 
      * @param configurationEndpoint
-     *        Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on the cluster, can be
-     *        used by an application to connect to any node in the cluster. The configuration endpoint will always have
-     *        <code>.cfg</code> in it.</p>
+     *        Represents a Memcached cluster endpoint which can be used by an application to connect to any node in the
+     *        cluster. The configuration endpoint will always have <code>.cfg</code> in it.</p>
      *        <p>
      *        Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -569,6 +612,22 @@ public class CacheCluster implements Serializable, Cloneable {
      * Current generation:
      * </p>
      * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
+     * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
      * </p>
@@ -625,6 +684,22 @@ public class CacheCluster implements Serializable, Cloneable {
      * <p>
      * Current generation:
      * </p>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -694,6 +769,22 @@ public class CacheCluster implements Serializable, Cloneable {
      *        Current generation:
      *        </p>
      *        <p>
+     *        <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward).
+     *        </p>
+     *        <p>
+     *        <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     *        <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     *        <code>cache.m6g.16xlarge</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
+     *        </p>
+     *        </note>
+     *        <p>
      *        <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *        <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
      *        <code>cache.m5.24xlarge</code>
@@ -753,6 +844,22 @@ public class CacheCluster implements Serializable, Cloneable {
      *        <p>
      *        Current generation:
      *        </p>
+     *        <p>
+     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward).
+     *        </p>
+     *        <p>
+     *        <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     *        <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     *        <code>cache.r6g.16xlarge</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
+     *        </p>
+     *        </note>
      *        <p>
      *        <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *        <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -831,6 +938,22 @@ public class CacheCluster implements Serializable, Cloneable {
      * Current generation:
      * </p>
      * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
+     * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
      * </p>
@@ -887,6 +1010,22 @@ public class CacheCluster implements Serializable, Cloneable {
      * <p>
      * Current generation:
      * </p>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -955,6 +1094,22 @@ public class CacheCluster implements Serializable, Cloneable {
      *         Current generation:
      *         </p>
      *         <p>
+     *         <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *         version 1.5.16 onward).
+     *         </p>
+     *         <p>
+     *         <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     *         <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     *         <code>cache.m6g.16xlarge</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         For region availability, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *         >Supported Node Types</a>
+     *         </p>
+     *         </note>
+     *         <p>
      *         <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *         <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
      *         <code>cache.m5.24xlarge</code>
@@ -1014,6 +1169,22 @@ public class CacheCluster implements Serializable, Cloneable {
      *         <p>
      *         Current generation:
      *         </p>
+     *         <p>
+     *         <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *         version 1.5.16 onward).
+     *         </p>
+     *         <p>
+     *         <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     *         <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     *         <code>cache.r6g.16xlarge</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         For region availability, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *         >Supported Node Types</a>
+     *         </p>
+     *         </note>
      *         <p>
      *         <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *         <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -1092,6 +1263,22 @@ public class CacheCluster implements Serializable, Cloneable {
      * Current generation:
      * </p>
      * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
+     * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
      * </p>
@@ -1148,6 +1335,22 @@ public class CacheCluster implements Serializable, Cloneable {
      * <p>
      * Current generation:
      * </p>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -1217,6 +1420,22 @@ public class CacheCluster implements Serializable, Cloneable {
      *        Current generation:
      *        </p>
      *        <p>
+     *        <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward).
+     *        </p>
+     *        <p>
+     *        <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     *        <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     *        <code>cache.m6g.16xlarge</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
+     *        </p>
+     *        </note>
+     *        <p>
      *        <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *        <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
      *        <code>cache.m5.24xlarge</code>
@@ -1276,6 +1495,22 @@ public class CacheCluster implements Serializable, Cloneable {
      *        <p>
      *        Current generation:
      *        </p>
+     *        <p>
+     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward).
+     *        </p>
+     *        <p>
+     *        <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     *        <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     *        <code>cache.r6g.16xlarge</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
+     *        </p>
+     *        </note>
      *        <p>
      *        <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *        <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -1477,14 +1712,14 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * 
      * @param numCacheNodes
      *        The number of cache nodes in the cluster.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      */
 
     public void setNumCacheNodes(Integer numCacheNodes) {
@@ -1497,13 +1732,13 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * 
      * @return The number of cache nodes in the cluster.</p>
      *         <p>
      *         For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *         between 1 and 20.
+     *         between 1 and 40.
      */
 
     public Integer getNumCacheNodes() {
@@ -1516,14 +1751,14 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * 
      * @param numCacheNodes
      *        The number of cache nodes in the cluster.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1575,6 +1810,46 @@ public class CacheCluster implements Serializable, Cloneable {
 
     public CacheCluster withPreferredAvailabilityZone(String preferredAvailabilityZone) {
         setPreferredAvailabilityZone(preferredAvailabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The outpost ARN in which the cache cluster is created.
+     */
+
+    public void setPreferredOutpostArn(String preferredOutpostArn) {
+        this.preferredOutpostArn = preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @return The outpost ARN in which the cache cluster is created.
+     */
+
+    public String getPreferredOutpostArn() {
+        return this.preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The outpost ARN in which the cache cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheCluster withPreferredOutpostArn(String preferredOutpostArn) {
+        setPreferredOutpostArn(preferredOutpostArn);
         return this;
     }
 
@@ -2964,6 +3239,131 @@ public class CacheCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A boolean value indicating whether log delivery is enabled for the replication group.
+     * </p>
+     * 
+     * @param replicationGroupLogDeliveryEnabled
+     *        A boolean value indicating whether log delivery is enabled for the replication group.
+     */
+
+    public void setReplicationGroupLogDeliveryEnabled(Boolean replicationGroupLogDeliveryEnabled) {
+        this.replicationGroupLogDeliveryEnabled = replicationGroupLogDeliveryEnabled;
+    }
+
+    /**
+     * <p>
+     * A boolean value indicating whether log delivery is enabled for the replication group.
+     * </p>
+     * 
+     * @return A boolean value indicating whether log delivery is enabled for the replication group.
+     */
+
+    public Boolean getReplicationGroupLogDeliveryEnabled() {
+        return this.replicationGroupLogDeliveryEnabled;
+    }
+
+    /**
+     * <p>
+     * A boolean value indicating whether log delivery is enabled for the replication group.
+     * </p>
+     * 
+     * @param replicationGroupLogDeliveryEnabled
+     *        A boolean value indicating whether log delivery is enabled for the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheCluster withReplicationGroupLogDeliveryEnabled(Boolean replicationGroupLogDeliveryEnabled) {
+        setReplicationGroupLogDeliveryEnabled(replicationGroupLogDeliveryEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean value indicating whether log delivery is enabled for the replication group.
+     * </p>
+     * 
+     * @return A boolean value indicating whether log delivery is enabled for the replication group.
+     */
+
+    public Boolean isReplicationGroupLogDeliveryEnabled() {
+        return this.replicationGroupLogDeliveryEnabled;
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * 
+     * @return Returns the destination, format and type of the logs.
+     */
+
+    public java.util.List<LogDeliveryConfiguration> getLogDeliveryConfigurations() {
+        if (logDeliveryConfigurations == null) {
+            logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration>();
+        }
+        return logDeliveryConfigurations;
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Returns the destination, format and type of the logs.
+     */
+
+    public void setLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfiguration> logDeliveryConfigurations) {
+        if (logDeliveryConfigurations == null) {
+            this.logDeliveryConfigurations = null;
+            return;
+        }
+
+        this.logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration>(logDeliveryConfigurations);
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLogDeliveryConfigurations(java.util.Collection)} or
+     * {@link #withLogDeliveryConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Returns the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheCluster withLogDeliveryConfigurations(LogDeliveryConfiguration... logDeliveryConfigurations) {
+        if (this.logDeliveryConfigurations == null) {
+            setLogDeliveryConfigurations(new com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration>(logDeliveryConfigurations.length));
+        }
+        for (LogDeliveryConfiguration ele : logDeliveryConfigurations) {
+            this.logDeliveryConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Returns the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheCluster withLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfiguration> logDeliveryConfigurations) {
+        setLogDeliveryConfigurations(logDeliveryConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2993,6 +3393,8 @@ public class CacheCluster implements Serializable, Cloneable {
             sb.append("NumCacheNodes: ").append(getNumCacheNodes()).append(",");
         if (getPreferredAvailabilityZone() != null)
             sb.append("PreferredAvailabilityZone: ").append(getPreferredAvailabilityZone()).append(",");
+        if (getPreferredOutpostArn() != null)
+            sb.append("PreferredOutpostArn: ").append(getPreferredOutpostArn()).append(",");
         if (getCacheClusterCreateTime() != null)
             sb.append("CacheClusterCreateTime: ").append(getCacheClusterCreateTime()).append(",");
         if (getPreferredMaintenanceWindow() != null)
@@ -3028,7 +3430,11 @@ public class CacheCluster implements Serializable, Cloneable {
         if (getAtRestEncryptionEnabled() != null)
             sb.append("AtRestEncryptionEnabled: ").append(getAtRestEncryptionEnabled()).append(",");
         if (getARN() != null)
-            sb.append("ARN: ").append(getARN());
+            sb.append("ARN: ").append(getARN()).append(",");
+        if (getReplicationGroupLogDeliveryEnabled() != null)
+            sb.append("ReplicationGroupLogDeliveryEnabled: ").append(getReplicationGroupLogDeliveryEnabled()).append(",");
+        if (getLogDeliveryConfigurations() != null)
+            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -3078,6 +3484,10 @@ public class CacheCluster implements Serializable, Cloneable {
         if (other.getPreferredAvailabilityZone() == null ^ this.getPreferredAvailabilityZone() == null)
             return false;
         if (other.getPreferredAvailabilityZone() != null && other.getPreferredAvailabilityZone().equals(this.getPreferredAvailabilityZone()) == false)
+            return false;
+        if (other.getPreferredOutpostArn() == null ^ this.getPreferredOutpostArn() == null)
+            return false;
+        if (other.getPreferredOutpostArn() != null && other.getPreferredOutpostArn().equals(this.getPreferredOutpostArn()) == false)
             return false;
         if (other.getCacheClusterCreateTime() == null ^ this.getCacheClusterCreateTime() == null)
             return false;
@@ -3151,6 +3561,15 @@ public class CacheCluster implements Serializable, Cloneable {
             return false;
         if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
             return false;
+        if (other.getReplicationGroupLogDeliveryEnabled() == null ^ this.getReplicationGroupLogDeliveryEnabled() == null)
+            return false;
+        if (other.getReplicationGroupLogDeliveryEnabled() != null
+                && other.getReplicationGroupLogDeliveryEnabled().equals(this.getReplicationGroupLogDeliveryEnabled()) == false)
+            return false;
+        if (other.getLogDeliveryConfigurations() == null ^ this.getLogDeliveryConfigurations() == null)
+            return false;
+        if (other.getLogDeliveryConfigurations() != null && other.getLogDeliveryConfigurations().equals(this.getLogDeliveryConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -3168,6 +3587,7 @@ public class CacheCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCacheClusterStatus() == null) ? 0 : getCacheClusterStatus().hashCode());
         hashCode = prime * hashCode + ((getNumCacheNodes() == null) ? 0 : getNumCacheNodes().hashCode());
         hashCode = prime * hashCode + ((getPreferredAvailabilityZone() == null) ? 0 : getPreferredAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getPreferredOutpostArn() == null) ? 0 : getPreferredOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getCacheClusterCreateTime() == null) ? 0 : getCacheClusterCreateTime().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getPendingModifiedValues() == null) ? 0 : getPendingModifiedValues().hashCode());
@@ -3186,6 +3606,8 @@ public class CacheCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getAtRestEncryptionEnabled() == null) ? 0 : getAtRestEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
+        hashCode = prime * hashCode + ((getReplicationGroupLogDeliveryEnabled() == null) ? 0 : getReplicationGroupLogDeliveryEnabled().hashCode());
+        hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         return hashCode;
     }
 

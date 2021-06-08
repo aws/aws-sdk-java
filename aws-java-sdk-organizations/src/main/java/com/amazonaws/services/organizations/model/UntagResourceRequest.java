@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,105 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the resource to remove the tag from.
+     * The ID of the resource to remove a tag from.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceId;
     /**
      * <p>
-     * The tag to remove from the specified resource.
+     * The list of keys for tags to remove from the specified resource.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The ID of the resource to remove the tag from.
+     * The ID of the resource to remove a tag from.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The ID of the resource to remove the tag from.
+     *        The ID of the resource to remove a tag from.</p>
+     *        <p>
+     *        You can specify any of the following taggable resources.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AWS account – specify the account ID number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     *        <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Root – specify the root ID that begins with <code>r-</code> and looks similar to:
+     *        <code>r-<i>1a2b</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     *        <code>p-<i>12abcdefg3</i> </code>
+     *        </p>
+     *        </li>
      */
 
     public void setResourceId(String resourceId) {
@@ -53,10 +134,64 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the resource to remove the tag from.
+     * The ID of the resource to remove a tag from.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ID of the resource to remove the tag from.
+     * @return The ID of the resource to remove a tag from.</p>
+     *         <p>
+     *         You can specify any of the following taggable resources.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         AWS account – specify the account ID number.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     *         <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Root – specify the root ID that begins with <code>r-</code> and looks similar to:
+     *         <code>r-<i>1a2b</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     *         <code>p-<i>12abcdefg3</i> </code>
+     *         </p>
+     *         </li>
      */
 
     public String getResourceId() {
@@ -65,11 +200,65 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the resource to remove the tag from.
+     * The ID of the resource to remove a tag from.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The ID of the resource to remove the tag from.
+     *        The ID of the resource to remove a tag from.</p>
+     *        <p>
+     *        You can specify any of the following taggable resources.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AWS account – specify the account ID number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     *        <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Root – specify the root ID that begins with <code>r-</code> and looks similar to:
+     *        <code>r-<i>1a2b</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     *        <code>p-<i>12abcdefg3</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +269,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag to remove from the specified resource.
+     * The list of keys for tags to remove from the specified resource.
      * </p>
      * 
-     * @return The tag to remove from the specified resource.
+     * @return The list of keys for tags to remove from the specified resource.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +281,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag to remove from the specified resource.
+     * The list of keys for tags to remove from the specified resource.
      * </p>
      * 
      * @param tagKeys
-     *        The tag to remove from the specified resource.
+     *        The list of keys for tags to remove from the specified resource.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +299,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag to remove from the specified resource.
+     * The list of keys for tags to remove from the specified resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +308,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The tag to remove from the specified resource.
+     *        The list of keys for tags to remove from the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +324,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag to remove from the specified resource.
+     * The list of keys for tags to remove from the specified resource.
      * </p>
      * 
      * @param tagKeys
-     *        The tag to remove from the specified resource.
+     *        The list of keys for tags to remove from the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,13 +31,13 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet containing the instance being accessed.
+     * A unique identifier for the fleet containing the instance being accessed.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * A unique identifier for an instance being accessed.
+     * A unique identifier for the instance being accessed.
      * </p>
      */
     private String instanceId;
@@ -62,11 +62,11 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet containing the instance being accessed.
+     * A unique identifier for the fleet containing the instance being accessed.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet containing the instance being accessed.
+     *        A unique identifier for the fleet containing the instance being accessed.
      */
 
     public void setFleetId(String fleetId) {
@@ -75,10 +75,10 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet containing the instance being accessed.
+     * A unique identifier for the fleet containing the instance being accessed.
      * </p>
      * 
-     * @return A unique identifier for a fleet containing the instance being accessed.
+     * @return A unique identifier for the fleet containing the instance being accessed.
      */
 
     public String getFleetId() {
@@ -87,11 +87,11 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet containing the instance being accessed.
+     * A unique identifier for the fleet containing the instance being accessed.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet containing the instance being accessed.
+     *        A unique identifier for the fleet containing the instance being accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for an instance being accessed.
+     * A unique identifier for the instance being accessed.
      * </p>
      * 
      * @param instanceId
-     *        A unique identifier for an instance being accessed.
+     *        A unique identifier for the instance being accessed.
      */
 
     public void setInstanceId(String instanceId) {
@@ -115,10 +115,10 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for an instance being accessed.
+     * A unique identifier for the instance being accessed.
      * </p>
      * 
-     * @return A unique identifier for an instance being accessed.
+     * @return A unique identifier for the instance being accessed.
      */
 
     public String getInstanceId() {
@@ -127,11 +127,11 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for an instance being accessed.
+     * A unique identifier for the instance being accessed.
      * </p>
      * 
      * @param instanceId
-     *        A unique identifier for an instance being accessed.
+     *        A unique identifier for the instance being accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

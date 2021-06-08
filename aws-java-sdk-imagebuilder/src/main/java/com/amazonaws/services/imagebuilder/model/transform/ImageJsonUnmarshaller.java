@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshall
                     context.nextToken();
                     image.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    image.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     image.setName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -79,6 +83,10 @@ public class ImageJsonUnmarshaller implements Unmarshaller<Image, JsonUnmarshall
                 if (context.testExpression("imageRecipe", targetDepth)) {
                     context.nextToken();
                     image.setImageRecipe(ImageRecipeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("containerRecipe", targetDepth)) {
+                    context.nextToken();
+                    image.setContainerRecipe(ContainerRecipeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sourcePipelineName", targetDepth)) {
                     context.nextToken();

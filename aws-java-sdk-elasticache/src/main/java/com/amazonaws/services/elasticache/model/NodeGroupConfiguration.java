@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,18 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> replicaAvailabilityZones;
+    /**
+     * <p>
+     * The outpost ARN of the primary node.
+     * </p>
+     */
+    private String primaryOutpostArn;
+    /**
+     * <p>
+     * The outpost ARN of the node replicas.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> replicaOutpostArns;
 
     /**
      * <p>
@@ -336,6 +348,119 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The outpost ARN of the primary node.
+     * </p>
+     * 
+     * @param primaryOutpostArn
+     *        The outpost ARN of the primary node.
+     */
+
+    public void setPrimaryOutpostArn(String primaryOutpostArn) {
+        this.primaryOutpostArn = primaryOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN of the primary node.
+     * </p>
+     * 
+     * @return The outpost ARN of the primary node.
+     */
+
+    public String getPrimaryOutpostArn() {
+        return this.primaryOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN of the primary node.
+     * </p>
+     * 
+     * @param primaryOutpostArn
+     *        The outpost ARN of the primary node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeGroupConfiguration withPrimaryOutpostArn(String primaryOutpostArn) {
+        setPrimaryOutpostArn(primaryOutpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN of the node replicas.
+     * </p>
+     * 
+     * @return The outpost ARN of the node replicas.
+     */
+
+    public java.util.List<String> getReplicaOutpostArns() {
+        if (replicaOutpostArns == null) {
+            replicaOutpostArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return replicaOutpostArns;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN of the node replicas.
+     * </p>
+     * 
+     * @param replicaOutpostArns
+     *        The outpost ARN of the node replicas.
+     */
+
+    public void setReplicaOutpostArns(java.util.Collection<String> replicaOutpostArns) {
+        if (replicaOutpostArns == null) {
+            this.replicaOutpostArns = null;
+            return;
+        }
+
+        this.replicaOutpostArns = new com.amazonaws.internal.SdkInternalList<String>(replicaOutpostArns);
+    }
+
+    /**
+     * <p>
+     * The outpost ARN of the node replicas.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplicaOutpostArns(java.util.Collection)} or {@link #withReplicaOutpostArns(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param replicaOutpostArns
+     *        The outpost ARN of the node replicas.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeGroupConfiguration withReplicaOutpostArns(String... replicaOutpostArns) {
+        if (this.replicaOutpostArns == null) {
+            setReplicaOutpostArns(new com.amazonaws.internal.SdkInternalList<String>(replicaOutpostArns.length));
+        }
+        for (String ele : replicaOutpostArns) {
+            this.replicaOutpostArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN of the node replicas.
+     * </p>
+     * 
+     * @param replicaOutpostArns
+     *        The outpost ARN of the node replicas.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeGroupConfiguration withReplicaOutpostArns(java.util.Collection<String> replicaOutpostArns) {
+        setReplicaOutpostArns(replicaOutpostArns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -356,7 +481,11 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
         if (getPrimaryAvailabilityZone() != null)
             sb.append("PrimaryAvailabilityZone: ").append(getPrimaryAvailabilityZone()).append(",");
         if (getReplicaAvailabilityZones() != null)
-            sb.append("ReplicaAvailabilityZones: ").append(getReplicaAvailabilityZones());
+            sb.append("ReplicaAvailabilityZones: ").append(getReplicaAvailabilityZones()).append(",");
+        if (getPrimaryOutpostArn() != null)
+            sb.append("PrimaryOutpostArn: ").append(getPrimaryOutpostArn()).append(",");
+        if (getReplicaOutpostArns() != null)
+            sb.append("ReplicaOutpostArns: ").append(getReplicaOutpostArns());
         sb.append("}");
         return sb.toString();
     }
@@ -391,6 +520,14 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getReplicaAvailabilityZones() != null && other.getReplicaAvailabilityZones().equals(this.getReplicaAvailabilityZones()) == false)
             return false;
+        if (other.getPrimaryOutpostArn() == null ^ this.getPrimaryOutpostArn() == null)
+            return false;
+        if (other.getPrimaryOutpostArn() != null && other.getPrimaryOutpostArn().equals(this.getPrimaryOutpostArn()) == false)
+            return false;
+        if (other.getReplicaOutpostArns() == null ^ this.getReplicaOutpostArns() == null)
+            return false;
+        if (other.getReplicaOutpostArns() != null && other.getReplicaOutpostArns().equals(this.getReplicaOutpostArns()) == false)
+            return false;
         return true;
     }
 
@@ -404,6 +541,8 @@ public class NodeGroupConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getReplicaCount() == null) ? 0 : getReplicaCount().hashCode());
         hashCode = prime * hashCode + ((getPrimaryAvailabilityZone() == null) ? 0 : getPrimaryAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getReplicaAvailabilityZones() == null) ? 0 : getReplicaAvailabilityZones().hashCode());
+        hashCode = prime * hashCode + ((getPrimaryOutpostArn() == null) ? 0 : getPrimaryOutpostArn().hashCode());
+        hashCode = prime * hashCode + ((getReplicaOutpostArns() == null) ? 0 : getReplicaOutpostArns().hashCode());
         return hashCode;
     }
 

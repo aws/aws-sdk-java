@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class CreateLocationS3RequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3StorageClass").build();
     private static final MarshallingInfo<StructuredPojo> S3CONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Config").build();
+    private static final MarshallingInfo<List> AGENTARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AgentArns").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -59,6 +61,7 @@ public class CreateLocationS3RequestMarshaller {
             protocolMarshaller.marshall(createLocationS3Request.getS3BucketArn(), S3BUCKETARN_BINDING);
             protocolMarshaller.marshall(createLocationS3Request.getS3StorageClass(), S3STORAGECLASS_BINDING);
             protocolMarshaller.marshall(createLocationS3Request.getS3Config(), S3CONFIG_BINDING);
+            protocolMarshaller.marshall(createLocationS3Request.getAgentArns(), AGENTARNS_BINDING);
             protocolMarshaller.marshall(createLocationS3Request.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

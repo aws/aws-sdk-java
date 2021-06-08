@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -209,10 +209,20 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private String dBParameterGroupName;
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      */
     private Boolean publiclyAccessible;
@@ -326,18 +336,20 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private String monitoringRoleArn;
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted read replica.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same KMS key as the source DB
-     * instance.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
-     * can't use encryption keys from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
+     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
+     * source DB instance.
+     * </p>
+     * <p>
+     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
+     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
+     * can't use CMKs from one AWS Region in another AWS Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
@@ -415,8 +427,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     * <a>CreateDBInstance</a>.
+     * accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -438,13 +449,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -486,20 +500,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Boolean deletionProtection;
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     * </p>
-     * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      */
     private String domain;
@@ -509,6 +516,39 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String domainIAMRoleName;
+    /**
+     * <p>
+     * The open mode of the replica database: mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * </p>
+     * <p>
+     * You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     */
+    private String replicaMode;
+    /**
+     * <p>
+     * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     */
+    private Integer maxAllocatedStorage;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -1740,17 +1780,36 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *        name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     *        A value that indicates whether the DB instance is publicly accessible.</p>
+     *        <p>
+     *        When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *        within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *        to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *        permitted if the security group assigned to the DB instance doesn't permit it.
+     *        </p>
+     *        <p>
+     *        When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *        resolves to a private IP address.
+     *        </p>
+     *        <p>
+     *        For more information, see <a>CreateDBInstance</a>.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -1759,16 +1818,35 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *         name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * @return A value that indicates whether the DB instance is publicly accessible.</p>
+     *         <p>
+     *         When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *         within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *         to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *         permitted if the security group assigned to the DB instance doesn't permit it.
+     *         </p>
+     *         <p>
+     *         When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *         resolves to a private IP address.
+     *         </p>
+     *         <p>
+     *         For more information, see <a>CreateDBInstance</a>.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -1777,17 +1855,36 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *        name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     *        A value that indicates whether the DB instance is publicly accessible.</p>
+     *        <p>
+     *        When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *        within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *        to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *        permitted if the security group assigned to the DB instance doesn't permit it.
+     *        </p>
+     *        <p>
+     *        When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *        resolves to a private IP address.
+     *        </p>
+     *        <p>
+     *        For more information, see <a>CreateDBInstance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1798,16 +1895,35 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *         name that resolves to a private IP address. For more information, see <a>CreateDBInstance</a>.
+     * @return A value that indicates whether the DB instance is publicly accessible.</p>
+     *         <p>
+     *         When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *         within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *         to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *         permitted if the security group assigned to the DB instance doesn't permit it.
+     *         </p>
+     *         <p>
+     *         When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *         resolves to a private IP address.
+     *         </p>
+     *         <p>
+     *         For more information, see <a>CreateDBInstance</a>.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -2571,35 +2687,39 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted read replica.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same KMS key as the source DB
-     * instance.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
-     * can't use encryption keys from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
+     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
+     * source DB instance.
+     * </p>
+     * <p>
+     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
+     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
+     * can't use CMKs from one AWS Region in another AWS Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS
-     *        key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for an encrypted read replica.</p>
      *        <p>
-     *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not
-     *        have to specify a value for this parameter. The read replica is encrypted with the same KMS key as the
-     *        source DB instance.
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      *        </p>
      *        <p>
-     *        If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     *        destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and
-     *        you can't use encryption keys from one AWS Region in another AWS Region.
+     *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not
+     *        specify a value for this parameter. A read replica in the same Region is always encrypted with the same
+     *        AWS KMS CMK as the source DB instance.
+     *        </p>
+     *        <p>
+     *        If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key
+     *        identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
+     *        created in, and you can't use CMKs from one AWS Region in another AWS Region.
      *        </p>
      *        <p>
      *        You can't create an encrypted read replica from an unencrypted DB instance.
@@ -2611,34 +2731,38 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted read replica.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same KMS key as the source DB
-     * instance.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
-     * can't use encryption keys from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
+     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
+     * source DB instance.
+     * </p>
+     * <p>
+     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
+     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
+     * can't use CMKs from one AWS Region in another AWS Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
      * </p>
      * 
-     * @return The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS
-     *         key identifier, or the KMS key alias for the KMS encryption key.</p>
+     * @return The AWS KMS key identifier for an encrypted read replica.</p>
      *         <p>
-     *         If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not
-     *         have to specify a value for this parameter. The read replica is encrypted with the same KMS key as the
-     *         source DB instance.
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      *         </p>
      *         <p>
-     *         If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for
-     *         the destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in,
-     *         and you can't use encryption keys from one AWS Region in another AWS Region.
+     *         If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not
+     *         specify a value for this parameter. A read replica in the same Region is always encrypted with the same
+     *         AWS KMS CMK as the source DB instance.
+     *         </p>
+     *         <p>
+     *         If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key
+     *         identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
+     *         created in, and you can't use CMKs from one AWS Region in another AWS Region.
      *         </p>
      *         <p>
      *         You can't create an encrypted read replica from an unencrypted DB instance.
@@ -2650,35 +2774,39 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS key
-     * identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for an encrypted read replica.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not have to
-     * specify a value for this parameter. The read replica is encrypted with the same KMS key as the source DB
-     * instance.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     * destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and you
-     * can't use encryption keys from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
+     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
+     * source DB instance.
+     * </p>
+     * <p>
+     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
+     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
+     * can't use CMKs from one AWS Region in another AWS Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource Name (ARN), KMS
-     *        key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for an encrypted read replica.</p>
      *        <p>
-     *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then you do not
-     *        have to specify a value for this parameter. The read replica is encrypted with the same KMS key as the
-     *        source DB instance.
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
      *        </p>
      *        <p>
-     *        If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the
-     *        destination AWS Region. KMS encryption keys are specific to the AWS Region that they are created in, and
-     *        you can't use encryption keys from one AWS Region in another AWS Region.
+     *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not
+     *        specify a value for this parameter. A read replica in the same Region is always encrypted with the same
+     *        AWS KMS CMK as the source DB instance.
+     *        </p>
+     *        <p>
+     *        If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key
+     *        identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
+     *        created in, and you can't use CMKs from one AWS Region in another AWS Region.
      *        </p>
      *        <p>
      *        You can't create an encrypted read replica from an unencrypted DB instance.
@@ -3105,8 +3233,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     * <a>CreateDBInstance</a>.
+     * accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3116,8 +3243,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     *        <a>CreateDBInstance</a>.</p>
+     *        database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3131,8 +3257,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     * <a>CreateDBInstance</a>.
+     * accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3141,8 +3266,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     *         <a>CreateDBInstance</a>.</p>
+     *         database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3156,8 +3280,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     * <a>CreateDBInstance</a>.
+     * accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3167,8 +3290,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     *        <a>CreateDBInstance</a>.</p>
+     *        database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3184,8 +3306,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     * <a>CreateDBInstance</a>.
+     * accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3194,8 +3315,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled. For information about the supported DB engines, see
-     *         <a>CreateDBInstance</a>.</p>
+     *         database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3296,22 +3416,28 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
+     *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *        has a different default encryption key for each AWS Region.
+     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
+     *        each AWS Region.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -3320,21 +3446,27 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     * @return The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
+     *         </p>
      *         <p>
      *         If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *         default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *         has a different default encryption key for each AWS Region.
+     *         default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK
+     *         for each AWS Region.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -3343,22 +3475,28 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
+     *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *        has a different default encryption key for each AWS Region.
+     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
+     *        each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3715,36 +3853,22 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     * </p>
-     * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The Active Directory directory ID to create the DB instance in.</p>
+     *        The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *        Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -3753,35 +3877,21 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     * </p>
-     * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
-     * @return The Active Directory directory ID to create the DB instance in.</p>
+     * @return The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *         Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *         <p>
-     *         For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
-     *         the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *         Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     *         </p>
-     *         <p>
-     *         For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *         that connect to the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *         Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *         Guide</i>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *         Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public String getDomain() {
@@ -3790,36 +3900,22 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     * </p>
-     * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The Active Directory directory ID to create the DB instance in.</p>
+     *        The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *        Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3865,6 +3961,259 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     public CreateDBInstanceReadReplicaRequest withDomainIAMRoleName(String domainIAMRoleName) {
         setDomainIAMRoleName(domainIAMRoleName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The open mode of the replica database: mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * </p>
+     * <p>
+     * You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param replicaMode
+     *        The open mode of the replica database: mounted or read-only.</p> <note>
+     *        <p>
+     *        This parameter is only supported for Oracle DB instances.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *        cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information
+     *        to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a
+     *        read-only workload.
+     *        </p>
+     *        <p>
+     *        You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *        Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @see ReplicaMode
+     */
+
+    public void setReplicaMode(String replicaMode) {
+        this.replicaMode = replicaMode;
+    }
+
+    /**
+     * <p>
+     * The open mode of the replica database: mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * </p>
+     * <p>
+     * You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @return The open mode of the replica database: mounted or read-only.</p> <note>
+     *         <p>
+     *         This parameter is only supported for Oracle DB instances.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *         cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit
+     *         information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't
+     *         serve a read-only workload.
+     *         </p>
+     *         <p>
+     *         You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *         Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @see ReplicaMode
+     */
+
+    public String getReplicaMode() {
+        return this.replicaMode;
+    }
+
+    /**
+     * <p>
+     * The open mode of the replica database: mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * </p>
+     * <p>
+     * You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param replicaMode
+     *        The open mode of the replica database: mounted or read-only.</p> <note>
+     *        <p>
+     *        This parameter is only supported for Oracle DB instances.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *        cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information
+     *        to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a
+     *        read-only workload.
+     *        </p>
+     *        <p>
+     *        You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *        Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicaMode
+     */
+
+    public CreateDBInstanceReadReplicaRequest withReplicaMode(String replicaMode) {
+        setReplicaMode(replicaMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The open mode of the replica database: mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * </p>
+     * <p>
+     * You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param replicaMode
+     *        The open mode of the replica database: mounted or read-only.</p> <note>
+     *        <p>
+     *        This parameter is only supported for Oracle DB instances.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *        cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information
+     *        to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a
+     *        read-only workload.
+     *        </p>
+     *        <p>
+     *        You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *        Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicaMode
+     */
+
+    public CreateDBInstanceReadReplicaRequest withReplicaMode(ReplicaMode replicaMode) {
+        this.replicaMode = replicaMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param maxAllocatedStorage
+     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+     *        <p>
+     *        For more information about this setting, including limitations that apply to it, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"
+     *        > Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User
+     *        Guide</i>.
+     */
+
+    public void setMaxAllocatedStorage(Integer maxAllocatedStorage) {
+        this.maxAllocatedStorage = maxAllocatedStorage;
+    }
+
+    /**
+     * <p>
+     * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @return The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+     *         <p>
+     *         For more information about this setting, including limitations that apply to it, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"
+     *         > Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User
+     *         Guide</i>.
+     */
+
+    public Integer getMaxAllocatedStorage() {
+        return this.maxAllocatedStorage;
+    }
+
+    /**
+     * <p>
+     * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param maxAllocatedStorage
+     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+     *        <p>
+     *        For more information about this setting, including limitations that apply to it, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"
+     *        > Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User
+     *        Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withMaxAllocatedStorage(Integer maxAllocatedStorage) {
+        setMaxAllocatedStorage(maxAllocatedStorage);
         return this;
     }
 
@@ -3974,6 +4323,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getDomainIAMRoleName() != null)
             sb.append("DomainIAMRoleName: ").append(getDomainIAMRoleName()).append(",");
+        if (getReplicaMode() != null)
+            sb.append("ReplicaMode: ").append(getReplicaMode()).append(",");
+        if (getMaxAllocatedStorage() != null)
+            sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -4112,6 +4465,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false)
             return false;
+        if (other.getReplicaMode() == null ^ this.getReplicaMode() == null)
+            return false;
+        if (other.getReplicaMode() != null && other.getReplicaMode().equals(this.getReplicaMode()) == false)
+            return false;
+        if (other.getMaxAllocatedStorage() == null ^ this.getMaxAllocatedStorage() == null)
+            return false;
+        if (other.getMaxAllocatedStorage() != null && other.getMaxAllocatedStorage().equals(this.getMaxAllocatedStorage()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -4154,6 +4515,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
+        hashCode = prime * hashCode + ((getReplicaMode() == null) ? 0 : getReplicaMode().hashCode());
+        hashCode = prime * hashCode + ((getMaxAllocatedStorage() == null) ? 0 : getMaxAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

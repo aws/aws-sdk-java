@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,16 @@ public class DomainAssociationJsonUnmarshaller implements Unmarshaller<DomainAss
                     context.nextToken();
                     domainAssociation.setEnableAutoSubDomain(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("autoSubDomainCreationPatterns", targetDepth)) {
+                    context.nextToken();
+                    domainAssociation.setAutoSubDomainCreationPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("autoSubDomainIAMRole", targetDepth)) {
+                    context.nextToken();
+                    domainAssociation.setAutoSubDomainIAMRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("domainStatus", targetDepth)) {
                     context.nextToken();
                     domainAssociation.setDomainStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -74,7 +84,9 @@ public class DomainAssociationJsonUnmarshaller implements Unmarshaller<DomainAss
                 }
                 if (context.testExpression("subDomains", targetDepth)) {
                     context.nextToken();
-                    domainAssociation.setSubDomains(new ListUnmarshaller<SubDomain>(SubDomainJsonUnmarshaller.getInstance()).unmarshall(context));
+                    domainAssociation.setSubDomains(new ListUnmarshaller<SubDomain>(SubDomainJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

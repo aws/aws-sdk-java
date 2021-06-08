@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,30 +31,30 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
     private java.util.Date createdAt;
     /**
      * <p>
-     * The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to AWS
-     * Security Hub and exporting finding events to Amazon CloudWatch.
+     * The frequency with which Macie publishes updates to policy findings for the account. This includes publishing
+     * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      */
     private String findingPublishingFrequency;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze data in
-     * AWS resources for the account.
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in AWS
+     * resources for the account.
      * </p>
      */
     private String serviceRole;
     /**
      * <p>
-     * The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all
-     * Amazon Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all
-     * Amazon Macie activities are enabled for the account.
+     * The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie
+     * activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities
+     * are enabled for the account.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon
-     * Macie account.
+     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie
+     * account.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -101,13 +101,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to AWS
-     * Security Hub and exporting finding events to Amazon CloudWatch.
+     * The frequency with which Macie publishes updates to policy findings for the account. This includes publishing
+     * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to
-     *        AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     *        The frequency with which Macie publishes updates to policy findings for the account. This includes
+     *        publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -117,12 +117,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to AWS
-     * Security Hub and exporting finding events to Amazon CloudWatch.
+     * The frequency with which Macie publishes updates to policy findings for the account. This includes publishing
+     * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
-     * @return The frequency with which Amazon Macie publishes findings for the account. This includes adding findings
-     *         to AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     * @return The frequency with which Macie publishes updates to policy findings for the account. This includes
+     *         publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -132,13 +132,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to AWS
-     * Security Hub and exporting finding events to Amazon CloudWatch.
+     * The frequency with which Macie publishes updates to policy findings for the account. This includes publishing
+     * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to
-     *        AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     *        The frequency with which Macie publishes updates to policy findings for the account. This includes
+     *        publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -150,13 +150,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to AWS
-     * Security Hub and exporting finding events to Amazon CloudWatch.
+     * The frequency with which Macie publishes updates to policy findings for the account. This includes publishing
+     * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * </p>
      * 
      * @param findingPublishingFrequency
-     *        The frequency with which Amazon Macie publishes findings for the account. This includes adding findings to
-     *        AWS Security Hub and exporting finding events to Amazon CloudWatch.
+     *        The frequency with which Macie publishes updates to policy findings for the account. This includes
+     *        publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -168,13 +168,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze data in
-     * AWS resources for the account.
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in AWS
+     * resources for the account.
      * </p>
      * 
      * @param serviceRole
-     *        The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze
-     *        data in AWS resources for the account.
+     *        The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in
+     *        AWS resources for the account.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -183,12 +183,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze data in
-     * AWS resources for the account.
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in AWS
+     * resources for the account.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze
-     *         data in AWS resources for the account.
+     * @return The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data
+     *         in AWS resources for the account.
      */
 
     public String getServiceRole() {
@@ -197,13 +197,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze data in
-     * AWS resources for the account.
+     * The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in AWS
+     * resources for the account.
      * </p>
      * 
      * @param serviceRole
-     *        The Amazon Resource Name (ARN) of the service-level role that allows Amazon Macie to monitor and analyze
-     *        data in AWS resources for the account.
+     *        The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor and analyze data in
+     *        AWS resources for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,15 +214,15 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all
-     * Amazon Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all
-     * Amazon Macie activities are enabled for the account.
+     * The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie
+     * activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities
+     * are enabled for the account.
      * </p>
      * 
      * @param status
-     *        The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but
-     *        all Amazon Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled
-     *        and all Amazon Macie activities are enabled for the account.
+     *        The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie
+     *        activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie
+     *        activities are enabled for the account.
      * @see MacieStatus
      */
 
@@ -232,14 +232,14 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all
-     * Amazon Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all
-     * Amazon Macie activities are enabled for the account.
+     * The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie
+     * activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities
+     * are enabled for the account.
      * </p>
      * 
-     * @return The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but
-     *         all Amazon Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled
-     *         and all Amazon Macie activities are enabled for the account.
+     * @return The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all
+     *         Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all
+     *         Macie activities are enabled for the account.
      * @see MacieStatus
      */
 
@@ -249,15 +249,15 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all
-     * Amazon Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all
-     * Amazon Macie activities are enabled for the account.
+     * The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie
+     * activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities
+     * are enabled for the account.
      * </p>
      * 
      * @param status
-     *        The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but
-     *        all Amazon Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled
-     *        and all Amazon Macie activities are enabled for the account.
+     *        The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie
+     *        activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie
+     *        activities are enabled for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MacieStatus
      */
@@ -269,15 +269,15 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but all
-     * Amazon Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all
-     * Amazon Macie activities are enabled for the account.
+     * The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie
+     * activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie activities
+     * are enabled for the account.
      * </p>
      * 
      * @param status
-     *        The current status of the Amazon Macie account. Possible values are: PAUSED, the account is enabled but
-     *        all Amazon Macie activities are suspended (paused) for the account; and, ENABLED, the account is enabled
-     *        and all Amazon Macie activities are enabled for the account.
+     *        The current status of the Macie account. Possible values are: PAUSED, the account is enabled but all Macie
+     *        activities are suspended (paused) for the account; and, ENABLED, the account is enabled and all Macie
+     *        activities are enabled for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MacieStatus
      */
@@ -289,13 +289,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon
-     * Macie account.
+     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie
+     * account.
      * </p>
      * 
      * @param updatedAt
      *        The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *        Amazon Macie account.
+     *        Macie account.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -304,12 +304,12 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon
-     * Macie account.
+     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie
+     * account.
      * </p>
      * 
      * @return The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *         Amazon Macie account.
+     *         Macie account.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -318,13 +318,13 @@ public class GetMacieSessionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Amazon
-     * Macie account.
+     * The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the Macie
+     * account.
      * </p>
      * 
      * @param updatedAt
      *        The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the
-     *        Amazon Macie account.
+     *        Macie account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

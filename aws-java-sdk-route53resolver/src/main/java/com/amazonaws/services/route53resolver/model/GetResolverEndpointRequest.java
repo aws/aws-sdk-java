@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class GetResolverEndpointRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get information about.
+     * The ID of the Resolver endpoint that you want to get information about.
      * </p>
      */
     private String resolverEndpointId;
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get information about.
+     * The ID of the Resolver endpoint that you want to get information about.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the resolver endpoint that you want to get information about.
+     *        The ID of the Resolver endpoint that you want to get information about.
      */
 
     public void setResolverEndpointId(String resolverEndpointId) {
@@ -47,10 +47,10 @@ public class GetResolverEndpointRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get information about.
+     * The ID of the Resolver endpoint that you want to get information about.
      * </p>
      * 
-     * @return The ID of the resolver endpoint that you want to get information about.
+     * @return The ID of the Resolver endpoint that you want to get information about.
      */
 
     public String getResolverEndpointId() {
@@ -59,11 +59,11 @@ public class GetResolverEndpointRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get information about.
+     * The ID of the Resolver endpoint that you want to get information about.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the resolver endpoint that you want to get information about.
+     *        The ID of the Resolver endpoint that you want to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

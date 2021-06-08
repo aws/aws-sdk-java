@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of
- * service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
+ * Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of
+ * service-managed or customer-managed S3 storage after the channel is created.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ServiceManagedChannelS3Storage"

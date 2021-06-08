@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for the generate access logs request.
+ * The request structure for the generate access logs request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs" target="_top">AWS API
@@ -30,36 +30,36 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The time at which the logs should start, inclusive.
+     * The time at which the logs should start. The time range specified is inclusive of the start time.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The time at which the logs should end, inclusive.
+     * The time at which the logs should end. The time range specified is inclusive of the end time.
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
 
     /**
      * <p>
-     * The time at which the logs should start, inclusive.
+     * The time at which the logs should start. The time range specified is inclusive of the start time.
      * </p>
      * 
      * @param startTime
-     *        The time at which the logs should start, inclusive.
+     *        The time at which the logs should start. The time range specified is inclusive of the start time.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -68,10 +68,10 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The time at which the logs should start, inclusive.
+     * The time at which the logs should start. The time range specified is inclusive of the start time.
      * </p>
      * 
-     * @return The time at which the logs should start, inclusive.
+     * @return The time at which the logs should start. The time range specified is inclusive of the start time.
      */
 
     public java.util.Date getStartTime() {
@@ -80,11 +80,11 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The time at which the logs should start, inclusive.
+     * The time at which the logs should start. The time range specified is inclusive of the start time.
      * </p>
      * 
      * @param startTime
-     *        The time at which the logs should start, inclusive.
+     *        The time at which the logs should start. The time range specified is inclusive of the start time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The time at which the logs should end, inclusive.
+     * The time at which the logs should end. The time range specified is inclusive of the end time.
      * </p>
      * 
      * @param endTime
-     *        The time at which the logs should end, inclusive.
+     *        The time at which the logs should end. The time range specified is inclusive of the end time.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -108,10 +108,10 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The time at which the logs should end, inclusive.
+     * The time at which the logs should end. The time range specified is inclusive of the end time.
      * </p>
      * 
-     * @return The time at which the logs should end, inclusive.
+     * @return The time at which the logs should end. The time range specified is inclusive of the end time.
      */
 
     public java.util.Date getEndTime() {
@@ -120,11 +120,11 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The time at which the logs should end, inclusive.
+     * The time at which the logs should end. The time range specified is inclusive of the end time.
      * </p>
      * 
      * @param endTime
-     *        The time at which the logs should end, inclusive.
+     *        The time at which the logs should end. The time range specified is inclusive of the end time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Name of the domain.
+     *        The name of the domain.
      */
 
     public void setDomainName(String domainName) {
@@ -148,10 +148,10 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
-     * @return Name of the domain.
+     * @return The name of the domain.
      */
 
     public String getDomainName() {
@@ -160,11 +160,11 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Name of the domain.
+     *        The name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -188,10 +188,10 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -200,11 +200,11 @@ public class GenerateAccessLogsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

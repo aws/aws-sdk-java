@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,11 +70,15 @@ public class OTAUpdateInfoJsonUnmarshaller implements Unmarshaller<OTAUpdateInfo
                 }
                 if (context.testExpression("targets", targetDepth)) {
                     context.nextToken();
-                    oTAUpdateInfo.setTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    oTAUpdateInfo.setTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("protocols", targetDepth)) {
                     context.nextToken();
-                    oTAUpdateInfo.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    oTAUpdateInfo.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("awsJobExecutionsRolloutConfig", targetDepth)) {
                     context.nextToken();
@@ -90,7 +94,9 @@ public class OTAUpdateInfoJsonUnmarshaller implements Unmarshaller<OTAUpdateInfo
                 }
                 if (context.testExpression("otaUpdateFiles", targetDepth)) {
                     context.nextToken();
-                    oTAUpdateInfo.setOtaUpdateFiles(new ListUnmarshaller<OTAUpdateFile>(OTAUpdateFileJsonUnmarshaller.getInstance()).unmarshall(context));
+                    oTAUpdateInfo.setOtaUpdateFiles(new ListUnmarshaller<OTAUpdateFile>(OTAUpdateFileJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("otaUpdateStatus", targetDepth)) {
                     context.nextToken();

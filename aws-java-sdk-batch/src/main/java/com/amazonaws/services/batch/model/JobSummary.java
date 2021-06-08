@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     */
+    private String jobArn;
     /**
      * <p>
      * The ID of the job.
@@ -76,7 +82,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private Long stoppedAt;
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      */
     private ContainerSummary container;
@@ -90,8 +96,53 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The node properties for a single node in a job summary list.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      */
     private NodePropertiesSummary nodeProperties;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @param jobArn
+     *        The Amazon Resource Name (ARN) of the job.
+     */
+
+    public void setJobArn(String jobArn) {
+        this.jobArn = jobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the job.
+     */
+
+    public String getJobArn() {
+        return this.jobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the job.
+     * </p>
+     * 
+     * @param jobArn
+     *        The Amazon Resource Name (ARN) of the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobSummary withJobArn(String jobArn) {
+        setJobArn(jobArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -421,11 +472,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      * 
      * @param container
-     *        An object representing the details of the container that is associated with the job.
+     *        An object representing the details of the container that's associated with the job.
      */
 
     public void setContainer(ContainerSummary container) {
@@ -434,10 +485,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      * 
-     * @return An object representing the details of the container that is associated with the job.
+     * @return An object representing the details of the container that's associated with the job.
      */
 
     public ContainerSummary getContainer() {
@@ -446,11 +497,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the details of the container that is associated with the job.
+     * An object representing the details of the container that's associated with the job.
      * </p>
      * 
      * @param container
-     *        An object representing the details of the container that is associated with the job.
+     *        An object representing the details of the container that's associated with the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -503,9 +554,17 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The node properties for a single node in a job summary list.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
      * @param nodeProperties
-     *        The node properties for a single node in a job summary list.
+     *        The node properties for a single node in a job summary list.</p> <note>
+     *        <p>
+     *        This isn't applicable to jobs running on Fargate resources.
+     *        </p>
      */
 
     public void setNodeProperties(NodePropertiesSummary nodeProperties) {
@@ -516,8 +575,16 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The node properties for a single node in a job summary list.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
-     * @return The node properties for a single node in a job summary list.
+     * @return The node properties for a single node in a job summary list.</p> <note>
+     *         <p>
+     *         This isn't applicable to jobs running on Fargate resources.
+     *         </p>
      */
 
     public NodePropertiesSummary getNodeProperties() {
@@ -528,9 +595,17 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The node properties for a single node in a job summary list.
      * </p>
+     * <note>
+     * <p>
+     * This isn't applicable to jobs running on Fargate resources.
+     * </p>
+     * </note>
      * 
      * @param nodeProperties
-     *        The node properties for a single node in a job summary list.
+     *        The node properties for a single node in a job summary list.</p> <note>
+     *        <p>
+     *        This isn't applicable to jobs running on Fargate resources.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -551,6 +626,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getJobArn() != null)
+            sb.append("JobArn: ").append(getJobArn()).append(",");
         if (getJobId() != null)
             sb.append("JobId: ").append(getJobId()).append(",");
         if (getJobName() != null)
@@ -585,6 +662,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof JobSummary == false)
             return false;
         JobSummary other = (JobSummary) obj;
+        if (other.getJobArn() == null ^ this.getJobArn() == null)
+            return false;
+        if (other.getJobArn() != null && other.getJobArn().equals(this.getJobArn()) == false)
+            return false;
         if (other.getJobId() == null ^ this.getJobId() == null)
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
@@ -633,6 +714,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getJobArn() == null) ? 0 : getJobArn().hashCode());
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());

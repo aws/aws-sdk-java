@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class UpdateDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String deviceId;
+    /**
+     * <p>
+     * The AWS location of the device.
+     * </p>
+     */
+    private AWSLocation aWSLocation;
     /**
      * <p>
      * A description of the device.
@@ -165,6 +171,46 @@ public class UpdateDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public UpdateDeviceRequest withDeviceId(String deviceId) {
         setDeviceId(deviceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS location of the device.
+     * </p>
+     * 
+     * @param aWSLocation
+     *        The AWS location of the device.
+     */
+
+    public void setAWSLocation(AWSLocation aWSLocation) {
+        this.aWSLocation = aWSLocation;
+    }
+
+    /**
+     * <p>
+     * The AWS location of the device.
+     * </p>
+     * 
+     * @return The AWS location of the device.
+     */
+
+    public AWSLocation getAWSLocation() {
+        return this.aWSLocation;
+    }
+
+    /**
+     * <p>
+     * The AWS location of the device.
+     * </p>
+     * 
+     * @param aWSLocation
+     *        The AWS location of the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDeviceRequest withAWSLocation(AWSLocation aWSLocation) {
+        setAWSLocation(aWSLocation);
         return this;
     }
 
@@ -510,6 +556,8 @@ public class UpdateDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("GlobalNetworkId: ").append(getGlobalNetworkId()).append(",");
         if (getDeviceId() != null)
             sb.append("DeviceId: ").append(getDeviceId()).append(",");
+        if (getAWSLocation() != null)
+            sb.append("AWSLocation: ").append(getAWSLocation()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getType() != null)
@@ -521,7 +569,7 @@ public class UpdateDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getSerialNumber() != null)
             sb.append("SerialNumber: ").append(getSerialNumber()).append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation()).append(",");
+            sb.append("Location: ").append("***Sensitive Data Redacted***").append(",");
         if (getSiteId() != null)
             sb.append("SiteId: ").append(getSiteId());
         sb.append("}");
@@ -545,6 +593,10 @@ public class UpdateDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getDeviceId() == null ^ this.getDeviceId() == null)
             return false;
         if (other.getDeviceId() != null && other.getDeviceId().equals(this.getDeviceId()) == false)
+            return false;
+        if (other.getAWSLocation() == null ^ this.getAWSLocation() == null)
+            return false;
+        if (other.getAWSLocation() != null && other.getAWSLocation().equals(this.getAWSLocation()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -584,6 +636,7 @@ public class UpdateDeviceRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getGlobalNetworkId() == null) ? 0 : getGlobalNetworkId().hashCode());
         hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
+        hashCode = prime * hashCode + ((getAWSLocation() == null) ? 0 : getAWSLocation().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getVendor() == null) ? 0 : getVendor().hashCode());

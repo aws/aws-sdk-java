@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,12 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The activity IDs of the desired scaling activities. You can specify up to 50 IDs. If you omit this parameter, all
-     * activities for the past six weeks are described. If unknown activities are requested, they are ignored with no
-     * error. If you specify an Auto Scaling group, the results are limited to that group.
+     * The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six
+     * weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> activityIds;
@@ -39,6 +42,12 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String autoScalingGroupName;
+    /**
+     * <p>
+     * Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * </p>
+     */
+    private Boolean includeDeletedGroups;
     /**
      * <p>
      * The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value
@@ -55,14 +64,19 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The activity IDs of the desired scaling activities. You can specify up to 50 IDs. If you omit this parameter, all
-     * activities for the past six weeks are described. If unknown activities are requested, they are ignored with no
-     * error. If you specify an Auto Scaling group, the results are limited to that group.
+     * The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six
+     * weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 IDs.
      * </p>
      * 
-     * @return The activity IDs of the desired scaling activities. You can specify up to 50 IDs. If you omit this
-     *         parameter, all activities for the past six weeks are described. If unknown activities are requested, they
-     *         are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.
+     * @return The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the
+     *         past six weeks are described. If unknown activities are requested, they are ignored with no error. If you
+     *         specify an Auto Scaling group, the results are limited to that group.</p>
+     *         <p>
+     *         Array Members: Maximum number of 50 IDs.
      */
 
     public java.util.List<String> getActivityIds() {
@@ -74,15 +88,20 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The activity IDs of the desired scaling activities. You can specify up to 50 IDs. If you omit this parameter, all
-     * activities for the past six weeks are described. If unknown activities are requested, they are ignored with no
-     * error. If you specify an Auto Scaling group, the results are limited to that group.
+     * The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six
+     * weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 IDs.
      * </p>
      * 
      * @param activityIds
-     *        The activity IDs of the desired scaling activities. You can specify up to 50 IDs. If you omit this
-     *        parameter, all activities for the past six weeks are described. If unknown activities are requested, they
-     *        are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.
+     *        The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the
+     *        past six weeks are described. If unknown activities are requested, they are ignored with no error. If you
+     *        specify an Auto Scaling group, the results are limited to that group.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 IDs.
      */
 
     public void setActivityIds(java.util.Collection<String> activityIds) {
@@ -96,9 +115,12 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The activity IDs of the desired scaling activities. You can specify up to 50 IDs. If you omit this parameter, all
-     * activities for the past six weeks are described. If unknown activities are requested, they are ignored with no
-     * error. If you specify an Auto Scaling group, the results are limited to that group.
+     * The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six
+     * weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -107,9 +129,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param activityIds
-     *        The activity IDs of the desired scaling activities. You can specify up to 50 IDs. If you omit this
-     *        parameter, all activities for the past six weeks are described. If unknown activities are requested, they
-     *        are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.
+     *        The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the
+     *        past six weeks are described. If unknown activities are requested, they are ignored with no error. If you
+     *        specify an Auto Scaling group, the results are limited to that group.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,15 +149,20 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The activity IDs of the desired scaling activities. You can specify up to 50 IDs. If you omit this parameter, all
-     * activities for the past six weeks are described. If unknown activities are requested, they are ignored with no
-     * error. If you specify an Auto Scaling group, the results are limited to that group.
+     * The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six
+     * weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.
+     * </p>
+     * <p>
+     * Array Members: Maximum number of 50 IDs.
      * </p>
      * 
      * @param activityIds
-     *        The activity IDs of the desired scaling activities. You can specify up to 50 IDs. If you omit this
-     *        parameter, all activities for the past six weeks are described. If unknown activities are requested, they
-     *        are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.
+     *        The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the
+     *        past six weeks are described. If unknown activities are requested, they are ignored with no error. If you
+     *        specify an Auto Scaling group, the results are limited to that group.</p>
+     *        <p>
+     *        Array Members: Maximum number of 50 IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,6 +209,58 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
     public DescribeScalingActivitiesRequest withAutoScalingGroupName(String autoScalingGroupName) {
         setAutoScalingGroupName(autoScalingGroupName);
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * </p>
+     * 
+     * @param includeDeletedGroups
+     *        Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     */
+
+    public void setIncludeDeletedGroups(Boolean includeDeletedGroups) {
+        this.includeDeletedGroups = includeDeletedGroups;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * </p>
+     * 
+     * @return Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     */
+
+    public Boolean getIncludeDeletedGroups() {
+        return this.includeDeletedGroups;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * </p>
+     * 
+     * @param includeDeletedGroups
+     *        Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeScalingActivitiesRequest withIncludeDeletedGroups(Boolean includeDeletedGroups) {
+        setIncludeDeletedGroups(includeDeletedGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     * </p>
+     * 
+     * @return Indicates whether to include scaling activity from deleted Auto Scaling groups.
+     */
+
+    public Boolean isIncludeDeletedGroups() {
+        return this.includeDeletedGroups;
     }
 
     /**
@@ -284,6 +365,8 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
             sb.append("ActivityIds: ").append(getActivityIds()).append(",");
         if (getAutoScalingGroupName() != null)
             sb.append("AutoScalingGroupName: ").append(getAutoScalingGroupName()).append(",");
+        if (getIncludeDeletedGroups() != null)
+            sb.append("IncludeDeletedGroups: ").append(getIncludeDeletedGroups()).append(",");
         if (getMaxRecords() != null)
             sb.append("MaxRecords: ").append(getMaxRecords()).append(",");
         if (getNextToken() != null)
@@ -310,6 +393,10 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false)
             return false;
+        if (other.getIncludeDeletedGroups() == null ^ this.getIncludeDeletedGroups() == null)
+            return false;
+        if (other.getIncludeDeletedGroups() != null && other.getIncludeDeletedGroups().equals(this.getIncludeDeletedGroups()) == false)
+            return false;
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null)
             return false;
         if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false)
@@ -328,6 +415,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
         hashCode = prime * hashCode + ((getActivityIds() == null) ? 0 : getActivityIds().hashCode());
         hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getIncludeDeletedGroups() == null) ? 0 : getIncludeDeletedGroups().hashCode());
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

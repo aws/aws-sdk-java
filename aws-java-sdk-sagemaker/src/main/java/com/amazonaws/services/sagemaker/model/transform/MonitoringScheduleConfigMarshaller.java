@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class MonitoringScheduleConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleConfig").build();
     private static final MarshallingInfo<StructuredPojo> MONITORINGJOBDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringJobDefinition").build();
+    private static final MarshallingInfo<String> MONITORINGJOBDEFINITIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringJobDefinitionName").build();
+    private static final MarshallingInfo<String> MONITORINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringType").build();
 
     private static final MonitoringScheduleConfigMarshaller instance = new MonitoringScheduleConfigMarshaller();
 
@@ -50,6 +54,8 @@ public class MonitoringScheduleConfigMarshaller {
         try {
             protocolMarshaller.marshall(monitoringScheduleConfig.getScheduleConfig(), SCHEDULECONFIG_BINDING);
             protocolMarshaller.marshall(monitoringScheduleConfig.getMonitoringJobDefinition(), MONITORINGJOBDEFINITION_BINDING);
+            protocolMarshaller.marshall(monitoringScheduleConfig.getMonitoringJobDefinitionName(), MONITORINGJOBDEFINITIONNAME_BINDING);
+            protocolMarshaller.marshall(monitoringScheduleConfig.getMonitoringType(), MONITORINGTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

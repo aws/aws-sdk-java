@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -430,8 +430,10 @@ public interface AmazonMTurk {
 
     /**
      * <p>
-     * The <code>GetAccountBalance</code> operation retrieves the amount of money in your Amazon Mechanical Turk
-     * account.
+     * The <code>GetAccountBalance</code> operation retrieves the Prepaid HITs balance in your Amazon Mechanical Turk
+     * account if you are a Prepaid Requester. Alternatively, this operation will retrieve the remaining available AWS
+     * Billing usage if you have enabled AWS Billing. Note: If you have enabled AWS Billing and still have a remaining
+     * Prepaid HITs balance, this balance can be viewed on the My Account page in the Requester console.
      * </p>
      * 
      * @param getAccountBalanceRequest

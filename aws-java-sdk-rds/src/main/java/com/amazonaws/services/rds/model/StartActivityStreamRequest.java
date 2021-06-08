@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the DB cluster, for example
+     * The Amazon Resource Name (ARN) of the DB cluster, for example,
      * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
      * </p>
      */
@@ -41,8 +41,8 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
     private String mode;
     /**
      * <p>
-     * The AWS KMS key identifier for encrypting messages in the database activity stream. The key identifier can be
-     * either a key ID, a key ARN, or a key alias.
+     * The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key identifier is
+     * the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
      * </p>
      */
     private String kmsKeyId;
@@ -56,12 +56,12 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the DB cluster, for example
+     * The Amazon Resource Name (ARN) of the DB cluster, for example,
      * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the DB cluster, for example
+     *        The Amazon Resource Name (ARN) of the DB cluster, for example,
      *        <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
      */
 
@@ -71,11 +71,11 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the DB cluster, for example
+     * The Amazon Resource Name (ARN) of the DB cluster, for example,
      * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the DB cluster, for example
+     * @return The Amazon Resource Name (ARN) of the DB cluster, for example,
      *         <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
      */
 
@@ -85,12 +85,12 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the DB cluster, for example
+     * The Amazon Resource Name (ARN) of the DB cluster, for example,
      * <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the DB cluster, for example
+     *        The Amazon Resource Name (ARN) of the DB cluster, for example,
      *        <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -173,13 +173,13 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS KMS key identifier for encrypting messages in the database activity stream. The key identifier can be
-     * either a key ID, a key ARN, or a key alias.
+     * The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key identifier is
+     * the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for encrypting messages in the database activity stream. The key identifier can
-     *        be either a key ID, a key ARN, or a key alias.
+     *        The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key
+     *        identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -188,12 +188,12 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS KMS key identifier for encrypting messages in the database activity stream. The key identifier can be
-     * either a key ID, a key ARN, or a key alias.
+     * The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key identifier is
+     * the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
      * </p>
      * 
-     * @return The AWS KMS key identifier for encrypting messages in the database activity stream. The key identifier
-     *         can be either a key ID, a key ARN, or a key alias.
+     * @return The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key
+     *         identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -202,13 +202,13 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS KMS key identifier for encrypting messages in the database activity stream. The key identifier can be
-     * either a key ID, a key ARN, or a key alias.
+     * The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key identifier is
+     * the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for encrypting messages in the database activity stream. The key identifier can
-     *        be either a key ID, a key ARN, or a key alias.
+     *        The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key
+     *        identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

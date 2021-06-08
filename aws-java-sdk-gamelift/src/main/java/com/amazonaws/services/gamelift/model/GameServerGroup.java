@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,17 +19,25 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is
- * subject to change.</b>
+ * <b>This data type is used with the GameLift FleetIQ and game server groups.</b>
  * </p>
  * <p>
- * Properties describing a game server group resource. A game server group manages certain properties of a corresponding
- * EC2 Auto Scaling group.
+ * Properties that describe a game server group resource. A game server group manages certain properties related to a
+ * corresponding EC2 Auto Scaling group.
  * </p>
  * <p>
- * A game server group is created by a successful call to <a>CreateGameServerGroup</a> and deleted by calling
- * <a>DeleteGameServerGroup</a>. Game server group activity can be temporarily suspended and resumed by calling
- * <a>SuspendGameServerGroup</a> and <a>ResumeGameServerGroup</a>.
+ * A game server group is created by a successful call to <code>CreateGameServerGroup</code> and deleted by calling
+ * <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling
+ * <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively.
+ * </p>
+ * <p>
+ * <b>Related actions</b>
+ * </p>
+ * <p>
+ * <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a> |
+ * <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a> |
+ * <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerGroup" target="_top">AWS API
@@ -40,7 +48,7 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A developer-defined identifier for the game server group. The name is unique per Region per AWS account.
+     * A developer-defined identifier for the game server group. The name is unique for each Region in each AWS account.
      * </p>
      */
     private String gameServerGroupName;
@@ -53,37 +61,43 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is
-     * validated to ensure that it contains the necessary permissions for game server groups.
+     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * The set of EC2 instance types that GameLift FleetIQ can use when rebalancing and autoscaling instances in the
-     * group.
+     * The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in
+     * the corresponding Auto Scaling group.
      * </p>
      */
     private java.util.List<InstanceDefinition> instanceDefinitions;
     /**
      * <p>
-     * The fallback balancing method to use for the game server group when Spot instances in a Region become unavailable
-     * or are not viable for game hosting. Once triggered, this method remains active until Spot instances can once
-     * again be used. Method options include:
+     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
+     * group. Method options include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * not replaced.
+     * <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again
+     * be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated
+     * (after current gameplay ends) and are not replaced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting capacity
-     * by using On-Demand instances. Existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * replaced with new On-Demand instances.
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server
+     * group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling
+     * back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and
+     * are replaced with new On-Demand Instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.
      * </p>
      * </li>
      * </ul>
@@ -92,16 +106,16 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A flag that indicates whether instances in the game server group are protected from early termination.
-     * Unprotected instances that have active game servers running may be terminated during a scale-down event, causing
-     * players to be dropped from the game. Protected instances cannot be terminated while there are active game servers
-     * running except in the event of a forced game server group deletion (see <a>DeleteGameServerGroup</a>). An
-     * exception to this is Spot Instances, which may be terminated by AWS regardless of protection status.
+     * Unprotected instances that have active game servers running might be terminated during a scale-down event,
+     * causing players to be dropped from the game. Protected instances cannot be terminated while there are active game
+     * servers running except in the event of a forced game server group deletion (see ). An exception to this is with
+     * Spot Instances, which can be terminated by AWS regardless of protection status.
      * </p>
      */
     private String gameServerProtectionPolicy;
     /**
      * <p>
-     * A generated unique ID for the EC2 Auto Scaling group with is associated with this game server group.
+     * A generated unique ID for the EC2 Auto Scaling group that is associated with this game server group.
      * </p>
      */
     private String autoScalingGroupArn;
@@ -112,41 +126,41 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * NEW - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
+     * <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ACTIVATING - GameLift FleetIQ is setting up a game server group, which includes creating an autoscaling group in
-     * your AWS account.
+     * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto
+     * Scaling group in your AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ACTIVE - The game server group has been successfully created.
+     * <code>ACTIVE</code> - The game server group has been successfully created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETE_SCHEDULED - A request to delete the game server group has been received.
+     * <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETING - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing
-     * it. GameLift FleetIQ must first complete and release hosts before it deletes the autoscaling group and the game
-     * server group.
+     * <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is
+     * processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group
+     * and the game server group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETED - The game server group has been successfully deleted.
+     * <code>DELETED</code> - The game server group has been successfully deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ERROR - The asynchronous processes of activating or deleting a game server group has failed, resulting in an
-     * error state.
+     * <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed,
+     * resulting in an error state.
      * </p>
      * </li>
      * </ul>
@@ -154,8 +168,8 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     private String status;
     /**
      * <p>
-     * Additional information about the current game server group status. This information may provide additional
-     * insight on groups that in ERROR status.
+     * Additional information about the current game server group status. This information might provide additional
+     * insight on groups that are in <code>ERROR</code> status.
      * </p>
      */
     private String statusReason;
@@ -169,24 +183,25 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * A time stamp indicating when this game server group was last updated.
+     * A timestamp that indicates when this game server group was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
 
     /**
      * <p>
-     * A developer-defined identifier for the game server group. The name is unique per Region per AWS account.
+     * A developer-defined identifier for the game server group. The name is unique for each Region in each AWS account.
      * </p>
      * 
      * @param gameServerGroupName
-     *        A developer-defined identifier for the game server group. The name is unique per Region per AWS account.
+     *        A developer-defined identifier for the game server group. The name is unique for each Region in each AWS
+     *        account.
      */
 
     public void setGameServerGroupName(String gameServerGroupName) {
@@ -195,10 +210,11 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A developer-defined identifier for the game server group. The name is unique per Region per AWS account.
+     * A developer-defined identifier for the game server group. The name is unique for each Region in each AWS account.
      * </p>
      * 
-     * @return A developer-defined identifier for the game server group. The name is unique per Region per AWS account.
+     * @return A developer-defined identifier for the game server group. The name is unique for each Region in each AWS
+     *         account.
      */
 
     public String getGameServerGroupName() {
@@ -207,11 +223,12 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A developer-defined identifier for the game server group. The name is unique per Region per AWS account.
+     * A developer-defined identifier for the game server group. The name is unique for each Region in each AWS account.
      * </p>
      * 
      * @param gameServerGroupName
-     *        A developer-defined identifier for the game server group. The name is unique per Region per AWS account.
+     *        A developer-defined identifier for the game server group. The name is unique for each Region in each AWS
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,15 +280,13 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is
-     * validated to ensure that it contains the necessary permissions for game server groups.
+     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-     *        allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is validated to ensure
-     *        that it contains the necessary permissions for game server groups.
+     *        allows Amazon GameLift to access your EC2 Auto Scaling groups.
      */
 
     public void setRoleArn(String roleArn) {
@@ -281,14 +296,12 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is
-     * validated to ensure that it contains the necessary permissions for game server groups.
+     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
      * </p>
      * 
      * @return The Amazon Resource Name (<a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-     *         allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is validated to ensure
-     *         that it contains the necessary permissions for game server groups.
+     *         allows Amazon GameLift to access your EC2 Auto Scaling groups.
      */
 
     public String getRoleArn() {
@@ -298,15 +311,13 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is
-     * validated to ensure that it contains the necessary permissions for game server groups.
+     * for an IAM role that allows Amazon GameLift to access your EC2 Auto Scaling groups.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that
-     *        allows Amazon GameLift to access your EC2 Auto Scaling groups. The submitted role is validated to ensure
-     *        that it contains the necessary permissions for game server groups.
+     *        allows Amazon GameLift to access your EC2 Auto Scaling groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,12 +328,12 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The set of EC2 instance types that GameLift FleetIQ can use when rebalancing and autoscaling instances in the
-     * group.
+     * The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in
+     * the corresponding Auto Scaling group.
      * </p>
      * 
-     * @return The set of EC2 instance types that GameLift FleetIQ can use when rebalancing and autoscaling instances in
-     *         the group.
+     * @return The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling
+     *         instances in the corresponding Auto Scaling group.
      */
 
     public java.util.List<InstanceDefinition> getInstanceDefinitions() {
@@ -331,13 +342,13 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The set of EC2 instance types that GameLift FleetIQ can use when rebalancing and autoscaling instances in the
-     * group.
+     * The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in
+     * the corresponding Auto Scaling group.
      * </p>
      * 
      * @param instanceDefinitions
-     *        The set of EC2 instance types that GameLift FleetIQ can use when rebalancing and autoscaling instances in
-     *        the group.
+     *        The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling
+     *        instances in the corresponding Auto Scaling group.
      */
 
     public void setInstanceDefinitions(java.util.Collection<InstanceDefinition> instanceDefinitions) {
@@ -351,8 +362,8 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The set of EC2 instance types that GameLift FleetIQ can use when rebalancing and autoscaling instances in the
-     * group.
+     * The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in
+     * the corresponding Auto Scaling group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -361,8 +372,8 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param instanceDefinitions
-     *        The set of EC2 instance types that GameLift FleetIQ can use when rebalancing and autoscaling instances in
-     *        the group.
+     *        The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling
+     *        instances in the corresponding Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,13 +389,13 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The set of EC2 instance types that GameLift FleetIQ can use when rebalancing and autoscaling instances in the
-     * group.
+     * The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling instances in
+     * the corresponding Auto Scaling group.
      * </p>
      * 
      * @param instanceDefinitions
-     *        The set of EC2 instance types that GameLift FleetIQ can use when rebalancing and autoscaling instances in
-     *        the group.
+     *        The set of EC2 instance types that GameLift FleetIQ can use when balancing and automatically scaling
+     *        instances in the corresponding Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,44 +406,58 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The fallback balancing method to use for the game server group when Spot instances in a Region become unavailable
-     * or are not viable for game hosting. Once triggered, this method remains active until Spot instances can once
-     * again be used. Method options include:
+     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
+     * group. Method options include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * not replaced.
+     * <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again
+     * be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated
+     * (after current gameplay ends) and are not replaced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting capacity
-     * by using On-Demand instances. Existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * replaced with new On-Demand instances.
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server
+     * group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling
+     * back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and
+     * are replaced with new On-Demand Instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.
      * </p>
      * </li>
      * </ul>
      * 
      * @param balancingStrategy
-     *        The fallback balancing method to use for the game server group when Spot instances in a Region become
-     *        unavailable or are not viable for game hosting. Once triggered, this method remains active until Spot
-     *        instances can once again be used. Method options include:</p>
+     *        Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     *        server group. Method options include the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     *        instances are started, and the existing nonviable Spot instances are terminated (once current gameplay
-     *        ends) and not replaced.
+     *        <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are
+     *        unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot
+     *        Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot
+     *        Instances are terminated (after current gameplay ends) and are not replaced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting
-     *        capacity by using On-Demand instances. Existing nonviable Spot instances are terminated (once current
-     *        gameplay ends) and replaced with new On-Demand instances.
+     *        <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game
+     *        server group. If Spot Instances are unavailable, the game server group continues to provide hosting
+     *        capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after
+     *        current gameplay ends) and are replaced with new On-Demand Instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot
+     *        Instances are used, even when available, while this balancing strategy is in force.
      *        </p>
      *        </li>
      * @see BalancingStrategy
@@ -444,43 +469,57 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The fallback balancing method to use for the game server group when Spot instances in a Region become unavailable
-     * or are not viable for game hosting. Once triggered, this method remains active until Spot instances can once
-     * again be used. Method options include:
+     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
+     * group. Method options include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * not replaced.
+     * <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again
+     * be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated
+     * (after current gameplay ends) and are not replaced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting capacity
-     * by using On-Demand instances. Existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * replaced with new On-Demand instances.
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server
+     * group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling
+     * back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and
+     * are replaced with new On-Demand Instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The fallback balancing method to use for the game server group when Spot instances in a Region become
-     *         unavailable or are not viable for game hosting. Once triggered, this method remains active until Spot
-     *         instances can once again be used. Method options include:</p>
+     * @return Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     *         server group. Method options include the following:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No
-     *         new instances are started, and the existing nonviable Spot instances are terminated (once current
-     *         gameplay ends) and not replaced.
+     *         <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are
+     *         unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot
+     *         Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot
+     *         Instances are terminated (after current gameplay ends) and are not replaced.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting
-     *         capacity by using On-Demand instances. Existing nonviable Spot instances are terminated (once current
-     *         gameplay ends) and replaced with new On-Demand instances.
+     *         <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game
+     *         server group. If Spot Instances are unavailable, the game server group continues to provide hosting
+     *         capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after
+     *         current gameplay ends) and are replaced with new On-Demand Instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot
+     *         Instances are used, even when available, while this balancing strategy is in force.
      *         </p>
      *         </li>
      * @see BalancingStrategy
@@ -492,44 +531,58 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The fallback balancing method to use for the game server group when Spot instances in a Region become unavailable
-     * or are not viable for game hosting. Once triggered, this method remains active until Spot instances can once
-     * again be used. Method options include:
+     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
+     * group. Method options include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * not replaced.
+     * <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again
+     * be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated
+     * (after current gameplay ends) and are not replaced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting capacity
-     * by using On-Demand instances. Existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * replaced with new On-Demand instances.
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server
+     * group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling
+     * back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and
+     * are replaced with new On-Demand Instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.
      * </p>
      * </li>
      * </ul>
      * 
      * @param balancingStrategy
-     *        The fallback balancing method to use for the game server group when Spot instances in a Region become
-     *        unavailable or are not viable for game hosting. Once triggered, this method remains active until Spot
-     *        instances can once again be used. Method options include:</p>
+     *        Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     *        server group. Method options include the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     *        instances are started, and the existing nonviable Spot instances are terminated (once current gameplay
-     *        ends) and not replaced.
+     *        <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are
+     *        unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot
+     *        Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot
+     *        Instances are terminated (after current gameplay ends) and are not replaced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting
-     *        capacity by using On-Demand instances. Existing nonviable Spot instances are terminated (once current
-     *        gameplay ends) and replaced with new On-Demand instances.
+     *        <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game
+     *        server group. If Spot Instances are unavailable, the game server group continues to provide hosting
+     *        capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after
+     *        current gameplay ends) and are replaced with new On-Demand Instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot
+     *        Instances are used, even when available, while this balancing strategy is in force.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -543,44 +596,58 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The fallback balancing method to use for the game server group when Spot instances in a Region become unavailable
-     * or are not viable for game hosting. Once triggered, this method remains active until Spot instances can once
-     * again be used. Method options include:
+     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
+     * group. Method options include the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     * instances are started, and the existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * not replaced.
+     * <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are unavailable
+     * or not viable for game hosting, the game server group provides no hosting capacity until Spot Instances can again
+     * be used. Until then, no new instances are started, and the existing nonviable Spot Instances are terminated
+     * (after current gameplay ends) and are not replaced.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting capacity
-     * by using On-Demand instances. Existing nonviable Spot instances are terminated (once current gameplay ends) and
-     * replaced with new On-Demand instances.
+     * <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game server
+     * group. If Spot Instances are unavailable, the game server group continues to provide hosting capacity by falling
+     * back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after current gameplay ends) and
+     * are replaced with new On-Demand Instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are
+     * used, even when available, while this balancing strategy is in force.
      * </p>
      * </li>
      * </ul>
      * 
      * @param balancingStrategy
-     *        The fallback balancing method to use for the game server group when Spot instances in a Region become
-     *        unavailable or are not viable for game hosting. Once triggered, this method remains active until Spot
-     *        instances can once again be used. Method options include:</p>
+     *        Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     *        server group. Method options include the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        SPOT_ONLY -- If Spot instances are unavailable, the game server group provides no hosting capacity. No new
-     *        instances are started, and the existing nonviable Spot instances are terminated (once current gameplay
-     *        ends) and not replaced.
+     *        <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If Spot Instances are
+     *        unavailable or not viable for game hosting, the game server group provides no hosting capacity until Spot
+     *        Instances can again be used. Until then, no new instances are started, and the existing nonviable Spot
+     *        Instances are terminated (after current gameplay ends) and are not replaced.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SPOT_PREFERRED -- If Spot instances are unavailable, the game server group continues to provide hosting
-     *        capacity by using On-Demand instances. Existing nonviable Spot instances are terminated (once current
-     *        gameplay ends) and replaced with new On-Demand instances.
+     *        <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available in the game
+     *        server group. If Spot Instances are unavailable, the game server group continues to provide hosting
+     *        capacity by falling back to On-Demand Instances. Existing nonviable Spot Instances are terminated (after
+     *        current gameplay ends) and are replaced with new On-Demand Instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot
+     *        Instances are used, even when available, while this balancing strategy is in force.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -595,19 +662,18 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A flag that indicates whether instances in the game server group are protected from early termination.
-     * Unprotected instances that have active game servers running may be terminated during a scale-down event, causing
-     * players to be dropped from the game. Protected instances cannot be terminated while there are active game servers
-     * running except in the event of a forced game server group deletion (see <a>DeleteGameServerGroup</a>). An
-     * exception to this is Spot Instances, which may be terminated by AWS regardless of protection status.
+     * Unprotected instances that have active game servers running might be terminated during a scale-down event,
+     * causing players to be dropped from the game. Protected instances cannot be terminated while there are active game
+     * servers running except in the event of a forced game server group deletion (see ). An exception to this is with
+     * Spot Instances, which can be terminated by AWS regardless of protection status.
      * </p>
      * 
      * @param gameServerProtectionPolicy
      *        A flag that indicates whether instances in the game server group are protected from early termination.
-     *        Unprotected instances that have active game servers running may be terminated during a scale-down event,
+     *        Unprotected instances that have active game servers running might be terminated during a scale-down event,
      *        causing players to be dropped from the game. Protected instances cannot be terminated while there are
-     *        active game servers running except in the event of a forced game server group deletion (see
-     *        <a>DeleteGameServerGroup</a>). An exception to this is Spot Instances, which may be terminated by AWS
-     *        regardless of protection status.
+     *        active game servers running except in the event of a forced game server group deletion (see ). An
+     *        exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status.
      * @see GameServerProtectionPolicy
      */
 
@@ -618,18 +684,17 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A flag that indicates whether instances in the game server group are protected from early termination.
-     * Unprotected instances that have active game servers running may be terminated during a scale-down event, causing
-     * players to be dropped from the game. Protected instances cannot be terminated while there are active game servers
-     * running except in the event of a forced game server group deletion (see <a>DeleteGameServerGroup</a>). An
-     * exception to this is Spot Instances, which may be terminated by AWS regardless of protection status.
+     * Unprotected instances that have active game servers running might be terminated during a scale-down event,
+     * causing players to be dropped from the game. Protected instances cannot be terminated while there are active game
+     * servers running except in the event of a forced game server group deletion (see ). An exception to this is with
+     * Spot Instances, which can be terminated by AWS regardless of protection status.
      * </p>
      * 
      * @return A flag that indicates whether instances in the game server group are protected from early termination.
-     *         Unprotected instances that have active game servers running may be terminated during a scale-down event,
-     *         causing players to be dropped from the game. Protected instances cannot be terminated while there are
-     *         active game servers running except in the event of a forced game server group deletion (see
-     *         <a>DeleteGameServerGroup</a>). An exception to this is Spot Instances, which may be terminated by AWS
-     *         regardless of protection status.
+     *         Unprotected instances that have active game servers running might be terminated during a scale-down
+     *         event, causing players to be dropped from the game. Protected instances cannot be terminated while there
+     *         are active game servers running except in the event of a forced game server group deletion (see ). An
+     *         exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status.
      * @see GameServerProtectionPolicy
      */
 
@@ -640,19 +705,18 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A flag that indicates whether instances in the game server group are protected from early termination.
-     * Unprotected instances that have active game servers running may be terminated during a scale-down event, causing
-     * players to be dropped from the game. Protected instances cannot be terminated while there are active game servers
-     * running except in the event of a forced game server group deletion (see <a>DeleteGameServerGroup</a>). An
-     * exception to this is Spot Instances, which may be terminated by AWS regardless of protection status.
+     * Unprotected instances that have active game servers running might be terminated during a scale-down event,
+     * causing players to be dropped from the game. Protected instances cannot be terminated while there are active game
+     * servers running except in the event of a forced game server group deletion (see ). An exception to this is with
+     * Spot Instances, which can be terminated by AWS regardless of protection status.
      * </p>
      * 
      * @param gameServerProtectionPolicy
      *        A flag that indicates whether instances in the game server group are protected from early termination.
-     *        Unprotected instances that have active game servers running may be terminated during a scale-down event,
+     *        Unprotected instances that have active game servers running might be terminated during a scale-down event,
      *        causing players to be dropped from the game. Protected instances cannot be terminated while there are
-     *        active game servers running except in the event of a forced game server group deletion (see
-     *        <a>DeleteGameServerGroup</a>). An exception to this is Spot Instances, which may be terminated by AWS
-     *        regardless of protection status.
+     *        active game servers running except in the event of a forced game server group deletion (see ). An
+     *        exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerProtectionPolicy
      */
@@ -665,19 +729,18 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A flag that indicates whether instances in the game server group are protected from early termination.
-     * Unprotected instances that have active game servers running may be terminated during a scale-down event, causing
-     * players to be dropped from the game. Protected instances cannot be terminated while there are active game servers
-     * running except in the event of a forced game server group deletion (see <a>DeleteGameServerGroup</a>). An
-     * exception to this is Spot Instances, which may be terminated by AWS regardless of protection status.
+     * Unprotected instances that have active game servers running might be terminated during a scale-down event,
+     * causing players to be dropped from the game. Protected instances cannot be terminated while there are active game
+     * servers running except in the event of a forced game server group deletion (see ). An exception to this is with
+     * Spot Instances, which can be terminated by AWS regardless of protection status.
      * </p>
      * 
      * @param gameServerProtectionPolicy
      *        A flag that indicates whether instances in the game server group are protected from early termination.
-     *        Unprotected instances that have active game servers running may be terminated during a scale-down event,
+     *        Unprotected instances that have active game servers running might be terminated during a scale-down event,
      *        causing players to be dropped from the game. Protected instances cannot be terminated while there are
-     *        active game servers running except in the event of a forced game server group deletion (see
-     *        <a>DeleteGameServerGroup</a>). An exception to this is Spot Instances, which may be terminated by AWS
-     *        regardless of protection status.
+     *        active game servers running except in the event of a forced game server group deletion (see ). An
+     *        exception to this is with Spot Instances, which can be terminated by AWS regardless of protection status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerProtectionPolicy
      */
@@ -689,11 +752,11 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A generated unique ID for the EC2 Auto Scaling group with is associated with this game server group.
+     * A generated unique ID for the EC2 Auto Scaling group that is associated with this game server group.
      * </p>
      * 
      * @param autoScalingGroupArn
-     *        A generated unique ID for the EC2 Auto Scaling group with is associated with this game server group.
+     *        A generated unique ID for the EC2 Auto Scaling group that is associated with this game server group.
      */
 
     public void setAutoScalingGroupArn(String autoScalingGroupArn) {
@@ -702,10 +765,10 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A generated unique ID for the EC2 Auto Scaling group with is associated with this game server group.
+     * A generated unique ID for the EC2 Auto Scaling group that is associated with this game server group.
      * </p>
      * 
-     * @return A generated unique ID for the EC2 Auto Scaling group with is associated with this game server group.
+     * @return A generated unique ID for the EC2 Auto Scaling group that is associated with this game server group.
      */
 
     public String getAutoScalingGroupArn() {
@@ -714,11 +777,11 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A generated unique ID for the EC2 Auto Scaling group with is associated with this game server group.
+     * A generated unique ID for the EC2 Auto Scaling group that is associated with this game server group.
      * </p>
      * 
      * @param autoScalingGroupArn
-     *        A generated unique ID for the EC2 Auto Scaling group with is associated with this game server group.
+     *        A generated unique ID for the EC2 Auto Scaling group that is associated with this game server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -734,41 +797,41 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * NEW - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
+     * <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ACTIVATING - GameLift FleetIQ is setting up a game server group, which includes creating an autoscaling group in
-     * your AWS account.
+     * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto
+     * Scaling group in your AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ACTIVE - The game server group has been successfully created.
+     * <code>ACTIVE</code> - The game server group has been successfully created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETE_SCHEDULED - A request to delete the game server group has been received.
+     * <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETING - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing
-     * it. GameLift FleetIQ must first complete and release hosts before it deletes the autoscaling group and the game
-     * server group.
+     * <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is
+     * processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group
+     * and the game server group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETED - The game server group has been successfully deleted.
+     * <code>DELETED</code> - The game server group has been successfully deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ERROR - The asynchronous processes of activating or deleting a game server group has failed, resulting in an
-     * error state.
+     * <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed,
+     * resulting in an error state.
      * </p>
      * </li>
      * </ul>
@@ -778,41 +841,41 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        NEW - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
+     *        <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ACTIVATING - GameLift FleetIQ is setting up a game server group, which includes creating an autoscaling
-     *        group in your AWS account.
+     *        <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an
+     *        Auto Scaling group in your AWS account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ACTIVE - The game server group has been successfully created.
+     *        <code>ACTIVE</code> - The game server group has been successfully created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DELETE_SCHEDULED - A request to delete the game server group has been received.
+     *        <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DELETING - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is
-     *        processing it. GameLift FleetIQ must first complete and release hosts before it deletes the autoscaling
-     *        group and the game server group.
+     *        <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request
+     *        and is processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto
+     *        Scaling group and the game server group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DELETED - The game server group has been successfully deleted.
+     *        <code>DELETED</code> - The game server group has been successfully deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ERROR - The asynchronous processes of activating or deleting a game server group has failed, resulting in
-     *        an error state.
+     *        <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed,
+     *        resulting in an error state.
      *        </p>
      *        </li>
      * @see GameServerGroupStatus
@@ -829,41 +892,41 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * NEW - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
+     * <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ACTIVATING - GameLift FleetIQ is setting up a game server group, which includes creating an autoscaling group in
-     * your AWS account.
+     * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto
+     * Scaling group in your AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ACTIVE - The game server group has been successfully created.
+     * <code>ACTIVE</code> - The game server group has been successfully created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETE_SCHEDULED - A request to delete the game server group has been received.
+     * <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETING - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing
-     * it. GameLift FleetIQ must first complete and release hosts before it deletes the autoscaling group and the game
-     * server group.
+     * <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is
+     * processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group
+     * and the game server group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETED - The game server group has been successfully deleted.
+     * <code>DELETED</code> - The game server group has been successfully deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ERROR - The asynchronous processes of activating or deleting a game server group has failed, resulting in an
-     * error state.
+     * <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed,
+     * resulting in an error state.
      * </p>
      * </li>
      * </ul>
@@ -872,41 +935,41 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         NEW - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
+     *         <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ACTIVATING - GameLift FleetIQ is setting up a game server group, which includes creating an autoscaling
-     *         group in your AWS account.
+     *         <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an
+     *         Auto Scaling group in your AWS account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ACTIVE - The game server group has been successfully created.
+     *         <code>ACTIVE</code> - The game server group has been successfully created.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELETE_SCHEDULED - A request to delete the game server group has been received.
+     *         <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELETING - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is
-     *         processing it. GameLift FleetIQ must first complete and release hosts before it deletes the autoscaling
-     *         group and the game server group.
+     *         <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code>
+     *         request and is processing it. GameLift FleetIQ must first complete and release hosts before it deletes
+     *         the Auto Scaling group and the game server group.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELETED - The game server group has been successfully deleted.
+     *         <code>DELETED</code> - The game server group has been successfully deleted.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ERROR - The asynchronous processes of activating or deleting a game server group has failed, resulting in
-     *         an error state.
+     *         <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed,
+     *         resulting in an error state.
      *         </p>
      *         </li>
      * @see GameServerGroupStatus
@@ -923,41 +986,41 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * NEW - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
+     * <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ACTIVATING - GameLift FleetIQ is setting up a game server group, which includes creating an autoscaling group in
-     * your AWS account.
+     * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto
+     * Scaling group in your AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ACTIVE - The game server group has been successfully created.
+     * <code>ACTIVE</code> - The game server group has been successfully created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETE_SCHEDULED - A request to delete the game server group has been received.
+     * <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETING - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing
-     * it. GameLift FleetIQ must first complete and release hosts before it deletes the autoscaling group and the game
-     * server group.
+     * <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is
+     * processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group
+     * and the game server group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETED - The game server group has been successfully deleted.
+     * <code>DELETED</code> - The game server group has been successfully deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ERROR - The asynchronous processes of activating or deleting a game server group has failed, resulting in an
-     * error state.
+     * <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed,
+     * resulting in an error state.
      * </p>
      * </li>
      * </ul>
@@ -967,41 +1030,41 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        NEW - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
+     *        <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ACTIVATING - GameLift FleetIQ is setting up a game server group, which includes creating an autoscaling
-     *        group in your AWS account.
+     *        <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an
+     *        Auto Scaling group in your AWS account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ACTIVE - The game server group has been successfully created.
+     *        <code>ACTIVE</code> - The game server group has been successfully created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DELETE_SCHEDULED - A request to delete the game server group has been received.
+     *        <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DELETING - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is
-     *        processing it. GameLift FleetIQ must first complete and release hosts before it deletes the autoscaling
-     *        group and the game server group.
+     *        <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request
+     *        and is processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto
+     *        Scaling group and the game server group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DELETED - The game server group has been successfully deleted.
+     *        <code>DELETED</code> - The game server group has been successfully deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ERROR - The asynchronous processes of activating or deleting a game server group has failed, resulting in
-     *        an error state.
+     *        <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed,
+     *        resulting in an error state.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1020,41 +1083,41 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * NEW - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
+     * <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ACTIVATING - GameLift FleetIQ is setting up a game server group, which includes creating an autoscaling group in
-     * your AWS account.
+     * <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an Auto
+     * Scaling group in your AWS account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ACTIVE - The game server group has been successfully created.
+     * <code>ACTIVE</code> - The game server group has been successfully created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETE_SCHEDULED - A request to delete the game server group has been received.
+     * <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETING - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is processing
-     * it. GameLift FleetIQ must first complete and release hosts before it deletes the autoscaling group and the game
-     * server group.
+     * <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is
+     * processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto Scaling group
+     * and the game server group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * DELETED - The game server group has been successfully deleted.
+     * <code>DELETED</code> - The game server group has been successfully deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * ERROR - The asynchronous processes of activating or deleting a game server group has failed, resulting in an
-     * error state.
+     * <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed,
+     * resulting in an error state.
      * </p>
      * </li>
      * </ul>
@@ -1064,41 +1127,41 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        NEW - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
+     *        <code>NEW</code> - GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code> request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ACTIVATING - GameLift FleetIQ is setting up a game server group, which includes creating an autoscaling
-     *        group in your AWS account.
+     *        <code>ACTIVATING</code> - GameLift FleetIQ is setting up a game server group, which includes creating an
+     *        Auto Scaling group in your AWS account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ACTIVE - The game server group has been successfully created.
+     *        <code>ACTIVE</code> - The game server group has been successfully created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DELETE_SCHEDULED - A request to delete the game server group has been received.
+     *        <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DELETING - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request and is
-     *        processing it. GameLift FleetIQ must first complete and release hosts before it deletes the autoscaling
-     *        group and the game server group.
+     *        <code>DELETING</code> - GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code> request
+     *        and is processing it. GameLift FleetIQ must first complete and release hosts before it deletes the Auto
+     *        Scaling group and the game server group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        DELETED - The game server group has been successfully deleted.
+     *        <code>DELETED</code> - The game server group has been successfully deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ERROR - The asynchronous processes of activating or deleting a game server group has failed, resulting in
-     *        an error state.
+     *        <code>ERROR</code> - The asynchronous processes of activating or deleting a game server group has failed,
+     *        resulting in an error state.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1112,13 +1175,13 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Additional information about the current game server group status. This information may provide additional
-     * insight on groups that in ERROR status.
+     * Additional information about the current game server group status. This information might provide additional
+     * insight on groups that are in <code>ERROR</code> status.
      * </p>
      * 
      * @param statusReason
-     *        Additional information about the current game server group status. This information may provide additional
-     *        insight on groups that in ERROR status.
+     *        Additional information about the current game server group status. This information might provide
+     *        additional insight on groups that are in <code>ERROR</code> status.
      */
 
     public void setStatusReason(String statusReason) {
@@ -1127,12 +1190,12 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Additional information about the current game server group status. This information may provide additional
-     * insight on groups that in ERROR status.
+     * Additional information about the current game server group status. This information might provide additional
+     * insight on groups that are in <code>ERROR</code> status.
      * </p>
      * 
-     * @return Additional information about the current game server group status. This information may provide
-     *         additional insight on groups that in ERROR status.
+     * @return Additional information about the current game server group status. This information might provide
+     *         additional insight on groups that are in <code>ERROR</code> status.
      */
 
     public String getStatusReason() {
@@ -1141,13 +1204,13 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Additional information about the current game server group status. This information may provide additional
-     * insight on groups that in ERROR status.
+     * Additional information about the current game server group status. This information might provide additional
+     * insight on groups that are in <code>ERROR</code> status.
      * </p>
      * 
      * @param statusReason
-     *        Additional information about the current game server group status. This information may provide additional
-     *        insight on groups that in ERROR status.
+     *        Additional information about the current game server group status. This information might provide
+     *        additional insight on groups that are in <code>ERROR</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1267,12 +1330,12 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
      *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -1282,11 +1345,11 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @return A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (for example "1469498468.057").
+     *         milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getCreationTime() {
@@ -1296,12 +1359,12 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
      *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1312,11 +1375,11 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A time stamp indicating when this game server group was last updated.
+     * A timestamp that indicates when this game server group was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        A time stamp indicating when this game server group was last updated.
+     *        A timestamp that indicates when this game server group was last updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -1325,10 +1388,10 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A time stamp indicating when this game server group was last updated.
+     * A timestamp that indicates when this game server group was last updated.
      * </p>
      * 
-     * @return A time stamp indicating when this game server group was last updated.
+     * @return A timestamp that indicates when this game server group was last updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -1337,11 +1400,11 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A time stamp indicating when this game server group was last updated.
+     * A timestamp that indicates when this game server group was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        A time stamp indicating when this game server group was last updated.
+     *        A timestamp that indicates when this game server group was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

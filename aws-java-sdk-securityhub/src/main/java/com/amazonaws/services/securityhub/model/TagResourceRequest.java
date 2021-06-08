@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,8 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resourceArn;
     /**
      * <p>
-     * The tags to add to the resource.
+     * The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than 128
+     * characters. The tag values can be no longer than 256 characters.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -80,10 +81,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to add to the resource.
+     * The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than 128
+     * characters. The tag values can be no longer than 256 characters.
      * </p>
      * 
-     * @return The tags to add to the resource.
+     * @return The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than
+     *         128 characters. The tag values can be no longer than 256 characters.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -92,11 +95,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to add to the resource.
+     * The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than 128
+     * characters. The tag values can be no longer than 256 characters.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the resource.
+     *        The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than
+     *        128 characters. The tag values can be no longer than 256 characters.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -105,11 +110,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to add to the resource.
+     * The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than 128
+     * characters. The tag values can be no longer than 256 characters.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the resource.
+     *        The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than
+     *        128 characters. The tag values can be no longer than 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      * >CreateAssetModel</a> or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     * >UpdateAssetModel</a> API.
+     * >UpdateAssetModel</a> API operation.
      * </p>
      */
     private String name;
@@ -99,7 +99,7 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      * >CreateAssetModel</a> or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     * >UpdateAssetModel</a> API.
+     * >UpdateAssetModel</a> API operation.
      * </p>
      * 
      * @param name
@@ -107,7 +107,7 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      *        >CreateAssetModel</a> or <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     *        >UpdateAssetModel</a> API.
+     *        >UpdateAssetModel</a> API operation.
      */
 
     public void setName(String name) {
@@ -120,14 +120,14 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      * >CreateAssetModel</a> or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     * >UpdateAssetModel</a> API.
+     * >UpdateAssetModel</a> API operation.
      * </p>
      * 
      * @return The name of the asset model hierarchy that you specify by using the <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      *         >CreateAssetModel</a> or <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     *         >UpdateAssetModel</a> API.
+     *         >UpdateAssetModel</a> API operation.
      */
 
     public String getName() {
@@ -140,7 +140,7 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      * >CreateAssetModel</a> or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     * >UpdateAssetModel</a> API.
+     * >UpdateAssetModel</a> API operation.
      * </p>
      * 
      * @param name
@@ -148,7 +148,7 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      *        >CreateAssetModel</a> or <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     *        >UpdateAssetModel</a> API.
+     *        >UpdateAssetModel</a> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

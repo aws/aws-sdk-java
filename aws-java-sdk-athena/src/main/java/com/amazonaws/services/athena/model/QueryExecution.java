@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,12 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String workGroup;
+    /**
+     * <p>
+     * The engine version that executed the query.
+     * </p>
+     */
+    private EngineVersion engineVersion;
 
     /**
      * <p>
@@ -479,6 +485,46 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The engine version that executed the query.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The engine version that executed the query.
+     */
+
+    public void setEngineVersion(EngineVersion engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+
+    /**
+     * <p>
+     * The engine version that executed the query.
+     * </p>
+     * 
+     * @return The engine version that executed the query.
+     */
+
+    public EngineVersion getEngineVersion() {
+        return this.engineVersion;
+    }
+
+    /**
+     * <p>
+     * The engine version that executed the query.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The engine version that executed the query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryExecution withEngineVersion(EngineVersion engineVersion) {
+        setEngineVersion(engineVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -505,7 +551,9 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
         if (getStatistics() != null)
             sb.append("Statistics: ").append(getStatistics()).append(",");
         if (getWorkGroup() != null)
-            sb.append("WorkGroup: ").append(getWorkGroup());
+            sb.append("WorkGroup: ").append(getWorkGroup()).append(",");
+        if (getEngineVersion() != null)
+            sb.append("EngineVersion: ").append(getEngineVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -552,6 +600,10 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWorkGroup() != null && other.getWorkGroup().equals(this.getWorkGroup()) == false)
             return false;
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
+            return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+            return false;
         return true;
     }
 
@@ -568,6 +620,7 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
-     * User Guide.</i>
+     * User Guide</i>.
      * </p>
      */
     private String status;
@@ -98,7 +98,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the overriding
-     * <code>OverrideOptions</code> value to operation.
+     * <code>OverrideOptions</code> value to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      */
     private Options options;
@@ -185,14 +187,14 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
-     * User Guide.</i>
+     * User Guide</i>.
      * </p>
      * 
      * @param status
      *        The status of the task that was described.</p>
      *        <p>
      *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     *        DataSync User Guide.</i>
+     *        DataSync User Guide</i>.
      * @see TaskStatus
      */
 
@@ -206,13 +208,13 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
-     * User Guide.</i>
+     * User Guide</i>.
      * </p>
      * 
      * @return The status of the task that was described.</p>
      *         <p>
      *         For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     *         DataSync User Guide.</i>
+     *         DataSync User Guide</i>.
      * @see TaskStatus
      */
 
@@ -226,14 +228,14 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
-     * User Guide.</i>
+     * User Guide</i>.
      * </p>
      * 
      * @param status
      *        The status of the task that was described.</p>
      *        <p>
      *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     *        DataSync User Guide.</i>
+     *        DataSync User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskStatus
      */
@@ -249,14 +251,14 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS DataSync
-     * User Guide.</i>
+     * User Guide</i>.
      * </p>
      * 
      * @param status
      *        The status of the task that was described.</p>
      *        <p>
      *        For detailed information about task execution statuses, see Understanding Task Statuses in the <i>AWS
-     *        DataSync User Guide.</i>
+     *        DataSync User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskStatus
      */
@@ -653,7 +655,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the overriding
-     * <code>OverrideOptions</code> value to operation.
+     * <code>OverrideOptions</code> value to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      * 
      * @param options
@@ -662,7 +666,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      *        as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>
      *        <p>
      *        For each individual task execution, you can override these options by specifying the overriding
-     *        <code>OverrideOptions</code> value to operation.
+     *        <code>OverrideOptions</code> value to <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
+     *        >StartTaskExecution</a> operation.
      */
 
     public void setOptions(Options options) {
@@ -677,7 +683,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the overriding
-     * <code>OverrideOptions</code> value to operation.
+     * <code>OverrideOptions</code> value to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      * 
      * @return The set of configuration options that control the behavior of a single execution of the task that occurs
@@ -685,7 +693,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      *         as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>
      *         <p>
      *         For each individual task execution, you can override these options by specifying the overriding
-     *         <code>OverrideOptions</code> value to operation.
+     *         <code>OverrideOptions</code> value to <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
+     *         >StartTaskExecution</a> operation.
      */
 
     public Options getOptions() {
@@ -700,7 +710,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the overriding
-     * <code>OverrideOptions</code> value to operation.
+     * <code>OverrideOptions</code> value to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      * 
      * @param options
@@ -709,7 +721,9 @@ public class DescribeTaskResult extends com.amazonaws.AmazonWebServiceResult<com
      *        as user ID (UID) and group (GID), file permissions, data integrity verification, and so on.</p>
      *        <p>
      *        For each individual task execution, you can override these options by specifying the overriding
-     *        <code>OverrideOptions</code> value to operation.
+     *        <code>OverrideOptions</code> value to <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
+     *        >StartTaskExecution</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

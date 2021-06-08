@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,15 @@ public class UpdateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private Integer minimumLinks;
+    /**
+     * <p>
+     * The LAG MAC Security (MACsec) encryption mode.
+     * </p>
+     * <p>
+     * AWS applies the value to all connections which are part of the LAG.
+     * </p>
+     */
+    private String encryptionMode;
 
     /**
      * <p>
@@ -165,6 +174,61 @@ public class UpdateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The LAG MAC Security (MACsec) encryption mode.
+     * </p>
+     * <p>
+     * AWS applies the value to all connections which are part of the LAG.
+     * </p>
+     * 
+     * @param encryptionMode
+     *        The LAG MAC Security (MACsec) encryption mode.</p>
+     *        <p>
+     *        AWS applies the value to all connections which are part of the LAG.
+     */
+
+    public void setEncryptionMode(String encryptionMode) {
+        this.encryptionMode = encryptionMode;
+    }
+
+    /**
+     * <p>
+     * The LAG MAC Security (MACsec) encryption mode.
+     * </p>
+     * <p>
+     * AWS applies the value to all connections which are part of the LAG.
+     * </p>
+     * 
+     * @return The LAG MAC Security (MACsec) encryption mode.</p>
+     *         <p>
+     *         AWS applies the value to all connections which are part of the LAG.
+     */
+
+    public String getEncryptionMode() {
+        return this.encryptionMode;
+    }
+
+    /**
+     * <p>
+     * The LAG MAC Security (MACsec) encryption mode.
+     * </p>
+     * <p>
+     * AWS applies the value to all connections which are part of the LAG.
+     * </p>
+     * 
+     * @param encryptionMode
+     *        The LAG MAC Security (MACsec) encryption mode.</p>
+     *        <p>
+     *        AWS applies the value to all connections which are part of the LAG.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLagRequest withEncryptionMode(String encryptionMode) {
+        setEncryptionMode(encryptionMode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +245,9 @@ public class UpdateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getLagName() != null)
             sb.append("LagName: ").append(getLagName()).append(",");
         if (getMinimumLinks() != null)
-            sb.append("MinimumLinks: ").append(getMinimumLinks());
+            sb.append("MinimumLinks: ").append(getMinimumLinks()).append(",");
+        if (getEncryptionMode() != null)
+            sb.append("EncryptionMode: ").append(getEncryptionMode());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +274,10 @@ public class UpdateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getMinimumLinks() != null && other.getMinimumLinks().equals(this.getMinimumLinks()) == false)
             return false;
+        if (other.getEncryptionMode() == null ^ this.getEncryptionMode() == null)
+            return false;
+        if (other.getEncryptionMode() != null && other.getEncryptionMode().equals(this.getEncryptionMode()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +289,7 @@ public class UpdateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getLagId() == null) ? 0 : getLagId().hashCode());
         hashCode = prime * hashCode + ((getLagName() == null) ? 0 : getLagName().hashCode());
         hashCode = prime * hashCode + ((getMinimumLinks() == null) ? 0 : getMinimumLinks().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionMode() == null) ? 0 : getEncryptionMode().hashCode());
         return hashCode;
     }
 

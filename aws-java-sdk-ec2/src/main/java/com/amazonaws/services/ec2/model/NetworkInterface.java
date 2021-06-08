@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -112,8 +112,7 @@ public class NetworkInterface implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<NetworkInterfacePrivateIpAddress> privateIpAddresses;
     /**
      * <p>
-     * The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or Auto
-     * Scaling).
+     * The alias or AWS account ID of the principal or service that created the network interface.
      * </p>
      */
     private String requesterId;
@@ -125,7 +124,7 @@ public class NetworkInterface implements Serializable, Cloneable {
     private Boolean requesterManaged;
     /**
      * <p>
-     * Indicates whether traffic to or from the instance is validated.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      */
     private Boolean sourceDestCheck;
@@ -848,13 +847,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or Auto
-     * Scaling).
+     * The alias or AWS account ID of the principal or service that created the network interface.
      * </p>
      * 
      * @param requesterId
-     *        The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or
-     *        Auto Scaling).
+     *        The alias or AWS account ID of the principal or service that created the network interface.
      */
 
     public void setRequesterId(String requesterId) {
@@ -863,12 +860,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or Auto
-     * Scaling).
+     * The alias or AWS account ID of the principal or service that created the network interface.
      * </p>
      * 
-     * @return The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or
-     *         Auto Scaling).
+     * @return The alias or AWS account ID of the principal or service that created the network interface.
      */
 
     public String getRequesterId() {
@@ -877,13 +872,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or Auto
-     * Scaling).
+     * The alias or AWS account ID of the principal or service that created the network interface.
      * </p>
      * 
      * @param requesterId
-     *        The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or
-     *        Auto Scaling).
+     *        The alias or AWS account ID of the principal or service that created the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -946,11 +939,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether traffic to or from the instance is validated.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether traffic to or from the instance is validated.
+     *        Indicates whether source/destination checking is enabled.
      */
 
     public void setSourceDestCheck(Boolean sourceDestCheck) {
@@ -959,10 +952,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether traffic to or from the instance is validated.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
-     * @return Indicates whether traffic to or from the instance is validated.
+     * @return Indicates whether source/destination checking is enabled.
      */
 
     public Boolean getSourceDestCheck() {
@@ -971,11 +964,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether traffic to or from the instance is validated.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether traffic to or from the instance is validated.
+     *        Indicates whether source/destination checking is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -986,10 +979,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether traffic to or from the instance is validated.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
-     * @return Indicates whether traffic to or from the instance is validated.
+     * @return Indicates whether source/destination checking is enabled.
      */
 
     public Boolean isSourceDestCheck() {

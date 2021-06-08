@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,19 +41,16 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
     private Boolean encrypted;
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
-     * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
-     * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
+     * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
+     * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS
+     * volume types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
-     * </p>
-     * <p>
-     * Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in requests
-     * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
      * </p>
      */
     private Integer iops;
@@ -75,8 +72,9 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
     private Integer volumeSize;
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
-     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
+     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code> io2</code> for Provisioned
+     * IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code>
+     * for Magnetic.
      * </p>
      * <p>
      * Default: <code>gp2</code>
@@ -198,35 +196,29 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
-     * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
-     * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
+     * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
+     * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS
+     * volume types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
-     * </p>
-     * <p>
-     * Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in requests
-     * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents
-     *        the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
-     *        baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
-     *        For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code>
+     *        volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>.
+     *        Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     *        href
+     *        ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     *        built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *        EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
-     *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
-     *        volumes.
-     *        </p>
-     *        <p>
-     *        Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in
-     *        requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     *        This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
      */
 
     public void setIops(Integer iops) {
@@ -235,35 +227,28 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
-     * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
-     * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
+     * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
+     * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS
+     * volume types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
-     * </p>
-     * <p>
-     * Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in requests
-     * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
      * </p>
      * 
-     * @return The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents
-     *         the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
-     *         baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
-     *         For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * @return The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code>
+     *         volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>.
+     *         Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     *         href
+     *         ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     *         built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *         EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
-     *         Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
-     *         volumes.
-     *         </p>
-     *         <p>
-     *         Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in
-     *         requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
-     *         volumes.
+     *         This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
      */
 
     public Integer getIops() {
@@ -272,35 +257,29 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
-     * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-     * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
-     * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code> volume,
+     * with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>. Range is 100 to
+     * 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS
+     * volume types</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
-     * Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code> volumes.
-     * </p>
-     * <p>
-     * Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in requests
-     * to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     * This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents
-     *        the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
-     *        baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
-     *        For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        The number of I/O operations per second (IOPS) to provision for an <code>io1</code> or <code>io2</code>
+     *        volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>, and 500 IOPS/GiB for <code>io2</code>.
+     *        Range is 100 to 64,000 IOPS for volumes in most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     *        href
+     *        ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+     *        built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS. For more
+     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *        EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
-     *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
-     *        volumes.
-     *        </p>
-     *        <p>
-     *        Condition: This parameter is required for requests to create <code>io1</code>volumes; it is not used in
-     *        requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.
+     *        This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -412,17 +391,18 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
-     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
+     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code> io2</code> for Provisioned
+     * IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code>
+     * for Magnetic.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD,
-     *        Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for
-     *        Magnetic.</p>
+     *        The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code> io2</code> for
+     *        Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or
+     *        <code>standard</code> for Magnetic.</p>
      *        <p>
      *        Default: <code>gp2</code>
      */
@@ -433,16 +413,17 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
-     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
+     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code> io2</code> for Provisioned
+     * IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code>
+     * for Magnetic.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
-     * @return The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD,
-     *         Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code>
-     *         for Magnetic.</p>
+     * @return The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code> io2</code> for
+     *         Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or
+     *         <code>standard</code> for Magnetic.</p>
      *         <p>
      *         Default: <code>gp2</code>
      */
@@ -453,17 +434,18 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
-     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
+     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code> io2</code> for Provisioned
+     * IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code>
+     * for Magnetic.
      * </p>
      * <p>
      * Default: <code>gp2</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD,
-     *        Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for
-     *        Magnetic.</p>
+     *        The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code> io2</code> for
+     *        Provisioned IOPS SSD, Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or
+     *        <code>standard</code> for Magnetic.</p>
      *        <p>
      *        Default: <code>gp2</code>
      * @return Returns a reference to this object so that method calls can be chained together.

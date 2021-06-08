@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,22 @@ public class StatisticsJsonUnmarshaller implements Unmarshaller<Statistics, Json
                 if (context.testExpression("Stddev", targetDepth)) {
                     context.nextToken();
                     statistics.setStddev(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("CountLong", targetDepth)) {
+                    context.nextToken();
+                    statistics.setCountLong(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("CountDistinctLong", targetDepth)) {
+                    context.nextToken();
+                    statistics.setCountDistinctLong(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("CountNullLong", targetDepth)) {
+                    context.nextToken();
+                    statistics.setCountNullLong(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("CountNanLong", targetDepth)) {
+                    context.nextToken();
+                    statistics.setCountNanLong(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

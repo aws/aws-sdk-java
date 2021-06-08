@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class H265SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorMetadata").build();
     private static final MarshallingInfo<StructuredPojo> COLORSPACESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorSpaceSettings").build();
+    private static final MarshallingInfo<StructuredPojo> FILTERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterSettings").build();
     private static final MarshallingInfo<String> FIXEDAFD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("fixedAfd").build();
     private static final MarshallingInfo<String> FLICKERAQ_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -107,6 +109,7 @@ public class H265SettingsMarshaller {
             protocolMarshaller.marshall(h265Settings.getBufSize(), BUFSIZE_BINDING);
             protocolMarshaller.marshall(h265Settings.getColorMetadata(), COLORMETADATA_BINDING);
             protocolMarshaller.marshall(h265Settings.getColorSpaceSettings(), COLORSPACESETTINGS_BINDING);
+            protocolMarshaller.marshall(h265Settings.getFilterSettings(), FILTERSETTINGS_BINDING);
             protocolMarshaller.marshall(h265Settings.getFixedAfd(), FIXEDAFD_BINDING);
             protocolMarshaller.marshall(h265Settings.getFlickerAq(), FLICKERAQ_BINDING);
             protocolMarshaller.marshall(h265Settings.getFramerateDenominator(), FRAMERATEDENOMINATOR_BINDING);

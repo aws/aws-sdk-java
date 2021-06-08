@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,33 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
      * </p>
      */
     private java.util.List<String> affectedAccounts;
-
+    /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String eventScopeCode;
     /**
      * <p>
@@ -113,7 +139,56 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
     }
 
     /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param eventScopeCode
+     *        This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *        event.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *        value is always empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *        <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *        an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *        service, those account IDs appear in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *        specified in the request is invalid or doesn't exist.
+     *        </p>
+     *        </li>
      * @see EventScopeCode
      */
 
@@ -122,7 +197,55 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
     }
 
     /**
-     * @return
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *         event.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *         value is always empty.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *         <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *         an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *         service, those account IDs appear in the response.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *         specified in the request is invalid or doesn't exist.
+     *         </p>
+     *         </li>
      * @see EventScopeCode
      */
 
@@ -131,7 +254,56 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
     }
 
     /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param eventScopeCode
+     *        This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *        event.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *        value is always empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *        <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *        an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *        service, those account IDs appear in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *        specified in the request is invalid or doesn't exist.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventScopeCode
      */
@@ -142,7 +314,56 @@ public class DescribeAffectedAccountsForOrganizationResult extends com.amazonaws
     }
 
     /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param eventScopeCode
+     *        This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *        event.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *        value is always empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *        <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *        an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *        service, those account IDs appear in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *        specified in the request is invalid or doesn't exist.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventScopeCode
      */

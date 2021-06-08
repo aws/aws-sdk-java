@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,17 +18,6 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Describes the state of a Classic Load Balancer.
- * </p>
- * <p>
- * If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is
- * <code>InService</code>.
- * </p>
- * <p>
- * If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state
- * transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If Elastic
- * Load Balancing health checks are enabled for the load balancer, the state transitions to <code>InService</code> after
- * at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load
- * balancer remains in the <code>Added</code> state.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LoadBalancerState" target="_top">AWS API
@@ -50,29 +39,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Adding</code> - The instances in the group are being registered with the load balancer.
+     * <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Added</code> - All instances in the group are registered with the load balancer.
+     * <code>Added</code> - All Auto Scaling instances are registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InService</code> - At least one instance in the group passed an ELB health check.
+     * <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If connection
+     * <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection
      * draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the
      * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removed</code> - All instances in the group are deregistered from the load balancer.
+     * <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.
      * </p>
      * </li>
      * </ul>
@@ -126,29 +115,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Adding</code> - The instances in the group are being registered with the load balancer.
+     * <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Added</code> - All instances in the group are registered with the load balancer.
+     * <code>Added</code> - All Auto Scaling instances are registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InService</code> - At least one instance in the group passed an ELB health check.
+     * <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If connection
+     * <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection
      * draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the
      * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removed</code> - All instances in the group are deregistered from the load balancer.
+     * <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.
      * </p>
      * </li>
      * </ul>
@@ -158,29 +147,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Adding</code> - The instances in the group are being registered with the load balancer.
+     *        <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Added</code> - All instances in the group are registered with the load balancer.
+     *        <code>Added</code> - All Auto Scaling instances are registered with the load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>InService</code> - At least one instance in the group passed an ELB health check.
+     *        <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If
+     *        <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If
      *        connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before
      *        deregistering the instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Removed</code> - All instances in the group are deregistered from the load balancer.
+     *        <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.
      *        </p>
      *        </li>
      */
@@ -196,29 +185,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Adding</code> - The instances in the group are being registered with the load balancer.
+     * <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Added</code> - All instances in the group are registered with the load balancer.
+     * <code>Added</code> - All Auto Scaling instances are registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InService</code> - At least one instance in the group passed an ELB health check.
+     * <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If connection
+     * <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection
      * draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the
      * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removed</code> - All instances in the group are deregistered from the load balancer.
+     * <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.
      * </p>
      * </li>
      * </ul>
@@ -227,29 +216,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Adding</code> - The instances in the group are being registered with the load balancer.
+     *         <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Added</code> - All instances in the group are registered with the load balancer.
+     *         <code>Added</code> - All Auto Scaling instances are registered with the load balancer.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>InService</code> - At least one instance in the group passed an ELB health check.
+     *         <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If
+     *         <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If
      *         connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before
      *         deregistering the instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Removed</code> - All instances in the group are deregistered from the load balancer.
+     *         <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.
      *         </p>
      *         </li>
      */
@@ -265,29 +254,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Adding</code> - The instances in the group are being registered with the load balancer.
+     * <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Added</code> - All instances in the group are registered with the load balancer.
+     * <code>Added</code> - All Auto Scaling instances are registered with the load balancer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>InService</code> - At least one instance in the group passed an ELB health check.
+     * <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If connection
+     * <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If connection
      * draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before deregistering the
      * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Removed</code> - All instances in the group are deregistered from the load balancer.
+     * <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.
      * </p>
      * </li>
      * </ul>
@@ -297,29 +286,29 @@ public class LoadBalancerState implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Adding</code> - The instances in the group are being registered with the load balancer.
+     *        <code>Adding</code> - The Auto Scaling instances are being registered with the load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Added</code> - All instances in the group are registered with the load balancer.
+     *        <code>Added</code> - All Auto Scaling instances are registered with the load balancer.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>InService</code> - At least one instance in the group passed an ELB health check.
+     *        <code>InService</code> - At least one Auto Scaling instance passed an <code>ELB</code> health check.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Removing</code> - The instances in the group are being deregistered from the load balancer. If
+     *        <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer. If
      *        connection draining is enabled, Elastic Load Balancing waits for in-flight requests to complete before
      *        deregistering the instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Removed</code> - All instances in the group are deregistered from the load balancer.
+     *        <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

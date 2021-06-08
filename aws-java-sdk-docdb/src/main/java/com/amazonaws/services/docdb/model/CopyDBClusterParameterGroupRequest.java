@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If the source parameter group is in a different AWS Region than the copy, specify a valid cluster parameter group
-     * ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
+     * ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.
      * </p>
      * </li>
      * </ul>
@@ -125,7 +125,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If the source parameter group is in a different AWS Region than the copy, specify a valid cluster parameter group
-     * ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
+     * ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.
      * </p>
      * </li>
      * </ul>
@@ -151,7 +151,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        If the source parameter group is in a different AWS Region than the copy, specify a valid cluster
      *        parameter group ARN; for example,
-     *        <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
+     *        <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.
      *        </p>
      *        </li>
      */
@@ -182,7 +182,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If the source parameter group is in a different AWS Region than the copy, specify a valid cluster parameter group
-     * ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
+     * ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.
      * </p>
      * </li>
      * </ul>
@@ -207,7 +207,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *         <p>
      *         If the source parameter group is in a different AWS Region than the copy, specify a valid cluster
      *         parameter group ARN; for example,
-     *         <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
+     *         <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.
      *         </p>
      *         </li>
      */
@@ -238,7 +238,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * If the source parameter group is in a different AWS Region than the copy, specify a valid cluster parameter group
-     * ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
+     * ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.
      * </p>
      * </li>
      * </ul>
@@ -264,7 +264,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        If the source parameter group is in a different AWS Region than the copy, specify a valid cluster
      *        parameter group ARN; for example,
-     *        <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
+     *        <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

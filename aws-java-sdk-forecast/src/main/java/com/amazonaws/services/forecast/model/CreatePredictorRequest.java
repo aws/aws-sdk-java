@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,10 +47,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Supports hyperparameter optimization (HPO)
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * </li>
      * <li>
@@ -88,6 +90,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer forecastHorizon;
     /**
      * <p>
+     * Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types
+     * can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>.
+     * </p>
+     * <p>
+     * The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * </p>
+     */
+    private java.util.List<String> forecastTypes;
+    /**
+     * <p>
      * Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and
      * chooses the best algorithm and configuration for your training dataset.
      * </p>
@@ -101,6 +114,16 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean performAutoML;
+    /**
+     * <p>
+     * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     */
+    private String autoMLOverrideStrategy;
     /**
      * <p>
      * Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training
@@ -117,12 +140,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithm supports HPO:
+     * The following algorithms support HPO:
      * </p>
      * <ul>
      * <li>
      * <p>
      * DeepAR+
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNN-QR
      * </p>
      * </li>
      * </ul>
@@ -173,6 +201,59 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private EncryptionConfig encryptionConfig;
+    /**
+     * <p>
+     * The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -230,10 +311,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Supports hyperparameter optimization (HPO)
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * </li>
      * <li>
@@ -267,10 +350,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     *        <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Supports hyperparameter optimization (HPO)
+     *        <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      *        </p>
      *        </li>
      *        <li>
@@ -310,10 +395,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Supports hyperparameter optimization (HPO)
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * </li>
      * <li>
@@ -346,10 +433,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     *         <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         Supports hyperparameter optimization (HPO)
+     *         <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      *         </p>
      *         </li>
      *         <li>
@@ -389,10 +478,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     * <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Supports hyperparameter optimization (HPO)
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      * </p>
      * </li>
      * <li>
@@ -426,10 +517,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+     *        <code>arn:aws:forecast:::algorithm/CNN-QR</code>
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Supports hyperparameter optimization (HPO)
+     *        <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
      *        </p>
      *        </li>
      *        <li>
@@ -546,6 +639,112 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreatePredictorRequest withForecastHorizon(Integer forecastHorizon) {
         setForecastHorizon(forecastHorizon);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types
+     * can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>.
+     * </p>
+     * <p>
+     * The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * </p>
+     * 
+     * @return Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
+     *         Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
+     *         the mean forecast with <code>mean</code>. </p>
+     *         <p>
+     *         The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     */
+
+    public java.util.List<String> getForecastTypes() {
+        return forecastTypes;
+    }
+
+    /**
+     * <p>
+     * Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types
+     * can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>.
+     * </p>
+     * <p>
+     * The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
+     *        Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
+     *        the mean forecast with <code>mean</code>. </p>
+     *        <p>
+     *        The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     */
+
+    public void setForecastTypes(java.util.Collection<String> forecastTypes) {
+        if (forecastTypes == null) {
+            this.forecastTypes = null;
+            return;
+        }
+
+        this.forecastTypes = new java.util.ArrayList<String>(forecastTypes);
+    }
+
+    /**
+     * <p>
+     * Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types
+     * can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>.
+     * </p>
+     * <p>
+     * The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setForecastTypes(java.util.Collection)} or {@link #withForecastTypes(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
+     *        Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
+     *        the mean forecast with <code>mean</code>. </p>
+     *        <p>
+     *        The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePredictorRequest withForecastTypes(String... forecastTypes) {
+        if (this.forecastTypes == null) {
+            setForecastTypes(new java.util.ArrayList<String>(forecastTypes.length));
+        }
+        for (String ele : forecastTypes) {
+            this.forecastTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types
+     * can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with
+     * <code>mean</code>.
+     * </p>
+     * <p>
+     * The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * </p>
+     * 
+     * @param forecastTypes
+     *        Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
+     *        Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
+     *        the mean forecast with <code>mean</code>. </p>
+     *        <p>
+     *        The default value is <code>["0.10", "0.50", "0.9"]</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePredictorRequest withForecastTypes(java.util.Collection<String> forecastTypes) {
+        setForecastTypes(forecastTypes);
         return this;
     }
 
@@ -671,6 +870,93 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @param autoMLOverrideStrategy
+     *        Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
+     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     *        <p>
+     *        This parameter is only valid for predictors trained using AutoML.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public void setAutoMLOverrideStrategy(String autoMLOverrideStrategy) {
+        this.autoMLOverrideStrategy = autoMLOverrideStrategy;
+    }
+
+    /**
+     * <p>
+     * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @return Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
+     *         strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     *         <p>
+     *         This parameter is only valid for predictors trained using AutoML.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public String getAutoMLOverrideStrategy() {
+        return this.autoMLOverrideStrategy;
+    }
+
+    /**
+     * <p>
+     * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @param autoMLOverrideStrategy
+     *        Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
+     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     *        <p>
+     *        This parameter is only valid for predictors trained using AutoML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public CreatePredictorRequest withAutoMLOverrideStrategy(String autoMLOverrideStrategy) {
+        setAutoMLOverrideStrategy(autoMLOverrideStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.
+     * </p>
+     * <p>
+     * This parameter is only valid for predictors trained using AutoML.
+     * </p>
+     * 
+     * @param autoMLOverrideStrategy
+     *        Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML
+     *        strategy that minimizes training time, use <code>LatencyOptimized</code>.</p>
+     *        <p>
+     *        This parameter is only valid for predictors trained using AutoML.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLOverrideStrategy
+     */
+
+    public CreatePredictorRequest withAutoMLOverrideStrategy(AutoMLOverrideStrategy autoMLOverrideStrategy) {
+        this.autoMLOverrideStrategy = autoMLOverrideStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training
      * data. The process of performing HPO is known as running a hyperparameter tuning job.
      * </p>
@@ -685,12 +971,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithm supports HPO:
+     * The following algorithms support HPO:
      * </p>
      * <ul>
      * <li>
      * <p>
      * DeepAR+
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNN-QR
      * </p>
      * </li>
      * </ul>
@@ -709,12 +1000,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *        </p>
      *        <p>
-     *        The following algorithm supports HPO:
+     *        The following algorithms support HPO:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        DeepAR+
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CNN-QR
      *        </p>
      *        </li>
      */
@@ -739,12 +1035,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithm supports HPO:
+     * The following algorithms support HPO:
      * </p>
      * <ul>
      * <li>
      * <p>
      * DeepAR+
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNN-QR
      * </p>
      * </li>
      * </ul>
@@ -762,12 +1063,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *         you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *         </p>
      *         <p>
-     *         The following algorithm supports HPO:
+     *         The following algorithms support HPO:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         DeepAR+
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CNN-QR
      *         </p>
      *         </li>
      */
@@ -792,12 +1098,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithm supports HPO:
+     * The following algorithms support HPO:
      * </p>
      * <ul>
      * <li>
      * <p>
      * DeepAR+
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNN-QR
      * </p>
      * </li>
      * </ul>
@@ -816,12 +1127,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *        you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *        </p>
      *        <p>
-     *        The following algorithm supports HPO:
+     *        The following algorithms support HPO:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        DeepAR+
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CNN-QR
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -848,12 +1164,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      * specify an algorithm and <code>PerformAutoML</code> must be false.
      * </p>
      * <p>
-     * The following algorithm supports HPO:
+     * The following algorithms support HPO:
      * </p>
      * <ul>
      * <li>
      * <p>
      * DeepAR+
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNN-QR
      * </p>
      * </li>
      * </ul>
@@ -871,12 +1192,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
      *         you are required to specify an algorithm and <code>PerformAutoML</code> must be false.
      *         </p>
      *         <p>
-     *         The following algorithm supports HPO:
+     *         The following algorithms support HPO:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         DeepAR+
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CNN-QR
      *         </p>
      *         </li>
      */
@@ -1208,6 +1534,448 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag
+     *         consists of a key and an optional value, both of which you define.</p>
+     *         <p>
+     *         The following basic restrictions apply to tags:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Maximum number of tags per resource - 50.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For each resource, each tag key must be unique, and each tag key can have only one value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum key length - 128 Unicode characters in UTF-8.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum value length - 256 Unicode characters in UTF-8.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If your tagging schema is used across multiple services and resources, remember that other services may
+     *         have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *         representable in UTF-8, and the following characters: + - = . _ : / @.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tag keys and values are case sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a
+     *         prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix.
+     *         Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then
+     *         Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the
+     *         key prefix of <code>aws</code> do not count against your tags per resource limit.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
+     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
+     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
+     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
+     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePredictorRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists
+     * of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag
+     *        consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
+     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
+     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePredictorRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1225,8 +1993,12 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("AlgorithmArn: ").append(getAlgorithmArn()).append(",");
         if (getForecastHorizon() != null)
             sb.append("ForecastHorizon: ").append(getForecastHorizon()).append(",");
+        if (getForecastTypes() != null)
+            sb.append("ForecastTypes: ").append(getForecastTypes()).append(",");
         if (getPerformAutoML() != null)
             sb.append("PerformAutoML: ").append(getPerformAutoML()).append(",");
+        if (getAutoMLOverrideStrategy() != null)
+            sb.append("AutoMLOverrideStrategy: ").append(getAutoMLOverrideStrategy()).append(",");
         if (getPerformHPO() != null)
             sb.append("PerformHPO: ").append(getPerformHPO()).append(",");
         if (getTrainingParameters() != null)
@@ -1240,7 +2012,9 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
         if (getFeaturizationConfig() != null)
             sb.append("FeaturizationConfig: ").append(getFeaturizationConfig()).append(",");
         if (getEncryptionConfig() != null)
-            sb.append("EncryptionConfig: ").append(getEncryptionConfig());
+            sb.append("EncryptionConfig: ").append(getEncryptionConfig()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1267,9 +2041,17 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getForecastHorizon() != null && other.getForecastHorizon().equals(this.getForecastHorizon()) == false)
             return false;
+        if (other.getForecastTypes() == null ^ this.getForecastTypes() == null)
+            return false;
+        if (other.getForecastTypes() != null && other.getForecastTypes().equals(this.getForecastTypes()) == false)
+            return false;
         if (other.getPerformAutoML() == null ^ this.getPerformAutoML() == null)
             return false;
         if (other.getPerformAutoML() != null && other.getPerformAutoML().equals(this.getPerformAutoML()) == false)
+            return false;
+        if (other.getAutoMLOverrideStrategy() == null ^ this.getAutoMLOverrideStrategy() == null)
+            return false;
+        if (other.getAutoMLOverrideStrategy() != null && other.getAutoMLOverrideStrategy().equals(this.getAutoMLOverrideStrategy()) == false)
             return false;
         if (other.getPerformHPO() == null ^ this.getPerformHPO() == null)
             return false;
@@ -1299,6 +2081,10 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getEncryptionConfig() != null && other.getEncryptionConfig().equals(this.getEncryptionConfig()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1310,7 +2096,9 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getPredictorName() == null) ? 0 : getPredictorName().hashCode());
         hashCode = prime * hashCode + ((getAlgorithmArn() == null) ? 0 : getAlgorithmArn().hashCode());
         hashCode = prime * hashCode + ((getForecastHorizon() == null) ? 0 : getForecastHorizon().hashCode());
+        hashCode = prime * hashCode + ((getForecastTypes() == null) ? 0 : getForecastTypes().hashCode());
         hashCode = prime * hashCode + ((getPerformAutoML() == null) ? 0 : getPerformAutoML().hashCode());
+        hashCode = prime * hashCode + ((getAutoMLOverrideStrategy() == null) ? 0 : getAutoMLOverrideStrategy().hashCode());
         hashCode = prime * hashCode + ((getPerformHPO() == null) ? 0 : getPerformHPO().hashCode());
         hashCode = prime * hashCode + ((getTrainingParameters() == null) ? 0 : getTrainingParameters().hashCode());
         hashCode = prime * hashCode + ((getEvaluationParameters() == null) ? 0 : getEvaluationParameters().hashCode());
@@ -1318,6 +2106,7 @@ public class CreatePredictorRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getFeaturizationConfig() == null) ? 0 : getFeaturizationConfig().hashCode());
         hashCode = prime * hashCode + ((getEncryptionConfig() == null) ? 0 : getEncryptionConfig().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

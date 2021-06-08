@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,17 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * The block device mapping entries.
+     * </p>
+     * <p>
+     * If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.
+     * </p>
+     * <p>
+     * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
+     * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -128,6 +139,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      */
     private String virtualizationType;
+    /**
+     * <p>
+     * The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private String bootMode;
 
     /**
      * Default constructor for RegisterImageRequest object. Callers should use the setter or fluent setter (with...)
@@ -327,8 +346,29 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * The block device mapping entries.
      * </p>
+     * <p>
+     * If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.
+     * </p>
+     * <p>
+     * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
+     * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
      * 
-     * @return The block device mapping entries.
+     * @return The block device mapping entries.</p>
+     *         <p>
+     *         If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of
+     *         the volume.
+     *         </p>
+     *         <p>
+     *         If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
+     *         Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances
+     *         on the same Outpost only. For more information, <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     *         snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -342,9 +382,30 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * The block device mapping entries.
      * </p>
+     * <p>
+     * If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.
+     * </p>
+     * <p>
+     * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
+     * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping entries.
+     *        The block device mapping entries.</p>
+     *        <p>
+     *        If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of
+     *        the volume.
+     *        </p>
+     *        <p>
+     *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
+     *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on
+     *        the same Outpost only. For more information, <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     *        snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -361,13 +422,34 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * The block device mapping entries.
      * </p>
      * <p>
+     * If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.
+     * </p>
+     * <p>
+     * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
+     * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping entries.
+     *        The block device mapping entries.</p>
+     *        <p>
+     *        If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of
+     *        the volume.
+     *        </p>
+     *        <p>
+     *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
+     *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on
+     *        the same Outpost only. For more information, <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     *        snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,9 +467,30 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * The block device mapping entries.
      * </p>
+     * <p>
+     * If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.
+     * </p>
+     * <p>
+     * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
+     * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
      * 
      * @param blockDeviceMappings
-     *        The block device mapping entries.
+     *        The block device mapping entries.</p>
+     *        <p>
+     *        If you specify an EBS volume using the ID of an EBS snapshot, you can't specify the encryption state of
+     *        the volume.
+     *        </p>
+     *        <p>
+     *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
+     *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on
+     *        the same Outpost only. For more information, <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
+     *        snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -927,6 +1030,99 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
+     * <p>
+     * The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param bootMode
+     *        The boot mode of the AMI. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        Elastic Compute Cloud User Guide</i>.
+     * @see BootModeValues
+     */
+
+    public void setBootMode(String bootMode) {
+        this.bootMode = bootMode;
+    }
+
+    /**
+     * <p>
+     * The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return The boot mode of the AMI. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *         Elastic Compute Cloud User Guide</i>.
+     * @see BootModeValues
+     */
+
+    public String getBootMode() {
+        return this.bootMode;
+    }
+
+    /**
+     * <p>
+     * The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param bootMode
+     *        The boot mode of the AMI. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BootModeValues
+     */
+
+    public RegisterImageRequest withBootMode(String bootMode) {
+        setBootMode(bootMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param bootMode
+     *        The boot mode of the AMI. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        Elastic Compute Cloud User Guide</i>.
+     * @see BootModeValues
+     */
+
+    public void setBootMode(BootModeValues bootMode) {
+        withBootMode(bootMode);
+    }
+
+    /**
+     * <p>
+     * The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param bootMode
+     *        The boot mode of the AMI. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BootModeValues
+     */
+
+    public RegisterImageRequest withBootMode(BootModeValues bootMode) {
+        this.bootMode = bootMode.toString();
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -972,7 +1168,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         if (getSriovNetSupport() != null)
             sb.append("SriovNetSupport: ").append(getSriovNetSupport()).append(",");
         if (getVirtualizationType() != null)
-            sb.append("VirtualizationType: ").append(getVirtualizationType());
+            sb.append("VirtualizationType: ").append(getVirtualizationType()).append(",");
+        if (getBootMode() != null)
+            sb.append("BootMode: ").append(getBootMode());
         sb.append("}");
         return sb.toString();
     }
@@ -1035,6 +1233,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false)
             return false;
+        if (other.getBootMode() == null ^ this.getBootMode() == null)
+            return false;
+        if (other.getBootMode() != null && other.getBootMode().equals(this.getBootMode()) == false)
+            return false;
         return true;
     }
 
@@ -1055,6 +1257,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode());
         hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode());
         hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode());
+        hashCode = prime * hashCode + ((getBootMode() == null) ? 0 : getBootMode().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,41 +30,41 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not
-     * found, BackupNotFound will be thrown.
+     * IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found,
+     * BackupNotFound will be thrown.
      * </p>
      */
     private java.util.List<String> backupIds;
     /**
      * <p>
-     * (Optional) Filters structure. Supported names are file-system-id and backup-type.
+     * Filters structure. Supported names are file-system-id and backup-type.
      * </p>
      */
     private java.util.List<Filter> filters;
     /**
      * <p>
-     * (Optional) Maximum number of backups to return in the response (integer). This parameter value must be greater
-     * than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
-     * specified in the request and the service's internal maximum number of items per page.
+     * Maximum number of backups to return in the response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a
-     * token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * (Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not
-     * found, BackupNotFound will be thrown.
+     * IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found,
+     * BackupNotFound will be thrown.
      * </p>
      * 
-     * @return (Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are
-     *         not found, BackupNotFound will be thrown.
+     * @return IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found,
+     *         BackupNotFound will be thrown.
      */
 
     public java.util.List<String> getBackupIds() {
@@ -73,13 +73,13 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not
-     * found, BackupNotFound will be thrown.
+     * IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found,
+     * BackupNotFound will be thrown.
      * </p>
      * 
      * @param backupIds
-     *        (Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are
-     *        not found, BackupNotFound will be thrown.
+     *        IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found,
+     *        BackupNotFound will be thrown.
      */
 
     public void setBackupIds(java.util.Collection<String> backupIds) {
@@ -93,8 +93,8 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not
-     * found, BackupNotFound will be thrown.
+     * IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found,
+     * BackupNotFound will be thrown.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -103,8 +103,8 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param backupIds
-     *        (Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are
-     *        not found, BackupNotFound will be thrown.
+     *        IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found,
+     *        BackupNotFound will be thrown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,13 +120,13 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not
-     * found, BackupNotFound will be thrown.
+     * IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found,
+     * BackupNotFound will be thrown.
      * </p>
      * 
      * @param backupIds
-     *        (Optional) IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are
-     *        not found, BackupNotFound will be thrown.
+     *        IDs of the backups you want to retrieve (String). This overrides any filters. If any IDs are not found,
+     *        BackupNotFound will be thrown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,10 +137,10 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) Filters structure. Supported names are file-system-id and backup-type.
+     * Filters structure. Supported names are file-system-id and backup-type.
      * </p>
      * 
-     * @return (Optional) Filters structure. Supported names are file-system-id and backup-type.
+     * @return Filters structure. Supported names are file-system-id and backup-type.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -149,11 +149,11 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) Filters structure. Supported names are file-system-id and backup-type.
+     * Filters structure. Supported names are file-system-id and backup-type.
      * </p>
      * 
      * @param filters
-     *        (Optional) Filters structure. Supported names are file-system-id and backup-type.
+     *        Filters structure. Supported names are file-system-id and backup-type.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -167,7 +167,7 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) Filters structure. Supported names are file-system-id and backup-type.
+     * Filters structure. Supported names are file-system-id and backup-type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -176,7 +176,7 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param filters
-     *        (Optional) Filters structure. Supported names are file-system-id and backup-type.
+     *        Filters structure. Supported names are file-system-id and backup-type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +192,11 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) Filters structure. Supported names are file-system-id and backup-type.
+     * Filters structure. Supported names are file-system-id and backup-type.
      * </p>
      * 
      * @param filters
-     *        (Optional) Filters structure. Supported names are file-system-id and backup-type.
+     *        Filters structure. Supported names are file-system-id and backup-type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,15 +207,15 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) Maximum number of backups to return in the response (integer). This parameter value must be greater
-     * than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
-     * specified in the request and the service's internal maximum number of items per page.
+     * Maximum number of backups to return in the response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Maximum number of backups to return in the response (integer). This parameter value must be
-     *        greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
-     *        parameter specified in the request and the service's internal maximum number of items per page.
+     *        Maximum number of backups to return in the response (integer). This parameter value must be greater than
+     *        0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
+     *        specified in the request and the service's internal maximum number of items per page.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -224,14 +224,14 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) Maximum number of backups to return in the response (integer). This parameter value must be greater
-     * than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
-     * specified in the request and the service's internal maximum number of items per page.
+     * Maximum number of backups to return in the response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.
      * </p>
      * 
-     * @return (Optional) Maximum number of backups to return in the response (integer). This parameter value must be
-     *         greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
-     *         parameter specified in the request and the service's internal maximum number of items per page.
+     * @return Maximum number of backups to return in the response (integer). This parameter value must be greater than
+     *         0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
+     *         specified in the request and the service's internal maximum number of items per page.
      */
 
     public Integer getMaxResults() {
@@ -240,15 +240,15 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) Maximum number of backups to return in the response (integer). This parameter value must be greater
-     * than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
-     * specified in the request and the service's internal maximum number of items per page.
+     * Maximum number of backups to return in the response (integer). This parameter value must be greater than 0. The
+     * number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in the
+     * request and the service's internal maximum number of items per page.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Maximum number of backups to return in the response (integer). This parameter value must be
-     *        greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
-     *        parameter specified in the request and the service's internal maximum number of items per page.
+     *        Maximum number of backups to return in the response (integer). This parameter value must be greater than
+     *        0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter
+     *        specified in the request and the service's internal maximum number of items per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,13 +259,13 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a
-     * token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      * 
      * @param nextToken
-     *        (Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code> operation
-     *        (String). If a token present, the action continues the list from where the returning call left off.
+     *        Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a
+     *        token present, the action continues the list from where the returning call left off.
      */
 
     public void setNextToken(String nextToken) {
@@ -274,12 +274,12 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a
-     * token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      * 
-     * @return (Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code> operation
-     *         (String). If a token present, the action continues the list from where the returning call left off.
+     * @return Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a
+     *         token present, the action continues the list from where the returning call left off.
      */
 
     public String getNextToken() {
@@ -288,13 +288,13 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a
-     * token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      * 
      * @param nextToken
-     *        (Optional) Opaque pagination token returned from a previous <code>DescribeBackups</code> operation
-     *        (String). If a token present, the action continues the list from where the returning call left off.
+     *        Opaque pagination token returned from a previous <code>DescribeBackups</code> operation (String). If a
+     *        token present, the action continues the list from where the returning call left off.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

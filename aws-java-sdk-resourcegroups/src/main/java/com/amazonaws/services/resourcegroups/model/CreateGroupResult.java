@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,13 +25,15 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A full description of the resource group after it is created.
+     * The description of the resource group.
      * </p>
      */
     private Group group;
     /**
      * <p>
-     * The resource query associated with the group.
+     * The resource query associated with the group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      */
     private ResourceQuery resourceQuery;
@@ -41,14 +43,22 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The service configuration associated with the resource group. For details about the syntax of a service
+     * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.
+     * </p>
+     */
+    private GroupConfiguration groupConfiguration;
 
     /**
      * <p>
-     * A full description of the resource group after it is created.
+     * The description of the resource group.
      * </p>
      * 
      * @param group
-     *        A full description of the resource group after it is created.
+     *        The description of the resource group.
      */
 
     public void setGroup(Group group) {
@@ -57,10 +67,10 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A full description of the resource group after it is created.
+     * The description of the resource group.
      * </p>
      * 
-     * @return A full description of the resource group after it is created.
+     * @return The description of the resource group.
      */
 
     public Group getGroup() {
@@ -69,11 +79,11 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A full description of the resource group after it is created.
+     * The description of the resource group.
      * </p>
      * 
      * @param group
-     *        A full description of the resource group after it is created.
+     *        The description of the resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +94,15 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The resource query associated with the group.
+     * The resource query associated with the group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * 
      * @param resourceQuery
-     *        The resource query associated with the group.
+     *        The resource query associated with the group. For more information about resource queries, see <a href=
+     *        "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *        >Create a tag-based group in Resource Groups</a>.
      */
 
     public void setResourceQuery(ResourceQuery resourceQuery) {
@@ -97,10 +111,14 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The resource query associated with the group.
+     * The resource query associated with the group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * 
-     * @return The resource query associated with the group.
+     * @return The resource query associated with the group. For more information about resource queries, see <a
+     *         href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *         >Create a tag-based group in Resource Groups</a>.
      */
 
     public ResourceQuery getResourceQuery() {
@@ -109,11 +127,15 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The resource query associated with the group.
+     * The resource query associated with the group. For more information about resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
      * 
      * @param resourceQuery
-     *        The resource query associated with the group.
+     *        The resource query associated with the group. For more information about resource queries, see <a href=
+     *        "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *        >Create a tag-based group in Resource Groups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,6 +213,58 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The service configuration associated with the resource group. For details about the syntax of a service
+     * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.
+     * </p>
+     * 
+     * @param groupConfiguration
+     *        The service configuration associated with the resource group. For details about the syntax of a service
+     *        configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     *        configurations for resource groups</a>.
+     */
+
+    public void setGroupConfiguration(GroupConfiguration groupConfiguration) {
+        this.groupConfiguration = groupConfiguration;
+    }
+
+    /**
+     * <p>
+     * The service configuration associated with the resource group. For details about the syntax of a service
+     * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.
+     * </p>
+     * 
+     * @return The service configuration associated with the resource group. For details about the syntax of a service
+     *         configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     *         configurations for resource groups</a>.
+     */
+
+    public GroupConfiguration getGroupConfiguration() {
+        return this.groupConfiguration;
+    }
+
+    /**
+     * <p>
+     * The service configuration associated with the resource group. For details about the syntax of a service
+     * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     * configurations for resource groups</a>.
+     * </p>
+     * 
+     * @param groupConfiguration
+     *        The service configuration associated with the resource group. For details about the syntax of a service
+     *        configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+     *        configurations for resource groups</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGroupResult withGroupConfiguration(GroupConfiguration groupConfiguration) {
+        setGroupConfiguration(groupConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -207,7 +281,9 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getResourceQuery() != null)
             sb.append("ResourceQuery: ").append(getResourceQuery()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getGroupConfiguration() != null)
+            sb.append("GroupConfiguration: ").append(getGroupConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -234,6 +310,10 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getGroupConfiguration() == null ^ this.getGroupConfiguration() == null)
+            return false;
+        if (other.getGroupConfiguration() != null && other.getGroupConfiguration().equals(this.getGroupConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -245,6 +325,7 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         hashCode = prime * hashCode + ((getResourceQuery() == null) ? 0 : getResourceQuery().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getGroupConfiguration() == null) ? 0 : getGroupConfiguration().hashCode());
         return hashCode;
     }
 

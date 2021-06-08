@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,23 @@ public class DescribeProductAsAdminRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The product name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The unique identifier of the shared portfolio that the specified product is associated with.
+     * </p>
+     * <p>
+     * You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter
+     * is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared
+     * TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     * </p>
+     */
+    private String sourcePortfolioId;
 
     /**
      * <p>
@@ -235,6 +252,114 @@ public class DescribeProductAsAdminRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The product name.
+     * </p>
+     * 
+     * @param name
+     *        The product name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The product name.
+     * </p>
+     * 
+     * @return The product name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The product name.
+     * </p>
+     * 
+     * @param name
+     *        The product name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductAsAdminRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the shared portfolio that the specified product is associated with.
+     * </p>
+     * <p>
+     * You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter
+     * is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared
+     * TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     * </p>
+     * 
+     * @param sourcePortfolioId
+     *        The unique identifier of the shared portfolio that the specified product is associated with.</p>
+     *        <p>
+     *        You can provide this parameter to retrieve the shared TagOptions associated with the product. If this
+     *        parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both
+     *        local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     */
+
+    public void setSourcePortfolioId(String sourcePortfolioId) {
+        this.sourcePortfolioId = sourcePortfolioId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the shared portfolio that the specified product is associated with.
+     * </p>
+     * <p>
+     * You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter
+     * is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared
+     * TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     * </p>
+     * 
+     * @return The unique identifier of the shared portfolio that the specified product is associated with.</p>
+     *         <p>
+     *         You can provide this parameter to retrieve the shared TagOptions associated with the product. If this
+     *         parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both
+     *         local and shared TagOptions associated with the product. Otherwise only local TagOptions will be
+     *         returned.
+     */
+
+    public String getSourcePortfolioId() {
+        return this.sourcePortfolioId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the shared portfolio that the specified product is associated with.
+     * </p>
+     * <p>
+     * You can provide this parameter to retrieve the shared TagOptions associated with the product. If this parameter
+     * is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both local and shared
+     * TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     * </p>
+     * 
+     * @param sourcePortfolioId
+     *        The unique identifier of the shared portfolio that the specified product is associated with.</p>
+     *        <p>
+     *        You can provide this parameter to retrieve the shared TagOptions associated with the product. If this
+     *        parameter is provided and if TagOptions sharing is enabled in the portfolio share, the API returns both
+     *        local and shared TagOptions associated with the product. Otherwise only local TagOptions will be returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductAsAdminRequest withSourcePortfolioId(String sourcePortfolioId) {
+        setSourcePortfolioId(sourcePortfolioId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -249,7 +374,11 @@ public class DescribeProductAsAdminRequest extends com.amazonaws.AmazonWebServic
         if (getAcceptLanguage() != null)
             sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getId() != null)
-            sb.append("Id: ").append(getId());
+            sb.append("Id: ").append(getId()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getSourcePortfolioId() != null)
+            sb.append("SourcePortfolioId: ").append(getSourcePortfolioId());
         sb.append("}");
         return sb.toString();
     }
@@ -272,6 +401,14 @@ public class DescribeProductAsAdminRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getSourcePortfolioId() == null ^ this.getSourcePortfolioId() == null)
+            return false;
+        if (other.getSourcePortfolioId() != null && other.getSourcePortfolioId().equals(this.getSourcePortfolioId()) == false)
+            return false;
         return true;
     }
 
@@ -282,6 +419,8 @@ public class DescribeProductAsAdminRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSourcePortfolioId() == null) ? 0 : getSourcePortfolioId().hashCode());
         return hashCode;
     }
 

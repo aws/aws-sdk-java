@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The ARN and group name of a group.
+ * The unique identifiers for a resource group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupIdentifier" target="_top">AWS
@@ -30,24 +30,24 @@ public class GroupIdentifier implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of a resource group.
+     * The name of the resource group.
      * </p>
      */
     private String groupName;
     /**
      * <p>
-     * The ARN of a resource group.
+     * The ARN of the resource group.
      * </p>
      */
     private String groupArn;
 
     /**
      * <p>
-     * The name of a resource group.
+     * The name of the resource group.
      * </p>
      * 
      * @param groupName
-     *        The name of a resource group.
+     *        The name of the resource group.
      */
 
     public void setGroupName(String groupName) {
@@ -56,10 +56,10 @@ public class GroupIdentifier implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of a resource group.
+     * The name of the resource group.
      * </p>
      * 
-     * @return The name of a resource group.
+     * @return The name of the resource group.
      */
 
     public String getGroupName() {
@@ -68,11 +68,11 @@ public class GroupIdentifier implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of a resource group.
+     * The name of the resource group.
      * </p>
      * 
      * @param groupName
-     *        The name of a resource group.
+     *        The name of the resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class GroupIdentifier implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of a resource group.
+     * The ARN of the resource group.
      * </p>
      * 
      * @param groupArn
-     *        The ARN of a resource group.
+     *        The ARN of the resource group.
      */
 
     public void setGroupArn(String groupArn) {
@@ -96,10 +96,10 @@ public class GroupIdentifier implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of a resource group.
+     * The ARN of the resource group.
      * </p>
      * 
-     * @return The ARN of a resource group.
+     * @return The ARN of the resource group.
      */
 
     public String getGroupArn() {
@@ -108,11 +108,11 @@ public class GroupIdentifier implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of a resource group.
+     * The ARN of the resource group.
      * </p>
      * 
      * @param groupArn
-     *        The ARN of a resource group.
+     *        The ARN of the resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,12 @@ public class ConfigurationAggregator implements Serializable, Cloneable, Structu
      * </p>
      */
     private java.util.Date lastUpdatedTime;
+    /**
+     * <p>
+     * AWS service that created the configuration aggregator.
+     * </p>
+     */
+    private String createdBy;
 
     /**
      * <p>
@@ -340,6 +346,46 @@ public class ConfigurationAggregator implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * AWS service that created the configuration aggregator.
+     * </p>
+     * 
+     * @param createdBy
+     *        AWS service that created the configuration aggregator.
+     */
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    /**
+     * <p>
+     * AWS service that created the configuration aggregator.
+     * </p>
+     * 
+     * @return AWS service that created the configuration aggregator.
+     */
+
+    public String getCreatedBy() {
+        return this.createdBy;
+    }
+
+    /**
+     * <p>
+     * AWS service that created the configuration aggregator.
+     * </p>
+     * 
+     * @param createdBy
+     *        AWS service that created the configuration aggregator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigurationAggregator withCreatedBy(String createdBy) {
+        setCreatedBy(createdBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -362,7 +408,9 @@ public class ConfigurationAggregator implements Serializable, Cloneable, Structu
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
+        if (getCreatedBy() != null)
+            sb.append("CreatedBy: ").append(getCreatedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -402,6 +450,10 @@ public class ConfigurationAggregator implements Serializable, Cloneable, Structu
             return false;
         if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
+        if (other.getCreatedBy() == null ^ this.getCreatedBy() == null)
+            return false;
+        if (other.getCreatedBy() != null && other.getCreatedBy().equals(this.getCreatedBy()) == false)
+            return false;
         return true;
     }
 
@@ -416,6 +468,7 @@ public class ConfigurationAggregator implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getOrganizationAggregationSource() == null) ? 0 : getOrganizationAggregationSource().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         return hashCode;
     }
 

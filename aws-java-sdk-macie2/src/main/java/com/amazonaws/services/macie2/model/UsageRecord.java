@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides quota and aggregated usage data for an account.
+ * Provides quota and aggregated usage data for an Amazon Macie account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageRecord" target="_top">AWS API
@@ -30,14 +30,13 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that the data applies to.
+     * The unique identifier for the AWS account that the data applies to.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the account. This
-     * value is null if the account didn't participate in the free trial.
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      * </p>
      */
     private java.util.Date freeTrialStartDate;
@@ -51,11 +50,11 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that the data applies to.
+     * The unique identifier for the AWS account that the data applies to.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account that the data applies to.
+     *        The unique identifier for the AWS account that the data applies to.
      */
 
     public void setAccountId(String accountId) {
@@ -64,10 +63,10 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that the data applies to.
+     * The unique identifier for the AWS account that the data applies to.
      * </p>
      * 
-     * @return The AWS account ID for the account that the data applies to.
+     * @return The unique identifier for the AWS account that the data applies to.
      */
 
     public String getAccountId() {
@@ -76,11 +75,11 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID for the account that the data applies to.
+     * The unique identifier for the AWS account that the data applies to.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID for the account that the data applies to.
+     *        The unique identifier for the AWS account that the data applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,13 +90,11 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the account. This
-     * value is null if the account didn't participate in the free trial.
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      * </p>
      * 
      * @param freeTrialStartDate
-     *        The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the
-     *        account. This value is null if the account didn't participate in the free trial.
+     *        The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      */
 
     public void setFreeTrialStartDate(java.util.Date freeTrialStartDate) {
@@ -106,12 +103,10 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the account. This
-     * value is null if the account didn't participate in the free trial.
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the
-     *         account. This value is null if the account didn't participate in the free trial.
+     * @return The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      */
 
     public java.util.Date getFreeTrialStartDate() {
@@ -120,13 +115,11 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the account. This
-     * value is null if the account didn't participate in the free trial.
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      * </p>
      * 
      * @param freeTrialStartDate
-     *        The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the
-     *        account. This value is null if the account didn't participate in the free trial.
+     *        The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

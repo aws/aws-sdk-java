@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,12 +107,19 @@ public class Snapshot implements Serializable, Cloneable {
     private Integer volumeSize;
     /**
      * <p>
-     * Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured AWS
+     * account alias set using the IAM console.
      * </p>
      */
     private String ownerAlias;
+    /**
+     * <p>
+     * The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on
+     * Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private String outpostArn;
     /**
      * <p>
      * Any tags assigned to the snapshot.
@@ -698,15 +705,13 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured AWS
+     * account alias set using the IAM console.
      * </p>
      * 
      * @param ownerAlias
-     *        Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     *        <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     *        user-configured AWS account alias, which is set from the IAM console.
+     *        The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured
+     *        AWS account alias set using the IAM console.
      */
 
     public void setOwnerAlias(String ownerAlias) {
@@ -715,14 +720,12 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured AWS
+     * account alias set using the IAM console.
      * </p>
      * 
-     * @return Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     *         <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     *         user-configured AWS account alias, which is set from the IAM console.
+     * @return The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the
+     *         user-configured AWS account alias set using the IAM console.
      */
 
     public String getOwnerAlias() {
@@ -731,20 +734,70 @@ public class Snapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured AWS
+     * account alias set using the IAM console.
      * </p>
      * 
      * @param ownerAlias
-     *        Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> | <code>all</code> |
-     *        <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     *        user-configured AWS account alias, which is set from the IAM console.
+     *        The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured
+     *        AWS account alias set using the IAM console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Snapshot withOwnerAlias(String ownerAlias) {
         setOwnerAlias(ownerAlias);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on
+     * Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on
+     *        Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on
+     * Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on
+     *         Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on
+     * Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on
+     *        Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
         return this;
     }
 
@@ -859,6 +912,8 @@ public class Snapshot implements Serializable, Cloneable {
             sb.append("VolumeSize: ").append(getVolumeSize()).append(",");
         if (getOwnerAlias() != null)
             sb.append("OwnerAlias: ").append(getOwnerAlias()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -927,6 +982,10 @@ public class Snapshot implements Serializable, Cloneable {
             return false;
         if (other.getOwnerAlias() != null && other.getOwnerAlias().equals(this.getOwnerAlias()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -952,6 +1011,7 @@ public class Snapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode());
         hashCode = prime * hashCode + ((getOwnerAlias() == null) ? 0 : getOwnerAlias().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

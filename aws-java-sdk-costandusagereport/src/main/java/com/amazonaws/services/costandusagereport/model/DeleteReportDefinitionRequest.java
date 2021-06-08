@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,10 +28,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteReportDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include
+     * spaces.
+     * </p>
+     */
     private String reportName;
 
     /**
+     * <p>
+     * The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include
+     * spaces.
+     * </p>
+     * 
      * @param reportName
+     *        The name of the report that you want to delete. The name must be unique, is case sensitive, and can't
+     *        include spaces.
      */
 
     public void setReportName(String reportName) {
@@ -39,7 +52,13 @@ public class DeleteReportDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include
+     * spaces.
+     * </p>
+     * 
+     * @return The name of the report that you want to delete. The name must be unique, is case sensitive, and can't
+     *         include spaces.
      */
 
     public String getReportName() {
@@ -47,7 +66,14 @@ public class DeleteReportDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include
+     * spaces.
+     * </p>
+     * 
      * @param reportName
+     *        The name of the report that you want to delete. The name must be unique, is case sensitive, and can't
+     *        include spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,13 +90,31 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (S3 Glacier or S# Glacier Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      */
     private String poolId;
+    /**
+     * <p>
+     * If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.
+     * </p>
+     */
+    private Boolean worm;
+    /**
+     * <p>
+     * The date that the tape is first archived with tape retention lock enabled.
+     * </p>
+     */
+    private java.util.Date retentionStartDate;
+    /**
+     * <p>
+     * The date that the tape enters a custom tape pool.
+     * </p>
+     */
+    private java.util.Date poolEntryDate;
 
     /**
      * <p>
@@ -490,19 +508,19 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (S3 Glacier or S# Glacier Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
      *        The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the
      *        S3 storage class that is associated with the pool. When you use your backup application to eject the tape,
-     *        the tape is archived directly into the storage class (S3 Glacier or S# Glacier Deep Archive) that
+     *        the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
      *        corresponds to the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public void setPoolId(String poolId) {
@@ -513,18 +531,18 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (S3 Glacier or S# Glacier Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @return The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the
      *         S3 storage class that is associated with the pool. When you use your backup application to eject the
-     *         tape, the tape is archived directly into the storage class (S3 Glacier or S# Glacier Deep Archive) that
+     *         tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
      *         corresponds to the pool.</p>
      *         <p>
-     *         Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *         Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public String getPoolId() {
@@ -535,24 +553,156 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the S3
      * storage class that is associated with the pool. When you use your backup application to eject the tape, the tape
-     * is archived directly into the storage class (S3 Glacier or S# Glacier Deep Archive) that corresponds to the pool.
+     * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
      *        The ID of the pool that contains tapes that will be archived. The tapes in this pool are archived in the
      *        S3 storage class that is associated with the pool. When you use your backup application to eject the tape,
-     *        the tape is archived directly into the storage class (S3 Glacier or S# Glacier Deep Archive) that
+     *        the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
      *        corresponds to the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Tape withPoolId(String poolId) {
         setPoolId(poolId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.
+     * </p>
+     * 
+     * @param worm
+     *        If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.
+     */
+
+    public void setWorm(Boolean worm) {
+        this.worm = worm;
+    }
+
+    /**
+     * <p>
+     * If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.
+     * </p>
+     * 
+     * @return If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.
+     */
+
+    public Boolean getWorm() {
+        return this.worm;
+    }
+
+    /**
+     * <p>
+     * If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.
+     * </p>
+     * 
+     * @param worm
+     *        If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Tape withWorm(Boolean worm) {
+        setWorm(worm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.
+     * </p>
+     * 
+     * @return If the tape is archived as write-once-read-many (WORM), this value is <code>true</code>.
+     */
+
+    public Boolean isWorm() {
+        return this.worm;
+    }
+
+    /**
+     * <p>
+     * The date that the tape is first archived with tape retention lock enabled.
+     * </p>
+     * 
+     * @param retentionStartDate
+     *        The date that the tape is first archived with tape retention lock enabled.
+     */
+
+    public void setRetentionStartDate(java.util.Date retentionStartDate) {
+        this.retentionStartDate = retentionStartDate;
+    }
+
+    /**
+     * <p>
+     * The date that the tape is first archived with tape retention lock enabled.
+     * </p>
+     * 
+     * @return The date that the tape is first archived with tape retention lock enabled.
+     */
+
+    public java.util.Date getRetentionStartDate() {
+        return this.retentionStartDate;
+    }
+
+    /**
+     * <p>
+     * The date that the tape is first archived with tape retention lock enabled.
+     * </p>
+     * 
+     * @param retentionStartDate
+     *        The date that the tape is first archived with tape retention lock enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Tape withRetentionStartDate(java.util.Date retentionStartDate) {
+        setRetentionStartDate(retentionStartDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date that the tape enters a custom tape pool.
+     * </p>
+     * 
+     * @param poolEntryDate
+     *        The date that the tape enters a custom tape pool.
+     */
+
+    public void setPoolEntryDate(java.util.Date poolEntryDate) {
+        this.poolEntryDate = poolEntryDate;
+    }
+
+    /**
+     * <p>
+     * The date that the tape enters a custom tape pool.
+     * </p>
+     * 
+     * @return The date that the tape enters a custom tape pool.
+     */
+
+    public java.util.Date getPoolEntryDate() {
+        return this.poolEntryDate;
+    }
+
+    /**
+     * <p>
+     * The date that the tape enters a custom tape pool.
+     * </p>
+     * 
+     * @param poolEntryDate
+     *        The date that the tape enters a custom tape pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Tape withPoolEntryDate(java.util.Date poolEntryDate) {
+        setPoolEntryDate(poolEntryDate);
         return this;
     }
 
@@ -587,7 +737,13 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
         if (getKMSKey() != null)
             sb.append("KMSKey: ").append(getKMSKey()).append(",");
         if (getPoolId() != null)
-            sb.append("PoolId: ").append(getPoolId());
+            sb.append("PoolId: ").append(getPoolId()).append(",");
+        if (getWorm() != null)
+            sb.append("Worm: ").append(getWorm()).append(",");
+        if (getRetentionStartDate() != null)
+            sb.append("RetentionStartDate: ").append(getRetentionStartDate()).append(",");
+        if (getPoolEntryDate() != null)
+            sb.append("PoolEntryDate: ").append(getPoolEntryDate());
         sb.append("}");
         return sb.toString();
     }
@@ -642,6 +798,18 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPoolId() != null && other.getPoolId().equals(this.getPoolId()) == false)
             return false;
+        if (other.getWorm() == null ^ this.getWorm() == null)
+            return false;
+        if (other.getWorm() != null && other.getWorm().equals(this.getWorm()) == false)
+            return false;
+        if (other.getRetentionStartDate() == null ^ this.getRetentionStartDate() == null)
+            return false;
+        if (other.getRetentionStartDate() != null && other.getRetentionStartDate().equals(this.getRetentionStartDate()) == false)
+            return false;
+        if (other.getPoolEntryDate() == null ^ this.getPoolEntryDate() == null)
+            return false;
+        if (other.getPoolEntryDate() != null && other.getPoolEntryDate().equals(this.getPoolEntryDate()) == false)
+            return false;
         return true;
     }
 
@@ -660,6 +828,9 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTapeUsedInBytes() == null) ? 0 : getTapeUsedInBytes().hashCode());
         hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
         hashCode = prime * hashCode + ((getPoolId() == null) ? 0 : getPoolId().hashCode());
+        hashCode = prime * hashCode + ((getWorm() == null) ? 0 : getWorm().hashCode());
+        hashCode = prime * hashCode + ((getRetentionStartDate() == null) ? 0 : getRetentionStartDate().hashCode());
+        hashCode = prime * hashCode + ((getPoolEntryDate() == null) ? 0 : getPoolEntryDate().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -18,6 +18,7 @@
  */
 package com.amazonaws.http;
 
+import com.amazonaws.retry.RetryMode;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -255,6 +256,59 @@ public class AmazonHttpClientTest {
         String userAgent = capturedRequest.getValue().getFirstHeader("User-Agent").getValue();
         Assert.assertTrue(userAgent.startsWith(prefix));
         Assert.assertTrue(userAgent.endsWith(suffix));
+    }
+
+    @Test
+    public void testRetryModeUserAgentIsAdded() throws Exception {
+        Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.PUT, URI_NAME, true);
+
+        HttpResponseHandler<AmazonWebServiceResponse<Object>> handler = createStubResponseHandler();
+        EasyMock.replay(handler);
+        ClientConfiguration config =
+            new ClientConfiguration().withRetryMode(RetryMode.STANDARD);
+
+        Capture<HttpRequestBase> capturedRequest = new Capture<HttpRequestBase>();
+
+        EasyMock.reset(httpClient);
+        EasyMock
+            .expect(httpClient.execute(
+                EasyMock.capture(capturedRequest), EasyMock.<HttpContext>anyObject()))
+            .andReturn(createBasicHttpResponse())
+            .once();
+        EasyMock.replay(httpClient);
+
+        AmazonHttpClient client = new AmazonHttpClient(config, httpClient, null);
+
+        client.requestExecutionBuilder().request(request).execute(handler);
+
+        String userAgent = capturedRequest.getValue().getFirstHeader("User-Agent").getValue();
+        Assert.assertTrue(userAgent.contains("cfg/retry-mode/standard"));
+    }
+
+    @Test
+    public void testNoRetryMode_legacyRetryModeIsInUserAgent() throws Exception {
+        Request<?> request = mockRequest(SERVER_NAME, HttpMethodName.PUT, URI_NAME, true);
+
+        HttpResponseHandler<AmazonWebServiceResponse<Object>> handler = createStubResponseHandler();
+        EasyMock.replay(handler);
+        ClientConfiguration config = new ClientConfiguration();
+
+        Capture<HttpRequestBase> capturedRequest = new Capture<HttpRequestBase>();
+
+        EasyMock.reset(httpClient);
+        EasyMock
+            .expect(httpClient.execute(
+                EasyMock.capture(capturedRequest), EasyMock.<HttpContext>anyObject()))
+            .andReturn(createBasicHttpResponse())
+            .once();
+        EasyMock.replay(httpClient);
+
+        AmazonHttpClient client = new AmazonHttpClient(config, httpClient, null);
+
+        client.requestExecutionBuilder().request(request).execute(handler);
+
+        String userAgent = capturedRequest.getValue().getFirstHeader("User-Agent").getValue();
+        Assert.assertTrue(userAgent.contains("cfg/retry-mode/legacy"));
     }
 
     @Test

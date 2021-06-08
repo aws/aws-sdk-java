@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class ServiceNowConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KnowledgeArticleConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> SERVICECATALOGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceCatalogConfiguration").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthenticationType").build();
 
     private static final ServiceNowConfigurationMarshaller instance = new ServiceNowConfigurationMarshaller();
 
@@ -59,6 +61,7 @@ public class ServiceNowConfigurationMarshaller {
             protocolMarshaller.marshall(serviceNowConfiguration.getServiceNowBuildVersion(), SERVICENOWBUILDVERSION_BINDING);
             protocolMarshaller.marshall(serviceNowConfiguration.getKnowledgeArticleConfiguration(), KNOWLEDGEARTICLECONFIGURATION_BINDING);
             protocolMarshaller.marshall(serviceNowConfiguration.getServiceCatalogConfiguration(), SERVICECATALOGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(serviceNowConfiguration.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

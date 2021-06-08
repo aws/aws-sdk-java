@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     private Mp2Settings mp2Settings;
 
     private PassThroughSettings passThroughSettings;
+
+    private WavSettings wavSettings;
 
     /**
      * @param aacSettings
@@ -167,6 +169,32 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * @param wavSettings
+     */
+
+    public void setWavSettings(WavSettings wavSettings) {
+        this.wavSettings = wavSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public WavSettings getWavSettings() {
+        return this.wavSettings;
+    }
+
+    /**
+     * @param wavSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioCodecSettings withWavSettings(WavSettings wavSettings) {
+        setWavSettings(wavSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -187,7 +215,9 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
         if (getMp2Settings() != null)
             sb.append("Mp2Settings: ").append(getMp2Settings()).append(",");
         if (getPassThroughSettings() != null)
-            sb.append("PassThroughSettings: ").append(getPassThroughSettings());
+            sb.append("PassThroughSettings: ").append(getPassThroughSettings()).append(",");
+        if (getWavSettings() != null)
+            sb.append("WavSettings: ").append(getWavSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -222,6 +252,10 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getPassThroughSettings() != null && other.getPassThroughSettings().equals(this.getPassThroughSettings()) == false)
             return false;
+        if (other.getWavSettings() == null ^ this.getWavSettings() == null)
+            return false;
+        if (other.getWavSettings() != null && other.getWavSettings().equals(this.getWavSettings()) == false)
+            return false;
         return true;
     }
 
@@ -235,6 +269,7 @@ public class AudioCodecSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getEac3Settings() == null) ? 0 : getEac3Settings().hashCode());
         hashCode = prime * hashCode + ((getMp2Settings() == null) ? 0 : getMp2Settings().hashCode());
         hashCode = prime * hashCode + ((getPassThroughSettings() == null) ? 0 : getPassThroughSettings().hashCode());
+        hashCode = prime * hashCode + ((getWavSettings() == null) ? 0 : getWavSettings().hashCode());
         return hashCode;
     }
 

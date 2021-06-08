@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,9 @@ public class ApplicationUpdateJsonUnmarshaller implements Unmarshaller<Applicati
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("InputUpdates", targetDepth)) {
                     context.nextToken();
-                    applicationUpdate.setInputUpdates(new ListUnmarshaller<InputUpdate>(InputUpdateJsonUnmarshaller.getInstance()).unmarshall(context));
+                    applicationUpdate.setInputUpdates(new ListUnmarshaller<InputUpdate>(InputUpdateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ApplicationCodeUpdate", targetDepth)) {
                     context.nextToken();
@@ -58,17 +60,23 @@ public class ApplicationUpdateJsonUnmarshaller implements Unmarshaller<Applicati
                 }
                 if (context.testExpression("OutputUpdates", targetDepth)) {
                     context.nextToken();
-                    applicationUpdate.setOutputUpdates(new ListUnmarshaller<OutputUpdate>(OutputUpdateJsonUnmarshaller.getInstance()).unmarshall(context));
+                    applicationUpdate.setOutputUpdates(new ListUnmarshaller<OutputUpdate>(OutputUpdateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReferenceDataSourceUpdates", targetDepth)) {
                     context.nextToken();
                     applicationUpdate.setReferenceDataSourceUpdates(new ListUnmarshaller<ReferenceDataSourceUpdate>(ReferenceDataSourceUpdateJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptionUpdates", targetDepth)) {
                     context.nextToken();
                     applicationUpdate.setCloudWatchLoggingOptionUpdates(new ListUnmarshaller<CloudWatchLoggingOptionUpdate>(
-                            CloudWatchLoggingOptionUpdateJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CloudWatchLoggingOptionUpdateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

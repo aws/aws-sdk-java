@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ import com.amazonaws.arn.Arn;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.Presigner;
+import com.amazonaws.auth.ServiceAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
 import com.amazonaws.client.builder.AwsClientBuilder;
@@ -94,9 +95,13 @@ import com.amazonaws.services.s3.internal.RegionalEndpointsOptionResolver;
 import com.amazonaws.services.s3.internal.ResponseHeaderHandlerChain;
 import com.amazonaws.services.s3.internal.S3AbortableInputStream;
 import com.amazonaws.services.s3.internal.S3AccessPointBuilder;
+import com.amazonaws.services.s3.internal.S3ObjectLambdaOperationEndpointBuilder;
+import com.amazonaws.services.s3.internal.S3ObjectLambdaEndpointBuilder;
 import com.amazonaws.services.s3.internal.S3ErrorResponseHandler;
 import com.amazonaws.services.s3.internal.S3MetadataResponseHandler;
 import com.amazonaws.services.s3.internal.S3ObjectResponseHandler;
+import com.amazonaws.services.s3.internal.S3OutpostAccessPointBuilder;
+import com.amazonaws.services.s3.internal.S3OutpostResource;
 import com.amazonaws.services.s3.internal.S3QueryStringSigner;
 import com.amazonaws.services.s3.internal.S3RequestEndpointResolver;
 import com.amazonaws.services.s3.internal.S3RequesterChargedHeaderHandler;
@@ -142,11 +147,15 @@ import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.DeleteBucketEncryptionResult;
+import com.amazonaws.services.s3.model.DeleteBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.DeleteBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.DeleteBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
 import com.amazonaws.services.s3.model.DeleteBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
@@ -160,6 +169,8 @@ import com.amazonaws.services.s3.model.DeleteObjectsResult;
 import com.amazonaws.services.s3.model.DeletePublicAccessBlockRequest;
 import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
+import com.amazonaws.services.s3.model.ExpectedBucketOwnerRequest;
+import com.amazonaws.services.s3.model.ExpectedSourceBucketOwnerRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GenericBucketRequest;
 import com.amazonaws.services.s3.model.GetBucketAccelerateConfigurationRequest;
@@ -169,6 +180,8 @@ import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.GetBucketEncryptionResult;
+import com.amazonaws.services.s3.model.GetBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
@@ -177,6 +190,8 @@ import com.amazonaws.services.s3.model.GetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.GetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyStatusRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyStatusResult;
@@ -208,6 +223,8 @@ import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsRequest;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
+import com.amazonaws.services.s3.model.ListBucketIntelligentTieringConfigurationsRequest;
+import com.amazonaws.services.s3.model.ListBucketIntelligentTieringConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsRequest;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsRequest;
@@ -264,6 +281,8 @@ import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
+import com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
@@ -271,6 +290,8 @@ import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.SetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
@@ -294,9 +315,13 @@ import com.amazonaws.services.s3.model.UploadObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
+import com.amazonaws.services.s3.model.WriteGetObjectResponseRequest;
+import com.amazonaws.services.s3.model.WriteGetObjectResponseResult;
 import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringConfiguration;
 import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
 import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
+import com.amazonaws.services.s3.model.ownership.OwnershipControls;
 import com.amazonaws.services.s3.model.transform.AclXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketNotificationConfigurationStaxUnmarshaller;
@@ -332,6 +357,7 @@ import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.ServiceClientHolderInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.UriResourcePathUtils;
 import com.amazonaws.util.ValidationUtils;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -366,6 +392,7 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.entity.ContentType;
 
+
 /**
  * <p>
  * Provides the client for accessing the Amazon S3 web service.
@@ -399,6 +426,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private static final String S3_V4_SIGNER = "AWSS3V4SignerType";
     private static final String SERVICE_ID = "S3";
     private static final String AWS_PARTITION_KEY = "aws";
+    private static final String S3_OUTPOSTS_NAME = "s3-outposts";
+    private static final String S3_OBJECT_LAMBDAS_NAME = "s3-object-lambda";
 
     protected static final AmazonS3ClientConfigurationFactory configFactory
             = new AmazonS3ClientConfigurationFactory();
@@ -1558,9 +1587,16 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         } else {
             // Ensures the data received from S3 has the same length as the
             // expected content-length
-            is = new LengthCheckInputStream(is,
-                                            s3Object.getObjectMetadata().getContentLength(), // expected length
-                                            INCLUDE_SKIPPED_BYTES); // bytes received from S3 are all included even if skipped
+
+            // Note: The GetObject response many not have a content-length if
+            // it was uploaded using chunked encoding, e.g.
+            // using WriteGetObjectResponse
+            Object contentLength = s3Object.getObjectMetadata().getRawMetadataValue(Headers.CONTENT_LENGTH);
+            if (contentLength != null) {
+                is = new LengthCheckInputStream(is,
+                        s3Object.getObjectMetadata().getContentLength(), // expected length
+                        INCLUDE_SKIPPED_BYTES); // bytes received from S3 are all included even if skipped
+            }
         }
 
         S3AbortableInputStream abortableInputStream =
@@ -1621,6 +1657,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObjectTagging");
         request.addParameter("tagging", null);
         addParameterIfNotNull(request, "versionId", getObjectTaggingRequest.getVersionId());
+        populateRequesterPaysHeader(request, getObjectTaggingRequest.isRequesterPays());
 
         ResponseHeaderHandlerChain<GetObjectTaggingResult> handlerChain = new ResponseHeaderHandlerChain<GetObjectTaggingResult>(
                 new Unmarshallers.GetObjectTaggingResponseUnmarshaller(),
@@ -1645,6 +1682,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addParameterIfNotNull(request, "versionId", setObjectTaggingRequest.getVersionId());
         byte[] content = new ObjectTaggingXmlFactory().convertToXmlByteArray(tagging);
         setContent(request, content, "application/xml", true);
+        populateRequesterPaysHeader(request, setObjectTaggingRequest.isRequesterPays());
 
         ResponseHeaderHandlerChain<SetObjectTaggingResult> handlerChain = new ResponseHeaderHandlerChain<SetObjectTaggingResult>(
                 new Unmarshallers.SetObjectTaggingResponseUnmarshaller(),
@@ -1752,6 +1790,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         if (putObjectRequest.getRedirectLocation() != null) {
             request.addHeader(Headers.REDIRECT_LOCATION, putObjectRequest.getRedirectLocation());
+        }
+
+        Boolean bucketKeyEnabled = putObjectRequest.getBucketKeyEnabled();
+        if (bucketKeyEnabled != null) {
+            addHeaderIfNotNull(request, Headers.SERVER_SIDE_ENCRYPTION_BUCKET_KEY_ENABLED,
+                    String.valueOf(bucketKeyEnabled));
         }
 
         addHeaderIfNotNull(request, Headers.S3_TAGGING, urlEncodeTags(putObjectRequest.getTagging()));
@@ -1933,6 +1977,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         result.setETag(metadata.getETag());
         result.setMetadata(metadata);
         result.setRequesterCharged(metadata.isRequesterCharged());
+        result.setBucketKeyEnabled(metadata.getBucketKeyEnabled());
         return result;
     }
 
@@ -1992,6 +2037,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         Request<CopyObjectRequest> request = createRequest(destinationBucketName, destinationKey, copyObjectRequest, HttpMethodName.PUT);
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyObject");
+
+        Boolean bucketKeyEnabled = copyObjectRequest.getBucketKeyEnabled();
+        if (bucketKeyEnabled != null) {
+            addHeaderIfNotNull(request, Headers.SERVER_SIDE_ENCRYPTION_BUCKET_KEY_ENABLED,
+                    String.valueOf(bucketKeyEnabled));
+        }
 
         populateRequestWithCopyObjectParameters(request, copyObjectRequest);
 
@@ -2074,6 +2125,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         copyObjectResult.setSSEAlgorithm(copyObjectResultHandler.getSSEAlgorithm());
         copyObjectResult.setSSECustomerAlgorithm(copyObjectResultHandler.getSSECustomerAlgorithm());
         copyObjectResult.setSSECustomerKeyMd5(copyObjectResultHandler.getSSECustomerKeyMd5());
+        copyObjectResult.setBucketKeyEnabled(copyObjectResultHandler.getBucketKeyEnabled());
         copyObjectResult.setExpirationTime(copyObjectResultHandler.getExpirationTime());
         copyObjectResult.setExpirationTimeRuleId(copyObjectResultHandler.getExpirationTimeRuleId());
         copyObjectResult.setRequesterCharged(copyObjectResultHandler.isRequesterCharged());
@@ -2215,6 +2267,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         copyPartResult.setSSEAlgorithm(copyObjectResultHandler.getSSEAlgorithm());
         copyPartResult.setSSECustomerAlgorithm(copyObjectResultHandler.getSSECustomerAlgorithm());
         copyPartResult.setSSECustomerKeyMd5(copyObjectResultHandler.getSSECustomerKeyMd5());
+        copyPartResult.setBucketKeyEnabled(copyObjectResultHandler.getBucketKeyEnabled());
 
         return copyPartResult;
     }
@@ -2261,18 +2314,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Length", String.valueOf(content.length));
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(content));
-        try {
-            byte[] md5 = Md5Utils.computeMD5Hash(content);
-            String md5Base64 = BinaryUtils.toBase64(md5);
-            request.addHeader("Content-MD5", md5Base64);
-        } catch ( Exception e ) {
-            throw new SdkClientException("Couldn't compute md5 sum", e);
-        }
+        populateRequestHeaderWithMd5(request, content);
 
         @SuppressWarnings("unchecked")
         ResponseHeaderHandlerChain<DeleteObjectsResponse> responseHandler = new ResponseHeaderHandlerChain<DeleteObjectsResponse>(
                 new Unmarshallers.DeleteObjectsResultUnmarshaller(),
                 new S3RequesterChargedHeaderHandler<DeleteObjectsResponse>());
+
+
+
 
         DeleteObjectsResponse response = invoke(request, responseHandler, deleteObjectsRequest.getBucketName(), null);
 
@@ -2365,6 +2415,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(versioningConfiguration);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -2475,14 +2526,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Length", String.valueOf(content.length));
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(content));
-        try {
-            byte[] md5 = Md5Utils.computeMD5Hash(content);
-            String md5Base64 = BinaryUtils.toBase64(md5);
-            request.addHeader("Content-MD5", md5Base64);
-        } catch ( Exception e ) {
-            throw new SdkClientException("Couldn't compute md5 sum", e);
-        }
-
+        populateRequestHeaderWithMd5(request, content);
         invoke(request, voidResponseHandler, bucketName, null);
     }
 
@@ -2565,13 +2609,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Length", String.valueOf(content.length));
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(content));
-        try {
-            byte[] md5 = Md5Utils.computeMD5Hash(content);
-            String md5Base64 = BinaryUtils.toBase64(md5);
-            request.addHeader("Content-MD5", md5Base64);
-        } catch ( Exception e ) {
-            throw new SdkClientException("Couldn't compute md5 sum", e);
-        }
+        populateRequestHeaderWithMd5(request, content);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -2654,13 +2692,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Length", String.valueOf(content.length));
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(content));
-        try {
-            byte[] md5 = Md5Utils.computeMD5Hash(content);
-            String md5Base64 = BinaryUtils.toBase64(md5);
-            request.addHeader("Content-MD5", md5Base64);
-        } catch ( Exception e ) {
-            throw new SdkClientException("Couldn't compute md5 sum", e);
-        }
+        populateRequestHeaderWithMd5(request, content);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -2717,6 +2749,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(configuration);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -2772,7 +2805,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(bucketNotificationConfiguration);
         request.setContent(new ByteArrayInputStream(bytes));
-
         invoke(request, voidResponseHandler, bucketName, null);
     }
 
@@ -2842,6 +2874,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(loggingConfiguration);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -2980,7 +3013,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<SetBucketPolicyRequest> request = createRequest(bucketName, null, setBucketPolicyRequest, HttpMethodName.PUT);
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBucketPolicy");
         request.addParameter("policy", null);
-        request.setContent(new ByteArrayInputStream(ServiceUtils.toByteArray(policyText)));
+        byte[] content = ServiceUtils.toByteArray(policyText);
+        request.setContent(new ByteArrayInputStream(content));
+        populateRequestHeaderWithMd5(request, content);
 
         if (setBucketPolicyRequest.getConfirmRemoveSelfBucketAccess() != null &&
             setBucketPolicyRequest.getConfirmRemoveSelfBucketAccess()) {
@@ -3075,6 +3110,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(sseConfig);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         return invoke(request, new Unmarshallers.SetBucketEncryptionUnmarshaller(), bucketName, null);
     }
@@ -3098,6 +3134,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(config);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         return invoke(request, new Unmarshallers.SetPublicAccessBlockUnmarshaller(), bucketName, null);
     }
@@ -3321,6 +3358,90 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
+    public WriteGetObjectResponseResult writeGetObjectResponse(WriteGetObjectResponseRequest writeGetObjectResponseRequest) {
+        writeGetObjectResponseRequest = beforeClientExecution(writeGetObjectResponseRequest);
+
+        rejectNull(writeGetObjectResponseRequest, "The request parameter must be specified");
+
+        Request<WriteGetObjectResponseRequest> request = createRequest(null, null, writeGetObjectResponseRequest, HttpMethodName.POST);
+        request.setResourcePath("/WriteGetObjectResponse");
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "WriteGetObjectResponse");
+        request.addHandlerContext(HandlerContextKey.REQUIRES_LENGTH, false);
+        request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, true);
+
+        // Never sign the body. This operation is v4-unsigned-body
+        request.addHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED, true);
+        request.addHandlerContext(S3HandlerContextKeys.IS_PAYLOAD_SIGNING_ENABLED, false);
+
+        addHeaderIfNotNull(request, Headers.REQUEST_ROUTE, writeGetObjectResponseRequest.getRequestRoute());
+        addHeaderIfNotNull(request, Headers.REQUEST_TOKEN, writeGetObjectResponseRequest.getRequestToken());
+        addIntegerHeaderIfNotNull(request, Headers.FWD_STATUS_CODE, writeGetObjectResponseRequest.getStatusCode());
+        addHeaderIfNotNull(request, Headers.FWD_ERROR_CODE, writeGetObjectResponseRequest.getErrorCode());
+        addHeaderIfNotNull(request, Headers.FWD_ERROR_MESSAGE, writeGetObjectResponseRequest.getErrorMessage());
+        addHeaderIfNotNull(request, Headers.FWD_ACCEPT_RANGES, writeGetObjectResponseRequest.getAcceptRanges());
+        addHeaderIfNotNull(request, Headers.FWD_CACHE_CONTROL, writeGetObjectResponseRequest.getCacheControl());
+        addHeaderIfNotNull(request, Headers.FWD_CONTENT_DISPOSITION, writeGetObjectResponseRequest.getContentDisposition());
+        addHeaderIfNotNull(request, Headers.FWD_CONTENT_ENCODING, writeGetObjectResponseRequest.getContentEncoding());
+        addHeaderIfNotNull(request, Headers.FWD_CONTENT_LANGUAGE, writeGetObjectResponseRequest.getContentLanguage());
+        addHeaderIfNotNull(request, Headers.FWD_CONTENT_RANGE, writeGetObjectResponseRequest.getContentRange());
+        addHeaderIfNotNull(request, Headers.FWD_CONTENT_TYPE, writeGetObjectResponseRequest.getContentType());
+        addHeaderIfNotNull(request, Headers.FWD_DELETE_MARKER, writeGetObjectResponseRequest.getDeleteMarker());
+        addHeaderIfNotNull(request, Headers.FWD_ETAG, writeGetObjectResponseRequest.getETag());
+        addDateHeader(request, Headers.FWD_EXPIRES, writeGetObjectResponseRequest.getExpires());
+        addHeaderIfNotNull(request, Headers.FWD_EXPIRATION, writeGetObjectResponseRequest.getExpiration());
+        addDateHeader(request, Headers.FWD_LAST_MODIFIED, writeGetObjectResponseRequest.getLastModified());
+        addIntegerHeaderIfNotNull(request, Headers.FWD_MISSING_META, writeGetObjectResponseRequest.getMissingMeta());
+        addHeaderIfNotNull(request, Headers.FWD_OBJECT_LOCK_MODE, writeGetObjectResponseRequest.getObjectLockMode());
+        addHeaderIfNotNull(request, Headers.FWD_OBJECT_LOCK_LEGAL_HOLD, writeGetObjectResponseRequest.getObjectLockLegalHoldStatus());
+        addDateHeader(request, Headers.FWD_OBJECT_LOCK_RETAIN_UNTIL_DATE, writeGetObjectResponseRequest.getObjectLockRetainUntilDate());
+        addIntegerHeaderIfNotNull(request, Headers.FWD_PARTS_COUNT, writeGetObjectResponseRequest.getPartsCount());
+        addHeaderIfNotNull(request, Headers.FWD_REPLICATION_STATUS, writeGetObjectResponseRequest.getReplicationStatus());
+        addHeaderIfNotNull(request, Headers.FWD_REQUEST_CHARGED, writeGetObjectResponseRequest.getRequestCharged());
+        addHeaderIfNotNull(request, Headers.FWD_RESTORE, writeGetObjectResponseRequest.getRestore());
+        addHeaderIfNotNull(request, Headers.FWD_SERVER_SIDE_ENCRYPTION, writeGetObjectResponseRequest.getServerSideEncryption());
+        addHeaderIfNotNull(request, Headers.FWD_SSE_CUSTOMER_ALGORITHM, writeGetObjectResponseRequest.getSSECustomerAlgorithm());
+        addHeaderIfNotNull(request, Headers.FWD_SSE_KMS_KEY_ID, writeGetObjectResponseRequest.getSSEKMSKeyId());
+        addHeaderIfNotNull(request, Headers.FWD_SSE_CUSTOMER_KEY_MD5, writeGetObjectResponseRequest.getSSECustomerKeyMD5());
+        addHeaderIfNotNull(request, Headers.FWD_STORAGE_CLASS, writeGetObjectResponseRequest.getStorageClass());
+        addIntegerHeaderIfNotNull(request, Headers.FWD_TAG_COUNT, writeGetObjectResponseRequest.getTagCount());
+        addHeaderIfNotNull(request, Headers.FWD_VERSION_ID, writeGetObjectResponseRequest.getVersionId());
+        if (writeGetObjectResponseRequest.getBucketKeyEnabled() != null) {
+            request.addHeader(Headers.FWD_SSE_BUCKET_KEY_ENABLED, writeGetObjectResponseRequest.getBucketKeyEnabled().toString());
+        }
+
+        ObjectMetadata metadata = writeGetObjectResponseRequest.getMetadata();
+        if (metadata == null) {
+            metadata = new ObjectMetadata();
+        }
+
+        if (writeGetObjectResponseRequest.getContentLength() != null) {
+            metadata.setContentLength(writeGetObjectResponseRequest.getContentLength());
+        }
+
+        InputStream originalIs = writeGetObjectResponseRequest.getInputStream();
+        File originalFile = writeGetObjectResponseRequest.getFile();
+        InputStream requestInputStream = null;
+        try {
+            requestInputStream = getInputStream(
+                    writeGetObjectResponseRequest.getInputStream(),
+                    writeGetObjectResponseRequest.getFile(),
+                    metadata,
+                    request,
+                    false,
+                    true
+            );
+
+            request.setContent(requestInputStream);
+
+            populateRequestMetadata(request, metadata);
+
+            return invoke(request, new Unmarshallers.WriteGetObjectResponseResultUnmarshaller(), null, null);
+        } finally {
+            cleanupDataSource(writeGetObjectResponseRequest, originalFile, originalIs, requestInputStream, log);
+        }
+    }
+
+    @Override
     public URL generatePresignedUrl(String bucketName, String key, Date expiration)
             throws SdkClientException {
         return generatePresignedUrl(bucketName, key, expiration, HttpMethod.GET);
@@ -3393,6 +3514,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addResponseHeaderParameters(request, req.getResponseHeaders());
 
         Signer signer = createSigner(request, bucketName, key);
+
+        if (request.getHandlerContext(HandlerContextKey.SIGNING_NAME) != null && !isSignerOverridden()) {
+            String signingName = request.getHandlerContext(HandlerContextKey.SIGNING_NAME);
+            if (signer instanceof ServiceAwareSigner) {
+                ((ServiceAwareSigner) signer).setServiceName(signingName);
+            }
+        }
 
         if (signer instanceof Presigner) {
             // If we have a signer which knows how to presign requests,
@@ -3547,6 +3675,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         if (initiateMultipartUploadRequest.objectMetadata != null) {
             populateRequestMetadata(request, initiateMultipartUploadRequest.objectMetadata);
+        }
+
+        Boolean bucketKeyEnabled = initiateMultipartUploadRequest.getBucketKeyEnabled();
+        if (bucketKeyEnabled != null) {
+            addHeaderIfNotNull(request, Headers.SERVER_SIDE_ENCRYPTION_BUCKET_KEY_ENABLED,
+                    String.valueOf(bucketKeyEnabled));
         }
 
         populateRequesterPaysHeader(request, initiateMultipartUploadRequest.isRequesterPays());
@@ -3770,6 +3904,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             result.setSSECustomerAlgorithm(metadata.getSSECustomerAlgorithm());
             result.setSSECustomerKeyMd5(metadata.getSSECustomerKeyMd5());
             result.setRequesterCharged(metadata.isRequesterCharged());
+            result.setBucketKeyEnabled(metadata.getBucketKeyEnabled());
             return result;
         } catch (Throwable t) {
             publishProgress(listener, ProgressEventType.TRANSFER_PART_FAILED_EVENT);
@@ -3799,7 +3934,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         restoreObjectRequest = beforeClientExecution(restoreObjectRequest);
         String bucketName = restoreObjectRequest.getBucketName();
         String key = restoreObjectRequest.getKey();
-        int expirationInDays = restoreObjectRequest.getExpirationInDays();
 
         rejectNull(bucketName, "The bucket name parameter must be specified when restoring a glacier object");
         rejectNull(key, "The key parameter must be specified when restoring a glacier object");
@@ -3811,12 +3945,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 rejectNull(restoreObjectRequest.getSelectParameters(),
                            "The select parameters must be specified when restoring a glacier object with SELECT restore request type");
             }
-        } else if (expirationInDays == -1) {
-            throw new IllegalArgumentException("The expiration in days parameter must be specified when restoring a glacier object without OutputLocation");
         }
 
-        Request<RestoreObjectRequest> request =
-            createRestoreObjectRequest(restoreObjectRequest);
+        Request<RestoreObjectRequest> request = createRestoreObjectRequest(restoreObjectRequest);
 
         @SuppressWarnings("unchecked")
         ResponseHeaderHandlerChain<RestoreObjectResult> responseHandler = new ResponseHeaderHandlerChain<RestoreObjectResult>(
@@ -3996,6 +4127,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Type", "application/xml");
         request.addHeader("Content-Length", String.valueOf(aclAsXml.length));
         request.setContent(new ByteArrayInputStream(aclAsXml));
+        populateRequestHeaderWithMd5(request, aclAsXml);
 
         invoke(request, voidResponseHandler, bucketName, key);
     }
@@ -4030,13 +4162,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             S3Resource s3Resource = S3ArnConverter.getInstance().convertArn(resourceArn);
             String region = s3Resource.getRegion();
             String regionalEndpoint = RegionUtils.getRegion(region).getServiceEndpoint("s3");
+
             signer = getSignerByURI(URI.create(uri.getScheme() + "://" + regionalEndpoint));
         } else {
             signer = getSignerByURI(uri);
         }
 
         if (!isSignerOverridden()) {
-
             if ((signer instanceof AWSS3V4Signer) && bucketRegionShouldBeCached(request)) {
 
                 String region = bucketRegionCache.get(bucketName);
@@ -4047,21 +4179,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                      if (!clientOptions.isAccelerateModeEnabled()) {
                          resolveRequestEndpoint(request, bucketName, key, RuntimeHttpUtils.toUri(RegionUtils.getRegion(region).getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration));
                      }
-                     return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, region);
+                     return updateSigV4SignerWithServiceAndRegion((AWSS3V4Signer) signer, request, region);
                 } else if (request.getOriginalRequest() instanceof GeneratePresignedUrlRequest) {
                     String signerRegion = getSignerRegion();
                     if (signerRegion == null) {
                         return createSigV2Signer(request, bucketName, key);
                     }
-                    return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, signerRegion);
+                    return updateSigV4SignerWithServiceAndRegion((AWSS3V4Signer) signer, request, signerRegion);
                 } else if (isAdditionalHeadRequestToFindRegion) {
-                    return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, "us-east-1");
+                    return updateSigV4SignerWithServiceAndRegion((AWSS3V4Signer) signer, request, "us-east-1");
                 }
             }
 
             String regionOverride = getSignerRegionOverride();
             if (regionOverride != null) {
-                return updateSigV4SignerWithRegion(new AWSS3V4Signer(), regionOverride);
+                return updateSigV4SignerWithServiceAndRegion(new AWSS3V4Signer(), request, regionOverride);
             }
         }
 
@@ -4085,9 +4217,20 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return new S3Signer(request.getHttpMethod().toString(), resourcePath);
     }
 
-    private AWSS3V4Signer updateSigV4SignerWithRegion(final AWSS3V4Signer v4Signer, String region) {
-        v4Signer.setServiceName(getServiceNameIntern());
-        v4Signer.setRegionName(region);
+    private AWSS3V4Signer updateSigV4SignerWithServiceAndRegion(final AWSS3V4Signer v4Signer, Request<?> request, String region) {
+        String signingNameOverride = request.getHandlerContext(HandlerContextKey.SIGNING_NAME);
+        if (signingNameOverride != null) {
+            v4Signer.setServiceName(signingNameOverride);
+        } else {
+            v4Signer.setServiceName(getServiceNameIntern());
+        }
+
+        String signingRegionOverride = request.getHandlerContext(HandlerContextKey.SIGNING_REGION);
+        if (signingRegionOverride != null) {
+            v4Signer.setRegionName(signingRegionOverride);
+        } else {
+            v4Signer.setRegionName(region);
+        }
         return v4Signer;
     }
 
@@ -4287,12 +4430,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            Amazon S3.
      */
     private void populateRequestWithCopyObjectParameters(Request<? extends AmazonWebServiceRequest> request, CopyObjectRequest copyObjectRequest) {
-        String copySourceHeader =
-             "/" + SdkHttpUtils.urlEncode(copyObjectRequest.getSourceBucketName(), true)
-           + "/" + SdkHttpUtils.urlEncode(copyObjectRequest.getSourceKey(), true);
-        if (copyObjectRequest.getSourceVersionId() != null) {
-            copySourceHeader += "?versionId=" + copyObjectRequest.getSourceVersionId();
-        }
+        String copySourceHeader = assembleCopySourceHeader(copyObjectRequest.getSourceBucketName(),
+                                                           copyObjectRequest.getSourceKey(),
+                                                           copyObjectRequest.getSourceVersionId());
+
         request.addHeader("x-amz-copy-source", copySourceHeader);
 
         addDateHeader(request, Headers.COPY_SOURCE_IF_MODIFIED_SINCE,
@@ -4356,13 +4497,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            The object containing all the options for copying an object in
      *            Amazon S3.
      */
-    private static void populateRequestWithCopyPartParameters(Request<?> request, CopyPartRequest copyPartRequest) {
-        String copySourceHeader =
-             "/" + SdkHttpUtils.urlEncode(copyPartRequest.getSourceBucketName(), true)
-           + "/" + SdkHttpUtils.urlEncode(copyPartRequest.getSourceKey(), true);
-        if (copyPartRequest.getSourceVersionId() != null) {
-            copySourceHeader += "?versionId=" + copyPartRequest.getSourceVersionId();
-        }
+    private void populateRequestWithCopyPartParameters(Request<?> request, CopyPartRequest copyPartRequest) {
+        String copySourceHeader = assembleCopySourceHeader(copyPartRequest.getSourceBucketName(),
+                                                           copyPartRequest.getSourceKey(),
+                                                           copyPartRequest.getSourceVersionId());
         request.addHeader("x-amz-copy-source", copySourceHeader);
 
         addDateHeader(request, Headers.COPY_SOURCE_IF_MODIFIED_SINCE,
@@ -4383,6 +4521,71 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // Populate the SSE-C parameters for the destination object
         populateSourceSSE_C(request, copyPartRequest.getSourceSSECustomerKey());
         populateSSE_C(request, copyPartRequest.getDestinationSSECustomerKey());
+    }
+
+
+    /**
+     * Populates the specified request header with Content-MD5.
+     * @param request The request to populate with Content-MD5 header.
+     * @param content Content for which MD5Hash is calculated.
+     */
+    private void populateRequestHeaderWithMd5(Request<?> request, byte[] content) {
+        try {
+            byte[] md5 = Md5Utils.computeMD5Hash(content);
+            String md5Base64 = BinaryUtils.toBase64(md5);
+            request.addHeader("Content-MD5", md5Base64);
+        } catch ( Exception e ) {
+            throw new SdkClientException("Couldn't compute md5 sum", e);
+        }
+    }
+
+
+    /**
+     * Assemble copy source header (x-amz-copy-source) from copy source bucket name, object key, and version ID.
+     *
+     * @param sourceBucketName copy source bucket name, can either be source bucket name or source access point ARN
+     * @param sourceObjectKey  copy source object key
+     * @param sourceVersionId  copy source version ID, optional.
+     * @return copy source header (x-amz-copy-source)
+     */
+    private String assembleCopySourceHeader(String sourceBucketName, String sourceObjectKey, String sourceVersionId) {
+        if (sourceBucketName == null) {
+            throw new IllegalArgumentException("Copy source bucket name should not be null");
+        }
+
+        if (sourceObjectKey == null) {
+            throw new IllegalArgumentException("Copy source object key should not be null");
+        }
+
+        String copySourceHeader;
+
+        if (isArn(sourceBucketName)) {
+            // The source bucket name appears to be ARN. Parse it as S3 access point ARN and form
+            // object-via-access-point copy source header.
+            Arn resourceArn = Arn.fromString(sourceBucketName);
+            S3Resource s3Resource;
+            try {
+                s3Resource = S3ArnConverter.getInstance().convertArn(resourceArn);
+            } catch (RuntimeException e) {
+                throw new IllegalArgumentException("An ARN was passed as a bucket parameter to an S3 operation, "
+                                                   + "however it does not appear to be a valid S3 access point ARN.", e);
+            }
+            if (!S3ResourceType.ACCESS_POINT.toString().equals(s3Resource.getType())) {
+                throw new IllegalArgumentException("An ARN was passed as a bucket parameter to an S3 operation, "
+                                                      + "however it does not appear to be a valid S3 access point ARN.");
+            }
+
+            copySourceHeader = SdkHttpUtils.urlEncode(sourceBucketName + "/object/" + sourceObjectKey, false);
+        } else {
+            copySourceHeader = "/" + SdkHttpUtils.urlEncode(sourceBucketName, true)
+                    + "/" + SdkHttpUtils.urlEncode(sourceObjectKey, true);
+        }
+
+        if (sourceVersionId != null) {
+            copySourceHeader += "?versionId=" + sourceVersionId;
+        }
+
+        return copySourceHeader;
     }
 
     /**
@@ -4482,6 +4685,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private static void addHeaderIfNotNull(Request<?> request, String header, String value) {
         if (value != null) {
             request.addHeader(header, value);
+        }
+    }
+
+    private static void addIntegerHeaderIfNotNull(Request<?> request, String header, Integer value) {
+        if (value != null) {
+            request.addHeader(header, Integer.toString(value));
         }
     }
 
@@ -4611,6 +4820,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     @Override
     public URL getUrl(String bucketName, String key) {
+        if (isArn(bucketName)) {
+            throw new IllegalArgumentException("ARNs are not supported for getUrl in this SDK version. Please use S3Utilities "
+                                               + "in the AWS SDK for Java 2.x.");
+        }
         Request<?> request = new DefaultRequest<Object>(Constants.S3_SERVICE_DISPLAY_NAME);
         resolveRequestEndpoint(request, bucketName, key, endpoint);
         return ServiceUtils.convertRequestToUrl(request, false, false);
@@ -4621,15 +4834,20 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         String authority = super.endpoint.getAuthority();
         if (Constants.S3_HOSTNAME.equals(authority)) {
             return Region.US_Standard;
-        } else {
-            Matcher m = Region.S3_REGIONAL_ENDPOINT_PATTERN.matcher(authority);
-            if (m.matches()) {
-                return Region.fromValue(m.group(1));
-            } else {
-                throw new IllegalStateException(
-                    "S3 client with invalid S3 endpoint configured: " + authority);
-            }
         }
+
+        Matcher m = Region.S3_REGIONAL_ENDPOINT_PATTERN.matcher(authority);
+        if (m.matches()) {
+            return Region.fromValue(m.group(1));
+        }
+
+        String signerRegion = getSignerRegion();
+        if (signerRegion != null) {
+            return Region.fromValue(signerRegion);
+        }
+
+        throw new IllegalStateException("Unable to determine region from configured S3 endpoint (" + authority +
+                                        ") or signing region.");
     }
 
     @Override
@@ -4638,13 +4856,27 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if(Constants.S3_HOSTNAME.equals(authority)) {
             return "us-east-1";
         }
+        return getRegionNameFromAuthorityOrSigner();
+    }
+
+    private String getRegionNameFromAuthorityOrSigner() {
+        String authority = super.endpoint.getAuthority();
         Matcher m = Region.S3_REGIONAL_ENDPOINT_PATTERN.matcher(authority);
-        try {
-            m.matches();
-            return RegionUtils.getRegion(m.group(1)).getName();
-        } catch (Exception e) {
-            throw new IllegalStateException("No valid region has been specified. Unable to return region name", e);
+        if (m.matches()) {
+            try {
+                return RegionUtils.getRegion(m.group(1)).getName();
+            } catch (Exception e) {
+                throw new IllegalStateException("No valid region has been specified. Unable to return region name.", e);
+            }
         }
+
+        String signerRegion = getSignerRegion();
+        if (signerRegion != null) {
+            return signerRegion;
+        }
+
+        throw new IllegalStateException("Unable to determine region from configured S3 endpoint (" + authority +
+                                        ") or signing region.");
     }
 
     private static boolean isRegionFipsEnabled(String regionName) {
@@ -4692,56 +4924,64 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                   clientOptions.isPayloadSigningEnabled());
         request.addHandlerContext(HandlerContextKey.SERVICE_ID, SERVICE_ID);
 
+        if (originalRequest instanceof ExpectedBucketOwnerRequest) {
+            ExpectedBucketOwnerRequest expectedBucketOwnerRequest = (ExpectedBucketOwnerRequest) originalRequest;
+            addHeaderIfNotNull(request, "x-amz-expected-bucket-owner",
+                               expectedBucketOwnerRequest.getExpectedBucketOwner());
+        }
+
+        if (originalRequest instanceof ExpectedSourceBucketOwnerRequest) {
+            ExpectedSourceBucketOwnerRequest expectedSourceBucketOwnerRequest = (ExpectedSourceBucketOwnerRequest) originalRequest;
+            addHeaderIfNotNull(request, "x-amz-source-expected-bucket-owner",
+                               expectedSourceBucketOwnerRequest.getExpectedSourceBucketOwner());
+        }
+
         // If the bucketName appears to be an ARN, parse the ARN as an S3 resource and rewrite target resource arguments
         // based on the parsed resource.
         if (isAccessPointArn(bucketName)) {
             Arn resourceArn = Arn.fromString(bucketName);
             S3Resource s3Resource = S3ArnConverter.getInstance().convertArn(resourceArn);
+            validateConfiguration(s3Resource);
+            com.amazonaws.regions.Region region = RegionUtils.getRegion(getRegionNameFromAuthorityOrSigner());
 
-            if (S3ResourceType.fromValue(s3Resource.getType()) != S3ResourceType.ACCESS_POINT) {
-                throw new IllegalArgumentException("An ARN was passed as a bucket parameter to an S3 operation, "
-                                                   + "however it does not appear to be a valid S3 access point ARN.");
-            }
+            validateS3ResourceArn(resourceArn, region);
+            validateParentResourceIfNeeded((S3AccessPointResource) s3Resource, getRegionName());
 
-            if (isEndpointOverridden()) {
-                throw new IllegalArgumentException("An access point ARN cannot be passed as a bucket parameter to an S3"
-                                                   + " operation if the S3 client has been configured with an endpoint "
-                                                   + "override.");
-            }
-
-            if (isRegionFipsEnabled(getRegionName())) {
-                throw new IllegalArgumentException("An access point ARN cannot be passed as a bucket parameter to an S3"
-                                                   + " operation if the S3 client has been configured with a FIPS"
-                                                   + " enabled region.");
-            }
-
-            if (clientOptions.isAccelerateModeEnabled()) {
-                throw new IllegalArgumentException("An access point ARN cannot be passed as a bucket parameter to an S3 "
-                                                   + "operation if the S3 client has been configured with accelerate mode"
-                                                   + " enabled.");
-            }
-
-            if (clientOptions.isPathStyleAccess()) {
-                throw new IllegalArgumentException("An access point ARN cannot be passed as a bucket parameter to an S3 "
-                                                   + "operation if the S3 client has been configured with path style "
-                                                   + "addressing enabled.");
-            }
-
-            S3AccessPointResource s3EndpointResource = (S3AccessPointResource) s3Resource;
-            com.amazonaws.regions.Region clientRegion = RegionUtils.getRegion(getRegionName());
-            validateS3ResourceArn(resourceArn, clientRegion);
-            endpoint = S3AccessPointBuilder.create()
-                                           .withAccessPointName(s3EndpointResource.getAccessPointName())
-                                           .withAccountId(s3EndpointResource.getAccountId())
-                                           .withRegion(s3EndpointResource.getRegion())
-                                           .withProtocol(clientConfiguration.getProtocol().toString())
-                                           .withDomain(clientRegion.getDomain())
-                                           .withDualstackEnabled(clientOptions.isDualstackEnabled())
-                                           .toURI();
-            signingRegion = s3EndpointResource.getRegion();
+            endpoint = getEndpointForAccessPoint((S3AccessPointResource) s3Resource, region.getDomain());
+            signingRegion = s3Resource.getRegion();
 
             request.addHandlerContext(HandlerContextKey.SIGNING_REGION, signingRegion);
             resolveAccessPointEndpoint(request, null /* bucketName */, key, endpoint);
+
+            if (isOutpostAccessPointArn(bucketName)) {
+                request.addHandlerContext(HandlerContextKey.SIGNING_NAME, S3_OUTPOSTS_NAME);
+            } else if (isObjectLambdasArn(bucketName)) {
+                request.addHandlerContext(HandlerContextKey.SIGNING_NAME, S3_OBJECT_LAMBDAS_NAME);
+            }
+            return request;
+        } else if (isObjectLambdasRequest(originalRequest)) {
+            validateConfigurationForObjectLambdaOperation();
+
+            com.amazonaws.regions.Region region = RegionUtils.getRegion(getRegionName());
+            endpoint = getEndpointForObjectLambdas(region.getDomain(), region.getName());
+
+            resolveRequestEndpoint(request, null, null, endpoint);
+
+            if (originalRequest instanceof WriteGetObjectResponseRequest
+                && !clientConfiguration.isDisableHostPrefixInjection()) {
+
+                WriteGetObjectResponseRequest writeGetObjectResponseRequest = (WriteGetObjectResponseRequest) originalRequest;
+
+                rejectNull(writeGetObjectResponseRequest.getRequestRoute(), "requestRoute must not be null");
+
+                String requestRoute = writeGetObjectResponseRequest.getRequestRoute() + ".";
+                URI newEndpoint = UriResourcePathUtils.updateUriHost(request.getEndpoint(), requestRoute);
+
+                resolveEndpointIdentity(request, null, null, newEndpoint);
+            }
+
+            request.addHandlerContext(HandlerContextKey.SIGNING_NAME, S3_OBJECT_LAMBDAS_NAME);
+
             return request;
         } else {
             signingRegion = getSigningRegion();
@@ -4760,7 +5000,124 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         resolveRequestEndpoint(request, bucketName, key, endpoint);
         request.addHandlerContext(HandlerContextKey.SIGNING_REGION, signingRegion);
+
         return request;
+    }
+
+    private void validateParentResourceIfNeeded(S3AccessPointResource s3Resource, String regionName) {
+        if (s3Resource.getParentS3Resource() == null) {
+            return;
+        }
+
+        String type = s3Resource.getParentS3Resource().getType();
+        if (S3ResourceType.fromValue(type) == S3ResourceType.OUTPOST) {
+            if (clientOptions.isDualstackEnabled()) {
+                throw new IllegalArgumentException(String.format("An ARN of type %s cannot be passed as a bucket parameter to an S3 "
+                                                                 + "operation if the S3 client has been configured with dualstack", type));
+            }
+
+            if (isRegionFipsEnabled(regionName)) {
+                throw new IllegalArgumentException(String.format("An ARN of type %s cannot be passed as a bucket parameter to an S3"
+                                                                 + " operation if the S3 client has been configured with a FIPS"
+                                                                 + " enabled region.", type));
+            }
+        }
+    }
+
+    private URI getEndpointForAccessPoint(S3AccessPointResource s3Resource,
+                                          String domain) {
+        URI endpointOverride = isEndpointOverridden() ? getEndpoint() : null;
+
+        S3Resource parentS3Resource = s3Resource.getParentS3Resource();
+        String protocol = clientConfiguration.getProtocol().toString();
+
+        if (parentS3Resource instanceof S3OutpostResource) {
+            S3OutpostResource outpostResource = (S3OutpostResource) parentS3Resource;
+            return S3OutpostAccessPointBuilder.create()
+                                              .withEndpointOverride(endpointOverride)
+                                              .withAccountId(s3Resource.getAccountId())
+                                              .withOutpostId(outpostResource.getOutpostId())
+                                              .withRegion(s3Resource.getRegion())
+                                              .withAccessPointName(s3Resource.getAccessPointName())
+                                              .withProtocol(protocol)
+                                              .withDomain(domain)
+                                              .toURI();
+        }
+
+        com.amazonaws.regions.Region clientRegion = RegionUtils.getRegion(getRegionName());
+        boolean fipsRegionProvided = isRegionFipsEnabled(clientRegion.getName());
+
+        if (parentS3Resource != null && S3ResourceType.OBJECT_LAMBDAS.toString().equals(parentS3Resource.getType())) {
+            return S3ObjectLambdaEndpointBuilder.create()
+                    .withEndpointOverride(endpointOverride)
+                    .withAccessPointName(s3Resource.getAccessPointName())
+                    .withAccountId(s3Resource.getAccountId())
+                    .withRegion(s3Resource.getRegion())
+                    .withProtocol(protocol)
+                    .withDomain(domain)
+                    .withFipsEnabled(fipsRegionProvided)
+                    .withDualstackEnabled(clientOptions.isDualstackEnabled())
+                    .toURI();
+        }
+
+        return S3AccessPointBuilder.create()
+                                   .withEndpointOverride(endpointOverride)
+                                   .withAccessPointName(s3Resource.getAccessPointName())
+                                   .withAccountId(s3Resource.getAccountId())
+                                   .withRegion(s3Resource.getRegion())
+                                   .withProtocol(protocol)
+                                   .withDomain(domain)
+                                   .withDualstackEnabled(clientOptions.isDualstackEnabled())
+                                   .withFipsEnabled(fipsRegionProvided)
+                                   .toURI();
+    }
+
+    private URI getEndpointForObjectLambdas(String domain,
+                                            String trimmedRegion) {
+        if (isEndpointOverridden()) {
+            return getEndpoint();
+        }
+
+        String protocol = null;
+        if (clientConfiguration.getProtocol() != null) {
+            protocol = clientConfiguration.getProtocol().toString();
+        }
+
+        return S3ObjectLambdaOperationEndpointBuilder.create()
+                .withProtocol(protocol)
+                .withDomain(domain)
+                .withRegion(trimmedRegion)
+                .toURI();
+    }
+
+    private void validateConfiguration(S3Resource s3Resource) {
+        String type = s3Resource.getType();
+
+        if (!(S3ResourceType.fromValue(type) == S3ResourceType.ACCESS_POINT)) {
+            throw new IllegalArgumentException("An unsupported ARN was passed as a bucket parameter to an S3 operation");
+        }
+
+        if (clientOptions.isAccelerateModeEnabled()) {
+            throw new IllegalArgumentException(String.format("An ARN of type %s cannot be passed as a bucket parameter to an S3 "
+                                               + "operation if the S3 client has been configured with accelerate mode"
+                                               + " enabled.", type));
+        }
+
+        if (clientOptions.isPathStyleAccess()) {
+            throw new IllegalArgumentException(String.format("An ARN of type %s cannot be passed as a bucket parameter to an S3 "
+                                               + "operation if the S3 client has been configured with path style "
+                                               + "addressing enabled.", type));
+        }
+    }
+
+    private void validateConfigurationForObjectLambdaOperation() {
+        if (clientOptions.isDualstackEnabled()) {
+            throw new IllegalArgumentException("S3 Object Lambda does not support dualstack endpoints");
+        }
+
+        if (clientOptions.isAccelerateModeEnabled()) {
+            throw new IllegalArgumentException("S3 Object Lambda does not support accelerate endpoints");
+        }
     }
 
     private void validateS3ResourceArn(Arn resourceArn, com.amazonaws.regions.Region clientRegion) {
@@ -4773,14 +5130,29 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                                + "'" + clientPartition + "'.");
         }
 
-        if (!clientOptions.isForceGlobalBucketAccessEnabled() && !useArnRegion()) {
-            if (!clientRegion.getName().equals(resourceArn.getRegion())) {
-                throw new IllegalArgumentException("The region field of the ARN being passed as a bucket parameter to an "
-                        + "S3 operation does not match the region the client was configured "
-                        + "with. Provided region: '" + resourceArn.getRegion() + "'; client "
-                        + "region: '" + clientRegion.getName() + "'.");
-            }
+        validateIsTrue(!isRegionFipsEnabled(resourceArn.getRegion()),
+                "Invalid ARN, FIPS region is not allowed in ARN."
+                + " Provided arn region: '" + resourceArn.getRegion() + "'." );
+
+        if ((!clientOptions.isForceGlobalBucketAccessEnabled() && !useArnRegion())
+                || isRegionFipsEnabled(clientRegion.getName())) {
+            validateIsTrue( removeFipsIfNeeded(clientRegion.getName()).equals(resourceArn.getRegion()),
+                    "The region field of the ARN being passed as a bucket parameter to an "
+                            + "S3 operation does not match the region the client was configured "
+                            + "with. Provided region: '" + resourceArn.getRegion() + "'; client "
+                            + "region: '" + clientRegion.getName() + "'." );
         }
+    }
+
+    private String removeFipsIfNeeded(String region) {
+        if (region.startsWith("fips-")) {
+            return region.replace("fips-", "");
+        }
+
+        if (region.endsWith("-fips")) {
+            return region.replace("-fips", "");
+        }
+        return region;
     }
 
     private boolean useArnRegion() {
@@ -4799,6 +5171,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * the correct path.
      */
     private void resolveAccessPointEndpoint(Request<?> request, String bucketName, String key, URI endpoint) {
+        resolveEndpointIdentity(request, bucketName, key, endpoint);
+    }
+
+    private void resolveEndpointIdentity(Request<?> request, String bucketName, String key, URI endpoint) {
         ServiceEndpointBuilder builder = new IdentityEndpointBuilder(endpoint);
         buildEndpointResolver(builder, bucketName, key).resolveRequestEndpoint(request);
     }
@@ -5057,10 +5433,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
 
             executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
-
             validateRequestBeforeTransmit(request);
             response = client.execute(request, responseHandler, errorResponseHandler, executionContext);
-
             return response.getAwsResponse();
         } catch (ResetException ex) {
             ex.setExtraInfo("If the request involves an input stream, the maximum stream buffer size can be configured via request.getRequestClientOptions().setReadLimit(int)");
@@ -5121,7 +5495,29 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     private boolean isAccessPointArn(String s) {
-        return s != null && s.startsWith("arn:") && s.contains(":accesspoint");
+        return s != null
+                && s.startsWith("arn:")
+                && (isS3AccessPointArn(s) || isOutpostAccessPointArn(s) || isObjectLambdasArn(s));
+    }
+
+    private boolean isS3AccessPointArn(String s) {
+        return s.contains(":accesspoint");
+    }
+
+    private boolean isOutpostAccessPointArn(String s) {
+        return s.contains(":s3-outposts");
+    }
+
+    private boolean isObjectLambdasArn(String s) {
+        return s.contains(":s3-object-lambda");
+    }
+
+    private boolean isObjectLambdasRequest(AmazonWebServiceRequest request) {
+        return request instanceof WriteGetObjectResponseRequest;
+    }
+
+    private boolean isArn(String s) {
+        return s != null && s.startsWith("arn:");
     }
 
     private boolean bucketRegionShouldBeCached(Request<?> request) {
@@ -5133,7 +5529,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         RequestPaymentConfiguration configuration = new RequestPaymentConfiguration(
                 Payer.Requester);
 
-        setBucketRequestPayment(new SetRequestPaymentConfigurationRequest(
+        setRequestPaymentConfiguration(new SetRequestPaymentConfigurationRequest(
                 bucketName, configuration));
     }
 
@@ -5142,7 +5538,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         RequestPaymentConfiguration configuration = new RequestPaymentConfiguration(
                 Payer.BucketOwner);
 
-        setBucketRequestPayment(new SetRequestPaymentConfigurationRequest(
+        setRequestPaymentConfiguration(new SetRequestPaymentConfigurationRequest(
                 bucketName, configuration));
     }
 
@@ -5162,7 +5558,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * the cost of the request and the data download from the bucket. The bucket
      * owner always pays the cost of storing data.
      */
-    private void setBucketRequestPayment(
+    @Override
+    public void setRequestPaymentConfiguration(
             SetRequestPaymentConfigurationRequest setRequestPaymentConfigurationRequest) {
 
         String bucketName = setRequestPaymentConfigurationRequest
@@ -5187,6 +5584,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         byte[] bytes = requestPaymentConfigurationXmlFactory
                 .convertToXmlByteArray(configuration);
         request.setContent(new ByteArrayInputStream(bytes));
+        populateRequestHeaderWithMd5(request, bytes);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
@@ -5412,15 +5810,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(bytes));
 
+        populateRequestHeaderWithMd5(request, bytes);
 
-        try {
-            request.addHeader("Content-MD5",
-                    BinaryUtils.toBase64(Md5Utils.computeMD5Hash(bytes)));
-        } catch (Exception e) {
-            throw new SdkClientException(
-                    "Not able to compute MD5 of the replication rule configuration. Exception Message : "
-                            + e.getMessage(), e);
-        }
         invoke(request, voidResponseHandler, bucketName, null);
     }
 
@@ -5579,6 +5970,66 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
+    public DeleteBucketOwnershipControlsResult deleteBucketOwnershipControls(
+        DeleteBucketOwnershipControlsRequest deleteBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException {
+        deleteBucketOwnershipControlsRequest = beforeClientExecution(deleteBucketOwnershipControlsRequest);
+        rejectNull(deleteBucketOwnershipControlsRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(deleteBucketOwnershipControlsRequest.getBucketName(), "BucketName");
+
+        Request<DeleteBucketOwnershipControlsRequest> request =
+            createRequest(bucketName, null, deleteBucketOwnershipControlsRequest, HttpMethodName.DELETE);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBucketOwnershipControls");
+        request.addParameter("ownershipControls", null);
+
+        return invoke(request, new Unmarshallers.DeleteBucketOwnershipControlsUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public GetBucketOwnershipControlsResult getBucketOwnershipControls(
+        GetBucketOwnershipControlsRequest getBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException {
+        getBucketOwnershipControlsRequest = beforeClientExecution(getBucketOwnershipControlsRequest);
+        rejectNull(getBucketOwnershipControlsRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(getBucketOwnershipControlsRequest.getBucketName(), "BucketName");
+
+        Request<GetBucketOwnershipControlsRequest> request =
+            createRequest(bucketName, null, getBucketOwnershipControlsRequest, HttpMethodName.GET);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBucketOwnershipControls");
+        request.addParameter("ownershipControls", null);
+
+        return invoke(request, new Unmarshallers.GetBucketOwnershipControlsUnmarshaller(), bucketName, null);
+    }
+
+    public SetBucketOwnershipControlsResult setBucketOwnershipControls(
+        String bucketName, OwnershipControls ownershipControls)
+        throws AmazonServiceException, SdkClientException {
+        return setBucketOwnershipControls(new SetBucketOwnershipControlsRequest(bucketName, ownershipControls));
+    }
+
+    @Override
+    public SetBucketOwnershipControlsResult setBucketOwnershipControls(
+        SetBucketOwnershipControlsRequest setBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException {
+        setBucketOwnershipControlsRequest = beforeClientExecution(setBucketOwnershipControlsRequest);
+        rejectNull(setBucketOwnershipControlsRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(setBucketOwnershipControlsRequest.getBucketName(), "BucketName");
+        final OwnershipControls ownershipControls = assertNotNull(
+            setBucketOwnershipControlsRequest.getOwnershipControls(), "OwnershipControls");
+
+        Request<SetBucketOwnershipControlsRequest> request =
+            createRequest(bucketName, null, setBucketOwnershipControlsRequest, HttpMethodName.PUT);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBucketOwnershipControls");
+        request.addParameter("ownershipControls", null);
+
+        byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(ownershipControls);
+        setContent(request, bytes, "application/xml", true);
+
+        return invoke(request, new Unmarshallers.SetBucketOwnershipControlsUnmarshaller(), bucketName, null);
+    }
+
+
+    @Override
     public DeleteBucketAnalyticsConfigurationResult deleteBucketAnalyticsConfiguration(
             String bucketName, String id) throws AmazonServiceException, SdkClientException {
         return deleteBucketAnalyticsConfiguration(new DeleteBucketAnalyticsConfigurationRequest(bucketName, id));
@@ -5682,6 +6133,113 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         return invoke(request, new Unmarshallers.ListBucketAnalyticsConfigurationUnmarshaller(), bucketName, null);
     }
+
+    @Override
+    public DeleteBucketIntelligentTieringConfigurationResult deleteBucketIntelligentTieringConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return deleteBucketIntelligentTieringConfiguration(new DeleteBucketIntelligentTieringConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public DeleteBucketIntelligentTieringConfigurationResult deleteBucketIntelligentTieringConfiguration(
+            DeleteBucketIntelligentTieringConfigurationRequest deleteBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        deleteBucketIntelligentTieringConfigurationRequest = beforeClientExecution(deleteBucketIntelligentTieringConfigurationRequest);
+        rejectNull(deleteBucketIntelligentTieringConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                deleteBucketIntelligentTieringConfigurationRequest.getBucketName(), "BucketName");
+        final String id = assertStringNotEmpty(
+                deleteBucketIntelligentTieringConfigurationRequest.getId(), "IntelligentTiering Id");
+
+        Request<DeleteBucketIntelligentTieringConfigurationRequest> request =
+                createRequest(bucketName, null, deleteBucketIntelligentTieringConfigurationRequest, HttpMethodName.DELETE);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBucketIntelligentTieringConfiguration");
+        request.addParameter("intelligent-tiering", null);
+        request.addParameter("id", id);
+
+        return invoke(request, new Unmarshallers.DeleteBucketIntelligenTieringConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public GetBucketIntelligentTieringConfigurationResult getBucketIntelligentTieringConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException {
+        return getBucketIntelligentTieringConfiguration(new GetBucketIntelligentTieringConfigurationRequest(bucketName, id));
+    }
+
+    @Override
+    public GetBucketIntelligentTieringConfigurationResult getBucketIntelligentTieringConfiguration(
+            GetBucketIntelligentTieringConfigurationRequest getBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        getBucketIntelligentTieringConfigurationRequest = beforeClientExecution(getBucketIntelligentTieringConfigurationRequest);
+
+        rejectNull(getBucketIntelligentTieringConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                getBucketIntelligentTieringConfigurationRequest.getBucketName(), "BucketName");
+        final String id = assertStringNotEmpty(
+                getBucketIntelligentTieringConfigurationRequest.getId(), "IntelligentTiering Id");
+
+        Request<GetBucketIntelligentTieringConfigurationRequest> request =
+                createRequest(bucketName, null, getBucketIntelligentTieringConfigurationRequest, HttpMethodName.GET);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBucketIntelligentTieringConfiguration");
+        request.addParameter("intelligent-tiering", null);
+        request.addParameter("id", id);
+
+        return invoke(request, new Unmarshallers.GetBucketIntelligenTieringConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public SetBucketIntelligentTieringConfigurationResult setBucketIntelligentTieringConfiguration(
+            String bucketName, IntelligentTieringConfiguration intelligentTieringConfiguration)
+            throws AmazonServiceException, SdkClientException {
+        return setBucketIntelligentTieringConfiguration(
+                new SetBucketIntelligentTieringConfigurationRequest(bucketName, intelligentTieringConfiguration));
+    }
+
+    @Override
+    public SetBucketIntelligentTieringConfigurationResult setBucketIntelligentTieringConfiguration(
+            SetBucketIntelligentTieringConfigurationRequest setBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException {
+        setBucketIntelligentTieringConfigurationRequest = beforeClientExecution(setBucketIntelligentTieringConfigurationRequest);
+        rejectNull(setBucketIntelligentTieringConfigurationRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                setBucketIntelligentTieringConfigurationRequest.getBucketName(), "BucketName");
+        final IntelligentTieringConfiguration intelligentTieringConfiguration = assertNotNull(
+                setBucketIntelligentTieringConfigurationRequest.getIntelligentTierinConfiguration(),
+                "Intelligent Tiering Configuration");
+        final String id = assertNotNull(intelligentTieringConfiguration.getId(), "Intelligent Tiering Id");
+
+        Request<SetBucketIntelligentTieringConfigurationRequest> request =
+                createRequest(bucketName, null, setBucketIntelligentTieringConfigurationRequest, HttpMethodName.PUT);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBucketIntelligentTieringConfiguration");
+        request.addParameter("intelligent-tiering", null);
+        request.addParameter("id", id);
+
+        byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(intelligentTieringConfiguration);
+        request.addHeader("Content-Length", String.valueOf(bytes.length));
+        request.addHeader("Content-Type", "application/xml");
+        request.setContent(new ByteArrayInputStream(bytes));
+
+        return invoke(request, new Unmarshallers.SetBucketIntelligentTieringConfigurationUnmarshaller(), bucketName, null);
+    }
+
+    @Override
+    public ListBucketIntelligentTieringConfigurationsResult listBucketIntelligentTieringConfigurations(
+            ListBucketIntelligentTieringConfigurationsRequest listBucketIntelligentTieringConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException {
+        listBucketIntelligentTieringConfigurationsRequest = beforeClientExecution(listBucketIntelligentTieringConfigurationsRequest);
+        rejectNull(listBucketIntelligentTieringConfigurationsRequest, "The request cannot be null");
+        final String bucketName = assertStringNotEmpty(
+                listBucketIntelligentTieringConfigurationsRequest.getBucketName(), "BucketName");
+
+        Request<ListBucketIntelligentTieringConfigurationsRequest> request =
+                createRequest(bucketName, null, listBucketIntelligentTieringConfigurationsRequest, HttpMethodName.GET);
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBucketIntelligentTieringConfigurations");
+        request.addParameter("intelligent-tiering", null);
+        addParameterIfNotNull(request, "continuation-token", listBucketIntelligentTieringConfigurationsRequest.getContinuationToken());
+
+        return invoke(request, new Unmarshallers.ListBucketIntelligenTieringConfigurationUnmarshaller(), bucketName, null);
+    }
+
 
     @Override
     public DeleteBucketInventoryConfigurationResult deleteBucketInventoryConfiguration(
@@ -5999,6 +6557,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         result.setMetadata(metadata);
         result.setContentMd5(contentMd5);
         return result;
+    }
+
+    private void validateIsTrue(boolean condition, String error, Object... params) {
+        if (!condition) {
+            throw new IllegalArgumentException(String.format(error, params));
+        }
     }
 
 }

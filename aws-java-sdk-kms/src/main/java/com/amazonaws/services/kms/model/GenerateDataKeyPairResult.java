@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,9 @@ public class GenerateDataKeyPairResult extends com.amazonaws.AmazonWebServiceRes
     private java.nio.ByteBuffer publicKey;
     /**
      * <p>
-     * The identifier of the CMK that encrypted the private key.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that encrypted the private key.
      * </p>
      */
     private String keyId;
@@ -271,11 +273,15 @@ public class GenerateDataKeyPairResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The identifier of the CMK that encrypted the private key.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that encrypted the private key.
      * </p>
      * 
      * @param keyId
-     *        The identifier of the CMK that encrypted the private key.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK that encrypted the private key.
      */
 
     public void setKeyId(String keyId) {
@@ -284,10 +290,14 @@ public class GenerateDataKeyPairResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The identifier of the CMK that encrypted the private key.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that encrypted the private key.
      * </p>
      * 
-     * @return The identifier of the CMK that encrypted the private key.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *         the CMK that encrypted the private key.
      */
 
     public String getKeyId() {
@@ -296,11 +306,15 @@ public class GenerateDataKeyPairResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The identifier of the CMK that encrypted the private key.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that encrypted the private key.
      * </p>
      * 
      * @param keyId
-     *        The identifier of the CMK that encrypted the private key.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK that encrypted the private key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

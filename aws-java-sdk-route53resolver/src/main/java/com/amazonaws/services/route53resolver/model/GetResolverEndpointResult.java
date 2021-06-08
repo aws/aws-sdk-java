@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class GetResolverEndpointResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     * Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      * </p>
      */
     private ResolverEndpoint resolverEndpoint;
 
     /**
      * <p>
-     * Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     * Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      * </p>
      * 
      * @param resolverEndpoint
-     *        Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     *        Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      */
 
     public void setResolverEndpoint(ResolverEndpoint resolverEndpoint) {
@@ -45,10 +45,10 @@ public class GetResolverEndpointResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     * Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      * </p>
      * 
-     * @return Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     * @return Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      */
 
     public ResolverEndpoint getResolverEndpoint() {
@@ -57,11 +57,11 @@ public class GetResolverEndpointResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     * Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      * </p>
      * 
      * @param resolverEndpoint
-     *        Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     *        Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

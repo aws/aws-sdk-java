@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -452,6 +452,11 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <a>GetCommentReactions</a>, which returns information about emoji reactions to comments.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetCommentsForComparedCommit</a>, which returns information about comments on the comparison between two commit
  * specifiers in a repository.
  * </p>
@@ -465,6 +470,11 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * <li>
  * <p>
  * <a>PostCommentReply</a>, which creates a reply to a comment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutCommentReaction</a>, which creates or updates an emoji reaction to a comment.
  * </p>
  * </li>
  * <li>
@@ -578,6 +588,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("InvalidConflictDetailLevelException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codecommit.model.transform.InvalidConflictDetailLevelExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ReactionLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ReactionLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BeforeCommitIdAndAfterCommitIdAreSameException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codecommit.model.transform.BeforeCommitIdAndAfterCommitIdAreSameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -608,6 +621,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("ResourceArnRequiredException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codecommit.model.transform.ResourceArnRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidReactionUserArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidReactionUserArnExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerEventsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codecommit.model.transform.InvalidRepositoryTriggerEventsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -624,6 +640,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRelativeFileVersionEnumException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codecommit.model.transform.InvalidRelativeFileVersionEnumExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidReactionValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidReactionValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TagKeysListRequiredException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codecommit.model.transform.TagKeysListRequiredExceptionUnmarshaller.getInstance()))
@@ -890,6 +909,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BranchDoesNotExistException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codecommit.model.transform.BranchDoesNotExistExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ReactionValueRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ReactionValueRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ApprovalRuleTemplateNameAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codecommit.model.transform.ApprovalRuleTemplateNameAlreadyExistsExceptionUnmarshaller.getInstance()))
@@ -1369,6 +1391,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(associateApprovalRuleTemplateWithRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateApprovalRuleTemplateWithRepository");
@@ -1450,6 +1474,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(batchAssociateApprovalRuleTemplateWithRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchAssociateApprovalRuleTemplateWithRepositories");
@@ -1556,6 +1582,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(batchDescribeMergeConflictsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDescribeMergeConflicts");
@@ -1637,6 +1665,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(batchDisassociateApprovalRuleTemplateFromRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDisassociateApprovalRuleTemplateFromRepositories");
@@ -1716,6 +1746,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new BatchGetCommitsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetCommitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetCommits");
@@ -1798,6 +1830,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new BatchGetRepositoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetRepositories");
@@ -1875,6 +1909,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(createApprovalRuleTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApprovalRuleTemplate");
@@ -1924,7 +1960,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws BranchNameRequiredException
      *         A branch name is required, but was not specified.
      * @throws BranchNameExistsException
-     *         The specified branch name already exists.
+     *         Cannot create the branch with the specified name because the commit conflicts with an existing branch
+     *         with the same name. Branch names must be unique.
      * @throws InvalidBranchNameException
      *         The specified reference name is not valid.
      * @throws CommitIdRequiredException
@@ -1969,6 +2006,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new CreateBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBranch");
@@ -2126,6 +2165,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new CreateCommitRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCommitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCommit");
@@ -2248,6 +2289,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new CreatePullRequestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPullRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePullRequest");
@@ -2337,6 +2380,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(createPullRequestApprovalRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePullRequestApprovalRule");
@@ -2424,6 +2469,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new CreateRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRepository");
@@ -2576,6 +2623,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(createUnreferencedMergeCommitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUnreferencedMergeCommit");
@@ -2641,6 +2690,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(deleteApprovalRuleTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApprovalRuleTemplate");
@@ -2723,6 +2774,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new DeleteBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBranch");
@@ -2784,6 +2837,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new DeleteCommentContentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCommentContentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCommentContent");
@@ -2893,6 +2948,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new DeleteFileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFile");
@@ -2977,6 +3034,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(deletePullRequestApprovalRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePullRequestApprovalRule");
@@ -3056,6 +3115,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new DeleteRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRepository");
@@ -3166,6 +3227,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new DescribeMergeConflictsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMergeConflictsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMergeConflicts");
@@ -3250,6 +3313,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(describePullRequestEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePullRequestEvents");
@@ -3339,6 +3404,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(disassociateApprovalRuleTemplateFromRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateApprovalRuleTemplateFromRepository");
@@ -3420,6 +3487,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(evaluatePullRequestApprovalRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EvaluatePullRequestApprovalRules");
@@ -3484,6 +3553,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(getApprovalRuleTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApprovalRuleTemplate");
@@ -3569,6 +3640,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetBlobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBlobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBlob");
@@ -3649,6 +3722,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBranch");
@@ -3674,17 +3749,33 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * <p>
      * Returns the content of a comment made on a change, file, or commit in a repository.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentRequest
      * @return Result of the GetComment operation returned by the service.
      * @throws CommentDoesNotExistException
      *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
+     * @throws CommentDeletedException
+     *         This comment has already been deleted. You cannot edit or delete a deleted comment.
      * @throws CommentIdRequiredException
      *         The comment ID is missing or null. A comment ID is required.
      * @throws InvalidCommentIdException
      *         The comment ID is not in a valid format. Make sure that you have provided the full comment ID.
-     * @throws CommentDeletedException
-     *         This comment has already been deleted. You cannot edit or delete a deleted comment.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
      * @sample AWSCodeCommit.GetComment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetComment" target="_top">AWS API
      *      Documentation</a>
@@ -3710,6 +3801,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetCommentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCommentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComment");
@@ -3733,8 +3826,84 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
     /**
      * <p>
+     * Returns information about reactions to a specified comment ID. Reactions from users who have been deleted will
+     * not be included in the count.
+     * </p>
+     * 
+     * @param getCommentReactionsRequest
+     * @return Result of the GetCommentReactions operation returned by the service.
+     * @throws CommentDoesNotExistException
+     *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
+     * @throws CommentIdRequiredException
+     *         The comment ID is missing or null. A comment ID is required.
+     * @throws InvalidCommentIdException
+     *         The comment ID is not in a valid format. Make sure that you have provided the full comment ID.
+     * @throws InvalidReactionUserArnException
+     *         The Amazon Resource Name (ARN) of the user or identity is not valid.
+     * @throws InvalidMaxResultsException
+     *         The specified number of maximum results is not valid.
+     * @throws InvalidContinuationTokenException
+     *         The specified continuation token is not valid.
+     * @throws CommentDeletedException
+     *         This comment has already been deleted. You cannot edit or delete a deleted comment.
+     * @sample AWSCodeCommit.GetCommentReactions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommentReactions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetCommentReactionsResult getCommentReactions(GetCommentReactionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCommentReactions(request);
+    }
+
+    @SdkInternalApi
+    final GetCommentReactionsResult executeGetCommentReactions(GetCommentReactionsRequest getCommentReactionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCommentReactionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCommentReactionsRequest> request = null;
+        Response<GetCommentReactionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCommentReactionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCommentReactionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCommentReactions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCommentReactionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCommentReactionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about comments made on the comparison between two commits.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentsForComparedCommitRequest
      * @return Result of the GetCommentsForComparedCommit operation returned by the service.
@@ -3795,6 +3964,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(getCommentsForComparedCommitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCommentsForComparedCommit");
@@ -3821,6 +3992,12 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * <p>
      * Returns comments made on a pull request.
      * </p>
+     * <note>
+     * <p>
+     * Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a
+     * count of reactions from active identities, use GetCommentReactions.
+     * </p>
+     * </note>
      * 
      * @param getCommentsForPullRequestRequest
      * @return Result of the GetCommentsForPullRequest operation returned by the service.
@@ -3892,6 +4069,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(getCommentsForPullRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCommentsForPullRequest");
@@ -3973,6 +4152,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetCommitRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCommitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCommit");
@@ -4064,6 +4245,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetDifferencesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDifferencesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDifferences");
@@ -4153,6 +4336,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetFileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFile");
@@ -4238,6 +4423,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFolderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFolder");
@@ -4322,6 +4509,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetMergeCommitRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMergeCommitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMergeCommit");
@@ -4429,6 +4618,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetMergeConflictsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMergeConflictsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMergeConflicts");
@@ -4522,6 +4713,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetMergeOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMergeOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMergeOptions");
@@ -4593,6 +4786,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetPullRequestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPullRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPullRequest");
@@ -4670,6 +4865,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(getPullRequestApprovalStatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPullRequestApprovalStates");
@@ -4749,6 +4946,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(getPullRequestOverrideStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPullRequestOverrideState");
@@ -4832,6 +5031,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRepository");
@@ -4906,6 +5107,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetRepositoryTriggersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRepositoryTriggers");
@@ -4966,6 +5169,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(listApprovalRuleTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApprovalRuleTemplates");
@@ -5048,6 +5253,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(listAssociatedApprovalRuleTemplatesForRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssociatedApprovalRuleTemplatesForRepository");
@@ -5125,6 +5332,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new ListBranchesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBranchesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBranches");
@@ -5211,6 +5420,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new ListPullRequestsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPullRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPullRequests");
@@ -5271,6 +5482,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new ListRepositoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRepositories");
@@ -5350,6 +5563,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(listRepositoriesForApprovalRuleTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRepositoriesForApprovalRuleTemplate");
@@ -5425,6 +5640,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -5526,6 +5743,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(mergeBranchesByFastForwardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MergeBranchesByFastForward");
@@ -5676,6 +5895,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new MergeBranchesBySquashRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(mergeBranchesBySquashRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MergeBranchesBySquash");
@@ -5827,6 +6048,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(mergeBranchesByThreeWayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MergeBranchesByThreeWay");
@@ -5934,6 +6157,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(mergePullRequestByFastForwardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MergePullRequestByFastForward");
@@ -6087,6 +6312,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(mergePullRequestBySquashRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MergePullRequestBySquash");
@@ -6241,6 +6468,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(mergePullRequestByThreeWayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MergePullRequestByThreeWay");
@@ -6330,6 +6559,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(overridePullRequestApprovalRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "OverridePullRequestApprovalRules");
@@ -6397,6 +6628,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         A commit ID was not specified.
      * @throws InvalidCommitIdException
      *         The specified commit ID is not valid.
+     * @throws BeforeCommitIdAndAfterCommitIdAreSameException
+     *         The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and
+     *         the after commit ID must be different commit IDs.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -6407,9 +6641,6 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         No encryption key was found.
      * @throws EncryptionKeyUnavailableException
      *         The encryption key is not available.
-     * @throws BeforeCommitIdAndAfterCommitIdAreSameException
-     *         The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and
-     *         the after commit ID must be different commit IDs.
      * @throws CommitDoesNotExistException
      *         The specified commit does not exist or no commit was specified, and the specified repository has no
      *         default branch.
@@ -6417,6 +6648,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified path is not valid.
      * @throws PathDoesNotExistException
      *         The specified path does not exist.
+     * @throws PathRequiredException
+     *         The folderPath for a location cannot be null.
      * @sample AWSCodeCommit.PostCommentForComparedCommit
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForComparedCommit"
      *      target="_top">AWS API Documentation</a>
@@ -6443,6 +6676,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(postCommentForComparedCommitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostCommentForComparedCommit");
@@ -6521,6 +6756,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         A commit ID was not specified.
      * @throws InvalidCommitIdException
      *         The specified commit ID is not valid.
+     * @throws BeforeCommitIdAndAfterCommitIdAreSameException
+     *         The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and
+     *         the after commit ID must be different commit IDs.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -6540,9 +6778,6 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified path does not exist.
      * @throws PathRequiredException
      *         The folderPath for a location cannot be null.
-     * @throws BeforeCommitIdAndAfterCommitIdAreSameException
-     *         The before commit ID and the after commit ID are the same, which is not valid. The before commit ID and
-     *         the after commit ID must be different commit IDs.
      * @sample AWSCodeCommit.PostCommentForPullRequest
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PostCommentForPullRequest"
      *      target="_top">AWS API Documentation</a>
@@ -6569,6 +6804,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(postCommentForPullRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostCommentForPullRequest");
@@ -6643,6 +6880,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new PostCommentReplyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(postCommentReplyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostCommentReply");
@@ -6654,6 +6893,79 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
             HttpResponseHandler<AmazonWebServiceResponse<PostCommentReplyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PostCommentReplyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or updates a reaction to a specified comment for the user whose identity is used to make the request. You
+     * can only add or update a reaction for yourself. You cannot add, modify, or delete a reaction for another user.
+     * </p>
+     * 
+     * @param putCommentReactionRequest
+     * @return Result of the PutCommentReaction operation returned by the service.
+     * @throws CommentDoesNotExistException
+     *         No comment exists with the provided ID. Verify that you have used the correct ID, and then try again.
+     * @throws CommentIdRequiredException
+     *         The comment ID is missing or null. A comment ID is required.
+     * @throws InvalidCommentIdException
+     *         The comment ID is not in a valid format. Make sure that you have provided the full comment ID.
+     * @throws InvalidReactionValueException
+     *         The value of the reaction is not valid. For more information, see the <a
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User
+     *         Guide</a>.
+     * @throws ReactionValueRequiredException
+     *         A reaction value is required.
+     * @throws ReactionLimitExceededException
+     *         The number of reactions has been exceeded. Reactions are limited to one reaction per user for each
+     *         individual comment ID.
+     * @throws CommentDeletedException
+     *         This comment has already been deleted. You cannot edit or delete a deleted comment.
+     * @sample AWSCodeCommit.PutCommentReaction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutCommentReaction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutCommentReactionResult putCommentReaction(PutCommentReactionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutCommentReaction(request);
+    }
+
+    @SdkInternalApi
+    final PutCommentReactionResult executePutCommentReaction(PutCommentReactionRequest putCommentReactionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putCommentReactionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutCommentReactionRequest> request = null;
+        Response<PutCommentReactionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutCommentReactionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putCommentReactionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutCommentReaction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutCommentReactionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutCommentReactionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6778,6 +7090,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new PutFileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putFileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutFile");
@@ -6881,6 +7195,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new PutRepositoryTriggersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRepositoryTriggers");
@@ -6966,6 +7282,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -7071,6 +7389,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new TestRepositoryTriggersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestRepositoryTriggers");
@@ -7155,6 +7475,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -7227,6 +7549,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(updateApprovalRuleTemplateContentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApprovalRuleTemplateContent");
@@ -7296,6 +7620,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(updateApprovalRuleTemplateDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApprovalRuleTemplateDescription");
@@ -7363,6 +7689,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(updateApprovalRuleTemplateNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApprovalRuleTemplateName");
@@ -7431,6 +7759,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new UpdateCommentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCommentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateComment");
@@ -7517,6 +7847,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new UpdateDefaultBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDefaultBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDefaultBranch");
@@ -7609,6 +7941,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(updatePullRequestApprovalRuleContentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePullRequestApprovalRuleContent");
@@ -7701,6 +8035,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(updatePullRequestApprovalStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePullRequestApprovalState");
@@ -7768,6 +8104,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(updatePullRequestDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePullRequestDescription");
@@ -7849,6 +8187,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(updatePullRequestStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePullRequestStatus");
@@ -7917,6 +8257,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new UpdatePullRequestTitleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePullRequestTitleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePullRequestTitle");
@@ -8003,6 +8345,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(updateRepositoryDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRepositoryDescription");
@@ -8074,6 +8418,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new UpdateRepositoryNameRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRepositoryNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRepositoryName");
@@ -8169,6 +8515,11 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

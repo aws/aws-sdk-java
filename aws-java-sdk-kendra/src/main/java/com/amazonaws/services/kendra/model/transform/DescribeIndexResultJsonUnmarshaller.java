@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,7 +88,9 @@ public class DescribeIndexResultJsonUnmarshaller implements Unmarshaller<Describ
                 if (context.testExpression("DocumentMetadataConfigurations", targetDepth)) {
                     context.nextToken();
                     describeIndexResult.setDocumentMetadataConfigurations(new ListUnmarshaller<DocumentMetadataConfiguration>(
-                            DocumentMetadataConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DocumentMetadataConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IndexStatistics", targetDepth)) {
                     context.nextToken();
@@ -101,6 +103,17 @@ public class DescribeIndexResultJsonUnmarshaller implements Unmarshaller<Describ
                 if (context.testExpression("CapacityUnits", targetDepth)) {
                     context.nextToken();
                     describeIndexResult.setCapacityUnits(CapacityUnitsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("UserTokenConfigurations", targetDepth)) {
+                    context.nextToken();
+                    describeIndexResult.setUserTokenConfigurations(new ListUnmarshaller<UserTokenConfiguration>(UserTokenConfigurationJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("UserContextPolicy", targetDepth)) {
+                    context.nextToken();
+                    describeIndexResult.setUserContextPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

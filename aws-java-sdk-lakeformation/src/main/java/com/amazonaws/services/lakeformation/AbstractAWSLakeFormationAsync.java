@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,19 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     }
 
     @Override
+    public java.util.concurrent.Future<AddLFTagsToResourceResult> addLFTagsToResourceAsync(AddLFTagsToResourceRequest request) {
+
+        return addLFTagsToResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddLFTagsToResourceResult> addLFTagsToResourceAsync(AddLFTagsToResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddLFTagsToResourceRequest, AddLFTagsToResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGrantPermissionsResult> batchGrantPermissionsAsync(BatchGrantPermissionsRequest request) {
 
         return batchGrantPermissionsAsync(request, null);
@@ -49,6 +62,32 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     @Override
     public java.util.concurrent.Future<BatchRevokePermissionsResult> batchRevokePermissionsAsync(BatchRevokePermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchRevokePermissionsRequest, BatchRevokePermissionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLFTagResult> createLFTagAsync(CreateLFTagRequest request) {
+
+        return createLFTagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLFTagResult> createLFTagAsync(CreateLFTagRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLFTagRequest, CreateLFTagResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLFTagResult> deleteLFTagAsync(DeleteLFTagRequest request) {
+
+        return deleteLFTagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLFTagResult> deleteLFTagAsync(DeleteLFTagRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLFTagRequest, DeleteLFTagResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -106,6 +145,32 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetLFTagResult> getLFTagAsync(GetLFTagRequest request) {
+
+        return getLFTagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLFTagResult> getLFTagAsync(GetLFTagRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLFTagRequest, GetLFTagResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceLFTagsResult> getResourceLFTagsAsync(GetResourceLFTagsRequest request) {
+
+        return getResourceLFTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceLFTagsResult> getResourceLFTagsAsync(GetResourceLFTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourceLFTagsRequest, GetResourceLFTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GrantPermissionsResult> grantPermissionsAsync(GrantPermissionsRequest request) {
 
         return grantPermissionsAsync(request, null);
@@ -114,6 +179,19 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     @Override
     public java.util.concurrent.Future<GrantPermissionsResult> grantPermissionsAsync(GrantPermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GrantPermissionsRequest, GrantPermissionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLFTagsResult> listLFTagsAsync(ListLFTagsRequest request) {
+
+        return listLFTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLFTagsResult> listLFTagsAsync(ListLFTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLFTagsRequest, ListLFTagsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -171,6 +249,19 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveLFTagsFromResourceResult> removeLFTagsFromResourceAsync(RemoveLFTagsFromResourceRequest request) {
+
+        return removeLFTagsFromResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveLFTagsFromResourceResult> removeLFTagsFromResourceAsync(RemoveLFTagsFromResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveLFTagsFromResourceRequest, RemoveLFTagsFromResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RevokePermissionsResult> revokePermissionsAsync(RevokePermissionsRequest request) {
 
         return revokePermissionsAsync(request, null);
@@ -179,6 +270,45 @@ public class AbstractAWSLakeFormationAsync extends AbstractAWSLakeFormation impl
     @Override
     public java.util.concurrent.Future<RevokePermissionsResult> revokePermissionsAsync(RevokePermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<RevokePermissionsRequest, RevokePermissionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchDatabasesByLFTagsResult> searchDatabasesByLFTagsAsync(SearchDatabasesByLFTagsRequest request) {
+
+        return searchDatabasesByLFTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchDatabasesByLFTagsResult> searchDatabasesByLFTagsAsync(SearchDatabasesByLFTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<SearchDatabasesByLFTagsRequest, SearchDatabasesByLFTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchTablesByLFTagsResult> searchTablesByLFTagsAsync(SearchTablesByLFTagsRequest request) {
+
+        return searchTablesByLFTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchTablesByLFTagsResult> searchTablesByLFTagsAsync(SearchTablesByLFTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<SearchTablesByLFTagsRequest, SearchTablesByLFTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLFTagResult> updateLFTagAsync(UpdateLFTagRequest request) {
+
+        return updateLFTagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLFTagResult> updateLFTagAsync(UpdateLFTagRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLFTagRequest, UpdateLFTagResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

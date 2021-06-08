@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,12 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      */
     private String resourceArn;
+    /**
+     * <p>
+     * One or more tag key-value pairs for the <a>Protection</a> object that is created.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -396,6 +402,76 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * One or more tag key-value pairs for the <a>Protection</a> object that is created.
+     * </p>
+     * 
+     * @return One or more tag key-value pairs for the <a>Protection</a> object that is created.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the <a>Protection</a> object that is created.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the <a>Protection</a> object that is created.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the <a>Protection</a> object that is created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the <a>Protection</a> object that is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProtectionRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the <a>Protection</a> object that is created.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the <a>Protection</a> object that is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProtectionRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -410,7 +486,9 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: ").append(getResourceArn());
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -433,6 +511,10 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -443,6 +525,7 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

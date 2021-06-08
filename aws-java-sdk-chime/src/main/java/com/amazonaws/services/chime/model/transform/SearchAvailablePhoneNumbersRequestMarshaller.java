@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class SearchAvailablePhoneNumbersRequestMarshaller {
             .marshallLocationName("state").build();
     private static final MarshallingInfo<String> TOLLFREEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("toll-free-prefix").build();
+    private static final MarshallingInfo<String> PHONENUMBERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("phone-number-type").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("max-results").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,6 +65,7 @@ public class SearchAvailablePhoneNumbersRequestMarshaller {
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getCountry(), COUNTRY_BINDING);
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getState(), STATE_BINDING);
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getTollFreePrefix(), TOLLFREEPREFIX_BINDING);
+            protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getPhoneNumberType(), PHONENUMBERTYPE_BINDING);
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

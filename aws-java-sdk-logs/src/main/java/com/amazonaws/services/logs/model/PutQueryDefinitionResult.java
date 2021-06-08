@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutQueryDefinitionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the query definition.
+     * </p>
+     */
     private String queryDefinitionId;
 
     /**
+     * <p>
+     * The ID of the query definition.
+     * </p>
+     * 
      * @param queryDefinitionId
+     *        The ID of the query definition.
      */
 
     public void setQueryDefinitionId(String queryDefinitionId) {
@@ -34,7 +44,11 @@ public class PutQueryDefinitionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the query definition.
+     * </p>
+     * 
+     * @return The ID of the query definition.
      */
 
     public String getQueryDefinitionId() {
@@ -42,7 +56,12 @@ public class PutQueryDefinitionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The ID of the query definition.
+     * </p>
+     * 
      * @param queryDefinitionId
+     *        The ID of the query definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

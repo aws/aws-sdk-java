@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -170,22 +170,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> capabilities;
@@ -258,6 +260,40 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private AutoDeployment autoDeployment;
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to the management account, specify
+     * <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to a delegated administrator account,
+     * specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated admin in the management account. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a
+     * delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Stack sets with service-managed permissions are created in the management account, including stack sets that are
+     * created by delegated administrators.
+     * </p>
+     */
+    private String callAs;
     /**
      * <p>
      * A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry
@@ -466,7 +502,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -476,7 +512,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param templateURL
      *        The location of the file that contains the template body. The URL must point to a template (maximum size:
-     *        460,800 bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     *        460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information,
+     *        see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
@@ -490,7 +527,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -499,7 +536,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The location of the file that contains the template body. The URL must point to a template (maximum size:
-     *         460,800 bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     *         460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information,
+     *         see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
@@ -513,7 +551,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
-     * bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     * bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -523,7 +561,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param templateURL
      *        The location of the file that contains the template body. The URL must point to a template (maximum size:
-     *        460,800 bytes) that's located in an Amazon S3 bucket. For more information, see <a
+     *        460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document. For more information,
+     *        see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
@@ -705,22 +744,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      * 
      * @return In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities
@@ -819,22 +860,25 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>CAPABILITY_AUTO_EXPAND</code>
      *         </p>
      *         <p>
-     *         Some templates contain macros. If your stack template contains one or more macros, and you choose to
-     *         create a stack directly from the processed template, without first reviewing the resulting changes in a
-     *         change set, you must acknowledge this capability. For more information, see <a
+     *         Some templates reference macros. If your stack set template references one or more macros, you must
+     *         create the stack set directly from the processed template, without first reviewing the resulting changes
+     *         in a change set. To create the stack set directly, you must acknowledge this capability. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      *         CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *         </p>
-     *         <note>
+     *         <important>
      *         <p>
-     *         Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *         Stack sets with service-managed permissions do not currently support the use of macros in templates.
+     *         (This includes the <a href=
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *         >AWS::Include</a> and <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *         >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     *         capability, if you include a macro in your template the stack set operation will fail.
+     *         capability for a stack set with service-managed permissions, if you reference a macro in your template
+     *         the stack set operation will fail.
      *         </p>
-     *         </note></li>
+     *         </important></li>
      * @see Capability
      */
 
@@ -941,22 +985,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      * 
      * @param capabilities
@@ -1056,22 +1102,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>CAPABILITY_AUTO_EXPAND</code>
      *        </p>
      *        <p>
-     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
-     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
-     *        change set, you must acknowledge this capability. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        Some templates reference macros. If your stack set template references one or more macros, you must create
+     *        the stack set directly from the processed template, without first reviewing the resulting changes in a
+     *        change set. To create the stack set directly, you must acknowledge this capability. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     *        includes the <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
-     *        </note></li>
+     *        </important></li>
      * @see Capability
      */
 
@@ -1180,22 +1228,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1300,22 +1350,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>CAPABILITY_AUTO_EXPAND</code>
      *        </p>
      *        <p>
-     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
-     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
-     *        change set, you must acknowledge this capability. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        Some templates reference macros. If your stack set template references one or more macros, you must create
+     *        the stack set directly from the processed template, without first reviewing the resulting changes in a
+     *        change set. To create the stack set directly, you must acknowledge this capability. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     *        includes the <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
-     *        </note></li>
+     *        </important></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -1426,22 +1478,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      * 
      * @param capabilities
@@ -1541,22 +1595,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>CAPABILITY_AUTO_EXPAND</code>
      *        </p>
      *        <p>
-     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
-     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
-     *        change set, you must acknowledge this capability. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        Some templates reference macros. If your stack set template references one or more macros, you must create
+     *        the stack set directly from the processed template, without first reviewing the resulting changes in a
+     *        change set. To create the stack set directly, you must acknowledge this capability. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     *        includes the <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
-     *        </note></li>
+     *        </important></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -1662,22 +1718,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      * 
      * @param capabilities
@@ -1777,22 +1835,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>CAPABILITY_AUTO_EXPAND</code>
      *        </p>
      *        <p>
-     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
-     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
-     *        change set, you must acknowledge this capability. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        Some templates reference macros. If your stack set template references one or more macros, you must create
+     *        the stack set directly from the processed template, without first reviewing the resulting changes in a
+     *        change set. To create the stack set directly, you must acknowledge this capability. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     *        includes the <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
-     *        </note></li>
+     *        </important></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -2344,6 +2404,289 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to the management account, specify
+     * <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to a delegated administrator account,
+     * specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated admin in the management account. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a
+     * delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Stack sets with service-managed permissions are created in the management account, including stack sets that are
+     * created by delegated administrators.
+     * </p>
+     * 
+     * @param callAs
+     *        [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *        organization's management account or as a delegated administrator in a member account.</p>
+     *        <p>
+     *        By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *        permissions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to the management account, specify
+     *        <code>SELF</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to a delegated administrator
+     *        account, specify <code>DELEGATED_ADMIN</code>.
+     *        </p>
+     *        <p>
+     *        Your AWS account must be registered as a delegated admin in the management account. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *        >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Stack sets with service-managed permissions are created in the management account, including stack sets
+     *        that are created by delegated administrators.
+     * @see CallAs
+     */
+
+    public void setCallAs(String callAs) {
+        this.callAs = callAs;
+    }
+
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to the management account, specify
+     * <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to a delegated administrator account,
+     * specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated admin in the management account. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a
+     * delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Stack sets with service-managed permissions are created in the management account, including stack sets that are
+     * created by delegated administrators.
+     * </p>
+     * 
+     * @return [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *         organization's management account or as a delegated administrator in a member account.</p>
+     *         <p>
+     *         By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *         permissions.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To create a stack set with service-managed permissions while signed in to the management account, specify
+     *         <code>SELF</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a stack set with service-managed permissions while signed in to a delegated administrator
+     *         account, specify <code>DELEGATED_ADMIN</code>.
+     *         </p>
+     *         <p>
+     *         Your AWS account must be registered as a delegated admin in the management account. For more information,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *         >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Stack sets with service-managed permissions are created in the management account, including stack sets
+     *         that are created by delegated administrators.
+     * @see CallAs
+     */
+
+    public String getCallAs() {
+        return this.callAs;
+    }
+
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to the management account, specify
+     * <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to a delegated administrator account,
+     * specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated admin in the management account. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a
+     * delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Stack sets with service-managed permissions are created in the management account, including stack sets that are
+     * created by delegated administrators.
+     * </p>
+     * 
+     * @param callAs
+     *        [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *        organization's management account or as a delegated administrator in a member account.</p>
+     *        <p>
+     *        By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *        permissions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to the management account, specify
+     *        <code>SELF</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to a delegated administrator
+     *        account, specify <code>DELEGATED_ADMIN</code>.
+     *        </p>
+     *        <p>
+     *        Your AWS account must be registered as a delegated admin in the management account. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *        >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Stack sets with service-managed permissions are created in the management account, including stack sets
+     *        that are created by delegated administrators.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallAs
+     */
+
+    public CreateStackSetRequest withCallAs(String callAs) {
+        setCallAs(callAs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's
+     * management account or as a delegated administrator in a member account.
+     * </p>
+     * <p>
+     * By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to the management account, specify
+     * <code>SELF</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a stack set with service-managed permissions while signed in to a delegated administrator account,
+     * specify <code>DELEGATED_ADMIN</code>.
+     * </p>
+     * <p>
+     * Your AWS account must be registered as a delegated admin in the management account. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a
+     * delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Stack sets with service-managed permissions are created in the management account, including stack sets that are
+     * created by delegated administrators.
+     * </p>
+     * 
+     * @param callAs
+     *        [Service-managed permissions] Specifies whether you are acting as an account administrator in the
+     *        organization's management account or as a delegated administrator in a member account.</p>
+     *        <p>
+     *        By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed
+     *        permissions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to the management account, specify
+     *        <code>SELF</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a stack set with service-managed permissions while signed in to a delegated administrator
+     *        account, specify <code>DELEGATED_ADMIN</code>.
+     *        </p>
+     *        <p>
+     *        Your AWS account must be registered as a delegated admin in the management account. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html"
+     *        >Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Stack sets with service-managed permissions are created in the management account, including stack sets
+     *        that are created by delegated administrators.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CallAs
+     */
+
+    public CreateStackSetRequest withCallAs(CallAs callAs) {
+        this.callAs = callAs.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry
      * requests so that AWS CloudFormation knows that you're not attempting to create another stack set with the same
      * name. You might retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation successfully
@@ -2449,6 +2792,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("PermissionModel: ").append(getPermissionModel()).append(",");
         if (getAutoDeployment() != null)
             sb.append("AutoDeployment: ").append(getAutoDeployment()).append(",");
+        if (getCallAs() != null)
+            sb.append("CallAs: ").append(getCallAs()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
@@ -2509,6 +2854,10 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAutoDeployment() != null && other.getAutoDeployment().equals(this.getAutoDeployment()) == false)
             return false;
+        if (other.getCallAs() == null ^ this.getCallAs() == null)
+            return false;
+        if (other.getCallAs() != null && other.getCallAs().equals(this.getCallAs()) == false)
+            return false;
         if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
@@ -2532,6 +2881,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getExecutionRoleName() == null) ? 0 : getExecutionRoleName().hashCode());
         hashCode = prime * hashCode + ((getPermissionModel() == null) ? 0 : getPermissionModel().hashCode());
         hashCode = prime * hashCode + ((getAutoDeployment() == null) ? 0 : getAutoDeployment().hashCode());
+        hashCode = prime * hashCode + ((getCallAs() == null) ? 0 : getCallAs().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }

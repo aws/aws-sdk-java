@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,14 +63,29 @@ import com.amazonaws.services.elasticloadbalancingv2.model.transform.*;
  * </p>
  * <p>
  * Elastic Load Balancing supports the following types of load balancers: Application Load Balancers, Network Load
- * Balancers, and Classic Load Balancers. This reference covers Application Load Balancers and Network Load Balancers.
+ * Balancers, Gateway Load Balancers, and Classic Load Balancers. This reference covers the following load balancer
+ * types:
  * </p>
+ * <ul>
+ * <li>
  * <p>
- * An Application Load Balancer makes routing and load balancing decisions at the application layer (HTTP/HTTPS). A
- * Network Load Balancer makes routing and load balancing decisions at the transport layer (TCP/TLS). Both Application
- * Load Balancers and Network Load Balancers can route requests to one or more ports on each EC2 instance or container
- * instance in your virtual private cloud (VPC). For more information, see the <a
- * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User Guide</a>.
+ * Application Load Balancer - Operates at the application layer (layer 7) and supports HTTP and HTTPS.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP, TLS, and UDP.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Gateway Load Balancer - Operates at the network layer (layer 3).
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For more information, see the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
+ * Load Balancing User Guide</a>.
  * </p>
  * <p>
  * All Elastic Load Balancing operations are idempotent, which means that they complete at most one time. If you repeat
@@ -351,14 +366,11 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * again.
      * </p>
      * <p>
-     * To get the certificate list for a listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
-     * the certificate list for a listener, use <a>RemoveListenerCertificates</a>. To replace the default certificate
-     * for a listener, use <a>ModifyListener</a>.
-     * </p>
-     * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates"
-     * >SSL Certificates</a> in the <i>Application Load Balancers Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html">HTTPS
+     * listeners</a> in the <i>Application Load Balancers Guide</i> or <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS listeners</a>
+     * in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param addListenerCertificatesRequest
@@ -394,6 +406,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new AddListenerCertificatesRequestMarshaller().marshall(super.beforeMarshalling(addListenerCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddListenerCertificates");
@@ -405,6 +419,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<AddListenerCertificatesResult> responseHandler = new StaxResponseHandler<AddListenerCertificatesResult>(
                     new AddListenerCertificatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -418,15 +433,11 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load
-     * Balancers, Network Load Balancers, and your target groups.
+     * Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, and rules.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a resource already has a tag with the same key,
      * <code>AddTags</code> updates its value.
-     * </p>
-     * <p>
-     * To list the current tags for your resources, use <a>DescribeTags</a>. To remove tags from your resources, use
-     * <a>RemoveTags</a>.
      * </p>
      * 
      * @param addTagsRequest
@@ -464,6 +475,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new AddTagsRequestMarshaller().marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTags");
@@ -474,6 +487,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<AddTagsResult> responseHandler = new StaxResponseHandler<AddTagsResult>(new AddTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -486,23 +500,34 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Creates a listener for the specified Application Load Balancer or Network Load Balancer.
+     * Creates a listener for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.
      * </p>
      * <p>
-     * To update a listener, use <a>ModifyListener</a>. When you are finished with a listener, you can delete it using
-     * <a>DeleteListener</a>. If you are finished with both the listener and the load balancer, you can delete them both
-     * using <a>DeleteLoadBalancer</a>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">
+     * Listeners for your Application Load Balancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
+     * for your Network Load Balancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-listeners.html">Listeners for
+     * your Gateway Load Balancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
      * listeners with the same settings, each call succeeds.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
-     * for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners for
-     * Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param createListenerRequest
@@ -542,6 +567,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         a target group is used by multiple actions for a load balancer, it is counted as only one use.
      * @throws ALPNPolicyNotSupportedException
      *         The specified ALPN policy is not supported.
+     * @throws TooManyTagsException
+     *         You've reached the limit on the number of tags per load balancer.
      * @sample AmazonElasticLoadBalancing.CreateListener
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener"
      *      target="_top">AWS API Documentation</a>
@@ -567,6 +594,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new CreateListenerRequestMarshaller().marshall(super.beforeMarshalling(createListenerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateListener");
@@ -578,6 +607,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<CreateListenerResult> responseHandler = new StaxResponseHandler<CreateListenerResult>(
                     new CreateListenerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -590,35 +620,34 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Creates an Application Load Balancer or a Network Load Balancer.
+     * Creates an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.
      * </p>
      * <p>
-     * When you create a load balancer, you can specify security groups, public subnets, IP address type, and tags.
-     * Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
-     * <a>AddTags</a>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * To create listeners for your load balancer, use <a>CreateListener</a>. To describe your current load balancers,
-     * see <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you can delete it using
-     * <a>DeleteLoadBalancer</a>.
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">
+     * Application Load Balancers</a>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * For limit information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
-     * Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
-     * Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
+     * Load Balancers</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html">Gateway
+     * Load Balancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
      * load balancers with the same settings, each call succeeds.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html"
-     * >Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network Load
-     * Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param createLoadBalancerRequest
@@ -674,6 +703,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new CreateLoadBalancerRequestMarshaller().marshall(super.beforeMarshalling(createLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoadBalancer");
@@ -685,6 +716,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<CreateLoadBalancerResult> responseHandler = new StaxResponseHandler<CreateLoadBalancerResult>(
                     new CreateLoadBalancerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -700,15 +732,12 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.
      * </p>
      * <p>
-     * Rules are evaluated in priority order, from the lowest value to the highest value. When the conditions for a rule
-     * are met, its actions are performed. If the conditions for no rules are met, the actions for the default rule are
-     * performed. For more information, see <a href=
+     * Each rule consists of a priority, one or more actions, and one or more conditions. Rules are evaluated in
+     * priority order, from the lowest value to the highest value. When the conditions for a rule are met, its actions
+     * are performed. If the conditions for no rules are met, the actions for the default rule are performed. For more
+     * information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules"
-     * >Listener Rules</a> in the <i>Application Load Balancers Guide</i>.
-     * </p>
-     * <p>
-     * To view your current rules, use <a>DescribeRules</a>. To update a rule, use <a>ModifyRule</a>. To set the
-     * priorities of your rules, use <a>SetRulePriorities</a>. To delete a rule, use <a>DeleteRule</a>.
+     * >Listener rules</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param createRuleRequest
@@ -742,6 +771,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws TooManyUniqueTargetGroupsPerLoadBalancerException
      *         You've reached the limit on the number of unique target groups per load balancer across all listeners. If
      *         a target group is used by multiple actions for a load balancer, it is counted as only one use.
+     * @throws TooManyTagsException
+     *         You've reached the limit on the number of tags per load balancer.
      * @sample AmazonElasticLoadBalancing.CreateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule"
      *      target="_top">AWS API Documentation</a>
@@ -767,6 +798,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new CreateRuleRequestMarshaller().marshall(super.beforeMarshalling(createRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRule");
@@ -777,6 +810,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<CreateRuleResult> responseHandler = new StaxResponseHandler<CreateRuleResult>(new CreateRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -792,27 +826,31 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Creates a target group.
      * </p>
      * <p>
-     * To register targets with the target group, use <a>RegisterTargets</a>. To update the health check settings for
-     * the target group, use <a>ModifyTargetGroup</a>. To monitor the health of targets in the target group, use
-     * <a>DescribeTargetHealth</a>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * To route traffic to the targets in a target group, specify the target group in an action using
-     * <a>CreateListener</a> or <a>CreateRule</a>.
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">
+     * Target groups for your Application Load Balancers</a>
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * To delete a target group, use <a>DeleteTargetGroup</a>.
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
+     * groups for your Network Load Balancers</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html">Target groups for
+     * your Gateway Load Balancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
      * target groups with the same settings, each call succeeds.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html"
-     * >Target Groups for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> or <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
-     * Groups for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param createTargetGroupRequest
@@ -823,6 +861,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         You've reached the limit on the number of target groups for your AWS account.
      * @throws InvalidConfigurationRequestException
      *         The requested configuration is not valid.
+     * @throws TooManyTagsException
+     *         You've reached the limit on the number of tags per load balancer.
      * @sample AmazonElasticLoadBalancing.CreateTargetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup"
      *      target="_top">AWS API Documentation</a>
@@ -848,6 +888,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new CreateTargetGroupRequestMarshaller().marshall(super.beforeMarshalling(createTargetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTargetGroup");
@@ -859,6 +901,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<CreateTargetGroupResult> responseHandler = new StaxResponseHandler<CreateTargetGroupResult>(
                     new CreateTargetGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -874,8 +917,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Deletes the specified listener.
      * </p>
      * <p>
-     * Alternatively, your listener is deleted when you delete the load balancer to which it is attached, using
-     * <a>DeleteLoadBalancer</a>.
+     * Alternatively, your listener is deleted when you delete the load balancer to which it is attached.
      * </p>
      * 
      * @param deleteListenerRequest
@@ -907,6 +949,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DeleteListenerRequestMarshaller().marshall(super.beforeMarshalling(deleteListenerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteListener");
@@ -918,6 +962,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DeleteListenerResult> responseHandler = new StaxResponseHandler<DeleteListenerResult>(
                     new DeleteListenerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -930,7 +975,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Deletes the specified Application Load Balancer or Network Load Balancer and its attached listeners.
+     * Deletes the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer. Deleting a load
+     * balancer also deletes its listeners.
      * </p>
      * <p>
      * You can't delete a load balancer if deletion protection is enabled. If the load balancer does not exist or has
@@ -975,6 +1021,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DeleteLoadBalancerRequestMarshaller().marshall(super.beforeMarshalling(deleteLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoadBalancer");
@@ -986,6 +1034,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DeleteLoadBalancerResult> responseHandler = new StaxResponseHandler<DeleteLoadBalancerResult>(
                     new DeleteLoadBalancerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -999,6 +1048,9 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Deletes the specified rule.
+     * </p>
+     * <p>
+     * You can't delete the default rule.
      * </p>
      * 
      * @param deleteRuleRequest
@@ -1032,6 +1084,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DeleteRuleRequestMarshaller().marshall(super.beforeMarshalling(deleteRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRule");
@@ -1042,6 +1096,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<DeleteRuleResult> responseHandler = new StaxResponseHandler<DeleteRuleResult>(new DeleteRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1058,7 +1113,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * </p>
      * <p>
      * You can delete a target group if it is not referenced by any actions. Deleting a target group also deletes any
-     * associated health checks.
+     * associated health checks. Deleting a target group does not affect its registered targets. For example, any EC2
+     * instances continue to run until you stop or terminate them.
      * </p>
      * 
      * @param deleteTargetGroupRequest
@@ -1090,6 +1146,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DeleteTargetGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteTargetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTargetGroup");
@@ -1101,6 +1159,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DeleteTargetGroupResult> responseHandler = new StaxResponseHandler<DeleteTargetGroupResult>(
                     new DeleteTargetGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1149,6 +1208,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DeregisterTargetsRequestMarshaller().marshall(super.beforeMarshalling(deregisterTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterTargets");
@@ -1160,6 +1221,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DeregisterTargetsResult> responseHandler = new StaxResponseHandler<DeregisterTargetsResult>(
                     new DeregisterTargetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1175,12 +1237,28 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Describes the current Elastic Load Balancing resource limits for your AWS account.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
-     * Your Application Load Balancers</a> in the <i>Application Load Balancer Guide</i> or <a
-     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
-     * Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
+     * for your Application Load Balancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas for
+     * your Network Load Balancers</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas for your
+     * Gateway Load Balancers</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeAccountLimitsRequest
      * @return Result of the DescribeAccountLimits operation returned by the service.
@@ -1209,6 +1287,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DescribeAccountLimitsRequestMarshaller().marshall(super.beforeMarshalling(describeAccountLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountLimits");
@@ -1220,6 +1300,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeAccountLimitsResult> responseHandler = new StaxResponseHandler<DescribeAccountLimitsResult>(
                     new DescribeAccountLimitsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1241,7 +1322,9 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates"
-     * >SSL Certificates</a> in the <i>Application Load Balancers Guide</i>.
+     * >SSL certificates</a> in the <i>Application Load Balancers Guide</i> or <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#tls-listener-certificate"
+     * >Server certificates</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeListenerCertificatesRequest
@@ -1274,6 +1357,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DescribeListenerCertificatesRequestMarshaller().marshall(super.beforeMarshalling(describeListenerCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeListenerCertificates");
@@ -1285,6 +1370,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeListenerCertificatesResult> responseHandler = new StaxResponseHandler<DescribeListenerCertificatesResult>(
                     new DescribeListenerCertificatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1297,12 +1383,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the specified listeners or the listeners for the specified Application Load Balancer or Network Load
-     * Balancer. You must specify either a load balancer or one or more listeners.
-     * </p>
-     * <p>
-     * For an HTTPS or TLS listener, the output includes the default certificate for the listener. To describe the
-     * certificate list for the listener, use <a>DescribeListenerCertificates</a>.
+     * Describes the specified listeners or the listeners for the specified Application Load Balancer, Network Load
+     * Balancer, or Gateway Load Balancer. You must specify either a load balancer or one or more listeners.
      * </p>
      * 
      * @param describeListenersRequest
@@ -1338,6 +1420,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DescribeListenersRequestMarshaller().marshall(super.beforeMarshalling(describeListenersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeListeners");
@@ -1349,6 +1433,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeListenersResult> responseHandler = new StaxResponseHandler<DescribeListenersResult>(
                     new DescribeListenersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1361,15 +1446,35 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the attributes for the specified Application Load Balancer or Network Load Balancer.
+     * Describes the attributes for the specified Application Load Balancer, Network Load Balancer, or Gateway Load
+     * Balancer.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes"
-     * >Load Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href=
-     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes"
-     * >Load Balancer Attributes</a> in the <i>Network Load Balancers Guide</i>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes"
+     * >Load balancer attributes</a> in the <i>Application Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes"
+     * >Load balancer attributes</a> in the <i>Network Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html#load-balancer-attributes"
+     * >Load balancer attributes</a> in the <i>Gateway Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeLoadBalancerAttributesRequest
      * @return Result of the DescribeLoadBalancerAttributes operation returned by the service.
@@ -1401,6 +1506,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DescribeLoadBalancerAttributesRequestMarshaller().marshall(super.beforeMarshalling(describeLoadBalancerAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLoadBalancerAttributes");
@@ -1412,6 +1519,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeLoadBalancerAttributesResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancerAttributesResult>(
                     new DescribeLoadBalancerAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1425,10 +1533,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Describes the specified load balancers or all of your load balancers.
-     * </p>
-     * <p>
-     * To describe the listeners for a load balancer, use <a>DescribeListeners</a>. To describe the attributes for a
-     * load balancer, use <a>DescribeLoadBalancerAttributes</a>.
      * </p>
      * 
      * @param describeLoadBalancersRequest
@@ -1460,6 +1564,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DescribeLoadBalancersRequestMarshaller().marshall(super.beforeMarshalling(describeLoadBalancersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLoadBalancers");
@@ -1471,6 +1577,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeLoadBalancersResult> responseHandler = new StaxResponseHandler<DescribeLoadBalancersResult>(
                     new DescribeLoadBalancersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1520,6 +1627,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DescribeRulesRequestMarshaller().marshall(super.beforeMarshalling(describeRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRules");
@@ -1530,6 +1639,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<DescribeRulesResult> responseHandler = new StaxResponseHandler<DescribeRulesResult>(new DescribeRulesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1547,7 +1657,9 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
+     * >Security policies</a> in the <i>Application Load Balancers Guide</i> or <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
+     * >Security policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeSSLPoliciesRequest
@@ -1579,6 +1691,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DescribeSSLPoliciesRequestMarshaller().marshall(super.beforeMarshalling(describeSSLPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSSLPolicies");
@@ -1590,6 +1704,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeSSLPoliciesResult> responseHandler = new StaxResponseHandler<DescribeSSLPoliciesResult>(
                     new DescribeSSLPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1602,8 +1717,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the tags for the specified resources. You can describe the tags for one or more Application Load
-     * Balancers, Network Load Balancers, and target groups.
+     * Describes the tags for the specified Elastic Load Balancing resources. You can describe the tags for one or more
+     * Application Load Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, or rules.
      * </p>
      * 
      * @param describeTagsRequest
@@ -1641,6 +1756,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DescribeTagsRequestMarshaller().marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
@@ -1651,6 +1768,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<DescribeTagsResult> responseHandler = new StaxResponseHandler<DescribeTagsResult>(new DescribeTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1666,12 +1784,31 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Describes the attributes for the specified target group.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes"
-     * >Target Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href=
-     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes"
-     * >Target Group Attributes</a> in the <i>Network Load Balancers Guide</i>.
+     * For more information, see the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes"
+     * >Target group attributes</a> in the <i>Application Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes"
+     * >Target group attributes</a> in the <i>Network Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#target-group-attributes"
+     * >Target group attributes</a> in the <i>Gateway Load Balancers Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeTargetGroupAttributesRequest
      * @return Result of the DescribeTargetGroupAttributes operation returned by the service.
@@ -1703,6 +1840,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DescribeTargetGroupAttributesRequestMarshaller().marshall(super.beforeMarshalling(describeTargetGroupAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTargetGroupAttributes");
@@ -1714,6 +1853,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeTargetGroupAttributesResult> responseHandler = new StaxResponseHandler<DescribeTargetGroupAttributesResult>(
                     new DescribeTargetGroupAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1729,10 +1869,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Describes the specified target groups or all of your target groups. By default, all target groups are described.
      * Alternatively, you can specify one of the following to filter the results: the ARN of the load balancer, the
      * names of one or more target groups, or the ARNs of one or more target groups.
-     * </p>
-     * <p>
-     * To describe the targets for a target group, use <a>DescribeTargetHealth</a>. To describe the attributes of a
-     * target group, use <a>DescribeTargetGroupAttributes</a>.
      * </p>
      * 
      * @param describeTargetGroupsRequest
@@ -1766,6 +1902,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DescribeTargetGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeTargetGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTargetGroups");
@@ -1777,6 +1915,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeTargetGroupsResult> responseHandler = new StaxResponseHandler<DescribeTargetGroupsResult>(
                     new DescribeTargetGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1826,6 +1965,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new DescribeTargetHealthRequestMarshaller().marshall(super.beforeMarshalling(describeTargetHealthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTargetHealth");
@@ -1837,6 +1978,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<DescribeTargetHealthResult> responseHandler = new StaxResponseHandler<DescribeTargetHealthResult>(
                     new DescribeTargetHealthResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1924,6 +2066,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new ModifyListenerRequestMarshaller().marshall(super.beforeMarshalling(modifyListenerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyListener");
@@ -1935,6 +2079,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<ModifyListenerResult> responseHandler = new StaxResponseHandler<ModifyListenerResult>(
                     new ModifyListenerResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1947,7 +2092,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Modifies the specified attributes of the specified Application Load Balancer or Network Load Balancer.
+     * Modifies the specified attributes of the specified Application Load Balancer, Network Load Balancer, or Gateway
+     * Load Balancer.
      * </p>
      * <p>
      * If any of the specified attributes can't be modified as requested, the call fails. Any existing attributes that
@@ -1986,6 +2132,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new ModifyLoadBalancerAttributesRequestMarshaller().marshall(super.beforeMarshalling(modifyLoadBalancerAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyLoadBalancerAttributes");
@@ -1997,6 +2145,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<ModifyLoadBalancerAttributesResult> responseHandler = new StaxResponseHandler<ModifyLoadBalancerAttributesResult>(
                     new ModifyLoadBalancerAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2014,9 +2163,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * To add an item to a list, remove an item from a list, or update an item in a list, you must provide the entire
      * list. For example, to add an action, specify a list with the current actions plus the new action.
-     * </p>
-     * <p>
-     * To modify the actions for the default rule, use <a>ModifyListener</a>.
      * </p>
      * 
      * @param modifyRuleRequest
@@ -2069,6 +2215,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new ModifyRuleRequestMarshaller().marshall(super.beforeMarshalling(modifyRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyRule");
@@ -2079,6 +2227,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<ModifyRuleResult> responseHandler = new StaxResponseHandler<ModifyRuleResult>(new ModifyRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2092,9 +2241,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Modifies the health checks used when evaluating the health state of the targets in the specified target group.
-     * </p>
-     * <p>
-     * To monitor the health of the targets, use <a>DescribeTargetHealth</a>.
      * </p>
      * 
      * @param modifyTargetGroupRequest
@@ -2128,6 +2274,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new ModifyTargetGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyTargetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTargetGroup");
@@ -2139,6 +2287,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<ModifyTargetGroupResult> responseHandler = new StaxResponseHandler<ModifyTargetGroupResult>(
                     new ModifyTargetGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2186,6 +2335,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new ModifyTargetGroupAttributesRequestMarshaller().marshall(super.beforeMarshalling(modifyTargetGroupAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTargetGroupAttributes");
@@ -2197,6 +2348,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<ModifyTargetGroupAttributesResult> responseHandler = new StaxResponseHandler<ModifyTargetGroupAttributesResult>(
                     new ModifyTargetGroupAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2223,9 +2375,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * With a Network Load Balancer, you cannot register instances by instance ID if they have the following instance
      * types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1, HS1, M1, M2, M3, and T1. You can register instances of
      * these types by IP address.
-     * </p>
-     * <p>
-     * To remove a target from a target group, use <a>DeregisterTargets</a>.
      * </p>
      * 
      * @param registerTargetsRequest
@@ -2264,6 +2413,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new RegisterTargetsRequestMarshaller().marshall(super.beforeMarshalling(registerTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterTargets");
@@ -2275,6 +2426,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<RegisterTargetsResult> responseHandler = new StaxResponseHandler<RegisterTargetsResult>(
                     new RegisterTargetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2288,13 +2440,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Removes the specified certificate from the certificate list for the specified HTTPS or TLS listener.
-     * </p>
-     * <p>
-     * You can't remove the default certificate for a listener. To replace the default certificate, call
-     * <a>ModifyListener</a>.
-     * </p>
-     * <p>
-     * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
      * </p>
      * 
      * @param removeListenerCertificatesRequest
@@ -2329,6 +2474,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new RemoveListenerCertificatesRequestMarshaller().marshall(super.beforeMarshalling(removeListenerCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveListenerCertificates");
@@ -2340,6 +2487,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<RemoveListenerCertificatesResult> responseHandler = new StaxResponseHandler<RemoveListenerCertificatesResult>(
                     new RemoveListenerCertificatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2352,10 +2500,9 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Removes the specified tags from the specified Elastic Load Balancing resource.
-     * </p>
-     * <p>
-     * To list the current tags for your resources, use <a>DescribeTags</a>.
+     * Removes the specified tags from the specified Elastic Load Balancing resources. You can remove the tags for one
+     * or more Application Load Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, or
+     * rules.
      * </p>
      * 
      * @param removeTagsRequest
@@ -2395,6 +2542,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new RemoveTagsRequestMarshaller().marshall(super.beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTags");
@@ -2405,6 +2554,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<RemoveTagsResult> responseHandler = new StaxResponseHandler<RemoveTagsResult>(new RemoveTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2454,6 +2604,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new SetIpAddressTypeRequestMarshaller().marshall(super.beforeMarshalling(setIpAddressTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIpAddressType");
@@ -2465,6 +2617,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<SetIpAddressTypeResult> responseHandler = new StaxResponseHandler<SetIpAddressTypeResult>(
                     new SetIpAddressTypeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2517,6 +2670,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new SetRulePrioritiesRequestMarshaller().marshall(super.beforeMarshalling(setRulePrioritiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetRulePriorities");
@@ -2528,6 +2683,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<SetRulePrioritiesResult> responseHandler = new StaxResponseHandler<SetRulePrioritiesResult>(
                     new SetRulePrioritiesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2544,7 +2700,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * groups override the previously associated security groups.
      * </p>
      * <p>
-     * You can't specify a security group for a Network Load Balancer.
+     * You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
      * </p>
      * 
      * @param setSecurityGroupsRequest
@@ -2580,6 +2736,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new SetSecurityGroupsRequestMarshaller().marshall(super.beforeMarshalling(setSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSecurityGroups");
@@ -2591,6 +2749,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<SetSecurityGroupsResult> responseHandler = new StaxResponseHandler<SetSecurityGroupsResult>(
                     new SetSecurityGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2603,8 +2762,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Enables the Availability Zones for the specified public subnets for the specified load balancer. The specified
-     * subnets replace the previously enabled subnets.
+     * Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer or
+     * Network Load Balancer. The specified subnets replace the previously enabled subnets.
      * </p>
      * <p>
      * When you specify subnets for a Network Load Balancer, you must include all subnets that were enabled previously,
@@ -2650,6 +2809,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
                 request = new SetSubnetsRequestMarshaller().marshall(super.beforeMarshalling(setSubnetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSubnets");
@@ -2660,6 +2821,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<SetSubnetsResult> responseHandler = new StaxResponseHandler<SetSubnetsResult>(new SetSubnetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

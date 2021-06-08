@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,11 +70,15 @@ public class VoiceJsonUnmarshaller implements Unmarshaller<Voice, JsonUnmarshall
                 }
                 if (context.testExpression("AdditionalLanguageCodes", targetDepth)) {
                     context.nextToken();
-                    voice.setAdditionalLanguageCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    voice.setAdditionalLanguageCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedEngines", targetDepth)) {
                     context.nextToken();
-                    voice.setSupportedEngines(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    voice.setSupportedEngines(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

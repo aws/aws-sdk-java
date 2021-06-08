@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,65 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Identifies the file system that you are updating.
+     * </p>
+     */
     private String fileSystemId;
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      */
     private String clientRequestToken;
     /**
      * <p>
-     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance and for self-managed Active Directory configuration.
+     * Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage capacity
+     * target value, GiB, to increase the storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity increase request in progress.
+     * </p>
+     * <p>
+     * For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than the
+     * current storage capacity value. In order to increase storage capacity, the file system must have at least 16 MB/s
+     * of throughput capacity.
+     * </p>
+     * <p>
+     * For Lustre file systems, the storage capacity target value can be the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in multiples of
+     * 2400 GiB. The value must be greater than the current storage capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file systems
+     * and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the current storage
+     * capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+     * </p>
+     */
+    private Integer storageCapacity;
+    /**
+     * <p>
+     * The configuration updates for an Amazon FSx for Windows File Server file system.
      * </p>
      */
     private UpdateFileSystemWindowsConfiguration windowsConfiguration;
@@ -47,7 +94,12 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     private UpdateFileSystemLustreConfiguration lustreConfiguration;
 
     /**
+     * <p>
+     * Identifies the file system that you are updating.
+     * </p>
+     * 
      * @param fileSystemId
+     *        Identifies the file system that you are updating.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -55,7 +107,11 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * Identifies the file system that you are updating.
+     * </p>
+     * 
+     * @return Identifies the file system that you are updating.
      */
 
     public String getFileSystemId() {
@@ -63,7 +119,12 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Identifies the file system that you are updating.
+     * </p>
+     * 
      * @param fileSystemId
+     *        Identifies the file system that you are updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,14 +135,13 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This
-     *        string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *        AWS SDK.
+     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     *        automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -90,13 +150,12 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
-     * @return (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This
-     *         string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *         AWS SDK.
+     * @return A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     *         automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      */
 
     public String getClientRequestToken() {
@@ -105,14 +164,13 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This
-     *        string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *        AWS SDK.
+     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates. This string is
+     *        automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,13 +181,273 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance and for self-managed Active Directory configuration.
+     * Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage capacity
+     * target value, GiB, to increase the storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity increase request in progress.
+     * </p>
+     * <p>
+     * For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than the
+     * current storage capacity value. In order to increase storage capacity, the file system must have at least 16 MB/s
+     * of throughput capacity.
+     * </p>
+     * <p>
+     * For Lustre file systems, the storage capacity target value can be the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in multiples of
+     * 2400 GiB. The value must be greater than the current storage capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file systems
+     * and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the current storage
+     * capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+     * </p>
+     * 
+     * @param storageCapacity
+     *        Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage
+     *        capacity target value, GiB, to increase the storage capacity for the file system that you're updating. You
+     *        cannot make a storage capacity increase request if there is an existing storage capacity increase request
+     *        in progress.</p>
+     *        <p>
+     *        For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than
+     *        the current storage capacity value. In order to increase storage capacity, the file system must have at
+     *        least 16 MB/s of throughput capacity.
+     *        </p>
+     *        <p>
+     *        For Lustre file systems, the storage capacity target value can be the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in
+     *        multiples of 2400 GiB. The value must be greater than the current storage capacity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file
+     *        systems and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the
+     *        current storage capacity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     *        capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+     *        and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+     */
+
+    public void setStorageCapacity(Integer storageCapacity) {
+        this.storageCapacity = storageCapacity;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage capacity
+     * target value, GiB, to increase the storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity increase request in progress.
+     * </p>
+     * <p>
+     * For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than the
+     * current storage capacity value. In order to increase storage capacity, the file system must have at least 16 MB/s
+     * of throughput capacity.
+     * </p>
+     * <p>
+     * For Lustre file systems, the storage capacity target value can be the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in multiples of
+     * 2400 GiB. The value must be greater than the current storage capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file systems
+     * and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the current storage
+     * capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+     * </p>
+     * 
+     * @return Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage
+     *         capacity target value, GiB, to increase the storage capacity for the file system that you're updating.
+     *         You cannot make a storage capacity increase request if there is an existing storage capacity increase
+     *         request in progress.</p>
+     *         <p>
+     *         For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than
+     *         the current storage capacity value. In order to increase storage capacity, the file system must have at
+     *         least 16 MB/s of throughput capacity.
+     *         </p>
+     *         <p>
+     *         For Lustre file systems, the storage capacity target value can be the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in
+     *         multiples of 2400 GiB. The value must be greater than the current storage capacity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file
+     *         systems and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the
+     *         current storage capacity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+     *         storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+     *         and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+     */
+
+    public Integer getStorageCapacity() {
+        return this.storageCapacity;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage capacity
+     * target value, GiB, to increase the storage capacity for the file system that you're updating. You cannot make a
+     * storage capacity increase request if there is an existing storage capacity increase request in progress.
+     * </p>
+     * <p>
+     * For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than the
+     * current storage capacity value. In order to increase storage capacity, the file system must have at least 16 MB/s
+     * of throughput capacity.
+     * </p>
+     * <p>
+     * For Lustre file systems, the storage capacity target value can be the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in multiples of
+     * 2400 GiB. The value must be greater than the current storage capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file systems
+     * and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the current storage
+     * capacity.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     * capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and
+     * throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+     * </p>
+     * 
+     * @param storageCapacity
+     *        Use this parameter to increase the storage capacity of an Amazon FSx file system. Specifies the storage
+     *        capacity target value, GiB, to increase the storage capacity for the file system that you're updating. You
+     *        cannot make a storage capacity increase request if there is an existing storage capacity increase request
+     *        in progress.</p>
+     *        <p>
+     *        For Windows file systems, the storage capacity target value must be at least 10 percent (%) greater than
+     *        the current storage capacity value. In order to increase storage capacity, the file system must have at
+     *        least 16 MB/s of throughput capacity.
+     *        </p>
+     *        <p>
+     *        For Lustre file systems, the storage capacity target value can be the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are in
+     *        multiples of 2400 GiB. The value must be greater than the current storage capacity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB for 12 MB/s/TiB file
+     *        systems and multiples of 1800 GiB for 40 MB/s/TiB file systems. The values must be greater than the
+     *        current storage capacity.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SCRATCH_1</code> file systems, you cannot increase the storage capacity.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage
+     *        capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage
+     *        and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemRequest withStorageCapacity(Integer storageCapacity) {
+        setStorageCapacity(storageCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration updates for an Amazon FSx for Windows File Server file system.
      * </p>
      * 
      * @param windowsConfiguration
-     *        The configuration update for this Microsoft Windows file system. The only supported options are for backup
-     *        and maintenance and for self-managed Active Directory configuration.
+     *        The configuration updates for an Amazon FSx for Windows File Server file system.
      */
 
     public void setWindowsConfiguration(UpdateFileSystemWindowsConfiguration windowsConfiguration) {
@@ -138,12 +456,10 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance and for self-managed Active Directory configuration.
+     * The configuration updates for an Amazon FSx for Windows File Server file system.
      * </p>
      * 
-     * @return The configuration update for this Microsoft Windows file system. The only supported options are for
-     *         backup and maintenance and for self-managed Active Directory configuration.
+     * @return The configuration updates for an Amazon FSx for Windows File Server file system.
      */
 
     public UpdateFileSystemWindowsConfiguration getWindowsConfiguration() {
@@ -152,13 +468,11 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration update for this Microsoft Windows file system. The only supported options are for backup and
-     * maintenance and for self-managed Active Directory configuration.
+     * The configuration updates for an Amazon FSx for Windows File Server file system.
      * </p>
      * 
      * @param windowsConfiguration
-     *        The configuration update for this Microsoft Windows file system. The only supported options are for backup
-     *        and maintenance and for self-managed Active Directory configuration.
+     *        The configuration updates for an Amazon FSx for Windows File Server file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,6 +523,8 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("FileSystemId: ").append(getFileSystemId()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getStorageCapacity() != null)
+            sb.append("StorageCapacity: ").append(getStorageCapacity()).append(",");
         if (getWindowsConfiguration() != null)
             sb.append("WindowsConfiguration: ").append(getWindowsConfiguration()).append(",");
         if (getLustreConfiguration() != null)
@@ -235,6 +551,10 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getStorageCapacity() == null ^ this.getStorageCapacity() == null)
+            return false;
+        if (other.getStorageCapacity() != null && other.getStorageCapacity().equals(this.getStorageCapacity()) == false)
+            return false;
         if (other.getWindowsConfiguration() == null ^ this.getWindowsConfiguration() == null)
             return false;
         if (other.getWindowsConfiguration() != null && other.getWindowsConfiguration().equals(this.getWindowsConfiguration()) == false)
@@ -253,6 +573,7 @@ public class UpdateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getFileSystemId() == null) ? 0 : getFileSystemId().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getStorageCapacity() == null) ? 0 : getStorageCapacity().hashCode());
         hashCode = prime * hashCode + ((getWindowsConfiguration() == null) ? 0 : getWindowsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLustreConfiguration() == null) ? 0 : getLustreConfiguration().hashCode());
         return hashCode;

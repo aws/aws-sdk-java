@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,14 @@ public class DescribeAvailabilityMonitorTestResult extends com.amazonaws.AmazonW
     private String gatewayARN;
     /**
      * <p>
-     * The status of the High Availability monitoring test. If a test hasn't been performed, the value of this field is
+     * The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is
      * null.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The time the High Availability monitoring test was started. If a test hasn't been performed, the value of this
+     * The time the high availability monitoring test was started. If a test hasn't been performed, the value of this
      * field is null.
      * </p>
      */
@@ -68,12 +68,12 @@ public class DescribeAvailabilityMonitorTestResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The status of the High Availability monitoring test. If a test hasn't been performed, the value of this field is
+     * The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is
      * null.
      * </p>
      * 
      * @param status
-     *        The status of the High Availability monitoring test. If a test hasn't been performed, the value of this
+     *        The status of the high availability monitoring test. If a test hasn't been performed, the value of this
      *        field is null.
      * @see AvailabilityMonitorTestStatus
      */
@@ -84,11 +84,11 @@ public class DescribeAvailabilityMonitorTestResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The status of the High Availability monitoring test. If a test hasn't been performed, the value of this field is
+     * The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is
      * null.
      * </p>
      * 
-     * @return The status of the High Availability monitoring test. If a test hasn't been performed, the value of this
+     * @return The status of the high availability monitoring test. If a test hasn't been performed, the value of this
      *         field is null.
      * @see AvailabilityMonitorTestStatus
      */
@@ -99,12 +99,12 @@ public class DescribeAvailabilityMonitorTestResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The status of the High Availability monitoring test. If a test hasn't been performed, the value of this field is
+     * The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is
      * null.
      * </p>
      * 
      * @param status
-     *        The status of the High Availability monitoring test. If a test hasn't been performed, the value of this
+     *        The status of the high availability monitoring test. If a test hasn't been performed, the value of this
      *        field is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AvailabilityMonitorTestStatus
@@ -117,12 +117,12 @@ public class DescribeAvailabilityMonitorTestResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The status of the High Availability monitoring test. If a test hasn't been performed, the value of this field is
+     * The status of the high availability monitoring test. If a test hasn't been performed, the value of this field is
      * null.
      * </p>
      * 
      * @param status
-     *        The status of the High Availability monitoring test. If a test hasn't been performed, the value of this
+     *        The status of the high availability monitoring test. If a test hasn't been performed, the value of this
      *        field is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AvailabilityMonitorTestStatus
@@ -135,12 +135,12 @@ public class DescribeAvailabilityMonitorTestResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The time the High Availability monitoring test was started. If a test hasn't been performed, the value of this
+     * The time the high availability monitoring test was started. If a test hasn't been performed, the value of this
      * field is null.
      * </p>
      * 
      * @param startTime
-     *        The time the High Availability monitoring test was started. If a test hasn't been performed, the value of
+     *        The time the high availability monitoring test was started. If a test hasn't been performed, the value of
      *        this field is null.
      */
 
@@ -150,11 +150,11 @@ public class DescribeAvailabilityMonitorTestResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The time the High Availability monitoring test was started. If a test hasn't been performed, the value of this
+     * The time the high availability monitoring test was started. If a test hasn't been performed, the value of this
      * field is null.
      * </p>
      * 
-     * @return The time the High Availability monitoring test was started. If a test hasn't been performed, the value of
+     * @return The time the high availability monitoring test was started. If a test hasn't been performed, the value of
      *         this field is null.
      */
 
@@ -164,12 +164,12 @@ public class DescribeAvailabilityMonitorTestResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The time the High Availability monitoring test was started. If a test hasn't been performed, the value of this
+     * The time the high availability monitoring test was started. If a test hasn't been performed, the value of this
      * field is null.
      * </p>
      * 
      * @param startTime
-     *        The time the High Availability monitoring test was started. If a test hasn't been performed, the value of
+     *        The time the high availability monitoring test was started. If a test hasn't been performed, the value of
      *        this field is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

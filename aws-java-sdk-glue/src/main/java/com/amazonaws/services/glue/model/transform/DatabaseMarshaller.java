@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,10 @@ public class DatabaseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> CREATETABLEDEFAULTPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTableDefaultPermissions").build();
+    private static final MarshallingInfo<StructuredPojo> TARGETDATABASE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetDatabase").build();
+    private static final MarshallingInfo<String> CATALOGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CatalogId").build();
 
     private static final DatabaseMarshaller instance = new DatabaseMarshaller();
 
@@ -64,6 +68,8 @@ public class DatabaseMarshaller {
             protocolMarshaller.marshall(database.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(database.getCreateTime(), CREATETIME_BINDING);
             protocolMarshaller.marshall(database.getCreateTableDefaultPermissions(), CREATETABLEDEFAULTPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(database.getTargetDatabase(), TARGETDATABASE_BINDING);
+            protocolMarshaller.marshall(database.getCatalogId(), CATALOGID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

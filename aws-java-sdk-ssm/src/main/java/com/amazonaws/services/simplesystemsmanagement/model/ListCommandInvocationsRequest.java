@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,8 +58,8 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<CommandFilter> filters;
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and any command output. By default this is
-     * set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. The default value
+     * is 'false'.
      * </p>
      */
     private Boolean details;
@@ -305,13 +305,13 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and any command output. By default this is
-     * set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. The default value
+     * is 'false'.
      * </p>
      * 
      * @param details
-     *        (Optional) If set this returns the response of the command executions and any command output. By default
-     *        this is set to False.
+     *        (Optional) If set this returns the response of the command executions and any command output. The default
+     *        value is 'false'.
      */
 
     public void setDetails(Boolean details) {
@@ -320,12 +320,12 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and any command output. By default this is
-     * set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. The default value
+     * is 'false'.
      * </p>
      * 
-     * @return (Optional) If set this returns the response of the command executions and any command output. By default
-     *         this is set to False.
+     * @return (Optional) If set this returns the response of the command executions and any command output. The default
+     *         value is 'false'.
      */
 
     public Boolean getDetails() {
@@ -334,13 +334,13 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and any command output. By default this is
-     * set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. The default value
+     * is 'false'.
      * </p>
      * 
      * @param details
-     *        (Optional) If set this returns the response of the command executions and any command output. By default
-     *        this is set to False.
+     *        (Optional) If set this returns the response of the command executions and any command output. The default
+     *        value is 'false'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,12 +351,12 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and any command output. By default this is
-     * set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. The default value
+     * is 'false'.
      * </p>
      * 
-     * @return (Optional) If set this returns the response of the command executions and any command output. By default
-     *         this is set to False.
+     * @return (Optional) If set this returns the response of the command executions and any command output. The default
+     *         value is 'false'.
      */
 
     public Boolean isDetails() {

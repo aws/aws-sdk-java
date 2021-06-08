@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class GetMediaForFragmentListRequestMarshaller {
 
     private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<String> STREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StreamARN").build();
     private static final MarshallingInfo<List> FRAGMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Fragments").build();
 
@@ -50,6 +52,7 @@ public class GetMediaForFragmentListRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getMediaForFragmentListRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(getMediaForFragmentListRequest.getStreamARN(), STREAMARN_BINDING);
             protocolMarshaller.marshall(getMediaForFragmentListRequest.getFragments(), FRAGMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

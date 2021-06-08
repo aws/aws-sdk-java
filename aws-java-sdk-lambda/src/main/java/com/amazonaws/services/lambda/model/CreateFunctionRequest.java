@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -97,8 +97,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer timeout;
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      */
     private Integer memorySize;
@@ -116,6 +116,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private VpcConfig vpcConfig;
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     */
+    private String packageType;
     /**
      * <p>
      * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
@@ -156,6 +163,26 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> layers;
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
+     * that override the values in the container image Dockerfile.
+     * </p>
+     */
+    private ImageConfig imageConfig;
+    /**
+     * <p>
+     * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     * configuration includes a set of signing profiles, which define the trusted publishers for this function.
+     * </p>
+     */
+    private String codeSigningConfigArn;
 
     /**
      * <p>
@@ -644,13 +671,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
      * @param memorySize
-     *        The amount of memory that your function has access to. Increasing the function's memory also increases its
-     *        CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     *        The amount of memory available to the function at runtime. Increasing the function's memory also increases
+     *        its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -659,12 +686,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
-     * @return The amount of memory that your function has access to. Increasing the function's memory also increases
-     *         its CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * @return The amount of memory available to the function at runtime. Increasing the function's memory also
+     *         increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      */
 
     public Integer getMemorySize() {
@@ -673,13 +700,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
      * @param memorySize
-     *        The amount of memory that your function has access to. Increasing the function's memory also increases its
-     *        CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     *        The amount of memory available to the function at runtime. Increasing the function's memory also increases
+     *        its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -792,6 +819,89 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public CreateFunctionRequest withVpcConfig(VpcConfig vpcConfig) {
         setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @see PackageType
+     */
+
+    public void setPackageType(String packageType) {
+        this.packageType = packageType;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @return The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code>
+     *         for ZIP archive.
+     * @see PackageType
+     */
+
+    public String getPackageType() {
+        return this.packageType;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackageType
+     */
+
+    public CreateFunctionRequest withPackageType(String packageType) {
+        setPackageType(packageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @see PackageType
+     */
+
+    public void setPackageType(PackageType packageType) {
+        withPackageType(packageType);
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
+     * archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        ZIP archive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackageType
+     */
+
+    public CreateFunctionRequest withPackageType(PackageType packageType) {
+        this.packageType = packageType.toString();
         return this;
     }
 
@@ -1136,6 +1246,171 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @return Connection settings for an Amazon EFS file system.
+     */
+
+    public java.util.List<FileSystemConfig> getFileSystemConfigs() {
+        if (fileSystemConfigs == null) {
+            fileSystemConfigs = new com.amazonaws.internal.SdkInternalList<FileSystemConfig>();
+        }
+        return fileSystemConfigs;
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     */
+
+    public void setFileSystemConfigs(java.util.Collection<FileSystemConfig> fileSystemConfigs) {
+        if (fileSystemConfigs == null) {
+            this.fileSystemConfigs = null;
+            return;
+        }
+
+        this.fileSystemConfigs = new com.amazonaws.internal.SdkInternalList<FileSystemConfig>(fileSystemConfigs);
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFileSystemConfigs(java.util.Collection)} or {@link #withFileSystemConfigs(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withFileSystemConfigs(FileSystemConfig... fileSystemConfigs) {
+        if (this.fileSystemConfigs == null) {
+            setFileSystemConfigs(new com.amazonaws.internal.SdkInternalList<FileSystemConfig>(fileSystemConfigs.length));
+        }
+        for (FileSystemConfig ele : fileSystemConfigs) {
+            this.fileSystemConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withFileSystemConfigs(java.util.Collection<FileSystemConfig> fileSystemConfigs) {
+        setFileSystemConfigs(fileSystemConfigs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
+     * that override the values in the container image Dockerfile.
+     * </p>
+     * 
+     * @param imageConfig
+     *        <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
+     *        values</a> that override the values in the container image Dockerfile.
+     */
+
+    public void setImageConfig(ImageConfig imageConfig) {
+        this.imageConfig = imageConfig;
+    }
+
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
+     * that override the values in the container image Dockerfile.
+     * </p>
+     * 
+     * @return <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
+     *         values</a> that override the values in the container image Dockerfile.
+     */
+
+    public ImageConfig getImageConfig() {
+        return this.imageConfig;
+    }
+
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
+     * that override the values in the container image Dockerfile.
+     * </p>
+     * 
+     * @param imageConfig
+     *        <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
+     *        values</a> that override the values in the container image Dockerfile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withImageConfig(ImageConfig imageConfig) {
+        setImageConfig(imageConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     * configuration includes a set of signing profiles, which define the trusted publishers for this function.
+     * </p>
+     * 
+     * @param codeSigningConfigArn
+     *        To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     *        configuration includes a set of signing profiles, which define the trusted publishers for this function.
+     */
+
+    public void setCodeSigningConfigArn(String codeSigningConfigArn) {
+        this.codeSigningConfigArn = codeSigningConfigArn;
+    }
+
+    /**
+     * <p>
+     * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     * configuration includes a set of signing profiles, which define the trusted publishers for this function.
+     * </p>
+     * 
+     * @return To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     *         configuration includes a set of signing profiles, which define the trusted publishers for this function.
+     */
+
+    public String getCodeSigningConfigArn() {
+        return this.codeSigningConfigArn;
+    }
+
+    /**
+     * <p>
+     * To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     * configuration includes a set of signing profiles, which define the trusted publishers for this function.
+     * </p>
+     * 
+     * @param codeSigningConfigArn
+     *        To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing
+     *        configuration includes a set of signing profiles, which define the trusted publishers for this function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withCodeSigningConfigArn(String codeSigningConfigArn) {
+        setCodeSigningConfigArn(codeSigningConfigArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1167,6 +1442,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Publish: ").append(getPublish()).append(",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getPackageType() != null)
+            sb.append("PackageType: ").append(getPackageType()).append(",");
         if (getDeadLetterConfig() != null)
             sb.append("DeadLetterConfig: ").append(getDeadLetterConfig()).append(",");
         if (getEnvironment() != null)
@@ -1178,7 +1455,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getLayers() != null)
-            sb.append("Layers: ").append(getLayers());
+            sb.append("Layers: ").append(getLayers()).append(",");
+        if (getFileSystemConfigs() != null)
+            sb.append("FileSystemConfigs: ").append(getFileSystemConfigs()).append(",");
+        if (getImageConfig() != null)
+            sb.append("ImageConfig: ").append(getImageConfig()).append(",");
+        if (getCodeSigningConfigArn() != null)
+            sb.append("CodeSigningConfigArn: ").append(getCodeSigningConfigArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1233,6 +1516,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getPackageType() == null ^ this.getPackageType() == null)
+            return false;
+        if (other.getPackageType() != null && other.getPackageType().equals(this.getPackageType()) == false)
+            return false;
         if (other.getDeadLetterConfig() == null ^ this.getDeadLetterConfig() == null)
             return false;
         if (other.getDeadLetterConfig() != null && other.getDeadLetterConfig().equals(this.getDeadLetterConfig()) == false)
@@ -1257,6 +1544,18 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getLayers() != null && other.getLayers().equals(this.getLayers()) == false)
             return false;
+        if (other.getFileSystemConfigs() == null ^ this.getFileSystemConfigs() == null)
+            return false;
+        if (other.getFileSystemConfigs() != null && other.getFileSystemConfigs().equals(this.getFileSystemConfigs()) == false)
+            return false;
+        if (other.getImageConfig() == null ^ this.getImageConfig() == null)
+            return false;
+        if (other.getImageConfig() != null && other.getImageConfig().equals(this.getImageConfig()) == false)
+            return false;
+        if (other.getCodeSigningConfigArn() == null ^ this.getCodeSigningConfigArn() == null)
+            return false;
+        if (other.getCodeSigningConfigArn() != null && other.getCodeSigningConfigArn().equals(this.getCodeSigningConfigArn()) == false)
+            return false;
         return true;
     }
 
@@ -1275,12 +1574,16 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
         hashCode = prime * hashCode + ((getPublish() == null) ? 0 : getPublish().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getPackageType() == null) ? 0 : getPackageType().hashCode());
         hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getLayers() == null) ? 0 : getLayers().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemConfigs() == null) ? 0 : getFileSystemConfigs().hashCode());
+        hashCode = prime * hashCode + ((getImageConfig() == null) ? 0 : getImageConfig().hashCode());
+        hashCode = prime * hashCode + ((getCodeSigningConfigArn() == null) ? 0 : getCodeSigningConfigArn().hashCode());
         return hashCode;
     }
 

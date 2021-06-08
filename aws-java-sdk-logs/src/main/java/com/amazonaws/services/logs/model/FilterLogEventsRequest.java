@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -97,9 +97,8 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * false.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be
-     * true. The response from this operation will always interleave events from multiple log streams within a log
-     * group.
+     * <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The
+     * response from this operation always interleaves events from multiple log streams within a log group.
      * </p>
      */
     @Deprecated
@@ -561,9 +560,8 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * false.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be
-     * true. The response from this operation will always interleave events from multiple log streams within a log
-     * group.
+     * <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The
+     * response from this operation always interleaves events from multiple log streams within a log group.
      * </p>
      * 
      * @param interleaved
@@ -572,9 +570,9 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      *        the matched log events in the first log stream are searched first, then those in the next log stream, and
      *        so on. The default is false.</p>
      *        <p>
-     *        <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed
-     *        to be true. The response from this operation will always interleave events from multiple log streams
-     *        within a log group.
+     *        <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be
+     *        true. The response from this operation always interleaves events from multiple log streams within a log
+     *        group.
      */
     @Deprecated
     public void setInterleaved(Boolean interleaved) {
@@ -589,9 +587,8 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * false.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be
-     * true. The response from this operation will always interleave events from multiple log streams within a log
-     * group.
+     * <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The
+     * response from this operation always interleaves events from multiple log streams within a log group.
      * </p>
      * 
      * @return If the value is true, the operation makes a best effort to provide responses that contain events from
@@ -599,9 +596,9 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      *         the matched log events in the first log stream are searched first, then those in the next log stream, and
      *         so on. The default is false.</p>
      *         <p>
-     *         <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed
-     *         to be true. The response from this operation will always interleave events from multiple log streams
-     *         within a log group.
+     *         <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be
+     *         true. The response from this operation always interleaves events from multiple log streams within a log
+     *         group.
      */
     @Deprecated
     public Boolean getInterleaved() {
@@ -616,9 +613,8 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * false.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be
-     * true. The response from this operation will always interleave events from multiple log streams within a log
-     * group.
+     * <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The
+     * response from this operation always interleaves events from multiple log streams within a log group.
      * </p>
      * 
      * @param interleaved
@@ -627,9 +623,9 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      *        the matched log events in the first log stream are searched first, then those in the next log stream, and
      *        so on. The default is false.</p>
      *        <p>
-     *        <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed
-     *        to be true. The response from this operation will always interleave events from multiple log streams
-     *        within a log group.
+     *        <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be
+     *        true. The response from this operation always interleaves events from multiple log streams within a log
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -646,9 +642,8 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * false.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed to be
-     * true. The response from this operation will always interleave events from multiple log streams within a log
-     * group.
+     * <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The
+     * response from this operation always interleaves events from multiple log streams within a log group.
      * </p>
      * 
      * @return If the value is true, the operation makes a best effort to provide responses that contain events from
@@ -656,9 +651,9 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      *         the matched log events in the first log stream are searched first, then those in the next log stream, and
      *         so on. The default is false.</p>
      *         <p>
-     *         <b>IMPORTANT:</b> Starting on June 17, 2019, this parameter will be ignored and the value will be assumed
-     *         to be true. The response from this operation will always interleave events from multiple log streams
-     *         within a log group.
+     *         <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be
+     *         true. The response from this operation always interleaves events from multiple log streams within a log
+     *         group.
      */
     @Deprecated
     public Boolean isInterleaved() {

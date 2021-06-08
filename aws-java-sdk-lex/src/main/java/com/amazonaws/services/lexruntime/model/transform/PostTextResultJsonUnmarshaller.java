@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,16 @@ public class PostTextResultJsonUnmarshaller implements Unmarshaller<PostTextResu
                     context.nextToken();
                     postTextResult.setIntentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("nluIntentConfidence", targetDepth)) {
+                    context.nextToken();
+                    postTextResult.setNluIntentConfidence(IntentConfidenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("alternativeIntents", targetDepth)) {
+                    context.nextToken();
+                    postTextResult.setAlternativeIntents(new ListUnmarshaller<PredictedIntent>(PredictedIntentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("slots", targetDepth)) {
                     context.nextToken();
                     postTextResult.setSlots(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
@@ -89,6 +99,16 @@ public class PostTextResultJsonUnmarshaller implements Unmarshaller<PostTextResu
                 if (context.testExpression("sessionId", targetDepth)) {
                     context.nextToken();
                     postTextResult.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("botVersion", targetDepth)) {
+                    context.nextToken();
+                    postTextResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("activeContexts", targetDepth)) {
+                    context.nextToken();
+                    postTextResult.setActiveContexts(new ListUnmarshaller<ActiveContext>(ActiveContextJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,109 @@ public class ListThingPrincipalsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * The maximum number of results to return in this operation.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
      * The name of the thing.
      * </p>
      */
     private String thingName;
+
+    /**
+     * <p>
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *        <b>null</b> to receive the first set of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
+     * </p>
+     * 
+     * @return To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *         <b>null</b> to receive the first set of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *        <b>null</b> to receive the first set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListThingPrincipalsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in this operation.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in this operation.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in this operation.
+     * </p>
+     * 
+     * @return The maximum number of results to return in this operation.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in this operation.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in this operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListThingPrincipalsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
 
     /**
      * <p>
@@ -84,6 +183,10 @@ public class ListThingPrincipalsRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getThingName() != null)
             sb.append("ThingName: ").append(getThingName());
         sb.append("}");
@@ -100,6 +203,14 @@ public class ListThingPrincipalsRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof ListThingPrincipalsRequest == false)
             return false;
         ListThingPrincipalsRequest other = (ListThingPrincipalsRequest) obj;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         if (other.getThingName() == null ^ this.getThingName() == null)
             return false;
         if (other.getThingName() != null && other.getThingName().equals(this.getThingName()) == false)
@@ -112,6 +223,8 @@ public class ListThingPrincipalsRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
         return hashCode;
     }

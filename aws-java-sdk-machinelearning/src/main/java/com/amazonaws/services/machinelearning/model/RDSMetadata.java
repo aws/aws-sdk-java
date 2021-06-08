@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class RDSMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task from
      * Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      */
@@ -53,7 +53,7 @@ public class RDSMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor the progress of the copy task
      * from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      */
@@ -182,14 +182,14 @@ public class RDSMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task from
      * Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @param resourceRole
      *        The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task
      *        from Amazon RDS to Amazon S3. For more information, see <a
-     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
+     *        href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
      *        for data pipelines.
      */
 
@@ -201,14 +201,14 @@ public class RDSMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task from
      * Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @return The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task
      *         from Amazon RDS to Amazon S3. For more information, see <a
-     *         href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
-     *         for data pipelines.
+     *         href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     *         templates</a> for data pipelines.
      */
 
     public String getResourceRole() {
@@ -219,14 +219,14 @@ public class RDSMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task from
      * Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @param resourceRole
      *        The role (DataPipelineDefaultResourceRole) assumed by an Amazon EC2 instance to carry out the copy task
      *        from Amazon RDS to Amazon S3. For more information, see <a
-     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
+     *        href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
      *        for data pipelines.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -240,14 +240,14 @@ public class RDSMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor the progress of the copy task
      * from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @param serviceRole
      *        The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor the progress of the
      *        copy task from Amazon RDS to Amazon S3. For more information, see <a
-     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
+     *        href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
      *        for data pipelines.
      */
 
@@ -259,14 +259,14 @@ public class RDSMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor the progress of the copy task
      * from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @return The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor the progress of the
      *         copy task from Amazon RDS to Amazon S3. For more information, see <a
-     *         href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
-     *         for data pipelines.
+     *         href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     *         templates</a> for data pipelines.
      */
 
     public String getServiceRole() {
@@ -277,14 +277,14 @@ public class RDSMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor the progress of the copy task
      * from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @param serviceRole
      *        The role (DataPipelineDefaultRole) assumed by the Data Pipeline service to monitor the progress of the
      *        copy task from Amazon RDS to Amazon S3. For more information, see <a
-     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
+     *        href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
      *        for data pipelines.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,7 +106,9 @@ public class FleetJsonUnmarshaller implements Unmarshaller<Fleet, JsonUnmarshall
                 }
                 if (context.testExpression("FleetErrors", targetDepth)) {
                     context.nextToken();
-                    fleet.setFleetErrors(new ListUnmarshaller<FleetError>(FleetErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    fleet.setFleetErrors(new ListUnmarshaller<FleetError>(FleetErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EnableDefaultInternetAccess", targetDepth)) {
                     context.nextToken();
@@ -123,6 +125,10 @@ public class FleetJsonUnmarshaller implements Unmarshaller<Fleet, JsonUnmarshall
                 if (context.testExpression("IamRoleArn", targetDepth)) {
                     context.nextToken();
                     fleet.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StreamView", targetDepth)) {
+                    context.nextToken();
+                    fleet.setStreamView(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

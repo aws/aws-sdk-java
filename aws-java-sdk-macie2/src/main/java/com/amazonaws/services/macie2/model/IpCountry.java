@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved for future use.
+ * Provides information about the country that an IP address originated from.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpCountry" target="_top">AWS API
@@ -30,24 +30,27 @@ public class IpCountry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from. For
+     * example, US for the United States.
      * </p>
      */
     private String code;
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the country that the IP address originated from.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from. For
+     * example, US for the United States.
      * </p>
      * 
      * @param code
-     *        Reserved for future use.
+     *        The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from.
+     *        For example, US for the United States.
      */
 
     public void setCode(String code) {
@@ -56,10 +59,12 @@ public class IpCountry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from. For
+     * example, US for the United States.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated
+     *         from. For example, US for the United States.
      */
 
     public String getCode() {
@@ -68,11 +73,13 @@ public class IpCountry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from. For
+     * example, US for the United States.
      * </p>
      * 
      * @param code
-     *        Reserved for future use.
+     *        The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from.
+     *        For example, US for the United States.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +90,11 @@ public class IpCountry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the country that the IP address originated from.
      * </p>
      * 
      * @param name
-     *        Reserved for future use.
+     *        The name of the country that the IP address originated from.
      */
 
     public void setName(String name) {
@@ -96,10 +103,10 @@ public class IpCountry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the country that the IP address originated from.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The name of the country that the IP address originated from.
      */
 
     public String getName() {
@@ -108,11 +115,11 @@ public class IpCountry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reserved for future use.
+     * The name of the country that the IP address originated from.
      * </p>
      * 
      * @param name
-     *        Reserved for future use.
+     *        The name of the country that the IP address originated from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

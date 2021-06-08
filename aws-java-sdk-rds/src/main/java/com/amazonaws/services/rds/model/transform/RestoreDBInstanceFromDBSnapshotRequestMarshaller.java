@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -105,13 +105,15 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                }
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
                 }
                 tagsListIndex++;
             }
@@ -185,15 +187,17 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
             int processorFeaturesListIndex = 1;
 
             for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+                if (processorFeaturesListValue != null) {
 
-                if (processorFeaturesListValue.getName() != null) {
-                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
-                            StringUtils.fromString(processorFeaturesListValue.getName()));
-                }
+                    if (processorFeaturesListValue.getName() != null) {
+                        request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                                StringUtils.fromString(processorFeaturesListValue.getName()));
+                    }
 
-                if (processorFeaturesListValue.getValue() != null) {
-                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
-                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                    if (processorFeaturesListValue.getValue() != null) {
+                        request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                                StringUtils.fromString(processorFeaturesListValue.getValue()));
+                    }
                 }
                 processorFeaturesListIndex++;
             }
@@ -210,6 +214,10 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
 
         if (restoreDBInstanceFromDBSnapshotRequest.getDeletionProtection() != null) {
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.getDeletionProtection()));
+        }
+
+        if (restoreDBInstanceFromDBSnapshotRequest.getEnableCustomerOwnedIp() != null) {
+            request.addParameter("EnableCustomerOwnedIp", StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.getEnableCustomerOwnedIp()));
         }
 
         return request;

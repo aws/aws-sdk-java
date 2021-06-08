@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,22 +56,29 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint.
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint. If this is
+     * specified, then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance.
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance. If this is
+     * specified, the new instance that is created in Amazon EC2 will be configured to match the configuration of the
+     * source Lightsail instance. For example, if the source instance is configured for dual-stack (IPv4 and IPv6), then
+     * IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2. If the source instance is
+     * configured for IPv4 only, then only IPv4 will be configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NONE</code> - Use the default Amazon EC2 security group.
+     * <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified, then only IPv4 will be
+     * configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CLOSED</code> - All ports closed.
+     * <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.
      * </p>
      * </li>
      * </ul>
@@ -221,22 +228,29 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint.
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint. If this is
+     * specified, then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance.
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance. If this is
+     * specified, the new instance that is created in Amazon EC2 will be configured to match the configuration of the
+     * source Lightsail instance. For example, if the source instance is configured for dual-stack (IPv4 and IPv6), then
+     * IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2. If the source instance is
+     * configured for IPv4 only, then only IPv4 will be configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NONE</code> - Use the default Amazon EC2 security group.
+     * <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified, then only IPv4 will be
+     * configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CLOSED</code> - All ports closed.
+     * <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.
      * </p>
      * </li>
      * </ul>
@@ -256,22 +270,30 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint.
+     *        <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint. If this is
+     *        specified, then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance.
+     *        <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance. If this
+     *        is specified, the new instance that is created in Amazon EC2 will be configured to match the configuration
+     *        of the source Lightsail instance. For example, if the source instance is configured for dual-stack (IPv4
+     *        and IPv6), then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2. If
+     *        the source instance is configured for IPv4 only, then only IPv4 will be configured for the new instance
+     *        that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NONE</code> - Use the default Amazon EC2 security group.
+     *        <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified, then only IPv4 will
+     *        be configured for the new instance that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CLOSED</code> - All ports closed.
+     *        <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will be configured for the
+     *        new instance that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        </ul>
@@ -298,22 +320,29 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint.
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint. If this is
+     * specified, then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance.
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance. If this is
+     * specified, the new instance that is created in Amazon EC2 will be configured to match the configuration of the
+     * source Lightsail instance. For example, if the source instance is configured for dual-stack (IPv4 and IPv6), then
+     * IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2. If the source instance is
+     * configured for IPv4 only, then only IPv4 will be configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NONE</code> - Use the default Amazon EC2 security group.
+     * <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified, then only IPv4 will be
+     * configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CLOSED</code> - All ports closed.
+     * <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.
      * </p>
      * </li>
      * </ul>
@@ -332,22 +361,30 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint.
+     *         <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint. If this
+     *         is specified, then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance.
+     *         <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance. If this
+     *         is specified, the new instance that is created in Amazon EC2 will be configured to match the
+     *         configuration of the source Lightsail instance. For example, if the source instance is configured for
+     *         dual-stack (IPv4 and IPv6), then IPv4 and IPv6 will be configured for the new instance that is created in
+     *         Amazon EC2. If the source instance is configured for IPv4 only, then only IPv4 will be configured for the
+     *         new instance that is created in Amazon EC2.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NONE</code> - Use the default Amazon EC2 security group.
+     *         <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified, then only IPv4 will
+     *         be configured for the new instance that is created in Amazon EC2.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CLOSED</code> - All ports closed.
+     *         <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will be configured for the
+     *         new instance that is created in Amazon EC2.
      *         </p>
      *         </li>
      *         </ul>
@@ -374,22 +411,29 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint.
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint. If this is
+     * specified, then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance.
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance. If this is
+     * specified, the new instance that is created in Amazon EC2 will be configured to match the configuration of the
+     * source Lightsail instance. For example, if the source instance is configured for dual-stack (IPv4 and IPv6), then
+     * IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2. If the source instance is
+     * configured for IPv4 only, then only IPv4 will be configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NONE</code> - Use the default Amazon EC2 security group.
+     * <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified, then only IPv4 will be
+     * configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CLOSED</code> - All ports closed.
+     * <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.
      * </p>
      * </li>
      * </ul>
@@ -409,22 +453,30 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint.
+     *        <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint. If this is
+     *        specified, then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance.
+     *        <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance. If this
+     *        is specified, the new instance that is created in Amazon EC2 will be configured to match the configuration
+     *        of the source Lightsail instance. For example, if the source instance is configured for dual-stack (IPv4
+     *        and IPv6), then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2. If
+     *        the source instance is configured for IPv4 only, then only IPv4 will be configured for the new instance
+     *        that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NONE</code> - Use the default Amazon EC2 security group.
+     *        <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified, then only IPv4 will
+     *        be configured for the new instance that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CLOSED</code> - All ports closed.
+     *        <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will be configured for the
+     *        new instance that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        </ul>
@@ -453,22 +505,29 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint.
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint. If this is
+     * specified, then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance.
+     * <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance. If this is
+     * specified, the new instance that is created in Amazon EC2 will be configured to match the configuration of the
+     * source Lightsail instance. For example, if the source instance is configured for dual-stack (IPv4 and IPv6), then
+     * IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2. If the source instance is
+     * configured for IPv4 only, then only IPv4 will be configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NONE</code> - Use the default Amazon EC2 security group.
+     * <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified, then only IPv4 will be
+     * configured for the new instance that is created in Amazon EC2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>CLOSED</code> - All ports closed.
+     * <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will be configured for the new
+     * instance that is created in Amazon EC2.
      * </p>
      * </li>
      * </ul>
@@ -488,22 +547,30 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint.
+     *        <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance blueprint. If this is
+     *        specified, then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance.
+     *        <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail instance. If this
+     *        is specified, the new instance that is created in Amazon EC2 will be configured to match the configuration
+     *        of the source Lightsail instance. For example, if the source instance is configured for dual-stack (IPv4
+     *        and IPv6), then IPv4 and IPv6 will be configured for the new instance that is created in Amazon EC2. If
+     *        the source instance is configured for IPv4 only, then only IPv4 will be configured for the new instance
+     *        that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NONE</code> - Use the default Amazon EC2 security group.
+     *        <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified, then only IPv4 will
+     *        be configured for the new instance that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CLOSED</code> - All ports closed.
+     *        <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will be configured for the
+     *        new instance that is created in Amazon EC2.
      *        </p>
      *        </li>
      *        </ul>

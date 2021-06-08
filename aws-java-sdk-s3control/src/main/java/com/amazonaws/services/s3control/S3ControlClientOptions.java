@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,5 +30,7 @@ public final class S3ControlClientOptions {
      * Advanced option to use fips endpoints.
      */
     public static final AdvancedConfig.Key<Boolean> FIPS_ENABLED = new AdvancedConfig.Key<Boolean>();
+
+    public static final AdvancedConfig.Key<Boolean> USE_ARN_REGION_ENABLED = new AdvancedConfig.Key<Boolean>();
 
 }

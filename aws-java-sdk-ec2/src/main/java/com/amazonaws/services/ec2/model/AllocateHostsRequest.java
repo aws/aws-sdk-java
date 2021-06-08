@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
      * <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
-     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * > Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>on</code>
@@ -48,7 +48,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      */
@@ -93,8 +93,8 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>off</code>
@@ -108,7 +108,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
      * <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
-     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * > Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>on</code>
@@ -119,8 +119,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
      *        more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
-     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
-     *        Instances</i>.</p>
+     *        > Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>on</code>
      * @see AutoPlacement
@@ -136,7 +135,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
      * <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
-     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * > Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>on</code>
@@ -146,8 +145,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      *         configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
      *         more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
-     *         > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
-     *         Instances</i>.</p>
+     *         > Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
      *         Default: <code>on</code>
      * @see AutoPlacement
@@ -163,7 +161,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
      * <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
-     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * > Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>on</code>
@@ -174,8 +172,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
      *        more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
-     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
-     *        Instances</i>.</p>
+     *        > Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>on</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -193,7 +190,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
      * <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
-     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * > Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>on</code>
@@ -204,8 +201,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
      *        more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
-     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
-     *        Instances</i>.</p>
+     *        > Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>on</code>
      * @see AutoPlacement
@@ -221,7 +217,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * or if it only accepts Host tenancy instance launches that specify its unique host ID. For more information, see
      * <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
-     * > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * > Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>on</code>
@@ -232,8 +228,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      *        configuration, or if it only accepts Host tenancy instance launches that specify its unique host ID. For
      *        more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding"
-     *        > Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide for Linux
-     *        Instances</i>.</p>
+     *        > Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>on</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -289,14 +284,14 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      */
 
@@ -308,13 +303,13 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *         Idempotency</a>.
      */
 
@@ -326,14 +321,14 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -606,8 +601,8 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>off</code>
@@ -617,7 +612,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      *        Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
      *        default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
-     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>off</code>
      * @see HostRecovery
@@ -631,8 +626,8 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>off</code>
@@ -641,7 +636,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * @return Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
      *         default. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
-     *         Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
      *         Default: <code>off</code>
      * @see HostRecovery
@@ -655,8 +650,8 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>off</code>
@@ -666,7 +661,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      *        Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
      *        default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
-     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>off</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -682,8 +677,8 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>off</code>
@@ -693,7 +688,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      *        Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
      *        default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
-     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>off</code>
      * @see HostRecovery
@@ -707,8 +702,8 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * <p>
      * Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
      * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host Recovery</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host recovery</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * Default: <code>off</code>
@@ -718,7 +713,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      *        Indicates whether to enable or disable host recovery for the Dedicated Host. Host recovery is disabled by
      *        default. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html"> Host
-     *        Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
      *        Default: <code>off</code>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,17 @@ public class PutBotResultJsonUnmarshaller implements Unmarshaller<PutBotResult, 
                 }
                 if (context.testExpression("intents", targetDepth)) {
                     context.nextToken();
-                    putBotResult.setIntents(new ListUnmarshaller<Intent>(IntentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    putBotResult.setIntents(new ListUnmarshaller<Intent>(IntentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("enableModelImprovements", targetDepth)) {
+                    context.nextToken();
+                    putBotResult.setEnableModelImprovements(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("nluIntentConfidenceThreshold", targetDepth)) {
+                    context.nextToken();
+                    putBotResult.setNluIntentConfidenceThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
                 if (context.testExpression("clarificationPrompt", targetDepth)) {
                     context.nextToken();
@@ -118,7 +128,9 @@ public class PutBotResultJsonUnmarshaller implements Unmarshaller<PutBotResult, 
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    putBotResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    putBotResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

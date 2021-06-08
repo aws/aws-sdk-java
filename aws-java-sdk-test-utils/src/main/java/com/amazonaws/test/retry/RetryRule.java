@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,9 +23,9 @@ import java.util.concurrent.TimeUnit;
 
 public class RetryRule implements TestRule {
 
-    private int maxRetryAttempts;
-    private long delay;
-    private TimeUnit timeUnit;
+    private final int maxRetryAttempts;
+    private final long delay;
+    private final TimeUnit timeUnit;
 
     public RetryRule(int maxRetryAttempts) {
         this(maxRetryAttempts, 0, TimeUnit.SECONDS);

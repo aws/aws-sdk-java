@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,19 +18,22 @@ import javax.annotation.Generated;
  * <p>
  * Exception that indicates that the operation would exceed a limit.
  * </p>
- * <p>
- * <code>Type</code> is the type of limit that would be exceeded.
- * </p>
- * <p>
- * <code>Limit</code> is the threshold that would be exceeded.
- * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitsExceededException extends com.amazonaws.services.shield.model.AWSShieldException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * The type of limit that would be exceeded.
+     * </p>
+     */
     private String type;
-
+    /**
+     * <p>
+     * The threshold that would be exceeded.
+     * </p>
+     */
     private Long limit;
 
     /**
@@ -44,7 +47,12 @@ public class LimitsExceededException extends com.amazonaws.services.shield.model
     }
 
     /**
+     * <p>
+     * The type of limit that would be exceeded.
+     * </p>
+     * 
      * @param type
+     *        The type of limit that would be exceeded.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Type")
@@ -53,7 +61,11 @@ public class LimitsExceededException extends com.amazonaws.services.shield.model
     }
 
     /**
-     * @return
+     * <p>
+     * The type of limit that would be exceeded.
+     * </p>
+     * 
+     * @return The type of limit that would be exceeded.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Type")
@@ -62,7 +74,12 @@ public class LimitsExceededException extends com.amazonaws.services.shield.model
     }
 
     /**
+     * <p>
+     * The type of limit that would be exceeded.
+     * </p>
+     * 
      * @param type
+     *        The type of limit that would be exceeded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,7 +89,12 @@ public class LimitsExceededException extends com.amazonaws.services.shield.model
     }
 
     /**
+     * <p>
+     * The threshold that would be exceeded.
+     * </p>
+     * 
      * @param limit
+     *        The threshold that would be exceeded.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Limit")
@@ -81,7 +103,11 @@ public class LimitsExceededException extends com.amazonaws.services.shield.model
     }
 
     /**
-     * @return
+     * <p>
+     * The threshold that would be exceeded.
+     * </p>
+     * 
+     * @return The threshold that would be exceeded.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Limit")
@@ -90,7 +116,12 @@ public class LimitsExceededException extends com.amazonaws.services.shield.model
     }
 
     /**
+     * <p>
+     * The threshold that would be exceeded.
+     * </p>
+     * 
      * @param limit
+     *        The threshold that would be exceeded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

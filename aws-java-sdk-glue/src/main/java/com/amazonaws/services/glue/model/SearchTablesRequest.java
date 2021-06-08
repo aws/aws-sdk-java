@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     * A unique identifier, consisting of <code> <i>account_id</i> </code>.
      * </p>
      */
     private String catalogId;
@@ -41,6 +41,15 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the
      * predicate.
+     * </p>
+     * <p>
+     * The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and
+     * can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a
+     * fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field)
+     * is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is
+     * exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if
+     * <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and
+     * <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.
      * </p>
      */
     private java.util.List<PropertyPredicate> filters;
@@ -65,14 +74,34 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Allows you to specify that you want to search the tables shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String resourceShareType;
 
     /**
      * <p>
-     * A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     * A unique identifier, consisting of <code> <i>account_id</i> </code>.
      * </p>
      * 
      * @param catalogId
-     *        A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     *        A unique identifier, consisting of <code> <i>account_id</i> </code>.
      */
 
     public void setCatalogId(String catalogId) {
@@ -81,10 +110,10 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     * A unique identifier, consisting of <code> <i>account_id</i> </code>.
      * </p>
      * 
-     * @return A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     * @return A unique identifier, consisting of <code> <i>account_id</i> </code>.
      */
 
     public String getCatalogId() {
@@ -93,11 +122,11 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     * A unique identifier, consisting of <code> <i>account_id</i> </code>.
      * </p>
      * 
      * @param catalogId
-     *        A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     *        A unique identifier, consisting of <code> <i>account_id</i> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,9 +180,27 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the
      * predicate.
      * </p>
+     * <p>
+     * The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and
+     * can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a
+     * fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field)
+     * is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is
+     * exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if
+     * <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and
+     * <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.
+     * </p>
      * 
      * @return A list of key-value pairs, and a comparator used to filter the search results. Returns all entities
-     *         matching the predicate.
+     *         matching the predicate.</p>
+     *         <p>
+     *         The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time
+     *         fields, and can be omitted for other field types. Also, when comparing string values, such as when
+     *         <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the
+     *         value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #,
+     *         etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of
+     *         <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables
+     *         named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is
+     *         not returned.
      */
 
     public java.util.List<PropertyPredicate> getFilters() {
@@ -165,10 +212,28 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the
      * predicate.
      * </p>
+     * <p>
+     * The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and
+     * can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a
+     * fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field)
+     * is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is
+     * exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if
+     * <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and
+     * <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.
+     * </p>
      * 
      * @param filters
      *        A list of key-value pairs, and a comparator used to filter the search results. Returns all entities
-     *        matching the predicate.
+     *        matching the predicate.</p>
+     *        <p>
+     *        The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time
+     *        fields, and can be omitted for other field types. Also, when comparing string values, such as when
+     *        <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value
+     *        of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc.
+     *        into tokens. Then each token is exact-match compared with the <code>Value</code> member of
+     *        <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables
+     *        named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is
+     *        not returned.
      */
 
     public void setFilters(java.util.Collection<PropertyPredicate> filters) {
@@ -186,6 +251,15 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * predicate.
      * </p>
      * <p>
+     * The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and
+     * can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a
+     * fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field)
+     * is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is
+     * exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if
+     * <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and
+     * <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
@@ -193,7 +267,16 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param filters
      *        A list of key-value pairs, and a comparator used to filter the search results. Returns all entities
-     *        matching the predicate.
+     *        matching the predicate.</p>
+     *        <p>
+     *        The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time
+     *        fields, and can be omitted for other field types. Also, when comparing string values, such as when
+     *        <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value
+     *        of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc.
+     *        into tokens. Then each token is exact-match compared with the <code>Value</code> member of
+     *        <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables
+     *        named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is
+     *        not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,10 +295,28 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the
      * predicate.
      * </p>
+     * <p>
+     * The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and
+     * can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a
+     * fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field)
+     * is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is
+     * exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if
+     * <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and
+     * <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.
+     * </p>
      * 
      * @param filters
      *        A list of key-value pairs, and a comparator used to filter the search results. Returns all entities
-     *        matching the predicate.
+     *        matching the predicate.</p>
+     *        <p>
+     *        The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time
+     *        fields, and can be omitted for other field types. Also, when comparing string values, such as when
+     *        <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value
+     *        of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc.
+     *        into tokens. Then each token is exact-match compared with the <code>Value</code> member of
+     *        <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables
+     *        named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is
+     *        not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -390,6 +491,173 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Allows you to specify that you want to search the tables shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceShareType
+     *        Allows you to specify that you want to search the tables shared with your account. The allowable values
+     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor
+     *        local account.
+     *        </p>
+     *        </li>
+     * @see ResourceShareType
+     */
+
+    public void setResourceShareType(String resourceShareType) {
+        this.resourceShareType = resourceShareType;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify that you want to search the tables shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Allows you to specify that you want to search the tables shared with your account. The allowable values
+     *         are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor
+     *         local account.
+     *         </p>
+     *         </li>
+     * @see ResourceShareType
+     */
+
+    public String getResourceShareType() {
+        return this.resourceShareType;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify that you want to search the tables shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceShareType
+     *        Allows you to specify that you want to search the tables shared with your account. The allowable values
+     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor
+     *        local account.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceShareType
+     */
+
+    public SearchTablesRequest withResourceShareType(String resourceShareType) {
+        setResourceShareType(resourceShareType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify that you want to search the tables shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceShareType
+     *        Allows you to specify that you want to search the tables shared with your account. The allowable values
+     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FOREIGN</code>, will search the tables shared with your account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor
+     *        local account.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceShareType
+     */
+
+    public SearchTablesRequest withResourceShareType(ResourceShareType resourceShareType) {
+        this.resourceShareType = resourceShareType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -412,7 +680,9 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getSortCriteria() != null)
             sb.append("SortCriteria: ").append(getSortCriteria()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getResourceShareType() != null)
+            sb.append("ResourceShareType: ").append(getResourceShareType());
         sb.append("}");
         return sb.toString();
     }
@@ -451,6 +721,10 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getResourceShareType() == null ^ this.getResourceShareType() == null)
+            return false;
+        if (other.getResourceShareType() != null && other.getResourceShareType().equals(this.getResourceShareType()) == false)
+            return false;
         return true;
     }
 
@@ -465,6 +739,7 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSearchText() == null) ? 0 : getSearchText().hashCode());
         hashCode = prime * hashCode + ((getSortCriteria() == null) ? 0 : getSortCriteria().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getResourceShareType() == null) ? 0 : getResourceShareType().hashCode());
         return hashCode;
     }
 

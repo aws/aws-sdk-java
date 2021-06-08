@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class Detector implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
+     * The name of the event type.
+     * </p>
+     */
+    private String eventTypeName;
+    /**
+     * <p>
      * Timestamp of when the detector was last updated.
      * </p>
      */
@@ -52,6 +58,12 @@ public class Detector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String createdTime;
+    /**
+     * <p>
+     * The detector ARN.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -130,6 +142,46 @@ public class Detector implements Serializable, Cloneable, StructuredPojo {
 
     public Detector withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the event type.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The name of the event type.
+     */
+
+    public void setEventTypeName(String eventTypeName) {
+        this.eventTypeName = eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the event type.
+     * </p>
+     * 
+     * @return The name of the event type.
+     */
+
+    public String getEventTypeName() {
+        return this.eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the event type.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The name of the event type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Detector withEventTypeName(String eventTypeName) {
+        setEventTypeName(eventTypeName);
         return this;
     }
 
@@ -214,6 +266,46 @@ public class Detector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The detector ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The detector ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The detector ARN.
+     * </p>
+     * 
+     * @return The detector ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The detector ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The detector ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Detector withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -229,10 +321,14 @@ public class Detector implements Serializable, Cloneable, StructuredPojo {
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getEventTypeName() != null)
+            sb.append("EventTypeName: ").append(getEventTypeName()).append(",");
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -255,6 +351,10 @@ public class Detector implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getEventTypeName() == null ^ this.getEventTypeName() == null)
+            return false;
+        if (other.getEventTypeName() != null && other.getEventTypeName().equals(this.getEventTypeName()) == false)
+            return false;
         if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
             return false;
         if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
@@ -262,6 +362,10 @@ public class Detector implements Serializable, Cloneable, StructuredPojo {
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         return true;
     }
@@ -273,8 +377,10 @@ public class Detector implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEventTypeName() == null) ? 0 : getEventTypeName().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

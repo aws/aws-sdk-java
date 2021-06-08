@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,8 @@ public class TrialComponentMarshaller {
             .marshallLocationName("OutputArtifacts").build();
     private static final MarshallingInfo<List> METRICS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Metrics").build();
+    private static final MarshallingInfo<StructuredPojo> METADATAPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetadataProperties").build();
     private static final MarshallingInfo<StructuredPojo> SOURCEDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceDetail").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -97,6 +99,7 @@ public class TrialComponentMarshaller {
             protocolMarshaller.marshall(trialComponent.getInputArtifacts(), INPUTARTIFACTS_BINDING);
             protocolMarshaller.marshall(trialComponent.getOutputArtifacts(), OUTPUTARTIFACTS_BINDING);
             protocolMarshaller.marshall(trialComponent.getMetrics(), METRICS_BINDING);
+            protocolMarshaller.marshall(trialComponent.getMetadataProperties(), METADATAPROPERTIES_BINDING);
             protocolMarshaller.marshall(trialComponent.getSourceDetail(), SOURCEDETAIL_BINDING);
             protocolMarshaller.marshall(trialComponent.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(trialComponent.getParents(), PARENTS_BINDING);

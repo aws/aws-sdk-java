@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,7 @@ public class TransitGatewayVpcAttachment implements Serializable, Cloneable {
     private String vpcOwnerId;
     /**
      * <p>
-     * The state of the VPC attachment.
+     * The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.
      * </p>
      */
     private String state;
@@ -243,11 +243,11 @@ public class TransitGatewayVpcAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the VPC attachment.
+     * The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.
      * </p>
      * 
      * @param state
-     *        The state of the VPC attachment.
+     *        The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.
      * @see TransitGatewayAttachmentState
      */
 
@@ -257,10 +257,10 @@ public class TransitGatewayVpcAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the VPC attachment.
+     * The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.
      * </p>
      * 
-     * @return The state of the VPC attachment.
+     * @return The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.
      * @see TransitGatewayAttachmentState
      */
 
@@ -270,11 +270,11 @@ public class TransitGatewayVpcAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the VPC attachment.
+     * The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.
      * </p>
      * 
      * @param state
-     *        The state of the VPC attachment.
+     *        The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitGatewayAttachmentState
      */
@@ -286,11 +286,11 @@ public class TransitGatewayVpcAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the VPC attachment.
+     * The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.
      * </p>
      * 
      * @param state
-     *        The state of the VPC attachment.
+     *        The state of the VPC attachment. Note that the <code>initiating</code> state has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitGatewayAttachmentState
      */

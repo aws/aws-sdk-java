@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The kernel gateway app settings.
+ * The KernelGateway app settings.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/KernelGatewayAppSettings" target="_top">AWS
@@ -30,19 +30,27 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     * KernelGateway app.
      * </p>
      */
     private ResourceSpec defaultResourceSpec;
+    /**
+     * <p>
+     * A list of custom SageMaker images that are configured to run as a KernelGateway app.
+     * </p>
+     */
+    private java.util.List<CustomImage> customImages;
 
     /**
      * <p>
-     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     * KernelGateway app.
      * </p>
      * 
      * @param defaultResourceSpec
-     *        The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the
-     *        instance.
+     *        The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     *        KernelGateway app.
      */
 
     public void setDefaultResourceSpec(ResourceSpec defaultResourceSpec) {
@@ -51,11 +59,12 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     * KernelGateway app.
      * </p>
      * 
-     * @return The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the
-     *         instance.
+     * @return The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     *         KernelGateway app.
      */
 
     public ResourceSpec getDefaultResourceSpec() {
@@ -64,17 +73,88 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     * KernelGateway app.
      * </p>
      * 
      * @param defaultResourceSpec
-     *        The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the
-     *        instance.
+     *        The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     *        KernelGateway app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public KernelGatewayAppSettings withDefaultResourceSpec(ResourceSpec defaultResourceSpec) {
         setDefaultResourceSpec(defaultResourceSpec);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of custom SageMaker images that are configured to run as a KernelGateway app.
+     * </p>
+     * 
+     * @return A list of custom SageMaker images that are configured to run as a KernelGateway app.
+     */
+
+    public java.util.List<CustomImage> getCustomImages() {
+        return customImages;
+    }
+
+    /**
+     * <p>
+     * A list of custom SageMaker images that are configured to run as a KernelGateway app.
+     * </p>
+     * 
+     * @param customImages
+     *        A list of custom SageMaker images that are configured to run as a KernelGateway app.
+     */
+
+    public void setCustomImages(java.util.Collection<CustomImage> customImages) {
+        if (customImages == null) {
+            this.customImages = null;
+            return;
+        }
+
+        this.customImages = new java.util.ArrayList<CustomImage>(customImages);
+    }
+
+    /**
+     * <p>
+     * A list of custom SageMaker images that are configured to run as a KernelGateway app.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCustomImages(java.util.Collection)} or {@link #withCustomImages(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param customImages
+     *        A list of custom SageMaker images that are configured to run as a KernelGateway app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KernelGatewayAppSettings withCustomImages(CustomImage... customImages) {
+        if (this.customImages == null) {
+            setCustomImages(new java.util.ArrayList<CustomImage>(customImages.length));
+        }
+        for (CustomImage ele : customImages) {
+            this.customImages.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of custom SageMaker images that are configured to run as a KernelGateway app.
+     * </p>
+     * 
+     * @param customImages
+     *        A list of custom SageMaker images that are configured to run as a KernelGateway app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KernelGatewayAppSettings withCustomImages(java.util.Collection<CustomImage> customImages) {
+        setCustomImages(customImages);
         return this;
     }
 
@@ -91,7 +171,9 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDefaultResourceSpec() != null)
-            sb.append("DefaultResourceSpec: ").append(getDefaultResourceSpec());
+            sb.append("DefaultResourceSpec: ").append(getDefaultResourceSpec()).append(",");
+        if (getCustomImages() != null)
+            sb.append("CustomImages: ").append(getCustomImages());
         sb.append("}");
         return sb.toString();
     }
@@ -110,6 +192,10 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
             return false;
         if (other.getDefaultResourceSpec() != null && other.getDefaultResourceSpec().equals(this.getDefaultResourceSpec()) == false)
             return false;
+        if (other.getCustomImages() == null ^ this.getCustomImages() == null)
+            return false;
+        if (other.getCustomImages() != null && other.getCustomImages().equals(this.getCustomImages()) == false)
+            return false;
         return true;
     }
 
@@ -119,6 +205,7 @@ public class KernelGatewayAppSettings implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDefaultResourceSpec() == null) ? 0 : getDefaultResourceSpec().hashCode());
+        hashCode = prime * hashCode + ((getCustomImages() == null) ? 0 : getCustomImages().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ public class ExternalModelMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelEndpoint").build();
     private static final MarshallingInfo<String> MODELSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelSource").build();
-    private static final MarshallingInfo<StructuredPojo> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("role").build();
+    private static final MarshallingInfo<String> INVOKEMODELENDPOINTROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("invokeModelEndpointRoleArn").build();
     private static final MarshallingInfo<StructuredPojo> INPUTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -43,6 +43,8 @@ public class ExternalModelMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedTime").build();
     private static final MarshallingInfo<String> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdTime").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
 
     private static final ExternalModelMarshaller instance = new ExternalModelMarshaller();
 
@@ -62,12 +64,13 @@ public class ExternalModelMarshaller {
         try {
             protocolMarshaller.marshall(externalModel.getModelEndpoint(), MODELENDPOINT_BINDING);
             protocolMarshaller.marshall(externalModel.getModelSource(), MODELSOURCE_BINDING);
-            protocolMarshaller.marshall(externalModel.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(externalModel.getInvokeModelEndpointRoleArn(), INVOKEMODELENDPOINTROLEARN_BINDING);
             protocolMarshaller.marshall(externalModel.getInputConfiguration(), INPUTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(externalModel.getOutputConfiguration(), OUTPUTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(externalModel.getModelEndpointStatus(), MODELENDPOINTSTATUS_BINDING);
             protocolMarshaller.marshall(externalModel.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(externalModel.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(externalModel.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

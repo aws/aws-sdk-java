@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,8 @@ public class DescribeNotificationRuleResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("EventTypes", targetDepth)) {
                     context.nextToken();
                     describeNotificationRuleResult.setEventTypes(new ListUnmarshaller<EventTypeSummary>(EventTypeSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Resource", targetDepth)) {
                     context.nextToken();
@@ -68,7 +69,8 @@ public class DescribeNotificationRuleResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
                     describeNotificationRuleResult.setTargets(new ListUnmarshaller<TargetSummary>(TargetSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DetailType", targetDepth)) {
                     context.nextToken();

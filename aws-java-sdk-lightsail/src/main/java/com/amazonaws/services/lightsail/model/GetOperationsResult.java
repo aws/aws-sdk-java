@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.List<Operation> operations;
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -124,7 +124,7 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -135,7 +135,7 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param nextPageToken
-     *        The token to advance to the next page of resutls from your request.</p>
+     *        The token to advance to the next page of results from your request.</p>
      *        <p>
      *        A next page token is not returned if there are no more results to display.
      *        </p>
@@ -150,7 +150,7 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -160,7 +160,7 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
      * token using the <code>pageToken</code> parameter.
      * </p>
      * 
-     * @return The token to advance to the next page of resutls from your request.</p>
+     * @return The token to advance to the next page of results from your request.</p>
      *         <p>
      *         A next page token is not returned if there are no more results to display.
      *         </p>
@@ -175,7 +175,7 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The token to advance to the next page of resutls from your request.
+     * The token to advance to the next page of results from your request.
      * </p>
      * <p>
      * A next page token is not returned if there are no more results to display.
@@ -186,7 +186,7 @@ public class GetOperationsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param nextPageToken
-     *        The token to advance to the next page of resutls from your request.</p>
+     *        The token to advance to the next page of results from your request.</p>
      *        <p>
      *        A next page token is not returned if there are no more results to display.
      *        </p>

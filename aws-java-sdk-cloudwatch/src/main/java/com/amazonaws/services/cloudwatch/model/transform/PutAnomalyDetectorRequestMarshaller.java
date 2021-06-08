@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,13 +55,15 @@ public class PutAnomalyDetectorRequestMarshaller implements Marshaller<Request<P
             int dimensionsListIndex = 1;
 
             for (Dimension dimensionsListValue : dimensionsList) {
+                if (dimensionsListValue != null) {
 
-                if (dimensionsListValue.getName() != null) {
-                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
-                }
+                    if (dimensionsListValue.getName() != null) {
+                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
+                    }
 
-                if (dimensionsListValue.getValue() != null) {
-                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
+                    if (dimensionsListValue.getValue() != null) {
+                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
+                    }
                 }
                 dimensionsListIndex++;
             }
@@ -82,15 +84,17 @@ public class PutAnomalyDetectorRequestMarshaller implements Marshaller<Request<P
                     int excludedTimeRangesListIndex = 1;
 
                     for (Range excludedTimeRangesListValue : excludedTimeRangesList) {
+                        if (excludedTimeRangesListValue != null) {
 
-                        if (excludedTimeRangesListValue.getStartTime() != null) {
-                            request.addParameter("Configuration.ExcludedTimeRanges.member." + excludedTimeRangesListIndex + ".StartTime",
-                                    StringUtils.fromDate(excludedTimeRangesListValue.getStartTime()));
-                        }
+                            if (excludedTimeRangesListValue.getStartTime() != null) {
+                                request.addParameter("Configuration.ExcludedTimeRanges.member." + excludedTimeRangesListIndex + ".StartTime",
+                                        StringUtils.fromDate(excludedTimeRangesListValue.getStartTime()));
+                            }
 
-                        if (excludedTimeRangesListValue.getEndTime() != null) {
-                            request.addParameter("Configuration.ExcludedTimeRanges.member." + excludedTimeRangesListIndex + ".EndTime",
-                                    StringUtils.fromDate(excludedTimeRangesListValue.getEndTime()));
+                            if (excludedTimeRangesListValue.getEndTime() != null) {
+                                request.addParameter("Configuration.ExcludedTimeRanges.member." + excludedTimeRangesListIndex + ".EndTime",
+                                        StringUtils.fromDate(excludedTimeRangesListValue.getEndTime()));
+                            }
                         }
                         excludedTimeRangesListIndex++;
                     }

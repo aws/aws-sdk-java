@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,12 +42,16 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
+     * The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g.,
+     * <code>ns-111.awsdns-22.com.</code>).
      * </p>
      * <p>
      * For Lightsail load balancers, the value looks like
-     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
-     * <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
+     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions,
+     * the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value
+     * looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set
+     * <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer,
+     * distribution, or container service.
      * </p>
      */
     private String target;
@@ -55,14 +59,14 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer. You
      * can include an alias (A type) record in your request, which points to a load balancer DNS name and routes traffic
-     * to your load balancer
+     * to your load balancer.
      * </p>
      */
     private Boolean isAlias;
     /**
      * <p>
-     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
-     * start of authority (SOA), service locator (SRV), or text (TXT).
+     * The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail
+     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
      * <p>
      * The following domain entry types can be used:
@@ -71,6 +75,11 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AAAA</code>
      * </p>
      * </li>
      * <li>
@@ -202,20 +211,29 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
+     * The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g.,
+     * <code>ns-111.awsdns-22.com.</code>).
      * </p>
      * <p>
      * For Lightsail load balancers, the value looks like
-     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
-     * <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
+     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions,
+     * the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value
+     * looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set
+     * <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer,
+     * distribution, or container service.
      * </p>
      * 
      * @param target
-     *        The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+     *        The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g.,
+     *        <code>ns-111.awsdns-22.com.</code>).</p>
      *        <p>
      *        For Lightsail load balancers, the value looks like
-     *        <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
-     *        <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
+     *        <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail
+     *        distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container
+     *        services, the value looks like
+     *        <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set
+     *        <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer,
+     *        distribution, or container service.
      */
 
     public void setTarget(String target) {
@@ -224,19 +242,28 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
+     * The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g.,
+     * <code>ns-111.awsdns-22.com.</code>).
      * </p>
      * <p>
      * For Lightsail load balancers, the value looks like
-     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
-     * <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
+     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions,
+     * the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value
+     * looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set
+     * <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer,
+     * distribution, or container service.
      * </p>
      * 
-     * @return The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+     * @return The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g.,
+     *         <code>ns-111.awsdns-22.com.</code>).</p>
      *         <p>
      *         For Lightsail load balancers, the value looks like
-     *         <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
-     *         <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
+     *         <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail
+     *         distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container
+     *         services, the value looks like
+     *         <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set
+     *         <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer,
+     *         distribution, or container service.
      */
 
     public String getTarget() {
@@ -245,20 +272,29 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).
+     * The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g.,
+     * <code>ns-111.awsdns-22.com.</code>).
      * </p>
      * <p>
      * For Lightsail load balancers, the value looks like
-     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
-     * <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
+     * <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions,
+     * the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value
+     * looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set
+     * <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer,
+     * distribution, or container service.
      * </p>
      * 
      * @param target
-     *        The target AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+     *        The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g.,
+     *        <code>ns-111.awsdns-22.com.</code>).</p>
      *        <p>
      *        For Lightsail load balancers, the value looks like
-     *        <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. Be sure to also set
-     *        <code>isAlias</code> to <code>true</code> when setting up an A record for a load balancer.
+     *        <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail
+     *        distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container
+     *        services, the value looks like
+     *        <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set
+     *        <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer,
+     *        distribution, or container service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,13 +307,13 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer. You
      * can include an alias (A type) record in your request, which points to a load balancer DNS name and routes traffic
-     * to your load balancer
+     * to your load balancer.
      * </p>
      * 
      * @param isAlias
      *        When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
      *        balancer. You can include an alias (A type) record in your request, which points to a load balancer DNS
-     *        name and routes traffic to your load balancer
+     *        name and routes traffic to your load balancer.
      */
 
     public void setIsAlias(Boolean isAlias) {
@@ -288,12 +324,12 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer. You
      * can include an alias (A type) record in your request, which points to a load balancer DNS name and routes traffic
-     * to your load balancer
+     * to your load balancer.
      * </p>
      * 
      * @return When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
      *         balancer. You can include an alias (A type) record in your request, which points to a load balancer DNS
-     *         name and routes traffic to your load balancer
+     *         name and routes traffic to your load balancer.
      */
 
     public Boolean getIsAlias() {
@@ -304,13 +340,13 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer. You
      * can include an alias (A type) record in your request, which points to a load balancer DNS name and routes traffic
-     * to your load balancer
+     * to your load balancer.
      * </p>
      * 
      * @param isAlias
      *        When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
      *        balancer. You can include an alias (A type) record in your request, which points to a load balancer DNS
-     *        name and routes traffic to your load balancer
+     *        name and routes traffic to your load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,12 +359,12 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer. You
      * can include an alias (A type) record in your request, which points to a load balancer DNS name and routes traffic
-     * to your load balancer
+     * to your load balancer.
      * </p>
      * 
      * @return When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load
      *         balancer. You can include an alias (A type) record in your request, which points to a load balancer DNS
-     *         name and routes traffic to your load balancer
+     *         name and routes traffic to your load balancer.
      */
 
     public Boolean isAlias() {
@@ -337,8 +373,8 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
-     * start of authority (SOA), service locator (SRV), or text (TXT).
+     * The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail
+     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
      * <p>
      * The following domain entry types can be used:
@@ -347,6 +383,11 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AAAA</code>
      * </p>
      * </li>
      * <li>
@@ -382,8 +423,8 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param type
-     *        The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server
-     *        (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
+     *        The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME),
+     *        mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
      *        <p>
      *        The following domain entry types can be used:
      *        </p>
@@ -391,6 +432,11 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AAAA</code>
      *        </p>
      *        </li>
      *        <li>
@@ -431,8 +477,8 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
-     * start of authority (SOA), service locator (SRV), or text (TXT).
+     * The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail
+     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
      * <p>
      * The following domain entry types can be used:
@@ -441,6 +487,11 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AAAA</code>
      * </p>
      * </li>
      * <li>
@@ -475,8 +526,9 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server
-     *         (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
+     * @return The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME),
+     *         mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text
+     *         (TXT).</p>
      *         <p>
      *         The following domain entry types can be used:
      *         </p>
@@ -484,6 +536,11 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>A</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AAAA</code>
      *         </p>
      *         </li>
      *         <li>
@@ -524,8 +581,8 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server (NS),
-     * start of authority (SOA), service locator (SRV), or text (TXT).
+     * The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME), mail
+     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
      * </p>
      * <p>
      * The following domain entry types can be used:
@@ -534,6 +591,11 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AAAA</code>
      * </p>
      * </li>
      * <li>
@@ -569,8 +631,8 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param type
-     *        The type of domain entry, such as address (A), canonical name (CNAME), mail exchanger (MX), name server
-     *        (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
+     *        The type of domain entry, such as address for IPv4 (A), address for IPv6 (AAAA), canonical name (CNAME),
+     *        mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>
      *        <p>
      *        The following domain entry types can be used:
      *        </p>
@@ -578,6 +640,11 @@ public class DomainEntry implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AAAA</code>
      *        </p>
      *        </li>
      *        <li>

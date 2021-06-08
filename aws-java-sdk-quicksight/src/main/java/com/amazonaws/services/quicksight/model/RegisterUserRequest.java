@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,8 +94,8 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
      * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
      * name. For more information on assuming IAM roles, see <a
-     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
-     * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
+     * the <i>AWS CLI Reference.</i>
      * </p>
      */
     private String sessionName;
@@ -118,6 +118,89 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String userName;
+    /**
+     * <p>
+     * (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     * Customized permissions allows you to control a user's access by restricting access the following operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create and update data sources
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update datasets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update email reports
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subscribe to email reports
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     * </p>
+     * <p>
+     * A set of custom permissions includes any combination of these restrictions. Currently, you need to create the
+     * profile names for custom permission sets by using the QuickSight console. Then, you use the
+     * <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
+     * </p>
+     * <p>
+     * QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     * typically granted by assigning QuickSight users to one of the default security cohorts in QuickSight (admin,
+     * author, reader).
+     * </p>
+     * <p>
+     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).
+     * </p>
+     */
+    private String customPermissionsName;
+    /**
+     * <p>
+     * The type of supported external login provider that provides identity to let a user federate into Amazon
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported external login
+     * provider can be one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the
+     * <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed
+     * when the external provider is custom.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use
+     * the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String externalLoginFederationProviderType;
+    /**
+     * <p>
+     * The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be used
+     * when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     * </p>
+     */
+    private String customFederationProviderUrl;
+    /**
+     * <p>
+     * The identity ID for a user in the external login provider.
+     * </p>
+     */
+    private String externalLoginId;
 
     /**
      * <p>
@@ -631,8 +714,8 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
      * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
      * name. For more information on assuming IAM roles, see <a
-     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
-     * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
+     * the <i>AWS CLI Reference.</i>
      * </p>
      * 
      * @param sessionName
@@ -640,8 +723,8 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        don't need to provide the session name for other scenarios, for example when you are registering an IAM
      *        user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user
      *        has a different session name. For more information on assuming IAM roles, see <a
-     *        href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
-     *        <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i>
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
+     *        </a> in the <i>AWS CLI Reference.</i>
      */
 
     public void setSessionName(String sessionName) {
@@ -654,16 +737,16 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
      * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
      * name. For more information on assuming IAM roles, see <a
-     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
-     * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
+     * the <i>AWS CLI Reference.</i>
      * </p>
      * 
      * @return You need to use this parameter only when you register one or more users using an assumed IAM role. You
      *         don't need to provide the session name for other scenarios, for example when you are registering an IAM
      *         user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user
      *         has a different session name. For more information on assuming IAM roles, see <a
-     *         href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
-     *         <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i>
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
+     *         </a> in the <i>AWS CLI Reference.</i>
      */
 
     public String getSessionName() {
@@ -676,8 +759,8 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon
      * QuickSight user. You can register multiple users using the same IAM role if each user has a different session
      * name. For more information on assuming IAM roles, see <a
-     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
-     * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in
+     * the <i>AWS CLI Reference.</i>
      * </p>
      * 
      * @param sessionName
@@ -685,8 +768,8 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        don't need to provide the session name for other scenarios, for example when you are registering an IAM
      *        user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user
      *        has a different session name. For more information on assuming IAM roles, see <a
-     *        href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
-     *        <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i>
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code>
+     *        </a> in the <i>AWS CLI Reference.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -822,6 +905,518 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     * Customized permissions allows you to control a user's access by restricting access the following operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create and update data sources
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update datasets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update email reports
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subscribe to email reports
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     * </p>
+     * <p>
+     * A set of custom permissions includes any combination of these restrictions. Currently, you need to create the
+     * profile names for custom permission sets by using the QuickSight console. Then, you use the
+     * <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
+     * </p>
+     * <p>
+     * QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     * typically granted by assigning QuickSight users to one of the default security cohorts in QuickSight (admin,
+     * author, reader).
+     * </p>
+     * <p>
+     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).
+     * </p>
+     * 
+     * @param customPermissionsName
+     *        (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     *        Customized permissions allows you to control a user's access by restricting access the following
+     *        operations:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Create and update data sources
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Create and update datasets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Create and update email reports
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Subscribe to email reports
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     *        </p>
+     *        <p>
+     *        A set of custom permissions includes any combination of these restrictions. Currently, you need to create
+     *        the profile names for custom permission sets by using the QuickSight console. Then, you use the
+     *        <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
+     *        </p>
+     *        <p>
+     *        QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     *        typically granted by assigning QuickSight users to one of the default security cohorts in QuickSight
+     *        (admin, author, reader).
+     *        </p>
+     *        <p>
+     *        This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based
+     *        Federation for Single Sign-On (SSO).
+     */
+
+    public void setCustomPermissionsName(String customPermissionsName) {
+        this.customPermissionsName = customPermissionsName;
+    }
+
+    /**
+     * <p>
+     * (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     * Customized permissions allows you to control a user's access by restricting access the following operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create and update data sources
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update datasets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update email reports
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subscribe to email reports
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     * </p>
+     * <p>
+     * A set of custom permissions includes any combination of these restrictions. Currently, you need to create the
+     * profile names for custom permission sets by using the QuickSight console. Then, you use the
+     * <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
+     * </p>
+     * <p>
+     * QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     * typically granted by assigning QuickSight users to one of the default security cohorts in QuickSight (admin,
+     * author, reader).
+     * </p>
+     * <p>
+     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).
+     * </p>
+     * 
+     * @return (Enterprise edition only) The name of the custom permissions profile that you want to assign to this
+     *         user. Customized permissions allows you to control a user's access by restricting access the following
+     *         operations:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Create and update data sources
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Create and update datasets
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Create and update email reports
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Subscribe to email reports
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     *         </p>
+     *         <p>
+     *         A set of custom permissions includes any combination of these restrictions. Currently, you need to create
+     *         the profile names for custom permission sets by using the QuickSight console. Then, you use the
+     *         <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
+     *         </p>
+     *         <p>
+     *         QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     *         typically granted by assigning QuickSight users to one of the default security cohorts in QuickSight
+     *         (admin, author, reader).
+     *         </p>
+     *         <p>
+     *         This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based
+     *         Federation for Single Sign-On (SSO).
+     */
+
+    public String getCustomPermissionsName() {
+        return this.customPermissionsName;
+    }
+
+    /**
+     * <p>
+     * (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     * Customized permissions allows you to control a user's access by restricting access the following operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create and update data sources
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update datasets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update email reports
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Subscribe to email reports
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     * </p>
+     * <p>
+     * A set of custom permissions includes any combination of these restrictions. Currently, you need to create the
+     * profile names for custom permission sets by using the QuickSight console. Then, you use the
+     * <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
+     * </p>
+     * <p>
+     * QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     * typically granted by assigning QuickSight users to one of the default security cohorts in QuickSight (admin,
+     * author, reader).
+     * </p>
+     * <p>
+     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).
+     * </p>
+     * 
+     * @param customPermissionsName
+     *        (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     *        Customized permissions allows you to control a user's access by restricting access the following
+     *        operations:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Create and update data sources
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Create and update datasets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Create and update email reports
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Subscribe to email reports
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To add custom permissions to an existing user, use <code> <a>UpdateUser</a> </code> instead.
+     *        </p>
+     *        <p>
+     *        A set of custom permissions includes any combination of these restrictions. Currently, you need to create
+     *        the profile names for custom permission sets by using the QuickSight console. Then, you use the
+     *        <code>RegisterUser</code> API operation to assign the named set of permissions to a QuickSight user.
+     *        </p>
+     *        <p>
+     *        QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     *        typically granted by assigning QuickSight users to one of the default security cohorts in QuickSight
+     *        (admin, author, reader).
+     *        </p>
+     *        <p>
+     *        This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based
+     *        Federation for Single Sign-On (SSO).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterUserRequest withCustomPermissionsName(String customPermissionsName) {
+        setCustomPermissionsName(customPermissionsName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of supported external login provider that provides identity to let a user federate into Amazon
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported external login
+     * provider can be one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the
+     * <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed
+     * when the external provider is custom.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use
+     * the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param externalLoginFederationProviderType
+     *        The type of supported external login provider that provides identity to let a user federate into Amazon
+     *        QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported
+     *        external login provider can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing
+     *        the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is
+     *        only needed when the external provider is custom.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code>
+     *        type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     *        </p>
+     *        </li>
+     */
+
+    public void setExternalLoginFederationProviderType(String externalLoginFederationProviderType) {
+        this.externalLoginFederationProviderType = externalLoginFederationProviderType;
+    }
+
+    /**
+     * <p>
+     * The type of supported external login provider that provides identity to let a user federate into Amazon
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported external login
+     * provider can be one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the
+     * <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed
+     * when the external provider is custom.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use
+     * the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of supported external login provider that provides identity to let a user federate into Amazon
+     *         QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported
+     *         external login provider can be one of the following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing
+     *         the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is
+     *         only needed when the external provider is custom.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code>
+     *         type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     *         </p>
+     *         </li>
+     */
+
+    public String getExternalLoginFederationProviderType() {
+        return this.externalLoginFederationProviderType;
+    }
+
+    /**
+     * <p>
+     * The type of supported external login provider that provides identity to let a user federate into Amazon
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported external login
+     * provider can be one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the
+     * <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed
+     * when the external provider is custom.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use
+     * the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param externalLoginFederationProviderType
+     *        The type of supported external login provider that provides identity to let a user federate into Amazon
+     *        QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported
+     *        external login provider can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing
+     *        the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is
+     *        only needed when the external provider is custom.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code>
+     *        type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterUserRequest withExternalLoginFederationProviderType(String externalLoginFederationProviderType) {
+        setExternalLoginFederationProviderType(externalLoginFederationProviderType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be used
+     * when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     * </p>
+     * 
+     * @param customFederationProviderUrl
+     *        The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     *        QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be
+     *        used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     */
+
+    public void setCustomFederationProviderUrl(String customFederationProviderUrl) {
+        this.customFederationProviderUrl = customFederationProviderUrl;
+    }
+
+    /**
+     * <p>
+     * The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be used
+     * when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     * </p>
+     * 
+     * @return The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     *         QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only
+     *         be used when <code>ExternalLoginFederationProviderType</code> parameter is set to
+     *         <code>CUSTOM_OIDC</code>.
+     */
+
+    public String getCustomFederationProviderUrl() {
+        return this.customFederationProviderUrl;
+    }
+
+    /**
+     * <p>
+     * The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be used
+     * when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     * </p>
+     * 
+     * @param customFederationProviderUrl
+     *        The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     *        QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be
+     *        used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterUserRequest withCustomFederationProviderUrl(String customFederationProviderUrl) {
+        setCustomFederationProviderUrl(customFederationProviderUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identity ID for a user in the external login provider.
+     * </p>
+     * 
+     * @param externalLoginId
+     *        The identity ID for a user in the external login provider.
+     */
+
+    public void setExternalLoginId(String externalLoginId) {
+        this.externalLoginId = externalLoginId;
+    }
+
+    /**
+     * <p>
+     * The identity ID for a user in the external login provider.
+     * </p>
+     * 
+     * @return The identity ID for a user in the external login provider.
+     */
+
+    public String getExternalLoginId() {
+        return this.externalLoginId;
+    }
+
+    /**
+     * <p>
+     * The identity ID for a user in the external login provider.
+     * </p>
+     * 
+     * @param externalLoginId
+     *        The identity ID for a user in the external login provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterUserRequest withExternalLoginId(String externalLoginId) {
+        setExternalLoginId(externalLoginId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -848,7 +1443,15 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getNamespace() != null)
             sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: ").append(getUserName());
+            sb.append("UserName: ").append(getUserName()).append(",");
+        if (getCustomPermissionsName() != null)
+            sb.append("CustomPermissionsName: ").append(getCustomPermissionsName()).append(",");
+        if (getExternalLoginFederationProviderType() != null)
+            sb.append("ExternalLoginFederationProviderType: ").append(getExternalLoginFederationProviderType()).append(",");
+        if (getCustomFederationProviderUrl() != null)
+            sb.append("CustomFederationProviderUrl: ").append(getCustomFederationProviderUrl()).append(",");
+        if (getExternalLoginId() != null)
+            sb.append("ExternalLoginId: ").append(getExternalLoginId());
         sb.append("}");
         return sb.toString();
     }
@@ -895,6 +1498,23 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
+        if (other.getCustomPermissionsName() == null ^ this.getCustomPermissionsName() == null)
+            return false;
+        if (other.getCustomPermissionsName() != null && other.getCustomPermissionsName().equals(this.getCustomPermissionsName()) == false)
+            return false;
+        if (other.getExternalLoginFederationProviderType() == null ^ this.getExternalLoginFederationProviderType() == null)
+            return false;
+        if (other.getExternalLoginFederationProviderType() != null
+                && other.getExternalLoginFederationProviderType().equals(this.getExternalLoginFederationProviderType()) == false)
+            return false;
+        if (other.getCustomFederationProviderUrl() == null ^ this.getCustomFederationProviderUrl() == null)
+            return false;
+        if (other.getCustomFederationProviderUrl() != null && other.getCustomFederationProviderUrl().equals(this.getCustomFederationProviderUrl()) == false)
+            return false;
+        if (other.getExternalLoginId() == null ^ this.getExternalLoginId() == null)
+            return false;
+        if (other.getExternalLoginId() != null && other.getExternalLoginId().equals(this.getExternalLoginId()) == false)
+            return false;
         return true;
     }
 
@@ -911,6 +1531,10 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getAwsAccountId() == null) ? 0 : getAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getCustomPermissionsName() == null) ? 0 : getCustomPermissionsName().hashCode());
+        hashCode = prime * hashCode + ((getExternalLoginFederationProviderType() == null) ? 0 : getExternalLoginFederationProviderType().hashCode());
+        hashCode = prime * hashCode + ((getCustomFederationProviderUrl() == null) ? 0 : getCustomFederationProviderUrl().hashCode());
+        hashCode = prime * hashCode + ((getExternalLoginId() == null) ? 0 : getExternalLoginId().hashCode());
         return hashCode;
     }
 

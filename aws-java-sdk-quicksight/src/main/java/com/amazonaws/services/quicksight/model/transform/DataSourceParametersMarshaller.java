@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class DataSourceParametersMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MariaDbParameters").build();
     private static final MarshallingInfo<StructuredPojo> MYSQLPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MySqlParameters").build();
+    private static final MarshallingInfo<StructuredPojo> ORACLEPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OracleParameters").build();
     private static final MarshallingInfo<StructuredPojo> POSTGRESQLPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PostgreSqlParameters").build();
     private static final MarshallingInfo<StructuredPojo> PRESTOPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -90,6 +92,7 @@ public class DataSourceParametersMarshaller {
             protocolMarshaller.marshall(dataSourceParameters.getJiraParameters(), JIRAPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getMariaDbParameters(), MARIADBPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getMySqlParameters(), MYSQLPARAMETERS_BINDING);
+            protocolMarshaller.marshall(dataSourceParameters.getOracleParameters(), ORACLEPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getPostgreSqlParameters(), POSTGRESQLPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getPrestoParameters(), PRESTOPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSourceParameters.getRdsParameters(), RDSPARAMETERS_BINDING);

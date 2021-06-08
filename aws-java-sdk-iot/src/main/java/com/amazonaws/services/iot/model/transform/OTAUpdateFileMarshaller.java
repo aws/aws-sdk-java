@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class OTAUpdateFileMarshaller {
 
     private static final MarshallingInfo<String> FILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("fileName").build();
+    private static final MarshallingInfo<Integer> FILETYPE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileType").build();
     private static final MarshallingInfo<String> FILEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileVersion").build();
     private static final MarshallingInfo<StructuredPojo> FILELOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -57,6 +59,7 @@ public class OTAUpdateFileMarshaller {
 
         try {
             protocolMarshaller.marshall(oTAUpdateFile.getFileName(), FILENAME_BINDING);
+            protocolMarshaller.marshall(oTAUpdateFile.getFileType(), FILETYPE_BINDING);
             protocolMarshaller.marshall(oTAUpdateFile.getFileVersion(), FILEVERSION_BINDING);
             protocolMarshaller.marshall(oTAUpdateFile.getFileLocation(), FILELOCATION_BINDING);
             protocolMarshaller.marshall(oTAUpdateFile.getCodeSigning(), CODESIGNING_BINDING);

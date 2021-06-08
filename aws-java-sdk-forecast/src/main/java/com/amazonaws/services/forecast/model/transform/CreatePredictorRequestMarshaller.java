@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.forecast.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,8 +35,12 @@ public class CreatePredictorRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlgorithmArn").build();
     private static final MarshallingInfo<Integer> FORECASTHORIZON_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForecastHorizon").build();
+    private static final MarshallingInfo<List> FORECASTTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ForecastTypes").build();
     private static final MarshallingInfo<Boolean> PERFORMAUTOML_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PerformAutoML").build();
+    private static final MarshallingInfo<String> AUTOMLOVERRIDESTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoMLOverrideStrategy").build();
     private static final MarshallingInfo<Boolean> PERFORMHPO_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PerformHPO").build();
     private static final MarshallingInfo<Map> TRAININGPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
@@ -51,6 +55,8 @@ public class CreatePredictorRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeaturizationConfig").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionConfig").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreatePredictorRequestMarshaller instance = new CreatePredictorRequestMarshaller();
 
@@ -71,7 +77,9 @@ public class CreatePredictorRequestMarshaller {
             protocolMarshaller.marshall(createPredictorRequest.getPredictorName(), PREDICTORNAME_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getAlgorithmArn(), ALGORITHMARN_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getForecastHorizon(), FORECASTHORIZON_BINDING);
+            protocolMarshaller.marshall(createPredictorRequest.getForecastTypes(), FORECASTTYPES_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getPerformAutoML(), PERFORMAUTOML_BINDING);
+            protocolMarshaller.marshall(createPredictorRequest.getAutoMLOverrideStrategy(), AUTOMLOVERRIDESTRATEGY_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getPerformHPO(), PERFORMHPO_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getTrainingParameters(), TRAININGPARAMETERS_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getEvaluationParameters(), EVALUATIONPARAMETERS_BINDING);
@@ -79,6 +87,7 @@ public class CreatePredictorRequestMarshaller {
             protocolMarshaller.marshall(createPredictorRequest.getInputDataConfig(), INPUTDATACONFIG_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getFeaturizationConfig(), FEATURIZATIONCONFIG_BINDING);
             protocolMarshaller.marshall(createPredictorRequest.getEncryptionConfig(), ENCRYPTIONCONFIG_BINDING);
+            protocolMarshaller.marshall(createPredictorRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

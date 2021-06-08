@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,8 @@ public class NodegroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modifiedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> CAPACITYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityType").build();
     private static final MarshallingInfo<StructuredPojo> SCALINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scalingConfig").build();
     private static final MarshallingInfo<List> INSTANCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -59,12 +61,18 @@ public class NodegroupMarshaller {
             .marshallLocationName("nodeRole").build();
     private static final MarshallingInfo<Map> LABELS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("labels").build();
+    private static final MarshallingInfo<List> TAINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("taints").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resources").build();
     private static final MarshallingInfo<Integer> DISKSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("diskSize").build();
     private static final MarshallingInfo<StructuredPojo> HEALTH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("health").build();
+    private static final MarshallingInfo<StructuredPojo> UPDATECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateConfig").build();
+    private static final MarshallingInfo<StructuredPojo> LAUNCHTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchTemplate").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -92,6 +100,7 @@ public class NodegroupMarshaller {
             protocolMarshaller.marshall(nodegroup.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(nodegroup.getModifiedAt(), MODIFIEDAT_BINDING);
             protocolMarshaller.marshall(nodegroup.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(nodegroup.getCapacityType(), CAPACITYTYPE_BINDING);
             protocolMarshaller.marshall(nodegroup.getScalingConfig(), SCALINGCONFIG_BINDING);
             protocolMarshaller.marshall(nodegroup.getInstanceTypes(), INSTANCETYPES_BINDING);
             protocolMarshaller.marshall(nodegroup.getSubnets(), SUBNETS_BINDING);
@@ -99,9 +108,12 @@ public class NodegroupMarshaller {
             protocolMarshaller.marshall(nodegroup.getAmiType(), AMITYPE_BINDING);
             protocolMarshaller.marshall(nodegroup.getNodeRole(), NODEROLE_BINDING);
             protocolMarshaller.marshall(nodegroup.getLabels(), LABELS_BINDING);
+            protocolMarshaller.marshall(nodegroup.getTaints(), TAINTS_BINDING);
             protocolMarshaller.marshall(nodegroup.getResources(), RESOURCES_BINDING);
             protocolMarshaller.marshall(nodegroup.getDiskSize(), DISKSIZE_BINDING);
             protocolMarshaller.marshall(nodegroup.getHealth(), HEALTH_BINDING);
+            protocolMarshaller.marshall(nodegroup.getUpdateConfig(), UPDATECONFIG_BINDING);
+            protocolMarshaller.marshall(nodegroup.getLaunchTemplate(), LAUNCHTEMPLATE_BINDING);
             protocolMarshaller.marshall(nodegroup.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

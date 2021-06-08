@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
     private Boolean acceptanceRequired;
     /**
      * <p>
-     * The private DNS name to assign to the VPC endpoint service.
+     * (Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.
      * </p>
      */
     private String privateDnsName;
@@ -45,6 +45,12 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> networkLoadBalancerArns;
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> gatewayLoadBalancerArns;
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
@@ -122,11 +128,11 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The private DNS name to assign to the VPC endpoint service.
+     * (Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.
      * </p>
      * 
      * @param privateDnsName
-     *        The private DNS name to assign to the VPC endpoint service.
+     *        (Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.
      */
 
     public void setPrivateDnsName(String privateDnsName) {
@@ -135,10 +141,10 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The private DNS name to assign to the VPC endpoint service.
+     * (Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.
      * </p>
      * 
-     * @return The private DNS name to assign to the VPC endpoint service.
+     * @return (Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.
      */
 
     public String getPrivateDnsName() {
@@ -147,11 +153,11 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     /**
      * <p>
-     * The private DNS name to assign to the VPC endpoint service.
+     * (Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.
      * </p>
      * 
      * @param privateDnsName
-     *        The private DNS name to assign to the VPC endpoint service.
+     *        (Interface endpoint configuration) The private DNS name to assign to the VPC endpoint service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,6 +236,79 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
 
     public CreateVpcEndpointServiceConfigurationRequest withNetworkLoadBalancerArns(java.util.Collection<String> networkLoadBalancerArns) {
         setNetworkLoadBalancerArns(networkLoadBalancerArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     */
+
+    public java.util.List<String> getGatewayLoadBalancerArns() {
+        if (gatewayLoadBalancerArns == null) {
+            gatewayLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return gatewayLoadBalancerArns;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     */
+
+    public void setGatewayLoadBalancerArns(java.util.Collection<String> gatewayLoadBalancerArns) {
+        if (gatewayLoadBalancerArns == null) {
+            this.gatewayLoadBalancerArns = null;
+            return;
+        }
+
+        this.gatewayLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>(gatewayLoadBalancerArns);
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGatewayLoadBalancerArns(java.util.Collection)} or
+     * {@link #withGatewayLoadBalancerArns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcEndpointServiceConfigurationRequest withGatewayLoadBalancerArns(String... gatewayLoadBalancerArns) {
+        if (this.gatewayLoadBalancerArns == null) {
+            setGatewayLoadBalancerArns(new com.amazonaws.internal.SdkInternalList<String>(gatewayLoadBalancerArns.length));
+        }
+        for (String ele : gatewayLoadBalancerArns) {
+            this.gatewayLoadBalancerArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of one or more Gateway Load Balancers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcEndpointServiceConfigurationRequest withGatewayLoadBalancerArns(java.util.Collection<String> gatewayLoadBalancerArns) {
+        setGatewayLoadBalancerArns(gatewayLoadBalancerArns);
         return this;
     }
 
@@ -390,6 +469,8 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
             sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
         if (getNetworkLoadBalancerArns() != null)
             sb.append("NetworkLoadBalancerArns: ").append(getNetworkLoadBalancerArns()).append(",");
+        if (getGatewayLoadBalancerArns() != null)
+            sb.append("GatewayLoadBalancerArns: ").append(getGatewayLoadBalancerArns()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTagSpecifications() != null)
@@ -420,6 +501,10 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
             return false;
         if (other.getNetworkLoadBalancerArns() != null && other.getNetworkLoadBalancerArns().equals(this.getNetworkLoadBalancerArns()) == false)
             return false;
+        if (other.getGatewayLoadBalancerArns() == null ^ this.getGatewayLoadBalancerArns() == null)
+            return false;
+        if (other.getGatewayLoadBalancerArns() != null && other.getGatewayLoadBalancerArns().equals(this.getGatewayLoadBalancerArns()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -439,6 +524,7 @@ public class CreateVpcEndpointServiceConfigurationRequest extends AmazonWebServi
         hashCode = prime * hashCode + ((getAcceptanceRequired() == null) ? 0 : getAcceptanceRequired().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
         hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
+        hashCode = prime * hashCode + ((getGatewayLoadBalancerArns() == null) ? 0 : getGatewayLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;

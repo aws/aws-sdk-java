@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -55,7 +56,7 @@
     "defaultEndpoint" : "a2i-runtime.sagemaker.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "a2i-runtime.sagemaker.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<important> <p>Amazon Augmented AI is in preview release and is subject to change. We do not recommend using this product in production environments.</p> </important> <p>Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine learning application. When an AI application can't evaluate data with a high degree of confidence, human reviewers can take over. This human review is called a human review workflow. To create and start a human review workflow, you need three resources: a <i>worker task template</i>, a <i>flow definition</i>, and a <i>human loop</i>.</p> <p>For information about these resources and prerequisites for using Amazon A2I, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-getting-started.html\">Get Started with Amazon Augmented AI</a> in the Amazon SageMaker Developer Guide.</p> <p>This API reference includes information about API actions and data types that you can use to interact with Amazon A2I programmatically. Use this guide to:</p> <ul> <li> <p>Start a human loop with the <code>StartHumanLoop</code> operation when using Amazon A2I with a <i>custom task type</i>. To learn more about the difference between custom and built-in task types, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-task-types-general.html\">Use Task Types </a>. To learn how to start a human loop using this API, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html#a2i-instructions-starthumanloop\">Create and Start a Human Loop for a Custom Task Type </a> in the Amazon SageMaker Developer Guide.</p> </li> <li> <p>Manage your human loops. You can list all human loops that you have created, describe individual human loops, and stop and delete human loops. To learn more, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-monitor-humanloop-results.html\">Monitor and Manage Your Human Loop </a> in the Amazon SageMaker Developer Guide.</p> </li> </ul> <p>Amazon A2I integrates APIs from various AWS services to create and start human review workflows for those services. To learn how Amazon A2I uses these APIs, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html\">Use APIs in Amazon A2I</a> in the Amazon SageMaker Developer Guide.</p>",
+    "documentation" : "<p>Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine learning application. When an AI application can't evaluate data with a high degree of confidence, human reviewers can take over. This human review is called a human review workflow. To create and start a human review workflow, you need three resources: a <i>worker task template</i>, a <i>flow definition</i>, and a <i>human loop</i>.</p> <p>For information about these resources and prerequisites for using Amazon A2I, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-getting-started.html\">Get Started with Amazon Augmented AI</a> in the Amazon SageMaker Developer Guide.</p> <p>This API reference includes information about API actions and data types that you can use to interact with Amazon A2I programmatically. Use this guide to:</p> <ul> <li> <p>Start a human loop with the <code>StartHumanLoop</code> operation when using Amazon A2I with a <i>custom task type</i>. To learn more about the difference between custom and built-in task types, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-task-types-general.html\">Use Task Types </a>. To learn how to start a human loop using this API, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html#a2i-instructions-starthumanloop\">Create and Start a Human Loop for a Custom Task Type </a> in the Amazon SageMaker Developer Guide.</p> </li> <li> <p>Manage your human loops. You can list all human loops that you have created, describe individual human loops, and stop and delete human loops. To learn more, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-monitor-humanloop-results.html\">Monitor and Manage Your Human Loop </a> in the Amazon SageMaker Developer Guide.</p> </li> </ul> <p>Amazon A2I integrates APIs from various AWS services to create and start human review workflows for those services. To learn how Amazon A2I uses these APIs, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html\">Use APIs in Amazon A2I</a> in the Amazon SageMaker Developer Guide.</p>",
     "endpointPrefix" : "a2i-runtime.sagemaker",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -91,7 +92,7 @@
       "asyncReturnType" : "DeleteHumanLoopResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Deletes the specified human loop for a flow definition.</p>",
+      "documentation" : "<p>Deletes the specified human loop for a flow definition.</p> <p>If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>. </p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -102,7 +103,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>We couldn't find the requested resource.</p>",
+        "documentation" : "<p>We couldn't find the requested resource. Check that your resources exists and were created in the same AWS Region as your request, and try your request again. </p>",
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "ThrottlingException",
@@ -140,7 +141,7 @@
       "asyncReturnType" : "DescribeHumanLoopResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns information about the specified human loop.</p>",
+      "documentation" : "<p>Returns information about the specified human loop. If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code> error. </p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -151,7 +152,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>We couldn't find the requested resource.</p>",
+        "documentation" : "<p>We couldn't find the requested resource. Check that your resources exists and were created in the same AWS Region as your request, and try your request again. </p>",
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "ThrottlingException",
@@ -200,7 +201,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>We couldn't find the requested resource.</p>",
+        "documentation" : "<p>We couldn't find the requested resource. Check that your resources exists and were created in the same AWS Region as your request, and try your request again. </p>",
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "ThrottlingException",
@@ -253,7 +254,7 @@
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "ServiceQuotaExceededException",
-        "documentation" : "<p>You exceeded your service quota. Delete some resources or request an increase in your service quota.</p>",
+        "documentation" : "<p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your AWS account. For a list of Amazon A2I service quotes, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/a2i.html\">Amazon Augmented AI Service Quotes</a>. Delete some resources or request an increase in your service quota. You can request a quota increase using Service Quotas or the AWS Support Center. To request an increase, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html\">AWS Service Quotas</a> in the <i>AWS General Reference</i>.</p>",
         "httpStatusCode" : 402
       }, {
         "exceptionName" : "InternalServerException",
@@ -302,7 +303,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>We couldn't find the requested resource.</p>",
+        "documentation" : "<p>We couldn't find the requested resource. Check that your resources exists and were created in the same AWS Region as your request, and try your request again. </p>",
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "ThrottlingException",
@@ -348,6 +349,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ConflictException",
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.exception.ConflictException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -356,6 +358,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -393,6 +396,7 @@
         "value" : "FreeOfAdultContent"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.enum.ContentClassifier",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -401,6 +405,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -435,6 +440,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.request.DeleteHumanLoopRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -503,6 +509,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the human loop that you want to delete.</p>\n@param humanLoopName The name of the human loop that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -573,6 +580,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the human loop that you want to delete.</p>\n@param humanLoopName The name of the human loop that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -588,6 +596,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HumanLoopName" ],
@@ -619,6 +628,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.response.DeleteHumanLoopResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -627,6 +637,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -661,6 +672,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.request.DescribeHumanLoopRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -729,6 +741,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the human loop that you want information about.</p>\n@param humanLoopName The name of the human loop that you want information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -799,6 +812,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the human loop that you want information about.</p>\n@param humanLoopName The name of the human loop that you want information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -814,6 +828,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HumanLoopName" ],
@@ -845,6 +860,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.response.DescribeHumanLoopResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -906,6 +922,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The creation time when Amazon Augmented AI created the human loop.</p>\n@param creationTime The creation time when Amazon Augmented AI created the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -974,6 +991,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>\n@param failureReason The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -991,12 +1009,12 @@
         "c2jName" : "FailureCode",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>A failure code that identifies the type of failure.</p>",
+        "documentation" : "<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p>\n@param failureCode A failure code that identifies the type of failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>\n@param failureCode A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withFailureCode",
-        "getterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p>\n@return A failure code that identifies the type of failure.*/",
+        "getterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>\n@return A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>*/",
         "getterMethodName" : "getFailureCode",
         "getterModel" : {
           "returnType" : "String",
@@ -1030,7 +1048,7 @@
         "marshallingType" : "STRING",
         "name" : "FailureCode",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p>\n@param failureCode A failure code that identifies the type of failure.*/",
+        "setterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>\n@param failureCode A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>*/",
         "setterMethodName" : "setFailureCode",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1042,15 +1060,16 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p>\n@param failureCode A failure code that identifies the type of failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>\n@param failureCode A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "failureCode",
           "variableType" : "String",
-          "documentation" : "<p>A failure code that identifies the type of failure.</p>",
+          "documentation" : "<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1110,6 +1129,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the human loop. </p>\n@param humanLoopStatus The status of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HumanLoopStatus*/",
@@ -1178,6 +1198,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>\n@param humanLoopName The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1246,6 +1267,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the human loop.</p>\n@param humanLoopArn The Amazon Resource Name (ARN) of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1314,6 +1336,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the flow definition.</p>\n@param flowDefinitionArn The Amazon Resource Name (ARN) of the flow definition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1382,6 +1405,7 @@
           "variableSetterType" : "HumanLoopOutput"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object that contains information about the output of the human loop.</p>\n@param humanLoopOutput An object that contains information about the output of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1452,6 +1476,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The creation time when Amazon Augmented AI created the human loop.</p>\n@param creationTime The creation time when Amazon Augmented AI created the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1470,12 +1495,12 @@
           "c2jName" : "FailureCode",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>A failure code that identifies the type of failure.</p>",
+          "documentation" : "<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p>\n@param failureCode A failure code that identifies the type of failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>\n@param failureCode A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withFailureCode",
-          "getterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p>\n@return A failure code that identifies the type of failure.*/",
+          "getterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>\n@return A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>*/",
           "getterMethodName" : "getFailureCode",
           "getterModel" : {
             "returnType" : "String",
@@ -1509,7 +1534,7 @@
           "marshallingType" : "STRING",
           "name" : "FailureCode",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p>\n@param failureCode A failure code that identifies the type of failure.*/",
+          "setterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>\n@param failureCode A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>*/",
           "setterMethodName" : "setFailureCode",
           "setterModel" : {
             "timestampFormat" : null,
@@ -1521,15 +1546,16 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p>\n@param failureCode A failure code that identifies the type of failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>\n@param failureCode A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "failureCode",
             "variableType" : "String",
-            "documentation" : "<p>A failure code that identifies the type of failure.</p>",
+            "documentation" : "<p>A failure code that identifies the type of failure.</p> <p>Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code> </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -1590,6 +1616,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.</p>\n@param failureReason The reason why a human loop failed. The failure reason is returned when the status of the human loop is <code>Failed</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1659,6 +1686,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the flow definition.</p>\n@param flowDefinitionArn The Amazon Resource Name (ARN) of the flow definition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1728,6 +1756,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the human loop.</p>\n@param humanLoopArn The Amazon Resource Name (ARN) of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1797,6 +1826,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>\n@param humanLoopName The name of the human loop. The name must be lowercase, unique within the Region in your account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1866,6 +1896,7 @@
             "variableSetterType" : "HumanLoopOutput"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object that contains information about the output of the human loop.</p>\n@param humanLoopOutput An object that contains information about the output of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1935,6 +1966,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the human loop. </p>\n@param humanLoopStatus The status of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HumanLoopStatus*/",
@@ -1950,6 +1982,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "CreationTime", "HumanLoopStatus", "HumanLoopName", "HumanLoopArn", "FlowDefinitionArn" ],
@@ -1984,6 +2017,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.model.HumanLoopDataAttributes",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2084,6 +2118,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ContentClassifier*/",
@@ -2128,6 +2163,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Declares that your content is free of personally identifiable information or adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setContentClassifiers(java.util.Collection)} or {@link #withContentClassifiers(java.util.Collection)} if you want to override the existing values.</p>\n@param contentClassifiers Declares that your content is free of personally identifiable information or adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ContentClassifier*/",
@@ -2237,6 +2273,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ContentClassifier*/",
@@ -2281,6 +2318,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Declares that your content is free of personally identifiable information or adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setContentClassifiers(java.util.Collection)} or {@link #withContentClassifiers(java.util.Collection)} if you want to override the existing values.</p>\n@param contentClassifiers Declares that your content is free of personally identifiable information or adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ContentClassifier*/",
@@ -2296,6 +2334,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ContentClassifiers" ],
@@ -2330,6 +2369,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.model.HumanLoopInput",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2391,6 +2431,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>\n@param inputContent Serialized input from the human loop. The input must be a string representation of a file in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2461,6 +2502,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>\n@param inputContent Serialized input from the human loop. The input must be a string representation of a file in JSON format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2476,6 +2518,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "InputContent" ],
@@ -2510,6 +2553,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.model.HumanLoopOutput",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2571,6 +2615,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>\n@param outputS3Uri The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2641,6 +2686,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>\n@param outputS3Uri The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2656,6 +2702,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "OutputS3Uri" ],
@@ -2705,6 +2752,7 @@
         "value" : "Stopping"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.enum.HumanLoopStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2713,6 +2761,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2747,6 +2796,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.model.HumanLoopSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2808,6 +2858,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the human loop.</p>\n@param humanLoopName The name of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2876,6 +2927,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the human loop. </p>\n@param humanLoopStatus The status of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HumanLoopStatus*/",
@@ -2944,6 +2996,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>When Amazon Augmented AI created the human loop.</p>\n@param creationTime When Amazon Augmented AI created the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3012,6 +3065,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>\n@param failureReason The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3080,6 +3134,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>\n@param flowDefinitionArn The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3150,6 +3205,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>When Amazon Augmented AI created the human loop.</p>\n@param creationTime When Amazon Augmented AI created the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3219,6 +3275,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.</p>\n@param failureReason The reason why the human loop failed. A failure reason is returned when the status of the human loop is <code>Failed</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3288,6 +3345,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.</p>\n@param flowDefinitionArn The Amazon Resource Name (ARN) of the flow definition used to configure the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3357,6 +3415,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the human loop.</p>\n@param humanLoopName The name of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3426,6 +3485,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the human loop. </p>\n@param humanLoopStatus The status of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HumanLoopStatus*/",
@@ -3441,6 +3501,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3475,6 +3536,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerException",
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.exception.InternalServerException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3483,6 +3545,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3514,6 +3577,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.request.ListHumanLoopsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3582,6 +3646,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>\n@param creationTimeAfter (Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3650,6 +3715,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>\n@param creationTimeBefore (Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3718,6 +3784,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a flow definition.</p>\n@param flowDefinitionArn The Amazon Resource Name (ARN) of a flow definition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3786,6 +3853,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>\n@param sortOrder Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortOrder*/",
@@ -3854,6 +3922,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A token to display the next page of results.</p>\n@param nextToken A token to display the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3922,6 +3991,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>\n@param maxResults The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3992,6 +4062,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>\n@param creationTimeAfter (Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4061,6 +4132,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>\n@param creationTimeBefore (Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4130,6 +4202,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of a flow definition.</p>\n@param flowDefinitionArn The Amazon Resource Name (ARN) of a flow definition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4199,6 +4272,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results. </p>\n@param maxResults The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in the output. You can use this token to display the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4268,6 +4342,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A token to display the next page of results.</p>\n@param nextToken A token to display the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4337,6 +4412,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.</p>\n@param sortOrder Optional. The order for displaying results. Valid values: <code>Ascending</code> and <code>Descending</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortOrder*/",
@@ -4352,6 +4428,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "FlowDefinitionArn" ],
@@ -4383,6 +4460,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.response.ListHumanLoopsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4483,6 +4561,7 @@
               "variableSetterType" : "HumanLoopSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4527,6 +4606,7 @@
           "variableSetterType" : "java.util.Collection<HumanLoopSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of objects that contain information about the human loops.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHumanLoopSummaries(java.util.Collection)} or {@link #withHumanLoopSummaries(java.util.Collection)} if you want to override the existing values.</p>\n@param humanLoopSummaries An array of objects that contain information about the human loops.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4595,6 +4675,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A token to display the next page of results.</p>\n@param nextToken A token to display the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4704,6 +4785,7 @@
                 "variableSetterType" : "HumanLoopSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4748,6 +4830,7 @@
             "variableSetterType" : "java.util.Collection<HumanLoopSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of objects that contain information about the human loops.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHumanLoopSummaries(java.util.Collection)} or {@link #withHumanLoopSummaries(java.util.Collection)} if you want to override the existing values.</p>\n@param humanLoopSummaries An array of objects that contain information about the human loops.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4817,6 +4900,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A token to display the next page of results.</p>\n@param nextToken A token to display the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4832,6 +4916,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HumanLoopSummaries" ],
@@ -4862,10 +4947,11 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>We couldn't find the requested resource.</p>",
+      "documentation" : "<p>We couldn't find the requested resource. Check that your resources exists and were created in the same AWS Region as your request, and try your request again. </p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4874,6 +4960,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4901,10 +4988,11 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>You exceeded your service quota. Delete some resources or request an increase in your service quota.</p>",
+      "documentation" : "<p>You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of service resources or operations for your AWS account. For a list of Amazon A2I service quotes, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/a2i.html\">Amazon Augmented AI Service Quotes</a>. Delete some resources or request an increase in your service quota. You can request a quota increase using Service Quotas or the AWS Support Center. To request an increase, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html\">AWS Service Quotas</a> in the <i>AWS General Reference</i>.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceQuotaExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.exception.ServiceQuotaExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4913,6 +5001,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4950,6 +5039,7 @@
         "value" : "Descending"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.enum.SortOrder",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4958,6 +5048,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4992,6 +5083,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.request.StartHumanLoopRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5060,6 +5152,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the human loop.</p>\n@param humanLoopName The name of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5128,6 +5221,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>\n@param flowDefinitionArn The Amazon Resource Name (ARN) of the flow definition associated with this human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5196,6 +5290,7 @@
           "variableSetterType" : "HumanLoopInput"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object that contains information about the human loop.</p>\n@param humanLoopInput An object that contains information about the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5264,6 +5359,7 @@
           "variableSetterType" : "HumanLoopDataAttributes"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>\n@param dataAttributes Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5334,6 +5430,7 @@
             "variableSetterType" : "HumanLoopDataAttributes"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.</p>\n@param dataAttributes Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data is free of personally identifiable information and/or free of adult content.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5403,6 +5500,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</p>\n@param flowDefinitionArn The Amazon Resource Name (ARN) of the flow definition associated with this human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5472,6 +5570,7 @@
             "variableSetterType" : "HumanLoopInput"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object that contains information about the human loop.</p>\n@param humanLoopInput An object that contains information about the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5541,6 +5640,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the human loop.</p>\n@param humanLoopName The name of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5556,6 +5656,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HumanLoopName", "FlowDefinitionArn", "HumanLoopInput" ],
@@ -5587,6 +5688,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.response.StartHumanLoopResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5648,6 +5750,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the human loop.</p>\n@param humanLoopArn The Amazon Resource Name (ARN) of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5718,6 +5821,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the human loop.</p>\n@param humanLoopArn The Amazon Resource Name (ARN) of the human loop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5733,6 +5837,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5767,6 +5872,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.request.StopHumanLoopRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5835,6 +5941,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the human loop that you want to stop.</p>\n@param humanLoopName The name of the human loop that you want to stop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5905,6 +6012,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the human loop that you want to stop.</p>\n@param humanLoopName The name of the human loop that you want to stop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5920,6 +6028,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HumanLoopName" ],
@@ -5951,6 +6060,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.response.StopHumanLoopResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5959,6 +6069,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5993,6 +6104,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ThrottlingException",
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.exception.ThrottlingException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6001,6 +6113,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6032,6 +6145,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ValidationException",
+      "fullyQualifiedName" : "com.amazonaws.services.augmentedairuntime.exception.ValidationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6040,6 +6154,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.augmentedairuntime.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6065,7 +6180,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonAugmentedAIRuntimeException",

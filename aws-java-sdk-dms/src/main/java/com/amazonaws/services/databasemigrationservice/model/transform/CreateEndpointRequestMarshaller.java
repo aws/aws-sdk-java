@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,22 @@ public class CreateEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NeptuneSettings").build();
     private static final MarshallingInfo<StructuredPojo> REDSHIFTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedshiftSettings").build();
+    private static final MarshallingInfo<StructuredPojo> POSTGRESQLSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PostgreSQLSettings").build();
+    private static final MarshallingInfo<StructuredPojo> MYSQLSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MySQLSettings").build();
+    private static final MarshallingInfo<StructuredPojo> ORACLESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OracleSettings").build();
+    private static final MarshallingInfo<StructuredPojo> SYBASESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SybaseSettings").build();
+    private static final MarshallingInfo<StructuredPojo> MICROSOFTSQLSERVERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MicrosoftSQLServerSettings").build();
+    private static final MarshallingInfo<StructuredPojo> IBMDB2SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IBMDb2Settings").build();
+    private static final MarshallingInfo<String> RESOURCEIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceIdentifier").build();
+    private static final MarshallingInfo<StructuredPojo> DOCDBSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocDbSettings").build();
 
     private static final CreateEndpointRequestMarshaller instance = new CreateEndpointRequestMarshaller();
 
@@ -117,6 +133,14 @@ public class CreateEndpointRequestMarshaller {
             protocolMarshaller.marshall(createEndpointRequest.getElasticsearchSettings(), ELASTICSEARCHSETTINGS_BINDING);
             protocolMarshaller.marshall(createEndpointRequest.getNeptuneSettings(), NEPTUNESETTINGS_BINDING);
             protocolMarshaller.marshall(createEndpointRequest.getRedshiftSettings(), REDSHIFTSETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getPostgreSQLSettings(), POSTGRESQLSETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getMySQLSettings(), MYSQLSETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getOracleSettings(), ORACLESETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getSybaseSettings(), SYBASESETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getMicrosoftSQLServerSettings(), MICROSOFTSQLSERVERSETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getIBMDb2Settings(), IBMDB2SETTINGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getResourceIdentifier(), RESOURCEIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getDocDbSettings(), DOCDBSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

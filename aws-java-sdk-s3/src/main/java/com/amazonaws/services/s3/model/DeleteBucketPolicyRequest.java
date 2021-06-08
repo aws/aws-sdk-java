@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,16 +28,17 @@ import com.amazonaws.services.s3.AmazonS3;
  * </p>
  * <p>
  * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
- * Amazon S3 developer guide</a> for more information on forming bucket polices.
+ * Amazon S3 User Guide</a> for more information on forming bucket polices.
  * </p>
  *
  * @see AmazonS3#deleteBucketPolicy(DeleteBucketPolicyRequest)
  */
-public class DeleteBucketPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteBucketPolicyRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /** The name of the Amazon S3 bucket whose policy is being deleted. */
     private String bucketName;
 
+    private String expectedBucketOwner;
 
     /**
      * Creates a new request object, ready to be executed to delete the bucket
@@ -49,6 +50,19 @@ public class DeleteBucketPolicyRequest extends AmazonWebServiceRequest implement
      */
     public DeleteBucketPolicyRequest(String bucketName) {
         this.bucketName = bucketName;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteBucketPolicyRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
 

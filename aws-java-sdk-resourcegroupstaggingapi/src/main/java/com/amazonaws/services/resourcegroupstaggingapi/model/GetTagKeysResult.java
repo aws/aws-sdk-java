@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,9 @@ public class GetTagKeysResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      */
     private String paginationToken;
@@ -39,14 +40,15 @@ public class GetTagKeysResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      * 
      * @param paginationToken
-     *        A string that indicates that the response contains more data than can be returned in a single response. To
-     *        receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent
-     *        request.
+     *        A string that indicates that there is more data available than this response contains. To receive the next
+     *        part of the response, specify this response value as the <code>PaginationToken</code> value in the request
+     *        for the next page.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -55,13 +57,14 @@ public class GetTagKeysResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      * 
-     * @return A string that indicates that the response contains more data than can be returned in a single response.
-     *         To receive additional data, specify this string for the <code>PaginationToken</code> value in a
-     *         subsequent request.
+     * @return A string that indicates that there is more data available than this response contains. To receive the
+     *         next part of the response, specify this response value as the <code>PaginationToken</code> value in the
+     *         request for the next page.
      */
 
     public String getPaginationToken() {
@@ -70,14 +73,15 @@ public class GetTagKeysResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A string that indicates that the response contains more data than can be returned in a single response. To
-     * receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent request.
+     * A string that indicates that there is more data available than this response contains. To receive the next part
+     * of the response, specify this response value as the <code>PaginationToken</code> value in the request for the
+     * next page.
      * </p>
      * 
      * @param paginationToken
-     *        A string that indicates that the response contains more data than can be returned in a single response. To
-     *        receive additional data, specify this string for the <code>PaginationToken</code> value in a subsequent
-     *        request.
+     *        A string that indicates that there is more data available than this response contains. To receive the next
+     *        part of the response, specify this response value as the <code>PaginationToken</code> value in the request
+     *        for the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

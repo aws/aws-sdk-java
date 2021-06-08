@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,12 +17,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an automatic scaling process that has been suspended.
+ * Describes an auto scaling process that has been suspended.
  * </p>
  * <p>
  * For more information, see <a
  * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling
- * Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+ * processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendedProcess" target="_top">AWS API

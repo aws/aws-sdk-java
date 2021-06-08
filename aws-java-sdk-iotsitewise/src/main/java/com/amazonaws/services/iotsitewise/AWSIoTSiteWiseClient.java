@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,11 +93,20 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotsitewise.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotsitewise.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotsitewise.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotsitewise.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotsitewise.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
@@ -105,14 +114,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                             new JsonErrorShapeMetadata().withErrorCode("ConflictingOperationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.ConflictingOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotsitewise.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotsitewise.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotsitewise.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.iotsitewise.model.AWSIoTSiteWiseException.class));
 
     public static AWSIoTSiteWiseClientBuilder builder() {
@@ -166,7 +169,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * Associates a child asset with the given parent asset through a hierarchy defined in the parent asset's model. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-     * Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param associateAssetsRequest
@@ -222,6 +225,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new AssociateAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateAssets");
@@ -308,6 +313,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(batchAssociateProjectAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchAssociateProjectAssets");
@@ -386,6 +393,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(batchDisassociateProjectAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDisassociateProjectAssets");
@@ -421,7 +430,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Sends a list of asset property values to AWS IoT SiteWise. Each value is a timestamp-quality-value (TQV) data
      * point. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting Data Using the API</a>
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a>
      * in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -444,9 +453,9 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * </ul>
      * <important>
      * <p>
-     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 15
-     * minutes in the past and no more than 5 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
-     * inclusive range of [-15, +5] minutes and returns a <code>TimestampOutOfRangeException</code> error.
+     * With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days
+     * in the past and no more than 10 minutes in the future. AWS IoT SiteWise rejects timestamps outside of the
+     * inclusive range of [-7 days, +10 minutes] and returns a <code>TimestampOutOfRangeException</code> error.
      * </p>
      * <p>
      * For each asset property, AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a
@@ -454,6 +463,12 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * <code>{T1, GOOD, V2}</code> replaces the existing TQV.
      * </p>
      * </important>
+     * <p>
+     * AWS IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action"
+     * >BatchPutAssetPropertyValue authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
      * 
      * @param batchPutAssetPropertyValueRequest
      * @return Result of the BatchPutAssetPropertyValue operation returned by the service.
@@ -511,6 +526,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(batchPutAssetPropertyValueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchPutAssetPropertyValue");
@@ -544,8 +561,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Creates an access policy that grants the specified AWS Single Sign-On user or group access to the specified AWS
-     * IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (AWS SSO user, AWS SSO group, or IAM user) access to
+     * the specified AWS IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -598,6 +615,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccessPolicy");
@@ -631,7 +650,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
     /**
      * <p>
      * Creates an asset from an existing asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating Assets</a> in the
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the
      * <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -690,6 +709,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAsset");
@@ -725,7 +746,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * Creates an asset model from specified property and hierarchy definitions. You create assets from asset models.
      * With asset models, you can easily create assets of the same type that have standardized definitions. Each asset
      * created from a model inherits the asset model's property and hierarchy definitions. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining Asset Models</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -784,6 +805,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateAssetModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssetModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAssetModel");
@@ -869,6 +892,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDashboard");
@@ -957,6 +982,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGateway");
@@ -989,18 +1016,15 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. Before you can create a portal, you must configure
-     * AWS Single Sign-On in the current Region. AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
-     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise Monitor uses AWS SSO or IAM to
+     * authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
-     * Before you can sign in to a new portal, you must add at least one AWS SSO user or group to that portal. For more
-     * information, see <a
+     * Before you can sign in to a new portal, you must add at least one identity to that portal. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins"
-     * >Adding or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Adding or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * </note>
      * 
@@ -1054,6 +1078,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreatePortalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePortal");
@@ -1139,6 +1165,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new CreateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
@@ -1171,8 +1199,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Deletes an access policy that grants the specified AWS Single Sign-On identity access to the specified AWS IoT
-     * SiteWise Monitor resource. You can use this operation to revoke access to an AWS IoT SiteWise Monitor resource.
+     * Deletes an access policy that grants the specified identity access to the specified AWS IoT SiteWise Monitor
+     * resource. You can use this operation to revoke access to an AWS IoT SiteWise Monitor resource.
      * </p>
      * 
      * @param deleteAccessPolicyRequest
@@ -1216,6 +1244,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessPolicy");
@@ -1249,8 +1279,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
     /**
      * <p>
      * Deletes an asset. This action can't be undone. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1304,6 +1334,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAsset");
@@ -1340,8 +1372,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * before you can delete the model. Also, you can't delete an asset model if a parent asset model exists that
      * contains a property formula expression that depends on the asset model that you want to delete. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param deleteAssetModelRequest
@@ -1388,6 +1420,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteAssetModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssetModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAssetModel");
@@ -1464,6 +1498,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDashboard");
@@ -1497,9 +1533,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
     /**
      * <p>
      * Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your
-     * gateway's file system. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-retention.html">Data retention</a> in the
-     * <i>AWS IoT SiteWise User Guide</i>.
+     * gateway's file system.
      * </p>
      * 
      * @param deleteGatewayRequest
@@ -1543,6 +1577,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGateway");
@@ -1622,6 +1658,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeletePortalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePortal");
@@ -1698,6 +1736,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DeleteProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
@@ -1730,8 +1770,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Describes an access policy, which specifies an AWS SSO user or group's access to an AWS IoT SiteWise Monitor
-     * portal or project.
+     * Describes an access policy, which specifies an identity's access to an AWS IoT SiteWise Monitor portal or
+     * project.
      * </p>
      * 
      * @param describeAccessPolicyRequest
@@ -1775,6 +1815,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccessPolicy");
@@ -1851,6 +1893,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAsset");
@@ -1927,6 +1971,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeAssetModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssetModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAssetModel");
@@ -1959,7 +2005,19 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Retrieves information about an asset's property.
+     * Retrieves information about an asset property.
+     * </p>
+     * <note>
+     * <p>
+     * When you call this operation for an attribute property, this response includes the default attribute value that
+     * you define in the asset model. If you update the default value in the model, this operation's response includes
+     * the new default value.
+     * </p>
+     * </note>
+     * <p>
+     * This operation doesn't return the value of the asset property. To get the value of an asset property, use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">
+     * GetAssetPropertyValue</a>.
      * </p>
      * 
      * @param describeAssetPropertyRequest
@@ -2003,6 +2061,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeAssetPropertyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssetPropertyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAssetProperty");
@@ -2080,6 +2140,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDashboard");
@@ -2101,6 +2163,80 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDashboardResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDashboardResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about the default encryption configuration for the AWS account in the default or specified
+     * region. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
+     * <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param describeDefaultEncryptionConfigurationRequest
+     * @return Result of the DescribeDefaultEncryptionConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.DescribeDefaultEncryptionConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDefaultEncryptionConfigurationResult describeDefaultEncryptionConfiguration(DescribeDefaultEncryptionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDefaultEncryptionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDefaultEncryptionConfigurationResult executeDescribeDefaultEncryptionConfiguration(
+            DescribeDefaultEncryptionConfigurationRequest describeDefaultEncryptionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDefaultEncryptionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDefaultEncryptionConfigurationRequest> request = null;
+        Response<DescribeDefaultEncryptionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDefaultEncryptionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDefaultEncryptionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDefaultEncryptionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDefaultEncryptionConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeDefaultEncryptionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -2156,6 +2292,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGateway");
@@ -2239,6 +2377,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(describeGatewayCapabilityConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGatewayCapabilityConfiguration");
@@ -2316,6 +2456,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeLoggingOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLoggingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLoggingOptions");
@@ -2393,6 +2535,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribePortalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePortalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePortal");
@@ -2469,6 +2613,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DescribeProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProject");
@@ -2548,6 +2694,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new DisassociateAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateAssets");
@@ -2582,7 +2730,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Gets aggregated values for an asset property. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-     * Aggregated Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -2647,6 +2795,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(getAssetPropertyAggregatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssetPropertyAggregates");
@@ -2682,7 +2832,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Gets an asset property's current value. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values"
-     * >Querying Current Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying current values</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -2746,6 +2896,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new GetAssetPropertyValueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAssetPropertyValueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssetPropertyValue");
@@ -2781,7 +2933,7 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Gets the history of an asset property's values. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values"
-     * >Querying Historical Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -2846,6 +2998,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(getAssetPropertyValueHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssetPropertyValueHistory");
@@ -2879,8 +3033,116 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an AWS SSO identity (a user or group) or an AWS IoT SiteWise
-     * Monitor resource (a portal or project).
+     * Get interpolated values for an asset property for a specified time interval, during a period of time. For
+     * example, you can use the this operation to return the interpolated temperature values for a wind turbine every 24
+     * hours over a duration of 7 days.
+     * </p>
+     * <note>
+     * <p>
+     * This API isn't available in China (Beijing).
+     * </p>
+     * </note>
+     * <p>
+     * To identify an asset property, you must specify one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>assetId</code> and <code>propertyId</code> of an asset property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>propertyAlias</code>, which is a data stream alias (for example,
+     * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html"
+     * >UpdateAssetProperty</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getInterpolatedAssetPropertyValuesRequest
+     * @return Result of the GetInterpolatedAssetPropertyValues operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws ServiceUnavailableException
+     *         The requested service is unavailable.
+     * @sample AWSIoTSiteWise.GetInterpolatedAssetPropertyValues
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetInterpolatedAssetPropertyValues"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetInterpolatedAssetPropertyValuesResult getInterpolatedAssetPropertyValues(GetInterpolatedAssetPropertyValuesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInterpolatedAssetPropertyValues(request);
+    }
+
+    @SdkInternalApi
+    final GetInterpolatedAssetPropertyValuesResult executeGetInterpolatedAssetPropertyValues(
+            GetInterpolatedAssetPropertyValuesRequest getInterpolatedAssetPropertyValuesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getInterpolatedAssetPropertyValuesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetInterpolatedAssetPropertyValuesRequest> request = null;
+        Response<GetInterpolatedAssetPropertyValuesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetInterpolatedAssetPropertyValuesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getInterpolatedAssetPropertyValuesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInterpolatedAssetPropertyValues");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "data.";
+                String resolvedHostPrefix = String.format("data.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetInterpolatedAssetPropertyValuesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetInterpolatedAssetPropertyValuesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a paginated list of access policies for an identity (an AWS SSO user, an AWS SSO group, or an IAM user)
+     * or an AWS IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -2922,6 +3184,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListAccessPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccessPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccessPolicies");
@@ -2996,6 +3260,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListAssetModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssetModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssetModels");
@@ -3016,6 +3282,86 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAssetModelsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAssetModelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a paginated list of asset relationships for an asset. You can use this operation to identify an asset's
+     * root asset and all associated assets between that asset and its root.
+     * </p>
+     * 
+     * @param listAssetRelationshipsRequest
+     * @return Result of the ListAssetRelationships operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListAssetRelationships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAssetRelationshipsResult listAssetRelationships(ListAssetRelationshipsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssetRelationships(request);
+    }
+
+    @SdkInternalApi
+    final ListAssetRelationshipsResult executeListAssetRelationships(ListAssetRelationshipsRequest listAssetRelationshipsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAssetRelationshipsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAssetRelationshipsRequest> request = null;
+        Response<ListAssetRelationshipsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAssetRelationshipsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssetRelationshipsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssetRelationships");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "model.";
+                String resolvedHostPrefix = String.format("model.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssetRelationshipsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAssetRelationshipsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -3092,6 +3438,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssets");
@@ -3124,9 +3472,23 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Retrieves a paginated list of the assets associated to a parent asset (<code>assetId</code>) by a given hierarchy
-     * (<code>hierarchyId</code>).
+     * Retrieves a paginated list of associated assets.
      * </p>
+     * <p>
+     * You can use this operation to do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * List child assets associated to a parent asset by a hierarchy that you specify.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * List an asset's parent asset.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listAssociatedAssetsRequest
      * @return Result of the ListAssociatedAssets operation returned by the service.
@@ -3169,6 +3531,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListAssociatedAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssociatedAssets");
@@ -3243,6 +3607,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListDashboardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDashboardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDashboards");
@@ -3317,6 +3683,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListGatewaysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGateways");
@@ -3391,6 +3759,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListPortalsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortalsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPortals");
@@ -3465,6 +3835,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListProjectAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjectAssets");
@@ -3539,6 +3911,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
@@ -3590,6 +3964,20 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws UnauthorizedException
+     *         You are not authorized.
      * @sample AWSIoTSiteWise.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
@@ -3615,6 +4003,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -3626,6 +4016,90 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets the default encryption configuration for the AWS account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
+     * <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param putDefaultEncryptionConfigurationRequest
+     * @return Result of the PutDefaultEncryptionConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @sample AWSIoTSiteWise.PutDefaultEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutDefaultEncryptionConfigurationResult putDefaultEncryptionConfiguration(PutDefaultEncryptionConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutDefaultEncryptionConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutDefaultEncryptionConfigurationResult executePutDefaultEncryptionConfiguration(
+            PutDefaultEncryptionConfigurationRequest putDefaultEncryptionConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putDefaultEncryptionConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutDefaultEncryptionConfigurationRequest> request = null;
+        Response<PutDefaultEncryptionConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutDefaultEncryptionConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putDefaultEncryptionConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDefaultEncryptionConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutDefaultEncryptionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutDefaultEncryptionConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3685,6 +4159,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new PutLoggingOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLoggingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLoggingOptions");
@@ -3737,6 +4213,20 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws UnauthorizedException
+     *         You are not authorized.
      * @throws TooManyTagsException
      *         You've reached the limit for the number of tags allowed for a resource. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits
@@ -3766,6 +4256,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3808,6 +4300,20 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      *         SiteWise User Guide</i>.
      * @throws ResourceNotFoundException
      *         The requested resource can't be found.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @throws UnauthorizedException
+     *         You are not authorized.
      * @sample AWSIoTSiteWise.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -3833,6 +4339,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -3856,8 +4364,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Updates an existing access policy that specifies an AWS SSO user or group's access to an AWS IoT SiteWise Monitor
-     * portal or project resource.
+     * Updates an existing access policy that specifies an identity's access to an AWS IoT SiteWise Monitor portal or
+     * project resource.
      * </p>
      * 
      * @param updateAccessPolicyRequest
@@ -3901,6 +4409,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccessPolicy");
@@ -3934,8 +4444,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
     /**
      * <p>
      * Updates an asset's name. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param updateAssetRequest
@@ -3984,6 +4494,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAsset");
@@ -4018,8 +4530,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Updates an asset model and all of the assets that were created from the model. Each asset created from the model
      * inherits the updated asset model's property and hierarchy definitions. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -4030,10 +4542,9 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
      * >DescribeAssetModel</a>.
      * </p>
      * <p>
-     * If you remove a property from an asset model or update a property's formula expression, AWS IoT SiteWise deletes
-     * all previous data for that property. If you remove a hierarchy definition from an asset model, AWS IoT SiteWise
-     * disassociates every asset associated with that hierarchy. You can't change the type or data type of an existing
-     * property.
+     * If you remove a property from an asset model, AWS IoT SiteWise deletes all previous data for that property. If
+     * you remove a hierarchy definition from an asset model, AWS IoT SiteWise disassociates every asset associated with
+     * that hierarchy. You can't change the type or data type of an existing property.
      * </p>
      * </important>
      * 
@@ -4092,6 +4603,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateAssetModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssetModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAssetModel");
@@ -4180,6 +4693,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateAssetPropertyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssetPropertyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAssetProperty");
@@ -4256,6 +4771,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDashboard");
@@ -4335,6 +4852,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGateway");
@@ -4429,6 +4948,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                         .beforeMarshalling(updateGatewayCapabilityConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGatewayCapabilityConfiguration");
@@ -4509,6 +5030,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdatePortalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePortalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePortal");
@@ -4585,6 +5108,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
                 request = new UpdateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");

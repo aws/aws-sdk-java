@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * Whether S3 Object Lock legal hold will be applied to objects in an S3 Batch Operations job.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3ObjectLockLegalHold" target="_top">AWS
  *      API Documentation</a>
@@ -26,18 +28,18 @@ public class S3ObjectLockLegalHold implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The Object Lock legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The Object Lock legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param status
-     *        The Legal Hold status to be applied to all objects in the Batch Operations job.
+     *        The Object Lock legal hold status to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockLegalHoldStatus
      */
 
@@ -47,10 +49,10 @@ public class S3ObjectLockLegalHold implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The Object Lock legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
-     * @return The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * @return The Object Lock legal hold status to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockLegalHoldStatus
      */
 
@@ -60,11 +62,11 @@ public class S3ObjectLockLegalHold implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The Object Lock legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param status
-     *        The Legal Hold status to be applied to all objects in the Batch Operations job.
+     *        The Object Lock legal hold status to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockLegalHoldStatus
      */
@@ -76,11 +78,11 @@ public class S3ObjectLockLegalHold implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The Object Lock legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param status
-     *        The Legal Hold status to be applied to all objects in the Batch Operations job.
+     *        The Object Lock legal hold status to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockLegalHoldStatus
      */

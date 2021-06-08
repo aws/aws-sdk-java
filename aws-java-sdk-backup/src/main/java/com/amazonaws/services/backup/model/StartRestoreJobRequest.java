@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
+     * <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.
      * </p>
      * </li>
@@ -61,7 +61,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     * specify a key from another AWS account provided that key it is properly shared with your account via AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -78,6 +79,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new
      * Amazon EFS file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
+     * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
+     * parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      * </p>
      * </li>
      * </ul>
@@ -103,12 +111,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
      * <li>
@@ -118,12 +136,12 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DDB</code> for Amazon DynamoDB
+     * <code>Aurora</code> for Amazon Aurora
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EFS</code> for Amazon Elastic File System
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * </ul>
@@ -193,7 +211,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
+     * <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.
      * </p>
      * </li>
@@ -205,7 +223,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     * specify a key from another AWS account provided that key it is properly shared with your account via AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -224,6 +243,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * Amazon EFS file system.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
+     * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
+     * parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a
@@ -240,8 +266,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned
-     *         in <code>GetRecoveryPointRestoreMetadata</code>.
+     *         <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup.
+     *         Returned in <code>GetRecoveryPointRestoreMetadata</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -252,7 +278,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     *         <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You
+     *         can specify a key from another AWS account provided that key it is properly shared with your account via
+     *         AWS KMS.
      *         </p>
      *         </li>
      *         <li>
@@ -270,6 +298,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored
      *         to a new Amazon EFS file system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
+     *         <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system.
+     *         This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      *         </p>
      *         </li>
      */
@@ -295,7 +330,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
+     * <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.
      * </p>
      * </li>
@@ -307,7 +342,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     * specify a key from another AWS account provided that key it is properly shared with your account via AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -324,6 +360,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new
      * Amazon EFS file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
+     * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
+     * parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      * </p>
      * </li>
      * </ul>
@@ -343,8 +386,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
-     *        <code>GetRecoveryPointRestoreMetadata</code>.
+     *        <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup.
+     *        Returned in <code>GetRecoveryPointRestoreMetadata</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -355,7 +398,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     *        <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     *        specify a key from another AWS account provided that key it is properly shared with your account via AWS
+     *        KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -373,6 +418,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored
      *        to a new Amazon EFS file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
+     *        <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system.
+     *        This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      *        </p>
      *        </li>
      */
@@ -398,7 +450,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
+     * <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.
      * </p>
      * </li>
@@ -410,7 +462,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     * <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     * specify a key from another AWS account provided that key it is properly shared with your account via AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -427,6 +480,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new
      * Amazon EFS file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
+     * <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This
+     * parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      * </p>
      * </li>
      * </ul>
@@ -446,8 +506,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
-     *        <code>GetRecoveryPointRestoreMetadata</code>.
+     *        <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup.
+     *        Returned in <code>GetRecoveryPointRestoreMetadata</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -458,7 +518,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.
+     *        <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system. You can
+     *        specify a key from another AWS account provided that key it is properly shared with your account via AWS
+     *        KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -476,6 +538,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored
      *        to a new Amazon EFS file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ItemsToRestore </code>: An array of one to five strings where each string is a file path. Use
+     *        <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system.
+     *        This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -607,12 +676,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
      * <li>
@@ -622,12 +701,12 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DDB</code> for Amazon DynamoDB
+     * <code>Aurora</code> for Amazon Aurora
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EFS</code> for Amazon Elastic File System
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * </ul>
@@ -637,12 +716,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>DynamoDB</code> for Amazon DynamoDB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>EBS</code> for Amazon Elastic Block Store
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Storage Gateway</code> for AWS Storage Gateway
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EFS</code> for Amazon Elastic File System
      *        </p>
      *        </li>
      *        <li>
@@ -652,12 +741,12 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DDB</code> for Amazon DynamoDB
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EFS</code> for Amazon Elastic File System
+     *        <code>Storage Gateway</code> for AWS Storage Gateway
      *        </p>
      *        </li>
      */
@@ -673,12 +762,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
      * <li>
@@ -688,12 +787,12 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DDB</code> for Amazon DynamoDB
+     * <code>Aurora</code> for Amazon Aurora
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EFS</code> for Amazon Elastic File System
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * </ul>
@@ -702,12 +801,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>DynamoDB</code> for Amazon DynamoDB
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>EBS</code> for Amazon Elastic Block Store
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Storage Gateway</code> for AWS Storage Gateway
+     *         <code>EC2</code> for Amazon Elastic Compute Cloud
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EFS</code> for Amazon Elastic File System
      *         </p>
      *         </li>
      *         <li>
@@ -717,12 +826,12 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DDB</code> for Amazon DynamoDB
+     *         <code>Aurora</code> for Amazon Aurora
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EFS</code> for Amazon Elastic File System
+     *         <code>Storage Gateway</code> for AWS Storage Gateway
      *         </p>
      *         </li>
      */
@@ -738,12 +847,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EBS</code> for Amazon Elastic Block Store
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Storage Gateway</code> for AWS Storage Gateway
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
      * <li>
@@ -753,12 +872,12 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * <code>DDB</code> for Amazon DynamoDB
+     * <code>Aurora</code> for Amazon Aurora
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>EFS</code> for Amazon Elastic File System
+     * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * </ul>
@@ -768,12 +887,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>DynamoDB</code> for Amazon DynamoDB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>EBS</code> for Amazon Elastic Block Store
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Storage Gateway</code> for AWS Storage Gateway
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EFS</code> for Amazon Elastic File System
      *        </p>
      *        </li>
      *        <li>
@@ -783,12 +912,12 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DDB</code> for Amazon DynamoDB
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EFS</code> for Amazon Elastic File System
+     *        <code>Storage Gateway</code> for AWS Storage Gateway
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

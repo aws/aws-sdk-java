@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -177,6 +177,14 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
 
         if (restoreFromClusterSnapshotRequest.getNumberOfNodes() != null) {
             request.addParameter("NumberOfNodes", StringUtils.fromInteger(restoreFromClusterSnapshotRequest.getNumberOfNodes()));
+        }
+
+        if (restoreFromClusterSnapshotRequest.getAvailabilityZoneRelocation() != null) {
+            request.addParameter("AvailabilityZoneRelocation", StringUtils.fromBoolean(restoreFromClusterSnapshotRequest.getAvailabilityZoneRelocation()));
+        }
+
+        if (restoreFromClusterSnapshotRequest.getAquaConfigurationStatus() != null) {
+            request.addParameter("AquaConfigurationStatus", StringUtils.fromString(restoreFromClusterSnapshotRequest.getAquaConfigurationStatus()));
         }
 
         return request;

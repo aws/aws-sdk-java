@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,9 @@ public class ListAttachedPoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The group or principal for which the policies will be listed.
+     * The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      */
     private String target;
@@ -47,11 +49,16 @@ public class ListAttachedPoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The group or principal for which the policies will be listed.
+     * The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
      * @param target
-     *        The group or principal for which the policies will be listed.
+     *        The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *        (<i>region</i>:<i>id</i>).
      */
 
     public void setTarget(String target) {
@@ -60,10 +67,15 @@ public class ListAttachedPoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The group or principal for which the policies will be listed.
+     * The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
-     * @return The group or principal for which the policies will be listed.
+     * @return The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     *         (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *         (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *         (<i>region</i>:<i>id</i>).
      */
 
     public String getTarget() {
@@ -72,11 +84,16 @@ public class ListAttachedPoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The group or principal for which the policies will be listed.
+     * The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
      * @param target
-     *        The group or principal for which the policies will be listed.
+     *        The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *        (<i>region</i>:<i>id</i>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

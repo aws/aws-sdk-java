@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an exported environment variable.
+ * Contains information about an exported environment variable.
  * </p>
+ * <p>
+ * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from the
+ * current build stage to subsequent stages in the pipeline. For more information, see <a
+ * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with variables</a> in
+ * the <i>AWS CodePipeline User Guide</i>.
+ * </p>
+ * <note>
+ * <p>
+ * During a build, the value of a variable is available starting with the <code>install</code> phase. It can be updated
+ * between the start of the <code>install</code> phase and the end of the <code>post_build</code> phase. After the
+ * <code>post_build</code> phase ends, the value of exported variables cannot change.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ExportedEnvironmentVariable"
  *      target="_top">AWS API Documentation</a>
@@ -30,31 +43,24 @@ public class ExportedEnvironmentVariable implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of this exported environment variable.
+     * The name of the exported environment variable.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The value assigned to this exported environment variable.
+     * The value assigned to the exported environment variable.
      * </p>
-     * <note>
-     * <p>
-     * During a build, the value of a variable is available starting with the <code>install</code> phase. It can be
-     * updated between the start of the <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables cannot change.
-     * </p>
-     * </note>
      */
     private String value;
 
     /**
      * <p>
-     * The name of this exported environment variable.
+     * The name of the exported environment variable.
      * </p>
      * 
      * @param name
-     *        The name of this exported environment variable.
+     *        The name of the exported environment variable.
      */
 
     public void setName(String name) {
@@ -63,10 +69,10 @@ public class ExportedEnvironmentVariable implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of this exported environment variable.
+     * The name of the exported environment variable.
      * </p>
      * 
-     * @return The name of this exported environment variable.
+     * @return The name of the exported environment variable.
      */
 
     public String getName() {
@@ -75,11 +81,11 @@ public class ExportedEnvironmentVariable implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of this exported environment variable.
+     * The name of the exported environment variable.
      * </p>
      * 
      * @param name
-     *        The name of this exported environment variable.
+     *        The name of the exported environment variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,23 +96,11 @@ public class ExportedEnvironmentVariable implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The value assigned to this exported environment variable.
+     * The value assigned to the exported environment variable.
      * </p>
-     * <note>
-     * <p>
-     * During a build, the value of a variable is available starting with the <code>install</code> phase. It can be
-     * updated between the start of the <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables cannot change.
-     * </p>
-     * </note>
      * 
      * @param value
-     *        The value assigned to this exported environment variable. </p> <note>
-     *        <p>
-     *        During a build, the value of a variable is available starting with the <code>install</code> phase. It can
-     *        be updated between the start of the <code>install</code> phase and the end of the <code>post_build</code>
-     *        phase. After the <code>post_build</code> phase ends, the value of exported variables cannot change.
-     *        </p>
+     *        The value assigned to the exported environment variable.
      */
 
     public void setValue(String value) {
@@ -115,22 +109,10 @@ public class ExportedEnvironmentVariable implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The value assigned to this exported environment variable.
+     * The value assigned to the exported environment variable.
      * </p>
-     * <note>
-     * <p>
-     * During a build, the value of a variable is available starting with the <code>install</code> phase. It can be
-     * updated between the start of the <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables cannot change.
-     * </p>
-     * </note>
      * 
-     * @return The value assigned to this exported environment variable. </p> <note>
-     *         <p>
-     *         During a build, the value of a variable is available starting with the <code>install</code> phase. It can
-     *         be updated between the start of the <code>install</code> phase and the end of the <code>post_build</code>
-     *         phase. After the <code>post_build</code> phase ends, the value of exported variables cannot change.
-     *         </p>
+     * @return The value assigned to the exported environment variable.
      */
 
     public String getValue() {
@@ -139,23 +121,11 @@ public class ExportedEnvironmentVariable implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The value assigned to this exported environment variable.
+     * The value assigned to the exported environment variable.
      * </p>
-     * <note>
-     * <p>
-     * During a build, the value of a variable is available starting with the <code>install</code> phase. It can be
-     * updated between the start of the <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables cannot change.
-     * </p>
-     * </note>
      * 
      * @param value
-     *        The value assigned to this exported environment variable. </p> <note>
-     *        <p>
-     *        During a build, the value of a variable is available starting with the <code>install</code> phase. It can
-     *        be updated between the start of the <code>install</code> phase and the end of the <code>post_build</code>
-     *        phase. After the <code>post_build</code> phase ends, the value of exported variables cannot change.
-     *        </p>
+     *        The value assigned to the exported environment variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

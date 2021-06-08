@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amazon Resource Name (ARN) for the data source.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      */
     private String dataSourceArn;
@@ -49,11 +49,11 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amazon Resource Name (ARN) for the data source.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        The amazon Resource Name (ARN) for the data source.
+     *        The Amazon Resource Name (ARN) for the data source.
      */
 
     public void setDataSourceArn(String dataSourceArn) {
@@ -62,10 +62,10 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amazon Resource Name (ARN) for the data source.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      * 
-     * @return The amazon Resource Name (ARN) for the data source.
+     * @return The Amazon Resource Name (ARN) for the data source.
      */
 
     public String getDataSourceArn() {
@@ -74,11 +74,11 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amazon Resource Name (ARN) for the data source.
+     * The Amazon Resource Name (ARN) for the data source.
      * </p>
      * 
      * @param dataSourceArn
-     *        The amazon Resource Name (ARN) for the data source.
+     *        The Amazon Resource Name (ARN) for the data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

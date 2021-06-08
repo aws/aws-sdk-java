@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class CreateLagRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("childConnectionTags").build();
     private static final MarshallingInfo<String> PROVIDERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("providerName").build();
+    private static final MarshallingInfo<Boolean> REQUESTMACSEC_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestMACSec").build();
 
     private static final CreateLagRequestMarshaller instance = new CreateLagRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class CreateLagRequestMarshaller {
             protocolMarshaller.marshall(createLagRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createLagRequest.getChildConnectionTags(), CHILDCONNECTIONTAGS_BINDING);
             protocolMarshaller.marshall(createLagRequest.getProviderName(), PROVIDERNAME_BINDING);
+            protocolMarshaller.marshall(createLagRequest.getRequestMACSec(), REQUESTMACSEC_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

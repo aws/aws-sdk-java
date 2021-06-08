@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,10 @@ public enum ElastiCacheActions implements Action {
     CreateReplicationGroup("elasticache:CreateReplicationGroup"),
     /** Action for the CreateSnapshot operation. */
     CreateSnapshot("elasticache:CreateSnapshot"),
+    /** Action for the CreateUser operation. */
+    CreateUser("elasticache:CreateUser"),
+    /** Action for the CreateUserGroup operation. */
+    CreateUserGroup("elasticache:CreateUserGroup"),
     /** Action for the DecreaseNodeGroupsInGlobalReplicationGroup operation. */
     DecreaseNodeGroupsInGlobalReplicationGroup("elasticache:DecreaseNodeGroupsInGlobalReplicationGroup"),
     /** Action for the DecreaseReplicaCount operation. */
@@ -69,6 +73,10 @@ public enum ElastiCacheActions implements Action {
     DeleteReplicationGroup("elasticache:DeleteReplicationGroup"),
     /** Action for the DeleteSnapshot operation. */
     DeleteSnapshot("elasticache:DeleteSnapshot"),
+    /** Action for the DeleteUser operation. */
+    DeleteUser("elasticache:DeleteUser"),
+    /** Action for the DeleteUserGroup operation. */
+    DeleteUserGroup("elasticache:DeleteUserGroup"),
     /** Action for the DescribeCacheClusters operation. */
     DescribeCacheClusters("elasticache:DescribeCacheClusters"),
     /** Action for the DescribeCacheEngineVersions operation. */
@@ -99,6 +107,10 @@ public enum ElastiCacheActions implements Action {
     DescribeSnapshots("elasticache:DescribeSnapshots"),
     /** Action for the DescribeUpdateActions operation. */
     DescribeUpdateActions("elasticache:DescribeUpdateActions"),
+    /** Action for the DescribeUserGroups operation. */
+    DescribeUserGroups("elasticache:DescribeUserGroups"),
+    /** Action for the DescribeUsers operation. */
+    DescribeUsers("elasticache:DescribeUsers"),
     /** Action for the DisassociateGlobalReplicationGroup operation. */
     DisassociateGlobalReplicationGroup("elasticache:DisassociateGlobalReplicationGroup"),
     /** Action for the FailoverGlobalReplicationGroup operation. */
@@ -123,6 +135,10 @@ public enum ElastiCacheActions implements Action {
     ModifyReplicationGroup("elasticache:ModifyReplicationGroup"),
     /** Action for the ModifyReplicationGroupShardConfiguration operation. */
     ModifyReplicationGroupShardConfiguration("elasticache:ModifyReplicationGroupShardConfiguration"),
+    /** Action for the ModifyUser operation. */
+    ModifyUser("elasticache:ModifyUser"),
+    /** Action for the ModifyUserGroup operation. */
+    ModifyUserGroup("elasticache:ModifyUserGroup"),
     /** Action for the PurchaseReservedCacheNodesOffering operation. */
     PurchaseReservedCacheNodesOffering("elasticache:PurchaseReservedCacheNodesOffering"),
     /** Action for the RebalanceSlotsInGlobalReplicationGroup operation. */
@@ -150,5 +166,9 @@ public enum ElastiCacheActions implements Action {
 
     public String getActionName() {
         return this.action;
+    }
+
+    public boolean isNotType() {
+        return false;
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
     private Long longValue;
     /**
      * <p>
-     * A date value expressed as seconds from the Unix epoch.
+     * A date expressed as an ISO 8601 string.
      * </p>
      */
     private java.util.Date dateValue;
@@ -205,11 +205,11 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A date value expressed as seconds from the Unix epoch.
+     * A date expressed as an ISO 8601 string.
      * </p>
      * 
      * @param dateValue
-     *        A date value expressed as seconds from the Unix epoch.
+     *        A date expressed as an ISO 8601 string.
      */
 
     public void setDateValue(java.util.Date dateValue) {
@@ -218,10 +218,10 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A date value expressed as seconds from the Unix epoch.
+     * A date expressed as an ISO 8601 string.
      * </p>
      * 
-     * @return A date value expressed as seconds from the Unix epoch.
+     * @return A date expressed as an ISO 8601 string.
      */
 
     public java.util.Date getDateValue() {
@@ -230,11 +230,11 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A date value expressed as seconds from the Unix epoch.
+     * A date expressed as an ISO 8601 string.
      * </p>
      * 
      * @param dateValue
-     *        A date value expressed as seconds from the Unix epoch.
+     *        A date expressed as an ISO 8601 string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

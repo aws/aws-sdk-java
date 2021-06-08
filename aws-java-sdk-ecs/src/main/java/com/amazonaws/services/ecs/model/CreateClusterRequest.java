@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      */
     private String clusterName;
@@ -93,12 +93,20 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<ClusterSetting> settings;
     /**
      * <p>
-     * The short name of one or more capacity providers to associate with the cluster.
+     * The execute command configuration for the cluster.
+     * </p>
+     */
+    private ClusterConfiguration configuration;
+    /**
+     * <p>
+     * The short name of one or more capacity providers to associate with the cluster. A capacity provider must be
+     * associated with a cluster before it can be included as part of the default capacity provider strategy of the
+     * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created
-     * and not already associated with another cluster. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.
+     * and not already associated with another cluster. New Auto Scaling group capacity providers can be created with
+     * the <a>CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -113,26 +121,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<String> capacityProviders;
     /**
      * <p>
-     * The capacity provider strategy to use by default for the cluster.
-     * </p>
-     * <p>
-     * When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then
-     * the default capacity provider strategy for the cluster is used.
-     * </p>
-     * <p>
-     * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
-     * <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a
-     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider
-     * with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.
-     * </p>
-     * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
-     * New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     * </p>
-     * <p>
-     * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
-     * capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be
-     * associated with a cluster to be used.
+     * The capacity provider strategy to set as the default for the cluster. When a default capacity provider strategy
+     * is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs wtih no capacity provider
+     * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
      * </p>
      * <p>
      * If a default capacity provider strategy is not defined for a cluster during creation, it can be defined later
@@ -144,12 +135,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
      * @param clusterName
      *        The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     *        <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *        <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     *        allowed.
      */
 
     public void setClusterName(String clusterName) {
@@ -159,11 +151,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
      * @return The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     *         <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *         <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     *         allowed.
      */
 
     public String getClusterName() {
@@ -173,12 +166,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     * <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed.
      * </p>
      * 
      * @param clusterName
      *        The name of your cluster. If you do not specify a name for your cluster, you create a cluster named
-     *        <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
+     *        <code>default</code>. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     *        allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -707,12 +701,54 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name of one or more capacity providers to associate with the cluster.
+     * The execute command configuration for the cluster.
+     * </p>
+     * 
+     * @param configuration
+     *        The execute command configuration for the cluster.
+     */
+
+    public void setConfiguration(ClusterConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * The execute command configuration for the cluster.
+     * </p>
+     * 
+     * @return The execute command configuration for the cluster.
+     */
+
+    public ClusterConfiguration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * The execute command configuration for the cluster.
+     * </p>
+     * 
+     * @param configuration
+     *        The execute command configuration for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withConfiguration(ClusterConfiguration configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The short name of one or more capacity providers to associate with the cluster. A capacity provider must be
+     * associated with a cluster before it can be included as part of the default capacity provider strategy of the
+     * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created
-     * and not already associated with another cluster. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.
+     * and not already associated with another cluster. New Auto Scaling group capacity providers can be created with
+     * the <a>CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -724,11 +760,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * for a cluster after the cluster is created.
      * </p>
      * 
-     * @return The short name of one or more capacity providers to associate with the cluster.</p>
+     * @return The short name of one or more capacity providers to associate with the cluster. A capacity provider must
+     *         be associated with a cluster before it can be included as part of the default capacity provider strategy
+     *         of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
+     *         <a>RunTask</a> actions.</p>
      *         <p>
      *         If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *         created and not already associated with another cluster. New capacity providers can be created with the
-     *         <a>CreateCapacityProvider</a> API operation.
+     *         created and not already associated with another cluster. New Auto Scaling group capacity providers can be
+     *         created with the <a>CreateCapacityProvider</a> API operation.
      *         </p>
      *         <p>
      *         To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
@@ -749,12 +788,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name of one or more capacity providers to associate with the cluster.
+     * The short name of one or more capacity providers to associate with the cluster. A capacity provider must be
+     * associated with a cluster before it can be included as part of the default capacity provider strategy of the
+     * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created
-     * and not already associated with another cluster. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.
+     * and not already associated with another cluster. New Auto Scaling group capacity providers can be created with
+     * the <a>CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -767,11 +808,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param capacityProviders
-     *        The short name of one or more capacity providers to associate with the cluster.</p>
+     *        The short name of one or more capacity providers to associate with the cluster. A capacity provider must
+     *        be associated with a cluster before it can be included as part of the default capacity provider strategy
+     *        of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
+     *        <a>RunTask</a> actions.</p>
      *        <p>
      *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created and not already associated with another cluster. New capacity providers can be created with the
-     *        <a>CreateCapacityProvider</a> API operation.
+     *        created and not already associated with another cluster. New Auto Scaling group capacity providers can be
+     *        created with the <a>CreateCapacityProvider</a> API operation.
      *        </p>
      *        <p>
      *        To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
@@ -794,12 +838,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name of one or more capacity providers to associate with the cluster.
+     * The short name of one or more capacity providers to associate with the cluster. A capacity provider must be
+     * associated with a cluster before it can be included as part of the default capacity provider strategy of the
+     * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created
-     * and not already associated with another cluster. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.
+     * and not already associated with another cluster. New Auto Scaling group capacity providers can be created with
+     * the <a>CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -817,11 +863,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param capacityProviders
-     *        The short name of one or more capacity providers to associate with the cluster.</p>
+     *        The short name of one or more capacity providers to associate with the cluster. A capacity provider must
+     *        be associated with a cluster before it can be included as part of the default capacity provider strategy
+     *        of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
+     *        <a>RunTask</a> actions.</p>
      *        <p>
      *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created and not already associated with another cluster. New capacity providers can be created with the
-     *        <a>CreateCapacityProvider</a> API operation.
+     *        created and not already associated with another cluster. New Auto Scaling group capacity providers can be
+     *        created with the <a>CreateCapacityProvider</a> API operation.
      *        </p>
      *        <p>
      *        To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
@@ -846,12 +895,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The short name of one or more capacity providers to associate with the cluster.
+     * The short name of one or more capacity providers to associate with the cluster. A capacity provider must be
+     * associated with a cluster before it can be included as part of the default capacity provider strategy of the
+     * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created
-     * and not already associated with another cluster. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.
+     * and not already associated with another cluster. New Auto Scaling group capacity providers can be created with
+     * the <a>CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -864,11 +915,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param capacityProviders
-     *        The short name of one or more capacity providers to associate with the cluster.</p>
+     *        The short name of one or more capacity providers to associate with the cluster. A capacity provider must
+     *        be associated with a cluster before it can be included as part of the default capacity provider strategy
+     *        of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
+     *        <a>RunTask</a> actions.</p>
      *        <p>
      *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created and not already associated with another cluster. New capacity providers can be created with the
-     *        <a>CreateCapacityProvider</a> API operation.
+     *        created and not already associated with another cluster. New Auto Scaling group capacity providers can be
+     *        created with the <a>CreateCapacityProvider</a> API operation.
      *        </p>
      *        <p>
      *        To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
@@ -888,53 +942,19 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The capacity provider strategy to use by default for the cluster.
-     * </p>
-     * <p>
-     * When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then
-     * the default capacity provider strategy for the cluster is used.
-     * </p>
-     * <p>
-     * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
-     * <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a
-     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider
-     * with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.
-     * </p>
-     * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
-     * New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     * </p>
-     * <p>
-     * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
-     * capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be
-     * associated with a cluster to be used.
+     * The capacity provider strategy to set as the default for the cluster. When a default capacity provider strategy
+     * is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs wtih no capacity provider
+     * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
      * </p>
      * <p>
      * If a default capacity provider strategy is not defined for a cluster during creation, it can be defined later
      * with the <a>PutClusterCapacityProviders</a> API operation.
      * </p>
      * 
-     * @return The capacity provider strategy to use by default for the cluster.</p>
-     *         <p>
-     *         When creating a service or running a task on a cluster, if no capacity provider or launch type is
-     *         specified then the default capacity provider strategy for the cluster is used.
-     *         </p>
-     *         <p>
-     *         A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
-     *         and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be
-     *         used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a
-     *         capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     *         <code>UPDATING</code> status can be used.
-     *         </p>
-     *         <p>
-     *         If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *         created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     *         </p>
-     *         <p>
-     *         To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-     *         <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are available to all
-     *         accounts and only need to be associated with a cluster to be used.
-     *         </p>
+     * @return The capacity provider strategy to set as the default for the cluster. When a default capacity provider
+     *         strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs wtih no
+     *         capacity provider strategy or launch type specified, the default capacity provider strategy for the
+     *         cluster is used.</p>
      *         <p>
      *         If a default capacity provider strategy is not defined for a cluster during creation, it can be defined
      *         later with the <a>PutClusterCapacityProviders</a> API operation.
@@ -949,26 +969,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The capacity provider strategy to use by default for the cluster.
-     * </p>
-     * <p>
-     * When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then
-     * the default capacity provider strategy for the cluster is used.
-     * </p>
-     * <p>
-     * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
-     * <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a
-     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider
-     * with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.
-     * </p>
-     * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
-     * New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     * </p>
-     * <p>
-     * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
-     * capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be
-     * associated with a cluster to be used.
+     * The capacity provider strategy to set as the default for the cluster. When a default capacity provider strategy
+     * is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs wtih no capacity provider
+     * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
      * </p>
      * <p>
      * If a default capacity provider strategy is not defined for a cluster during creation, it can be defined later
@@ -976,27 +979,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param defaultCapacityProviderStrategy
-     *        The capacity provider strategy to use by default for the cluster.</p>
-     *        <p>
-     *        When creating a service or running a task on a cluster, if no capacity provider or launch type is
-     *        specified then the default capacity provider strategy for the cluster is used.
-     *        </p>
-     *        <p>
-     *        A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
-     *        and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be
-     *        used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a
-     *        capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     *        <code>UPDATING</code> status can be used.
-     *        </p>
-     *        <p>
-     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     *        </p>
-     *        <p>
-     *        To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-     *        <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are available to all
-     *        accounts and only need to be associated with a cluster to be used.
-     *        </p>
+     *        The capacity provider strategy to set as the default for the cluster. When a default capacity provider
+     *        strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs wtih no
+     *        capacity provider strategy or launch type specified, the default capacity provider strategy for the
+     *        cluster is used.</p>
      *        <p>
      *        If a default capacity provider strategy is not defined for a cluster during creation, it can be defined
      *        later with the <a>PutClusterCapacityProviders</a> API operation.
@@ -1013,26 +999,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The capacity provider strategy to use by default for the cluster.
-     * </p>
-     * <p>
-     * When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then
-     * the default capacity provider strategy for the cluster is used.
-     * </p>
-     * <p>
-     * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
-     * <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a
-     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider
-     * with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.
-     * </p>
-     * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
-     * New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     * </p>
-     * <p>
-     * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
-     * capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be
-     * associated with a cluster to be used.
+     * The capacity provider strategy to set as the default for the cluster. When a default capacity provider strategy
+     * is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs wtih no capacity provider
+     * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
      * </p>
      * <p>
      * If a default capacity provider strategy is not defined for a cluster during creation, it can be defined later
@@ -1045,27 +1014,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param defaultCapacityProviderStrategy
-     *        The capacity provider strategy to use by default for the cluster.</p>
-     *        <p>
-     *        When creating a service or running a task on a cluster, if no capacity provider or launch type is
-     *        specified then the default capacity provider strategy for the cluster is used.
-     *        </p>
-     *        <p>
-     *        A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
-     *        and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be
-     *        used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a
-     *        capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     *        <code>UPDATING</code> status can be used.
-     *        </p>
-     *        <p>
-     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     *        </p>
-     *        <p>
-     *        To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-     *        <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are available to all
-     *        accounts and only need to be associated with a cluster to be used.
-     *        </p>
+     *        The capacity provider strategy to set as the default for the cluster. When a default capacity provider
+     *        strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs wtih no
+     *        capacity provider strategy or launch type specified, the default capacity provider strategy for the
+     *        cluster is used.</p>
      *        <p>
      *        If a default capacity provider strategy is not defined for a cluster during creation, it can be defined
      *        later with the <a>PutClusterCapacityProviders</a> API operation.
@@ -1084,26 +1036,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The capacity provider strategy to use by default for the cluster.
-     * </p>
-     * <p>
-     * When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then
-     * the default capacity provider strategy for the cluster is used.
-     * </p>
-     * <p>
-     * A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and
-     * <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a
-     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider
-     * with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.
-     * </p>
-     * <p>
-     * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created.
-     * New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     * </p>
-     * <p>
-     * To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
-     * capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be
-     * associated with a cluster to be used.
+     * The capacity provider strategy to set as the default for the cluster. When a default capacity provider strategy
+     * is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs wtih no capacity provider
+     * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
      * </p>
      * <p>
      * If a default capacity provider strategy is not defined for a cluster during creation, it can be defined later
@@ -1111,27 +1046,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param defaultCapacityProviderStrategy
-     *        The capacity provider strategy to use by default for the cluster.</p>
-     *        <p>
-     *        When creating a service or running a task on a cluster, if no capacity provider or launch type is
-     *        specified then the default capacity provider strategy for the cluster is used.
-     *        </p>
-     *        <p>
-     *        A capacity provider strategy consists of one or more capacity providers along with the <code>base</code>
-     *        and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be
-     *        used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a
-     *        capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     *        <code>UPDATING</code> status can be used.
-     *        </p>
-     *        <p>
-     *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be
-     *        created. New capacity providers can be created with the <a>CreateCapacityProvider</a> API operation.
-     *        </p>
-     *        <p>
-     *        To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or
-     *        <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are available to all
-     *        accounts and only need to be associated with a cluster to be used.
-     *        </p>
+     *        The capacity provider strategy to set as the default for the cluster. When a default capacity provider
+     *        strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs wtih no
+     *        capacity provider strategy or launch type specified, the default capacity provider strategy for the
+     *        cluster is used.</p>
      *        <p>
      *        If a default capacity provider strategy is not defined for a cluster during creation, it can be defined
      *        later with the <a>PutClusterCapacityProviders</a> API operation.
@@ -1161,6 +1079,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Tags: ").append(getTags()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getCapacityProviders() != null)
             sb.append("CapacityProviders: ").append(getCapacityProviders()).append(",");
         if (getDefaultCapacityProviderStrategy() != null)
@@ -1191,6 +1111,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         if (other.getCapacityProviders() == null ^ this.getCapacityProviders() == null)
             return false;
         if (other.getCapacityProviders() != null && other.getCapacityProviders().equals(this.getCapacityProviders()) == false)
@@ -1211,6 +1135,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getClusterName() == null) ? 0 : getClusterName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCapacityProviders() == null) ? 0 : getCapacityProviders().hashCode());
         hashCode = prime * hashCode + ((getDefaultCapacityProviderStrategy() == null) ? 0 : getDefaultCapacityProviderStrategy().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,19 +72,25 @@ public class BackupPlansListMember implements Serializable, Cloneable, Structure
     private String backupPlanName;
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      */
     private String creatorRequestId;
     /**
      * <p>
-     * The last time a job to back up resources was executed with this rule. A date and time, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For
-     * example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
+     * The last time a job to back up resources was run with this rule. A date and time, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
+     * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      */
     private java.util.Date lastExecutionDate;
+    /**
+     * <p>
+     * Contains a list of <code>BackupOptions</code> for a resource type.
+     * </p>
+     */
+    private java.util.List<AdvancedBackupSetting> advancedBackupSettings;
 
     /**
      * <p>
@@ -364,13 +370,13 @@ public class BackupPlansListMember implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *        executing the operation twice.
+     *        running the operation twice.
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -379,12 +385,12 @@ public class BackupPlansListMember implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      * 
      * @return A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *         executing the operation twice.
+     *         running the operation twice.
      */
 
     public String getCreatorRequestId() {
@@ -393,13 +399,13 @@ public class BackupPlansListMember implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *        executing the operation twice.
+     *        running the operation twice.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,13 +416,13 @@ public class BackupPlansListMember implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The last time a job to back up resources was executed with this rule. A date and time, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For
-     * example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
+     * The last time a job to back up resources was run with this rule. A date and time, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
+     * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param lastExecutionDate
-     *        The last time a job to back up resources was executed with this rule. A date and time, in Unix format and
+     *        The last time a job to back up resources was run with this rule. A date and time, in Unix format and
      *        Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds.
      *        For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      */
@@ -427,12 +433,12 @@ public class BackupPlansListMember implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The last time a job to back up resources was executed with this rule. A date and time, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For
-     * example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
+     * The last time a job to back up resources was run with this rule. A date and time, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
+     * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
-     * @return The last time a job to back up resources was executed with this rule. A date and time, in Unix format and
+     * @return The last time a job to back up resources was run with this rule. A date and time, in Unix format and
      *         Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to
      *         milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      */
@@ -443,13 +449,13 @@ public class BackupPlansListMember implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The last time a job to back up resources was executed with this rule. A date and time, in Unix format and
-     * Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For
-     * example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
+     * The last time a job to back up resources was run with this rule. A date and time, in Unix format and Coordinated
+     * Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds. For example, the
+     * value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param lastExecutionDate
-     *        The last time a job to back up resources was executed with this rule. A date and time, in Unix format and
+     *        The last time a job to back up resources was run with this rule. A date and time, in Unix format and
      *        Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code> is accurate to milliseconds.
      *        For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -457,6 +463,76 @@ public class BackupPlansListMember implements Serializable, Cloneable, Structure
 
     public BackupPlansListMember withLastExecutionDate(java.util.Date lastExecutionDate) {
         setLastExecutionDate(lastExecutionDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains a list of <code>BackupOptions</code> for a resource type.
+     * </p>
+     * 
+     * @return Contains a list of <code>BackupOptions</code> for a resource type.
+     */
+
+    public java.util.List<AdvancedBackupSetting> getAdvancedBackupSettings() {
+        return advancedBackupSettings;
+    }
+
+    /**
+     * <p>
+     * Contains a list of <code>BackupOptions</code> for a resource type.
+     * </p>
+     * 
+     * @param advancedBackupSettings
+     *        Contains a list of <code>BackupOptions</code> for a resource type.
+     */
+
+    public void setAdvancedBackupSettings(java.util.Collection<AdvancedBackupSetting> advancedBackupSettings) {
+        if (advancedBackupSettings == null) {
+            this.advancedBackupSettings = null;
+            return;
+        }
+
+        this.advancedBackupSettings = new java.util.ArrayList<AdvancedBackupSetting>(advancedBackupSettings);
+    }
+
+    /**
+     * <p>
+     * Contains a list of <code>BackupOptions</code> for a resource type.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdvancedBackupSettings(java.util.Collection)} or
+     * {@link #withAdvancedBackupSettings(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param advancedBackupSettings
+     *        Contains a list of <code>BackupOptions</code> for a resource type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupPlansListMember withAdvancedBackupSettings(AdvancedBackupSetting... advancedBackupSettings) {
+        if (this.advancedBackupSettings == null) {
+            setAdvancedBackupSettings(new java.util.ArrayList<AdvancedBackupSetting>(advancedBackupSettings.length));
+        }
+        for (AdvancedBackupSetting ele : advancedBackupSettings) {
+            this.advancedBackupSettings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains a list of <code>BackupOptions</code> for a resource type.
+     * </p>
+     * 
+     * @param advancedBackupSettings
+     *        Contains a list of <code>BackupOptions</code> for a resource type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupPlansListMember withAdvancedBackupSettings(java.util.Collection<AdvancedBackupSetting> advancedBackupSettings) {
+        setAdvancedBackupSettings(advancedBackupSettings);
         return this;
     }
 
@@ -487,7 +563,9 @@ public class BackupPlansListMember implements Serializable, Cloneable, Structure
         if (getCreatorRequestId() != null)
             sb.append("CreatorRequestId: ").append(getCreatorRequestId()).append(",");
         if (getLastExecutionDate() != null)
-            sb.append("LastExecutionDate: ").append(getLastExecutionDate());
+            sb.append("LastExecutionDate: ").append(getLastExecutionDate()).append(",");
+        if (getAdvancedBackupSettings() != null)
+            sb.append("AdvancedBackupSettings: ").append(getAdvancedBackupSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -534,6 +612,10 @@ public class BackupPlansListMember implements Serializable, Cloneable, Structure
             return false;
         if (other.getLastExecutionDate() != null && other.getLastExecutionDate().equals(this.getLastExecutionDate()) == false)
             return false;
+        if (other.getAdvancedBackupSettings() == null ^ this.getAdvancedBackupSettings() == null)
+            return false;
+        if (other.getAdvancedBackupSettings() != null && other.getAdvancedBackupSettings().equals(this.getAdvancedBackupSettings()) == false)
+            return false;
         return true;
     }
 
@@ -550,6 +632,7 @@ public class BackupPlansListMember implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getBackupPlanName() == null) ? 0 : getBackupPlanName().hashCode());
         hashCode = prime * hashCode + ((getCreatorRequestId() == null) ? 0 : getCreatorRequestId().hashCode());
         hashCode = prime * hashCode + ((getLastExecutionDate() == null) ? 0 : getLastExecutionDate().hashCode());
+        hashCode = prime * hashCode + ((getAdvancedBackupSettings() == null) ? 0 : getAdvancedBackupSettings().hashCode());
         return hashCode;
     }
 

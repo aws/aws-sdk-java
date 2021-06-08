@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,19 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The name of the access point whose policy you want to delete.
+     * </p>
+     * <p>
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
+     * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must
+     * be URL encoded.
      * </p>
      */
     private String name;
@@ -82,9 +95,34 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The name of the access point whose policy you want to delete.
      * </p>
+     * <p>
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
+     * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must
+     * be URL encoded.
+     * </p>
      * 
      * @param name
-     *        The name of the access point whose policy you want to delete.
+     *        The name of the access point whose policy you want to delete.</p>
+     *        <p>
+     *        For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     *        x-amz-outpost-id as well.
+     *        </p>
+     *        <p>
+     *        For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
+     *        access point accessed in the format
+     *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     *        . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
+     *        owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *        <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The
+     *        value must be URL encoded.
      */
 
     public void setName(String name) {
@@ -95,8 +133,33 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The name of the access point whose policy you want to delete.
      * </p>
+     * <p>
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
+     * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must
+     * be URL encoded.
+     * </p>
      * 
-     * @return The name of the access point whose policy you want to delete.
+     * @return The name of the access point whose policy you want to delete.</p>
+     *         <p>
+     *         For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     *         x-amz-outpost-id as well.
+     *         </p>
+     *         <p>
+     *         For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
+     *         access point accessed in the format
+     *         <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     *         . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
+     *         owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *         <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The
+     *         value must be URL encoded.
      */
 
     public String getName() {
@@ -107,9 +170,34 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The name of the access point whose policy you want to delete.
      * </p>
+     * <p>
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the access
+     * point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
+     * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must
+     * be URL encoded.
+     * </p>
      * 
      * @param name
-     *        The name of the access point whose policy you want to delete.
+     *        The name of the access point whose policy you want to delete.</p>
+     *        <p>
+     *        For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     *        x-amz-outpost-id as well.
+     *        </p>
+     *        <p>
+     *        For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
+     *        access point accessed in the format
+     *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     *        . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
+     *        owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *        <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The
+     *        value must be URL encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

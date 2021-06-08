@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String applicationDescription;
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      */
     private String runtimeEnvironment;
@@ -71,6 +72,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data
+     * Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * </p>
+     */
+    private String applicationMode;
 
     /**
      * <p>
@@ -154,11 +162,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @see RuntimeEnvironment
      */
 
@@ -168,10 +178,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
-     * @return The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * @return The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *         <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @see RuntimeEnvironment
      */
 
@@ -181,11 +193,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -197,11 +211,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -466,6 +482,73 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data
+     * Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * </p>
+     * 
+     * @param applicationMode
+     *        Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a
+     *        Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * @see ApplicationMode
+     */
+
+    public void setApplicationMode(String applicationMode) {
+        this.applicationMode = applicationMode;
+    }
+
+    /**
+     * <p>
+     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data
+     * Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * </p>
+     * 
+     * @return Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a
+     *         Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * @see ApplicationMode
+     */
+
+    public String getApplicationMode() {
+        return this.applicationMode;
+    }
+
+    /**
+     * <p>
+     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data
+     * Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * </p>
+     * 
+     * @param applicationMode
+     *        Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a
+     *        Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationMode
+     */
+
+    public CreateApplicationRequest withApplicationMode(String applicationMode) {
+        setApplicationMode(applicationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a Kinesis Data
+     * Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * </p>
+     * 
+     * @param applicationMode
+     *        Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio notebook. To create a
+     *        Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code> mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationMode
+     */
+
+    public CreateApplicationRequest withApplicationMode(ApplicationMode applicationMode) {
+        this.applicationMode = applicationMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -490,7 +573,9 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getCloudWatchLoggingOptions() != null)
             sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getApplicationMode() != null)
+            sb.append("ApplicationMode: ").append(getApplicationMode());
         sb.append("}");
         return sb.toString();
     }
@@ -533,6 +618,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getApplicationMode() == null ^ this.getApplicationMode() == null)
+            return false;
+        if (other.getApplicationMode() != null && other.getApplicationMode().equals(this.getApplicationMode()) == false)
+            return false;
         return true;
     }
 
@@ -548,6 +637,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getApplicationConfiguration() == null) ? 0 : getApplicationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getApplicationMode() == null) ? 0 : getApplicationMode().hashCode());
         return hashCode;
     }
 

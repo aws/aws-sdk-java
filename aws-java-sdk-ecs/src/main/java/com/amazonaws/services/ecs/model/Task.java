@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -143,6 +143,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     private String desiredStatus;
     /**
      * <p>
+     * Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables execute
+     * command functionality on all containers in the task.
+     * </p>
+     */
+    private Boolean enableExecuteCommand;
+    /**
+     * <p>
      * The Unix timestamp for when the task execution stopped.
      * </p>
      */
@@ -186,8 +193,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     private String lastStatus;
     /**
      * <p>
-     * The launch type on which your task is running. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which your task is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -379,6 +386,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long version;
+    /**
+     * <p>
+     * The ephemeral storage settings for the task.
+     * </p>
+     */
+    private EphemeralStorage ephemeralStorage;
 
     /**
      * <p>
@@ -1237,6 +1250,66 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables execute
+     * command functionality on all containers in the task.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables
+     *        execute command functionality on all containers in the task.
+     */
+
+    public void setEnableExecuteCommand(Boolean enableExecuteCommand) {
+        this.enableExecuteCommand = enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables execute
+     * command functionality on all containers in the task.
+     * </p>
+     * 
+     * @return Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables
+     *         execute command functionality on all containers in the task.
+     */
+
+    public Boolean getEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables execute
+     * command functionality on all containers in the task.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables
+     *        execute command functionality on all containers in the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Task withEnableExecuteCommand(Boolean enableExecuteCommand) {
+        setEnableExecuteCommand(enableExecuteCommand);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables execute
+     * command functionality on all containers in the task.
+     * </p>
+     * 
+     * @return Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables
+     *         execute command functionality on all containers in the task.
+     */
+
+    public Boolean isEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
+     * <p>
      * The Unix timestamp for when the task execution stopped.
      * </p>
      * 
@@ -1584,15 +1657,15 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which your task is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your task is running. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The infrastructure on which your task is running. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -1602,14 +1675,14 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which your task is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The launch type on which your task is running. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return The infrastructure on which your task is running. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *         types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -1619,15 +1692,15 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which your task is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your task is running. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The infrastructure on which your task is running. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -1639,15 +1712,15 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which your task is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your task is running. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The infrastructure on which your task is running. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -2979,6 +3052,46 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ephemeral storage settings for the task.
+     * </p>
+     * 
+     * @param ephemeralStorage
+     *        The ephemeral storage settings for the task.
+     */
+
+    public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The ephemeral storage settings for the task.
+     * </p>
+     * 
+     * @return The ephemeral storage settings for the task.
+     */
+
+    public EphemeralStorage getEphemeralStorage() {
+        return this.ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The ephemeral storage settings for the task.
+     * </p>
+     * 
+     * @param ephemeralStorage
+     *        The ephemeral storage settings for the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Task withEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        setEphemeralStorage(ephemeralStorage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3014,6 +3127,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDesiredStatus() != null)
             sb.append("DesiredStatus: ").append(getDesiredStatus()).append(",");
+        if (getEnableExecuteCommand() != null)
+            sb.append("EnableExecuteCommand: ").append(getEnableExecuteCommand()).append(",");
         if (getExecutionStoppedAt() != null)
             sb.append("ExecutionStoppedAt: ").append(getExecutionStoppedAt()).append(",");
         if (getGroup() != null)
@@ -3055,7 +3170,9 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         if (getTaskDefinitionArn() != null)
             sb.append("TaskDefinitionArn: ").append(getTaskDefinitionArn()).append(",");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getEphemeralStorage() != null)
+            sb.append("EphemeralStorage: ").append(getEphemeralStorage());
         sb.append("}");
         return sb.toString();
     }
@@ -3117,6 +3234,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         if (other.getDesiredStatus() == null ^ this.getDesiredStatus() == null)
             return false;
         if (other.getDesiredStatus() != null && other.getDesiredStatus().equals(this.getDesiredStatus()) == false)
+            return false;
+        if (other.getEnableExecuteCommand() == null ^ this.getEnableExecuteCommand() == null)
+            return false;
+        if (other.getEnableExecuteCommand() != null && other.getEnableExecuteCommand().equals(this.getEnableExecuteCommand()) == false)
             return false;
         if (other.getExecutionStoppedAt() == null ^ this.getExecutionStoppedAt() == null)
             return false;
@@ -3202,6 +3323,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getEphemeralStorage() == null ^ this.getEphemeralStorage() == null)
+            return false;
+        if (other.getEphemeralStorage() != null && other.getEphemeralStorage().equals(this.getEphemeralStorage()) == false)
+            return false;
         return true;
     }
 
@@ -3222,6 +3347,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDesiredStatus() == null) ? 0 : getDesiredStatus().hashCode());
+        hashCode = prime * hashCode + ((getEnableExecuteCommand() == null) ? 0 : getEnableExecuteCommand().hashCode());
         hashCode = prime * hashCode + ((getExecutionStoppedAt() == null) ? 0 : getExecutionStoppedAt().hashCode());
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
@@ -3243,6 +3369,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
         hashCode = prime * hashCode + ((getTaskDefinitionArn() == null) ? 0 : getTaskDefinitionArn().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
         return hashCode;
     }
 

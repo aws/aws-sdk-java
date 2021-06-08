@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the IAM SAML identity provider used for federated authentication.
+ * Describes the IAM SAML identity providers used for federated authentication.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FederatedAuthentication" target="_top">AWS API
@@ -32,6 +32,12 @@ public class FederatedAuthentication implements Serializable, Cloneable {
      * </p>
      */
     private String samlProviderArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     * </p>
+     */
+    private String selfServiceSamlProviderArn;
 
     /**
      * <p>
@@ -74,6 +80,46 @@ public class FederatedAuthentication implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     * </p>
+     * 
+     * @param selfServiceSamlProviderArn
+     *        The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     */
+
+    public void setSelfServiceSamlProviderArn(String selfServiceSamlProviderArn) {
+        this.selfServiceSamlProviderArn = selfServiceSamlProviderArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     */
+
+    public String getSelfServiceSamlProviderArn() {
+        return this.selfServiceSamlProviderArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     * </p>
+     * 
+     * @param selfServiceSamlProviderArn
+     *        The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FederatedAuthentication withSelfServiceSamlProviderArn(String selfServiceSamlProviderArn) {
+        setSelfServiceSamlProviderArn(selfServiceSamlProviderArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -86,7 +132,9 @@ public class FederatedAuthentication implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSamlProviderArn() != null)
-            sb.append("SamlProviderArn: ").append(getSamlProviderArn());
+            sb.append("SamlProviderArn: ").append(getSamlProviderArn()).append(",");
+        if (getSelfServiceSamlProviderArn() != null)
+            sb.append("SelfServiceSamlProviderArn: ").append(getSelfServiceSamlProviderArn());
         sb.append("}");
         return sb.toString();
     }
@@ -105,6 +153,10 @@ public class FederatedAuthentication implements Serializable, Cloneable {
             return false;
         if (other.getSamlProviderArn() != null && other.getSamlProviderArn().equals(this.getSamlProviderArn()) == false)
             return false;
+        if (other.getSelfServiceSamlProviderArn() == null ^ this.getSelfServiceSamlProviderArn() == null)
+            return false;
+        if (other.getSelfServiceSamlProviderArn() != null && other.getSelfServiceSamlProviderArn().equals(this.getSelfServiceSamlProviderArn()) == false)
+            return false;
         return true;
     }
 
@@ -114,6 +166,7 @@ public class FederatedAuthentication implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSamlProviderArn() == null) ? 0 : getSamlProviderArn().hashCode());
+        hashCode = prime * hashCode + ((getSelfServiceSamlProviderArn() == null) ? 0 : getSelfServiceSamlProviderArn().hashCode());
         return hashCode;
     }
 

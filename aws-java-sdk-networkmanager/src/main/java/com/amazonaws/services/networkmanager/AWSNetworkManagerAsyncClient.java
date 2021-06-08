@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,10 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * Transit Gateway Network Manager (Network Manager) enables you to create a global network, in which you can monitor
  * your AWS and on-premises networks that are built around transit gateways.
+ * </p>
+ * <p>
+ * The Network Manager APIs are supported in the US West (Oregon) Region only. You must specify the
+ * <code>us-west-2</code> Region in all requests made to Network Manager.
  * </p>
  */
 @ThreadSafe
@@ -125,6 +129,74 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeAssociateLink(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateTransitGatewayConnectPeerResult> associateTransitGatewayConnectPeerAsync(
+            AssociateTransitGatewayConnectPeerRequest request) {
+
+        return associateTransitGatewayConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateTransitGatewayConnectPeerResult> associateTransitGatewayConnectPeerAsync(
+            final AssociateTransitGatewayConnectPeerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateTransitGatewayConnectPeerRequest, AssociateTransitGatewayConnectPeerResult> asyncHandler) {
+        final AssociateTransitGatewayConnectPeerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateTransitGatewayConnectPeerResult>() {
+            @Override
+            public AssociateTransitGatewayConnectPeerResult call() throws Exception {
+                AssociateTransitGatewayConnectPeerResult result = null;
+
+                try {
+                    result = executeAssociateTransitGatewayConnectPeer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest request) {
+
+        return createConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(final CreateConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult> asyncHandler) {
+        final CreateConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConnectionResult>() {
+            @Override
+            public CreateConnectionResult call() throws Exception {
+                CreateConnectionResult result = null;
+
+                try {
+                    result = executeCreateConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -257,6 +329,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeCreateSite(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request) {
+
+        return deleteConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(final DeleteConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler) {
+        final DeleteConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConnectionResult>() {
+            @Override
+            public DeleteConnectionResult call() throws Exception {
+                DeleteConnectionResult result = null;
+
+                try {
+                    result = executeDeleteConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -537,6 +642,74 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateTransitGatewayConnectPeerResult> disassociateTransitGatewayConnectPeerAsync(
+            DisassociateTransitGatewayConnectPeerRequest request) {
+
+        return disassociateTransitGatewayConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateTransitGatewayConnectPeerResult> disassociateTransitGatewayConnectPeerAsync(
+            final DisassociateTransitGatewayConnectPeerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateTransitGatewayConnectPeerRequest, DisassociateTransitGatewayConnectPeerResult> asyncHandler) {
+        final DisassociateTransitGatewayConnectPeerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateTransitGatewayConnectPeerResult>() {
+            @Override
+            public DisassociateTransitGatewayConnectPeerResult call() throws Exception {
+                DisassociateTransitGatewayConnectPeerResult result = null;
+
+                try {
+                    result = executeDisassociateTransitGatewayConnectPeer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectionsResult> getConnectionsAsync(GetConnectionsRequest request) {
+
+        return getConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectionsResult> getConnectionsAsync(final GetConnectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConnectionsRequest, GetConnectionsResult> asyncHandler) {
+        final GetConnectionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConnectionsResult>() {
+            @Override
+            public GetConnectionsResult call() throws Exception {
+                GetConnectionsResult result = null;
+
+                try {
+                    result = executeGetConnections(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCustomerGatewayAssociationsResult> getCustomerGatewayAssociationsAsync(GetCustomerGatewayAssociationsRequest request) {
 
         return getCustomerGatewayAssociationsAsync(request, null);
@@ -703,6 +876,41 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetTransitGatewayConnectPeerAssociationsResult> getTransitGatewayConnectPeerAssociationsAsync(
+            GetTransitGatewayConnectPeerAssociationsRequest request) {
+
+        return getTransitGatewayConnectPeerAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTransitGatewayConnectPeerAssociationsResult> getTransitGatewayConnectPeerAssociationsAsync(
+            final GetTransitGatewayConnectPeerAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTransitGatewayConnectPeerAssociationsRequest, GetTransitGatewayConnectPeerAssociationsResult> asyncHandler) {
+        final GetTransitGatewayConnectPeerAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTransitGatewayConnectPeerAssociationsResult>() {
+            @Override
+            public GetTransitGatewayConnectPeerAssociationsResult call() throws Exception {
+                GetTransitGatewayConnectPeerAssociationsResult result = null;
+
+                try {
+                    result = executeGetTransitGatewayConnectPeerAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTransitGatewayRegistrationsResult> getTransitGatewayRegistrationsAsync(GetTransitGatewayRegistrationsRequest request) {
 
         return getTransitGatewayRegistrationsAsync(request, null);
@@ -853,6 +1061,39 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest request) {
+
+        return updateConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(final UpdateConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResult> asyncHandler) {
+        final UpdateConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateConnectionResult>() {
+            @Override
+            public UpdateConnectionResult call() throws Exception {
+                UpdateConnectionResult result = null;
+
+                try {
+                    result = executeUpdateConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

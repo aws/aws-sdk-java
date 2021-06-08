@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class DeleteJobExecutionRequestMarshaller {
             .marshallLocationName("executionNumber").build();
     private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("force").build();
+    private static final MarshallingInfo<String> NAMESPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("namespaceId").build();
 
     private static final DeleteJobExecutionRequestMarshaller instance = new DeleteJobExecutionRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class DeleteJobExecutionRequestMarshaller {
             protocolMarshaller.marshall(deleteJobExecutionRequest.getThingName(), THINGNAME_BINDING);
             protocolMarshaller.marshall(deleteJobExecutionRequest.getExecutionNumber(), EXECUTIONNUMBER_BINDING);
             protocolMarshaller.marshall(deleteJobExecutionRequest.getForce(), FORCE_BINDING);
+            protocolMarshaller.marshall(deleteJobExecutionRequest.getNamespaceId(), NAMESPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

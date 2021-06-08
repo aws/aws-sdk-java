@@ -112,6 +112,77 @@
   },
   "shapes":{
     "Accept":{"type":"string"},
+    "ActiveContext":{
+      "type":"structure",
+      "required":[
+        "name",
+        "timeToLive",
+        "parameters"
+      ],
+      "members":{
+        "name":{
+          "shape":"ActiveContextName",
+          "documentation":"<p>The name of the context.</p>"
+        },
+        "timeToLive":{
+          "shape":"ActiveContextTimeToLive",
+          "documentation":"<p>The length of time or number of turns that a context remains active.</p>"
+        },
+        "parameters":{
+          "shape":"ActiveContextParametersMap",
+          "documentation":"<p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>"
+        }
+      },
+      "documentation":"<p>A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code>PutContent</code>, <code>PutText</code>, or <code>PutSession</code> operation.</p>"
+    },
+    "ActiveContextName":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":"^([A-Za-z]_?)+$"
+    },
+    "ActiveContextParametersMap":{
+      "type":"map",
+      "key":{"shape":"ParameterName"},
+      "value":{"shape":"Text"},
+      "max":10,
+      "min":0
+    },
+    "ActiveContextTimeToLive":{
+      "type":"structure",
+      "members":{
+        "timeToLiveInSeconds":{
+          "shape":"ActiveContextTimeToLiveInSeconds",
+          "documentation":"<p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>"
+        },
+        "turnsToLive":{
+          "shape":"ActiveContextTurnsToLive",
+          "documentation":"<p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>"
+        }
+      },
+      "documentation":"<p>The length of time or number of turns that a context remains active.</p>"
+    },
+    "ActiveContextTimeToLiveInSeconds":{
+      "type":"integer",
+      "max":86400,
+      "min":5
+    },
+    "ActiveContextTurnsToLive":{
+      "type":"integer",
+      "max":20,
+      "min":1
+    },
+    "ActiveContextsList":{
+      "type":"list",
+      "member":{"shape":"ActiveContext"},
+      "max":20,
+      "min":0,
+      "sensitive":true
+    },
+    "ActiveContextsString":{
+      "type":"string",
+      "sensitive":true
+    },
     "AttributesString":{
       "type":"string",
       "sensitive":true
@@ -140,6 +211,12 @@
     },
     "BotAlias":{"type":"string"},
     "BotName":{"type":"string"},
+    "BotVersion":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[0-9]+|\\$LATEST"
+    },
     "Button":{
       "type":"structure",
       "required":[
@@ -303,6 +380,7 @@
         "Failed"
       ]
     },
+    "Double":{"type":"double"},
     "ErrorMessage":{"type":"string"},
     "FulfillmentState":{
       "type":"string",
@@ -390,10 +468,29 @@
         "dialogAction":{
           "shape":"DialogAction",
           "documentation":"<p>Describes the current state of the bot.</p>"
+        },
+        "activeContexts":{
+          "shape":"ActiveContextsList",
+          "documentation":"<p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>"
         }
       }
     },
     "HttpContentType":{"type":"string"},
+    "IntentConfidence":{
+      "type":"structure",
+      "members":{
+        "score":{
+          "shape":"Double",
+          "documentation":"<p>A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>"
+        }
+      },
+      "documentation":"<p>Provides a score that indicates the confidence that Amazon Lex has that an intent is the one that satisfies the user's intent.</p>"
+    },
+    "IntentList":{
+      "type":"list",
+      "member":{"shape":"PredictedIntent"},
+      "max":4
+    },
     "IntentName":{"type":"string"},
     "IntentSummary":{
       "type":"structure",
@@ -502,6 +599,11 @@
       "error":{"httpStatusCode":404},
       "exception":true
     },
+    "ParameterName":{
+      "type":"string",
+      "max":100,
+      "min":1
+    },
     "PostContentRequest":{
       "type":"structure",
       "required":[
@@ -559,6 +661,13 @@
         "inputStream":{
           "shape":"BlobStream",
           "documentation":"<p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p> <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>"
+        },
+        "activeContexts":{
+          "shape":"ActiveContextsString",
+          "documentation":"<p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p> <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>",
+          "jsonvalue":true,
+          "location":"header",
+          "locationName":"x-amz-lex-active-contexts"
         }
       },
       "payload":"inputStream"
@@ -578,6 +687,20 @@
           "location":"header",
           "locationName":"x-amz-lex-intent-name"
         },
+        "nluIntentConfidence":{
+          "shape":"String",
+          "documentation":"<p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0.</p> <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex. </p>",
+          "jsonvalue":true,
+          "location":"header",
+          "locationName":"x-amz-lex-nlu-intent-confidence"
+        },
+        "alternativeIntents":{
+          "shape":"String",
+          "documentation":"<p>One to four alternative intents that may be applicable to the user's intent.</p> <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>",
+          "jsonvalue":true,
+          "location":"header",
+          "locationName":"x-amz-lex-alternative-intents"
+        },
         "slots":{
           "shape":"String",
           "documentation":"<p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the conversation. The field is base-64 encoded.</p> <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>",
@@ -594,15 +717,23 @@
         },
         "sentimentResponse":{
           "shape":"String",
-          "documentation":"<p>The sentiment expressed in and utterance.</p> <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>",
+          "documentation":"<p>The sentiment expressed in an utterance.</p> <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>",
           "location":"header",
           "locationName":"x-amz-lex-sentiment"
         },
         "message":{
           "shape":"Text",
-          "documentation":"<p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p> <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p> <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>",
+          "documentation":"<p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p> <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p> <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p> <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>",
+          "deprecated":true,
+          "deprecatedMessage":"The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales.",
           "location":"header",
           "locationName":"x-amz-lex-message"
+        },
+        "encodedMessage":{
+          "shape":"SensitiveString",
+          "documentation":"<p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p> <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p> <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p> <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>",
+          "location":"header",
+          "locationName":"x-amz-lex-encoded-message"
         },
         "messageFormat":{
           "shape":"MessageFormatType",
@@ -624,19 +755,40 @@
         },
         "inputTranscript":{
           "shape":"String",
-          "documentation":"<p>The text used to process the request.</p> <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>",
+          "documentation":"<p>The text used to process the request.</p> <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the <code>encodedInputTranscript</code> field instead.</p> <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>",
+          "deprecated":true,
+          "deprecatedMessage":"The inputTranscript field is deprecated, use the encodedInputTranscript field instead. The inputTranscript field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales.",
           "location":"header",
           "locationName":"x-amz-lex-input-transcript"
+        },
+        "encodedInputTranscript":{
+          "shape":"SensitiveStringUnbounded",
+          "documentation":"<p>The text used to process the request.</p> <p>If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p> <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use the value.</p>",
+          "location":"header",
+          "locationName":"x-amz-lex-encoded-input-transcript"
         },
         "audioStream":{
           "shape":"BlobStream",
           "documentation":"<p>The prompt (or statement) to convey to the user. This is based on the bot configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex sends that message in the response. </p>"
+        },
+        "botVersion":{
+          "shape":"BotVersion",
+          "documentation":"<p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>",
+          "location":"header",
+          "locationName":"x-amz-lex-bot-version"
         },
         "sessionId":{
           "shape":"String",
           "documentation":"<p>The unique identifier for the session.</p>",
           "location":"header",
           "locationName":"x-amz-lex-session-id"
+        },
+        "activeContexts":{
+          "shape":"ActiveContextsString",
+          "documentation":"<p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>",
+          "jsonvalue":true,
+          "location":"header",
+          "locationName":"x-amz-lex-active-contexts"
         }
       },
       "payload":"audioStream"
@@ -679,6 +831,10 @@
         "inputText":{
           "shape":"Text",
           "documentation":"<p>The text that the user entered (Amazon Lex interprets this text).</p>"
+        },
+        "activeContexts":{
+          "shape":"ActiveContextsList",
+          "documentation":"<p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p> <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>"
         }
       }
     },
@@ -688,6 +844,14 @@
         "intentName":{
           "shape":"IntentName",
           "documentation":"<p>The current user intent that Amazon Lex is aware of.</p>"
+        },
+        "nluIntentConfidence":{
+          "shape":"IntentConfidence",
+          "documentation":"<p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0. For more information, see <a href=\"https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html\">Confidence Scores</a>.</p> <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.</p>"
+        },
+        "alternativeIntents":{
+          "shape":"IntentList",
+          "documentation":"<p>One to four alternative intents that may be applicable to the user's intent.</p> <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>"
         },
         "slots":{
           "shape":"StringMap",
@@ -724,8 +888,34 @@
         "sessionId":{
           "shape":"String",
           "documentation":"<p>A unique identifier for the session.</p>"
+        },
+        "botVersion":{
+          "shape":"BotVersion",
+          "documentation":"<p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>"
+        },
+        "activeContexts":{
+          "shape":"ActiveContextsList",
+          "documentation":"<p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p> <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>"
         }
       }
+    },
+    "PredictedIntent":{
+      "type":"structure",
+      "members":{
+        "intentName":{
+          "shape":"IntentName",
+          "documentation":"<p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>"
+        },
+        "nluIntentConfidence":{
+          "shape":"IntentConfidence",
+          "documentation":"<p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>"
+        },
+        "slots":{
+          "shape":"StringMap",
+          "documentation":"<p>The slot and slot values associated with the predicted intent.</p>"
+        }
+      },
+      "documentation":"<p>An intent that Amazon Lex suggests satisfies the user's intent. Includes the name of the intent, the confidence that Amazon Lex has that the user's intent is satisfied, and the slots defined for the intent.</p>"
     },
     "PutSessionRequest":{
       "type":"structure",
@@ -770,6 +960,10 @@
           "documentation":"<p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p> <ul> <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech in the configuration that you specify. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p> </li> <li> <p>If the value is <code>audio/pcm</code>, the speech is returned as <code>audio/pcm</code> in 16-bit, little endian format.</p> </li> <li> <p>The following are the accepted values:</p> <ul> <li> <p> <code>audio/mpeg</code> </p> </li> <li> <p> <code>audio/ogg</code> </p> </li> <li> <p> <code>audio/pcm</code> </p> </li> <li> <p> <code>audio/*</code> (defaults to mpeg)</p> </li> <li> <p> <code>text/plain; charset=utf-8</code> </p> </li> </ul> </li> </ul>",
           "location":"header",
           "locationName":"Accept"
+        },
+        "activeContexts":{
+          "shape":"ActiveContextsList",
+          "documentation":"<p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p> <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>"
         }
       }
     },
@@ -804,9 +998,17 @@
         },
         "message":{
           "shape":"Text",
-          "documentation":"<p>The next message that should be presented to the user.</p>",
+          "documentation":"<p>The next message that should be presented to the user.</p> <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>",
+          "deprecated":true,
+          "deprecatedMessage":"The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales.",
           "location":"header",
           "locationName":"x-amz-lex-message"
+        },
+        "encodedMessage":{
+          "shape":"SensitiveString",
+          "documentation":"<p>The next message that should be presented to the user.</p> <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>",
+          "location":"header",
+          "locationName":"x-amz-lex-encoded-message"
         },
         "messageFormat":{
           "shape":"MessageFormatType",
@@ -835,6 +1037,13 @@
           "documentation":"<p>A unique identifier for the session.</p>",
           "location":"header",
           "locationName":"x-amz-lex-session-id"
+        },
+        "activeContexts":{
+          "shape":"ActiveContextsString",
+          "documentation":"<p>A list of active contexts for the session.</p>",
+          "jsonvalue":true,
+          "location":"header",
+          "locationName":"x-amz-lex-active-contexts"
         }
       },
       "payload":"audioStream"
@@ -865,6 +1074,16 @@
         }
       },
       "documentation":"<p>If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).</p>"
+    },
+    "SensitiveString":{
+      "type":"string",
+      "max":1366,
+      "min":1,
+      "sensitive":true
+    },
+    "SensitiveStringUnbounded":{
+      "type":"string",
+      "sensitive":true
     },
     "SentimentLabel":{"type":"string"},
     "SentimentResponse":{

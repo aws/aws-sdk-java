@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class PutAppReplicationConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * ID of the application tassociated with the replication configuration.
+     * The ID of the application.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Replication configurations for server groups in the application.
+     * Information about the replication configurations for server groups in the application.
      * </p>
      */
     private java.util.List<ServerGroupReplicationConfiguration> serverGroupReplicationConfigurations;
 
     /**
      * <p>
-     * ID of the application tassociated with the replication configuration.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application tassociated with the replication configuration.
+     *        The ID of the application.
      */
 
     public void setAppId(String appId) {
@@ -53,10 +53,10 @@ public class PutAppReplicationConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * ID of the application tassociated with the replication configuration.
+     * The ID of the application.
      * </p>
      * 
-     * @return ID of the application tassociated with the replication configuration.
+     * @return The ID of the application.
      */
 
     public String getAppId() {
@@ -65,11 +65,11 @@ public class PutAppReplicationConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * ID of the application tassociated with the replication configuration.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application tassociated with the replication configuration.
+     *        The ID of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class PutAppReplicationConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Replication configurations for server groups in the application.
+     * Information about the replication configurations for server groups in the application.
      * </p>
      * 
-     * @return Replication configurations for server groups in the application.
+     * @return Information about the replication configurations for server groups in the application.
      */
 
     public java.util.List<ServerGroupReplicationConfiguration> getServerGroupReplicationConfigurations() {
@@ -92,11 +92,11 @@ public class PutAppReplicationConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Replication configurations for server groups in the application.
+     * Information about the replication configurations for server groups in the application.
      * </p>
      * 
      * @param serverGroupReplicationConfigurations
-     *        Replication configurations for server groups in the application.
+     *        Information about the replication configurations for server groups in the application.
      */
 
     public void setServerGroupReplicationConfigurations(java.util.Collection<ServerGroupReplicationConfiguration> serverGroupReplicationConfigurations) {
@@ -110,7 +110,7 @@ public class PutAppReplicationConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Replication configurations for server groups in the application.
+     * Information about the replication configurations for server groups in the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -120,7 +120,7 @@ public class PutAppReplicationConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param serverGroupReplicationConfigurations
-     *        Replication configurations for server groups in the application.
+     *        Information about the replication configurations for server groups in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class PutAppReplicationConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Replication configurations for server groups in the application.
+     * Information about the replication configurations for server groups in the application.
      * </p>
      * 
      * @param serverGroupReplicationConfigurations
-     *        Replication configurations for server groups in the application.
+     *        Information about the replication configurations for server groups in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

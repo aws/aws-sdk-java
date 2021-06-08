@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,9 +14,18 @@
  */
 package com.amazonaws.services.s3;
 
+import static com.amazonaws.services.s3.S3ArnUtils.parseOutpostArn;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.arn.Arn;
 import com.amazonaws.arn.ArnConverter;
+import com.amazonaws.arn.ArnResource;
+import com.amazonaws.services.s3.internal.IntermediateOutpostResource;
+import com.amazonaws.services.s3.internal.OutpostResourceType;
+import com.amazonaws.services.s3.internal.S3ObjectLambdasResource;
+import com.amazonaws.services.s3.internal.S3OutpostResource;
 
 /**
  * An implementation of {@link ArnConverter} that can be used to convert valid {@link Arn} representations of s3
@@ -26,6 +35,8 @@ import com.amazonaws.arn.ArnConverter;
 @SdkInternalApi
 public class S3ArnConverter implements ArnConverter<S3Resource> {
     private static final S3ArnConverter INSTANCE = new S3ArnConverter();
+    private static final Pattern OBJECT_AP_PATTERN = Pattern.compile("^([0-9a-zA-Z-]+)/object/(.*)$");
+    private static final String OBJECT_LAMBDAS_SERVICE = "s3-object-lambda";
 
     private S3ArnConverter() {
     }
@@ -47,39 +58,73 @@ public class S3ArnConverter implements ArnConverter<S3Resource> {
      */
     @Override
     public S3Resource convertArn(Arn arn) {
-        Arn v2Arn = convertToV2Arn(arn);
+        if (isV1Arn(arn)) {
+            return convertV1Arn(arn);
+        }
+
         S3ResourceType s3ResourceType;
 
         try {
-            s3ResourceType = S3ResourceType.fromValue(v2Arn.getResource().getResourceType());
+            s3ResourceType = S3ResourceType.fromValue(arn.getResource().getResourceType());
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("Unknown ARN type '" + v2Arn.getResource().getResourceType() + "'");
+            throw new IllegalArgumentException("Unknown ARN type '" + arn.getResource().getResourceType() + "'");
         }
 
+        // OBJECT is a sub-resource under ACCESS_POINT and BUCKET and will not be recognized as a primary ARN resource
+        // type
         switch(s3ResourceType) {
-            case OBJECT:
-                return parseS3ObjectArn(v2Arn);
             case ACCESS_POINT:
-                return parseS3AccessPointArn(v2Arn);
+                return parseS3AccessPointArn(arn);
             case BUCKET:
-                return parseS3BucketArn(v2Arn);
+                return parseS3BucketArn(arn);
+            case OUTPOST:
+                return parseS3OutpostAccessPointArn(arn);
             default:
-                throw new IllegalArgumentException("Unknown ARN type '" + v2Arn.getResource().getResourceType() + "'");
+                throw new IllegalArgumentException("Unknown ARN type '" + arn.getResource().getResourceType() + "'");
         }
     }
 
-    private Arn convertToV2Arn(Arn arn) {
-        if (!isV1Arn(arn)) {
-            return arn;
-        }
-
+    private S3Resource convertV1Arn(Arn arn) {
         String resource = arn.getResourceAsString();
+        String[] splitResource = resource.split("/", 2);
 
-        if (resource.contains("/")) {
-            return arn.toBuilder().withResource("object:" + arn.getResourceAsString()).build();
+        if (splitResource.length > 1) {
+            // Bucket/key
+            S3BucketResource parentBucket = S3BucketResource.builder()
+                                                            .withPartition(arn.getPartition())
+                                                            .withBucketName(splitResource[0])
+                                                            .build();
+
+            return S3ObjectResource.builder()
+                                   .withParentS3Resource(parentBucket)
+                                   .withKey(splitResource[1])
+                                   .build();
         } else {
-            return arn.toBuilder().withResource("bucket_name:" + arn.getResourceAsString()).build();
+            // Just bucket
+            return S3BucketResource.builder()
+                                   .withPartition(arn.getPartition())
+                                   .withBucketName(resource)
+                                   .build();
         }
+    }
+
+    private S3Resource parseS3OutpostAccessPointArn(Arn arn) {
+        IntermediateOutpostResource intermediateOutpostResource = parseOutpostArn(arn);
+        ArnResource outpostSubResource = intermediateOutpostResource.getOutpostSubresource();
+
+        if (!OutpostResourceType.OUTPOST_ACCESS_POINT.toString().equals(outpostSubResource.getResourceType())) {
+            throw new IllegalArgumentException("Unknown outpost ARN type '" + outpostSubResource.getResourceType() + "'");
+        }
+
+        return S3AccessPointResource.builder()
+                                    .withAccessPointName(outpostSubResource.getResource())
+                                    .withParentS3Resource(S3OutpostResource.builder()
+                                                                           .withPartition(arn.getPartition())
+                                                                           .withRegion(arn.getRegion())
+                                                                           .withAccountId(arn.getAccountId())
+                                                                           .withOutpostId(intermediateOutpostResource.getOutpostId())
+                                                                           .build())
+                                    .build();
     }
 
     private S3BucketResource parseS3BucketArn(Arn arn) {
@@ -91,36 +136,55 @@ public class S3ArnConverter implements ArnConverter<S3Resource> {
                                .build();
     }
 
-    private S3AccessPointResource parseS3AccessPointArn(Arn arn) {
-        return S3AccessPointResource.builder()
-                                 .withPartition(arn.getPartition())
-                                 .withRegion(arn.getRegion())
-                                 .withAccountId(arn.getAccountId())
-                                 .withAccessPointName(arn.getResource().getResource())
-                                 .build();
-    }
+    private S3Resource parseS3AccessPointArn(Arn arn) {
+        Matcher objectMatcher = OBJECT_AP_PATTERN.matcher(arn.getResource().getResource());
 
-    private S3ObjectResource parseS3ObjectArn(Arn arn) {
-        String resourceString = arn.getResource().getResource();
-        String [] splitResourceString = resourceString.split("/");
+        if (objectMatcher.matches()) {
+            // ARN is actually an object addressed through an access-point
+            String accessPointName = objectMatcher.group(1);
+            String objectKey = objectMatcher.group(2);
+            S3AccessPointResource parentResource =
+                S3AccessPointResource.builder()
+                                     .withPartition(arn.getPartition())
+                                     .withRegion(arn.getRegion())
+                                     .withAccountId(arn.getAccountId())
+                                     .withAccessPointName(accessPointName)
+                                     .build();
 
-        if (splitResourceString.length < 2) {
-            throw new IllegalArgumentException("Invalid format for S3 object resource ARN");
+            return S3ObjectResource.builder()
+                                   .withParentS3Resource(parentResource)
+                                   .withKey(objectKey)
+                                   .build();
         }
 
-        String bucketName = splitResourceString[0];
-        String key = splitResourceString[1];
+        if (OBJECT_LAMBDAS_SERVICE.equals(arn.getService())) {
+            return parseS3ObjectLambdasAccessPointArn(arn);
+        }
 
-        return S3ObjectResource.builder()
-                               .withPartition(arn.getPartition())
-                               .withRegion(arn.getRegion())
-                               .withAccountId(arn.getAccountId())
-                               .withBucketName(bucketName)
-                               .withKey(key)
-                               .build();
+        return S3AccessPointResource.builder()
+                                    .withPartition(arn.getPartition())
+                                    .withRegion(arn.getRegion())
+                                    .withAccountId(arn.getAccountId())
+                                    .withAccessPointName(arn.getResource().getResource())
+                                    .build();
     }
 
-    private boolean isV1Arn(Arn arn) {
+    private S3Resource parseS3ObjectLambdasAccessPointArn(Arn arn) {
+        S3ObjectLambdasResource objectLambdasResource = S3ObjectLambdasResource.builder()
+                .withAccountId(arn.getAccountId())
+                .withRegion(arn.getRegion())
+                .withPartition(arn.getPartition())
+                .withAccessPointName(arn.getResource().getResource())
+                .build();
+
+        return S3AccessPointResource.builder()
+                .withAccessPointName(objectLambdasResource.getAccessPointName())
+                .withParentS3Resource(objectLambdasResource)
+                .build();
+    }
+
+    private static boolean isV1Arn(Arn arn) {
         return arn.getAccountId() == null && arn.getRegion() == null;
     }
+
 }

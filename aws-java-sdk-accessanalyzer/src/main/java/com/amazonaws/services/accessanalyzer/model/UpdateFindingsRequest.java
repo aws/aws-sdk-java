@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,9 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the analyzer that generated the findings to update.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> that generated the findings to update.
      * </p>
      */
     private String analyzerArn;
@@ -63,11 +65,15 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the analyzer that generated the findings to update.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> that generated the findings to update.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer that generated the findings to update.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> that generated the findings to update.
      */
 
     public void setAnalyzerArn(String analyzerArn) {
@@ -76,10 +82,14 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the analyzer that generated the findings to update.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> that generated the findings to update.
      * </p>
      * 
-     * @return The ARN of the analyzer that generated the findings to update.
+     * @return The <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *         >ARN of the analyzer</a> that generated the findings to update.
      */
 
     public String getAnalyzerArn() {
@@ -88,11 +98,15 @@ public class UpdateFindingsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the analyzer that generated the findings to update.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> that generated the findings to update.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer that generated the findings to update.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> that generated the findings to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

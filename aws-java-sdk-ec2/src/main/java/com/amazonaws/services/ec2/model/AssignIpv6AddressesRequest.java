@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,10 @@ public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The number of IPv6 addresses to assign to the network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.
+     * The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6
+     * addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network
+     * interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option
+     * if specifying specific IPv6 addresses.
      * </p>
      */
     private Integer ipv6AddressCount;
@@ -48,13 +50,17 @@ public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The number of IPv6 addresses to assign to the network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.
+     * The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6
+     * addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network
+     * interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option
+     * if specifying specific IPv6 addresses.
      * </p>
      * 
      * @param ipv6AddressCount
-     *        The number of IPv6 addresses to assign to the network interface. Amazon EC2 automatically selects the IPv6
-     *        addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.
+     *        The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6
+     *        addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network
+     *        interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this
+     *        option if specifying specific IPv6 addresses.
      */
 
     public void setIpv6AddressCount(Integer ipv6AddressCount) {
@@ -63,12 +69,16 @@ public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The number of IPv6 addresses to assign to the network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.
+     * The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6
+     * addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network
+     * interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option
+     * if specifying specific IPv6 addresses.
      * </p>
      * 
-     * @return The number of IPv6 addresses to assign to the network interface. Amazon EC2 automatically selects the
-     *         IPv6 addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.
+     * @return The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6
+     *         addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the
+     *         network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't
+     *         use this option if specifying specific IPv6 addresses.
      */
 
     public Integer getIpv6AddressCount() {
@@ -77,13 +87,17 @@ public class AssignIpv6AddressesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The number of IPv6 addresses to assign to the network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.
+     * The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6
+     * addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network
+     * interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this option
+     * if specifying specific IPv6 addresses.
      * </p>
      * 
      * @param ipv6AddressCount
-     *        The number of IPv6 addresses to assign to the network interface. Amazon EC2 automatically selects the IPv6
-     *        addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses.
+     *        The number of additional IPv6 addresses to assign to the network interface. The specified number of IPv6
+     *        addresses are assigned in addition to the existing IPv6 addresses that are already assigned to the network
+     *        interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. You can't use this
+     *        option if specifying specific IPv6 addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,18 +72,19 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK.
+     * The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     * cryptographic operations</a> for which you can use the CMK.
      * </p>
      */
     private String keyUsage;
     /**
      * <p>
-     * The state of the CMK.
+     * The current status of the CMK.
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
-     * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a> in
+     * the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private String keyState;
@@ -153,8 +154,8 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     private String customerMasterKeySpec;
     /**
      * <p>
-     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
-     * within AWS KMS.
+     * The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms within
+     * AWS KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
@@ -163,8 +164,8 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> encryptionAlgorithms;
     /**
      * <p>
-     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
-     * AWS KMS.
+     * The signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within AWS
+     * KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
@@ -446,11 +447,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK.
+     * The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     * cryptographic operations</a> for which you can use the CMK.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     *        cryptographic operations</a> for which you can use the CMK.
      * @see KeyUsageType
      */
 
@@ -460,10 +464,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK.
+     * The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     * cryptographic operations</a> for which you can use the CMK.
      * </p>
      * 
-     * @return The cryptographic operations for which you can use the CMK.
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
+     *         >cryptographic operations</a> for which you can use the CMK.
      * @see KeyUsageType
      */
 
@@ -473,11 +480,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK.
+     * The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     * cryptographic operations</a> for which you can use the CMK.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     *        cryptographic operations</a> for which you can use the CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyUsageType
      */
@@ -489,11 +499,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK.
+     * The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     * cryptographic operations</a> for which you can use the CMK.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     *        cryptographic operations</a> for which you can use the CMK.
      * @see KeyUsageType
      */
 
@@ -503,11 +516,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cryptographic operations for which you can use the CMK.
+     * The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     * cryptographic operations</a> for which you can use the CMK.
      * </p>
      * 
      * @param keyUsage
-     *        The cryptographic operations for which you can use the CMK.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">
+     *        cryptographic operations</a> for which you can use the CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyUsageType
      */
@@ -519,20 +535,20 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the CMK.
+     * The current status of the CMK.
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
-     * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a> in
+     * the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
-     *        The state of the CMK.</p>
+     *        The current status of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
-     *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your
+     *        CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyState
      */
 
@@ -542,19 +558,19 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the CMK.
+     * The current status of the CMK.
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
-     * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a> in
+     * the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return The state of the CMK.</p>
+     * @return The current status of the CMK.</p>
      *         <p>
      *         For more information about how key state affects the use of a CMK, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
-     *         of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your
+     *         CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyState
      */
 
@@ -564,20 +580,20 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the CMK.
+     * The current status of the CMK.
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
-     * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a> in
+     * the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
-     *        The state of the CMK.</p>
+     *        The current status of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
-     *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your
+     *        CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyState
      */
@@ -589,20 +605,20 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the CMK.
+     * The current status of the CMK.
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
-     * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a> in
+     * the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
-     *        The state of the CMK.</p>
+     *        The current status of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
-     *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your
+     *        CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @see KeyState
      */
 
@@ -612,20 +628,20 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the CMK.
+     * The current status of the CMK.
      * </p>
      * <p>
      * For more information about how key state affects the use of a CMK, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a
-     * Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a> in
+     * the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyState
-     *        The state of the CMK.</p>
+     *        The current status of the CMK.</p>
      *        <p>
      *        For more information about how key state affects the use of a CMK, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use
-     *        of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your
+     *        CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyState
      */
@@ -1217,15 +1233,15 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
-     * within AWS KMS.
+     * The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms within
+     * AWS KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * </p>
      * 
-     * @return A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption
-     *         algorithms within AWS KMS.</p>
+     * @return The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
+     *         within AWS KMS.</p>
      *         <p>
      *         This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * @see EncryptionAlgorithmSpec
@@ -1240,16 +1256,16 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
-     * within AWS KMS.
+     * The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms within
+     * AWS KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * </p>
      * 
      * @param encryptionAlgorithms
-     *        A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption
-     *        algorithms within AWS KMS.</p>
+     *        The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
+     *        within AWS KMS.</p>
      *        <p>
      *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * @see EncryptionAlgorithmSpec
@@ -1266,8 +1282,8 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
-     * within AWS KMS.
+     * The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms within
+     * AWS KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
@@ -1279,8 +1295,8 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param encryptionAlgorithms
-     *        A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption
-     *        algorithms within AWS KMS.</p>
+     *        The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
+     *        within AWS KMS.</p>
      *        <p>
      *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1299,16 +1315,16 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
-     * within AWS KMS.
+     * The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms within
+     * AWS KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * </p>
      * 
      * @param encryptionAlgorithms
-     *        A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption
-     *        algorithms within AWS KMS.</p>
+     *        The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
+     *        within AWS KMS.</p>
      *        <p>
      *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1322,16 +1338,16 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
-     * within AWS KMS.
+     * The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms within
+     * AWS KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * </p>
      * 
      * @param encryptionAlgorithms
-     *        A list of encryption algorithms that the CMK supports. You cannot use the CMK with other encryption
-     *        algorithms within AWS KMS.</p>
+     *        The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
+     *        within AWS KMS.</p>
      *        <p>
      *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1354,15 +1370,15 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
-     * AWS KMS.
+     * The signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within AWS
+     * KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
      * </p>
      * 
-     * @return A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms
-     *         within AWS KMS.</p>
+     * @return The signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
+     *         AWS KMS.</p>
      *         <p>
      *         This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
      * @see SigningAlgorithmSpec
@@ -1377,16 +1393,16 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
-     * AWS KMS.
+     * The signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within AWS
+     * KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
      * </p>
      * 
      * @param signingAlgorithms
-     *        A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms
-     *        within AWS KMS.</p>
+     *        The signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
+     *        AWS KMS.</p>
      *        <p>
      *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
      * @see SigningAlgorithmSpec
@@ -1403,8 +1419,8 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
-     * AWS KMS.
+     * The signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within AWS
+     * KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
@@ -1416,8 +1432,8 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param signingAlgorithms
-     *        A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms
-     *        within AWS KMS.</p>
+     *        The signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
+     *        AWS KMS.</p>
      *        <p>
      *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1436,16 +1452,16 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
-     * AWS KMS.
+     * The signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within AWS
+     * KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
      * </p>
      * 
      * @param signingAlgorithms
-     *        A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms
-     *        within AWS KMS.</p>
+     *        The signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
+     *        AWS KMS.</p>
      *        <p>
      *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1459,16 +1475,16 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
-     * AWS KMS.
+     * The signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within AWS
+     * KMS.
      * </p>
      * <p>
      * This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
      * </p>
      * 
      * @param signingAlgorithms
-     *        A list of signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms
-     *        within AWS KMS.</p>
+     *        The signing algorithms that the CMK supports. You cannot use the CMK with other signing algorithms within
+     *        AWS KMS.</p>
      *        <p>
      *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>SIGN_VERIFY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

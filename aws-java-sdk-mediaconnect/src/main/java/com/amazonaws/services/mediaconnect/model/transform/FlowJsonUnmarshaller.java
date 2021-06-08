@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,11 +62,19 @@ public class FlowJsonUnmarshaller implements Unmarshaller<Flow, JsonUnmarshaller
                 }
                 if (context.testExpression("entitlements", targetDepth)) {
                     context.nextToken();
-                    flow.setEntitlements(new ListUnmarshaller<Entitlement>(EntitlementJsonUnmarshaller.getInstance()).unmarshall(context));
+                    flow.setEntitlements(new ListUnmarshaller<Entitlement>(EntitlementJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("flowArn", targetDepth)) {
                     context.nextToken();
                     flow.setFlowArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("mediaStreams", targetDepth)) {
+                    context.nextToken();
+                    flow.setMediaStreams(new ListUnmarshaller<MediaStream>(MediaStreamJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
@@ -74,7 +82,9 @@ public class FlowJsonUnmarshaller implements Unmarshaller<Flow, JsonUnmarshaller
                 }
                 if (context.testExpression("outputs", targetDepth)) {
                     context.nextToken();
-                    flow.setOutputs(new ListUnmarshaller<Output>(OutputJsonUnmarshaller.getInstance()).unmarshall(context));
+                    flow.setOutputs(new ListUnmarshaller<Output>(OutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("source", targetDepth)) {
                     context.nextToken();
@@ -86,7 +96,9 @@ public class FlowJsonUnmarshaller implements Unmarshaller<Flow, JsonUnmarshaller
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    flow.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    flow.setSources(new ListUnmarshaller<Source>(SourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -94,7 +106,9 @@ public class FlowJsonUnmarshaller implements Unmarshaller<Flow, JsonUnmarshaller
                 }
                 if (context.testExpression("vpcInterfaces", targetDepth)) {
                     context.nextToken();
-                    flow.setVpcInterfaces(new ListUnmarshaller<VpcInterface>(VpcInterfaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    flow.setVpcInterfaces(new ListUnmarshaller<VpcInterface>(VpcInterfaceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

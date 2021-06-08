@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,25 +55,25 @@ import com.amazonaws.services.qldbsession.model.transform.*;
  * </p>
  * <note>
  * <p>
- * Instead of interacting directly with this API, we recommend that you use the Amazon QLDB Driver or the QLDB Shell to
- * execute data transactions on a ledger.
+ * Instead of interacting directly with this API, we recommend using the QLDB driver or the QLDB shell to execute data
+ * transactions on a ledger.
  * </p>
  * <ul>
  * <li>
  * <p>
- * If you are working with an AWS SDK, use the QLDB Driver. The driver provides a high-level abstraction layer above
- * this <code>qldbsession</code> data plane and manages <code>SendCommand</code> API calls for you. For information and
- * a list of supported programming languages, see <a
+ * If you are working with an AWS SDK, use the QLDB driver. The driver provides a high-level abstraction layer above
+ * this <i>QLDB Session</i> data plane and manages <code>SendCommand</code> API calls for you. For information and a
+ * list of supported programming languages, see <a
  * href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-driver.html">Getting started with the
  * driver</a> in the <i>Amazon QLDB Developer Guide</i>.
  * </p>
  * </li>
  * <li>
  * <p>
- * If you are working with the AWS Command Line Interface (AWS CLI), use the QLDB Shell. The shell is a command line
- * interface that uses the QLDB Driver to interact with a ledger. For information, see <a
+ * If you are working with the AWS Command Line Interface (AWS CLI), use the QLDB shell. The shell is a command line
+ * interface that uses the QLDB driver to interact with a ledger. For information, see <a
  * href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing Amazon QLDB using the QLDB
- * Shell</a>.
+ * shell</a>.
  * </p>
  * </li>
  * </ul>
@@ -102,17 +102,20 @@ public class AmazonQLDBSessionClient extends AmazonWebServiceClient implements A
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSessionException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.qldbsession.model.transform.InvalidSessionExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RateExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.qldbsession.model.transform.RateExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.qldbsession.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("CapacityExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.qldbsession.model.transform.CapacityExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OccConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.qldbsession.model.transform.OccConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSessionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.qldbsession.model.transform.InvalidSessionExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.qldbsession.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.qldbsession.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
@@ -170,25 +173,25 @@ public class AmazonQLDBSessionClient extends AmazonWebServiceClient implements A
      * </p>
      * <note>
      * <p>
-     * Instead of interacting directly with this API, we recommend that you use the Amazon QLDB Driver or the QLDB Shell
-     * to execute data transactions on a ledger.
+     * Instead of interacting directly with this API, we recommend using the QLDB driver or the QLDB shell to execute
+     * data transactions on a ledger.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If you are working with an AWS SDK, use the QLDB Driver. The driver provides a high-level abstraction layer above
-     * this <code>qldbsession</code> data plane and manages <code>SendCommand</code> API calls for you. For information
-     * and a list of supported programming languages, see <a
+     * If you are working with an AWS SDK, use the QLDB driver. The driver provides a high-level abstraction layer above
+     * this <i>QLDB Session</i> data plane and manages <code>SendCommand</code> API calls for you. For information and a
+     * list of supported programming languages, see <a
      * href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-driver.html">Getting started with
      * the driver</a> in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you are working with the AWS Command Line Interface (AWS CLI), use the QLDB Shell. The shell is a command line
-     * interface that uses the QLDB Driver to interact with a ledger. For information, see <a
+     * If you are working with the AWS Command Line Interface (AWS CLI), use the QLDB shell. The shell is a command line
+     * interface that uses the QLDB driver to interact with a ledger. For information, see <a
      * href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing Amazon QLDB using the
-     * QLDB Shell</a>.
+     * QLDB shell</a>.
      * </p>
      * </li>
      * </ul>
@@ -208,6 +211,8 @@ public class AmazonQLDBSessionClient extends AmazonWebServiceClient implements A
      *         Returned when the rate of requests exceeds the allowed throughput.
      * @throws LimitExceededException
      *         Returned if a resource limit such as number of active sessions is exceeded.
+     * @throws CapacityExceededException
+     *         Returned when the request exceeds the processing capacity of the ledger.
      * @sample AmazonQLDBSession.SendCommand
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/SendCommand" target="_top">AWS API
      *      Documentation</a>
@@ -233,6 +238,8 @@ public class AmazonQLDBSessionClient extends AmazonWebServiceClient implements A
                 request = new SendCommandRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendCommandRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB Session");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendCommand");
@@ -328,6 +335,11 @@ public class AmazonQLDBSessionClient extends AmazonWebServiceClient implements A
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

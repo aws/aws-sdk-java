@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,32 +27,24 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. Use either the <a>GameServerGroup</a>
-     * name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.
      * </p>
      */
     private String gameServerGroupName;
     /**
      * <p>
-     * The identifier for the game server to be updated.
+     * A custom string that uniquely identifies the game server to update.
      * </p>
      */
     private String gameServerId;
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on a game servers using <a>DescribeGameServer</a> or
-     * <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      */
     private String gameServerData;
-    /**
-     * <p>
-     * A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>. Custom
-     * sort keys are developer-defined based on how you want to organize the retrieved game server information.
-     * </p>
-     */
-    private String customSortKey;
     /**
      * <p>
      * Indicates whether the game server is available or is currently hosting gameplay.
@@ -61,20 +53,20 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
     private String utilizationStatus;
     /**
      * <p>
-     * Indicates health status of the game server. An update that explicitly includes this parameter updates the game
-     * server's <i>LastHealthCheckTime</i> time stamp.
+     * Indicates health status of the game server. A request that includes this parameter updates the game server's
+     * <i>LastHealthCheckTime</i> timestamp.
      * </p>
      */
     private String healthCheck;
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. Use either the <a>GameServerGroup</a>
-     * name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        An identifier for the game server group where the game server is running. Use either the
+     *        A unique identifier for the game server group where the game server is running. Use either the
      *        <a>GameServerGroup</a> name or ARN value.
      */
 
@@ -84,11 +76,11 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. Use either the <a>GameServerGroup</a>
-     * name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
-     * @return An identifier for the game server group where the game server is running. Use either the
+     * @return A unique identifier for the game server group where the game server is running. Use either the
      *         <a>GameServerGroup</a> name or ARN value.
      */
 
@@ -98,12 +90,12 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. Use either the <a>GameServerGroup</a>
-     * name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        An identifier for the game server group where the game server is running. Use either the
+     *        A unique identifier for the game server group where the game server is running. Use either the
      *        <a>GameServerGroup</a> name or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -115,11 +107,11 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the game server to be updated.
+     * A custom string that uniquely identifies the game server to update.
      * </p>
      * 
      * @param gameServerId
-     *        The identifier for the game server to be updated.
+     *        A custom string that uniquely identifies the game server to update.
      */
 
     public void setGameServerId(String gameServerId) {
@@ -128,10 +120,10 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the game server to be updated.
+     * A custom string that uniquely identifies the game server to update.
      * </p>
      * 
-     * @return The identifier for the game server to be updated.
+     * @return A custom string that uniquely identifies the game server to update.
      */
 
     public String getGameServerId() {
@@ -140,11 +132,11 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the game server to be updated.
+     * A custom string that uniquely identifies the game server to update.
      * </p>
      * 
      * @param gameServerId
-     *        The identifier for the game server to be updated.
+     *        A custom string that uniquely identifies the game server to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,13 +148,12 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on a game servers using <a>DescribeGameServer</a> or
-     * <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      * 
      * @param gameServerData
      *        A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *        client or service when it requests information on a game servers using <a>DescribeGameServer</a> or
+     *        client or service when it requests information on game servers using <a>ListGameServers</a> or
      *        <a>ClaimGameServer</a>.
      */
 
@@ -173,12 +164,11 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on a game servers using <a>DescribeGameServer</a> or
-     * <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      * 
      * @return A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *         client or service when it requests information on a game servers using <a>DescribeGameServer</a> or
+     *         client or service when it requests information on game servers using <a>ListGameServers</a> or
      *         <a>ClaimGameServer</a>.
      */
 
@@ -189,68 +179,18 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on a game servers using <a>DescribeGameServer</a> or
-     * <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      * 
      * @param gameServerData
      *        A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *        client or service when it requests information on a game servers using <a>DescribeGameServer</a> or
+     *        client or service when it requests information on game servers using <a>ListGameServers</a> or
      *        <a>ClaimGameServer</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGameServerRequest withGameServerData(String gameServerData) {
         setGameServerData(gameServerData);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>. Custom
-     * sort keys are developer-defined based on how you want to organize the retrieved game server information.
-     * </p>
-     * 
-     * @param customSortKey
-     *        A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>.
-     *        Custom sort keys are developer-defined based on how you want to organize the retrieved game server
-     *        information.
-     */
-
-    public void setCustomSortKey(String customSortKey) {
-        this.customSortKey = customSortKey;
-    }
-
-    /**
-     * <p>
-     * A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>. Custom
-     * sort keys are developer-defined based on how you want to organize the retrieved game server information.
-     * </p>
-     * 
-     * @return A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>.
-     *         Custom sort keys are developer-defined based on how you want to organize the retrieved game server
-     *         information.
-     */
-
-    public String getCustomSortKey() {
-        return this.customSortKey;
-    }
-
-    /**
-     * <p>
-     * A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>. Custom
-     * sort keys are developer-defined based on how you want to organize the retrieved game server information.
-     * </p>
-     * 
-     * @param customSortKey
-     *        A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>.
-     *        Custom sort keys are developer-defined based on how you want to organize the retrieved game server
-     *        information.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateGameServerRequest withCustomSortKey(String customSortKey) {
-        setCustomSortKey(customSortKey);
         return this;
     }
 
@@ -315,13 +255,13 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates health status of the game server. An update that explicitly includes this parameter updates the game
-     * server's <i>LastHealthCheckTime</i> time stamp.
+     * Indicates health status of the game server. A request that includes this parameter updates the game server's
+     * <i>LastHealthCheckTime</i> timestamp.
      * </p>
      * 
      * @param healthCheck
-     *        Indicates health status of the game server. An update that explicitly includes this parameter updates the
-     *        game server's <i>LastHealthCheckTime</i> time stamp.
+     *        Indicates health status of the game server. A request that includes this parameter updates the game
+     *        server's <i>LastHealthCheckTime</i> timestamp.
      * @see GameServerHealthCheck
      */
 
@@ -331,12 +271,12 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates health status of the game server. An update that explicitly includes this parameter updates the game
-     * server's <i>LastHealthCheckTime</i> time stamp.
+     * Indicates health status of the game server. A request that includes this parameter updates the game server's
+     * <i>LastHealthCheckTime</i> timestamp.
      * </p>
      * 
-     * @return Indicates health status of the game server. An update that explicitly includes this parameter updates the
-     *         game server's <i>LastHealthCheckTime</i> time stamp.
+     * @return Indicates health status of the game server. A request that includes this parameter updates the game
+     *         server's <i>LastHealthCheckTime</i> timestamp.
      * @see GameServerHealthCheck
      */
 
@@ -346,13 +286,13 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates health status of the game server. An update that explicitly includes this parameter updates the game
-     * server's <i>LastHealthCheckTime</i> time stamp.
+     * Indicates health status of the game server. A request that includes this parameter updates the game server's
+     * <i>LastHealthCheckTime</i> timestamp.
      * </p>
      * 
      * @param healthCheck
-     *        Indicates health status of the game server. An update that explicitly includes this parameter updates the
-     *        game server's <i>LastHealthCheckTime</i> time stamp.
+     *        Indicates health status of the game server. A request that includes this parameter updates the game
+     *        server's <i>LastHealthCheckTime</i> timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerHealthCheck
      */
@@ -364,13 +304,13 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates health status of the game server. An update that explicitly includes this parameter updates the game
-     * server's <i>LastHealthCheckTime</i> time stamp.
+     * Indicates health status of the game server. A request that includes this parameter updates the game server's
+     * <i>LastHealthCheckTime</i> timestamp.
      * </p>
      * 
      * @param healthCheck
-     *        Indicates health status of the game server. An update that explicitly includes this parameter updates the
-     *        game server's <i>LastHealthCheckTime</i> time stamp.
+     *        Indicates health status of the game server. A request that includes this parameter updates the game
+     *        server's <i>LastHealthCheckTime</i> timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerHealthCheck
      */
@@ -398,8 +338,6 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("GameServerId: ").append(getGameServerId()).append(",");
         if (getGameServerData() != null)
             sb.append("GameServerData: ").append(getGameServerData()).append(",");
-        if (getCustomSortKey() != null)
-            sb.append("CustomSortKey: ").append(getCustomSortKey()).append(",");
         if (getUtilizationStatus() != null)
             sb.append("UtilizationStatus: ").append(getUtilizationStatus()).append(",");
         if (getHealthCheck() != null)
@@ -430,10 +368,6 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getGameServerData() != null && other.getGameServerData().equals(this.getGameServerData()) == false)
             return false;
-        if (other.getCustomSortKey() == null ^ this.getCustomSortKey() == null)
-            return false;
-        if (other.getCustomSortKey() != null && other.getCustomSortKey().equals(this.getCustomSortKey()) == false)
-            return false;
         if (other.getUtilizationStatus() == null ^ this.getUtilizationStatus() == null)
             return false;
         if (other.getUtilizationStatus() != null && other.getUtilizationStatus().equals(this.getUtilizationStatus()) == false)
@@ -453,7 +387,6 @@ public class UpdateGameServerRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getGameServerGroupName() == null) ? 0 : getGameServerGroupName().hashCode());
         hashCode = prime * hashCode + ((getGameServerId() == null) ? 0 : getGameServerId().hashCode());
         hashCode = prime * hashCode + ((getGameServerData() == null) ? 0 : getGameServerData().hashCode());
-        hashCode = prime * hashCode + ((getCustomSortKey() == null) ? 0 : getCustomSortKey().hashCode());
         hashCode = prime * hashCode + ((getUtilizationStatus() == null) ? 0 : getUtilizationStatus().hashCode());
         hashCode = prime * hashCode + ((getHealthCheck() == null) ? 0 : getHealthCheck().hashCode());
         return hashCode;

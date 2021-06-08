@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -409,6 +409,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new AbortMultipartUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(abortMultipartUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AbortMultipartUpload");
@@ -485,6 +487,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new AbortVaultLockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(abortVaultLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AbortVaultLock");
@@ -551,6 +555,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new AddTagsToVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToVault");
@@ -656,6 +662,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(completeMultipartUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CompleteMultipartUpload");
@@ -732,6 +740,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new CompleteVaultLockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(completeVaultLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CompleteVaultLock");
@@ -825,6 +835,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new CreateVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVault");
@@ -918,6 +930,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new DeleteArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteArchive");
@@ -1002,6 +1016,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new DeleteVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVault");
@@ -1071,6 +1087,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(deleteVaultAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVaultAccessPolicy");
@@ -1149,6 +1167,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(deleteVaultNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVaultNotifications");
@@ -1234,6 +1254,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new DescribeJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJob");
@@ -1315,6 +1337,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new DescribeVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVault");
@@ -1376,6 +1400,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new GetDataRetrievalPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataRetrievalPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataRetrievalPolicy");
@@ -1481,6 +1507,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new GetJobOutputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobOutput");
@@ -1558,6 +1586,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new GetVaultAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVaultAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVaultAccessPolicy");
@@ -1653,6 +1683,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new GetVaultLockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVaultLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVaultLock");
@@ -1734,6 +1766,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new GetVaultNotificationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVaultNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVaultNotifications");
@@ -1803,6 +1837,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new InitiateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateJob");
@@ -1902,6 +1938,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(initiateMultipartUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateMultipartUpload");
@@ -2006,6 +2044,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new InitiateVaultLockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateVaultLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateVaultLock");
@@ -2100,6 +2140,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new ListJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
@@ -2189,6 +2231,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new ListMultipartUploadsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMultipartUploadsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMultipartUploads");
@@ -2275,6 +2319,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new ListPartsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPartsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListParts");
@@ -2333,6 +2379,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(listProvisionedCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisionedCapacity");
@@ -2396,6 +2444,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new ListTagsForVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForVault");
@@ -2480,6 +2530,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new ListVaultsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVaultsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVaults");
@@ -2540,6 +2592,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(purchaseProvisionedCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseProvisionedCapacity");
@@ -2604,6 +2658,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new RemoveTagsFromVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromVault");
@@ -2670,6 +2726,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new SetDataRetrievalPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setDataRetrievalPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetDataRetrievalPolicy");
@@ -2736,6 +2794,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new SetVaultAccessPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setVaultAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetVaultAccessPolicy");
@@ -2836,6 +2896,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new SetVaultNotificationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setVaultNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetVaultNotifications");
@@ -2937,10 +2999,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new UploadArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadArchive");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
                 request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
 
             } finally {
@@ -3054,10 +3119,13 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 request = new UploadMultipartPartRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadMultipartPartRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadMultipartPart");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
                 request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
 
             } finally {

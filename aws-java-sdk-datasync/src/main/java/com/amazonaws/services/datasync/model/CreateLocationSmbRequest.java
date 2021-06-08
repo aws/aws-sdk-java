@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      * <p>
@@ -64,6 +64,10 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     * </p>
+     * <p>
+     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
+     * see <a href="create-smb-location.html#SMBuser">user</a>.
      * </p>
      */
     private String user;
@@ -108,7 +112,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      * <p>
@@ -126,8 +130,8 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      *        subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
      *        network.</p> <note>
      *        <p>
-     *        <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>
-     *        .
+     *        <code>Subdirectory</code> must be specified with forward slashes. For example,
+     *        <code>/path/to/folder</code>.
      *        </p>
      *        </note>
      *        <p>
@@ -151,7 +155,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      * <p>
@@ -168,7 +172,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      *         subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
      *         network.</p> <note>
      *         <p>
-     *         <code>Subdirectory</code> must be specified with forward slashes. For example
+     *         <code>Subdirectory</code> must be specified with forward slashes. For example,
      *         <code>/path/to/folder</code>.
      *         </p>
      *         </note>
@@ -193,7 +197,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      * <p>
@@ -211,8 +215,8 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      *        subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
      *        network.</p> <note>
      *        <p>
-     *        <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>
-     *        .
+     *        <code>Subdirectory</code> must be specified with forward slashes. For example,
+     *        <code>/path/to/folder</code>.
      *        </p>
      *        </note>
      *        <p>
@@ -307,9 +311,16 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The user who can mount the share, has the permissions to access files and folders in the SMB share.
      * </p>
+     * <p>
+     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
+     * see <a href="create-smb-location.html#SMBuser">user</a>.
+     * </p>
      * 
      * @param user
-     *        The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     *        The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+     *        <p>
+     *        For information about choosing a user name that ensures sufficient permissions to files, folders, and
+     *        metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
      */
 
     public void setUser(String user) {
@@ -320,8 +331,15 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The user who can mount the share, has the permissions to access files and folders in the SMB share.
      * </p>
+     * <p>
+     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
+     * see <a href="create-smb-location.html#SMBuser">user</a>.
+     * </p>
      * 
-     * @return The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     * @return The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+     *         <p>
+     *         For information about choosing a user name that ensures sufficient permissions to files, folders, and
+     *         metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
      */
 
     public String getUser() {
@@ -332,9 +350,16 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The user who can mount the share, has the permissions to access files and folders in the SMB share.
      * </p>
+     * <p>
+     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
+     * see <a href="create-smb-location.html#SMBuser">user</a>.
+     * </p>
      * 
      * @param user
-     *        The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     *        The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+     *        <p>
+     *        For information about choosing a user name that ensures sufficient permissions to files, folders, and
+     *        metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

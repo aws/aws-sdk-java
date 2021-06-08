@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,18 +35,24 @@ public class MemberDetailMarshaller {
             .marshallLocationName("GraphArn").build();
     private static final MarshallingInfo<String> MASTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MasterId").build();
+    private static final MarshallingInfo<String> ADMINISTRATORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdministratorId").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> DISABLEDREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisabledReason").build();
     private static final MarshallingInfo<java.util.Date> INVITEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvitedTime").timestampFormat("unixTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvitedTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdatedTime").timestampFormat("unixTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdatedTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<Long> VOLUMEUSAGEINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeUsageInBytes").build();
+    private static final MarshallingInfo<java.util.Date> VOLUMEUSAGEUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeUsageUpdatedTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<Double> PERCENTOFGRAPHUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PercentOfGraphUtilization").build();
     private static final MarshallingInfo<java.util.Date> PERCENTOFGRAPHUTILIZATIONUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PercentOfGraphUtilizationUpdatedTime").timestampFormat("unixTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PercentOfGraphUtilizationUpdatedTime").timestampFormat("iso8601").build();
 
     private static final MemberDetailMarshaller instance = new MemberDetailMarshaller();
 
@@ -68,10 +74,13 @@ public class MemberDetailMarshaller {
             protocolMarshaller.marshall(memberDetail.getEmailAddress(), EMAILADDRESS_BINDING);
             protocolMarshaller.marshall(memberDetail.getGraphArn(), GRAPHARN_BINDING);
             protocolMarshaller.marshall(memberDetail.getMasterId(), MASTERID_BINDING);
+            protocolMarshaller.marshall(memberDetail.getAdministratorId(), ADMINISTRATORID_BINDING);
             protocolMarshaller.marshall(memberDetail.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(memberDetail.getDisabledReason(), DISABLEDREASON_BINDING);
             protocolMarshaller.marshall(memberDetail.getInvitedTime(), INVITEDTIME_BINDING);
             protocolMarshaller.marshall(memberDetail.getUpdatedTime(), UPDATEDTIME_BINDING);
+            protocolMarshaller.marshall(memberDetail.getVolumeUsageInBytes(), VOLUMEUSAGEINBYTES_BINDING);
+            protocolMarshaller.marshall(memberDetail.getVolumeUsageUpdatedTime(), VOLUMEUSAGEUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(memberDetail.getPercentOfGraphUtilization(), PERCENTOFGRAPHUTILIZATION_BINDING);
             protocolMarshaller.marshall(memberDetail.getPercentOfGraphUtilizationUpdatedTime(), PERCENTOFGRAPHUTILIZATIONUPDATEDTIME_BINDING);
         } catch (Exception e) {

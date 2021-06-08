@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,10 +70,22 @@ public class UpdateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<ColumnGroup> columnGroups;
     /**
      * <p>
+     * The folder that contains fields and nested subfolders for your dataset.
+     * </p>
+     */
+    private java.util.Map<String, FieldFolder> fieldFolders;
+    /**
+     * <p>
      * The row-level security configuration for the data you want to create.
      * </p>
      */
     private RowLevelPermissionDataSet rowLevelPermissionDataSet;
+    /**
+     * <p>
+     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * </p>
+     */
+    private java.util.List<ColumnLevelPermissionRule> columnLevelPermissionRules;
 
     /**
      * <p>
@@ -470,6 +482,74 @@ public class UpdateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The folder that contains fields and nested subfolders for your dataset.
+     * </p>
+     * 
+     * @return The folder that contains fields and nested subfolders for your dataset.
+     */
+
+    public java.util.Map<String, FieldFolder> getFieldFolders() {
+        return fieldFolders;
+    }
+
+    /**
+     * <p>
+     * The folder that contains fields and nested subfolders for your dataset.
+     * </p>
+     * 
+     * @param fieldFolders
+     *        The folder that contains fields and nested subfolders for your dataset.
+     */
+
+    public void setFieldFolders(java.util.Map<String, FieldFolder> fieldFolders) {
+        this.fieldFolders = fieldFolders;
+    }
+
+    /**
+     * <p>
+     * The folder that contains fields and nested subfolders for your dataset.
+     * </p>
+     * 
+     * @param fieldFolders
+     *        The folder that contains fields and nested subfolders for your dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDataSetRequest withFieldFolders(java.util.Map<String, FieldFolder> fieldFolders) {
+        setFieldFolders(fieldFolders);
+        return this;
+    }
+
+    /**
+     * Add a single FieldFolders entry
+     *
+     * @see UpdateDataSetRequest#withFieldFolders
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDataSetRequest addFieldFoldersEntry(String key, FieldFolder value) {
+        if (null == this.fieldFolders) {
+            this.fieldFolders = new java.util.HashMap<String, FieldFolder>();
+        }
+        if (this.fieldFolders.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.fieldFolders.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into FieldFolders.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDataSetRequest clearFieldFoldersEntries() {
+        this.fieldFolders = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The row-level security configuration for the data you want to create.
      * </p>
      * 
@@ -509,6 +589,76 @@ public class UpdateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * </p>
+     * 
+     * @return A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     */
+
+    public java.util.List<ColumnLevelPermissionRule> getColumnLevelPermissionRules() {
+        return columnLevelPermissionRules;
+    }
+
+    /**
+     * <p>
+     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * </p>
+     * 
+     * @param columnLevelPermissionRules
+     *        A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     */
+
+    public void setColumnLevelPermissionRules(java.util.Collection<ColumnLevelPermissionRule> columnLevelPermissionRules) {
+        if (columnLevelPermissionRules == null) {
+            this.columnLevelPermissionRules = null;
+            return;
+        }
+
+        this.columnLevelPermissionRules = new java.util.ArrayList<ColumnLevelPermissionRule>(columnLevelPermissionRules);
+    }
+
+    /**
+     * <p>
+     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setColumnLevelPermissionRules(java.util.Collection)} or
+     * {@link #withColumnLevelPermissionRules(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param columnLevelPermissionRules
+     *        A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDataSetRequest withColumnLevelPermissionRules(ColumnLevelPermissionRule... columnLevelPermissionRules) {
+        if (this.columnLevelPermissionRules == null) {
+            setColumnLevelPermissionRules(new java.util.ArrayList<ColumnLevelPermissionRule>(columnLevelPermissionRules.length));
+        }
+        for (ColumnLevelPermissionRule ele : columnLevelPermissionRules) {
+            this.columnLevelPermissionRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * </p>
+     * 
+     * @param columnLevelPermissionRules
+     *        A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDataSetRequest withColumnLevelPermissionRules(java.util.Collection<ColumnLevelPermissionRule> columnLevelPermissionRules) {
+        setColumnLevelPermissionRules(columnLevelPermissionRules);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -534,8 +684,12 @@ public class UpdateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("ImportMode: ").append(getImportMode()).append(",");
         if (getColumnGroups() != null)
             sb.append("ColumnGroups: ").append(getColumnGroups()).append(",");
+        if (getFieldFolders() != null)
+            sb.append("FieldFolders: ").append(getFieldFolders()).append(",");
         if (getRowLevelPermissionDataSet() != null)
-            sb.append("RowLevelPermissionDataSet: ").append(getRowLevelPermissionDataSet());
+            sb.append("RowLevelPermissionDataSet: ").append(getRowLevelPermissionDataSet()).append(",");
+        if (getColumnLevelPermissionRules() != null)
+            sb.append("ColumnLevelPermissionRules: ").append(getColumnLevelPermissionRules());
         sb.append("}");
         return sb.toString();
     }
@@ -578,9 +732,17 @@ public class UpdateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getColumnGroups() != null && other.getColumnGroups().equals(this.getColumnGroups()) == false)
             return false;
+        if (other.getFieldFolders() == null ^ this.getFieldFolders() == null)
+            return false;
+        if (other.getFieldFolders() != null && other.getFieldFolders().equals(this.getFieldFolders()) == false)
+            return false;
         if (other.getRowLevelPermissionDataSet() == null ^ this.getRowLevelPermissionDataSet() == null)
             return false;
         if (other.getRowLevelPermissionDataSet() != null && other.getRowLevelPermissionDataSet().equals(this.getRowLevelPermissionDataSet()) == false)
+            return false;
+        if (other.getColumnLevelPermissionRules() == null ^ this.getColumnLevelPermissionRules() == null)
+            return false;
+        if (other.getColumnLevelPermissionRules() != null && other.getColumnLevelPermissionRules().equals(this.getColumnLevelPermissionRules()) == false)
             return false;
         return true;
     }
@@ -597,7 +759,9 @@ public class UpdateDataSetRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getLogicalTableMap() == null) ? 0 : getLogicalTableMap().hashCode());
         hashCode = prime * hashCode + ((getImportMode() == null) ? 0 : getImportMode().hashCode());
         hashCode = prime * hashCode + ((getColumnGroups() == null) ? 0 : getColumnGroups().hashCode());
+        hashCode = prime * hashCode + ((getFieldFolders() == null) ? 0 : getFieldFolders().hashCode());
         hashCode = prime * hashCode + ((getRowLevelPermissionDataSet() == null) ? 0 : getRowLevelPermissionDataSet().hashCode());
+        hashCode = prime * hashCode + ((getColumnLevelPermissionRules() == null) ? 0 : getColumnLevelPermissionRules().hashCode());
         return hashCode;
     }
 

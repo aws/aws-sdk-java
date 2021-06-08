@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,8 +50,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
-     * bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing this template
-     * with the stack that you specified.
+     * bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates the change set
+     * by comparing this template with the stack that you specified.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
@@ -183,9 +183,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * This capacity does not apply to creating change sets, and specifying it when creating change sets has no effect.
      * </p>
      * <p>
-     * Also, change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     * that contains macros <i>and</i> nested stacks, you must create or update the stack directly from the template
-     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create or update the stack directly from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action,
+     * and specifying this capability.
      * </p>
      * </note>
      * <p>
@@ -296,6 +296,13 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceToImport> resourcesToImport;
+    /**
+     * <p>
+     * Creates a change set for the all nested stacks specified in the template. The default behavior of this action is
+     * set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.
+     * </p>
+     */
+    private Boolean includeNestedStacks;
 
     /**
      * <p>
@@ -419,8 +426,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
-     * bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing this template
-     * with the stack that you specified.
+     * bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates the change set
+     * by comparing this template with the stack that you specified.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
@@ -428,8 +435,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param templateURL
      *        The location of the file that contains the revised template. The URL must point to a template (max size:
-     *        460,800 bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing
-     *        this template with the stack that you specified.</p>
+     *        460,800 bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates
+     *        the change set by comparing this template with the stack that you specified.</p>
      *        <p>
      *        Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
      */
@@ -441,16 +448,16 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
-     * bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing this template
-     * with the stack that you specified.
+     * bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates the change set
+     * by comparing this template with the stack that you specified.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
      * </p>
      * 
      * @return The location of the file that contains the revised template. The URL must point to a template (max size:
-     *         460,800 bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing
-     *         this template with the stack that you specified.</p>
+     *         460,800 bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation
+     *         generates the change set by comparing this template with the stack that you specified.</p>
      *         <p>
      *         Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
      */
@@ -462,8 +469,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The location of the file that contains the revised template. The URL must point to a template (max size: 460,800
-     * bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing this template
-     * with the stack that you specified.
+     * bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates the change set
+     * by comparing this template with the stack that you specified.
      * </p>
      * <p>
      * Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
@@ -471,8 +478,8 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param templateURL
      *        The location of the file that contains the revised template. The URL must point to a template (max size:
-     *        460,800 bytes) that is located in an S3 bucket. AWS CloudFormation generates the change set by comparing
-     *        this template with the stack that you specified.</p>
+     *        460,800 bytes) that is located in an S3 bucket or a Systems Manager document. AWS CloudFormation generates
+     *        the change set by comparing this template with the stack that you specified.</p>
      *        <p>
      *        Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -728,9 +735,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * This capacity does not apply to creating change sets, and specifying it when creating change sets has no effect.
      * </p>
      * <p>
-     * Also, change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     * that contains macros <i>and</i> nested stacks, you must create or update the stack directly from the template
-     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create or update the stack directly from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action,
+     * and specifying this capability.
      * </p>
      * </note>
      * <p>
@@ -855,9 +862,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *         effect.
      *         </p>
      *         <p>
-     *         Also, change sets do not currently support nested stacks. If you want to create a stack from a stack
-     *         template that contains macros <i>and</i> nested stacks, you must create or update the stack directly from
-     *         the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
+     *         If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *         must create or update the stack directly from the template using the <a>CreateStack</a> or
+     *         <a>UpdateStack</a> action, and specifying this capability.
      *         </p>
      *         </note>
      *         <p>
@@ -988,9 +995,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * This capacity does not apply to creating change sets, and specifying it when creating change sets has no effect.
      * </p>
      * <p>
-     * Also, change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     * that contains macros <i>and</i> nested stacks, you must create or update the stack directly from the template
-     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create or update the stack directly from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action,
+     * and specifying this capability.
      * </p>
      * </note>
      * <p>
@@ -1116,9 +1123,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        effect.
      *        </p>
      *        <p>
-     *        Also, change sets do not currently support nested stacks. If you want to create a stack from a stack
-     *        template that contains macros <i>and</i> nested stacks, you must create or update the stack directly from
-     *        the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create or update the stack directly from the template using the <a>CreateStack</a> or
+     *        <a>UpdateStack</a> action, and specifying this capability.
      *        </p>
      *        </note>
      *        <p>
@@ -1251,9 +1258,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * This capacity does not apply to creating change sets, and specifying it when creating change sets has no effect.
      * </p>
      * <p>
-     * Also, change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     * that contains macros <i>and</i> nested stacks, you must create or update the stack directly from the template
-     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create or update the stack directly from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action,
+     * and specifying this capability.
      * </p>
      * </note>
      * <p>
@@ -1384,9 +1391,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        effect.
      *        </p>
      *        <p>
-     *        Also, change sets do not currently support nested stacks. If you want to create a stack from a stack
-     *        template that contains macros <i>and</i> nested stacks, you must create or update the stack directly from
-     *        the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create or update the stack directly from the template using the <a>CreateStack</a> or
+     *        <a>UpdateStack</a> action, and specifying this capability.
      *        </p>
      *        </note>
      *        <p>
@@ -1521,9 +1528,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * This capacity does not apply to creating change sets, and specifying it when creating change sets has no effect.
      * </p>
      * <p>
-     * Also, change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     * that contains macros <i>and</i> nested stacks, you must create or update the stack directly from the template
-     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create or update the stack directly from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action,
+     * and specifying this capability.
      * </p>
      * </note>
      * <p>
@@ -1649,9 +1656,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        effect.
      *        </p>
      *        <p>
-     *        Also, change sets do not currently support nested stacks. If you want to create a stack from a stack
-     *        template that contains macros <i>and</i> nested stacks, you must create or update the stack directly from
-     *        the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create or update the stack directly from the template using the <a>CreateStack</a> or
+     *        <a>UpdateStack</a> action, and specifying this capability.
      *        </p>
      *        </note>
      *        <p>
@@ -1781,9 +1788,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * This capacity does not apply to creating change sets, and specifying it when creating change sets has no effect.
      * </p>
      * <p>
-     * Also, change sets do not currently support nested stacks. If you want to create a stack from a stack template
-     * that contains macros <i>and</i> nested stacks, you must create or update the stack directly from the template
-     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
+     * If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you must
+     * create or update the stack directly from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action,
+     * and specifying this capability.
      * </p>
      * </note>
      * <p>
@@ -1909,9 +1916,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      *        effect.
      *        </p>
      *        <p>
-     *        Also, change sets do not currently support nested stacks. If you want to create a stack from a stack
-     *        template that contains macros <i>and</i> nested stacks, you must create or update the stack directly from
-     *        the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
+     *        If you want to create a stack from a stack template that contains macros <i>and</i> nested stacks, you
+     *        must create or update the stack directly from the template using the <a>CreateStack</a> or
+     *        <a>UpdateStack</a> action, and specifying this capability.
      *        </p>
      *        </note>
      *        <p>
@@ -2807,6 +2814,66 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Creates a change set for the all nested stacks specified in the template. The default behavior of this action is
+     * set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.
+     * </p>
+     * 
+     * @param includeNestedStacks
+     *        Creates a change set for the all nested stacks specified in the template. The default behavior of this
+     *        action is set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.
+     */
+
+    public void setIncludeNestedStacks(Boolean includeNestedStacks) {
+        this.includeNestedStacks = includeNestedStacks;
+    }
+
+    /**
+     * <p>
+     * Creates a change set for the all nested stacks specified in the template. The default behavior of this action is
+     * set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.
+     * </p>
+     * 
+     * @return Creates a change set for the all nested stacks specified in the template. The default behavior of this
+     *         action is set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.
+     */
+
+    public Boolean getIncludeNestedStacks() {
+        return this.includeNestedStacks;
+    }
+
+    /**
+     * <p>
+     * Creates a change set for the all nested stacks specified in the template. The default behavior of this action is
+     * set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.
+     * </p>
+     * 
+     * @param includeNestedStacks
+     *        Creates a change set for the all nested stacks specified in the template. The default behavior of this
+     *        action is set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChangeSetRequest withIncludeNestedStacks(Boolean includeNestedStacks) {
+        setIncludeNestedStacks(includeNestedStacks);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Creates a change set for the all nested stacks specified in the template. The default behavior of this action is
+     * set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.
+     * </p>
+     * 
+     * @return Creates a change set for the all nested stacks specified in the template. The default behavior of this
+     *         action is set to <code>False</code>. To include nested sets in a change set, specify <code>True</code>.
+     */
+
+    public Boolean isIncludeNestedStacks() {
+        return this.includeNestedStacks;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2849,7 +2916,9 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
         if (getChangeSetType() != null)
             sb.append("ChangeSetType: ").append(getChangeSetType()).append(",");
         if (getResourcesToImport() != null)
-            sb.append("ResourcesToImport: ").append(getResourcesToImport());
+            sb.append("ResourcesToImport: ").append(getResourcesToImport()).append(",");
+        if (getIncludeNestedStacks() != null)
+            sb.append("IncludeNestedStacks: ").append(getIncludeNestedStacks());
         sb.append("}");
         return sb.toString();
     }
@@ -2928,6 +2997,10 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getResourcesToImport() != null && other.getResourcesToImport().equals(this.getResourcesToImport()) == false)
             return false;
+        if (other.getIncludeNestedStacks() == null ^ this.getIncludeNestedStacks() == null)
+            return false;
+        if (other.getIncludeNestedStacks() != null && other.getIncludeNestedStacks().equals(this.getIncludeNestedStacks()) == false)
+            return false;
         return true;
     }
 
@@ -2952,6 +3025,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getChangeSetType() == null) ? 0 : getChangeSetType().hashCode());
         hashCode = prime * hashCode + ((getResourcesToImport() == null) ? 0 : getResourcesToImport().hashCode());
+        hashCode = prime * hashCode + ((getIncludeNestedStacks() == null) ? 0 : getIncludeNestedStacks().hashCode());
         return hashCode;
     }
 

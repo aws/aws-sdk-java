@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,12 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
     private String status;
     /**
      * <p>
-     * The creation date/time of the IAM access key related to a finding.
+     * Indicates when the IAM access key was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String createdAt;
@@ -69,6 +74,24 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
      * </p>
      */
     private String principalName;
+    /**
+     * <p>
+     * The AWS account ID of the account for the key.
+     * </p>
+     */
+    private String accountId;
+    /**
+     * <p>
+     * The identifier of the access key.
+     * </p>
+     */
+    private String accessKeyId;
+    /**
+     * <p>
+     * Information about the session that the key was used for.
+     * </p>
+     */
+    private AwsIamAccessKeySessionContext sessionContext;
 
     /**
      * <p>
@@ -192,11 +215,20 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The creation date/time of the IAM access key related to a finding.
+     * Indicates when the IAM access key was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createdAt
-     *        The creation date/time of the IAM access key related to a finding.
+     *        Indicates when the IAM access key was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setCreatedAt(String createdAt) {
@@ -205,10 +237,19 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The creation date/time of the IAM access key related to a finding.
+     * Indicates when the IAM access key was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return The creation date/time of the IAM access key related to a finding.
+     * @return Indicates when the IAM access key was created.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getCreatedAt() {
@@ -217,11 +258,20 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The creation date/time of the IAM access key related to a finding.
+     * Indicates when the IAM access key was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createdAt
-     *        The creation date/time of the IAM access key related to a finding.
+     *        Indicates when the IAM access key was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,6 +401,126 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The AWS account ID of the account for the key.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID of the account for the key.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the account for the key.
+     * </p>
+     * 
+     * @return The AWS account ID of the account for the key.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the account for the key.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID of the account for the key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsIamAccessKeyDetails withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the access key.
+     * </p>
+     * 
+     * @param accessKeyId
+     *        The identifier of the access key.
+     */
+
+    public void setAccessKeyId(String accessKeyId) {
+        this.accessKeyId = accessKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the access key.
+     * </p>
+     * 
+     * @return The identifier of the access key.
+     */
+
+    public String getAccessKeyId() {
+        return this.accessKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the access key.
+     * </p>
+     * 
+     * @param accessKeyId
+     *        The identifier of the access key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsIamAccessKeyDetails withAccessKeyId(String accessKeyId) {
+        setAccessKeyId(accessKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the session that the key was used for.
+     * </p>
+     * 
+     * @param sessionContext
+     *        Information about the session that the key was used for.
+     */
+
+    public void setSessionContext(AwsIamAccessKeySessionContext sessionContext) {
+        this.sessionContext = sessionContext;
+    }
+
+    /**
+     * <p>
+     * Information about the session that the key was used for.
+     * </p>
+     * 
+     * @return Information about the session that the key was used for.
+     */
+
+    public AwsIamAccessKeySessionContext getSessionContext() {
+        return this.sessionContext;
+    }
+
+    /**
+     * <p>
+     * Information about the session that the key was used for.
+     * </p>
+     * 
+     * @param sessionContext
+     *        Information about the session that the key was used for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsIamAccessKeyDetails withSessionContext(AwsIamAccessKeySessionContext sessionContext) {
+        setSessionContext(sessionContext);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -373,7 +543,13 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
         if (getPrincipalType() != null)
             sb.append("PrincipalType: ").append(getPrincipalType()).append(",");
         if (getPrincipalName() != null)
-            sb.append("PrincipalName: ").append(getPrincipalName());
+            sb.append("PrincipalName: ").append(getPrincipalName()).append(",");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getAccessKeyId() != null)
+            sb.append("AccessKeyId: ").append(getAccessKeyId()).append(",");
+        if (getSessionContext() != null)
+            sb.append("SessionContext: ").append(getSessionContext());
         sb.append("}");
         return sb.toString();
     }
@@ -412,6 +588,18 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
             return false;
         if (other.getPrincipalName() != null && other.getPrincipalName().equals(this.getPrincipalName()) == false)
             return false;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
+        if (other.getAccessKeyId() == null ^ this.getAccessKeyId() == null)
+            return false;
+        if (other.getAccessKeyId() != null && other.getAccessKeyId().equals(this.getAccessKeyId()) == false)
+            return false;
+        if (other.getSessionContext() == null ^ this.getSessionContext() == null)
+            return false;
+        if (other.getSessionContext() != null && other.getSessionContext().equals(this.getSessionContext()) == false)
+            return false;
         return true;
     }
 
@@ -426,6 +614,9 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getPrincipalId() == null) ? 0 : getPrincipalId().hashCode());
         hashCode = prime * hashCode + ((getPrincipalType() == null) ? 0 : getPrincipalType().hashCode());
         hashCode = prime * hashCode + ((getPrincipalName() == null) ? 0 : getPrincipalName().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getAccessKeyId() == null) ? 0 : getAccessKeyId().hashCode());
+        hashCode = prime * hashCode + ((getSessionContext() == null) ? 0 : getSessionContext().hashCode());
         return hashCode;
     }
 

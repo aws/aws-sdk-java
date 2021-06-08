@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,13 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private String apiEndpoint;
+    /**
+     * <p>
+     * Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     * Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * </p>
+     */
+    private Boolean apiGatewayManaged;
     /**
      * <p>
      * The API ID.
@@ -63,6 +70,14 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private Boolean disableSchemaValidation;
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     */
+    private Boolean disableExecuteApiEndpoint;
     /**
      * <p>
      * The validation information during API import. This may include particular properties of your OpenAPI definition
@@ -153,6 +168,66 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
     public ImportApiResult withApiEndpoint(String apiEndpoint) {
         setApiEndpoint(apiEndpoint);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     * Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * </p>
+     * 
+     * @param apiGatewayManaged
+     *        Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     *        Gateway. A managed API can be deleted only through the tooling or service that created it.
+     */
+
+    public void setApiGatewayManaged(Boolean apiGatewayManaged) {
+        this.apiGatewayManaged = apiGatewayManaged;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     * Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * </p>
+     * 
+     * @return Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     *         Gateway. A managed API can be deleted only through the tooling or service that created it.
+     */
+
+    public Boolean getApiGatewayManaged() {
+        return this.apiGatewayManaged;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     * Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * </p>
+     * 
+     * @param apiGatewayManaged
+     *        Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     *        Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportApiResult withApiGatewayManaged(Boolean apiGatewayManaged) {
+        setApiGatewayManaged(apiGatewayManaged);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     * Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * </p>
+     * 
+     * @return Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     *         Gateway. A managed API can be deleted only through the tooling or service that created it.
+     */
+
+    public Boolean isApiGatewayManaged() {
+        return this.apiGatewayManaged;
     }
 
     /**
@@ -417,6 +492,76 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     public Boolean isDisableSchemaValidation() {
         return this.disableSchemaValidation;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @param disableExecuteApiEndpoint
+     *        Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *        clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint.
+     *        To require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     */
+
+    public void setDisableExecuteApiEndpoint(Boolean disableExecuteApiEndpoint) {
+        this.disableExecuteApiEndpoint = disableExecuteApiEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @return Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *         clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+     *         endpoint. To require that clients use a custom domain name to invoke your API, disable the default
+     *         endpoint.
+     */
+
+    public Boolean getDisableExecuteApiEndpoint() {
+        return this.disableExecuteApiEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @param disableExecuteApiEndpoint
+     *        Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *        clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint.
+     *        To require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportApiResult withDisableExecuteApiEndpoint(Boolean disableExecuteApiEndpoint) {
+        setDisableExecuteApiEndpoint(disableExecuteApiEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @return Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *         clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+     *         endpoint. To require that clients use a custom domain name to invoke your API, disable the default
+     *         endpoint.
+     */
+
+    public Boolean isDisableExecuteApiEndpoint() {
+        return this.disableExecuteApiEndpoint;
     }
 
     /**
@@ -840,6 +985,8 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
         sb.append("{");
         if (getApiEndpoint() != null)
             sb.append("ApiEndpoint: ").append(getApiEndpoint()).append(",");
+        if (getApiGatewayManaged() != null)
+            sb.append("ApiGatewayManaged: ").append(getApiGatewayManaged()).append(",");
         if (getApiId() != null)
             sb.append("ApiId: ").append(getApiId()).append(",");
         if (getApiKeySelectionExpression() != null)
@@ -852,6 +999,8 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDisableSchemaValidation() != null)
             sb.append("DisableSchemaValidation: ").append(getDisableSchemaValidation()).append(",");
+        if (getDisableExecuteApiEndpoint() != null)
+            sb.append("DisableExecuteApiEndpoint: ").append(getDisableExecuteApiEndpoint()).append(",");
         if (getImportInfo() != null)
             sb.append("ImportInfo: ").append(getImportInfo()).append(",");
         if (getName() != null)
@@ -884,6 +1033,10 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getApiEndpoint() != null && other.getApiEndpoint().equals(this.getApiEndpoint()) == false)
             return false;
+        if (other.getApiGatewayManaged() == null ^ this.getApiGatewayManaged() == null)
+            return false;
+        if (other.getApiGatewayManaged() != null && other.getApiGatewayManaged().equals(this.getApiGatewayManaged()) == false)
+            return false;
         if (other.getApiId() == null ^ this.getApiId() == null)
             return false;
         if (other.getApiId() != null && other.getApiId().equals(this.getApiId()) == false)
@@ -907,6 +1060,10 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (other.getDisableSchemaValidation() == null ^ this.getDisableSchemaValidation() == null)
             return false;
         if (other.getDisableSchemaValidation() != null && other.getDisableSchemaValidation().equals(this.getDisableSchemaValidation()) == false)
+            return false;
+        if (other.getDisableExecuteApiEndpoint() == null ^ this.getDisableExecuteApiEndpoint() == null)
+            return false;
+        if (other.getDisableExecuteApiEndpoint() != null && other.getDisableExecuteApiEndpoint().equals(this.getDisableExecuteApiEndpoint()) == false)
             return false;
         if (other.getImportInfo() == null ^ this.getImportInfo() == null)
             return false;
@@ -945,12 +1102,14 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApiEndpoint() == null) ? 0 : getApiEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getApiGatewayManaged() == null) ? 0 : getApiGatewayManaged().hashCode());
         hashCode = prime * hashCode + ((getApiId() == null) ? 0 : getApiId().hashCode());
         hashCode = prime * hashCode + ((getApiKeySelectionExpression() == null) ? 0 : getApiKeySelectionExpression().hashCode());
         hashCode = prime * hashCode + ((getCorsConfiguration() == null) ? 0 : getCorsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisableSchemaValidation() == null) ? 0 : getDisableSchemaValidation().hashCode());
+        hashCode = prime * hashCode + ((getDisableExecuteApiEndpoint() == null) ? 0 : getDisableExecuteApiEndpoint().hashCode());
         hashCode = prime * hashCode + ((getImportInfo() == null) ? 0 : getImportInfo().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProtocolType() == null) ? 0 : getProtocolType().hashCode());

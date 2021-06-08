@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class PhoneNumberMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhoneNumberId").build();
     private static final MarshallingInfo<String> E164PHONENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("E164PhoneNumber").build();
+    private static final MarshallingInfo<String> COUNTRY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Country").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> PRODUCTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -71,6 +73,7 @@ public class PhoneNumberMarshaller {
         try {
             protocolMarshaller.marshall(phoneNumber.getPhoneNumberId(), PHONENUMBERID_BINDING);
             protocolMarshaller.marshall(phoneNumber.getE164PhoneNumber(), E164PHONENUMBER_BINDING);
+            protocolMarshaller.marshall(phoneNumber.getCountry(), COUNTRY_BINDING);
             protocolMarshaller.marshall(phoneNumber.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(phoneNumber.getProductType(), PRODUCTTYPE_BINDING);
             protocolMarshaller.marshall(phoneNumber.getStatus(), STATUS_BINDING);

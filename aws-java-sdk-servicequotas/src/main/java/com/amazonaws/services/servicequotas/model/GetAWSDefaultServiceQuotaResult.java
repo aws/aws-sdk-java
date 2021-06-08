@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class GetAWSDefaultServiceQuotaResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     * Information about the quota.
      * </p>
      */
     private ServiceQuota quota;
 
     /**
      * <p>
-     * Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     * Information about the quota.
      * </p>
      * 
      * @param quota
-     *        Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     *        Information about the quota.
      */
 
     public void setQuota(ServiceQuota quota) {
@@ -45,10 +45,10 @@ public class GetAWSDefaultServiceQuotaResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     * Information about the quota.
      * </p>
      * 
-     * @return Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     * @return Information about the quota.
      */
 
     public ServiceQuota getQuota() {
@@ -57,11 +57,11 @@ public class GetAWSDefaultServiceQuotaResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     * Information about the quota.
      * </p>
      * 
      * @param quota
-     *        Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+     *        Information about the quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

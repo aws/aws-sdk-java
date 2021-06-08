@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to parameters for how a Java-based Kinesis Data Analytics application executes multiple tasks
- * simultaneously.
+ * Describes updates to parameters for how an application executes multiple tasks simultaneously.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ParallelismConfigurationUpdate"
@@ -59,8 +58,8 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
     private Integer parallelismPerKPUUpdate;
     /**
      * <p>
-     * Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of the application
-     * in response to increased throughput.
+     * Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a Flink-based
+     * Kinesis Data Analytics application in response to increased throughput.
      * </p>
      */
     private Boolean autoScalingEnabledUpdate;
@@ -272,13 +271,13 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of the application
-     * in response to increased throughput.
+     * Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a Flink-based
+     * Kinesis Data Analytics application in response to increased throughput.
      * </p>
      * 
      * @param autoScalingEnabledUpdate
-     *        Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of the
-     *        application in response to increased throughput.
+     *        Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a
+     *        Flink-based Kinesis Data Analytics application in response to increased throughput.
      */
 
     public void setAutoScalingEnabledUpdate(Boolean autoScalingEnabledUpdate) {
@@ -287,12 +286,12 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of the application
-     * in response to increased throughput.
+     * Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a Flink-based
+     * Kinesis Data Analytics application in response to increased throughput.
      * </p>
      * 
-     * @return Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of the
-     *         application in response to increased throughput.
+     * @return Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a
+     *         Flink-based Kinesis Data Analytics application in response to increased throughput.
      */
 
     public Boolean getAutoScalingEnabledUpdate() {
@@ -301,13 +300,13 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of the application
-     * in response to increased throughput.
+     * Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a Flink-based
+     * Kinesis Data Analytics application in response to increased throughput.
      * </p>
      * 
      * @param autoScalingEnabledUpdate
-     *        Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of the
-     *        application in response to increased throughput.
+     *        Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a
+     *        Flink-based Kinesis Data Analytics application in response to increased throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,12 +317,12 @@ public class ParallelismConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of the application
-     * in response to increased throughput.
+     * Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a Flink-based
+     * Kinesis Data Analytics application in response to increased throughput.
      * </p>
      * 
-     * @return Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of the
-     *         application in response to increased throughput.
+     * @return Describes updates to whether the Kinesis Data Analytics service can increase the parallelism of a
+     *         Flink-based Kinesis Data Analytics application in response to increased throughput.
      */
 
     public Boolean isAutoScalingEnabledUpdate() {

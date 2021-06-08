@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,16 +21,31 @@ import java.io.Serializable;
 /**
  * Request object to get an analytics configuration.
  */
-public class GetBucketAnalyticsConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetBucketAnalyticsConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     private String bucketName;
     private String id;
+    private String expectedBucketOwner;
+
 
     public GetBucketAnalyticsConfigurationRequest() { }
 
     public GetBucketAnalyticsConfigurationRequest(String bucketName, String id) {
         this.bucketName = bucketName;
         this.id = id;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetBucketAnalyticsConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

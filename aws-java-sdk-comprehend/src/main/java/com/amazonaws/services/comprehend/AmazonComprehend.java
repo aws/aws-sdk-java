@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,10 +80,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
-     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
-     *         those for Custom Classification, Amazon Comprehend accepts text in all supported languages. For a list of
-     *         supported languages, see <a>supported-languages</a>.
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -107,10 +106,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
-     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
-     *         those for Custom Classification, Amazon Comprehend accepts text in all supported languages. For a list of
-     *         supported languages, see <a>supported-languages</a>.
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -135,10 +133,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
-     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
-     *         those for Custom Classification, Amazon Comprehend accepts text in all supported languages. For a list of
-     *         supported languages, see <a>supported-languages</a>.
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -163,10 +160,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
-     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
-     *         those for Custom Classification, Amazon Comprehend accepts text in all supported languages. For a list of
-     *         supported languages, see <a>supported-languages</a>.
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
      * @throws BatchSizeLimitExceededException
      *         The number of documents in the request exceeds the limit of 25. Try your request again with fewer
      *         documents.
@@ -189,8 +185,7 @@ public interface AmazonComprehend {
      * @throws InvalidRequestException
      *         The request is invalid.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws InternalServerException
@@ -203,7 +198,31 @@ public interface AmazonComprehend {
 
     /**
      * <p>
-     * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
+     * Analyzes input text for the presence of personally identifiable information (PII) and returns the labels of
+     * identified PII entity types such as name, address, bank account number, or phone number.
+     * </p>
+     * 
+     * @param containsPiiEntitiesRequest
+     * @return Result of the ContainsPiiEntities operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TextSizeLimitExceededException
+     *         The size of the input text exceeds the limit. Use a smaller document.
+     * @throws UnsupportedLanguageException
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ContainsPiiEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ContainsPiiEntities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ContainsPiiEntitiesResult containsPiiEntities(ContainsPiiEntitiesRequest containsPiiEntitiesRequest);
+
+    /**
+     * <p>
+     * Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a
      * set of training documents that labeled with the categories that you want to use. After the classifier is trained
      * you can use it to categorize a set of labeled documents into the categories. For more information, see
      * <a>how-document-classification</a>.
@@ -214,20 +233,19 @@ public interface AmazonComprehend {
      * @throws InvalidRequestException
      *         The request is invalid.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws ResourceLimitExceededException
-     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
-     *         and then try your request again.
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
-     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
-     *         those for Custom Classification, Amazon Comprehend accepts text in all supported languages. For a list of
-     *         supported languages, see <a>supported-languages</a>.
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
      * @throws KmsKeyValidationException
      *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
@@ -248,15 +266,14 @@ public interface AmazonComprehend {
      * @throws InvalidRequestException
      *         The request is invalid.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws ResourceLimitExceededException
-     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
-     *         and then try your request again.
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws TooManyTagsException
@@ -281,20 +298,19 @@ public interface AmazonComprehend {
      * @throws InvalidRequestException
      *         The request is invalid.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws TooManyTagsException
      *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
      *         number of tags includes both existing tags and those included in your current request.
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws ResourceLimitExceededException
-     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
-     *         and then try your request again.
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
-     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
-     *         those for Custom Classification, Amazon Comprehend accepts text in all supported languages. For a list of
-     *         supported languages, see <a>supported-languages</a>.
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
      * @throws KmsKeyValidationException
      *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
@@ -327,10 +343,9 @@ public interface AmazonComprehend {
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DeleteDocumentClassifier
@@ -350,7 +365,7 @@ public interface AmazonComprehend {
      * @throws InvalidRequestException
      *         The request is invalid.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws TooManyRequestsException
@@ -385,10 +400,9 @@ public interface AmazonComprehend {
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DeleteEntityRecognizer
@@ -530,6 +544,27 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Gets the status and details of an events detection job.
+     * </p>
+     * 
+     * @param describeEventsDetectionJobRequest
+     * @return Result of the DescribeEventsDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeEventsDetectionJobResult describeEventsDetectionJob(DescribeEventsDetectionJobRequest describeEventsDetectionJobRequest);
+
+    /**
+     * <p>
      * Gets the properties associated with a key phrases detection job. Use this operation to get the status of a
      * detection job.
      * </p>
@@ -549,6 +584,28 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeKeyPhrasesDetectionJobResult describeKeyPhrasesDetectionJob(DescribeKeyPhrasesDetectionJobRequest describeKeyPhrasesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with a PII entities detection job. For example, you can use this operation to get
+     * the job status.
+     * </p>
+     * 
+     * @param describePiiEntitiesDetectionJobRequest
+     * @return Result of the DescribePiiEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribePiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePiiEntitiesDetectionJobResult describePiiEntitiesDetectionJob(DescribePiiEntitiesDetectionJobRequest describePiiEntitiesDetectionJobRequest);
 
     /**
      * <p>
@@ -625,13 +682,14 @@ public interface AmazonComprehend {
      * @return Result of the DetectEntities operation returned by the service.
      * @throws InvalidRequestException
      *         The request is invalid.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
-     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
-     *         those for Custom Classification, Amazon Comprehend accepts text in all supported languages. For a list of
-     *         supported languages, see <a>supported-languages</a>.
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectEntities
@@ -652,10 +710,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
-     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
-     *         those for Custom Classification, Amazon Comprehend accepts text in all supported languages. For a list of
-     *         supported languages, see <a>supported-languages</a>.
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectKeyPhrases
@@ -663,6 +720,30 @@ public interface AmazonComprehend {
      *      API Documentation</a>
      */
     DetectKeyPhrasesResult detectKeyPhrases(DetectKeyPhrasesRequest detectKeyPhrasesRequest);
+
+    /**
+     * <p>
+     * Inspects the input text for entities that contain personally identifiable information (PII) and returns
+     * information about them.
+     * </p>
+     * 
+     * @param detectPiiEntitiesRequest
+     * @return Result of the DetectPiiEntities operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TextSizeLimitExceededException
+     *         The size of the input text exceeds the limit. Use a smaller document.
+     * @throws UnsupportedLanguageException
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DetectPiiEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DetectPiiEntitiesResult detectPiiEntities(DetectPiiEntitiesRequest detectPiiEntitiesRequest);
 
     /**
      * <p>
@@ -677,10 +758,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
-     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
-     *         those for Custom Classification, Amazon Comprehend accepts text in all supported languages. For a list of
-     *         supported languages, see <a>supported-languages</a>.
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectSentiment
@@ -702,10 +782,9 @@ public interface AmazonComprehend {
      * @throws TextSizeLimitExceededException
      *         The size of the input text exceeds the limit. Use a smaller document.
      * @throws UnsupportedLanguageException
-     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
-     *         (such as <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as
-     *         those for Custom Classification, Amazon Comprehend accepts text in all supported languages. For a list of
-     *         supported languages, see <a>supported-languages</a>.
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         see <a>supported-languages</a>.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.DetectSyntax
@@ -845,6 +924,27 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Gets a list of the events detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listEventsDetectionJobsRequest
+     * @return Result of the ListEventsDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the operation is invalid. Specify a different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListEventsDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListEventsDetectionJobsResult listEventsDetectionJobs(ListEventsDetectionJobsRequest listEventsDetectionJobsRequest);
+
+    /**
+     * <p>
      * Get a list of key phrase detection jobs that you have submitted.
      * </p>
      * 
@@ -863,6 +963,27 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     ListKeyPhrasesDetectionJobsResult listKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest listKeyPhrasesDetectionJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of the PII entity detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listPiiEntitiesDetectionJobsRequest
+     * @return Result of the ListPiiEntitiesDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the operation is invalid. Specify a different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListPiiEntitiesDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPiiEntitiesDetectionJobsResult listPiiEntitiesDetectionJobs(ListPiiEntitiesDetectionJobsRequest listPiiEntitiesDetectionJobsRequest);
 
     /**
      * <p>
@@ -939,8 +1060,7 @@ public interface AmazonComprehend {
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws KmsKeyValidationException
      *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
@@ -993,8 +1113,7 @@ public interface AmazonComprehend {
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws KmsKeyValidationException
      *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
      * @throws InternalServerException
@@ -1004,6 +1123,27 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     StartEntitiesDetectionJobResult startEntitiesDetectionJob(StartEntitiesDetectionJobRequest startEntitiesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous event detection job for a collection of documents.
+     * </p>
+     * 
+     * @param startEventsDetectionJobRequest
+     * @return Result of the StartEventsDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartEventsDetectionJobResult startEventsDetectionJob(StartEventsDetectionJobRequest startEventsDetectionJobRequest);
 
     /**
      * <p>
@@ -1026,6 +1166,27 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     StartKeyPhrasesDetectionJobResult startKeyPhrasesDetectionJob(StartKeyPhrasesDetectionJobRequest startKeyPhrasesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous PII entity detection job for a collection of documents.
+     * </p>
+     * 
+     * @param startPiiEntitiesDetectionJobRequest
+     * @return Result of the StartPiiEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartPiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartPiiEntitiesDetectionJobResult startPiiEntitiesDetectionJob(StartPiiEntitiesDetectionJobRequest startPiiEntitiesDetectionJobRequest);
 
     /**
      * <p>
@@ -1135,6 +1296,25 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Stops an events detection job in progress.
+     * </p>
+     * 
+     * @param stopEventsDetectionJobRequest
+     * @return Result of the StopEventsDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopEventsDetectionJobResult stopEventsDetectionJob(StopEventsDetectionJobRequest stopEventsDetectionJobRequest);
+
+    /**
+     * <p>
      * Stops a key phrases detection job in progress.
      * </p>
      * <p>
@@ -1163,6 +1343,25 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     StopKeyPhrasesDetectionJobResult stopKeyPhrasesDetectionJob(StopKeyPhrasesDetectionJobRequest stopKeyPhrasesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops a PII entities detection job in progress.
+     * </p>
+     * 
+     * @param stopPiiEntitiesDetectionJobRequest
+     * @return Result of the StopPiiEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopPiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopPiiEntitiesDetectionJobResult stopPiiEntitiesDetectionJob(StopPiiEntitiesDetectionJobRequest stopPiiEntitiesDetectionJobRequest);
 
     /**
      * <p>
@@ -1310,15 +1509,14 @@ public interface AmazonComprehend {
      * @throws TooManyRequestsException
      *         The number of requests exceeds the limit. Resubmit your request later.
      * @throws ResourceInUseException
-     *         The specified name is already in use. Use a different name and try your request again.
+     *         The specified resource name is already in use. Use a different name and try your request again.
      * @throws ResourceLimitExceededException
-     *         The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup,
-     *         and then try your request again.
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
      * @throws ResourceNotFoundException
      *         The specified resource ARN was not found. Check the ARN and try your request again.
      * @throws ResourceUnavailableException
-     *         The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
-     *         state and try your request again.
+     *         The specified resource is not available. Check the resource and try your request again.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonComprehend.UpdateEndpoint

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -141,6 +141,47 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Cancels a mailbox export job.
+     * </p>
+     * <note>
+     * <p>
+     * If the mailbox export job is near completion, it might not be possible to cancel it.
+     * </p>
+     * </note>
+     * 
+     * @param cancelMailboxExportJobRequest
+     * @return A Java Future containing the result of the CancelMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsync.CancelMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CancelMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMailboxExportJobResult> cancelMailboxExportJobAsync(CancelMailboxExportJobRequest cancelMailboxExportJobRequest);
+
+    /**
+     * <p>
+     * Cancels a mailbox export job.
+     * </p>
+     * <note>
+     * <p>
+     * If the mailbox export job is near completion, it might not be possible to cancel it.
+     * </p>
+     * </note>
+     * 
+     * @param cancelMailboxExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.CancelMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CancelMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMailboxExportJobResult> cancelMailboxExportJobAsync(CancelMailboxExportJobRequest cancelMailboxExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelMailboxExportJobRequest, CancelMailboxExportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
      * </p>
      * 
@@ -200,6 +241,106 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest createGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param createMobileDeviceAccessRuleRequest
+     * @return A Java Future containing the result of the CreateMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.CreateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMobileDeviceAccessRuleResult> createMobileDeviceAccessRuleAsync(
+            CreateMobileDeviceAccessRuleRequest createMobileDeviceAccessRuleRequest);
+
+    /**
+     * <p>
+     * Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param createMobileDeviceAccessRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.CreateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMobileDeviceAccessRuleResult> createMobileDeviceAccessRuleAsync(
+            CreateMobileDeviceAccessRuleRequest createMobileDeviceAccessRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMobileDeviceAccessRuleRequest, CreateMobileDeviceAccessRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
+     * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
+     * alias must match the directory alias. If you choose not to associate an existing directory with your
+     * organization, then we create a new Amazon WorkMail directory for you. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * You can associate multiple email domains with an organization, then set your default email domain from the Amazon
+     * WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For
+     * more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a
+     * domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the
+     * default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email
+     * for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed
+     * master key for you.
+     * </p>
+     * 
+     * @param createOrganizationRequest
+     * @return A Java Future containing the result of the CreateOrganization operation returned by the service.
+     * @sample AmazonWorkMailAsync.CreateOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOrganizationResult> createOrganizationAsync(CreateOrganizationRequest createOrganizationRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
+     * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
+     * alias must match the directory alias. If you choose not to associate an existing directory with your
+     * organization, then we create a new Amazon WorkMail directory for you. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * You can associate multiple email domains with an organization, then set your default email domain from the Amazon
+     * WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For
+     * more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a
+     * domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the
+     * default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email
+     * for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed
+     * master key for you.
+     * </p>
+     * 
+     * @param createOrganizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOrganization operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.CreateOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOrganizationResult> createOrganizationAsync(CreateOrganizationRequest createOrganizationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOrganizationRequest, CreateOrganizationResult> asyncHandler);
 
     /**
      * <p>
@@ -389,6 +530,78 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param deleteMobileDeviceAccessRuleRequest
+     * @return A Java Future containing the result of the DeleteMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.DeleteMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMobileDeviceAccessRuleResult> deleteMobileDeviceAccessRuleAsync(
+            DeleteMobileDeviceAccessRuleRequest deleteMobileDeviceAccessRuleRequest);
+
+    /**
+     * <p>
+     * Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param deleteMobileDeviceAccessRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.DeleteMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMobileDeviceAccessRuleResult> deleteMobileDeviceAccessRuleAsync(
+            DeleteMobileDeviceAccessRuleRequest deleteMobileDeviceAccessRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMobileDeviceAccessRuleRequest, DeleteMobileDeviceAccessRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of
+     * the organization. You can choose whether to delete the associated directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteOrganizationRequest
+     * @return A Java Future containing the result of the DeleteOrganization operation returned by the service.
+     * @sample AmazonWorkMailAsync.DeleteOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOrganizationResult> deleteOrganizationAsync(DeleteOrganizationRequest deleteOrganizationRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of
+     * the organization. You can choose whether to delete the associated directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteOrganizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOrganization operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.DeleteOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOrganizationResult> deleteOrganizationAsync(DeleteOrganizationRequest deleteOrganizationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOrganizationRequest, DeleteOrganizationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified resource.
      * </p>
      * 
@@ -555,6 +768,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<DescribeGroupResult> describeGroupAsync(DescribeGroupRequest describeGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeGroupRequest, DescribeGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the current status of a mailbox export job.
+     * </p>
+     * 
+     * @param describeMailboxExportJobRequest
+     * @return A Java Future containing the result of the DescribeMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsync.DescribeMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMailboxExportJobResult> describeMailboxExportJobAsync(DescribeMailboxExportJobRequest describeMailboxExportJobRequest);
+
+    /**
+     * <p>
+     * Describes the current status of a mailbox export job.
+     * </p>
+     * 
+     * @param describeMailboxExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.DescribeMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMailboxExportJobResult> describeMailboxExportJobAsync(DescribeMailboxExportJobRequest describeMailboxExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMailboxExportJobRequest, DescribeMailboxExportJobResult> asyncHandler);
 
     /**
      * <p>
@@ -816,6 +1060,43 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use
+     * this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail
+     * organization for a particular user's attributes.
+     * </p>
+     * 
+     * @param getMobileDeviceAccessEffectRequest
+     * @return A Java Future containing the result of the GetMobileDeviceAccessEffect operation returned by the service.
+     * @sample AmazonWorkMailAsync.GetMobileDeviceAccessEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMobileDeviceAccessEffectResult> getMobileDeviceAccessEffectAsync(
+            GetMobileDeviceAccessEffectRequest getMobileDeviceAccessEffectRequest);
+
+    /**
+     * <p>
+     * Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use
+     * this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail
+     * organization for a particular user's attributes.
+     * </p>
+     * 
+     * @param getMobileDeviceAccessEffectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMobileDeviceAccessEffect operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.GetMobileDeviceAccessEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMobileDeviceAccessEffectResult> getMobileDeviceAccessEffectAsync(
+            GetMobileDeviceAccessEffectRequest getMobileDeviceAccessEffectRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMobileDeviceAccessEffectRequest, GetMobileDeviceAccessEffectResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the access control rules for the specified organization.
      * </p>
      * 
@@ -940,6 +1221,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Lists the mailbox export jobs started for the specified organization within the last seven days.
+     * </p>
+     * 
+     * @param listMailboxExportJobsRequest
+     * @return A Java Future containing the result of the ListMailboxExportJobs operation returned by the service.
+     * @sample AmazonWorkMailAsync.ListMailboxExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMailboxExportJobsResult> listMailboxExportJobsAsync(ListMailboxExportJobsRequest listMailboxExportJobsRequest);
+
+    /**
+     * <p>
+     * Lists the mailbox export jobs started for the specified organization within the last seven days.
+     * </p>
+     * 
+     * @param listMailboxExportJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMailboxExportJobs operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.ListMailboxExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMailboxExportJobsResult> listMailboxExportJobsAsync(ListMailboxExportJobsRequest listMailboxExportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMailboxExportJobsRequest, ListMailboxExportJobsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the mailbox permissions associated with a user, group, or resource mailbox.
      * </p>
      * 
@@ -968,6 +1280,39 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<ListMailboxPermissionsResult> listMailboxPermissionsAsync(ListMailboxPermissionsRequest listMailboxPermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListMailboxPermissionsRequest, ListMailboxPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the mobile device access rules for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param listMobileDeviceAccessRulesRequest
+     * @return A Java Future containing the result of the ListMobileDeviceAccessRules operation returned by the service.
+     * @sample AmazonWorkMailAsync.ListMobileDeviceAccessRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMobileDeviceAccessRulesResult> listMobileDeviceAccessRulesAsync(
+            ListMobileDeviceAccessRulesRequest listMobileDeviceAccessRulesRequest);
+
+    /**
+     * <p>
+     * Lists the mobile device access rules for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param listMobileDeviceAccessRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMobileDeviceAccessRules operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.ListMobileDeviceAccessRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMobileDeviceAccessRulesResult> listMobileDeviceAccessRulesAsync(
+            ListMobileDeviceAccessRulesRequest listMobileDeviceAccessRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMobileDeviceAccessRulesRequest, ListMobileDeviceAccessRulesResult> asyncHandler);
 
     /**
      * <p>
@@ -1303,6 +1648,43 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to
+     * the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
+     * the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param startMailboxExportJobRequest
+     * @return A Java Future containing the result of the StartMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsync.StartMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMailboxExportJobResult> startMailboxExportJobAsync(StartMailboxExportJobRequest startMailboxExportJobRequest);
+
+    /**
+     * <p>
+     * Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to
+     * the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
+     * the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param startMailboxExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.StartMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMailboxExportJobResult> startMailboxExportJobAsync(StartMailboxExportJobRequest startMailboxExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartMailboxExportJobRequest, StartMailboxExportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Applies the specified tags to the specified Amazon WorkMail organization resource.
      * </p>
      * 
@@ -1393,6 +1775,41 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<UpdateMailboxQuotaResult> updateMailboxQuotaAsync(UpdateMailboxQuotaRequest updateMailboxQuotaRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateMailboxQuotaRequest, UpdateMailboxQuotaResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param updateMobileDeviceAccessRuleRequest
+     * @return A Java Future containing the result of the UpdateMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.UpdateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMobileDeviceAccessRuleResult> updateMobileDeviceAccessRuleAsync(
+            UpdateMobileDeviceAccessRuleRequest updateMobileDeviceAccessRuleRequest);
+
+    /**
+     * <p>
+     * Updates a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param updateMobileDeviceAccessRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.UpdateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMobileDeviceAccessRuleResult> updateMobileDeviceAccessRuleAsync(
+            UpdateMobileDeviceAccessRuleRequest updateMobileDeviceAccessRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMobileDeviceAccessRuleRequest, UpdateMobileDeviceAccessRuleResult> asyncHandler);
 
     /**
      * <p>

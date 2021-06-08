@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,11 @@ public class VpnConnectionOptionsSpecificationStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("TunnelInsideIpVersion", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setTunnelInsideIpVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("TunnelOptions", targetDepth)) {
                     vpnConnectionOptionsSpecification.withTunnelOptions(new ArrayList<VpnTunnelOptionsSpecification>());
                     continue;
@@ -65,6 +70,25 @@ public class VpnConnectionOptionsSpecificationStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("LocalIpv4NetworkCidr", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setLocalIpv4NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RemoteIpv4NetworkCidr", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setRemoteIpv4NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("LocalIpv6NetworkCidr", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setLocalIpv6NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RemoteIpv6NetworkCidr", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setRemoteIpv6NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpnConnectionOptionsSpecification;

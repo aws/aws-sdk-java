@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -183,12 +183,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
@@ -219,8 +219,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String kmsKeyId;
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -1299,12 +1299,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
@@ -1333,10 +1333,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+     *        The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB
+     *        cluster.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
-     *        a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *        a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB
      *        cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *        </p>
      *        <p>
@@ -1371,12 +1372,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
@@ -1404,11 +1405,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * rejected.
      * </p>
      * 
-     * @return The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB
+     * @return The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB
      *         cluster.</p>
      *         <p>
      *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
-     *         a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *         a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB
      *         cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *         </p>
      *         <p>
@@ -1443,12 +1444,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS
@@ -1477,10 +1478,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+     *        The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB
+     *        cluster.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
-     *        a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *        a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB
      *        cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *        </p>
      *        <p>
@@ -1517,15 +1519,15 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
@@ -1537,14 +1539,14 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     * @return True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
@@ -1556,15 +1558,15 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
@@ -1578,14 +1580,14 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     * @return True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>

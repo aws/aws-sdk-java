@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AccountSharingInfo> accountSharingInfoList;
+    /**
+     * <p>
+     * The token for the next set of items to return. Use this token to get the next set of results.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -187,6 +193,46 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The token for the next set of items to return. Use this token to get the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of items to return. Use this token to get the next set of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of items to return. Use this token to get the next set of results.
+     * </p>
+     * 
+     * @return The token for the next set of items to return. Use this token to get the next set of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of items to return. Use this token to get the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of items to return. Use this token to get the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDocumentPermissionResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -201,7 +247,9 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
         if (getAccountIds() != null)
             sb.append("AccountIds: ").append(getAccountIds()).append(",");
         if (getAccountSharingInfoList() != null)
-            sb.append("AccountSharingInfoList: ").append(getAccountSharingInfoList());
+            sb.append("AccountSharingInfoList: ").append(getAccountSharingInfoList()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -224,6 +272,10 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getAccountSharingInfoList() != null && other.getAccountSharingInfoList().equals(this.getAccountSharingInfoList()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -234,6 +286,7 @@ public class DescribeDocumentPermissionResult extends com.amazonaws.AmazonWebSer
 
         hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         hashCode = prime * hashCode + ((getAccountSharingInfoList() == null) ? 0 : getAccountSharingInfoList().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

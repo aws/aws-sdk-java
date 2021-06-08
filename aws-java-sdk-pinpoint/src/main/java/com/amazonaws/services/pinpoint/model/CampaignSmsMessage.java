@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,18 +36,38 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     private String body;
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      */
     private String messageType;
+    /**
+     * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     */
+    private String originationNumber;
     /**
      * <p>
      * The sender ID to display on recipients' devices when they receive the SMS message.
      * </p>
      */
     private String senderId;
+    /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     */
+    private String entityId;
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     */
+    private String templateId;
 
     /**
      * <p>
@@ -91,15 +111,15 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
-     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
-     *        or time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @see MessageType
      */
 
@@ -109,14 +129,14 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
-     * @return The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
-     *         as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
-     *         or time-sensitive, such as a marketing message.
+     * @return The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *         such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *         as marketing messages).
      * @see MessageType
      */
 
@@ -126,15 +146,15 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
-     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
-     *        or time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -146,15 +166,15 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
-     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
-     *        or time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @see MessageType
      */
 
@@ -164,21 +184,73 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The type of SMS message. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such
-     *        as a one-time password that supports a customer transaction; and, PROMOTIONAL, the message isn't critical
-     *        or time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
 
     public CampaignSmsMessage withMessageType(MessageType messageType) {
         this.messageType = messageType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     * 
+     * @param originationNumber
+     *        The long code to send the SMS message from. This value should be one of the dedicated long codes that's
+     *        assigned to your AWS account. Although it isn't required, we recommend that you specify the long code
+     *        using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     */
+
+    public void setOriginationNumber(String originationNumber) {
+        this.originationNumber = originationNumber;
+    }
+
+    /**
+     * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     * 
+     * @return The long code to send the SMS message from. This value should be one of the dedicated long codes that's
+     *         assigned to your AWS account. Although it isn't required, we recommend that you specify the long code
+     *         using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     */
+
+    public String getOriginationNumber() {
+        return this.originationNumber;
+    }
+
+    /**
+     * <p>
+     * The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned
+     * to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164
+     * format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * </p>
+     * 
+     * @param originationNumber
+     *        The long code to send the SMS message from. This value should be one of the dedicated long codes that's
+     *        assigned to your AWS account. Although it isn't required, we recommend that you specify the long code
+     *        using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignSmsMessage withOriginationNumber(String originationNumber) {
+        setOriginationNumber(originationNumber);
         return this;
     }
 
@@ -223,6 +295,89 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param entityId
+     *        The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your
+     *        country.
+     */
+
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
+    }
+
+    /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @return The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your
+     *         country.
+     */
+
+    public String getEntityId() {
+        return this.entityId;
+    }
+
+    /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param entityId
+     *        The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your
+     *        country.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignSmsMessage withEntityId(String entityId) {
+        setEntityId(entityId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param templateId
+     *        The template ID received from the regulatory body for sending SMS in your country.
+     */
+
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
+    }
+
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @return The template ID received from the regulatory body for sending SMS in your country.
+     */
+
+    public String getTemplateId() {
+        return this.templateId;
+    }
+
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param templateId
+     *        The template ID received from the regulatory body for sending SMS in your country.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignSmsMessage withTemplateId(String templateId) {
+        setTemplateId(templateId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -238,8 +393,14 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
             sb.append("Body: ").append(getBody()).append(",");
         if (getMessageType() != null)
             sb.append("MessageType: ").append(getMessageType()).append(",");
+        if (getOriginationNumber() != null)
+            sb.append("OriginationNumber: ").append(getOriginationNumber()).append(",");
         if (getSenderId() != null)
-            sb.append("SenderId: ").append(getSenderId());
+            sb.append("SenderId: ").append(getSenderId()).append(",");
+        if (getEntityId() != null)
+            sb.append("EntityId: ").append(getEntityId()).append(",");
+        if (getTemplateId() != null)
+            sb.append("TemplateId: ").append(getTemplateId());
         sb.append("}");
         return sb.toString();
     }
@@ -262,9 +423,21 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getMessageType() != null && other.getMessageType().equals(this.getMessageType()) == false)
             return false;
+        if (other.getOriginationNumber() == null ^ this.getOriginationNumber() == null)
+            return false;
+        if (other.getOriginationNumber() != null && other.getOriginationNumber().equals(this.getOriginationNumber()) == false)
+            return false;
         if (other.getSenderId() == null ^ this.getSenderId() == null)
             return false;
         if (other.getSenderId() != null && other.getSenderId().equals(this.getSenderId()) == false)
+            return false;
+        if (other.getEntityId() == null ^ this.getEntityId() == null)
+            return false;
+        if (other.getEntityId() != null && other.getEntityId().equals(this.getEntityId()) == false)
+            return false;
+        if (other.getTemplateId() == null ^ this.getTemplateId() == null)
+            return false;
+        if (other.getTemplateId() != null && other.getTemplateId().equals(this.getTemplateId()) == false)
             return false;
         return true;
     }
@@ -276,7 +449,10 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getMessageType() == null) ? 0 : getMessageType().hashCode());
+        hashCode = prime * hashCode + ((getOriginationNumber() == null) ? 0 : getOriginationNumber().hashCode());
         hashCode = prime * hashCode + ((getSenderId() == null) ? 0 : getSenderId().hashCode());
+        hashCode = prime * hashCode + ((getEntityId() == null) ? 0 : getEntityId().hashCode());
+        hashCode = prime * hashCode + ((getTemplateId() == null) ? 0 : getTemplateId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,7 +55,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String description;
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      */
     private String addressId;
@@ -77,34 +77,40 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String roleARN;
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      */
     private String snowballCapacityPreference;
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -130,13 +136,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String clusterId;
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      */
     private String snowballType;
@@ -152,6 +172,24 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private TaxDocuments taxDocuments;
+    /**
+     * <p>
+     * Defines the device configuration for an AWS Snowcone job.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
+     */
+    private DeviceConfiguration deviceConfiguration;
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     */
+    private String longTermPricingId;
 
     /**
      * <p>
@@ -368,11 +406,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      * 
      * @param addressId
-     *        The ID for the address that you want the Snowball shipped to.
+     *        The ID for the address that you want the Snow device shipped to.
      */
 
     public void setAddressId(String addressId) {
@@ -381,10 +419,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      * 
-     * @return The ID for the address that you want the Snowball shipped to.
+     * @return The ID for the address that you want the Snow device shipped to.
      */
 
     public String getAddressId() {
@@ -393,11 +431,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      * 
      * @param addressId
-     *        The ID for the address that you want the Snowball shipped to.
+     *        The ID for the address that you want the Snow device shipped to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,13 +551,25 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        If your job is being created in one of the US regions, you have the option of specifying what size
-     *        Snowball you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -529,12 +579,24 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
-     * @return If your job is being created in one of the US regions, you have the option of specifying what size
-     *         Snowball you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * @return If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *         device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i> or
+     *         "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -544,13 +606,25 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        If your job is being created in one of the US regions, you have the option of specifying what size
-     *        Snowball you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */
@@ -562,13 +636,25 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        If your job is being created in one of the US regions, you have the option of specifying what size
-     *        Snowball you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -578,13 +664,25 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * If your job is being created in one of the US regions, you have the option of specifying what size Snowball you'd
-     * like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
+     * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        If your job is being created in one of the US regions, you have the option of specifying what size
-     *        Snowball you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */
@@ -596,27 +694,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -627,26 +725,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     *        represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds
+     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     *        represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds
      *        are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -663,27 +761,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -693,26 +791,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * </ul>
      * 
-     * @return The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     *         represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds
-     *         are as follows:</p>
+     * @return The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather
+     *         it represents how quickly the Snow device moves to its destination while in transit. Regional shipping
+     *         speeds are as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *         about a day.
+     *         In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *         in about a day.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *         delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *         typically takes less than a week, one way.
+     *         In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *         are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *         which typically takes less than a week, one way.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In India, Snowballs are delivered in one to seven days.
+     *         In India, Snow devices are delivered in one to seven days.
      *         </p>
      *         </li>
      *         <li>
@@ -729,27 +827,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -760,26 +858,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     *        represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds
+     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     *        represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds
      *        are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -798,27 +896,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -829,26 +927,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     *        represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds
+     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     *        represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds
      *        are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -865,27 +963,27 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     * represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds are as
+     * The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     * represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as
      * follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowballs are delivered in one to seven days.
+     * In India, Snow devices are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -896,26 +994,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      * 
      * @param shippingOption
-     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snowball, rather it
-     *        represents how quickly the Snowball moves to its destination while in transit. Regional shipping speeds
+     *        The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it
+     *        represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds
      *        are as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        In Australia, you have access to express shipping. Typically, Snowballs shipped express are delivered in
-     *        about a day.
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowballs shipped express are
-     *        delivered in about a day. In addition, most countries in the EU have access to standard shipping, which
-     *        typically takes less than a week, one way.
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowballs are delivered in one to seven days.
+     *        In India, Snow devices are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -1020,22 +1118,50 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
-     *        jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snow Family device to use for this job. </p> <note>
+     *        <p>
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
      *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballType
      */
 
@@ -1045,21 +1171,49 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
-     * @return The type of AWS Snowball device to use for this job. Currently, the only supported device type for
-     *         cluster jobs is <code>EDGE</code>.</p>
+     * @return The type of AWS Snow Family device to use for this job. </p> <note>
+     *         <p>
+     *         For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster
+     *         jobs is <code>EDGE</code>.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
      *         Device Options</a> in the Snowball Edge Developer Guide.
+     *         </p>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i> or
+     *         "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballType
      */
 
@@ -1069,22 +1223,50 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
-     *        jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snow Family device to use for this job. </p> <note>
+     *        <p>
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
      *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -1096,22 +1278,50 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
-     *        jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snow Family device to use for this job. </p> <note>
+     *        <p>
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
      *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballType
      */
 
@@ -1121,22 +1331,50 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster jobs
-     * is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this job.
+     * </p>
+     * <note>
+     * <p>
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster jobs is
+     * <code>EDGE</code>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this job. Currently, the only supported device type for cluster
-     *        jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snow Family device to use for this job. </p> <note>
+     *        <p>
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The type of AWS Snow device to use for this job. Currently, the only supported device type for cluster
+     *        jobs is <code>EDGE</code>.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
      *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -1227,6 +1465,122 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Defines the device configuration for an AWS Snowcone job.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
+     * 
+     * @param deviceConfiguration
+     *        Defines the device configuration for an AWS Snowcone job.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
+     */
+
+    public void setDeviceConfiguration(DeviceConfiguration deviceConfiguration) {
+        this.deviceConfiguration = deviceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Defines the device configuration for an AWS Snowcone job.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
+     * 
+     * @return Defines the device configuration for an AWS Snowcone job.</p>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i> or
+     *         "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i>.
+     */
+
+    public DeviceConfiguration getDeviceConfiguration() {
+        return this.deviceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Defines the device configuration for an AWS Snowcone job.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
+     * 
+     * @param deviceConfiguration
+     *        Defines the device configuration for an AWS Snowcone job.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withDeviceConfiguration(DeviceConfiguration deviceConfiguration) {
+        setDeviceConfiguration(deviceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @param longTermPricingId
+     *        The ID of the long term pricing type for the device.
+     */
+
+    public void setLongTermPricingId(String longTermPricingId) {
+        this.longTermPricingId = longTermPricingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @return The ID of the long term pricing type for the device.
+     */
+
+    public String getLongTermPricingId() {
+        return this.longTermPricingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @param longTermPricingId
+     *        The ID of the long term pricing type for the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withLongTermPricingId(String longTermPricingId) {
+        setLongTermPricingId(longTermPricingId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1263,7 +1617,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getForwardingAddressId() != null)
             sb.append("ForwardingAddressId: ").append(getForwardingAddressId()).append(",");
         if (getTaxDocuments() != null)
-            sb.append("TaxDocuments: ").append(getTaxDocuments());
+            sb.append("TaxDocuments: ").append(getTaxDocuments()).append(",");
+        if (getDeviceConfiguration() != null)
+            sb.append("DeviceConfiguration: ").append(getDeviceConfiguration()).append(",");
+        if (getLongTermPricingId() != null)
+            sb.append("LongTermPricingId: ").append(getLongTermPricingId());
         sb.append("}");
         return sb.toString();
     }
@@ -1330,6 +1688,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getTaxDocuments() != null && other.getTaxDocuments().equals(this.getTaxDocuments()) == false)
             return false;
+        if (other.getDeviceConfiguration() == null ^ this.getDeviceConfiguration() == null)
+            return false;
+        if (other.getDeviceConfiguration() != null && other.getDeviceConfiguration().equals(this.getDeviceConfiguration()) == false)
+            return false;
+        if (other.getLongTermPricingId() == null ^ this.getLongTermPricingId() == null)
+            return false;
+        if (other.getLongTermPricingId() != null && other.getLongTermPricingId().equals(this.getLongTermPricingId()) == false)
+            return false;
         return true;
     }
 
@@ -1351,6 +1717,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getSnowballType() == null) ? 0 : getSnowballType().hashCode());
         hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         hashCode = prime * hashCode + ((getTaxDocuments() == null) ? 0 : getTaxDocuments().hashCode());
+        hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLongTermPricingId() == null) ? 0 : getLongTermPricingId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class BrokerSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date created;
     /** Required. The deployment mode of the broker. */
     private String deploymentMode;
+    /** Required. The type of broker engine. */
+    private String engineType;
     /** The broker's instance type. */
     private String hostInstanceType;
 
@@ -296,6 +298,57 @@ public class BrokerSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Required. The type of broker engine.
+     * 
+     * @param engineType
+     *        Required. The type of broker engine.
+     * @see EngineType
+     */
+
+    public void setEngineType(String engineType) {
+        this.engineType = engineType;
+    }
+
+    /**
+     * Required. The type of broker engine.
+     * 
+     * @return Required. The type of broker engine.
+     * @see EngineType
+     */
+
+    public String getEngineType() {
+        return this.engineType;
+    }
+
+    /**
+     * Required. The type of broker engine.
+     * 
+     * @param engineType
+     *        Required. The type of broker engine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EngineType
+     */
+
+    public BrokerSummary withEngineType(String engineType) {
+        setEngineType(engineType);
+        return this;
+    }
+
+    /**
+     * Required. The type of broker engine.
+     * 
+     * @param engineType
+     *        Required. The type of broker engine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EngineType
+     */
+
+    public BrokerSummary withEngineType(EngineType engineType) {
+        this.engineType = engineType.toString();
+        return this;
+    }
+
+    /**
      * The broker's instance type.
      * 
      * @param hostInstanceType
@@ -353,6 +406,8 @@ public class BrokerSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("Created: ").append(getCreated()).append(",");
         if (getDeploymentMode() != null)
             sb.append("DeploymentMode: ").append(getDeploymentMode()).append(",");
+        if (getEngineType() != null)
+            sb.append("EngineType: ").append(getEngineType()).append(",");
         if (getHostInstanceType() != null)
             sb.append("HostInstanceType: ").append(getHostInstanceType());
         sb.append("}");
@@ -393,6 +448,10 @@ public class BrokerSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeploymentMode() != null && other.getDeploymentMode().equals(this.getDeploymentMode()) == false)
             return false;
+        if (other.getEngineType() == null ^ this.getEngineType() == null)
+            return false;
+        if (other.getEngineType() != null && other.getEngineType().equals(this.getEngineType()) == false)
+            return false;
         if (other.getHostInstanceType() == null ^ this.getHostInstanceType() == null)
             return false;
         if (other.getHostInstanceType() != null && other.getHostInstanceType().equals(this.getHostInstanceType()) == false)
@@ -411,6 +470,7 @@ public class BrokerSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBrokerState() == null) ? 0 : getBrokerState().hashCode());
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getDeploymentMode() == null) ? 0 : getDeploymentMode().hashCode());
+        hashCode = prime * hashCode + ((getEngineType() == null) ? 0 : getEngineType().hashCode());
         hashCode = prime * hashCode + ((getHostInstanceType() == null) ? 0 : getHostInstanceType().hashCode());
         return hashCode;
     }

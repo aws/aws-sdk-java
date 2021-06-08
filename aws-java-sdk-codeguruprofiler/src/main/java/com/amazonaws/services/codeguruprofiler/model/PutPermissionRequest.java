@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The structure representing the putPermissionRequest.
+ * The structure representing the <code>putPermissionRequest</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PutPermission" target="_top">AWS API
@@ -30,37 +30,45 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of actions that the users and roles can perform on the profiling group.
+     * Specifies an action group that contains permissions to add to a profiling group resource. One action group is
+     * supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling
+     * agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * </p>
      */
     private String actionGroup;
     /**
      * <p>
-     * The list of role and user ARNs or the accountId that needs access (wildcards are not allowed).
+     * A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are
+     * supported in the ARNs.
      * </p>
      */
     private java.util.List<String> principals;
     /**
      * <p>
-     * The name of the profiling group.
+     * The name of the profiling group to grant access to.
      * </p>
      */
     private String profilingGroupName;
     /**
      * <p>
-     * A unique identifier for the current revision of the policy. This is required, if a policy exists for the
-     * profiling group. This is not required when creating the policy for the first time.
+     * A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do
+     * not specify this when you add permissions to a profiling group for the first time. If a policy already exists on
+     * the profiling group, you must specify the <code>revisionId</code>.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * The list of actions that the users and roles can perform on the profiling group.
+     * Specifies an action group that contains permissions to add to a profiling group resource. One action group is
+     * supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling
+     * agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * </p>
      * 
      * @param actionGroup
-     *        The list of actions that the users and roles can perform on the profiling group.
+     *        Specifies an action group that contains permissions to add to a profiling group resource. One action group
+     *        is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the
+     *        profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * @see ActionGroup
      */
 
@@ -70,10 +78,14 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of actions that the users and roles can perform on the profiling group.
+     * Specifies an action group that contains permissions to add to a profiling group resource. One action group is
+     * supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling
+     * agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * </p>
      * 
-     * @return The list of actions that the users and roles can perform on the profiling group.
+     * @return Specifies an action group that contains permissions to add to a profiling group resource. One action
+     *         group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by
+     *         the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * @see ActionGroup
      */
 
@@ -83,11 +95,15 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of actions that the users and roles can perform on the profiling group.
+     * Specifies an action group that contains permissions to add to a profiling group resource. One action group is
+     * supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling
+     * agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * </p>
      * 
      * @param actionGroup
-     *        The list of actions that the users and roles can perform on the profiling group.
+     *        Specifies an action group that contains permissions to add to a profiling group resource. One action group
+     *        is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the
+     *        profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionGroup
      */
@@ -99,11 +115,15 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of actions that the users and roles can perform on the profiling group.
+     * Specifies an action group that contains permissions to add to a profiling group resource. One action group is
+     * supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling
+     * agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * </p>
      * 
      * @param actionGroup
-     *        The list of actions that the users and roles can perform on the profiling group.
+     *        Specifies an action group that contains permissions to add to a profiling group resource. One action group
+     *        is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the
+     *        profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionGroup
      */
@@ -115,10 +135,12 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of role and user ARNs or the accountId that needs access (wildcards are not allowed).
+     * A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are
+     * supported in the ARNs.
      * </p>
      * 
-     * @return The list of role and user ARNs or the accountId that needs access (wildcards are not allowed).
+     * @return A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not
+     *         are supported in the ARNs.
      */
 
     public java.util.List<String> getPrincipals() {
@@ -127,11 +149,13 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of role and user ARNs or the accountId that needs access (wildcards are not allowed).
+     * A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are
+     * supported in the ARNs.
      * </p>
      * 
      * @param principals
-     *        The list of role and user ARNs or the accountId that needs access (wildcards are not allowed).
+     *        A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are
+     *        supported in the ARNs.
      */
 
     public void setPrincipals(java.util.Collection<String> principals) {
@@ -145,7 +169,8 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of role and user ARNs or the accountId that needs access (wildcards are not allowed).
+     * A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are
+     * supported in the ARNs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -154,7 +179,8 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param principals
-     *        The list of role and user ARNs or the accountId that needs access (wildcards are not allowed).
+     *        A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are
+     *        supported in the ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +196,13 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of role and user ARNs or the accountId that needs access (wildcards are not allowed).
+     * A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are
+     * supported in the ARNs.
      * </p>
      * 
      * @param principals
-     *        The list of role and user ARNs or the accountId that needs access (wildcards are not allowed).
+     *        A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are
+     *        supported in the ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +213,11 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the profiling group.
+     * The name of the profiling group to grant access to.
      * </p>
      * 
      * @param profilingGroupName
-     *        The name of the profiling group.
+     *        The name of the profiling group to grant access to.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -198,10 +226,10 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the profiling group.
+     * The name of the profiling group to grant access to.
      * </p>
      * 
-     * @return The name of the profiling group.
+     * @return The name of the profiling group to grant access to.
      */
 
     public String getProfilingGroupName() {
@@ -210,11 +238,11 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the profiling group.
+     * The name of the profiling group to grant access to.
      * </p>
      * 
      * @param profilingGroupName
-     *        The name of the profiling group.
+     *        The name of the profiling group to grant access to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,13 +253,15 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy. This is required, if a policy exists for the
-     * profiling group. This is not required when creating the policy for the first time.
+     * A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do
+     * not specify this when you add permissions to a profiling group for the first time. If a policy already exists on
+     * the profiling group, you must specify the <code>revisionId</code>.
      * </p>
      * 
      * @param revisionId
-     *        A unique identifier for the current revision of the policy. This is required, if a policy exists for the
-     *        profiling group. This is not required when creating the policy for the first time.
+     *        A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling
+     *        group. Do not specify this when you add permissions to a profiling group for the first time. If a policy
+     *        already exists on the profiling group, you must specify the <code>revisionId</code>.
      */
 
     public void setRevisionId(String revisionId) {
@@ -240,12 +270,14 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy. This is required, if a policy exists for the
-     * profiling group. This is not required when creating the policy for the first time.
+     * A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do
+     * not specify this when you add permissions to a profiling group for the first time. If a policy already exists on
+     * the profiling group, you must specify the <code>revisionId</code>.
      * </p>
      * 
-     * @return A unique identifier for the current revision of the policy. This is required, if a policy exists for the
-     *         profiling group. This is not required when creating the policy for the first time.
+     * @return A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling
+     *         group. Do not specify this when you add permissions to a profiling group for the first time. If a policy
+     *         already exists on the profiling group, you must specify the <code>revisionId</code>.
      */
 
     public String getRevisionId() {
@@ -254,13 +286,15 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy. This is required, if a policy exists for the
-     * profiling group. This is not required when creating the policy for the first time.
+     * A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do
+     * not specify this when you add permissions to a profiling group for the first time. If a policy already exists on
+     * the profiling group, you must specify the <code>revisionId</code>.
      * </p>
      * 
      * @param revisionId
-     *        A unique identifier for the current revision of the policy. This is required, if a policy exists for the
-     *        profiling group. This is not required when creating the policy for the first time.
+     *        A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling
+     *        group. Do not specify this when you add permissions to a profiling group for the first time. If a policy
+     *        already exists on the profiling group, you must specify the <code>revisionId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The row-level security configuration for the dataset.
+ * Information about a dataset that contains permissions for row-level security (RLS). The permissions dataset maps
+ * fields to users or groups. For more information, see <a href=
+ * "https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html"
+ * >Using Row-Level Security (RLS) to Restrict Access to a Dataset</a> in the <i>Amazon QuickSight User Guide</i>.
+ * </p>
+ * <p>
+ * The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code> is not supported
+ * for new RLS datasets.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowLevelPermissionDataSet"
@@ -30,24 +37,83 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission dataset.
+     * The namespace associated with the dataset that contains permissions for RLS.
+     * </p>
+     */
+    private String namespace;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * Permission policy.
+     * The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is included
+     * for backward compatibility only.
      * </p>
      */
     private String permissionPolicy;
+    /**
+     * <p>
+     * The user or group rules associated with the dataset that contains permissions for RLS.
+     * </p>
+     * <p>
+     * By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     * <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     * required, and <code>Namespace</code> must not exist.
+     * </p>
+     */
+    private String formatVersion;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission dataset.
+     * The namespace associated with the dataset that contains permissions for RLS.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace associated with the dataset that contains permissions for RLS.
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace associated with the dataset that contains permissions for RLS.
+     * </p>
+     * 
+     * @return The namespace associated with the dataset that contains permissions for RLS.
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace associated with the dataset that contains permissions for RLS.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace associated with the dataset that contains permissions for RLS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RowLevelPermissionDataSet withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the permission dataset.
+     *        The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      */
 
     public void setArn(String arn) {
@@ -56,10 +122,10 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission dataset.
+     * The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the permission dataset.
+     * @return The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      */
 
     public String getArn() {
@@ -68,11 +134,11 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the permission dataset.
+     * The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the permission dataset.
+     *        The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +149,13 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Permission policy.
+     * The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is included
+     * for backward compatibility only.
      * </p>
      * 
      * @param permissionPolicy
-     *        Permission policy.
+     *        The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is
+     *        included for backward compatibility only.
      * @see RowLevelPermissionPolicy
      */
 
@@ -97,10 +165,12 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Permission policy.
+     * The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is included
+     * for backward compatibility only.
      * </p>
      * 
-     * @return Permission policy.
+     * @return The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is
+     *         included for backward compatibility only.
      * @see RowLevelPermissionPolicy
      */
 
@@ -110,11 +180,13 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Permission policy.
+     * The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is included
+     * for backward compatibility only.
      * </p>
      * 
      * @param permissionPolicy
-     *        Permission policy.
+     *        The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is
+     *        included for backward compatibility only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RowLevelPermissionPolicy
      */
@@ -126,17 +198,122 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Permission policy.
+     * The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is included
+     * for backward compatibility only.
      * </p>
      * 
      * @param permissionPolicy
-     *        Permission policy.
+     *        The type of permissions to use when interpretting the permissions for RLS. <code>DENY_ACCESS</code> is
+     *        included for backward compatibility only.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RowLevelPermissionPolicy
      */
 
     public RowLevelPermissionDataSet withPermissionPolicy(RowLevelPermissionPolicy permissionPolicy) {
         this.permissionPolicy = permissionPolicy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user or group rules associated with the dataset that contains permissions for RLS.
+     * </p>
+     * <p>
+     * By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     * <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     * required, and <code>Namespace</code> must not exist.
+     * </p>
+     * 
+     * @param formatVersion
+     *        The user or group rules associated with the dataset that contains permissions for RLS.</p>
+     *        <p>
+     *        By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     *        <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     *        <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     *        required, and <code>Namespace</code> must not exist.
+     * @see RowLevelPermissionFormatVersion
+     */
+
+    public void setFormatVersion(String formatVersion) {
+        this.formatVersion = formatVersion;
+    }
+
+    /**
+     * <p>
+     * The user or group rules associated with the dataset that contains permissions for RLS.
+     * </p>
+     * <p>
+     * By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     * <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     * required, and <code>Namespace</code> must not exist.
+     * </p>
+     * 
+     * @return The user or group rules associated with the dataset that contains permissions for RLS.</p>
+     *         <p>
+     *         By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     *         <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     *         <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     *         required, and <code>Namespace</code> must not exist.
+     * @see RowLevelPermissionFormatVersion
+     */
+
+    public String getFormatVersion() {
+        return this.formatVersion;
+    }
+
+    /**
+     * <p>
+     * The user or group rules associated with the dataset that contains permissions for RLS.
+     * </p>
+     * <p>
+     * By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     * <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     * required, and <code>Namespace</code> must not exist.
+     * </p>
+     * 
+     * @param formatVersion
+     *        The user or group rules associated with the dataset that contains permissions for RLS.</p>
+     *        <p>
+     *        By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     *        <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     *        <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     *        required, and <code>Namespace</code> must not exist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RowLevelPermissionFormatVersion
+     */
+
+    public RowLevelPermissionDataSet withFormatVersion(String formatVersion) {
+        setFormatVersion(formatVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user or group rules associated with the dataset that contains permissions for RLS.
+     * </p>
+     * <p>
+     * By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     * <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     * required, and <code>Namespace</code> must not exist.
+     * </p>
+     * 
+     * @param formatVersion
+     *        The user or group rules associated with the dataset that contains permissions for RLS.</p>
+     *        <p>
+     *        By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     *        <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     *        <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     *        required, and <code>Namespace</code> must not exist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RowLevelPermissionFormatVersion
+     */
+
+    public RowLevelPermissionDataSet withFormatVersion(RowLevelPermissionFormatVersion formatVersion) {
+        this.formatVersion = formatVersion.toString();
         return this;
     }
 
@@ -152,10 +329,14 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getNamespace() != null)
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getPermissionPolicy() != null)
-            sb.append("PermissionPolicy: ").append(getPermissionPolicy());
+            sb.append("PermissionPolicy: ").append(getPermissionPolicy()).append(",");
+        if (getFormatVersion() != null)
+            sb.append("FormatVersion: ").append(getFormatVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -170,6 +351,10 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
         if (obj instanceof RowLevelPermissionDataSet == false)
             return false;
         RowLevelPermissionDataSet other = (RowLevelPermissionDataSet) obj;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -177,6 +362,10 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
         if (other.getPermissionPolicy() == null ^ this.getPermissionPolicy() == null)
             return false;
         if (other.getPermissionPolicy() != null && other.getPermissionPolicy().equals(this.getPermissionPolicy()) == false)
+            return false;
+        if (other.getFormatVersion() == null ^ this.getFormatVersion() == null)
+            return false;
+        if (other.getFormatVersion() != null && other.getFormatVersion().equals(this.getFormatVersion()) == false)
             return false;
         return true;
     }
@@ -186,8 +375,10 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getPermissionPolicy() == null) ? 0 : getPermissionPolicy().hashCode());
+        hashCode = prime * hashCode + ((getFormatVersion() == null) ? 0 : getFormatVersion().hashCode());
         return hashCode;
     }
 

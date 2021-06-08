@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DescribeAutoMLJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Request information about a job using that job's unique name.
+     * Requests information about an AutoML job using its unique name.
      * </p>
      */
     private String autoMLJobName;
 
     /**
      * <p>
-     * Request information about a job using that job's unique name.
+     * Requests information about an AutoML job using its unique name.
      * </p>
      * 
      * @param autoMLJobName
-     *        Request information about a job using that job's unique name.
+     *        Requests information about an AutoML job using its unique name.
      */
 
     public void setAutoMLJobName(String autoMLJobName) {
@@ -47,10 +47,10 @@ public class DescribeAutoMLJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Request information about a job using that job's unique name.
+     * Requests information about an AutoML job using its unique name.
      * </p>
      * 
-     * @return Request information about a job using that job's unique name.
+     * @return Requests information about an AutoML job using its unique name.
      */
 
     public String getAutoMLJobName() {
@@ -59,11 +59,11 @@ public class DescribeAutoMLJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Request information about a job using that job's unique name.
+     * Requests information about an AutoML job using its unique name.
      * </p>
      * 
      * @param autoMLJobName
-     *        Request information about a job using that job's unique name.
+     *        Requests information about an AutoML job using its unique name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

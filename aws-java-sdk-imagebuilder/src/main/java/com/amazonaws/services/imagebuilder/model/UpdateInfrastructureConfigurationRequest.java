@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,6 +94,12 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * The tags attached to the resource created by Image Builder.
+     * </p>
+     */
+    private java.util.Map<String, String> resourceTags;
 
     /**
      * <p>
@@ -634,6 +640,74 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
     }
 
     /**
+     * <p>
+     * The tags attached to the resource created by Image Builder.
+     * </p>
+     * 
+     * @return The tags attached to the resource created by Image Builder.
+     */
+
+    public java.util.Map<String, String> getResourceTags() {
+        return resourceTags;
+    }
+
+    /**
+     * <p>
+     * The tags attached to the resource created by Image Builder.
+     * </p>
+     * 
+     * @param resourceTags
+     *        The tags attached to the resource created by Image Builder.
+     */
+
+    public void setResourceTags(java.util.Map<String, String> resourceTags) {
+        this.resourceTags = resourceTags;
+    }
+
+    /**
+     * <p>
+     * The tags attached to the resource created by Image Builder.
+     * </p>
+     * 
+     * @param resourceTags
+     *        The tags attached to the resource created by Image Builder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateInfrastructureConfigurationRequest withResourceTags(java.util.Map<String, String> resourceTags) {
+        setResourceTags(resourceTags);
+        return this;
+    }
+
+    /**
+     * Add a single ResourceTags entry
+     *
+     * @see UpdateInfrastructureConfigurationRequest#withResourceTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateInfrastructureConfigurationRequest addResourceTagsEntry(String key, String value) {
+        if (null == this.resourceTags) {
+            this.resourceTags = new java.util.HashMap<String, String>();
+        }
+        if (this.resourceTags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.resourceTags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ResourceTags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateInfrastructureConfigurationRequest clearResourceTagsEntries() {
+        this.resourceTags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -666,7 +740,9 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
         if (getSnsTopicArn() != null)
             sb.append("SnsTopicArn: ").append(getSnsTopicArn()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getResourceTags() != null)
+            sb.append("ResourceTags: ").append(getResourceTags());
         sb.append("}");
         return sb.toString();
     }
@@ -726,6 +802,10 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getResourceTags() == null ^ this.getResourceTags() == null)
+            return false;
+        if (other.getResourceTags() != null && other.getResourceTags().equals(this.getResourceTags()) == false)
+            return false;
         return true;
     }
 
@@ -745,6 +825,7 @@ public class UpdateInfrastructureConfigurationRequest extends com.amazonaws.Amaz
         hashCode = prime * hashCode + ((getTerminateInstanceOnFailure() == null) ? 0 : getTerminateInstanceOnFailure().hashCode());
         hashCode = prime * hashCode + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getResourceTags() == null) ? 0 : getResourceTags().hashCode());
         return hashCode;
     }
 

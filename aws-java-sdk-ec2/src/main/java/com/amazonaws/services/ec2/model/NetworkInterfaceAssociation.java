@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes association information for an Elastic IP address (IPv4 only).
+ * Describes association information for an Elastic IP address (IPv4 only), or a Carrier IP address (for a network
+ * interface which resides in a subnet in a Wavelength Zone).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfaceAssociation" target="_top">AWS
@@ -56,6 +57,22 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
      * </p>
      */
     private String publicIp;
+    /**
+     * <p>
+     * The customer-owned IP address associated with the network interface.
+     * </p>
+     */
+    private String customerOwnedIp;
+    /**
+     * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     * <p>
+     * This option is only available when the network interface is in a subnet which is associated with a Wavelength
+     * Zone.
+     * </p>
+     */
+    private String carrierIp;
 
     /**
      * <p>
@@ -258,6 +275,107 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The customer-owned IP address associated with the network interface.
+     * </p>
+     * 
+     * @param customerOwnedIp
+     *        The customer-owned IP address associated with the network interface.
+     */
+
+    public void setCustomerOwnedIp(String customerOwnedIp) {
+        this.customerOwnedIp = customerOwnedIp;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IP address associated with the network interface.
+     * </p>
+     * 
+     * @return The customer-owned IP address associated with the network interface.
+     */
+
+    public String getCustomerOwnedIp() {
+        return this.customerOwnedIp;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IP address associated with the network interface.
+     * </p>
+     * 
+     * @param customerOwnedIp
+     *        The customer-owned IP address associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterfaceAssociation withCustomerOwnedIp(String customerOwnedIp) {
+        setCustomerOwnedIp(customerOwnedIp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     * <p>
+     * This option is only available when the network interface is in a subnet which is associated with a Wavelength
+     * Zone.
+     * </p>
+     * 
+     * @param carrierIp
+     *        The carrier IP address associated with the network interface.</p>
+     *        <p>
+     *        This option is only available when the network interface is in a subnet which is associated with a
+     *        Wavelength Zone.
+     */
+
+    public void setCarrierIp(String carrierIp) {
+        this.carrierIp = carrierIp;
+    }
+
+    /**
+     * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     * <p>
+     * This option is only available when the network interface is in a subnet which is associated with a Wavelength
+     * Zone.
+     * </p>
+     * 
+     * @return The carrier IP address associated with the network interface.</p>
+     *         <p>
+     *         This option is only available when the network interface is in a subnet which is associated with a
+     *         Wavelength Zone.
+     */
+
+    public String getCarrierIp() {
+        return this.carrierIp;
+    }
+
+    /**
+     * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     * <p>
+     * This option is only available when the network interface is in a subnet which is associated with a Wavelength
+     * Zone.
+     * </p>
+     * 
+     * @param carrierIp
+     *        The carrier IP address associated with the network interface.</p>
+     *        <p>
+     *        This option is only available when the network interface is in a subnet which is associated with a
+     *        Wavelength Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterfaceAssociation withCarrierIp(String carrierIp) {
+        setCarrierIp(carrierIp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -278,7 +396,11 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
         if (getPublicDnsName() != null)
             sb.append("PublicDnsName: ").append(getPublicDnsName()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: ").append(getPublicIp());
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
+        if (getCustomerOwnedIp() != null)
+            sb.append("CustomerOwnedIp: ").append(getCustomerOwnedIp()).append(",");
+        if (getCarrierIp() != null)
+            sb.append("CarrierIp: ").append(getCarrierIp());
         sb.append("}");
         return sb.toString();
     }
@@ -313,6 +435,14 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
             return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
+        if (other.getCustomerOwnedIp() == null ^ this.getCustomerOwnedIp() == null)
+            return false;
+        if (other.getCustomerOwnedIp() != null && other.getCustomerOwnedIp().equals(this.getCustomerOwnedIp()) == false)
+            return false;
+        if (other.getCarrierIp() == null ^ this.getCarrierIp() == null)
+            return false;
+        if (other.getCarrierIp() != null && other.getCarrierIp().equals(this.getCarrierIp()) == false)
+            return false;
         return true;
     }
 
@@ -326,6 +456,8 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIpOwnerId() == null) ? 0 : getIpOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPublicDnsName() == null) ? 0 : getPublicDnsName().hashCode());
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
+        hashCode = prime * hashCode + ((getCustomerOwnedIp() == null) ? 0 : getCustomerOwnedIp().hashCode());
+        hashCode = prime * hashCode + ((getCarrierIp() == null) ? 0 : getCarrierIp().hashCode());
         return hashCode;
     }
 

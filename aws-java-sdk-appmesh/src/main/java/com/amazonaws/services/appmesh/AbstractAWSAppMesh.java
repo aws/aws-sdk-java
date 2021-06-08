@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,12 +28,22 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
     }
 
     @Override
+    public CreateGatewayRouteResult createGatewayRoute(CreateGatewayRouteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMeshResult createMesh(CreateMeshRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateRouteResult createRoute(CreateRouteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateVirtualGatewayResult createVirtualGateway(CreateVirtualGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,12 +63,22 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
     }
 
     @Override
+    public DeleteGatewayRouteResult deleteGatewayRoute(DeleteGatewayRouteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteMeshResult deleteMesh(DeleteMeshRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteRouteResult deleteRoute(DeleteRouteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVirtualGatewayResult deleteVirtualGateway(DeleteVirtualGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,12 +98,22 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
     }
 
     @Override
+    public DescribeGatewayRouteResult describeGatewayRoute(DescribeGatewayRouteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeMeshResult describeMesh(DescribeMeshRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeRouteResult describeRoute(DescribeRouteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeVirtualGatewayResult describeVirtualGateway(DescribeVirtualGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,6 +133,11 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
     }
 
     @Override
+    public ListGatewayRoutesResult listGatewayRoutes(ListGatewayRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListMeshesResult listMeshes(ListMeshesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +149,11 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListVirtualGatewaysResult listVirtualGateways(ListVirtualGatewaysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,12 +183,22 @@ public class AbstractAWSAppMesh implements AWSAppMesh {
     }
 
     @Override
+    public UpdateGatewayRouteResult updateGatewayRoute(UpdateGatewayRouteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateMeshResult updateMesh(UpdateMeshRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UpdateRouteResult updateRoute(UpdateRouteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVirtualGatewayResult updateVirtualGateway(UpdateVirtualGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

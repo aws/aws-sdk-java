@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -195,6 +195,11 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     continue;
                 }
 
+                if (context.testExpression("ReplicaMode", targetDepth)) {
+                    dBInstance.setReplicaMode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("LicenseModel", targetDepth)) {
                     dBInstance.setLicenseModel(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -217,6 +222,11 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
 
                 if (context.testExpression("CharacterSetName", targetDepth)) {
                     dBInstance.setCharacterSetName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("NcharCharacterSetName", targetDepth)) {
+                    dBInstance.setNcharCharacterSetName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -387,6 +397,37 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
 
                 if (context.testExpression("MaxAllocatedStorage", targetDepth)) {
                     dBInstance.setMaxAllocatedStorage(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("TagList", targetDepth)) {
+                    dBInstance.withTagList(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("TagList/Tag", targetDepth)) {
+                    dBInstance.withTagList(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DBInstanceAutomatedBackupsReplications", targetDepth)) {
+                    dBInstance.withDBInstanceAutomatedBackupsReplications(new ArrayList<DBInstanceAutomatedBackupsReplication>());
+                    continue;
+                }
+
+                if (context.testExpression("DBInstanceAutomatedBackupsReplications/DBInstanceAutomatedBackupsReplication", targetDepth)) {
+                    dBInstance.withDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplicationStaxUnmarshaller.getInstance().unmarshall(
+                            context));
+                    continue;
+                }
+
+                if (context.testExpression("CustomerOwnedIpEnabled", targetDepth)) {
+                    dBInstance.setCustomerOwnedIpEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AwsBackupRecoveryPointArn", targetDepth)) {
+                    dBInstance.setAwsBackupRecoveryPointArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

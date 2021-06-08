@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,12 +27,9 @@ import com.amazonaws.services.certificatemanager.model.*;
  * <p>
  * <fullname>AWS Certificate Manager</fullname>
  * <p>
- * Welcome to the AWS Certificate Manager (ACM) API documentation.
- * </p>
- * <p>
- * You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications. For general information
- * about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/"> <i>AWS Certificate Manager User
- * Guide</i> </a>.
+ * You can use AWS Certificate Manager (ACM) to manage SSL/TLS certificates for your AWS-based websites and
+ * applications. For more information about using ACM, see the <a
+ * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -226,6 +223,37 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
 
     /**
      * <p>
+     * Returns the account configuration options associated with an AWS account.
+     * </p>
+     * 
+     * @param getAccountConfigurationRequest
+     * @return A Java Future containing the result of the GetAccountConfiguration operation returned by the service.
+     * @sample AWSCertificateManagerAsync.GetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccountConfigurationResult> getAccountConfigurationAsync(GetAccountConfigurationRequest getAccountConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns the account configuration options associated with an AWS account.
+     * </p>
+     * 
+     * @param getAccountConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccountConfiguration operation returned by the service.
+     * @sample AWSCertificateManagerAsyncHandler.GetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccountConfigurationResult> getAccountConfigurationAsync(GetAccountConfigurationRequest getAccountConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccountConfigurationRequest, GetAccountConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves an Amazon-issued certificate and its certificate chain. The chain consists of the certificate of the
      * issuing CA and the intermediate certificates of any other subordinate CAs. All of the certificates are base64
      * encoded. You can use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to decode
@@ -294,6 +322,11 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * </li>
      * <li>
      * <p>
+     * The private key must be no larger than 5 KB (5,120 bytes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * If the certificate you are importing is not self-signed, you must enter its certificate chain.
      * </p>
      * </li>
@@ -325,14 +358,14 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * <li>
      * <p>
      * To import a new certificate, omit the <code>CertificateArn</code> argument. Include this argument only when you
-     * want to replace a previously imported certifica
+     * want to replace a previously imported certificate.
      * </p>
      * </li>
      * <li>
      * <p>
      * When you import a certificate by using the CLI, you must specify the certificate, the certificate chain, and the
-     * private key by their file names preceded by <code>file://</code>. For example, you can specify a certificate
-     * saved in the <code>C:\temp</code> folder as <code>file://C:\temp\certificate_to_import.pem</code>. If you are
+     * private key by their file names preceded by <code>fileb://</code>. For example, you can specify a certificate
+     * saved in the <code>C:\temp</code> folder as <code>fileb://C:\temp\certificate_to_import.pem</code>. If you are
      * making an HTTP or HTTPS Query request, include these arguments as BLOBs.
      * </p>
      * </li>
@@ -396,6 +429,11 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * </li>
      * <li>
      * <p>
+     * The private key must be no larger than 5 KB (5,120 bytes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * If the certificate you are importing is not self-signed, you must enter its certificate chain.
      * </p>
      * </li>
@@ -427,14 +465,14 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
      * <li>
      * <p>
      * To import a new certificate, omit the <code>CertificateArn</code> argument. Include this argument only when you
-     * want to replace a previously imported certifica
+     * want to replace a previously imported certificate.
      * </p>
      * </li>
      * <li>
      * <p>
      * When you import a certificate by using the CLI, you must specify the certificate, the certificate chain, and the
-     * private key by their file names preceded by <code>file://</code>. For example, you can specify a certificate
-     * saved in the <code>C:\temp</code> folder as <code>file://C:\temp\certificate_to_import.pem</code>. If you are
+     * private key by their file names preceded by <code>fileb://</code>. For example, you can specify a certificate
+     * saved in the <code>C:\temp</code> folder as <code>fileb://C:\temp\certificate_to_import.pem</code>. If you are
      * making an HTTP or HTTPS Query request, include these arguments as BLOBs.
      * </p>
      * </li>
@@ -542,6 +580,49 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
 
     /**
      * <p>
+     * Adds or modifies account-level configurations in ACM.
+     * </p>
+     * <p>
+     * The supported configuration option is <code>DaysBeforeExpiry</code>. This option specifies the number of days
+     * prior to certificate expiration when ACM starts generating <code>EventBridge</code> events. ACM sends one event
+     * per day per certificate until the certificate expires. By default, accounts receive events starting 45 days
+     * before certificate expiration.
+     * </p>
+     * 
+     * @param putAccountConfigurationRequest
+     * @return A Java Future containing the result of the PutAccountConfiguration operation returned by the service.
+     * @sample AWSCertificateManagerAsync.PutAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/PutAccountConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountConfigurationResult> putAccountConfigurationAsync(PutAccountConfigurationRequest putAccountConfigurationRequest);
+
+    /**
+     * <p>
+     * Adds or modifies account-level configurations in ACM.
+     * </p>
+     * <p>
+     * The supported configuration option is <code>DaysBeforeExpiry</code>. This option specifies the number of days
+     * prior to certificate expiration when ACM starts generating <code>EventBridge</code> events. ACM sends one event
+     * per day per certificate until the certificate expires. By default, accounts receive events starting 45 days
+     * before certificate expiration.
+     * </p>
+     * 
+     * @param putAccountConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccountConfiguration operation returned by the service.
+     * @sample AWSCertificateManagerAsyncHandler.PutAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/PutAccountConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountConfigurationResult> putAccountConfigurationAsync(PutAccountConfigurationRequest putAccountConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccountConfigurationRequest, PutAccountConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Remove one or more tags from an ACM certificate. A tag consists of a key-value pair. If you do not specify the
      * value portion of the tag when calling this function, the tag will be removed regardless of value. If you specify
      * a value, the tag is removed only if it is associated with the specified value.
@@ -587,7 +668,7 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
 
     /**
      * <p>
-     * Renews an eligable ACM certificate. At this time, only exported private certificates can be renewed with this
+     * Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this
      * operation. In order to renew your ACM PCA certificates with ACM, you must first <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal
      * permission to do so</a>. For more information, see <a
@@ -605,7 +686,7 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
 
     /**
      * <p>
-     * Renews an eligable ACM certificate. At this time, only exported private certificates can be renewed with this
+     * Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this
      * operation. In order to renew your ACM PCA certificates with ACM, you must first <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal
      * permission to do so</a>. For more information, see <a

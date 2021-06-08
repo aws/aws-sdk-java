@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reserved for future use.
+ * Specifies a weekly recurrence pattern for running a classification job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/WeeklySchedule" target="_top">AWS API
@@ -30,21 +30,18 @@ public class WeeklySchedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY, THURSDAY,
-     * FRIDAY, SATURDAY, and SUNDAY.
+     * The day of the week when Amazon Macie runs the job.
      * </p>
      */
     private String dayOfWeek;
 
     /**
      * <p>
-     * Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY, THURSDAY,
-     * FRIDAY, SATURDAY, and SUNDAY.
+     * The day of the week when Amazon Macie runs the job.
      * </p>
      * 
      * @param dayOfWeek
-     *        Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY,
-     *        THURSDAY, FRIDAY, SATURDAY, and SUNDAY.
+     *        The day of the week when Amazon Macie runs the job.
      * @see DayOfWeek
      */
 
@@ -54,12 +51,10 @@ public class WeeklySchedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY, THURSDAY,
-     * FRIDAY, SATURDAY, and SUNDAY.
+     * The day of the week when Amazon Macie runs the job.
      * </p>
      * 
-     * @return Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY,
-     *         THURSDAY, FRIDAY, SATURDAY, and SUNDAY.
+     * @return The day of the week when Amazon Macie runs the job.
      * @see DayOfWeek
      */
 
@@ -69,13 +64,11 @@ public class WeeklySchedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY, THURSDAY,
-     * FRIDAY, SATURDAY, and SUNDAY.
+     * The day of the week when Amazon Macie runs the job.
      * </p>
      * 
      * @param dayOfWeek
-     *        Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY,
-     *        THURSDAY, FRIDAY, SATURDAY, and SUNDAY.
+     *        The day of the week when Amazon Macie runs the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DayOfWeek
      */
@@ -87,13 +80,11 @@ public class WeeklySchedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY, THURSDAY,
-     * FRIDAY, SATURDAY, and SUNDAY.
+     * The day of the week when Amazon Macie runs the job.
      * </p>
      * 
      * @param dayOfWeek
-     *        Run the job once a week, on a specific day of the week. Valid values are: MONDAY, TUESDAY, WEDNESDAY,
-     *        THURSDAY, FRIDAY, SATURDAY, and SUNDAY.
+     *        The day of the week when Amazon Macie runs the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DayOfWeek
      */

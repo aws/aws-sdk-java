@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,33 +25,37 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the
-     * GroupArn.
+     * A list of <a>GroupIdentifier</a> objects. Each identifier is an object that contains both the <code>Name</code>
+     * and the <code>GroupArn</code>.
      * </p>
      */
     private java.util.List<GroupIdentifier> groupIdentifiers;
     /**
+     * <important>
      * <p>
-     * A list of resource groups.
+     * <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i>
      * </p>
+     * </important>
      */
     @Deprecated
     private java.util.List<Group> groups;
     /**
      * <p>
-     * The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the
-     * GroupArn.
+     * A list of <a>GroupIdentifier</a> objects. Each identifier is an object that contains both the <code>Name</code>
+     * and the <code>GroupArn</code>.
      * </p>
      * 
-     * @return A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the
-     *         GroupArn.
+     * @return A list of <a>GroupIdentifier</a> objects. Each identifier is an object that contains both the
+     *         <code>Name</code> and the <code>GroupArn</code>.
      */
 
     public java.util.List<GroupIdentifier> getGroupIdentifiers() {
@@ -60,13 +64,13 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the
-     * GroupArn.
+     * A list of <a>GroupIdentifier</a> objects. Each identifier is an object that contains both the <code>Name</code>
+     * and the <code>GroupArn</code>.
      * </p>
      * 
      * @param groupIdentifiers
-     *        A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the
-     *        GroupArn.
+     *        A list of <a>GroupIdentifier</a> objects. Each identifier is an object that contains both the
+     *        <code>Name</code> and the <code>GroupArn</code>.
      */
 
     public void setGroupIdentifiers(java.util.Collection<GroupIdentifier> groupIdentifiers) {
@@ -80,8 +84,8 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the
-     * GroupArn.
+     * A list of <a>GroupIdentifier</a> objects. Each identifier is an object that contains both the <code>Name</code>
+     * and the <code>GroupArn</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,8 +94,8 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param groupIdentifiers
-     *        A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the
-     *        GroupArn.
+     *        A list of <a>GroupIdentifier</a> objects. Each identifier is an object that contains both the
+     *        <code>Name</code> and the <code>GroupArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,13 +111,13 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the
-     * GroupArn.
+     * A list of <a>GroupIdentifier</a> objects. Each identifier is an object that contains both the <code>Name</code>
+     * and the <code>GroupArn</code>.
      * </p>
      * 
      * @param groupIdentifiers
-     *        A list of GroupIdentifier objects. Each identifier is an object that contains both the GroupName and the
-     *        GroupArn.
+     *        A list of <a>GroupIdentifier</a> objects. Each identifier is an object that contains both the
+     *        <code>Name</code> and the <code>GroupArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,11 +127,16 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <important>
      * <p>
-     * A list of resource groups.
+     * <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i>
      * </p>
+     * </important>
      * 
-     * @return A list of resource groups.
+     * @return <p>
+     *         <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field
+     *         instead.</b> </i>
+     *         </p>
      */
     @Deprecated
     public java.util.List<Group> getGroups() {
@@ -135,12 +144,17 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <important>
      * <p>
-     * A list of resource groups.
+     * <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i>
      * </p>
+     * </important>
      * 
      * @param groups
-     *        A list of resource groups.
+     *        <p>
+     *        <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field
+     *        instead.</b> </i>
+     *        </p>
      */
     @Deprecated
     public void setGroups(java.util.Collection<Group> groups) {
@@ -153,9 +167,11 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <important>
      * <p>
-     * A list of resource groups.
+     * <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i>
      * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
@@ -163,7 +179,10 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param groups
-     *        A list of resource groups.
+     *        <p>
+     *        <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field
+     *        instead.</b> </i>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -178,12 +197,17 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <important>
      * <p>
-     * A list of resource groups.
+     * <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field instead.</b> </i>
      * </p>
+     * </important>
      * 
      * @param groups
-     *        A list of resource groups.
+     *        <p>
+     *        <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response field
+     *        instead.</b> </i>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -194,11 +218,16 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.
+     *        If present, indicates that more output is available than is included in the current response. Use this
+     *        value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *        next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *        back as <code>null</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -207,10 +236,15 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
-     * @return The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.
+     * @return If present, indicates that more output is available than is included in the current response. Use this
+     *         value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *         next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *         back as <code>null</code>.
      */
 
     public String getNextToken() {
@@ -219,11 +253,16 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        The NextToken value to include in a subsequent <code>ListGroups</code> request, to get more results.
+     *        If present, indicates that more output is available than is included in the current response. Use this
+     *        value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *        next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *        back as <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

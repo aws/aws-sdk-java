@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,12 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
      * authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      */
     private String principalArn;
 
@@ -218,12 +224,22 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
      * authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      * 
      * @param principalArn
      *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
      *        user, it modifies the account setting for all IAM users, IAM roles, and the root user of the account
      *        unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is
-     *        changed only for the authenticated user.
+     *        changed only for the authenticated user.</p> <note>
+     *        <p>
+     *        Federated users assume the account setting of the root user and can't have explicit account settings set
+     *        for them.
+     *        </p>
      */
 
     public void setPrincipalArn(String principalArn) {
@@ -237,11 +253,21 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
      * authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      * 
      * @return The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
      *         user, it modifies the account setting for all IAM users, IAM roles, and the root user of the account
      *         unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is
-     *         changed only for the authenticated user.
+     *         changed only for the authenticated user.</p> <note>
+     *         <p>
+     *         Federated users assume the account setting of the root user and can't have explicit account settings set
+     *         for them.
+     *         </p>
      */
 
     public String getPrincipalArn() {
@@ -255,12 +281,22 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
      * authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      * 
      * @param principalArn
      *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
      *        user, it modifies the account setting for all IAM users, IAM roles, and the root user of the account
      *        unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is
-     *        changed only for the authenticated user.
+     *        changed only for the authenticated user.</p> <note>
+     *        <p>
+     *        Federated users assume the account setting of the root user and can't have explicit account settings set
+     *        for them.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

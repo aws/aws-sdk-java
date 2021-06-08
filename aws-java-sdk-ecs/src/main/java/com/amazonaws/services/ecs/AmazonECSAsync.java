@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,14 +29,12 @@ import com.amazonaws.services.ecs.model.*;
  * <p>
  * Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it
  * easy to run, stop, and manage Docker containers on a cluster. You can host your cluster on a serverless
- * infrastructure that is managed by Amazon ECS by launching your services or tasks using the Fargate launch type. For
- * more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you
- * manage by using the EC2 launch type. For more information about launch types, see <a
- * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
+ * infrastructure that is managed by Amazon ECS by launching your services or tasks on AWS Fargate. For more control,
+ * you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage.
  * </p>
  * <p>
- * Amazon ECS lets you launch and stop container-based applications with simple API calls, allows you to get the state
- * of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
+ * Amazon ECS makes it easy to launch and stop container-based applications with simple API calls, allows you to get the
+ * state of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
  * </p>
  * <p>
  * You can use Amazon ECS to schedule the placement of containers across your cluster based on your resource needs,
@@ -524,6 +522,69 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Deletes the specified capacity provider.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are reserved and cannot be deleted. You
+     * can disassociate them from a cluster using either the <a>PutClusterCapacityProviders</a> API or by deleting the
+     * cluster.
+     * </p>
+     * </note>
+     * <p>
+     * Prior to a capacity provider being deleted, the capacity provider must be removed from the capacity provider
+     * strategy from all services. The <a>UpdateService</a> API can be used to remove a capacity provider from a
+     * service's capacity provider strategy. When updating a service, the <code>forceNewDeployment</code> option can be
+     * used to ensure that any tasks using the Amazon EC2 instance capacity provided by the capacity provider are
+     * transitioned to use the capacity from the remaining capacity providers. Only capacity providers that are not
+     * associated with a cluster can be deleted. To remove a capacity provider from a cluster, you can either use
+     * <a>PutClusterCapacityProviders</a> or delete the cluster.
+     * </p>
+     * 
+     * @param deleteCapacityProviderRequest
+     * @return A Java Future containing the result of the DeleteCapacityProvider operation returned by the service.
+     * @sample AmazonECSAsync.DeleteCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCapacityProviderResult> deleteCapacityProviderAsync(DeleteCapacityProviderRequest deleteCapacityProviderRequest);
+
+    /**
+     * <p>
+     * Deletes the specified capacity provider.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are reserved and cannot be deleted. You
+     * can disassociate them from a cluster using either the <a>PutClusterCapacityProviders</a> API or by deleting the
+     * cluster.
+     * </p>
+     * </note>
+     * <p>
+     * Prior to a capacity provider being deleted, the capacity provider must be removed from the capacity provider
+     * strategy from all services. The <a>UpdateService</a> API can be used to remove a capacity provider from a
+     * service's capacity provider strategy. When updating a service, the <code>forceNewDeployment</code> option can be
+     * used to ensure that any tasks using the Amazon EC2 instance capacity provided by the capacity provider are
+     * transitioned to use the capacity from the remaining capacity providers. Only capacity providers that are not
+     * associated with a cluster can be deleted. To remove a capacity provider from a cluster, you can either use
+     * <a>PutClusterCapacityProviders</a> or delete the cluster.
+     * </p>
+     * 
+     * @param deleteCapacityProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCapacityProvider operation returned by the service.
+     * @sample AmazonECSAsyncHandler.DeleteCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCapacityProviderResult> deleteCapacityProviderAsync(DeleteCapacityProviderRequest deleteCapacityProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCapacityProviderRequest, DeleteCapacityProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified cluster. The cluster will transition to the <code>INACTIVE</code> state. Clusters with an
      * <code>INACTIVE</code> status may remain discoverable in your account for a period of time. However, this behavior
      * is subject to change in the future, so you should not rely on <code>INACTIVE</code> clusters persisting.
@@ -884,8 +945,7 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Describes Amazon Elastic Container Service container instances. Returns metadata about registered and remaining
-     * resources on each container instance requested.
+     * Describes one or more container instances. Returns metadata about each container instance requested.
      * </p>
      * 
      * @param describeContainerInstancesRequest
@@ -899,8 +959,7 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Describes Amazon Elastic Container Service container instances. Returns metadata about registered and remaining
-     * resources on each container instance requested.
+     * Describes one or more container instances. Returns metadata about each container instance requested.
      * </p>
      * 
      * @param describeContainerInstancesRequest
@@ -1119,6 +1178,37 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Runs a command remotely on a container within a task.
+     * </p>
+     * 
+     * @param executeCommandRequest
+     * @return A Java Future containing the result of the ExecuteCommand operation returned by the service.
+     * @sample AmazonECSAsync.ExecuteCommand
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteCommandResult> executeCommandAsync(ExecuteCommandRequest executeCommandRequest);
+
+    /**
+     * <p>
+     * Runs a command remotely on a container within a task.
+     * </p>
+     * 
+     * @param executeCommandRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteCommand operation returned by the service.
+     * @sample AmazonECSAsyncHandler.ExecuteCommand
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteCommandResult> executeCommandAsync(ExecuteCommandRequest executeCommandRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteCommandRequest, ExecuteCommandResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the account settings for a specified principal.
      * </p>
      * 
@@ -1288,7 +1378,7 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Lists the services that are running in a specified cluster.
+     * Returns a list of services. You can filter the results by cluster, launch type, and scheduling strategy.
      * </p>
      * 
      * @param listServicesRequest
@@ -1301,7 +1391,7 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Lists the services that are running in a specified cluster.
+     * Returns a list of services. You can filter the results by cluster, launch type, and scheduling strategy.
      * </p>
      * 
      * @param listServicesRequest
@@ -1472,9 +1562,8 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Returns a list of tasks for a specified cluster. You can filter the results by family name, by a particular
-     * container instance, or by the desired status of the task with the <code>family</code>,
-     * <code>containerInstance</code>, and <code>desiredStatus</code> parameters.
+     * Returns a list of tasks. You can filter the results by cluster, task definition family, container instance,
+     * launch type, what IAM principal started the task, or by the desired status of the task.
      * </p>
      * <p>
      * Recently stopped tasks might appear in the returned results. Currently, stopped tasks appear in the returned
@@ -1491,9 +1580,8 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Returns a list of tasks for a specified cluster. You can filter the results by family name, by a particular
-     * container instance, or by the desired status of the task with the <code>family</code>,
-     * <code>containerInstance</code>, and <code>desiredStatus</code> parameters.
+     * Returns a list of tasks. You can filter the results by cluster, task definition family, container instance,
+     * launch type, what IAM principal started the task, or by the desired status of the task.
      * </p>
      * <p>
      * Recently stopped tasks might appear in the returned results. Currently, stopped tasks appear in the returned
@@ -2284,6 +2372,68 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Modifies the parameters for a capacity provider.
+     * </p>
+     * 
+     * @param updateCapacityProviderRequest
+     * @return A Java Future containing the result of the UpdateCapacityProvider operation returned by the service.
+     * @sample AmazonECSAsync.UpdateCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCapacityProviderResult> updateCapacityProviderAsync(UpdateCapacityProviderRequest updateCapacityProviderRequest);
+
+    /**
+     * <p>
+     * Modifies the parameters for a capacity provider.
+     * </p>
+     * 
+     * @param updateCapacityProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCapacityProvider operation returned by the service.
+     * @sample AmazonECSAsyncHandler.UpdateCapacityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCapacityProviderResult> updateCapacityProviderAsync(UpdateCapacityProviderRequest updateCapacityProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCapacityProviderRequest, UpdateCapacityProviderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the cluster.
+     * </p>
+     * 
+     * @param updateClusterRequest
+     * @return A Java Future containing the result of the UpdateCluster operation returned by the service.
+     * @sample AmazonECSAsync.UpdateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest updateClusterRequest);
+
+    /**
+     * <p>
+     * Updates the cluster.
+     * </p>
+     * 
+     * @param updateClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCluster operation returned by the service.
+     * @sample AmazonECSAsyncHandler.UpdateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest updateClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateClusterRequest, UpdateClusterResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the settings to use for a cluster.
      * </p>
      * 
@@ -2320,12 +2470,21 @@ public interface AmazonECSAsync extends AmazonECS {
      * differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another
      * operating system.
      * </p>
+     * <note>
      * <p>
-     * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon Linux with the
+     * The <code>UpdateContainerAgent</code> API isn't supported for container instances using the Amazon ECS-optimized
+     * Amazon Linux 2 (arm64) AMI. To update the container agent, you can update the <code>ecs-init</code> package which
+     * will update the agent. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating the Amazon
+     * ECS container agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or Amazon Linux AMI with the
      * <code>ecs-init</code> service installed and running. For help updating the Amazon ECS container agent on other
      * operating systems, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"
-     * >Manually Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
+     * >Manually updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
      * 
@@ -2344,12 +2503,21 @@ public interface AmazonECSAsync extends AmazonECS {
      * differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another
      * operating system.
      * </p>
+     * <note>
      * <p>
-     * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon Linux with the
+     * The <code>UpdateContainerAgent</code> API isn't supported for container instances using the Amazon ECS-optimized
+     * Amazon Linux 2 (arm64) AMI. To update the container agent, you can update the <code>ecs-init</code> package which
+     * will update the agent. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating the Amazon
+     * ECS container agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or Amazon Linux AMI with the
      * <code>ecs-init</code> service installed and running. For help updating the Amazon ECS container agent on other
      * operating systems, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"
-     * >Manually Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
+     * >Manually updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
      * 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,27 +28,29 @@ public class FrameCaptureGroupSettings implements Serializable, Cloneable, Struc
 
     /**
      * The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name
-     * prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling_) or the URI for a MediaStore container,
-     * plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling_). The final file names
-     * consist of the prefix from the destination field (for example, "curling_") + name modifier + the counter (5
-     * digits, starting from 00001) + extension (which is always .jpg). For example, curlingLow.00001.jpg
+     * prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container,
+     * plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names
+     * consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5
+     * digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
      */
     private OutputLocationRef destination;
+    /** Parameters that control interactions with the CDN. */
+    private FrameCaptureCdnSettings frameCaptureCdnSettings;
 
     /**
      * The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name
-     * prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling_) or the URI for a MediaStore container,
-     * plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling_). The final file names
-     * consist of the prefix from the destination field (for example, "curling_") + name modifier + the counter (5
-     * digits, starting from 00001) + extension (which is always .jpg). For example, curlingLow.00001.jpg
+     * prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container,
+     * plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names
+     * consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5
+     * digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
      * 
      * @param destination
      *        The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a
-     *        file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling_) or the URI for a
+     *        file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a
      *        MediaStore container, plus a file name prefix (for example,
-     *        mediastoressl://sportsDelivery/20180820/curling_). The final file names consist of the prefix from the
-     *        destination field (for example, "curling_") + name modifier + the counter (5 digits, starting from 00001)
-     *        + extension (which is always .jpg). For example, curlingLow.00001.jpg
+     *        mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the
+     *        destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001)
+     *        + extension (which is always .jpg). For example, curling-low.00001.jpg
      */
 
     public void setDestination(OutputLocationRef destination) {
@@ -57,17 +59,17 @@ public class FrameCaptureGroupSettings implements Serializable, Cloneable, Struc
 
     /**
      * The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name
-     * prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling_) or the URI for a MediaStore container,
-     * plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling_). The final file names
-     * consist of the prefix from the destination field (for example, "curling_") + name modifier + the counter (5
-     * digits, starting from 00001) + extension (which is always .jpg). For example, curlingLow.00001.jpg
+     * prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container,
+     * plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names
+     * consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5
+     * digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
      * 
      * @return The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a
-     *         file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling_) or the URI for a
+     *         file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a
      *         MediaStore container, plus a file name prefix (for example,
-     *         mediastoressl://sportsDelivery/20180820/curling_). The final file names consist of the prefix from the
-     *         destination field (for example, "curling_") + name modifier + the counter (5 digits, starting from 00001)
-     *         + extension (which is always .jpg). For example, curlingLow.00001.jpg
+     *         mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the
+     *         destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001)
+     *         + extension (which is always .jpg). For example, curling-low.00001.jpg
      */
 
     public OutputLocationRef getDestination() {
@@ -76,23 +78,57 @@ public class FrameCaptureGroupSettings implements Serializable, Cloneable, Struc
 
     /**
      * The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name
-     * prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling_) or the URI for a MediaStore container,
-     * plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling_). The final file names
-     * consist of the prefix from the destination field (for example, "curling_") + name modifier + the counter (5
-     * digits, starting from 00001) + extension (which is always .jpg). For example, curlingLow.00001.jpg
+     * prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container,
+     * plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names
+     * consist of the prefix from the destination field (for example, "curling-") + name modifier + the counter (5
+     * digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
      * 
      * @param destination
      *        The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a
-     *        file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling_) or the URI for a
+     *        file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a
      *        MediaStore container, plus a file name prefix (for example,
-     *        mediastoressl://sportsDelivery/20180820/curling_). The final file names consist of the prefix from the
-     *        destination field (for example, "curling_") + name modifier + the counter (5 digits, starting from 00001)
-     *        + extension (which is always .jpg). For example, curlingLow.00001.jpg
+     *        mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the
+     *        destination field (for example, "curling-") + name modifier + the counter (5 digits, starting from 00001)
+     *        + extension (which is always .jpg). For example, curling-low.00001.jpg
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FrameCaptureGroupSettings withDestination(OutputLocationRef destination) {
         setDestination(destination);
+        return this;
+    }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     * 
+     * @param frameCaptureCdnSettings
+     *        Parameters that control interactions with the CDN.
+     */
+
+    public void setFrameCaptureCdnSettings(FrameCaptureCdnSettings frameCaptureCdnSettings) {
+        this.frameCaptureCdnSettings = frameCaptureCdnSettings;
+    }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     * 
+     * @return Parameters that control interactions with the CDN.
+     */
+
+    public FrameCaptureCdnSettings getFrameCaptureCdnSettings() {
+        return this.frameCaptureCdnSettings;
+    }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     * 
+     * @param frameCaptureCdnSettings
+     *        Parameters that control interactions with the CDN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FrameCaptureGroupSettings withFrameCaptureCdnSettings(FrameCaptureCdnSettings frameCaptureCdnSettings) {
+        setFrameCaptureCdnSettings(frameCaptureCdnSettings);
         return this;
     }
 
@@ -109,7 +145,9 @@ public class FrameCaptureGroupSettings implements Serializable, Cloneable, Struc
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestination() != null)
-            sb.append("Destination: ").append(getDestination());
+            sb.append("Destination: ").append(getDestination()).append(",");
+        if (getFrameCaptureCdnSettings() != null)
+            sb.append("FrameCaptureCdnSettings: ").append(getFrameCaptureCdnSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -128,6 +166,10 @@ public class FrameCaptureGroupSettings implements Serializable, Cloneable, Struc
             return false;
         if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
             return false;
+        if (other.getFrameCaptureCdnSettings() == null ^ this.getFrameCaptureCdnSettings() == null)
+            return false;
+        if (other.getFrameCaptureCdnSettings() != null && other.getFrameCaptureCdnSettings().equals(this.getFrameCaptureCdnSettings()) == false)
+            return false;
         return true;
     }
 
@@ -137,6 +179,7 @@ public class FrameCaptureGroupSettings implements Serializable, Cloneable, Struc
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
+        hashCode = prime * hashCode + ((getFrameCaptureCdnSettings() == null) ? 0 : getFrameCaptureCdnSettings().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class CreateAssociationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceSeverity").build();
     private static final MarshallingInfo<String> SYNCCOMPLIANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SyncCompliance").build();
+    private static final MarshallingInfo<Boolean> APPLYONLYATCRONINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplyOnlyAtCronInterval").build();
+    private static final MarshallingInfo<List> CALENDARNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CalendarNames").build();
+    private static final MarshallingInfo<List> TARGETLOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocations").build();
 
     private static final CreateAssociationRequestMarshaller instance = new CreateAssociationRequestMarshaller();
 
@@ -85,6 +91,9 @@ public class CreateAssociationRequestMarshaller {
             protocolMarshaller.marshall(createAssociationRequest.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
             protocolMarshaller.marshall(createAssociationRequest.getComplianceSeverity(), COMPLIANCESEVERITY_BINDING);
             protocolMarshaller.marshall(createAssociationRequest.getSyncCompliance(), SYNCCOMPLIANCE_BINDING);
+            protocolMarshaller.marshall(createAssociationRequest.getApplyOnlyAtCronInterval(), APPLYONLYATCRONINTERVAL_BINDING);
+            protocolMarshaller.marshall(createAssociationRequest.getCalendarNames(), CALENDARNAMES_BINDING);
+            protocolMarshaller.marshall(createAssociationRequest.getTargetLocations(), TARGETLOCATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

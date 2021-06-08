@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based application, provides additional mapping information when the record format uses delimiters, such as
- * CSV. For example, the following sample records use CSV format, where the records use the <i>'\n'</i> as the row
- * delimiter and a comma (",") as the column delimiter:
+ * For a SQL-based Kinesis Data Analytics application, provides additional mapping information when the record format
+ * uses delimiters, such as CSV. For example, the following sample records use CSV format, where the records use the
+ * <i>'\n'</i> as the row delimiter and a comma (",") as the column delimiter:
  * </p>
  * <p>
  * <code>"name1", "address1"</code>

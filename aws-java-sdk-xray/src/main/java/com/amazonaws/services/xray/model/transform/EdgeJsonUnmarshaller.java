@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,11 +66,15 @@ public class EdgeJsonUnmarshaller implements Unmarshaller<Edge, JsonUnmarshaller
                 }
                 if (context.testExpression("ResponseTimeHistogram", targetDepth)) {
                     context.nextToken();
-                    edge.setResponseTimeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    edge.setResponseTimeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Aliases", targetDepth)) {
                     context.nextToken();
-                    edge.setAliases(new ListUnmarshaller<Alias>(AliasJsonUnmarshaller.getInstance()).unmarshall(context));
+                    edge.setAliases(new ListUnmarshaller<Alias>(AliasJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

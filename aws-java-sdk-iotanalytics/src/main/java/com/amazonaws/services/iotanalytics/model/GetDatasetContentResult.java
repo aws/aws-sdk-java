@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class GetDatasetContentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of "DatasetEntry" objects.
+     * A list of <code>DatasetEntry</code> objects.
      * </p>
      */
     private java.util.List<DatasetEntry> entries;
@@ -44,10 +44,10 @@ public class GetDatasetContentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of "DatasetEntry" objects.
+     * A list of <code>DatasetEntry</code> objects.
      * </p>
      * 
-     * @return A list of "DatasetEntry" objects.
+     * @return A list of <code>DatasetEntry</code> objects.
      */
 
     public java.util.List<DatasetEntry> getEntries() {
@@ -56,11 +56,11 @@ public class GetDatasetContentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of "DatasetEntry" objects.
+     * A list of <code>DatasetEntry</code> objects.
      * </p>
      * 
      * @param entries
-     *        A list of "DatasetEntry" objects.
+     *        A list of <code>DatasetEntry</code> objects.
      */
 
     public void setEntries(java.util.Collection<DatasetEntry> entries) {
@@ -74,7 +74,7 @@ public class GetDatasetContentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of "DatasetEntry" objects.
+     * A list of <code>DatasetEntry</code> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class GetDatasetContentResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param entries
-     *        A list of "DatasetEntry" objects.
+     *        A list of <code>DatasetEntry</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class GetDatasetContentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of "DatasetEntry" objects.
+     * A list of <code>DatasetEntry</code> objects.
      * </p>
      * 
      * @param entries
-     *        A list of "DatasetEntry" objects.
+     *        A list of <code>DatasetEntry</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

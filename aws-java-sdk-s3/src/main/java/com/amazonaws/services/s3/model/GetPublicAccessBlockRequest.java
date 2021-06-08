@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,9 +18,23 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.AmazonWebServiceRequest;
 import java.io.Serializable;
 
-public class GetPublicAccessBlockRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class GetPublicAccessBlockRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, ExpectedBucketOwnerRequest {
 
     private String bucketName;
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetPublicAccessBlockRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * The name of the Amazon S3 bucket whose Public Access Block configuration you want to retrieve.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,7 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * One or more keys to limit the results.
      * </p>
      */
     private String key;
@@ -45,13 +44,11 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * One or more keys to limit the results.
      * </p>
      * 
      * @param key
-     *        One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     *        One or more keys to limit the results.
      * @see AutomationExecutionFilterKey
      */
 
@@ -61,12 +58,10 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * One or more keys to limit the results.
      * </p>
      * 
-     * @return One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     *         ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * @return One or more keys to limit the results.
      * @see AutomationExecutionFilterKey
      */
 
@@ -76,13 +71,11 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * One or more keys to limit the results.
      * </p>
      * 
      * @param key
-     *        One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     *        One or more keys to limit the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutomationExecutionFilterKey
      */
@@ -94,13 +87,11 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * One or more keys to limit the results.
      * </p>
      * 
      * @param key
-     *        One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     *        One or more keys to limit the results.
      * @see AutomationExecutionFilterKey
      */
 
@@ -110,13 +101,11 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     * ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     * One or more keys to limit the results.
      * </p>
      * 
      * @param key
-     *        One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-     *        ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+     *        One or more keys to limit the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutomationExecutionFilterKey
      */

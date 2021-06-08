@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -177,6 +177,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new CancelContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelContact");
@@ -241,6 +243,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new CreateConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfig");
@@ -310,6 +314,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(createDataflowEndpointGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataflowEndpointGroup");
@@ -374,6 +380,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new CreateMissionProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMissionProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMissionProfile");
@@ -433,6 +441,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new DeleteConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfig");
@@ -493,6 +503,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(deleteDataflowEndpointGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataflowEndpointGroup");
@@ -553,6 +565,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new DeleteMissionProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMissionProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMissionProfile");
@@ -612,6 +626,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new DescribeContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContact");
@@ -674,6 +690,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new GetConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfig");
@@ -734,6 +752,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(getDataflowEndpointGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataflowEndpointGroup");
@@ -794,6 +814,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new GetMinuteUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMinuteUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMinuteUsage");
@@ -853,6 +875,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new GetMissionProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMissionProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMissionProfile");
@@ -912,6 +936,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new GetSatelliteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSatelliteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSatellite");
@@ -971,6 +997,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new ListConfigsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConfigsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigs");
@@ -1034,6 +1062,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new ListContactsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listContactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListContacts");
@@ -1094,6 +1124,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listDataflowEndpointGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataflowEndpointGroups");
@@ -1154,6 +1186,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new ListGroundStationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroundStationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroundStations");
@@ -1213,6 +1247,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new ListMissionProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMissionProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMissionProfiles");
@@ -1272,6 +1308,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new ListSatellitesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSatellitesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSatellites");
@@ -1331,6 +1369,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1390,6 +1430,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new ReserveContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(reserveContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReserveContact");
@@ -1449,6 +1491,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1508,6 +1552,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1571,6 +1617,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new UpdateConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfig");
@@ -1633,6 +1681,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                 request = new UpdateMissionProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMissionProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMissionProfile");
@@ -1728,6 +1778,11 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The map filter for querying findings.
+ * A map filter for querying findings. Each map filter provides the field to check, the value to look for, and the
+ * comparison operator.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/MapFilter" target="_top">AWS API
@@ -30,30 +31,56 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key of the map filter.
+     * The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the name of
+     * the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The value for the key in the map filter.
+     * The value for the key in the map filter. Filter values are case sensitive. For example, one of the values for a
+     * tag called <code>Department</code> might be <code>Security</code>. If you provide <code>security</code> as the
+     * filter value, then there is no match.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * The condition to apply to a key value when querying for findings with a map filter.
+     * The condition to apply to the key value when querying for findings with a map filter.
+     * </p>
+     * <p>
+     * To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, for the
+     * <code>ResourceTags</code> field, the filter <code>Department EQUALS Security</code> matches findings that have
+     * the value <code>Security</code> for the tag <code>Department</code>.
+     * </p>
+     * <p>
+     * To search for values other than the filter value, use <code>NOT_EQUALS</code>. For example, for the
+     * <code>ResourceTags</code> field, the filter <code>Department NOT_EQUALS Finance</code> matches findings that do
+     * not have the value <code>Finance</code> for the tag <code>Department</code>.
+     * </p>
+     * <p>
+     * <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A finding matches if it matches any
+     * one of those filters.
+     * </p>
+     * <p>
+     * <code>NOT_EQUALS</code> filters on the same field are joined by <code>AND</code>. A finding matches only if it
+     * matches all of those filters.
+     * </p>
+     * <p>
+     * You cannot have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field.
      * </p>
      */
     private String comparison;
 
     /**
      * <p>
-     * The key of the map filter.
+     * The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the name of
+     * the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.
      * </p>
      * 
      * @param key
-     *        The key of the map filter.
+     *        The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the
+     *        name of the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.
      */
 
     public void setKey(String key) {
@@ -62,10 +89,12 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key of the map filter.
+     * The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the name of
+     * the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.
      * </p>
      * 
-     * @return The key of the map filter.
+     * @return The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the
+     *         name of the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.
      */
 
     public String getKey() {
@@ -74,11 +103,13 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key of the map filter.
+     * The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the name of
+     * the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.
      * </p>
      * 
      * @param key
-     *        The key of the map filter.
+     *        The key of the map filter. For example, for <code>ResourceTags</code>, <code>Key</code> identifies the
+     *        name of the tag. For <code>UserDefinedFields</code>, <code>Key</code> is the name of the field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +120,15 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the key in the map filter.
+     * The value for the key in the map filter. Filter values are case sensitive. For example, one of the values for a
+     * tag called <code>Department</code> might be <code>Security</code>. If you provide <code>security</code> as the
+     * filter value, then there is no match.
      * </p>
      * 
      * @param value
-     *        The value for the key in the map filter.
+     *        The value for the key in the map filter. Filter values are case sensitive. For example, one of the values
+     *        for a tag called <code>Department</code> might be <code>Security</code>. If you provide
+     *        <code>security</code> as the filter value, then there is no match.
      */
 
     public void setValue(String value) {
@@ -102,10 +137,14 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the key in the map filter.
+     * The value for the key in the map filter. Filter values are case sensitive. For example, one of the values for a
+     * tag called <code>Department</code> might be <code>Security</code>. If you provide <code>security</code> as the
+     * filter value, then there is no match.
      * </p>
      * 
-     * @return The value for the key in the map filter.
+     * @return The value for the key in the map filter. Filter values are case sensitive. For example, one of the values
+     *         for a tag called <code>Department</code> might be <code>Security</code>. If you provide
+     *         <code>security</code> as the filter value, then there is no match.
      */
 
     public String getValue() {
@@ -114,11 +153,15 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the key in the map filter.
+     * The value for the key in the map filter. Filter values are case sensitive. For example, one of the values for a
+     * tag called <code>Department</code> might be <code>Security</code>. If you provide <code>security</code> as the
+     * filter value, then there is no match.
      * </p>
      * 
      * @param value
-     *        The value for the key in the map filter.
+     *        The value for the key in the map filter. Filter values are case sensitive. For example, one of the values
+     *        for a tag called <code>Department</code> might be <code>Security</code>. If you provide
+     *        <code>security</code> as the filter value, then there is no match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +172,52 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to apply to a key value when querying for findings with a map filter.
+     * The condition to apply to the key value when querying for findings with a map filter.
+     * </p>
+     * <p>
+     * To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, for the
+     * <code>ResourceTags</code> field, the filter <code>Department EQUALS Security</code> matches findings that have
+     * the value <code>Security</code> for the tag <code>Department</code>.
+     * </p>
+     * <p>
+     * To search for values other than the filter value, use <code>NOT_EQUALS</code>. For example, for the
+     * <code>ResourceTags</code> field, the filter <code>Department NOT_EQUALS Finance</code> matches findings that do
+     * not have the value <code>Finance</code> for the tag <code>Department</code>.
+     * </p>
+     * <p>
+     * <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A finding matches if it matches any
+     * one of those filters.
+     * </p>
+     * <p>
+     * <code>NOT_EQUALS</code> filters on the same field are joined by <code>AND</code>. A finding matches only if it
+     * matches all of those filters.
+     * </p>
+     * <p>
+     * You cannot have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field.
      * </p>
      * 
      * @param comparison
-     *        The condition to apply to a key value when querying for findings with a map filter.
+     *        The condition to apply to the key value when querying for findings with a map filter.</p>
+     *        <p>
+     *        To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, for the
+     *        <code>ResourceTags</code> field, the filter <code>Department EQUALS Security</code> matches findings that
+     *        have the value <code>Security</code> for the tag <code>Department</code>.
+     *        </p>
+     *        <p>
+     *        To search for values other than the filter value, use <code>NOT_EQUALS</code>. For example, for the
+     *        <code>ResourceTags</code> field, the filter <code>Department NOT_EQUALS Finance</code> matches findings
+     *        that do not have the value <code>Finance</code> for the tag <code>Department</code>.
+     *        </p>
+     *        <p>
+     *        <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A finding matches if it
+     *        matches any one of those filters.
+     *        </p>
+     *        <p>
+     *        <code>NOT_EQUALS</code> filters on the same field are joined by <code>AND</code>. A finding matches only
+     *        if it matches all of those filters.
+     *        </p>
+     *        <p>
+     *        You cannot have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field.
      * @see MapFilterComparison
      */
 
@@ -143,10 +227,52 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to apply to a key value when querying for findings with a map filter.
+     * The condition to apply to the key value when querying for findings with a map filter.
+     * </p>
+     * <p>
+     * To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, for the
+     * <code>ResourceTags</code> field, the filter <code>Department EQUALS Security</code> matches findings that have
+     * the value <code>Security</code> for the tag <code>Department</code>.
+     * </p>
+     * <p>
+     * To search for values other than the filter value, use <code>NOT_EQUALS</code>. For example, for the
+     * <code>ResourceTags</code> field, the filter <code>Department NOT_EQUALS Finance</code> matches findings that do
+     * not have the value <code>Finance</code> for the tag <code>Department</code>.
+     * </p>
+     * <p>
+     * <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A finding matches if it matches any
+     * one of those filters.
+     * </p>
+     * <p>
+     * <code>NOT_EQUALS</code> filters on the same field are joined by <code>AND</code>. A finding matches only if it
+     * matches all of those filters.
+     * </p>
+     * <p>
+     * You cannot have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field.
      * </p>
      * 
-     * @return The condition to apply to a key value when querying for findings with a map filter.
+     * @return The condition to apply to the key value when querying for findings with a map filter.</p>
+     *         <p>
+     *         To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, for the
+     *         <code>ResourceTags</code> field, the filter <code>Department EQUALS Security</code> matches findings that
+     *         have the value <code>Security</code> for the tag <code>Department</code>.
+     *         </p>
+     *         <p>
+     *         To search for values other than the filter value, use <code>NOT_EQUALS</code>. For example, for the
+     *         <code>ResourceTags</code> field, the filter <code>Department NOT_EQUALS Finance</code> matches findings
+     *         that do not have the value <code>Finance</code> for the tag <code>Department</code>.
+     *         </p>
+     *         <p>
+     *         <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A finding matches if it
+     *         matches any one of those filters.
+     *         </p>
+     *         <p>
+     *         <code>NOT_EQUALS</code> filters on the same field are joined by <code>AND</code>. A finding matches only
+     *         if it matches all of those filters.
+     *         </p>
+     *         <p>
+     *         You cannot have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same
+     *         field.
      * @see MapFilterComparison
      */
 
@@ -156,11 +282,52 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to apply to a key value when querying for findings with a map filter.
+     * The condition to apply to the key value when querying for findings with a map filter.
+     * </p>
+     * <p>
+     * To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, for the
+     * <code>ResourceTags</code> field, the filter <code>Department EQUALS Security</code> matches findings that have
+     * the value <code>Security</code> for the tag <code>Department</code>.
+     * </p>
+     * <p>
+     * To search for values other than the filter value, use <code>NOT_EQUALS</code>. For example, for the
+     * <code>ResourceTags</code> field, the filter <code>Department NOT_EQUALS Finance</code> matches findings that do
+     * not have the value <code>Finance</code> for the tag <code>Department</code>.
+     * </p>
+     * <p>
+     * <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A finding matches if it matches any
+     * one of those filters.
+     * </p>
+     * <p>
+     * <code>NOT_EQUALS</code> filters on the same field are joined by <code>AND</code>. A finding matches only if it
+     * matches all of those filters.
+     * </p>
+     * <p>
+     * You cannot have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field.
      * </p>
      * 
      * @param comparison
-     *        The condition to apply to a key value when querying for findings with a map filter.
+     *        The condition to apply to the key value when querying for findings with a map filter.</p>
+     *        <p>
+     *        To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, for the
+     *        <code>ResourceTags</code> field, the filter <code>Department EQUALS Security</code> matches findings that
+     *        have the value <code>Security</code> for the tag <code>Department</code>.
+     *        </p>
+     *        <p>
+     *        To search for values other than the filter value, use <code>NOT_EQUALS</code>. For example, for the
+     *        <code>ResourceTags</code> field, the filter <code>Department NOT_EQUALS Finance</code> matches findings
+     *        that do not have the value <code>Finance</code> for the tag <code>Department</code>.
+     *        </p>
+     *        <p>
+     *        <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A finding matches if it
+     *        matches any one of those filters.
+     *        </p>
+     *        <p>
+     *        <code>NOT_EQUALS</code> filters on the same field are joined by <code>AND</code>. A finding matches only
+     *        if it matches all of those filters.
+     *        </p>
+     *        <p>
+     *        You cannot have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MapFilterComparison
      */
@@ -172,11 +339,52 @@ public class MapFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition to apply to a key value when querying for findings with a map filter.
+     * The condition to apply to the key value when querying for findings with a map filter.
+     * </p>
+     * <p>
+     * To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, for the
+     * <code>ResourceTags</code> field, the filter <code>Department EQUALS Security</code> matches findings that have
+     * the value <code>Security</code> for the tag <code>Department</code>.
+     * </p>
+     * <p>
+     * To search for values other than the filter value, use <code>NOT_EQUALS</code>. For example, for the
+     * <code>ResourceTags</code> field, the filter <code>Department NOT_EQUALS Finance</code> matches findings that do
+     * not have the value <code>Finance</code> for the tag <code>Department</code>.
+     * </p>
+     * <p>
+     * <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A finding matches if it matches any
+     * one of those filters.
+     * </p>
+     * <p>
+     * <code>NOT_EQUALS</code> filters on the same field are joined by <code>AND</code>. A finding matches only if it
+     * matches all of those filters.
+     * </p>
+     * <p>
+     * You cannot have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field.
      * </p>
      * 
      * @param comparison
-     *        The condition to apply to a key value when querying for findings with a map filter.
+     *        The condition to apply to the key value when querying for findings with a map filter.</p>
+     *        <p>
+     *        To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, for the
+     *        <code>ResourceTags</code> field, the filter <code>Department EQUALS Security</code> matches findings that
+     *        have the value <code>Security</code> for the tag <code>Department</code>.
+     *        </p>
+     *        <p>
+     *        To search for values other than the filter value, use <code>NOT_EQUALS</code>. For example, for the
+     *        <code>ResourceTags</code> field, the filter <code>Department NOT_EQUALS Finance</code> matches findings
+     *        that do not have the value <code>Finance</code> for the tag <code>Department</code>.
+     *        </p>
+     *        <p>
+     *        <code>EQUALS</code> filters on the same field are joined by <code>OR</code>. A finding matches if it
+     *        matches any one of those filters.
+     *        </p>
+     *        <p>
+     *        <code>NOT_EQUALS</code> filters on the same field are joined by <code>AND</code>. A finding matches only
+     *        if it matches all of those filters.
+     *        </p>
+     *        <p>
+     *        You cannot have both an <code>EQUALS</code> filter and a <code>NOT_EQUALS</code> filter on the same field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MapFilterComparison
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,9 @@ public class PipelineDeclarationJsonUnmarshaller implements Unmarshaller<Pipelin
                 }
                 if (context.testExpression("stages", targetDepth)) {
                     context.nextToken();
-                    pipelineDeclaration.setStages(new ListUnmarshaller<StageDeclaration>(StageDeclarationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    pipelineDeclaration.setStages(new ListUnmarshaller<StageDeclaration>(StageDeclarationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

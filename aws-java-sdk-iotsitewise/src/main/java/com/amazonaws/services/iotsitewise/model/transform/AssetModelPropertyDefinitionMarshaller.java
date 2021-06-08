@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class AssetModelPropertyDefinitionMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> DATATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("dataType").build();
+    private static final MarshallingInfo<String> DATATYPESPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataTypeSpec").build();
     private static final MarshallingInfo<String> UNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("unit").build();
     private static final MarshallingInfo<StructuredPojo> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -54,6 +56,7 @@ public class AssetModelPropertyDefinitionMarshaller {
         try {
             protocolMarshaller.marshall(assetModelPropertyDefinition.getName(), NAME_BINDING);
             protocolMarshaller.marshall(assetModelPropertyDefinition.getDataType(), DATATYPE_BINDING);
+            protocolMarshaller.marshall(assetModelPropertyDefinition.getDataTypeSpec(), DATATYPESPEC_BINDING);
             protocolMarshaller.marshall(assetModelPropertyDefinition.getUnit(), UNIT_BINDING);
             protocolMarshaller.marshall(assetModelPropertyDefinition.getType(), TYPE_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,23 +39,40 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
      * The AWS Key Management Service ID of the key used to encrypt the output data, if any.
      * </p>
      * <p>
-     * If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution role must include
-     * permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the
-     * default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with
-     * KMS-managed keys for <code>LabelingJobOutputConfig</code>. If you use a bucket policy with an
-     * <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key
-     * of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
+     * If you provide your own KMS key ID, you must add the required permissions to your KMS key described in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions"
+     * >Encrypt Output Data and Storage Volume with AWS KMS</a>.
+     * </p>
+     * <p>
+     * If you don't provide a KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your role's
+     * account to encrypt your output data.
+     * </p>
+     * <p>
+     * If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side
+     * encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
      * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
-     * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateLabelingJob</code>
-     * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
-     * in the <i>AWS Key Management Service Developer Guide</i>.
-     * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if you
+     * want to do real time chaining to another streaming job and receive an Amazon SNS notifications each time a data
+     * object is submitted by a worker.
+     * </p>
+     * <p>
+     * If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling tasks,
+     * Ground Truth will send labeling task output data to the SNS output topic you specify here.
+     * </p>
+     * <p>
+     * To learn more, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-output-data"
+     * >Receive Output Data from a Streaming Labeling Job</a>.
+     * </p>
+     */
+    private String snsTopicArn;
 
     /**
      * <p>
@@ -102,40 +119,40 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
      * The AWS Key Management Service ID of the key used to encrypt the output data, if any.
      * </p>
      * <p>
-     * If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution role must include
-     * permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the
-     * default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with
-     * KMS-managed keys for <code>LabelingJobOutputConfig</code>. If you use a bucket policy with an
-     * <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key
-     * of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
-     * the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * If you provide your own KMS key ID, you must add the required permissions to your KMS key described in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions"
+     * >Encrypt Output Data and Storage Volume with AWS KMS</a>.
      * </p>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateLabelingJob</code>
-     * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
-     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * If you don't provide a KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your role's
+     * account to encrypt your output data.
+     * </p>
+     * <p>
+     * If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side
+     * encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * 
      * @param kmsKeyId
      *        The AWS Key Management Service ID of the key used to encrypt the output data, if any.</p>
      *        <p>
-     *        If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution role must include
-     *        permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the
-     *        default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with
-     *        KMS-managed keys for <code>LabelingJobOutputConfig</code>. If you use a bucket policy with an
-     *        <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the
-     *        condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
-     *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     *        If you provide your own KMS key ID, you must add the required permissions to your KMS key described in <a
+     *        href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions"
+     *        >Encrypt Output Data and Storage Volume with AWS KMS</a>.
      *        </p>
      *        <p>
-     *        The KMS key policy must grant permission to the IAM role that you specify in your
-     *        <code>CreateLabelingJob</code> request. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-     *        KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        If you don't provide a KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
+     *        role's account to encrypt your output data.
+     *        </p>
+     *        <p>
+     *        If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with
+     *        server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to
+     *        <code>"aws:kms"</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
+     *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -147,39 +164,39 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
      * The AWS Key Management Service ID of the key used to encrypt the output data, if any.
      * </p>
      * <p>
-     * If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution role must include
-     * permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the
-     * default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with
-     * KMS-managed keys for <code>LabelingJobOutputConfig</code>. If you use a bucket policy with an
-     * <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key
-     * of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
-     * the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * If you provide your own KMS key ID, you must add the required permissions to your KMS key described in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions"
+     * >Encrypt Output Data and Storage Volume with AWS KMS</a>.
      * </p>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateLabelingJob</code>
-     * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
-     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * If you don't provide a KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your role's
+     * account to encrypt your output data.
+     * </p>
+     * <p>
+     * If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side
+     * encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * 
      * @return The AWS Key Management Service ID of the key used to encrypt the output data, if any.</p>
      *         <p>
-     *         If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution role must include
-     *         permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses
-     *         the default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption
-     *         with KMS-managed keys for <code>LabelingJobOutputConfig</code>. If you use a bucket policy with an
-     *         <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the
-     *         condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
-     *         Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     *         If you provide your own KMS key ID, you must add the required permissions to your KMS key described in <a
+     *         href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions"
+     *         >Encrypt Output Data and Storage Volume with AWS KMS</a>.
      *         </p>
      *         <p>
-     *         The KMS key policy must grant permission to the IAM role that you specify in your
-     *         <code>CreateLabelingJob</code> request. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-     *         KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *         If you don't provide a KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
+     *         role's account to encrypt your output data.
+     *         </p>
+     *         <p>
+     *         If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with
+     *         server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to
+     *         <code>"aws:kms"</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
+     *         Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      */
 
     public String getKmsKeyId() {
@@ -191,45 +208,148 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
      * The AWS Key Management Service ID of the key used to encrypt the output data, if any.
      * </p>
      * <p>
-     * If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution role must include
-     * permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the
-     * default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with
-     * KMS-managed keys for <code>LabelingJobOutputConfig</code>. If you use a bucket policy with an
-     * <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the condition key
-     * of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
-     * the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * If you provide your own KMS key ID, you must add the required permissions to your KMS key described in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions"
+     * >Encrypt Output Data and Storage Volume with AWS KMS</a>.
      * </p>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateLabelingJob</code>
-     * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
-     * in the <i>AWS Key Management Service Developer Guide</i>.
+     * If you don't provide a KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your role's
+     * account to encrypt your output data.
+     * </p>
+     * <p>
+     * If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with server-side
+     * encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
      * 
      * @param kmsKeyId
      *        The AWS Key Management Service ID of the key used to encrypt the output data, if any.</p>
      *        <p>
-     *        If you use a KMS key ID or an alias of your master key, the Amazon SageMaker execution role must include
-     *        permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, Amazon SageMaker uses the
-     *        default KMS key for Amazon S3 for your role's account. Amazon SageMaker uses server-side encryption with
-     *        KMS-managed keys for <code>LabelingJobOutputConfig</code>. If you use a bucket policy with an
-     *        <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the
-     *        condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
-     *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     *        If you provide your own KMS key ID, you must add the required permissions to your KMS key described in <a
+     *        href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions"
+     *        >Encrypt Output Data and Storage Volume with AWS KMS</a>.
      *        </p>
      *        <p>
-     *        The KMS key policy must grant permission to the IAM role that you specify in your
-     *        <code>CreateLabelingJob</code> request. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-     *        KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        If you don't provide a KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
+     *        role's account to encrypt your output data.
+     *        </p>
+     *        <p>
+     *        If you use a bucket policy with an <code>s3:PutObject</code> permission that only allows objects with
+     *        server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code> to
+     *        <code>"aws:kms"</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
+     *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LabelingJobOutputConfig withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if you
+     * want to do real time chaining to another streaming job and receive an Amazon SNS notifications each time a data
+     * object is submitted by a worker.
+     * </p>
+     * <p>
+     * If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling tasks,
+     * Ground Truth will send labeling task output data to the SNS output topic you specify here.
+     * </p>
+     * <p>
+     * To learn more, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-output-data"
+     * >Receive Output Data from a Streaming Labeling Job</a>.
+     * </p>
+     * 
+     * @param snsTopicArn
+     *        An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if
+     *        you want to do real time chaining to another streaming job and receive an Amazon SNS notifications each
+     *        time a data object is submitted by a worker.</p>
+     *        <p>
+     *        If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling
+     *        tasks, Ground Truth will send labeling task output data to the SNS output topic you specify here.
+     *        </p>
+     *        <p>
+     *        To learn more, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-output-data"
+     *        >Receive Output Data from a Streaming Labeling Job</a>.
+     */
+
+    public void setSnsTopicArn(String snsTopicArn) {
+        this.snsTopicArn = snsTopicArn;
+    }
+
+    /**
+     * <p>
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if you
+     * want to do real time chaining to another streaming job and receive an Amazon SNS notifications each time a data
+     * object is submitted by a worker.
+     * </p>
+     * <p>
+     * If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling tasks,
+     * Ground Truth will send labeling task output data to the SNS output topic you specify here.
+     * </p>
+     * <p>
+     * To learn more, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-output-data"
+     * >Receive Output Data from a Streaming Labeling Job</a>.
+     * </p>
+     * 
+     * @return An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code>
+     *         if you want to do real time chaining to another streaming job and receive an Amazon SNS notifications
+     *         each time a data object is submitted by a worker.</p>
+     *         <p>
+     *         If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling
+     *         tasks, Ground Truth will send labeling task output data to the SNS output topic you specify here.
+     *         </p>
+     *         <p>
+     *         To learn more, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-output-data"
+     *         >Receive Output Data from a Streaming Labeling Job</a>.
+     */
+
+    public String getSnsTopicArn() {
+        return this.snsTopicArn;
+    }
+
+    /**
+     * <p>
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if you
+     * want to do real time chaining to another streaming job and receive an Amazon SNS notifications each time a data
+     * object is submitted by a worker.
+     * </p>
+     * <p>
+     * If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling tasks,
+     * Ground Truth will send labeling task output data to the SNS output topic you specify here.
+     * </p>
+     * <p>
+     * To learn more, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-output-data"
+     * >Receive Output Data from a Streaming Labeling Job</a>.
+     * </p>
+     * 
+     * @param snsTopicArn
+     *        An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if
+     *        you want to do real time chaining to another streaming job and receive an Amazon SNS notifications each
+     *        time a data object is submitted by a worker.</p>
+     *        <p>
+     *        If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling
+     *        tasks, Ground Truth will send labeling task output data to the SNS output topic you specify here.
+     *        </p>
+     *        <p>
+     *        To learn more, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-output-data"
+     *        >Receive Output Data from a Streaming Labeling Job</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LabelingJobOutputConfig withSnsTopicArn(String snsTopicArn) {
+        setSnsTopicArn(snsTopicArn);
         return this;
     }
 
@@ -248,7 +368,9 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
         if (getS3OutputPath() != null)
             sb.append("S3OutputPath: ").append(getS3OutputPath()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getSnsTopicArn() != null)
+            sb.append("SnsTopicArn: ").append(getSnsTopicArn());
         sb.append("}");
         return sb.toString();
     }
@@ -271,6 +393,10 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getSnsTopicArn() == null ^ this.getSnsTopicArn() == null)
+            return false;
+        if (other.getSnsTopicArn() != null && other.getSnsTopicArn().equals(this.getSnsTopicArn()) == false)
+            return false;
         return true;
     }
 
@@ -281,6 +407,7 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getS3OutputPath() == null) ? 0 : getS3OutputPath().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -609,6 +609,39 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     }
 
     @Override
+    public java.util.concurrent.Future<GetPrincipalTagAttributeMapResult> getPrincipalTagAttributeMapAsync(GetPrincipalTagAttributeMapRequest request) {
+
+        return getPrincipalTagAttributeMapAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPrincipalTagAttributeMapResult> getPrincipalTagAttributeMapAsync(final GetPrincipalTagAttributeMapRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPrincipalTagAttributeMapRequest, GetPrincipalTagAttributeMapResult> asyncHandler) {
+        final GetPrincipalTagAttributeMapRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPrincipalTagAttributeMapResult>() {
+            @Override
+            public GetPrincipalTagAttributeMapResult call() throws Exception {
+                GetPrincipalTagAttributeMapResult result = null;
+
+                try {
+                    result = executeGetPrincipalTagAttributeMap(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListIdentitiesResult> listIdentitiesAsync(ListIdentitiesRequest request) {
 
         return listIdentitiesAsync(request, null);
@@ -791,6 +824,39 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
 
                 try {
                     result = executeSetIdentityPoolRoles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetPrincipalTagAttributeMapResult> setPrincipalTagAttributeMapAsync(SetPrincipalTagAttributeMapRequest request) {
+
+        return setPrincipalTagAttributeMapAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetPrincipalTagAttributeMapResult> setPrincipalTagAttributeMapAsync(final SetPrincipalTagAttributeMapRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetPrincipalTagAttributeMapRequest, SetPrincipalTagAttributeMapResult> asyncHandler) {
+        final SetPrincipalTagAttributeMapRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetPrincipalTagAttributeMapResult>() {
+            @Override
+            public SetPrincipalTagAttributeMapResult call() throws Exception {
+                SetPrincipalTagAttributeMapResult result = null;
+
+                try {
+                    result = executeSetPrincipalTagAttributeMap(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2 instances in
  * the AWS Cloud. With Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you add and
  * remove files, so your applications have the storage they need, when they need it. For more information, see the <a
- * href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">User Guide</a>.
+ * href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon Elastic File System API Reference</a> and
+ * the <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon Elastic File System User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -595,6 +596,72 @@ public class AmazonElasticFileSystemAsyncClient extends AmazonElasticFileSystemC
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccountPreferencesResult> describeAccountPreferencesAsync(DescribeAccountPreferencesRequest request) {
+
+        return describeAccountPreferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountPreferencesResult> describeAccountPreferencesAsync(final DescribeAccountPreferencesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccountPreferencesRequest, DescribeAccountPreferencesResult> asyncHandler) {
+        final DescribeAccountPreferencesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccountPreferencesResult>() {
+            @Override
+            public DescribeAccountPreferencesResult call() throws Exception {
+                DescribeAccountPreferencesResult result = null;
+
+                try {
+                    result = executeDescribeAccountPreferences(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBackupPolicyResult> describeBackupPolicyAsync(DescribeBackupPolicyRequest request) {
+
+        return describeBackupPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBackupPolicyResult> describeBackupPolicyAsync(final DescribeBackupPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBackupPolicyRequest, DescribeBackupPolicyResult> asyncHandler) {
+        final DescribeBackupPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBackupPolicyResult>() {
+            @Override
+            public DescribeBackupPolicyResult call() throws Exception {
+                DescribeBackupPolicyResult result = null;
+
+                try {
+                    result = executeDescribeBackupPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFileSystemPolicyResult> describeFileSystemPolicyAsync(DescribeFileSystemPolicyRequest request) {
 
         return describeFileSystemPolicyAsync(request, null);
@@ -873,6 +940,72 @@ public class AmazonElasticFileSystemAsyncClient extends AmazonElasticFileSystemC
 
                 try {
                     result = executeModifyMountTargetSecurityGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountPreferencesResult> putAccountPreferencesAsync(PutAccountPreferencesRequest request) {
+
+        return putAccountPreferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountPreferencesResult> putAccountPreferencesAsync(final PutAccountPreferencesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAccountPreferencesRequest, PutAccountPreferencesResult> asyncHandler) {
+        final PutAccountPreferencesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAccountPreferencesResult>() {
+            @Override
+            public PutAccountPreferencesResult call() throws Exception {
+                PutAccountPreferencesResult result = null;
+
+                try {
+                    result = executePutAccountPreferences(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBackupPolicyResult> putBackupPolicyAsync(PutBackupPolicyRequest request) {
+
+        return putBackupPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBackupPolicyResult> putBackupPolicyAsync(final PutBackupPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutBackupPolicyRequest, PutBackupPolicyResult> asyncHandler) {
+        final PutBackupPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutBackupPolicyResult>() {
+            @Override
+            public PutBackupPolicyResult call() throws Exception {
+                PutBackupPolicyResult result = null;
+
+                try {
+                    result = executePutBackupPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

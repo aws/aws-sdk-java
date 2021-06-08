@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure that uses CloudWatch metrics to gather data about the service quota.
+ * Information about the CloudWatch metric that reflects quota usage.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/MetricInfo" target="_top">AWS API
@@ -30,42 +30,36 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the metric. The namespace is a container for CloudWatch metrics. You can specify a name for the
-     * namespace when you create a metric.
+     * The namespace of the metric.
      * </p>
      */
     private String metricNamespace;
     /**
      * <p>
-     * The name of the CloudWatch metric that measures usage of a service quota. This is a required field.
+     * The name of the metric.
      * </p>
      */
     private String metricName;
     /**
      * <p>
-     * A dimension is a name/value pair that is part of the identity of a metric. Every metric has specific
-     * characteristics that describe it, and you can think of dimensions as categories for those characteristics. These
-     * dimensions are part of the CloudWatch Metric Identity that measures usage against a particular service quota.
+     * The metric dimension. This is a name/value pair that is part of the identity of a metric.
      * </p>
      */
     private java.util.Map<String, String> metricDimensions;
     /**
      * <p>
-     * Statistics are metric data aggregations over specified periods of time. This is the recommended statistic to use
-     * when comparing usage in the CloudWatch Metric against your Service Quota.
+     * The metric statistic that we recommend you use when determining quota usage.
      * </p>
      */
     private String metricStatisticRecommendation;
 
     /**
      * <p>
-     * The namespace of the metric. The namespace is a container for CloudWatch metrics. You can specify a name for the
-     * namespace when you create a metric.
+     * The namespace of the metric.
      * </p>
      * 
      * @param metricNamespace
-     *        The namespace of the metric. The namespace is a container for CloudWatch metrics. You can specify a name
-     *        for the namespace when you create a metric.
+     *        The namespace of the metric.
      */
 
     public void setMetricNamespace(String metricNamespace) {
@@ -74,12 +68,10 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the metric. The namespace is a container for CloudWatch metrics. You can specify a name for the
-     * namespace when you create a metric.
+     * The namespace of the metric.
      * </p>
      * 
-     * @return The namespace of the metric. The namespace is a container for CloudWatch metrics. You can specify a name
-     *         for the namespace when you create a metric.
+     * @return The namespace of the metric.
      */
 
     public String getMetricNamespace() {
@@ -88,13 +80,11 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the metric. The namespace is a container for CloudWatch metrics. You can specify a name for the
-     * namespace when you create a metric.
+     * The namespace of the metric.
      * </p>
      * 
      * @param metricNamespace
-     *        The namespace of the metric. The namespace is a container for CloudWatch metrics. You can specify a name
-     *        for the namespace when you create a metric.
+     *        The namespace of the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +95,11 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the CloudWatch metric that measures usage of a service quota. This is a required field.
+     * The name of the metric.
      * </p>
      * 
      * @param metricName
-     *        The name of the CloudWatch metric that measures usage of a service quota. This is a required field.
+     *        The name of the metric.
      */
 
     public void setMetricName(String metricName) {
@@ -118,10 +108,10 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the CloudWatch metric that measures usage of a service quota. This is a required field.
+     * The name of the metric.
      * </p>
      * 
-     * @return The name of the CloudWatch metric that measures usage of a service quota. This is a required field.
+     * @return The name of the metric.
      */
 
     public String getMetricName() {
@@ -130,11 +120,11 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the CloudWatch metric that measures usage of a service quota. This is a required field.
+     * The name of the metric.
      * </p>
      * 
      * @param metricName
-     *        The name of the CloudWatch metric that measures usage of a service quota. This is a required field.
+     *        The name of the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,15 +135,10 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A dimension is a name/value pair that is part of the identity of a metric. Every metric has specific
-     * characteristics that describe it, and you can think of dimensions as categories for those characteristics. These
-     * dimensions are part of the CloudWatch Metric Identity that measures usage against a particular service quota.
+     * The metric dimension. This is a name/value pair that is part of the identity of a metric.
      * </p>
      * 
-     * @return A dimension is a name/value pair that is part of the identity of a metric. Every metric has specific
-     *         characteristics that describe it, and you can think of dimensions as categories for those
-     *         characteristics. These dimensions are part of the CloudWatch Metric Identity that measures usage against
-     *         a particular service quota.
+     * @return The metric dimension. This is a name/value pair that is part of the identity of a metric.
      */
 
     public java.util.Map<String, String> getMetricDimensions() {
@@ -162,16 +147,11 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A dimension is a name/value pair that is part of the identity of a metric. Every metric has specific
-     * characteristics that describe it, and you can think of dimensions as categories for those characteristics. These
-     * dimensions are part of the CloudWatch Metric Identity that measures usage against a particular service quota.
+     * The metric dimension. This is a name/value pair that is part of the identity of a metric.
      * </p>
      * 
      * @param metricDimensions
-     *        A dimension is a name/value pair that is part of the identity of a metric. Every metric has specific
-     *        characteristics that describe it, and you can think of dimensions as categories for those characteristics.
-     *        These dimensions are part of the CloudWatch Metric Identity that measures usage against a particular
-     *        service quota.
+     *        The metric dimension. This is a name/value pair that is part of the identity of a metric.
      */
 
     public void setMetricDimensions(java.util.Map<String, String> metricDimensions) {
@@ -180,16 +160,11 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A dimension is a name/value pair that is part of the identity of a metric. Every metric has specific
-     * characteristics that describe it, and you can think of dimensions as categories for those characteristics. These
-     * dimensions are part of the CloudWatch Metric Identity that measures usage against a particular service quota.
+     * The metric dimension. This is a name/value pair that is part of the identity of a metric.
      * </p>
      * 
      * @param metricDimensions
-     *        A dimension is a name/value pair that is part of the identity of a metric. Every metric has specific
-     *        characteristics that describe it, and you can think of dimensions as categories for those characteristics.
-     *        These dimensions are part of the CloudWatch Metric Identity that measures usage against a particular
-     *        service quota.
+     *        The metric dimension. This is a name/value pair that is part of the identity of a metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,13 +203,11 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Statistics are metric data aggregations over specified periods of time. This is the recommended statistic to use
-     * when comparing usage in the CloudWatch Metric against your Service Quota.
+     * The metric statistic that we recommend you use when determining quota usage.
      * </p>
      * 
      * @param metricStatisticRecommendation
-     *        Statistics are metric data aggregations over specified periods of time. This is the recommended statistic
-     *        to use when comparing usage in the CloudWatch Metric against your Service Quota.
+     *        The metric statistic that we recommend you use when determining quota usage.
      */
 
     public void setMetricStatisticRecommendation(String metricStatisticRecommendation) {
@@ -243,12 +216,10 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Statistics are metric data aggregations over specified periods of time. This is the recommended statistic to use
-     * when comparing usage in the CloudWatch Metric against your Service Quota.
+     * The metric statistic that we recommend you use when determining quota usage.
      * </p>
      * 
-     * @return Statistics are metric data aggregations over specified periods of time. This is the recommended statistic
-     *         to use when comparing usage in the CloudWatch Metric against your Service Quota.
+     * @return The metric statistic that we recommend you use when determining quota usage.
      */
 
     public String getMetricStatisticRecommendation() {
@@ -257,13 +228,11 @@ public class MetricInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Statistics are metric data aggregations over specified periods of time. This is the recommended statistic to use
-     * when comparing usage in the CloudWatch Metric against your Service Quota.
+     * The metric statistic that we recommend you use when determining quota usage.
      * </p>
      * 
      * @param metricStatisticRecommendation
-     *        Statistics are metric data aggregations over specified periods of time. This is the recommended statistic
-     *        to use when comparing usage in the CloudWatch Metric against your Service Quota.
+     *        The metric statistic that we recommend you use when determining quota usage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

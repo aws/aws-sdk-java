@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,9 @@ public class Ec2InstanceAttributesJsonUnmarshaller implements Unmarshaller<Ec2In
                 }
                 if (context.testExpression("RequestedEc2SubnetIds", targetDepth)) {
                     context.nextToken();
-                    ec2InstanceAttributes.setRequestedEc2SubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    ec2InstanceAttributes.setRequestedEc2SubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Ec2AvailabilityZone", targetDepth)) {
                     context.nextToken();
@@ -67,7 +69,8 @@ public class Ec2InstanceAttributesJsonUnmarshaller implements Unmarshaller<Ec2In
                 if (context.testExpression("RequestedEc2AvailabilityZones", targetDepth)) {
                     context.nextToken();
                     ec2InstanceAttributes.setRequestedEc2AvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IamInstanceProfile", targetDepth)) {
                     context.nextToken();
@@ -88,12 +91,14 @@ public class Ec2InstanceAttributesJsonUnmarshaller implements Unmarshaller<Ec2In
                 if (context.testExpression("AdditionalMasterSecurityGroups", targetDepth)) {
                     context.nextToken();
                     ec2InstanceAttributes.setAdditionalMasterSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AdditionalSlaveSecurityGroups", targetDepth)) {
                     context.nextToken();
                     ec2InstanceAttributes.setAdditionalSlaveSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

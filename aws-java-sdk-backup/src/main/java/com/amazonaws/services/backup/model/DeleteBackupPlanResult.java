@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,14 +39,14 @@ public class DeleteBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
      * January 26, 2018 12:11:30.087 AM.
      * </p>
      */
     private java.util.Date deletionDate;
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot
      * be edited.
      * </p>
      */
@@ -141,13 +141,13 @@ public class DeleteBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
      * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param deletionDate
      *        The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value
-     *        of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents
+     *        of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents
      *        Friday, January 26, 2018 12:11:30.087 AM.
      */
 
@@ -158,12 +158,12 @@ public class DeleteBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
      * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @return The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The
-     *         value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
+     *         value of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087
      *         represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
@@ -174,13 +174,13 @@ public class DeleteBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
      * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param deletionDate
      *        The date and time a backup plan is deleted, in Unix format and Coordinated Universal Time (UTC). The value
-     *        of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents
+     *        of <code>DeletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents
      *        Friday, January 26, 2018 12:11:30.087 AM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -192,12 +192,12 @@ public class DeleteBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot
      * be edited.
      * </p>
      * 
      * @param versionId
-     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids
+     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs
      *        cannot be edited.
      */
 
@@ -207,11 +207,11 @@ public class DeleteBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot
      * be edited.
      * </p>
      * 
-     * @return Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids
+     * @return Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs
      *         cannot be edited.
      */
 
@@ -221,12 +221,12 @@ public class DeleteBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot
      * be edited.
      * </p>
      * 
      * @param versionId
-     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids
+     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs
      *        cannot be edited.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

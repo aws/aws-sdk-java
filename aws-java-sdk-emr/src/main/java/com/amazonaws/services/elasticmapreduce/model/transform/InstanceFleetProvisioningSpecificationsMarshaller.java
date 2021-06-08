@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class InstanceFleetProvisioningSpecificationsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> SPOTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpotSpecification").build();
+    private static final MarshallingInfo<StructuredPojo> ONDEMANDSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnDemandSpecification").build();
 
     private static final InstanceFleetProvisioningSpecificationsMarshaller instance = new InstanceFleetProvisioningSpecificationsMarshaller();
 
@@ -47,6 +49,7 @@ public class InstanceFleetProvisioningSpecificationsMarshaller {
 
         try {
             protocolMarshaller.marshall(instanceFleetProvisioningSpecifications.getSpotSpecification(), SPOTSPECIFICATION_BINDING);
+            protocolMarshaller.marshall(instanceFleetProvisioningSpecifications.getOnDemandSpecification(), ONDEMANDSPECIFICATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

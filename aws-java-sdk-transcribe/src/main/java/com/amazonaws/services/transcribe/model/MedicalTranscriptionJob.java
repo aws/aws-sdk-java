@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The data structure that containts the information for a medical transcription job.
+ * The data structure that contains the information for a medical transcription job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/MedicalTranscriptionJob" target="_top">AWS
@@ -132,8 +132,8 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * <p>
      * <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what Amazon
      * Transcribe Medical can process. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and Quotas</a> in
-     * the <i>Amazon Transcribe Medical Guide</i>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and Quotas</a>
+     * in the <i>Amazon Transcribe Medical Guide</i>
      * </p>
      * </li>
      * <li>
@@ -153,6 +153,14 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * </p>
      */
     private MedicalTranscriptionSetting settings;
+    /**
+     * <p>
+     * Shows the type of content that you've configured Amazon Transcribe Medical to identify in a transcription job. If
+     * the value is <code>PHI</code>, you've configured the job to identify personal health information (PHI) in the
+     * transcription output.
+     * </p>
+     */
+    private String contentIdentificationType;
     /**
      * <p>
      * The medical specialty of any clinicians providing a dictation or having a conversation. <code>PRIMARYCARE</code>
@@ -712,8 +720,8 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * <p>
      * <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what Amazon
      * Transcribe Medical can process. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and Quotas</a> in
-     * the <i>Amazon Transcribe Medical Guide</i>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and Quotas</a>
+     * in the <i>Amazon Transcribe Medical Guide</i>
      * </p>
      * </li>
      * <li>
@@ -765,7 +773,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      *        <p>
      *        <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what
      *        Amazon Transcribe Medical can process. For more information, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
      *        Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>
      *        </p>
      *        </li>
@@ -823,8 +831,8 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * <p>
      * <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what Amazon
      * Transcribe Medical can process. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and Quotas</a> in
-     * the <i>Amazon Transcribe Medical Guide</i>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and Quotas</a>
+     * in the <i>Amazon Transcribe Medical Guide</i>
      * </p>
      * </li>
      * <li>
@@ -875,7 +883,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      *         <p>
      *         <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what
      *         Amazon Transcribe Medical can process. For more information, see <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
      *         Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>
      *         </p>
      *         </li>
@@ -933,8 +941,8 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * <p>
      * <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what Amazon
      * Transcribe Medical can process. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and Quotas</a> in
-     * the <i>Amazon Transcribe Medical Guide</i>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and Quotas</a>
+     * in the <i>Amazon Transcribe Medical Guide</i>
      * </p>
      * </li>
      * <li>
@@ -986,7 +994,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      *        <p>
      *        <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what
      *        Amazon Transcribe Medical can process. For more information, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
      *        Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>
      *        </p>
      *        </li>
@@ -1043,6 +1051,81 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
 
     public MedicalTranscriptionJob withSettings(MedicalTranscriptionSetting settings) {
         setSettings(settings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Shows the type of content that you've configured Amazon Transcribe Medical to identify in a transcription job. If
+     * the value is <code>PHI</code>, you've configured the job to identify personal health information (PHI) in the
+     * transcription output.
+     * </p>
+     * 
+     * @param contentIdentificationType
+     *        Shows the type of content that you've configured Amazon Transcribe Medical to identify in a transcription
+     *        job. If the value is <code>PHI</code>, you've configured the job to identify personal health information
+     *        (PHI) in the transcription output.
+     * @see MedicalContentIdentificationType
+     */
+
+    public void setContentIdentificationType(String contentIdentificationType) {
+        this.contentIdentificationType = contentIdentificationType;
+    }
+
+    /**
+     * <p>
+     * Shows the type of content that you've configured Amazon Transcribe Medical to identify in a transcription job. If
+     * the value is <code>PHI</code>, you've configured the job to identify personal health information (PHI) in the
+     * transcription output.
+     * </p>
+     * 
+     * @return Shows the type of content that you've configured Amazon Transcribe Medical to identify in a transcription
+     *         job. If the value is <code>PHI</code>, you've configured the job to identify personal health information
+     *         (PHI) in the transcription output.
+     * @see MedicalContentIdentificationType
+     */
+
+    public String getContentIdentificationType() {
+        return this.contentIdentificationType;
+    }
+
+    /**
+     * <p>
+     * Shows the type of content that you've configured Amazon Transcribe Medical to identify in a transcription job. If
+     * the value is <code>PHI</code>, you've configured the job to identify personal health information (PHI) in the
+     * transcription output.
+     * </p>
+     * 
+     * @param contentIdentificationType
+     *        Shows the type of content that you've configured Amazon Transcribe Medical to identify in a transcription
+     *        job. If the value is <code>PHI</code>, you've configured the job to identify personal health information
+     *        (PHI) in the transcription output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MedicalContentIdentificationType
+     */
+
+    public MedicalTranscriptionJob withContentIdentificationType(String contentIdentificationType) {
+        setContentIdentificationType(contentIdentificationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Shows the type of content that you've configured Amazon Transcribe Medical to identify in a transcription job. If
+     * the value is <code>PHI</code>, you've configured the job to identify personal health information (PHI) in the
+     * transcription output.
+     * </p>
+     * 
+     * @param contentIdentificationType
+     *        Shows the type of content that you've configured Amazon Transcribe Medical to identify in a transcription
+     *        job. If the value is <code>PHI</code>, you've configured the job to identify personal health information
+     *        (PHI) in the transcription output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MedicalContentIdentificationType
+     */
+
+    public MedicalTranscriptionJob withContentIdentificationType(MedicalContentIdentificationType contentIdentificationType) {
+        this.contentIdentificationType = contentIdentificationType.toString();
         return this;
     }
 
@@ -1284,6 +1367,8 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getContentIdentificationType() != null)
+            sb.append("ContentIdentificationType: ").append(getContentIdentificationType()).append(",");
         if (getSpecialty() != null)
             sb.append("Specialty: ").append(getSpecialty()).append(",");
         if (getType() != null)
@@ -1350,6 +1435,10 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getContentIdentificationType() == null ^ this.getContentIdentificationType() == null)
+            return false;
+        if (other.getContentIdentificationType() != null && other.getContentIdentificationType().equals(this.getContentIdentificationType()) == false)
+            return false;
         if (other.getSpecialty() == null ^ this.getSpecialty() == null)
             return false;
         if (other.getSpecialty() != null && other.getSpecialty().equals(this.getSpecialty()) == false)
@@ -1378,6 +1467,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getContentIdentificationType() == null) ? 0 : getContentIdentificationType().hashCode());
         hashCode = prime * hashCode + ((getSpecialty() == null) ? 0 : getSpecialty().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

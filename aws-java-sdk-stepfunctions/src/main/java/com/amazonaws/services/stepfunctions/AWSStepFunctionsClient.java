@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -145,6 +145,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOutput").withExceptionUnmarshaller(
                                     com.amazonaws.services.stepfunctions.model.transform.InvalidOutputExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTracingConfiguration").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.InvalidTracingConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withExceptionUnmarshaller(
                                     com.amazonaws.services.stepfunctions.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -420,6 +423,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new CreateActivityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createActivityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateActivity");
@@ -459,10 +464,11 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
      * was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine
-     * <code>name</code>, <code>definition</code>, <code>type</code>, and <code>LoggingConfiguration</code>. If a
-     * following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
-     * differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and
-     * <code>tags</code> will not be updated, even if they are different.
+     * <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and
+     * <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or
+     * <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the
+     * previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
+     * different.
      * </p>
      * </note>
      * 
@@ -475,6 +481,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidNameException
      *         The provided name is invalid.
      * @throws InvalidLoggingConfigurationException
+     * @throws InvalidTracingConfigurationException
+     *         Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to
+     *         <code>true</code> or <code>false</code>.
      * @throws StateMachineAlreadyExistsException
      *         A state machine with the same name but a different definition or role ARN already exists.
      * @throws StateMachineDeletingException
@@ -512,6 +521,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new CreateStateMachineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStateMachineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStateMachine");
@@ -567,6 +578,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new DeleteActivityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteActivityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteActivity");
@@ -629,6 +642,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new DeleteStateMachineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStateMachineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStateMachine");
@@ -692,6 +707,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new DescribeActivityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeActivityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeActivity");
@@ -758,6 +775,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new DescribeExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExecution");
@@ -821,6 +840,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new DescribeStateMachineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStateMachineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStateMachine");
@@ -889,6 +910,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(describeStateMachineForExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStateMachineForExecution");
@@ -964,6 +987,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new GetActivityTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getActivityTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetActivityTask");
@@ -1034,6 +1059,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new GetExecutionHistoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExecutionHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetExecutionHistory");
@@ -1101,6 +1128,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new ListActivitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listActivitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActivities");
@@ -1177,6 +1206,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new ListExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExecutions");
@@ -1244,6 +1275,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new ListStateMachinesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStateMachinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStateMachines");
@@ -1304,6 +1337,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1363,6 +1398,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new SendTaskFailureRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendTaskFailureRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendTaskFailure");
@@ -1437,6 +1474,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new SendTaskHeartbeatRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendTaskHeartbeatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendTaskHeartbeat");
@@ -1498,6 +1537,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new SendTaskSuccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendTaskSuccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendTaskSuccess");
@@ -1578,6 +1619,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new StartExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartExecution");
@@ -1590,6 +1633,81 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<StartExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartExecutionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a Synchronous Express state machine execution.
+     * </p>
+     * 
+     * @param startSyncExecutionRequest
+     * @return Result of the StartSyncExecution operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws InvalidExecutionInputException
+     *         The provided JSON input data is invalid.
+     * @throws InvalidNameException
+     *         The provided name is invalid.
+     * @throws StateMachineDoesNotExistException
+     *         The specified state machine does not exist.
+     * @throws StateMachineDeletingException
+     *         The specified state machine is being deleted.
+     * @throws StateMachineTypeNotSupportedException
+     * @sample AWSStepFunctions.StartSyncExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartSyncExecutionResult startSyncExecution(StartSyncExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSyncExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartSyncExecutionResult executeStartSyncExecution(StartSyncExecutionRequest startSyncExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSyncExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSyncExecutionRequest> request = null;
+        Response<StartSyncExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSyncExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSyncExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSyncExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "sync-";
+                String resolvedHostPrefix = String.format("sync-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSyncExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSyncExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -1638,6 +1756,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new StopExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopExecution");
@@ -1709,6 +1829,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1766,6 +1888,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1809,6 +1933,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidDefinitionException
      *         The provided Amazon States Language definition is invalid.
      * @throws InvalidLoggingConfigurationException
+     * @throws InvalidTracingConfigurationException
+     *         Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to
+     *         <code>true</code> or <code>false</code>.
      * @throws MissingRequiredParameterException
      *         Request is missing a required parameter. This error occurs if both <code>definition</code> and
      *         <code>roleArn</code> are not specified.
@@ -1841,6 +1968,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 request = new UpdateStateMachineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStateMachineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStateMachine");
@@ -1936,6 +2065,11 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

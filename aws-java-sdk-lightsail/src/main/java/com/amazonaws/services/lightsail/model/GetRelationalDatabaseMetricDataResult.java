@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,24 +26,24 @@ public class GetRelationalDatabaseMetricDataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric returned.
      * </p>
      */
     private String metricName;
     /**
      * <p>
-     * An object describing the result of your get relational database metric data request.
+     * An array of objects that describe the metric data returned.
      * </p>
      */
     private java.util.List<MetricDatapoint> metricData;
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric returned.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric.
+     *        The name of the metric returned.
      * @see RelationalDatabaseMetricName
      */
 
@@ -53,10 +53,10 @@ public class GetRelationalDatabaseMetricDataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric returned.
      * </p>
      * 
-     * @return The name of the metric.
+     * @return The name of the metric returned.
      * @see RelationalDatabaseMetricName
      */
 
@@ -66,11 +66,11 @@ public class GetRelationalDatabaseMetricDataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric returned.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric.
+     *        The name of the metric returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RelationalDatabaseMetricName
      */
@@ -82,11 +82,11 @@ public class GetRelationalDatabaseMetricDataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric returned.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric.
+     *        The name of the metric returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RelationalDatabaseMetricName
      */
@@ -98,10 +98,10 @@ public class GetRelationalDatabaseMetricDataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * An object describing the result of your get relational database metric data request.
+     * An array of objects that describe the metric data returned.
      * </p>
      * 
-     * @return An object describing the result of your get relational database metric data request.
+     * @return An array of objects that describe the metric data returned.
      */
 
     public java.util.List<MetricDatapoint> getMetricData() {
@@ -110,11 +110,11 @@ public class GetRelationalDatabaseMetricDataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * An object describing the result of your get relational database metric data request.
+     * An array of objects that describe the metric data returned.
      * </p>
      * 
      * @param metricData
-     *        An object describing the result of your get relational database metric data request.
+     *        An array of objects that describe the metric data returned.
      */
 
     public void setMetricData(java.util.Collection<MetricDatapoint> metricData) {
@@ -128,7 +128,7 @@ public class GetRelationalDatabaseMetricDataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * An object describing the result of your get relational database metric data request.
+     * An array of objects that describe the metric data returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,7 +137,7 @@ public class GetRelationalDatabaseMetricDataResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param metricData
-     *        An object describing the result of your get relational database metric data request.
+     *        An array of objects that describe the metric data returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class GetRelationalDatabaseMetricDataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * An object describing the result of your get relational database metric data request.
+     * An array of objects that describe the metric data returned.
      * </p>
      * 
      * @param metricData
-     *        An object describing the result of your get relational database metric data request.
+     *        An array of objects that describe the metric data returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

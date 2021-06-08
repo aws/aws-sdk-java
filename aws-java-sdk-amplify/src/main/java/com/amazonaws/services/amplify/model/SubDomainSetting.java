@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Setting for the Subdomain.
+ * Describes the settings for the subdomain.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/SubDomainSetting" target="_top">AWS API
@@ -30,24 +30,24 @@ public class SubDomainSetting implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Prefix setting for the Subdomain.
+     * The prefix setting for the subdomain.
      * </p>
      */
     private String prefix;
     /**
      * <p>
-     * Branch name setting for the Subdomain.
+     * The branch name setting for the subdomain.
      * </p>
      */
     private String branchName;
 
     /**
      * <p>
-     * Prefix setting for the Subdomain.
+     * The prefix setting for the subdomain.
      * </p>
      * 
      * @param prefix
-     *        Prefix setting for the Subdomain.
+     *        The prefix setting for the subdomain.
      */
 
     public void setPrefix(String prefix) {
@@ -56,10 +56,10 @@ public class SubDomainSetting implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Prefix setting for the Subdomain.
+     * The prefix setting for the subdomain.
      * </p>
      * 
-     * @return Prefix setting for the Subdomain.
+     * @return The prefix setting for the subdomain.
      */
 
     public String getPrefix() {
@@ -68,11 +68,11 @@ public class SubDomainSetting implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Prefix setting for the Subdomain.
+     * The prefix setting for the subdomain.
      * </p>
      * 
      * @param prefix
-     *        Prefix setting for the Subdomain.
+     *        The prefix setting for the subdomain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class SubDomainSetting implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Branch name setting for the Subdomain.
+     * The branch name setting for the subdomain.
      * </p>
      * 
      * @param branchName
-     *        Branch name setting for the Subdomain.
+     *        The branch name setting for the subdomain.
      */
 
     public void setBranchName(String branchName) {
@@ -96,10 +96,10 @@ public class SubDomainSetting implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Branch name setting for the Subdomain.
+     * The branch name setting for the subdomain.
      * </p>
      * 
-     * @return Branch name setting for the Subdomain.
+     * @return The branch name setting for the subdomain.
      */
 
     public String getBranchName() {
@@ -108,11 +108,11 @@ public class SubDomainSetting implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Branch name setting for the Subdomain.
+     * The branch name setting for the subdomain.
      * </p>
      * 
      * @param branchName
-     *        Branch name setting for the Subdomain.
+     *        The branch name setting for the subdomain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

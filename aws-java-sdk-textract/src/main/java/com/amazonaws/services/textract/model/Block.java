@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -125,6 +125,12 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String text;
+    /**
+     * <p>
+     * The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.
+     * </p>
+     */
+    private String textType;
     /**
      * <p>
      * The row in which a table cell is located. The first row position is 1. <code>RowIndex</code> isn't returned by
@@ -890,6 +896,65 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
 
     public Block withText(String text) {
         setText(text);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.
+     * </p>
+     * 
+     * @param textType
+     *        The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.
+     * @see TextType
+     */
+
+    public void setTextType(String textType) {
+        this.textType = textType;
+    }
+
+    /**
+     * <p>
+     * The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.
+     * </p>
+     * 
+     * @return The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.
+     * @see TextType
+     */
+
+    public String getTextType() {
+        return this.textType;
+    }
+
+    /**
+     * <p>
+     * The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.
+     * </p>
+     * 
+     * @param textType
+     *        The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TextType
+     */
+
+    public Block withTextType(String textType) {
+        setTextType(textType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.
+     * </p>
+     * 
+     * @param textType
+     *        The kind of text that Amazon Textract has detected. Can check for handwritten text and printed text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TextType
+     */
+
+    public Block withTextType(TextType textType) {
+        this.textType = textType.toString();
         return this;
     }
 
@@ -1751,6 +1816,8 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
             sb.append("Confidence: ").append(getConfidence()).append(",");
         if (getText() != null)
             sb.append("Text: ").append(getText()).append(",");
+        if (getTextType() != null)
+            sb.append("TextType: ").append(getTextType()).append(",");
         if (getRowIndex() != null)
             sb.append("RowIndex: ").append(getRowIndex()).append(",");
         if (getColumnIndex() != null)
@@ -1796,6 +1863,10 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
         if (other.getText() == null ^ this.getText() == null)
             return false;
         if (other.getText() != null && other.getText().equals(this.getText()) == false)
+            return false;
+        if (other.getTextType() == null ^ this.getTextType() == null)
+            return false;
+        if (other.getTextType() != null && other.getTextType().equals(this.getTextType()) == false)
             return false;
         if (other.getRowIndex() == null ^ this.getRowIndex() == null)
             return false;
@@ -1848,6 +1919,7 @@ public class Block implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBlockType() == null) ? 0 : getBlockType().hashCode());
         hashCode = prime * hashCode + ((getConfidence() == null) ? 0 : getConfidence().hashCode());
         hashCode = prime * hashCode + ((getText() == null) ? 0 : getText().hashCode());
+        hashCode = prime * hashCode + ((getTextType() == null) ? 0 : getTextType().hashCode());
         hashCode = prime * hashCode + ((getRowIndex() == null) ? 0 : getRowIndex().hashCode());
         hashCode = prime * hashCode + ((getColumnIndex() == null) ? 0 : getColumnIndex().hashCode());
         hashCode = prime * hashCode + ((getRowSpan() == null) ? 0 : getRowSpan().hashCode());

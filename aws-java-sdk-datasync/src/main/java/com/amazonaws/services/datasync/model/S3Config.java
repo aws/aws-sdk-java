@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,19 +35,24 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 bucket to access. This bucket is used as a parameter in the <a>CreateLocationS3</a> operation.
+     * The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation.
      * </p>
      */
     private String bucketAccessRoleArn;
 
     /**
      * <p>
-     * The Amazon S3 bucket to access. This bucket is used as a parameter in the <a>CreateLocationS3</a> operation.
+     * The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation.
      * </p>
      * 
      * @param bucketAccessRoleArn
-     *        The Amazon S3 bucket to access. This bucket is used as a parameter in the <a>CreateLocationS3</a>
-     *        operation.
+     *        The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html"
+     *        >CreateLocationS3</a> operation.
      */
 
     public void setBucketAccessRoleArn(String bucketAccessRoleArn) {
@@ -56,11 +61,14 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 bucket to access. This bucket is used as a parameter in the <a>CreateLocationS3</a> operation.
+     * The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation.
      * </p>
      * 
-     * @return The Amazon S3 bucket to access. This bucket is used as a parameter in the <a>CreateLocationS3</a>
-     *         operation.
+     * @return The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html"
+     *         >CreateLocationS3</a> operation.
      */
 
     public String getBucketAccessRoleArn() {
@@ -69,12 +77,15 @@ public class S3Config implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 bucket to access. This bucket is used as a parameter in the <a>CreateLocationS3</a> operation.
+     * The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation.
      * </p>
      * 
      * @param bucketAccessRoleArn
-     *        The Amazon S3 bucket to access. This bucket is used as a parameter in the <a>CreateLocationS3</a>
-     *        operation.
+     *        The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html"
+     *        >CreateLocationS3</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

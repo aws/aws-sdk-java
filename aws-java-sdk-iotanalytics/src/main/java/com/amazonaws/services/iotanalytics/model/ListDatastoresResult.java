@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListDatastoresResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of "DatastoreSummary" objects.
+     * A list of <code>DatastoreSummary</code> objects.
      * </p>
      */
     private java.util.List<DatastoreSummary> datastoreSummaries;
@@ -38,10 +38,10 @@ public class ListDatastoresResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of "DatastoreSummary" objects.
+     * A list of <code>DatastoreSummary</code> objects.
      * </p>
      * 
-     * @return A list of "DatastoreSummary" objects.
+     * @return A list of <code>DatastoreSummary</code> objects.
      */
 
     public java.util.List<DatastoreSummary> getDatastoreSummaries() {
@@ -50,11 +50,11 @@ public class ListDatastoresResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of "DatastoreSummary" objects.
+     * A list of <code>DatastoreSummary</code> objects.
      * </p>
      * 
      * @param datastoreSummaries
-     *        A list of "DatastoreSummary" objects.
+     *        A list of <code>DatastoreSummary</code> objects.
      */
 
     public void setDatastoreSummaries(java.util.Collection<DatastoreSummary> datastoreSummaries) {
@@ -68,7 +68,7 @@ public class ListDatastoresResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of "DatastoreSummary" objects.
+     * A list of <code>DatastoreSummary</code> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListDatastoresResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param datastoreSummaries
-     *        A list of "DatastoreSummary" objects.
+     *        A list of <code>DatastoreSummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListDatastoresResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of "DatastoreSummary" objects.
+     * A list of <code>DatastoreSummary</code> objects.
      * </p>
      * 
      * @param datastoreSummaries
-     *        A list of "DatastoreSummary" objects.
+     *        A list of <code>DatastoreSummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

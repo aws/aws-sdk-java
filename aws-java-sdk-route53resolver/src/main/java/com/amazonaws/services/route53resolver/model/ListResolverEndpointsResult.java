@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class ListResolverEndpointsResult extends com.amazonaws.AmazonWebServiceR
     private Integer maxResults;
     /**
      * <p>
-     * The resolver endpoints that were created by using the current AWS account, and that match the specified filters,
+     * The Resolver endpoints that were created by using the current AWS account, and that match the specified filters,
      * if any.
      * </p>
      */
@@ -139,11 +139,11 @@ public class ListResolverEndpointsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The resolver endpoints that were created by using the current AWS account, and that match the specified filters,
+     * The Resolver endpoints that were created by using the current AWS account, and that match the specified filters,
      * if any.
      * </p>
      * 
-     * @return The resolver endpoints that were created by using the current AWS account, and that match the specified
+     * @return The Resolver endpoints that were created by using the current AWS account, and that match the specified
      *         filters, if any.
      */
 
@@ -153,12 +153,12 @@ public class ListResolverEndpointsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The resolver endpoints that were created by using the current AWS account, and that match the specified filters,
+     * The Resolver endpoints that were created by using the current AWS account, and that match the specified filters,
      * if any.
      * </p>
      * 
      * @param resolverEndpoints
-     *        The resolver endpoints that were created by using the current AWS account, and that match the specified
+     *        The Resolver endpoints that were created by using the current AWS account, and that match the specified
      *        filters, if any.
      */
 
@@ -173,7 +173,7 @@ public class ListResolverEndpointsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The resolver endpoints that were created by using the current AWS account, and that match the specified filters,
+     * The Resolver endpoints that were created by using the current AWS account, and that match the specified filters,
      * if any.
      * </p>
      * <p>
@@ -183,7 +183,7 @@ public class ListResolverEndpointsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param resolverEndpoints
-     *        The resolver endpoints that were created by using the current AWS account, and that match the specified
+     *        The Resolver endpoints that were created by using the current AWS account, and that match the specified
      *        filters, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -200,12 +200,12 @@ public class ListResolverEndpointsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The resolver endpoints that were created by using the current AWS account, and that match the specified filters,
+     * The Resolver endpoints that were created by using the current AWS account, and that match the specified filters,
      * if any.
      * </p>
      * 
      * @param resolverEndpoints
-     *        The resolver endpoints that were created by using the current AWS account, and that match the specified
+     *        The Resolver endpoints that were created by using the current AWS account, and that match the specified
      *        filters, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

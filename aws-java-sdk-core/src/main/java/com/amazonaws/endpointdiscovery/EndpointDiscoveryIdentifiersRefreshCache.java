@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -104,6 +104,17 @@ public abstract class EndpointDiscoveryIdentifiersRefreshCache<K> {
                 }
             }
         }, refreshPeriod, TimeUnit.MINUTES);
+    }
+
+    public ScheduledFuture<?> loadAndScheduleEvict(final String key,
+                                                   final long refreshPeriod,
+                                                   final TimeUnit refreshPeriodTimeUnit) {
+        return executorService.schedule(new Runnable() {
+            @Override
+            public void run() {
+                evict(key);
+            }
+        }, refreshPeriod, refreshPeriodTimeUnit);
     }
 
     public void shutdown() {

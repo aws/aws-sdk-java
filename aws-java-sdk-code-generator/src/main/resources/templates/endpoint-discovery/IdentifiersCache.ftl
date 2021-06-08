@@ -12,6 +12,7 @@ import org.apache.commons.logging.LogFactory;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Generated;
 
@@ -41,14 +42,14 @@ public class ${className} extends EndpointDiscoveryIdentifiersRefreshCache<Strin
 
     @Override
     public URI put(String key, AmazonWebServiceRequest discoveryRequest, Map<String, String> endpointDetails, URI defaultEndpoint) {
-        loadAndScheduleRefresh(key, discoveryRequest, Long.valueOf(endpointDetails.get(Constants.CACHE_PERIOD)), defaultEndpoint);
-
         URI discoveredEndpoint = URI.create(String.format("%s://%s", defaultEndpoint.getScheme(), endpointDetails.get(Constants.ENDPOINT)));
 
-        log.debug("Cached new endpoint from service: " + discoveredEndpoint.toASCIIString());
-        log.debug("Refresh scheduled in: " + endpointDetails.get(Constants.CACHE_PERIOD) + " minutes");
-
         cache.put(key, discoveredEndpoint);
+        loadAndScheduleEvict(key, Long.valueOf(endpointDetails.get(Constants.CACHE_PERIOD)), TimeUnit.MINUTES);
+
+        log.debug("Cached new endpoint from service: " + discoveredEndpoint.toASCIIString());
+        log.debug("Cached endpoint TTL: " + endpointDetails.get(Constants.CACHE_PERIOD) + " minutes");
+
         return discoveredEndpoint;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,8 +69,8 @@ public class CreateDataSourceFromS3Request extends com.amazonaws.AmazonWebServic
      * <p>
      * The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data
      * referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training.
+     * training. This parameter must be set to <code>true</code> if the
+     * <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * </p>
      */
     private Boolean computeStatistics;
@@ -358,15 +358,15 @@ public class CreateDataSourceFromS3Request extends com.amazonaws.AmazonWebServic
      * <p>
      * The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data
      * referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training.
+     * training. This parameter must be set to <code>true</code> if the
+     * <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * </p>
      * 
      * @param computeStatistics
      *        The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation
      *        data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during
-     *        <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>
-     *        DataSource<code></code> needs to be used for <code>MLModel</code> training.
+     *        <code>MLModel</code> training. This parameter must be set to <code>true</code> if the
+     *        <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      */
 
     public void setComputeStatistics(Boolean computeStatistics) {
@@ -377,14 +377,14 @@ public class CreateDataSourceFromS3Request extends com.amazonaws.AmazonWebServic
      * <p>
      * The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data
      * referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training.
+     * training. This parameter must be set to <code>true</code> if the
+     * <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * </p>
      * 
      * @return The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation
      *         data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during
-     *         <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>
-     *         DataSource<code></code> needs to be used for <code>MLModel</code> training.
+     *         <code>MLModel</code> training. This parameter must be set to <code>true</code> if the
+     *         <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      */
 
     public Boolean getComputeStatistics() {
@@ -395,15 +395,15 @@ public class CreateDataSourceFromS3Request extends com.amazonaws.AmazonWebServic
      * <p>
      * The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data
      * referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training.
+     * training. This parameter must be set to <code>true</code> if the
+     * <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * </p>
      * 
      * @param computeStatistics
      *        The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation
      *        data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during
-     *        <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>
-     *        DataSource<code></code> needs to be used for <code>MLModel</code> training.
+     *        <code>MLModel</code> training. This parameter must be set to <code>true</code> if the
+     *        <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -416,14 +416,14 @@ public class CreateDataSourceFromS3Request extends com.amazonaws.AmazonWebServic
      * <p>
      * The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data
      * referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training.
+     * training. This parameter must be set to <code>true</code> if the
+     * <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * </p>
      * 
      * @return The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation
      *         data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during
-     *         <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>
-     *         DataSource<code></code> needs to be used for <code>MLModel</code> training.
+     *         <code>MLModel</code> training. This parameter must be set to <code>true</code> if the
+     *         <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      */
 
     public Boolean isComputeStatistics() {

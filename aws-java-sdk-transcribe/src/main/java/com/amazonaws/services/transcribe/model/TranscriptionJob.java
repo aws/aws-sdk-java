@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -153,6 +153,12 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     private Settings settings;
     /**
      * <p>
+     * An object containing the details of your custom language model.
+     * </p>
+     */
+    private ModelSettings modelSettings;
+    /**
+     * <p>
      * Provides information about how a transcription job is executed.
      * </p>
      */
@@ -163,6 +169,26 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private ContentRedaction contentRedaction;
+    /**
+     * <p>
+     * A value that shows if automatic language identification was enabled for a transcription job.
+     * </p>
+     */
+    private Boolean identifyLanguage;
+    /**
+     * <p>
+     * An object that shows the optional array of languages inputted for transcription jobs with automatic language
+     * identification enabled.
+     * </p>
+     */
+    private java.util.List<String> languageOptions;
+    /**
+     * <p>
+     * A value between zero and one that Amazon Transcribe assigned to the language that it identified in the source
+     * audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it identified.
+     * </p>
+     */
+    private Float identifiedLanguageScore;
 
     /**
      * <p>
@@ -1009,6 +1035,46 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * An object containing the details of your custom language model.
+     * </p>
+     * 
+     * @param modelSettings
+     *        An object containing the details of your custom language model.
+     */
+
+    public void setModelSettings(ModelSettings modelSettings) {
+        this.modelSettings = modelSettings;
+    }
+
+    /**
+     * <p>
+     * An object containing the details of your custom language model.
+     * </p>
+     * 
+     * @return An object containing the details of your custom language model.
+     */
+
+    public ModelSettings getModelSettings() {
+        return this.modelSettings;
+    }
+
+    /**
+     * <p>
+     * An object containing the details of your custom language model.
+     * </p>
+     * 
+     * @param modelSettings
+     *        An object containing the details of your custom language model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJob withModelSettings(ModelSettings modelSettings) {
+        setModelSettings(modelSettings);
+        return this;
+    }
+
+    /**
+     * <p>
      * Provides information about how a transcription job is executed.
      * </p>
      * 
@@ -1088,6 +1154,215 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A value that shows if automatic language identification was enabled for a transcription job.
+     * </p>
+     * 
+     * @param identifyLanguage
+     *        A value that shows if automatic language identification was enabled for a transcription job.
+     */
+
+    public void setIdentifyLanguage(Boolean identifyLanguage) {
+        this.identifyLanguage = identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * A value that shows if automatic language identification was enabled for a transcription job.
+     * </p>
+     * 
+     * @return A value that shows if automatic language identification was enabled for a transcription job.
+     */
+
+    public Boolean getIdentifyLanguage() {
+        return this.identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * A value that shows if automatic language identification was enabled for a transcription job.
+     * </p>
+     * 
+     * @param identifyLanguage
+     *        A value that shows if automatic language identification was enabled for a transcription job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJob withIdentifyLanguage(Boolean identifyLanguage) {
+        setIdentifyLanguage(identifyLanguage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that shows if automatic language identification was enabled for a transcription job.
+     * </p>
+     * 
+     * @return A value that shows if automatic language identification was enabled for a transcription job.
+     */
+
+    public Boolean isIdentifyLanguage() {
+        return this.identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * An object that shows the optional array of languages inputted for transcription jobs with automatic language
+     * identification enabled.
+     * </p>
+     * 
+     * @return An object that shows the optional array of languages inputted for transcription jobs with automatic
+     *         language identification enabled.
+     * @see LanguageCode
+     */
+
+    public java.util.List<String> getLanguageOptions() {
+        return languageOptions;
+    }
+
+    /**
+     * <p>
+     * An object that shows the optional array of languages inputted for transcription jobs with automatic language
+     * identification enabled.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object that shows the optional array of languages inputted for transcription jobs with automatic
+     *        language identification enabled.
+     * @see LanguageCode
+     */
+
+    public void setLanguageOptions(java.util.Collection<String> languageOptions) {
+        if (languageOptions == null) {
+            this.languageOptions = null;
+            return;
+        }
+
+        this.languageOptions = new java.util.ArrayList<String>(languageOptions);
+    }
+
+    /**
+     * <p>
+     * An object that shows the optional array of languages inputted for transcription jobs with automatic language
+     * identification enabled.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLanguageOptions(java.util.Collection)} or {@link #withLanguageOptions(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object that shows the optional array of languages inputted for transcription jobs with automatic
+     *        language identification enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public TranscriptionJob withLanguageOptions(String... languageOptions) {
+        if (this.languageOptions == null) {
+            setLanguageOptions(new java.util.ArrayList<String>(languageOptions.length));
+        }
+        for (String ele : languageOptions) {
+            this.languageOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that shows the optional array of languages inputted for transcription jobs with automatic language
+     * identification enabled.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object that shows the optional array of languages inputted for transcription jobs with automatic
+     *        language identification enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public TranscriptionJob withLanguageOptions(java.util.Collection<String> languageOptions) {
+        setLanguageOptions(languageOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that shows the optional array of languages inputted for transcription jobs with automatic language
+     * identification enabled.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object that shows the optional array of languages inputted for transcription jobs with automatic
+     *        language identification enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public TranscriptionJob withLanguageOptions(LanguageCode... languageOptions) {
+        java.util.ArrayList<String> languageOptionsCopy = new java.util.ArrayList<String>(languageOptions.length);
+        for (LanguageCode value : languageOptions) {
+            languageOptionsCopy.add(value.toString());
+        }
+        if (getLanguageOptions() == null) {
+            setLanguageOptions(languageOptionsCopy);
+        } else {
+            getLanguageOptions().addAll(languageOptionsCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value between zero and one that Amazon Transcribe assigned to the language that it identified in the source
+     * audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it identified.
+     * </p>
+     * 
+     * @param identifiedLanguageScore
+     *        A value between zero and one that Amazon Transcribe assigned to the language that it identified in the
+     *        source audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it
+     *        identified.
+     */
+
+    public void setIdentifiedLanguageScore(Float identifiedLanguageScore) {
+        this.identifiedLanguageScore = identifiedLanguageScore;
+    }
+
+    /**
+     * <p>
+     * A value between zero and one that Amazon Transcribe assigned to the language that it identified in the source
+     * audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it identified.
+     * </p>
+     * 
+     * @return A value between zero and one that Amazon Transcribe assigned to the language that it identified in the
+     *         source audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it
+     *         identified.
+     */
+
+    public Float getIdentifiedLanguageScore() {
+        return this.identifiedLanguageScore;
+    }
+
+    /**
+     * <p>
+     * A value between zero and one that Amazon Transcribe assigned to the language that it identified in the source
+     * audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it identified.
+     * </p>
+     * 
+     * @param identifiedLanguageScore
+     *        A value between zero and one that Amazon Transcribe assigned to the language that it identified in the
+     *        source audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it
+     *        identified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJob withIdentifiedLanguageScore(Float identifiedLanguageScore) {
+        setIdentifiedLanguageScore(identifiedLanguageScore);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1123,10 +1398,18 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getModelSettings() != null)
+            sb.append("ModelSettings: ").append(getModelSettings()).append(",");
         if (getJobExecutionSettings() != null)
             sb.append("JobExecutionSettings: ").append(getJobExecutionSettings()).append(",");
         if (getContentRedaction() != null)
-            sb.append("ContentRedaction: ").append(getContentRedaction());
+            sb.append("ContentRedaction: ").append(getContentRedaction()).append(",");
+        if (getIdentifyLanguage() != null)
+            sb.append("IdentifyLanguage: ").append(getIdentifyLanguage()).append(",");
+        if (getLanguageOptions() != null)
+            sb.append("LanguageOptions: ").append(getLanguageOptions()).append(",");
+        if (getIdentifiedLanguageScore() != null)
+            sb.append("IdentifiedLanguageScore: ").append(getIdentifiedLanguageScore());
         sb.append("}");
         return sb.toString();
     }
@@ -1189,6 +1472,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getModelSettings() == null ^ this.getModelSettings() == null)
+            return false;
+        if (other.getModelSettings() != null && other.getModelSettings().equals(this.getModelSettings()) == false)
+            return false;
         if (other.getJobExecutionSettings() == null ^ this.getJobExecutionSettings() == null)
             return false;
         if (other.getJobExecutionSettings() != null && other.getJobExecutionSettings().equals(this.getJobExecutionSettings()) == false)
@@ -1196,6 +1483,18 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         if (other.getContentRedaction() == null ^ this.getContentRedaction() == null)
             return false;
         if (other.getContentRedaction() != null && other.getContentRedaction().equals(this.getContentRedaction()) == false)
+            return false;
+        if (other.getIdentifyLanguage() == null ^ this.getIdentifyLanguage() == null)
+            return false;
+        if (other.getIdentifyLanguage() != null && other.getIdentifyLanguage().equals(this.getIdentifyLanguage()) == false)
+            return false;
+        if (other.getLanguageOptions() == null ^ this.getLanguageOptions() == null)
+            return false;
+        if (other.getLanguageOptions() != null && other.getLanguageOptions().equals(this.getLanguageOptions()) == false)
+            return false;
+        if (other.getIdentifiedLanguageScore() == null ^ this.getIdentifiedLanguageScore() == null)
+            return false;
+        if (other.getIdentifiedLanguageScore() != null && other.getIdentifiedLanguageScore().equals(this.getIdentifiedLanguageScore()) == false)
             return false;
         return true;
     }
@@ -1217,8 +1516,12 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getModelSettings() == null) ? 0 : getModelSettings().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionSettings() == null) ? 0 : getJobExecutionSettings().hashCode());
         hashCode = prime * hashCode + ((getContentRedaction() == null) ? 0 : getContentRedaction().hashCode());
+        hashCode = prime * hashCode + ((getIdentifyLanguage() == null) ? 0 : getIdentifyLanguage().hashCode());
+        hashCode = prime * hashCode + ((getLanguageOptions() == null) ? 0 : getLanguageOptions().hashCode());
+        hashCode = prime * hashCode + ((getIdentifiedLanguageScore() == null) ? 0 : getIdentifiedLanguageScore().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class ListModelPackagesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NAMECONTAINS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NameContains").build();
+    private static final MarshallingInfo<String> MODELAPPROVALSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelApprovalStatus").build();
+    private static final MarshallingInfo<String> MODELPACKAGEGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageGroupName").build();
+    private static final MarshallingInfo<String> MODELPACKAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelPackageType").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<String> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -62,6 +68,9 @@ public class ListModelPackagesRequestMarshaller {
             protocolMarshaller.marshall(listModelPackagesRequest.getCreationTimeBefore(), CREATIONTIMEBEFORE_BINDING);
             protocolMarshaller.marshall(listModelPackagesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listModelPackagesRequest.getNameContains(), NAMECONTAINS_BINDING);
+            protocolMarshaller.marshall(listModelPackagesRequest.getModelApprovalStatus(), MODELAPPROVALSTATUS_BINDING);
+            protocolMarshaller.marshall(listModelPackagesRequest.getModelPackageGroupName(), MODELPACKAGEGROUPNAME_BINDING);
+            protocolMarshaller.marshall(listModelPackagesRequest.getModelPackageType(), MODELPACKAGETYPE_BINDING);
             protocolMarshaller.marshall(listModelPackagesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listModelPackagesRequest.getSortBy(), SORTBY_BINDING);
             protocolMarshaller.marshall(listModelPackagesRequest.getSortOrder(), SORTORDER_BINDING);

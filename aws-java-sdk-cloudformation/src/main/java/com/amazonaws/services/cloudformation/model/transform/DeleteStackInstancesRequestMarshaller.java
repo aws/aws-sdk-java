@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,6 +85,10 @@ public class DeleteStackInstancesRequestMarshaller implements Marshaller<Request
                     }
                 }
 
+                if (deploymentTargets.getAccountsUrl() != null) {
+                    request.addParameter("DeploymentTargets.AccountsUrl", StringUtils.fromString(deploymentTargets.getAccountsUrl()));
+                }
+
                 if (deploymentTargets.getOrganizationalUnitIds().isEmpty()
                         && !((com.amazonaws.internal.SdkInternalList<String>) deploymentTargets.getOrganizationalUnitIds()).isAutoConstruct()) {
                     request.addParameter("DeploymentTargets.OrganizationalUnitIds", "");
@@ -127,6 +131,10 @@ public class DeleteStackInstancesRequestMarshaller implements Marshaller<Request
         {
             StackSetOperationPreferences operationPreferences = deleteStackInstancesRequest.getOperationPreferences();
             if (operationPreferences != null) {
+
+                if (operationPreferences.getRegionConcurrencyType() != null) {
+                    request.addParameter("OperationPreferences.RegionConcurrencyType", StringUtils.fromString(operationPreferences.getRegionConcurrencyType()));
+                }
 
                 if (operationPreferences.getRegionOrder().isEmpty()
                         && !((com.amazonaws.internal.SdkInternalList<String>) operationPreferences.getRegionOrder()).isAutoConstruct()) {
@@ -172,6 +180,10 @@ public class DeleteStackInstancesRequestMarshaller implements Marshaller<Request
         }
 
         request.addParameter("OperationId", IdempotentUtils.resolveString(deleteStackInstancesRequest.getOperationId()));
+
+        if (deleteStackInstancesRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(deleteStackInstancesRequest.getCallAs()));
+        }
 
         return request;
     }

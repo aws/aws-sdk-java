@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,7 +90,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private String resourceOwnerAccount;
     /**
      * <p>
-     * The type of the resource reported in the finding.
+     * The type of the resource identified in the finding.
      * </p>
      */
     private String resourceType;
@@ -614,11 +614,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource reported in the finding.
+     * The type of the resource identified in the finding.
      * </p>
      * 
      * @param resourceType
-     *        The type of the resource reported in the finding.
+     *        The type of the resource identified in the finding.
      * @see ResourceType
      */
 
@@ -628,10 +628,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource reported in the finding.
+     * The type of the resource identified in the finding.
      * </p>
      * 
-     * @return The type of the resource reported in the finding.
+     * @return The type of the resource identified in the finding.
      * @see ResourceType
      */
 
@@ -641,11 +641,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource reported in the finding.
+     * The type of the resource identified in the finding.
      * </p>
      * 
      * @param resourceType
-     *        The type of the resource reported in the finding.
+     *        The type of the resource identified in the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -657,11 +657,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource reported in the finding.
+     * The type of the resource identified in the finding.
      * </p>
      * 
      * @param resourceType
-     *        The type of the resource reported in the finding.
+     *        The type of the resource identified in the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

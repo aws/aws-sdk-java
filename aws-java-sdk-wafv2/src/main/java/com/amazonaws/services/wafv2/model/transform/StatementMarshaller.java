@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,8 @@ public class StatementMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotStatement").build();
     private static final MarshallingInfo<StructuredPojo> MANAGEDRULEGROUPSTATEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedRuleGroupStatement").build();
+    private static final MarshallingInfo<StructuredPojo> LABELMATCHSTATEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LabelMatchStatement").build();
 
     private static final StatementMarshaller instance = new StatementMarshaller();
 
@@ -83,6 +85,7 @@ public class StatementMarshaller {
             protocolMarshaller.marshall(statement.getOrStatement(), ORSTATEMENT_BINDING);
             protocolMarshaller.marshall(statement.getNotStatement(), NOTSTATEMENT_BINDING);
             protocolMarshaller.marshall(statement.getManagedRuleGroupStatement(), MANAGEDRULEGROUPSTATEMENT_BINDING);
+            protocolMarshaller.marshall(statement.getLabelMatchStatement(), LABELMATCHSTATEMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

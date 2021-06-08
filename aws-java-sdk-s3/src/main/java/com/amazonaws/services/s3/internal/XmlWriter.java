@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -127,11 +127,20 @@ public class XmlWriter {
             case '"':
                 escape = "&quot;";
                 break;
+            case '\'' :
+                escape = "&apos;";
+                break;
             case '<':
                 escape = "&lt;";
                 break;
             case '>':
                 escape = "&gt;";
+                break;
+            case '\u0085':
+                escape = "&#133;";
+                break;
+            case '\u2028':
+                escape = "&#8232;";
                 break;
             default:
                 escape = null;

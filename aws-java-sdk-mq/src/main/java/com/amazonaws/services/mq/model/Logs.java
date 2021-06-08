@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,16 +25,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Logs implements Serializable, Cloneable, StructuredPojo {
 
-    /** Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. */
+    /**
+     * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does
+     * not apply to RabbitMQ brokers.
+     */
     private Boolean audit;
     /** Enables general logging. */
     private Boolean general;
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does
+     * not apply to RabbitMQ brokers.
      * 
      * @param audit
      *        Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     *        Does not apply to RabbitMQ brokers.
      */
 
     public void setAudit(Boolean audit) {
@@ -42,9 +47,11 @@ public class Logs implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does
+     * not apply to RabbitMQ brokers.
      * 
      * @return Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     *         Does not apply to RabbitMQ brokers.
      */
 
     public Boolean getAudit() {
@@ -52,10 +59,12 @@ public class Logs implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does
+     * not apply to RabbitMQ brokers.
      * 
      * @param audit
      *        Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     *        Does not apply to RabbitMQ brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,9 +74,11 @@ public class Logs implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     * Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does
+     * not apply to RabbitMQ brokers.
      * 
      * @return Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+     *         Does not apply to RabbitMQ brokers.
      */
 
     public Boolean isAudit() {

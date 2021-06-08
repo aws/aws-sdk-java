@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,22 +37,90 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
     private String modelType;
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      */
     private String modelVersionNumber;
     /**
      * <p>
-     * The model version description.
+     * The training data source.
      * </p>
      */
-    private String description;
+    private String trainingDataSource;
+    /**
+     * <p>
+     * The training data schema.
+     * </p>
+     */
+    private TrainingDataSchema trainingDataSchema;
+    /**
+     * <p>
+     * The event details.
+     * </p>
+     */
+    private ExternalEventsDetail externalEventsDetail;
     /**
      * <p>
      * The model version status.
      * </p>
+     * <p>
+     * Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRAINING_COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
+    /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -155,11 +223,11 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
      * @param modelVersionNumber
-     *        The model version.
+     *        The model version number.
      */
 
     public void setModelVersionNumber(String modelVersionNumber) {
@@ -168,10 +236,10 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
-     * @return The model version.
+     * @return The model version number.
      */
 
     public String getModelVersionNumber() {
@@ -180,11 +248,11 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
      * @param modelVersionNumber
-     *        The model version.
+     *        The model version number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,41 +263,140 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The model version description.
+     * The training data source.
      * </p>
      * 
-     * @param description
-     *        The model version description.
+     * @param trainingDataSource
+     *        The training data source.
+     * @see TrainingDataSourceEnum
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTrainingDataSource(String trainingDataSource) {
+        this.trainingDataSource = trainingDataSource;
     }
 
     /**
      * <p>
-     * The model version description.
+     * The training data source.
      * </p>
      * 
-     * @return The model version description.
+     * @return The training data source.
+     * @see TrainingDataSourceEnum
      */
 
-    public String getDescription() {
-        return this.description;
+    public String getTrainingDataSource() {
+        return this.trainingDataSource;
     }
 
     /**
      * <p>
-     * The model version description.
+     * The training data source.
      * </p>
      * 
-     * @param description
-     *        The model version description.
+     * @param trainingDataSource
+     *        The training data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingDataSourceEnum
+     */
+
+    public GetModelVersionResult withTrainingDataSource(String trainingDataSource) {
+        setTrainingDataSource(trainingDataSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The training data source.
+     * </p>
+     * 
+     * @param trainingDataSource
+     *        The training data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingDataSourceEnum
+     */
+
+    public GetModelVersionResult withTrainingDataSource(TrainingDataSourceEnum trainingDataSource) {
+        this.trainingDataSource = trainingDataSource.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The training data schema.
+     * </p>
+     * 
+     * @param trainingDataSchema
+     *        The training data schema.
+     */
+
+    public void setTrainingDataSchema(TrainingDataSchema trainingDataSchema) {
+        this.trainingDataSchema = trainingDataSchema;
+    }
+
+    /**
+     * <p>
+     * The training data schema.
+     * </p>
+     * 
+     * @return The training data schema.
+     */
+
+    public TrainingDataSchema getTrainingDataSchema() {
+        return this.trainingDataSchema;
+    }
+
+    /**
+     * <p>
+     * The training data schema.
+     * </p>
+     * 
+     * @param trainingDataSchema
+     *        The training data schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetModelVersionResult withDescription(String description) {
-        setDescription(description);
+    public GetModelVersionResult withTrainingDataSchema(TrainingDataSchema trainingDataSchema) {
+        setTrainingDataSchema(trainingDataSchema);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The event details.
+     * </p>
+     * 
+     * @param externalEventsDetail
+     *        The event details.
+     */
+
+    public void setExternalEventsDetail(ExternalEventsDetail externalEventsDetail) {
+        this.externalEventsDetail = externalEventsDetail;
+    }
+
+    /**
+     * <p>
+     * The event details.
+     * </p>
+     * 
+     * @return The event details.
+     */
+
+    public ExternalEventsDetail getExternalEventsDetail() {
+        return this.externalEventsDetail;
+    }
+
+    /**
+     * <p>
+     * The event details.
+     * </p>
+     * 
+     * @param externalEventsDetail
+     *        The event details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetModelVersionResult withExternalEventsDetail(ExternalEventsDetail externalEventsDetail) {
+        setExternalEventsDetail(externalEventsDetail);
         return this;
     }
 
@@ -237,9 +404,108 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The model version status.
      * </p>
+     * <p>
+     * Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRAINING_COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The model version status.
+     *        The model version status.</p>
+     *        <p>
+     *        Possible values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TRAINING_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TRAINING_COMPLETE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVATE_REQUESTED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVATE_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVATE_REQUESTED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVATE_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ERROR</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -250,8 +516,107 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The model version status.
      * </p>
+     * <p>
+     * Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRAINING_COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The model version status.
+     * @return The model version status.</p>
+     *         <p>
+     *         Possible values are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>TRAINING_IN_PROGRESS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TRAINING_COMPLETE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVATE_REQUESTED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVATE_IN_PROGRESS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACTIVATE_REQUESTED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACTIVATE_IN_PROGRESS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACTIVE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ERROR</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -262,14 +627,153 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The model version status.
      * </p>
+     * <p>
+     * Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRAINING_COMPLETE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_REQUESTED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACTIVE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The model version status.
+     *        The model version status.</p>
+     *        <p>
+     *        Possible values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TRAINING_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TRAINING_COMPLETE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVATE_REQUESTED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVATE_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVATE_REQUESTED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVATE_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACTIVE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ERROR</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetModelVersionResult withStatus(String status) {
         setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The model version ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     * 
+     * @return The model version ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The model version ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetModelVersionResult withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -291,10 +795,16 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("ModelType: ").append(getModelType()).append(",");
         if (getModelVersionNumber() != null)
             sb.append("ModelVersionNumber: ").append(getModelVersionNumber()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+        if (getTrainingDataSource() != null)
+            sb.append("TrainingDataSource: ").append(getTrainingDataSource()).append(",");
+        if (getTrainingDataSchema() != null)
+            sb.append("TrainingDataSchema: ").append(getTrainingDataSchema()).append(",");
+        if (getExternalEventsDetail() != null)
+            sb.append("ExternalEventsDetail: ").append(getExternalEventsDetail()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -321,13 +831,25 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getModelVersionNumber() != null && other.getModelVersionNumber().equals(this.getModelVersionNumber()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getTrainingDataSource() == null ^ this.getTrainingDataSource() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getTrainingDataSource() != null && other.getTrainingDataSource().equals(this.getTrainingDataSource()) == false)
+            return false;
+        if (other.getTrainingDataSchema() == null ^ this.getTrainingDataSchema() == null)
+            return false;
+        if (other.getTrainingDataSchema() != null && other.getTrainingDataSchema().equals(this.getTrainingDataSchema()) == false)
+            return false;
+        if (other.getExternalEventsDetail() == null ^ this.getExternalEventsDetail() == null)
+            return false;
+        if (other.getExternalEventsDetail() != null && other.getExternalEventsDetail().equals(this.getExternalEventsDetail()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         return true;
     }
@@ -340,8 +862,11 @@ public class GetModelVersionResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getModelId() == null) ? 0 : getModelId().hashCode());
         hashCode = prime * hashCode + ((getModelType() == null) ? 0 : getModelType().hashCode());
         hashCode = prime * hashCode + ((getModelVersionNumber() == null) ? 0 : getModelVersionNumber().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTrainingDataSource() == null) ? 0 : getTrainingDataSource().hashCode());
+        hashCode = prime * hashCode + ((getTrainingDataSchema() == null) ? 0 : getTrainingDataSchema().hashCode());
+        hashCode = prime * hashCode + ((getExternalEventsDetail() == null) ? 0 : getExternalEventsDetail().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

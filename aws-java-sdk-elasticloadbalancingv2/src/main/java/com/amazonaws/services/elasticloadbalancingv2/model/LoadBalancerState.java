@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,9 @@ public class LoadBalancerState implements Serializable, Cloneable {
     /**
      * <p>
      * The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is
-     * fully set up and ready to route traffic, its state is <code>active</code>. If the load balancer could not be set
-     * up, its state is <code>failed</code>.
+     * fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic
+     * but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer
+     * could not be set up, its state is <code>failed</code>.
      * </p>
      */
     private String code;
@@ -44,14 +45,16 @@ public class LoadBalancerState implements Serializable, Cloneable {
     /**
      * <p>
      * The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is
-     * fully set up and ready to route traffic, its state is <code>active</code>. If the load balancer could not be set
-     * up, its state is <code>failed</code>.
+     * fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic
+     * but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer
+     * could not be set up, its state is <code>failed</code>.
      * </p>
      * 
      * @param code
      *        The state code. The initial state of the load balancer is <code>provisioning</code>. After the load
-     *        balancer is fully set up and ready to route traffic, its state is <code>active</code>. If the load
-     *        balancer could not be set up, its state is <code>failed</code>.
+     *        balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is
+     *        routing traffic but does not have the resources it needs to scale, its state is
+     *        <code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.
      * @see LoadBalancerStateEnum
      */
 
@@ -62,13 +65,15 @@ public class LoadBalancerState implements Serializable, Cloneable {
     /**
      * <p>
      * The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is
-     * fully set up and ready to route traffic, its state is <code>active</code>. If the load balancer could not be set
-     * up, its state is <code>failed</code>.
+     * fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic
+     * but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer
+     * could not be set up, its state is <code>failed</code>.
      * </p>
      * 
      * @return The state code. The initial state of the load balancer is <code>provisioning</code>. After the load
-     *         balancer is fully set up and ready to route traffic, its state is <code>active</code>. If the load
-     *         balancer could not be set up, its state is <code>failed</code>.
+     *         balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer
+     *         is routing traffic but does not have the resources it needs to scale, its state is
+     *         <code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.
      * @see LoadBalancerStateEnum
      */
 
@@ -79,14 +84,16 @@ public class LoadBalancerState implements Serializable, Cloneable {
     /**
      * <p>
      * The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is
-     * fully set up and ready to route traffic, its state is <code>active</code>. If the load balancer could not be set
-     * up, its state is <code>failed</code>.
+     * fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic
+     * but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer
+     * could not be set up, its state is <code>failed</code>.
      * </p>
      * 
      * @param code
      *        The state code. The initial state of the load balancer is <code>provisioning</code>. After the load
-     *        balancer is fully set up and ready to route traffic, its state is <code>active</code>. If the load
-     *        balancer could not be set up, its state is <code>failed</code>.
+     *        balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is
+     *        routing traffic but does not have the resources it needs to scale, its state is
+     *        <code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerStateEnum
      */
@@ -99,14 +106,16 @@ public class LoadBalancerState implements Serializable, Cloneable {
     /**
      * <p>
      * The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is
-     * fully set up and ready to route traffic, its state is <code>active</code>. If the load balancer could not be set
-     * up, its state is <code>failed</code>.
+     * fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic
+     * but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer
+     * could not be set up, its state is <code>failed</code>.
      * </p>
      * 
      * @param code
      *        The state code. The initial state of the load balancer is <code>provisioning</code>. After the load
-     *        balancer is fully set up and ready to route traffic, its state is <code>active</code>. If the load
-     *        balancer could not be set up, its state is <code>failed</code>.
+     *        balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is
+     *        routing traffic but does not have the resources it needs to scale, its state is
+     *        <code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.
      * @see LoadBalancerStateEnum
      */
 
@@ -117,14 +126,16 @@ public class LoadBalancerState implements Serializable, Cloneable {
     /**
      * <p>
      * The state code. The initial state of the load balancer is <code>provisioning</code>. After the load balancer is
-     * fully set up and ready to route traffic, its state is <code>active</code>. If the load balancer could not be set
-     * up, its state is <code>failed</code>.
+     * fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is routing traffic
+     * but does not have the resources it needs to scale, its state is<code>active_impaired</code>. If the load balancer
+     * could not be set up, its state is <code>failed</code>.
      * </p>
      * 
      * @param code
      *        The state code. The initial state of the load balancer is <code>provisioning</code>. After the load
-     *        balancer is fully set up and ready to route traffic, its state is <code>active</code>. If the load
-     *        balancer could not be set up, its state is <code>failed</code>.
+     *        balancer is fully set up and ready to route traffic, its state is <code>active</code>. If load balancer is
+     *        routing traffic but does not have the resources it needs to scale, its state is
+     *        <code>active_impaired</code>. If the load balancer could not be set up, its state is <code>failed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerStateEnum
      */

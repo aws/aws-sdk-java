@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,11 @@ public class CommitTransactionRequest implements Serializable, Cloneable, Struct
      * Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must
      * be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed
      * on the client does not match the digest computed by QLDB.
+     * </p>
+     * <p>
+     * The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only
+     * if the server has processed the exact set of statements sent by the client, in the same order that client sent
+     * them, and with no duplicates.
      * </p>
      */
     private java.nio.ByteBuffer commitDigest;
@@ -90,6 +95,11 @@ public class CommitTransactionRequest implements Serializable, Cloneable, Struct
      * on the client does not match the digest computed by QLDB.
      * </p>
      * <p>
+     * The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only
+     * if the server has processed the exact set of statements sent by the client, in the same order that client sent
+     * them, and with no duplicates.
+     * </p>
+     * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
@@ -103,7 +113,11 @@ public class CommitTransactionRequest implements Serializable, Cloneable, Struct
      * @param commitDigest
      *        Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest
      *        must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the
-     *        digest computed on the client does not match the digest computed by QLDB.
+     *        digest computed on the client does not match the digest computed by QLDB.</p>
+     *        <p>
+     *        The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and
+     *        only if the server has processed the exact set of statements sent by the client, in the same order that
+     *        client sent them, and with no duplicates.
      */
 
     public void setCommitDigest(java.nio.ByteBuffer commitDigest) {
@@ -117,6 +131,11 @@ public class CommitTransactionRequest implements Serializable, Cloneable, Struct
      * on the client does not match the digest computed by QLDB.
      * </p>
      * <p>
+     * The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only
+     * if the server has processed the exact set of statements sent by the client, in the same order that client sent
+     * them, and with no duplicates.
+     * </p>
+     * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
      * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
@@ -126,7 +145,11 @@ public class CommitTransactionRequest implements Serializable, Cloneable, Struct
      * 
      * @return Specifies the commit digest for the transaction to commit. For every active transaction, the commit
      *         digest must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if
-     *         the digest computed on the client does not match the digest computed by QLDB.
+     *         the digest computed on the client does not match the digest computed by QLDB.</p>
+     *         <p>
+     *         The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if
+     *         and only if the server has processed the exact set of statements sent by the client, in the same order
+     *         that client sent them, and with no duplicates.
      */
 
     public java.nio.ByteBuffer getCommitDigest() {
@@ -138,6 +161,11 @@ public class CommitTransactionRequest implements Serializable, Cloneable, Struct
      * Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest must
      * be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the digest computed
      * on the client does not match the digest computed by QLDB.
+     * </p>
+     * <p>
+     * The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and only
+     * if the server has processed the exact set of statements sent by the client, in the same order that client sent
+     * them, and with no duplicates.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -153,7 +181,11 @@ public class CommitTransactionRequest implements Serializable, Cloneable, Struct
      * @param commitDigest
      *        Specifies the commit digest for the transaction to commit. For every active transaction, the commit digest
      *        must be passed. QLDB validates <code>CommitDigest</code> and rejects the commit with an error if the
-     *        digest computed on the client does not match the digest computed by QLDB.
+     *        digest computed on the client does not match the digest computed by QLDB.</p>
+     *        <p>
+     *        The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits a transaction if and
+     *        only if the server has processed the exact set of statements sent by the client, in the same order that
+     *        client sent them, and with no duplicates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class AntennaUplinkConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spectrumConfig").build();
     private static final MarshallingInfo<StructuredPojo> TARGETEIRP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetEirp").build();
+    private static final MarshallingInfo<Boolean> TRANSMITDISABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transmitDisabled").build();
 
     private static final AntennaUplinkConfigMarshaller instance = new AntennaUplinkConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class AntennaUplinkConfigMarshaller {
         try {
             protocolMarshaller.marshall(antennaUplinkConfig.getSpectrumConfig(), SPECTRUMCONFIG_BINDING);
             protocolMarshaller.marshall(antennaUplinkConfig.getTargetEirp(), TARGETEIRP_BINDING);
+            protocolMarshaller.marshall(antennaUplinkConfig.getTransmitDisabled(), TRANSMITDISABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

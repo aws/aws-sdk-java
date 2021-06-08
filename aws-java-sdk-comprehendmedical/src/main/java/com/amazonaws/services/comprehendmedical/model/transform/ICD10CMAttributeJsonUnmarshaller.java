@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,7 +78,17 @@ public class ICD10CMAttributeJsonUnmarshaller implements Unmarshaller<ICD10CMAtt
                 }
                 if (context.testExpression("Traits", targetDepth)) {
                     context.nextToken();
-                    iCD10CMAttribute.setTraits(new ListUnmarshaller<ICD10CMTrait>(ICD10CMTraitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    iCD10CMAttribute.setTraits(new ListUnmarshaller<ICD10CMTrait>(ICD10CMTraitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Category", targetDepth)) {
+                    context.nextToken();
+                    iCD10CMAttribute.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RelationshipType", targetDepth)) {
+                    context.nextToken();
+                    iCD10CMAttribute.setRelationshipType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

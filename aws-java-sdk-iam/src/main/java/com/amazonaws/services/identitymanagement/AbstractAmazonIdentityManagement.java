@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -524,6 +524,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     }
 
     @Override
+    public ListInstanceProfileTagsResult listInstanceProfileTags(ListInstanceProfileTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -539,6 +544,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     }
 
     @Override
+    public ListMFADeviceTagsResult listMFADeviceTags(ListMFADeviceTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListMFADevicesResult listMFADevices(ListMFADevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -546,6 +556,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     @Override
     public ListMFADevicesResult listMFADevices() {
         return listMFADevices(new ListMFADevicesRequest());
+    }
+
+    @Override
+    public ListOpenIDConnectProviderTagsResult listOpenIDConnectProviderTags(ListOpenIDConnectProviderTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -570,6 +585,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
 
     @Override
     public ListPoliciesGrantingServiceAccessResult listPoliciesGrantingServiceAccess(ListPoliciesGrantingServiceAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPolicyTagsResult listPolicyTags(ListPolicyTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -599,6 +619,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     }
 
     @Override
+    public ListSAMLProviderTagsResult listSAMLProviderTags(ListSAMLProviderTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSAMLProvidersResult listSAMLProviders(ListSAMLProvidersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -616,6 +641,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     @Override
     public ListSSHPublicKeysResult listSSHPublicKeys() {
         return listSSHPublicKeys(new ListSSHPublicKeysRequest());
+    }
+
+    @Override
+    public ListServerCertificateTagsResult listServerCertificateTags(ListServerCertificateTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -744,7 +774,37 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     }
 
     @Override
+    public TagInstanceProfileResult tagInstanceProfile(TagInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagMFADeviceResult tagMFADevice(TagMFADeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagOpenIDConnectProviderResult tagOpenIDConnectProvider(TagOpenIDConnectProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagPolicyResult tagPolicy(TagPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagRoleResult tagRole(TagRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagSAMLProviderResult tagSAMLProvider(TagSAMLProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagServerCertificateResult tagServerCertificate(TagServerCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -754,7 +814,37 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     }
 
     @Override
+    public UntagInstanceProfileResult untagInstanceProfile(UntagInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagMFADeviceResult untagMFADevice(UntagMFADeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagOpenIDConnectProviderResult untagOpenIDConnectProvider(UntagOpenIDConnectProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagPolicyResult untagPolicy(UntagPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UntagRoleResult untagRole(UntagRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagSAMLProviderResult untagSAMLProvider(UntagSAMLProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagServerCertificateResult untagServerCertificate(UntagServerCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,14 @@ public class EventSourceMappingConfigurationJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     eventSourceMappingConfiguration.setUUID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StartingPosition", targetDepth)) {
+                    context.nextToken();
+                    eventSourceMappingConfiguration.setStartingPosition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StartingPositionTimestamp", targetDepth)) {
+                    context.nextToken();
+                    eventSourceMappingConfiguration.setStartingPositionTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("BatchSize", targetDepth)) {
                     context.nextToken();
                     eventSourceMappingConfiguration.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -92,6 +100,29 @@ public class EventSourceMappingConfigurationJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     eventSourceMappingConfiguration.setDestinationConfig(DestinationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Topics", targetDepth)) {
+                    context.nextToken();
+                    eventSourceMappingConfiguration.setTopics(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Queues", targetDepth)) {
+                    context.nextToken();
+                    eventSourceMappingConfiguration.setQueues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("SourceAccessConfigurations", targetDepth)) {
+                    context.nextToken();
+                    eventSourceMappingConfiguration.setSourceAccessConfigurations(new ListUnmarshaller<SourceAccessConfiguration>(
+                            SourceAccessConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("SelfManagedEventSource", targetDepth)) {
+                    context.nextToken();
+                    eventSourceMappingConfiguration.setSelfManagedEventSource(SelfManagedEventSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("MaximumRecordAgeInSeconds", targetDepth)) {
                     context.nextToken();
                     eventSourceMappingConfiguration.setMaximumRecordAgeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -103,6 +134,16 @@ public class EventSourceMappingConfigurationJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("MaximumRetryAttempts", targetDepth)) {
                     context.nextToken();
                     eventSourceMappingConfiguration.setMaximumRetryAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("TumblingWindowInSeconds", targetDepth)) {
+                    context.nextToken();
+                    eventSourceMappingConfiguration.setTumblingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("FunctionResponseTypes", targetDepth)) {
+                    context.nextToken();
+                    eventSourceMappingConfiguration.setFunctionResponseTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

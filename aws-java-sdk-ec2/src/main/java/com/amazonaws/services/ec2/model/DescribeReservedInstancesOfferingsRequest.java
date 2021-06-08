@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,10 +73,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
      * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
      * <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> |
-     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
+     * <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
+     * <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
+     * <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
      * </p>
      * </li>
      * <li>
@@ -106,8 +107,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String instanceType;
@@ -276,10 +277,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
      * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
      * <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> |
-     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
+     * <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
+     * <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
+     * <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
      * </p>
      * </li>
      * <li>
@@ -336,8 +338,9 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
      *         <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      *         <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
-     *         <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code>
-     *         | <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
+     *         <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> |
+     *         <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
+     *         <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
      *         <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
      *         | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
      *         </p>
@@ -406,10 +409,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
      * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
      * <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> |
-     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
+     * <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
+     * <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
+     * <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
      * </p>
      * </li>
      * <li>
@@ -467,7 +471,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
      *        <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      *        <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
-     *        <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
+     *        <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> |
+     *        <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
      *        <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
      *        <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
      *        <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
@@ -539,10 +544,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
      * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
      * <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> |
-     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
+     * <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
+     * <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
+     * <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
      * </p>
      * </li>
      * <li>
@@ -605,7 +611,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
      *        <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      *        <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
-     *        <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
+     *        <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> |
+     *        <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
      *        <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
      *        <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
      *        <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
@@ -679,10 +686,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account
      * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> |
      * <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> |
-     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
+     * <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
+     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
+     * <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
+     * <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
+     * <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
      * </p>
      * </li>
      * <li>
@@ -740,7 +748,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *        EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
      *        <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      *        <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> |
-     *        <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
+     *        <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> |
+     *        <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> |
      *        <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> |
      *        <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> |
      *        <code>Windows with SQL Server Enterprise (Amazon VPC)</code>)
@@ -825,15 +834,15 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type that the reservation will cover (for example, <code>m1.small</code>). For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -844,14 +853,14 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return The instance type that the reservation will cover (for example, <code>m1.small</code>). For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *         <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -862,15 +871,15 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type that the reservation will cover (for example, <code>m1.small</code>). For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -883,15 +892,15 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type that the reservation will cover (for example, <code>m1.small</code>). For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -902,15 +911,15 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type that the reservation will cover (for example, <code>m1.small</code>). For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */

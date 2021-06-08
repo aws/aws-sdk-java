@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,26 +25,45 @@ public class SseKmsEncryptedObjects implements Serializable, Cloneable {
     private String status;
 
     /**
-     * @return KMS encrypted S3 objects are not replicated if status is Disabled.
+     * <p>
+     * Specifies whether Amazon S3 replicates objects created with server-side encryption using an AWS KMS key stored in
+     * AWS Key Management Service.
+     * </p>
+     *
+     * @return Specifies whether Amazon S3 replicates objects created with server-side encryption using an AWS KMS key
+     *         stored in AWS Key Management Service.
+     * @see SseKmsEncryptedObjectsStatus
      */
     public String getStatus() {
         return status;
     }
 
     /**
-     * Sets the replication status for KMS encrypted objects. KMS encrypted S3 objects are not replicated if status is Disabled.
+     * <p>
+     * Specifies whether Amazon S3 replicates objects created with server-side encryption using an AWS KMS key
+     * stored in AWS Key Management Service.
+     * </p>
      *
-     * @param status New replication status.
+     * @param status
+     *        Specifies whether Amazon S3 replicates objects created with server-side encryption using an AWS KMS
+     *        key stored in AWS Key Management Service.
+     * @see SseKmsEncryptedObjectsStatus
      */
     public void setStatus(String status) {
         this.status = status;
     }
 
     /**
-     * Sets the replication status for KMS encrypted objects. KMS encrypted S3 objects are not replicated if status is Disabled.
+     * <p>
+     * Specifies whether Amazon S3 replicates objects created with server-side encryption using an AWS KMS key
+     * stored in AWS Key Management Service.
+     * </p>
      *
-     * @param status New replication status.
-     * @return This object for method chaining.
+     * @param status
+     *        Specifies whether Amazon S3 replicates objects created with server-side encryption using an AWS KMS
+     *        key stored in AWS Key Management Service.
+     * @see SseKmsEncryptedObjectsStatus
+     * @return Returns a reference to this object so that method calls can be chained together.
      */
     public SseKmsEncryptedObjects withStatus(String status) {
         setStatus(status);

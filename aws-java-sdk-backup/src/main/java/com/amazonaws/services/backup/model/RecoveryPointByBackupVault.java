@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,13 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
     private String backupVaultArn;
     /**
      * <p>
+     * The backup vault where the recovery point was originally copied from. If the recovery point is restored to the
+     * same account this value will be <code>null</code>.
+     * </p>
+     */
+    private String sourceBackupVaultArn;
+    /**
+     * <p>
      * An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.
      * </p>
      */
@@ -59,7 +66,8 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS)
-     * volume or an Amazon Relational Database Service (Amazon RDS) database.
+     * volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     * supported resource type is Amazon EC2.
      * </p>
      */
     private String resourceType;
@@ -121,6 +129,9 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
      * Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
+     * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
      * </p>
      */
     private Lifecycle lifecycle;
@@ -293,6 +304,52 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
 
     /**
      * <p>
+     * The backup vault where the recovery point was originally copied from. If the recovery point is restored to the
+     * same account this value will be <code>null</code>.
+     * </p>
+     * 
+     * @param sourceBackupVaultArn
+     *        The backup vault where the recovery point was originally copied from. If the recovery point is restored to
+     *        the same account this value will be <code>null</code>.
+     */
+
+    public void setSourceBackupVaultArn(String sourceBackupVaultArn) {
+        this.sourceBackupVaultArn = sourceBackupVaultArn;
+    }
+
+    /**
+     * <p>
+     * The backup vault where the recovery point was originally copied from. If the recovery point is restored to the
+     * same account this value will be <code>null</code>.
+     * </p>
+     * 
+     * @return The backup vault where the recovery point was originally copied from. If the recovery point is restored
+     *         to the same account this value will be <code>null</code>.
+     */
+
+    public String getSourceBackupVaultArn() {
+        return this.sourceBackupVaultArn;
+    }
+
+    /**
+     * <p>
+     * The backup vault where the recovery point was originally copied from. If the recovery point is restored to the
+     * same account this value will be <code>null</code>.
+     * </p>
+     * 
+     * @param sourceBackupVaultArn
+     *        The backup vault where the recovery point was originally copied from. If the recovery point is restored to
+     *        the same account this value will be <code>null</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPointByBackupVault withSourceBackupVaultArn(String sourceBackupVaultArn) {
+        setSourceBackupVaultArn(sourceBackupVaultArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.
      * </p>
      * 
@@ -334,12 +391,14 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS)
-     * volume or an Amazon Relational Database Service (Amazon RDS) database.
+     * volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     * supported resource type is Amazon EC2.
      * </p>
      * 
      * @param resourceType
      *        The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon
-     *        EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+     *        EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the
+     *        only supported resource type is Amazon EC2.
      */
 
     public void setResourceType(String resourceType) {
@@ -349,11 +408,13 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS)
-     * volume or an Amazon Relational Database Service (Amazon RDS) database.
+     * volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     * supported resource type is Amazon EC2.
      * </p>
      * 
      * @return The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon
-     *         EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+     *         EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the
+     *         only supported resource type is Amazon EC2.
      */
 
     public String getResourceType() {
@@ -363,12 +424,14 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS)
-     * volume or an Amazon Relational Database Service (Amazon RDS) database.
+     * volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     * supported resource type is Amazon EC2.
      * </p>
      * 
      * @param resourceType
      *        The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon
-     *        EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+     *        EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the
+     *        only supported resource type is Amazon EC2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -731,6 +794,9 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -740,6 +806,9 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public void setLifecycle(Lifecycle lifecycle) {
@@ -756,6 +825,9 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @return The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
      *         Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
@@ -764,6 +836,9 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
      *         the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *         The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *         cold.
+     *         </p>
+     *         <p>
+     *         Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public Lifecycle getLifecycle() {
@@ -780,6 +855,9 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -789,6 +867,9 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -973,6 +1054,8 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
             sb.append("BackupVaultName: ").append(getBackupVaultName()).append(",");
         if (getBackupVaultArn() != null)
             sb.append("BackupVaultArn: ").append(getBackupVaultArn()).append(",");
+        if (getSourceBackupVaultArn() != null)
+            sb.append("SourceBackupVaultArn: ").append(getSourceBackupVaultArn()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getResourceType() != null)
@@ -1024,6 +1107,10 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
         if (other.getBackupVaultArn() == null ^ this.getBackupVaultArn() == null)
             return false;
         if (other.getBackupVaultArn() != null && other.getBackupVaultArn().equals(this.getBackupVaultArn()) == false)
+            return false;
+        if (other.getSourceBackupVaultArn() == null ^ this.getSourceBackupVaultArn() == null)
+            return false;
+        if (other.getSourceBackupVaultArn() != null && other.getSourceBackupVaultArn().equals(this.getSourceBackupVaultArn()) == false)
             return false;
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
@@ -1088,6 +1175,7 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getRecoveryPointArn() == null) ? 0 : getRecoveryPointArn().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultArn() == null) ? 0 : getBackupVaultArn().hashCode());
+        hashCode = prime * hashCode + ((getSourceBackupVaultArn() == null) ? 0 : getSourceBackupVaultArn().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());

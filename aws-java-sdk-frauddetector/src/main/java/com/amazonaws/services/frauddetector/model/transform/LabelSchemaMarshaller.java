@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,6 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class LabelSchemaMarshaller {
 
-    private static final MarshallingInfo<String> LABELKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("labelKey").build();
     private static final MarshallingInfo<Map> LABELMAPPER_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("labelMapper").build();
 
@@ -50,7 +48,6 @@ public class LabelSchemaMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(labelSchema.getLabelKey(), LABELKEY_BINDING);
             protocolMarshaller.marshall(labelSchema.getLabelMapper(), LABELMAPPER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

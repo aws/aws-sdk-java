@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     * <code>ResourceId</code>.
+     * <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      * </p>
      */
     private Expression filter;
@@ -84,7 +86,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
     private java.util.List<String> metrics;
     /**
      * <p>
-     * You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or both.
+     * You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     * <code>TAG</code>, <code>COST_CATEGORY</code>.
      * </p>
      */
     private java.util.List<GroupDefinition> groupBy;
@@ -245,7 +248,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     * <code>ResourceId</code>.
+     * <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      * </p>
      * 
      * @param filter
@@ -257,7 +262,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      *        >Expression</a>. </p>
      *        <p>
      *        The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     *        <code>ResourceId</code>.
+     *        <code>ResourceId</code>. It requires the <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *        >Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      */
 
     public void setFilter(Expression filter) {
@@ -274,7 +281,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     * <code>ResourceId</code>.
+     * <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      * </p>
      * 
      * @return Filters Amazon Web Services costs by different dimensions. For example, you can specify
@@ -285,7 +294,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      *         >Expression</a>. </p>
      *         <p>
      *         The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     *         <code>ResourceId</code>.
+     *         <code>ResourceId</code>. It requires the <a
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *         >Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      */
 
     public Expression getFilter() {
@@ -302,7 +313,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     * <code>ResourceId</code>.
+     * <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      * </p>
      * 
      * @param filter
@@ -314,7 +327,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      *        >Expression</a>. </p>
      *        <p>
      *        The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     *        <code>ResourceId</code>.
+     *        <code>ResourceId</code>. It requires the <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *        >Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -543,11 +558,12 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or both.
+     * You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     * <code>TAG</code>, <code>COST_CATEGORY</code>.
      * </p>
      * 
-     * @return You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or
-     *         both.
+     * @return You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     *         <code>TAG</code>, <code>COST_CATEGORY</code>.
      */
 
     public java.util.List<GroupDefinition> getGroupBy() {
@@ -556,12 +572,13 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or both.
+     * You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     * <code>TAG</code>, <code>COST_CATEGORY</code>.
      * </p>
      * 
      * @param groupBy
-     *        You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or
-     *        both.
+     *        You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     *        <code>TAG</code>, <code>COST_CATEGORY</code>.
      */
 
     public void setGroupBy(java.util.Collection<GroupDefinition> groupBy) {
@@ -575,7 +592,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or both.
+     * You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     * <code>TAG</code>, <code>COST_CATEGORY</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -584,8 +602,8 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param groupBy
-     *        You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or
-     *        both.
+     *        You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     *        <code>TAG</code>, <code>COST_CATEGORY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -601,12 +619,13 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or both.
+     * You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     * <code>TAG</code>, <code>COST_CATEGORY</code>.
      * </p>
      * 
      * @param groupBy
-     *        You can group Amazon Web Services costs using up to two different groups: either dimensions, tag keys, or
-     *        both.
+     *        You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+     *        <code>TAG</code>, <code>COST_CATEGORY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

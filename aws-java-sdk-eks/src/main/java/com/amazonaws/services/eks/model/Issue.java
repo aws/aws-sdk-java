@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,20 +34,27 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to authenticate or authorize with
+     * your Kubernetes cluster API server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch
+     * instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated with the managed node group.
      * You may be able to recreate an Auto Scaling group with the same settings to recover.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate
-     * your cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed
-     * node group. Remove any dependencies from the security group.
+     * <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable to to communicate with your
+     * Kubernetes cluster API server. This can happen if there are network disruptions or if API servers are timing out
+     * processing requests.
      * </p>
      * </li>
      * <li>
@@ -65,6 +72,28 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed
+     * node group. Remove any dependencies from the security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate
+     * your cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for a node group do not
+     * automatically assign public IP addresses to instances launched into it. If you want your instances to be assigned
+     * a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the
+     * subnet. See <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying the
+     * public IPv4 addressing attribute for your subnet</a> in the Amazon VPC User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for your managed node group. You may
      * be able to recreate an instance profile with the same settings to recover.
      * </p>
@@ -73,20 +102,6 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed node group. You may be able to
      * recreate an IAM role with the same settings to recover.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch
-     * instances.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
-     * causes of this failure are insufficient <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
-     * permissions or lack of outbound internet access for the nodes.
      * </p>
      * </li>
      * <li>
@@ -103,13 +118,15 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your cluster
-     * API server.
+     * <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
+     * causes of this failure are insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a> permissions
+     * or lack of outbound internet access for the nodes.
      * </p>
      * </li>
      * </ul>
@@ -135,20 +152,27 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to authenticate or authorize with
+     * your Kubernetes cluster API server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch
+     * instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated with the managed node group.
      * You may be able to recreate an Auto Scaling group with the same settings to recover.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate
-     * your cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed
-     * node group. Remove any dependencies from the security group.
+     * <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable to to communicate with your
+     * Kubernetes cluster API server. This can happen if there are network disruptions or if API servers are timing out
+     * processing requests.
      * </p>
      * </li>
      * <li>
@@ -166,6 +190,28 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed
+     * node group. Remove any dependencies from the security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate
+     * your cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for a node group do not
+     * automatically assign public IP addresses to instances launched into it. If you want your instances to be assigned
+     * a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the
+     * subnet. See <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying the
+     * public IPv4 addressing attribute for your subnet</a> in the Amazon VPC User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for your managed node group. You may
      * be able to recreate an instance profile with the same settings to recover.
      * </p>
@@ -174,20 +220,6 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed node group. You may be able to
      * recreate an IAM role with the same settings to recover.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch
-     * instances.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
-     * causes of this failure are insufficient <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
-     * permissions or lack of outbound internet access for the nodes.
      * </p>
      * </li>
      * <li>
@@ -204,13 +236,15 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your cluster
-     * API server.
+     * <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
+     * causes of this failure are insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a> permissions
+     * or lack of outbound internet access for the nodes.
      * </p>
      * </li>
      * </ul>
@@ -220,20 +254,27 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to authenticate or
+     *        authorize with your Kubernetes cluster API server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to
+     *        launch instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated with the managed node
      *        group. You may be able to recreate an Auto Scaling group with the same settings to recover.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must
-     *        recreate your cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your
-     *        managed node group. Remove any dependencies from the security group.
+     *        <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable to to communicate
+     *        with your Kubernetes cluster API server. This can happen if there are network disruptions or if API
+     *        servers are timing out processing requests.
      *        </p>
      *        </li>
      *        <li>
@@ -251,6 +292,28 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your
+     *        managed node group. Remove any dependencies from the security group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must
+     *        recreate your cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for a node group do not
+     *        automatically assign public IP addresses to instances launched into it. If you want your instances to be
+     *        assigned a public IP address, then you need to enable the <code>auto-assign public IP address</code>
+     *        setting for the subnet. See <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
+     *        the public IPv4 addressing attribute for your subnet</a> in the Amazon VPC User Guide.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for your managed node group.
      *        You may be able to recreate an instance profile with the same settings to recover.
      *        </p>
@@ -259,20 +322,6 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed node group. You may be able to
      *        recreate an IAM role with the same settings to recover.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to
-     *        launch instances.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
-     *        Common causes of this failure are insufficient <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
-     *        permissions or lack of outbound internet access for the nodes.
      *        </p>
      *        </li>
      *        <li>
@@ -289,13 +338,15 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your
-     *        cluster API server.
+     *        <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
+     *        <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
+     *        Common causes of this failure are insufficient <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a>
+     *        permissions or lack of outbound internet access for the nodes.
      *        </p>
      *        </li>
      * @see NodegroupIssueCode
@@ -312,20 +363,27 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to authenticate or authorize with
+     * your Kubernetes cluster API server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch
+     * instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated with the managed node group.
      * You may be able to recreate an Auto Scaling group with the same settings to recover.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate
-     * your cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed
-     * node group. Remove any dependencies from the security group.
+     * <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable to to communicate with your
+     * Kubernetes cluster API server. This can happen if there are network disruptions or if API servers are timing out
+     * processing requests.
      * </p>
      * </li>
      * <li>
@@ -343,6 +401,28 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed
+     * node group. Remove any dependencies from the security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate
+     * your cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for a node group do not
+     * automatically assign public IP addresses to instances launched into it. If you want your instances to be assigned
+     * a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the
+     * subnet. See <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying the
+     * public IPv4 addressing attribute for your subnet</a> in the Amazon VPC User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for your managed node group. You may
      * be able to recreate an instance profile with the same settings to recover.
      * </p>
@@ -351,20 +431,6 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed node group. You may be able to
      * recreate an IAM role with the same settings to recover.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch
-     * instances.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
-     * causes of this failure are insufficient <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
-     * permissions or lack of outbound internet access for the nodes.
      * </p>
      * </li>
      * <li>
@@ -381,13 +447,15 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your cluster
-     * API server.
+     * <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
+     * causes of this failure are insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a> permissions
+     * or lack of outbound internet access for the nodes.
      * </p>
      * </li>
      * </ul>
@@ -396,20 +464,27 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
+     *         <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to authenticate or
+     *         authorize with your Kubernetes cluster API server.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to
+     *         launch instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated with the managed node
      *         group. You may be able to recreate an Auto Scaling group with the same settings to recover.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must
-     *         recreate your cluster.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your
-     *         managed node group. Remove any dependencies from the security group.
+     *         <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable to to communicate
+     *         with your Kubernetes cluster API server. This can happen if there are network disruptions or if API
+     *         servers are timing out processing requests.
      *         </p>
      *         </li>
      *         <li>
@@ -427,6 +502,28 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
+     *         <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your
+     *         managed node group. Remove any dependencies from the security group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must
+     *         recreate your cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for a node group do not
+     *         automatically assign public IP addresses to instances launched into it. If you want your instances to be
+     *         assigned a public IP address, then you need to enable the <code>auto-assign public IP address</code>
+     *         setting for the subnet. See <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
+     *         the public IPv4 addressing attribute for your subnet</a> in the Amazon VPC User Guide.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for your managed node group.
      *         You may be able to recreate an instance profile with the same settings to recover.
      *         </p>
@@ -435,20 +532,6 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed node group. You may be able to
      *         recreate an IAM role with the same settings to recover.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to
-     *         launch instances.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
-     *         Common causes of this failure are insufficient <a
-     *         href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM
-     *         role</a> permissions or lack of outbound internet access for the nodes.
      *         </p>
      *         </li>
      *         <li>
@@ -465,13 +548,15 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your
-     *         cluster API server.
+     *         <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
+     *         <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
+     *         Common causes of this failure are insufficient <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a>
+     *         permissions or lack of outbound internet access for the nodes.
      *         </p>
      *         </li>
      * @see NodegroupIssueCode
@@ -488,20 +573,27 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to authenticate or authorize with
+     * your Kubernetes cluster API server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch
+     * instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated with the managed node group.
      * You may be able to recreate an Auto Scaling group with the same settings to recover.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate
-     * your cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed
-     * node group. Remove any dependencies from the security group.
+     * <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable to to communicate with your
+     * Kubernetes cluster API server. This can happen if there are network disruptions or if API servers are timing out
+     * processing requests.
      * </p>
      * </li>
      * <li>
@@ -519,6 +611,28 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed
+     * node group. Remove any dependencies from the security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate
+     * your cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for a node group do not
+     * automatically assign public IP addresses to instances launched into it. If you want your instances to be assigned
+     * a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the
+     * subnet. See <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying the
+     * public IPv4 addressing attribute for your subnet</a> in the Amazon VPC User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for your managed node group. You may
      * be able to recreate an instance profile with the same settings to recover.
      * </p>
@@ -527,20 +641,6 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed node group. You may be able to
      * recreate an IAM role with the same settings to recover.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch
-     * instances.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
-     * causes of this failure are insufficient <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
-     * permissions or lack of outbound internet access for the nodes.
      * </p>
      * </li>
      * <li>
@@ -557,13 +657,15 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your cluster
-     * API server.
+     * <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
+     * causes of this failure are insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a> permissions
+     * or lack of outbound internet access for the nodes.
      * </p>
      * </li>
      * </ul>
@@ -573,20 +675,27 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to authenticate or
+     *        authorize with your Kubernetes cluster API server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to
+     *        launch instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated with the managed node
      *        group. You may be able to recreate an Auto Scaling group with the same settings to recover.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must
-     *        recreate your cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your
-     *        managed node group. Remove any dependencies from the security group.
+     *        <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable to to communicate
+     *        with your Kubernetes cluster API server. This can happen if there are network disruptions or if API
+     *        servers are timing out processing requests.
      *        </p>
      *        </li>
      *        <li>
@@ -604,6 +713,28 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your
+     *        managed node group. Remove any dependencies from the security group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must
+     *        recreate your cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for a node group do not
+     *        automatically assign public IP addresses to instances launched into it. If you want your instances to be
+     *        assigned a public IP address, then you need to enable the <code>auto-assign public IP address</code>
+     *        setting for the subnet. See <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
+     *        the public IPv4 addressing attribute for your subnet</a> in the Amazon VPC User Guide.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for your managed node group.
      *        You may be able to recreate an instance profile with the same settings to recover.
      *        </p>
@@ -612,20 +743,6 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed node group. You may be able to
      *        recreate an IAM role with the same settings to recover.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to
-     *        launch instances.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
-     *        Common causes of this failure are insufficient <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
-     *        permissions or lack of outbound internet access for the nodes.
      *        </p>
      *        </li>
      *        <li>
@@ -642,13 +759,15 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your
-     *        cluster API server.
+     *        <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
+     *        <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
+     *        Common causes of this failure are insufficient <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a>
+     *        permissions or lack of outbound internet access for the nodes.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -667,20 +786,27 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to authenticate or authorize with
+     * your Kubernetes cluster API server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch
+     * instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated with the managed node group.
      * You may be able to recreate an Auto Scaling group with the same settings to recover.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate
-     * your cluster.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed
-     * node group. Remove any dependencies from the security group.
+     * <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable to to communicate with your
+     * Kubernetes cluster API server. This can happen if there are network disruptions or if API servers are timing out
+     * processing requests.
      * </p>
      * </li>
      * <li>
@@ -698,6 +824,28 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your managed
+     * node group. Remove any dependencies from the security group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must recreate
+     * your cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for a node group do not
+     * automatically assign public IP addresses to instances launched into it. If you want your instances to be assigned
+     * a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the
+     * subnet. See <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying the
+     * public IPv4 addressing attribute for your subnet</a> in the Amazon VPC User Guide.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for your managed node group. You may
      * be able to recreate an instance profile with the same settings to recover.
      * </p>
@@ -706,20 +854,6 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed node group. You may be able to
      * recreate an IAM role with the same settings to recover.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to launch
-     * instances.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
-     * causes of this failure are insufficient <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
-     * permissions or lack of outbound internet access for the nodes.
      * </p>
      * </li>
      * <li>
@@ -736,13 +870,15 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your cluster
-     * API server.
+     * <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
+     * <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common
+     * causes of this failure are insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a> permissions
+     * or lack of outbound internet access for the nodes.
      * </p>
      * </li>
      * </ul>
@@ -752,20 +888,27 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to authenticate or
+     *        authorize with your Kubernetes cluster API server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to
+     *        launch instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated with the managed node
      *        group. You may be able to recreate an Auto Scaling group with the same settings to recover.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must
-     *        recreate your cluster.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your
-     *        managed node group. Remove any dependencies from the security group.
+     *        <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable to to communicate
+     *        with your Kubernetes cluster API server. This can happen if there are network disruptions or if API
+     *        servers are timing out processing requests.
      *        </p>
      *        </li>
      *        <li>
@@ -783,6 +926,28 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security group for your
+     *        managed node group. Remove any dependencies from the security group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for the cluster. You must
+     *        recreate your cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for a node group do not
+     *        automatically assign public IP addresses to instances launched into it. If you want your instances to be
+     *        assigned a public IP address, then you need to enable the <code>auto-assign public IP address</code>
+     *        setting for the subnet. See <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
+     *        the public IPv4 addressing attribute for your subnet</a> in the Amazon VPC User Guide.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>IamInstanceProfileNotFound</b>: We couldn't find the IAM instance profile for your managed node group.
      *        You may be able to recreate an instance profile with the same settings to recover.
      *        </p>
@@ -791,20 +956,6 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <b>IamNodeRoleNotFound</b>: We couldn't find the IAM role for your managed node group. You may be able to
      *        recreate an IAM role with the same settings to recover.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures while attempting to
-     *        launch instances.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
-     *        Common causes of this failure are insufficient <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker node IAM role</a>
-     *        permissions or lack of outbound internet access for the nodes.
      *        </p>
      *        </li>
      *        <li>
@@ -821,13 +972,15 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to communicate with your
-     *        cluster API server.
+     *        <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.
+     *        <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster.
+     *        Common causes of this failure are insufficient <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a>
+     *        permissions or lack of outbound internet access for the nodes.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

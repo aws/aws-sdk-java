@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,22 @@ import javax.annotation.Generated;
  * <p>
  * Current generation:
  * </p>
+ * <p>
+ * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16
+ * onward).
+ * </p>
+ * <p>
+ * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+ * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+ * <code>cache.m6g.16xlarge</code>
+ * </p>
+ * <note>
+ * <p>
+ * For region availability, see <a href=
+ * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+ * >Supported Node Types</a>
+ * </p>
+ * </note>
  * <p>
  * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
  * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -91,6 +107,22 @@ import javax.annotation.Generated;
  * <p>
  * Current generation:
  * </p>
+ * <p>
+ * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16
+ * onward).
+ * </p>
+ * <p>
+ * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+ * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+ * <code>cache.r6g.16xlarge</code>
+ * </p>
+ * <note>
+ * <p>
+ * For region availability, see <a href=
+ * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+ * >Supported Node Types</a>
+ * </p>
+ * </note>
  * <p>
  * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
  * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -193,6 +225,12 @@ public class CacheNode implements Serializable, Cloneable {
      * </p>
      */
     private String customerAvailabilityZone;
+    /**
+     * <p>
+     * The customer outpost ARN of the cache node.
+     * </p>
+     */
+    private String customerOutpostArn;
 
     /**
      * <p>
@@ -493,6 +531,46 @@ public class CacheNode implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The customer outpost ARN of the cache node.
+     * </p>
+     * 
+     * @param customerOutpostArn
+     *        The customer outpost ARN of the cache node.
+     */
+
+    public void setCustomerOutpostArn(String customerOutpostArn) {
+        this.customerOutpostArn = customerOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The customer outpost ARN of the cache node.
+     * </p>
+     * 
+     * @return The customer outpost ARN of the cache node.
+     */
+
+    public String getCustomerOutpostArn() {
+        return this.customerOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The customer outpost ARN of the cache node.
+     * </p>
+     * 
+     * @param customerOutpostArn
+     *        The customer outpost ARN of the cache node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheNode withCustomerOutpostArn(String customerOutpostArn) {
+        setCustomerOutpostArn(customerOutpostArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -517,7 +595,9 @@ public class CacheNode implements Serializable, Cloneable {
         if (getSourceCacheNodeId() != null)
             sb.append("SourceCacheNodeId: ").append(getSourceCacheNodeId()).append(",");
         if (getCustomerAvailabilityZone() != null)
-            sb.append("CustomerAvailabilityZone: ").append(getCustomerAvailabilityZone());
+            sb.append("CustomerAvailabilityZone: ").append(getCustomerAvailabilityZone()).append(",");
+        if (getCustomerOutpostArn() != null)
+            sb.append("CustomerOutpostArn: ").append(getCustomerOutpostArn());
         sb.append("}");
         return sb.toString();
     }
@@ -560,6 +640,10 @@ public class CacheNode implements Serializable, Cloneable {
             return false;
         if (other.getCustomerAvailabilityZone() != null && other.getCustomerAvailabilityZone().equals(this.getCustomerAvailabilityZone()) == false)
             return false;
+        if (other.getCustomerOutpostArn() == null ^ this.getCustomerOutpostArn() == null)
+            return false;
+        if (other.getCustomerOutpostArn() != null && other.getCustomerOutpostArn().equals(this.getCustomerOutpostArn()) == false)
+            return false;
         return true;
     }
 
@@ -575,6 +659,7 @@ public class CacheNode implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getParameterGroupStatus() == null) ? 0 : getParameterGroupStatus().hashCode());
         hashCode = prime * hashCode + ((getSourceCacheNodeId() == null) ? 0 : getSourceCacheNodeId().hashCode());
         hashCode = prime * hashCode + ((getCustomerAvailabilityZone() == null) ? 0 : getCustomerAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getCustomerOutpostArn() == null) ? 0 : getCustomerOutpostArn().hashCode());
         return hashCode;
     }
 

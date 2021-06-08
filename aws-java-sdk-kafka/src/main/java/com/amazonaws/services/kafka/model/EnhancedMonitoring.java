@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,9 +17,10 @@ import javax.annotation.Generated;
 /**
  * 
  <p>
- * Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT,
- * PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of
- * monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+ * Specifies which metrics are gathered for the MSK cluster. This property has the following possible values: DEFAULT,
+ * PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with each of
+ * these levels of monitoring, see <a
+ * href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +28,8 @@ public enum EnhancedMonitoring {
 
     DEFAULT("DEFAULT"),
     PER_BROKER("PER_BROKER"),
-    PER_TOPIC_PER_BROKER("PER_TOPIC_PER_BROKER");
+    PER_TOPIC_PER_BROKER("PER_TOPIC_PER_BROKER"),
+    PER_TOPIC_PER_PARTITION("PER_TOPIC_PER_PARTITION");
 
     private String value;
 

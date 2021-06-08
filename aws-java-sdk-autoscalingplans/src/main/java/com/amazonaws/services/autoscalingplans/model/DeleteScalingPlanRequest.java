@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     private String scalingPlanName;
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      */
     private Long scalingPlanVersion;
@@ -80,11 +80,11 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan.
+     *        The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -93,10 +93,10 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      * 
-     * @return The version number of the scaling plan.
+     * @return The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      */
 
     public Long getScalingPlanVersion() {
@@ -105,11 +105,11 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version number of the scaling plan.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan.
+     *        The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class UpdateThingShadowRequestMarshaller {
 
     private static final MarshallingInfo<String> THINGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("thingName").build();
+    private static final MarshallingInfo<String> SHADOWNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("name").build();
     private static final MarshallingInfo<java.nio.ByteBuffer> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
             .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
 
@@ -49,6 +51,7 @@ public class UpdateThingShadowRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateThingShadowRequest.getThingName(), THINGNAME_BINDING);
+            protocolMarshaller.marshall(updateThingShadowRequest.getShadowName(), SHADOWNAME_BINDING);
             protocolMarshaller.marshall(updateThingShadowRequest.getPayload(), PAYLOAD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

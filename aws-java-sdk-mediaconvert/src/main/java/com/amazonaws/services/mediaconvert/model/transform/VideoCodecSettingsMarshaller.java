@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class VideoCodecSettingsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> AV1SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("av1Settings").build();
+    private static final MarshallingInfo<StructuredPojo> AVCINTRASETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("avcIntraSettings").build();
     private static final MarshallingInfo<String> CODEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("codec").build();
     private static final MarshallingInfo<StructuredPojo> FRAMECAPTURESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -41,6 +43,12 @@ public class VideoCodecSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mpeg2Settings").build();
     private static final MarshallingInfo<StructuredPojo> PRORESSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("proresSettings").build();
+    private static final MarshallingInfo<StructuredPojo> VC3SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vc3Settings").build();
+    private static final MarshallingInfo<StructuredPojo> VP8SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vp8Settings").build();
+    private static final MarshallingInfo<StructuredPojo> VP9SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vp9Settings").build();
 
     private static final VideoCodecSettingsMarshaller instance = new VideoCodecSettingsMarshaller();
 
@@ -59,12 +67,16 @@ public class VideoCodecSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(videoCodecSettings.getAv1Settings(), AV1SETTINGS_BINDING);
+            protocolMarshaller.marshall(videoCodecSettings.getAvcIntraSettings(), AVCINTRASETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getCodec(), CODEC_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getFrameCaptureSettings(), FRAMECAPTURESETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getH264Settings(), H264SETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getH265Settings(), H265SETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getMpeg2Settings(), MPEG2SETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getProresSettings(), PRORESSETTINGS_BINDING);
+            protocolMarshaller.marshall(videoCodecSettings.getVc3Settings(), VC3SETTINGS_BINDING);
+            protocolMarshaller.marshall(videoCodecSettings.getVp8Settings(), VP8SETTINGS_BINDING);
+            protocolMarshaller.marshall(videoCodecSettings.getVp9Settings(), VP9SETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

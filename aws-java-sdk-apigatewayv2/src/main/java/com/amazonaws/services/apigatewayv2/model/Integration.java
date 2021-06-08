@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,6 +101,15 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
     private String integrationResponseSelectionExpression;
     /**
      * <p>
+     * Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more,
+     * see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html"
+     * >Integration subtype reference</a>.
+     * </p>
+     */
+    private String integrationSubtype;
+    /**
+     * <p>
      * The integration type of an integration. One of the following:
      * </p>
      * <p>
@@ -110,8 +119,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * APIs.
      * </p>
      * <p>
-     * AWS_PROXY: for integrating the route or method request with the Lambda function-invoking action with the client
-     * request passed through as-is. This integration is also referred to as Lambda proxy integration.
+     * AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This
+     * integration is also referred to as a Lambda proxy integration.
      * </p>
      * <p>
      * HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as
@@ -172,13 +181,29 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
     private String payloadFormatVersion;
     /**
      * <p>
-     * A key-value map specifying request parameters that are passed from the method request to the backend. The key is
-     * an integration request parameter name and the associated value is a method request parameter value or static
-     * value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request
-     * parameter value must match the pattern of
+     * For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the
+     * backend. The key is an integration request parameter name and the associated value is a method request parameter
+     * value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable> , where
      * <replaceable>{location}</replaceable> is querystring, path, or header; and <replaceable>{name}</replaceable> must
-     * be a valid and unique method request parameter name. Supported only for WebSocket APIs.
+     * be a valid and unique method request parameter name.
+     * </p>
+     * <p>
+     * For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying
+     * parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
+     * >Working with AWS service integrations for HTTP APIs</a>.
+     * </p>
+     * <p>
+     * For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     * specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the
+     * pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or
+     * remove. For values, you can provide static values, or map request data, stage variables, or context variables
+     * that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      */
     private java.util.Map<String, String> requestParameters;
@@ -190,6 +215,19 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> requestTemplates;
+    /**
+     * <p>
+     * Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     * integration before returning the response to clients. Specify a key-value map from a selection key to response
+     * parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters
+     * are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or
+     * overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to
+     * response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
+     * </p>
+     */
+    private java.util.Map<String, java.util.Map<String, String>> responseParameters;
     /**
      * <p>
      * The template selection expression for the integration. Supported only for WebSocket APIs.
@@ -775,6 +813,64 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more,
+     * see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html"
+     * >Integration subtype reference</a>.
+     * </p>
+     * 
+     * @param integrationSubtype
+     *        Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn
+     *        more, see <a href=
+     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html"
+     *        >Integration subtype reference</a>.
+     */
+
+    public void setIntegrationSubtype(String integrationSubtype) {
+        this.integrationSubtype = integrationSubtype;
+    }
+
+    /**
+     * <p>
+     * Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more,
+     * see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html"
+     * >Integration subtype reference</a>.
+     * </p>
+     * 
+     * @return Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn
+     *         more, see <a href=
+     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html"
+     *         >Integration subtype reference</a>.
+     */
+
+    public String getIntegrationSubtype() {
+        return this.integrationSubtype;
+    }
+
+    /**
+     * <p>
+     * Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more,
+     * see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html"
+     * >Integration subtype reference</a>.
+     * </p>
+     * 
+     * @param integrationSubtype
+     *        Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn
+     *        more, see <a href=
+     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html"
+     *        >Integration subtype reference</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Integration withIntegrationSubtype(String integrationSubtype) {
+        setIntegrationSubtype(integrationSubtype);
+        return this;
+    }
+
+    /**
+     * <p>
      * The integration type of an integration. One of the following:
      * </p>
      * <p>
@@ -784,8 +880,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * APIs.
      * </p>
      * <p>
-     * AWS_PROXY: for integrating the route or method request with the Lambda function-invoking action with the client
-     * request passed through as-is. This integration is also referred to as Lambda proxy integration.
+     * AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This
+     * integration is also referred to as a Lambda proxy integration.
      * </p>
      * <p>
      * HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as
@@ -809,8 +905,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      *        for WebSocket APIs.
      *        </p>
      *        <p>
-     *        AWS_PROXY: for integrating the route or method request with the Lambda function-invoking action with the
-     *        client request passed through as-is. This integration is also referred to as Lambda proxy integration.
+     *        AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action.
+     *        This integration is also referred to as a Lambda proxy integration.
      *        </p>
      *        <p>
      *        HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred
@@ -841,8 +937,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * APIs.
      * </p>
      * <p>
-     * AWS_PROXY: for integrating the route or method request with the Lambda function-invoking action with the client
-     * request passed through as-is. This integration is also referred to as Lambda proxy integration.
+     * AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This
+     * integration is also referred to as a Lambda proxy integration.
      * </p>
      * <p>
      * HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as
@@ -865,8 +961,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      *         for WebSocket APIs.
      *         </p>
      *         <p>
-     *         AWS_PROXY: for integrating the route or method request with the Lambda function-invoking action with the
-     *         client request passed through as-is. This integration is also referred to as Lambda proxy integration.
+     *         AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service
+     *         action. This integration is also referred to as a Lambda proxy integration.
      *         </p>
      *         <p>
      *         HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also
@@ -897,8 +993,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * APIs.
      * </p>
      * <p>
-     * AWS_PROXY: for integrating the route or method request with the Lambda function-invoking action with the client
-     * request passed through as-is. This integration is also referred to as Lambda proxy integration.
+     * AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This
+     * integration is also referred to as a Lambda proxy integration.
      * </p>
      * <p>
      * HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as
@@ -922,8 +1018,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      *        for WebSocket APIs.
      *        </p>
      *        <p>
-     *        AWS_PROXY: for integrating the route or method request with the Lambda function-invoking action with the
-     *        client request passed through as-is. This integration is also referred to as Lambda proxy integration.
+     *        AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action.
+     *        This integration is also referred to as a Lambda proxy integration.
      *        </p>
      *        <p>
      *        HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred
@@ -956,8 +1052,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      * APIs.
      * </p>
      * <p>
-     * AWS_PROXY: for integrating the route or method request with the Lambda function-invoking action with the client
-     * request passed through as-is. This integration is also referred to as Lambda proxy integration.
+     * AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This
+     * integration is also referred to as a Lambda proxy integration.
      * </p>
      * <p>
      * HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as
@@ -981,8 +1077,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      *        for WebSocket APIs.
      *        </p>
      *        <p>
-     *        AWS_PROXY: for integrating the route or method request with the Lambda function-invoking action with the
-     *        client request passed through as-is. This integration is also referred to as Lambda proxy integration.
+     *        AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action.
+     *        This integration is also referred to as a Lambda proxy integration.
      *        </p>
      *        <p>
      *        HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred
@@ -1320,23 +1416,54 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A key-value map specifying request parameters that are passed from the method request to the backend. The key is
-     * an integration request parameter name and the associated value is a method request parameter value or static
-     * value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request
-     * parameter value must match the pattern of
+     * For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the
+     * backend. The key is an integration request parameter name and the associated value is a method request parameter
+     * value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable> , where
      * <replaceable>{location}</replaceable> is querystring, path, or header; and <replaceable>{name}</replaceable> must
-     * be a valid and unique method request parameter name. Supported only for WebSocket APIs.
+     * be a valid and unique method request parameter name.
+     * </p>
+     * <p>
+     * For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying
+     * parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
+     * >Working with AWS service integrations for HTTP APIs</a>.
+     * </p>
+     * <p>
+     * For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     * specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the
+     * pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or
+     * remove. For values, you can provide static values, or map request data, stage variables, or context variables
+     * that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      * 
-     * @return A key-value map specifying request parameters that are passed from the method request to the backend. The
-     *         key is an integration request parameter name and the associated value is a method request parameter value
-     *         or static value that must be enclosed within single quotes and pre-encoded as required by the backend.
-     *         The method request parameter value must match the pattern of
+     * @return For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request
+     *         to the backend. The key is an integration request parameter name and the associated value is a method
+     *         request parameter value or static value that must be enclosed within single quotes and pre-encoded as
+     *         required by the backend. The method request parameter value must match the pattern of
      *         method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable> , where
      *         <replaceable>{location}</replaceable> is querystring, path, or header; and
-     *         <replaceable>{name}</replaceable> must be a valid and unique method request parameter name. Supported
-     *         only for WebSocket APIs.
+     *         <replaceable>{name}</replaceable> must be a valid and unique method request parameter name.</p>
+     *         <p>
+     *         For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map
+     *         specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map
+     *         request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
+     *         >Working with AWS service integrations for HTTP APIs</a>.
+     *         </p>
+     *         <p>
+     *         For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     *         specifying how to transform HTTP requests before sending them to backend integrations. The key should
+     *         follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be
+     *         append, overwrite or remove. For values, you can provide static values, or map request data, stage
+     *         variables, or context variables that are evaluated at runtime. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *         >Transforming API requests and responses</a>.
      */
 
     public java.util.Map<String, String> getRequestParameters() {
@@ -1345,24 +1472,55 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A key-value map specifying request parameters that are passed from the method request to the backend. The key is
-     * an integration request parameter name and the associated value is a method request parameter value or static
-     * value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request
-     * parameter value must match the pattern of
+     * For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the
+     * backend. The key is an integration request parameter name and the associated value is a method request parameter
+     * value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable> , where
      * <replaceable>{location}</replaceable> is querystring, path, or header; and <replaceable>{name}</replaceable> must
-     * be a valid and unique method request parameter name. Supported only for WebSocket APIs.
+     * be a valid and unique method request parameter name.
+     * </p>
+     * <p>
+     * For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying
+     * parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
+     * >Working with AWS service integrations for HTTP APIs</a>.
+     * </p>
+     * <p>
+     * For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     * specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the
+     * pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or
+     * remove. For values, you can provide static values, or map request data, stage variables, or context variables
+     * that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      * 
      * @param requestParameters
-     *        A key-value map specifying request parameters that are passed from the method request to the backend. The
-     *        key is an integration request parameter name and the associated value is a method request parameter value
-     *        or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The
-     *        method request parameter value must match the pattern of
+     *        For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request
+     *        to the backend. The key is an integration request parameter name and the associated value is a method
+     *        request parameter value or static value that must be enclosed within single quotes and pre-encoded as
+     *        required by the backend. The method request parameter value must match the pattern of
      *        method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable> , where
      *        <replaceable>{location}</replaceable> is querystring, path, or header; and
-     *        <replaceable>{name}</replaceable> must be a valid and unique method request parameter name. Supported only
-     *        for WebSocket APIs.
+     *        <replaceable>{name}</replaceable> must be a valid and unique method request parameter name.</p>
+     *        <p>
+     *        For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map
+     *        specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map
+     *        request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
+     *        >Working with AWS service integrations for HTTP APIs</a>.
+     *        </p>
+     *        <p>
+     *        For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     *        specifying how to transform HTTP requests before sending them to backend integrations. The key should
+     *        follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be
+     *        append, overwrite or remove. For values, you can provide static values, or map request data, stage
+     *        variables, or context variables that are evaluated at runtime. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *        >Transforming API requests and responses</a>.
      */
 
     public void setRequestParameters(java.util.Map<String, String> requestParameters) {
@@ -1371,24 +1529,55 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A key-value map specifying request parameters that are passed from the method request to the backend. The key is
-     * an integration request parameter name and the associated value is a method request parameter value or static
-     * value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request
-     * parameter value must match the pattern of
+     * For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the
+     * backend. The key is an integration request parameter name and the associated value is a method request parameter
+     * value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
      * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable> , where
      * <replaceable>{location}</replaceable> is querystring, path, or header; and <replaceable>{name}</replaceable> must
-     * be a valid and unique method request parameter name. Supported only for WebSocket APIs.
+     * be a valid and unique method request parameter name.
+     * </p>
+     * <p>
+     * For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying
+     * parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage
+     * variables, or context variables that are evaluated at runtime. To learn more, see <a href=
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
+     * >Working with AWS service integrations for HTTP APIs</a>.
+     * </p>
+     * <p>
+     * For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     * specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the
+     * pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or
+     * remove. For values, you can provide static values, or map request data, stage variables, or context variables
+     * that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
      * </p>
      * 
      * @param requestParameters
-     *        A key-value map specifying request parameters that are passed from the method request to the backend. The
-     *        key is an integration request parameter name and the associated value is a method request parameter value
-     *        or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The
-     *        method request parameter value must match the pattern of
+     *        For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request
+     *        to the backend. The key is an integration request parameter name and the associated value is a method
+     *        request parameter value or static value that must be enclosed within single quotes and pre-encoded as
+     *        required by the backend. The method request parameter value must match the pattern of
      *        method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable> , where
      *        <replaceable>{location}</replaceable> is querystring, path, or header; and
-     *        <replaceable>{name}</replaceable> must be a valid and unique method request parameter name. Supported only
-     *        for WebSocket APIs.
+     *        <replaceable>{name}</replaceable> must be a valid and unique method request parameter name.</p>
+     *        <p>
+     *        For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map
+     *        specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map
+     *        request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html"
+     *        >Working with AWS service integrations for HTTP APIs</a>.
+     *        </p>
+     *        <p>
+     *        For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     *        specifying how to transform HTTP requests before sending them to backend integrations. The key should
+     *        follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be
+     *        append, overwrite or remove. For values, you can provide static values, or map request data, stage
+     *        variables, or context variables that are evaluated at runtime. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *        >Transforming API requests and responses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1502,6 +1691,119 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
 
     public Integration clearRequestTemplatesEntries() {
         this.requestTemplates = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     * integration before returning the response to clients. Specify a key-value map from a selection key to response
+     * parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters
+     * are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or
+     * overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to
+     * response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
+     * </p>
+     * 
+     * @return Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     *         integration before returning the response to clients. Specify a key-value map from a selection key to
+     *         response parameters. The selection key must be a valid HTTP status code within the range of 200-599.
+     *         Response parameters are a key-value map. The key must match pattern
+     *         &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append,
+     *         overwrite or remove. The value can be a static value, or map to response data, stage variables, or
+     *         context variables that are evaluated at runtime. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *         >Transforming API requests and responses</a>.
+     */
+
+    public java.util.Map<String, java.util.Map<String, String>> getResponseParameters() {
+        return responseParameters;
+    }
+
+    /**
+     * <p>
+     * Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     * integration before returning the response to clients. Specify a key-value map from a selection key to response
+     * parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters
+     * are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or
+     * overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to
+     * response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
+     * </p>
+     * 
+     * @param responseParameters
+     *        Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     *        integration before returning the response to clients. Specify a key-value map from a selection key to
+     *        response parameters. The selection key must be a valid HTTP status code within the range of 200-599.
+     *        Response parameters are a key-value map. The key must match pattern
+     *        &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append,
+     *        overwrite or remove. The value can be a static value, or map to response data, stage variables, or context
+     *        variables that are evaluated at runtime. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *        >Transforming API requests and responses</a>.
+     */
+
+    public void setResponseParameters(java.util.Map<String, java.util.Map<String, String>> responseParameters) {
+        this.responseParameters = responseParameters;
+    }
+
+    /**
+     * <p>
+     * Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     * integration before returning the response to clients. Specify a key-value map from a selection key to response
+     * parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters
+     * are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or
+     * overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to
+     * response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming
+     * API requests and responses</a>.
+     * </p>
+     * 
+     * @param responseParameters
+     *        Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend
+     *        integration before returning the response to clients. Specify a key-value map from a selection key to
+     *        response parameters. The selection key must be a valid HTTP status code within the range of 200-599.
+     *        Response parameters are a key-value map. The key must match pattern
+     *        &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append,
+     *        overwrite or remove. The value can be a static value, or map to response data, stage variables, or context
+     *        variables that are evaluated at runtime. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html"
+     *        >Transforming API requests and responses</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Integration withResponseParameters(java.util.Map<String, java.util.Map<String, String>> responseParameters) {
+        setResponseParameters(responseParameters);
+        return this;
+    }
+
+    /**
+     * Add a single ResponseParameters entry
+     *
+     * @see Integration#withResponseParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Integration addResponseParametersEntry(String key, java.util.Map<String, String> value) {
+        if (null == this.responseParameters) {
+            this.responseParameters = new java.util.HashMap<String, java.util.Map<String, String>>();
+        }
+        if (this.responseParameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.responseParameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ResponseParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Integration clearResponseParametersEntries() {
+        this.responseParameters = null;
         return this;
     }
 
@@ -1670,6 +1972,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
             sb.append("IntegrationMethod: ").append(getIntegrationMethod()).append(",");
         if (getIntegrationResponseSelectionExpression() != null)
             sb.append("IntegrationResponseSelectionExpression: ").append(getIntegrationResponseSelectionExpression()).append(",");
+        if (getIntegrationSubtype() != null)
+            sb.append("IntegrationSubtype: ").append(getIntegrationSubtype()).append(",");
         if (getIntegrationType() != null)
             sb.append("IntegrationType: ").append(getIntegrationType()).append(",");
         if (getIntegrationUri() != null)
@@ -1682,6 +1986,8 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
             sb.append("RequestParameters: ").append(getRequestParameters()).append(",");
         if (getRequestTemplates() != null)
             sb.append("RequestTemplates: ").append(getRequestTemplates()).append(",");
+        if (getResponseParameters() != null)
+            sb.append("ResponseParameters: ").append(getResponseParameters()).append(",");
         if (getTemplateSelectionExpression() != null)
             sb.append("TemplateSelectionExpression: ").append(getTemplateSelectionExpression()).append(",");
         if (getTimeoutInMillis() != null)
@@ -1739,6 +2045,10 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
         if (other.getIntegrationResponseSelectionExpression() != null
                 && other.getIntegrationResponseSelectionExpression().equals(this.getIntegrationResponseSelectionExpression()) == false)
             return false;
+        if (other.getIntegrationSubtype() == null ^ this.getIntegrationSubtype() == null)
+            return false;
+        if (other.getIntegrationSubtype() != null && other.getIntegrationSubtype().equals(this.getIntegrationSubtype()) == false)
+            return false;
         if (other.getIntegrationType() == null ^ this.getIntegrationType() == null)
             return false;
         if (other.getIntegrationType() != null && other.getIntegrationType().equals(this.getIntegrationType()) == false)
@@ -1762,6 +2072,10 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
         if (other.getRequestTemplates() == null ^ this.getRequestTemplates() == null)
             return false;
         if (other.getRequestTemplates() != null && other.getRequestTemplates().equals(this.getRequestTemplates()) == false)
+            return false;
+        if (other.getResponseParameters() == null ^ this.getResponseParameters() == null)
+            return false;
+        if (other.getResponseParameters() != null && other.getResponseParameters().equals(this.getResponseParameters()) == false)
             return false;
         if (other.getTemplateSelectionExpression() == null ^ this.getTemplateSelectionExpression() == null)
             return false;
@@ -1792,12 +2106,14 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIntegrationId() == null) ? 0 : getIntegrationId().hashCode());
         hashCode = prime * hashCode + ((getIntegrationMethod() == null) ? 0 : getIntegrationMethod().hashCode());
         hashCode = prime * hashCode + ((getIntegrationResponseSelectionExpression() == null) ? 0 : getIntegrationResponseSelectionExpression().hashCode());
+        hashCode = prime * hashCode + ((getIntegrationSubtype() == null) ? 0 : getIntegrationSubtype().hashCode());
         hashCode = prime * hashCode + ((getIntegrationType() == null) ? 0 : getIntegrationType().hashCode());
         hashCode = prime * hashCode + ((getIntegrationUri() == null) ? 0 : getIntegrationUri().hashCode());
         hashCode = prime * hashCode + ((getPassthroughBehavior() == null) ? 0 : getPassthroughBehavior().hashCode());
         hashCode = prime * hashCode + ((getPayloadFormatVersion() == null) ? 0 : getPayloadFormatVersion().hashCode());
         hashCode = prime * hashCode + ((getRequestParameters() == null) ? 0 : getRequestParameters().hashCode());
         hashCode = prime * hashCode + ((getRequestTemplates() == null) ? 0 : getRequestTemplates().hashCode());
+        hashCode = prime * hashCode + ((getResponseParameters() == null) ? 0 : getResponseParameters().hashCode());
         hashCode = prime * hashCode + ((getTemplateSelectionExpression() == null) ? 0 : getTemplateSelectionExpression().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMillis() == null) ? 0 : getTimeoutInMillis().hashCode());
         hashCode = prime * hashCode + ((getTlsConfig() == null) ? 0 : getTlsConfig().hashCode());

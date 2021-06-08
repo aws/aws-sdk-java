@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,15 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
      * An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation
      * option.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch
+     * agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
+     * </p>
+     * </note>
      */
     private java.util.List<UtilizationMetric> projectedUtilizationMetrics;
     /**
@@ -47,11 +56,16 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
      * The performance risk of the Auto Scaling group configuration recommendation.
      * </p>
      * <p>
-     * Performance risk is the likelihood of the recommended instance type not meeting the performance requirement of
-     * your workload.
+     * Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your
+     * workload. Compute Optimizer calculates an individual performance risk score for each specification of the
+     * recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network
+     * throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum
+     * performance risk score across the analyzed resource specifications.
      * </p>
      * <p>
-     * The lowest performance risk is categorized as <code>0</code>, and the highest as <code>5</code>.
+     * The value ranges from 0 to 5, with 0 meaning that the recommended resource is predicted to always provide enough
+     * hardware capability. The higher the performance risk is, the more likely you should validate whether the
+     * recommended resource meets the performance requirements of your workload before migrating your resource.
      * </p>
      */
     private Double performanceRisk;
@@ -110,9 +124,25 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
      * An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation
      * option.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch
+     * agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
+     * </p>
+     * </note>
      * 
      * @return An array of objects that describe the projected utilization metrics of the Auto Scaling group
-     *         recommendation option.
+     *         recommendation option.</p> <note>
+     *         <p>
+     *         The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     *         Additionally, the <code>Memory</code> metric is returned only for resources that have the unified
+     *         CloudWatch agent installed on them. For more information, see <a
+     *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *         Utilization with the CloudWatch Agent</a>.
+     *         </p>
      */
 
     public java.util.List<UtilizationMetric> getProjectedUtilizationMetrics() {
@@ -124,10 +154,26 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
      * An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation
      * option.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch
+     * agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
+     * </p>
+     * </note>
      * 
      * @param projectedUtilizationMetrics
      *        An array of objects that describe the projected utilization metrics of the Auto Scaling group
-     *        recommendation option.
+     *        recommendation option.</p> <note>
+     *        <p>
+     *        The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     *        Additionally, the <code>Memory</code> metric is returned only for resources that have the unified
+     *        CloudWatch agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
      */
 
     public void setProjectedUtilizationMetrics(java.util.Collection<UtilizationMetric> projectedUtilizationMetrics) {
@@ -144,6 +190,15 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
      * An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation
      * option.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch
+     * agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProjectedUtilizationMetrics(java.util.Collection)} or
@@ -152,7 +207,14 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
      * 
      * @param projectedUtilizationMetrics
      *        An array of objects that describe the projected utilization metrics of the Auto Scaling group
-     *        recommendation option.
+     *        recommendation option.</p> <note>
+     *        <p>
+     *        The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     *        Additionally, the <code>Memory</code> metric is returned only for resources that have the unified
+     *        CloudWatch agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,10 +233,26 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
      * An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation
      * option.
      * </p>
+     * <note>
+     * <p>
+     * The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     * Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch
+     * agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
+     * with the CloudWatch Agent</a>.
+     * </p>
+     * </note>
      * 
      * @param projectedUtilizationMetrics
      *        An array of objects that describe the projected utilization metrics of the Auto Scaling group
-     *        recommendation option.
+     *        recommendation option.</p> <note>
+     *        <p>
+     *        The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned.
+     *        Additionally, the <code>Memory</code> metric is returned only for resources that have the unified
+     *        CloudWatch agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
+     *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,21 +266,32 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
      * The performance risk of the Auto Scaling group configuration recommendation.
      * </p>
      * <p>
-     * Performance risk is the likelihood of the recommended instance type not meeting the performance requirement of
-     * your workload.
+     * Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your
+     * workload. Compute Optimizer calculates an individual performance risk score for each specification of the
+     * recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network
+     * throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum
+     * performance risk score across the analyzed resource specifications.
      * </p>
      * <p>
-     * The lowest performance risk is categorized as <code>0</code>, and the highest as <code>5</code>.
+     * The value ranges from 0 to 5, with 0 meaning that the recommended resource is predicted to always provide enough
+     * hardware capability. The higher the performance risk is, the more likely you should validate whether the
+     * recommended resource meets the performance requirements of your workload before migrating your resource.
      * </p>
      * 
      * @param performanceRisk
      *        The performance risk of the Auto Scaling group configuration recommendation.</p>
      *        <p>
-     *        Performance risk is the likelihood of the recommended instance type not meeting the performance
-     *        requirement of your workload.
+     *        Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs
+     *        of your workload. Compute Optimizer calculates an individual performance risk score for each specification
+     *        of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS,
+     *        network throughput, and network PPS. The performance risk of the recommended instance is calculated as the
+     *        maximum performance risk score across the analyzed resource specifications.
      *        </p>
      *        <p>
-     *        The lowest performance risk is categorized as <code>0</code>, and the highest as <code>5</code>.
+     *        The value ranges from 0 to 5, with 0 meaning that the recommended resource is predicted to always provide
+     *        enough hardware capability. The higher the performance risk is, the more likely you should validate
+     *        whether the recommended resource meets the performance requirements of your workload before migrating your
+     *        resource.
      */
 
     public void setPerformanceRisk(Double performanceRisk) {
@@ -214,20 +303,31 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
      * The performance risk of the Auto Scaling group configuration recommendation.
      * </p>
      * <p>
-     * Performance risk is the likelihood of the recommended instance type not meeting the performance requirement of
-     * your workload.
+     * Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your
+     * workload. Compute Optimizer calculates an individual performance risk score for each specification of the
+     * recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network
+     * throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum
+     * performance risk score across the analyzed resource specifications.
      * </p>
      * <p>
-     * The lowest performance risk is categorized as <code>0</code>, and the highest as <code>5</code>.
+     * The value ranges from 0 to 5, with 0 meaning that the recommended resource is predicted to always provide enough
+     * hardware capability. The higher the performance risk is, the more likely you should validate whether the
+     * recommended resource meets the performance requirements of your workload before migrating your resource.
      * </p>
      * 
      * @return The performance risk of the Auto Scaling group configuration recommendation.</p>
      *         <p>
-     *         Performance risk is the likelihood of the recommended instance type not meeting the performance
-     *         requirement of your workload.
+     *         Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs
+     *         of your workload. Compute Optimizer calculates an individual performance risk score for each
+     *         specification of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk
+     *         throughput, disk IOPS, network throughput, and network PPS. The performance risk of the recommended
+     *         instance is calculated as the maximum performance risk score across the analyzed resource specifications.
      *         </p>
      *         <p>
-     *         The lowest performance risk is categorized as <code>0</code>, and the highest as <code>5</code>.
+     *         The value ranges from 0 to 5, with 0 meaning that the recommended resource is predicted to always provide
+     *         enough hardware capability. The higher the performance risk is, the more likely you should validate
+     *         whether the recommended resource meets the performance requirements of your workload before migrating
+     *         your resource.
      */
 
     public Double getPerformanceRisk() {
@@ -239,21 +339,32 @@ public class AutoScalingGroupRecommendationOption implements Serializable, Clone
      * The performance risk of the Auto Scaling group configuration recommendation.
      * </p>
      * <p>
-     * Performance risk is the likelihood of the recommended instance type not meeting the performance requirement of
-     * your workload.
+     * Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs of your
+     * workload. Compute Optimizer calculates an individual performance risk score for each specification of the
+     * recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS, network
+     * throughput, and network PPS. The performance risk of the recommended instance is calculated as the maximum
+     * performance risk score across the analyzed resource specifications.
      * </p>
      * <p>
-     * The lowest performance risk is categorized as <code>0</code>, and the highest as <code>5</code>.
+     * The value ranges from 0 to 5, with 0 meaning that the recommended resource is predicted to always provide enough
+     * hardware capability. The higher the performance risk is, the more likely you should validate whether the
+     * recommended resource meets the performance requirements of your workload before migrating your resource.
      * </p>
      * 
      * @param performanceRisk
      *        The performance risk of the Auto Scaling group configuration recommendation.</p>
      *        <p>
-     *        Performance risk is the likelihood of the recommended instance type not meeting the performance
-     *        requirement of your workload.
+     *        Performance risk indicates the likelihood of the recommended instance type not meeting the resource needs
+     *        of your workload. Compute Optimizer calculates an individual performance risk score for each specification
+     *        of the recommended instance, including CPU, memory, EBS throughput, EBS IOPS, disk throughput, disk IOPS,
+     *        network throughput, and network PPS. The performance risk of the recommended instance is calculated as the
+     *        maximum performance risk score across the analyzed resource specifications.
      *        </p>
      *        <p>
-     *        The lowest performance risk is categorized as <code>0</code>, and the highest as <code>5</code>.
+     *        The value ranges from 0 to 5, with 0 meaning that the recommended resource is predicted to always provide
+     *        enough hardware capability. The higher the performance risk is, the more likely you should validate
+     *        whether the recommended resource meets the performance requirements of your workload before migrating your
+     *        resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

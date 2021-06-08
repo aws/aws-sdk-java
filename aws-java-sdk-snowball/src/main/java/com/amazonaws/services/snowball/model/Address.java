@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are
- * validated at the time of creation. The address you provide must be located within the serviceable area of your
- * region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or
- * unsupported, then an exception is thrown.
+ * The address that you want the Snow device(s) associated with a specific job to be shipped to. Addresses are validated
+ * at the time of creation. The address you provide must be located within the serviceable area of your region. Although
+ * no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an
+ * exception is thrown.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Address" target="_top">AWS API
@@ -39,43 +39,43 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
     private String addressId;
     /**
      * <p>
-     * The name of a person to receive a Snowball at an address.
+     * The name of a person to receive a Snow device at an address.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The name of the company to receive a Snowball at an address.
+     * The name of the company to receive a Snow device at an address.
      * </p>
      */
     private String company;
     /**
      * <p>
-     * The first line in a street address that a Snowball is to be delivered to.
+     * The first line in a street address that a Snow device is to be delivered to.
      * </p>
      */
     private String street1;
     /**
      * <p>
-     * The second line in a street address that a Snowball is to be delivered to.
+     * The second line in a street address that a Snow device is to be delivered to.
      * </p>
      */
     private String street2;
     /**
      * <p>
-     * The third line in a street address that a Snowball is to be delivered to.
+     * The third line in a street address that a Snow device is to be delivered to.
      * </p>
      */
     private String street3;
     /**
      * <p>
-     * The city in an address that a Snowball is to be delivered to.
+     * The city in an address that a Snow device is to be delivered to.
      * </p>
      */
     private String city;
     /**
      * <p>
-     * The state or province in an address that a Snowball is to be delivered to.
+     * The state or province in an address that a Snow device is to be delivered to.
      * </p>
      */
     private String stateOrProvince;
@@ -93,19 +93,19 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
     private String landmark;
     /**
      * <p>
-     * The country in an address that a Snowball is to be delivered to.
+     * The country in an address that a Snow device is to be delivered to.
      * </p>
      */
     private String country;
     /**
      * <p>
-     * The postal code in an address that a Snowball is to be delivered to.
+     * The postal code in an address that a Snow device is to be delivered to.
      * </p>
      */
     private String postalCode;
     /**
      * <p>
-     * The phone number associated with an address that a Snowball is to be delivered to.
+     * The phone number associated with an address that a Snow device is to be delivered to.
      * </p>
      */
     private String phoneNumber;
@@ -159,11 +159,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a person to receive a Snowball at an address.
+     * The name of a person to receive a Snow device at an address.
      * </p>
      * 
      * @param name
-     *        The name of a person to receive a Snowball at an address.
+     *        The name of a person to receive a Snow device at an address.
      */
 
     public void setName(String name) {
@@ -172,10 +172,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a person to receive a Snowball at an address.
+     * The name of a person to receive a Snow device at an address.
      * </p>
      * 
-     * @return The name of a person to receive a Snowball at an address.
+     * @return The name of a person to receive a Snow device at an address.
      */
 
     public String getName() {
@@ -184,11 +184,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a person to receive a Snowball at an address.
+     * The name of a person to receive a Snow device at an address.
      * </p>
      * 
      * @param name
-     *        The name of a person to receive a Snowball at an address.
+     *        The name of a person to receive a Snow device at an address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,11 +199,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the company to receive a Snowball at an address.
+     * The name of the company to receive a Snow device at an address.
      * </p>
      * 
      * @param company
-     *        The name of the company to receive a Snowball at an address.
+     *        The name of the company to receive a Snow device at an address.
      */
 
     public void setCompany(String company) {
@@ -212,10 +212,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the company to receive a Snowball at an address.
+     * The name of the company to receive a Snow device at an address.
      * </p>
      * 
-     * @return The name of the company to receive a Snowball at an address.
+     * @return The name of the company to receive a Snow device at an address.
      */
 
     public String getCompany() {
@@ -224,11 +224,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the company to receive a Snowball at an address.
+     * The name of the company to receive a Snow device at an address.
      * </p>
      * 
      * @param company
-     *        The name of the company to receive a Snowball at an address.
+     *        The name of the company to receive a Snow device at an address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,11 +239,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The first line in a street address that a Snowball is to be delivered to.
+     * The first line in a street address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param street1
-     *        The first line in a street address that a Snowball is to be delivered to.
+     *        The first line in a street address that a Snow device is to be delivered to.
      */
 
     public void setStreet1(String street1) {
@@ -252,10 +252,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The first line in a street address that a Snowball is to be delivered to.
+     * The first line in a street address that a Snow device is to be delivered to.
      * </p>
      * 
-     * @return The first line in a street address that a Snowball is to be delivered to.
+     * @return The first line in a street address that a Snow device is to be delivered to.
      */
 
     public String getStreet1() {
@@ -264,11 +264,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The first line in a street address that a Snowball is to be delivered to.
+     * The first line in a street address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param street1
-     *        The first line in a street address that a Snowball is to be delivered to.
+     *        The first line in a street address that a Snow device is to be delivered to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +279,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The second line in a street address that a Snowball is to be delivered to.
+     * The second line in a street address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param street2
-     *        The second line in a street address that a Snowball is to be delivered to.
+     *        The second line in a street address that a Snow device is to be delivered to.
      */
 
     public void setStreet2(String street2) {
@@ -292,10 +292,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The second line in a street address that a Snowball is to be delivered to.
+     * The second line in a street address that a Snow device is to be delivered to.
      * </p>
      * 
-     * @return The second line in a street address that a Snowball is to be delivered to.
+     * @return The second line in a street address that a Snow device is to be delivered to.
      */
 
     public String getStreet2() {
@@ -304,11 +304,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The second line in a street address that a Snowball is to be delivered to.
+     * The second line in a street address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param street2
-     *        The second line in a street address that a Snowball is to be delivered to.
+     *        The second line in a street address that a Snow device is to be delivered to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,11 +319,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The third line in a street address that a Snowball is to be delivered to.
+     * The third line in a street address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param street3
-     *        The third line in a street address that a Snowball is to be delivered to.
+     *        The third line in a street address that a Snow device is to be delivered to.
      */
 
     public void setStreet3(String street3) {
@@ -332,10 +332,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The third line in a street address that a Snowball is to be delivered to.
+     * The third line in a street address that a Snow device is to be delivered to.
      * </p>
      * 
-     * @return The third line in a street address that a Snowball is to be delivered to.
+     * @return The third line in a street address that a Snow device is to be delivered to.
      */
 
     public String getStreet3() {
@@ -344,11 +344,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The third line in a street address that a Snowball is to be delivered to.
+     * The third line in a street address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param street3
-     *        The third line in a street address that a Snowball is to be delivered to.
+     *        The third line in a street address that a Snow device is to be delivered to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,11 +359,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The city in an address that a Snowball is to be delivered to.
+     * The city in an address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param city
-     *        The city in an address that a Snowball is to be delivered to.
+     *        The city in an address that a Snow device is to be delivered to.
      */
 
     public void setCity(String city) {
@@ -372,10 +372,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The city in an address that a Snowball is to be delivered to.
+     * The city in an address that a Snow device is to be delivered to.
      * </p>
      * 
-     * @return The city in an address that a Snowball is to be delivered to.
+     * @return The city in an address that a Snow device is to be delivered to.
      */
 
     public String getCity() {
@@ -384,11 +384,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The city in an address that a Snowball is to be delivered to.
+     * The city in an address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param city
-     *        The city in an address that a Snowball is to be delivered to.
+     *        The city in an address that a Snow device is to be delivered to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,11 +399,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state or province in an address that a Snowball is to be delivered to.
+     * The state or province in an address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param stateOrProvince
-     *        The state or province in an address that a Snowball is to be delivered to.
+     *        The state or province in an address that a Snow device is to be delivered to.
      */
 
     public void setStateOrProvince(String stateOrProvince) {
@@ -412,10 +412,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state or province in an address that a Snowball is to be delivered to.
+     * The state or province in an address that a Snow device is to be delivered to.
      * </p>
      * 
-     * @return The state or province in an address that a Snowball is to be delivered to.
+     * @return The state or province in an address that a Snow device is to be delivered to.
      */
 
     public String getStateOrProvince() {
@@ -424,11 +424,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state or province in an address that a Snowball is to be delivered to.
+     * The state or province in an address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param stateOrProvince
-     *        The state or province in an address that a Snowball is to be delivered to.
+     *        The state or province in an address that a Snow device is to be delivered to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -519,11 +519,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The country in an address that a Snowball is to be delivered to.
+     * The country in an address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param country
-     *        The country in an address that a Snowball is to be delivered to.
+     *        The country in an address that a Snow device is to be delivered to.
      */
 
     public void setCountry(String country) {
@@ -532,10 +532,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The country in an address that a Snowball is to be delivered to.
+     * The country in an address that a Snow device is to be delivered to.
      * </p>
      * 
-     * @return The country in an address that a Snowball is to be delivered to.
+     * @return The country in an address that a Snow device is to be delivered to.
      */
 
     public String getCountry() {
@@ -544,11 +544,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The country in an address that a Snowball is to be delivered to.
+     * The country in an address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param country
-     *        The country in an address that a Snowball is to be delivered to.
+     *        The country in an address that a Snow device is to be delivered to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -559,11 +559,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The postal code in an address that a Snowball is to be delivered to.
+     * The postal code in an address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param postalCode
-     *        The postal code in an address that a Snowball is to be delivered to.
+     *        The postal code in an address that a Snow device is to be delivered to.
      */
 
     public void setPostalCode(String postalCode) {
@@ -572,10 +572,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The postal code in an address that a Snowball is to be delivered to.
+     * The postal code in an address that a Snow device is to be delivered to.
      * </p>
      * 
-     * @return The postal code in an address that a Snowball is to be delivered to.
+     * @return The postal code in an address that a Snow device is to be delivered to.
      */
 
     public String getPostalCode() {
@@ -584,11 +584,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The postal code in an address that a Snowball is to be delivered to.
+     * The postal code in an address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param postalCode
-     *        The postal code in an address that a Snowball is to be delivered to.
+     *        The postal code in an address that a Snow device is to be delivered to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -599,11 +599,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The phone number associated with an address that a Snowball is to be delivered to.
+     * The phone number associated with an address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param phoneNumber
-     *        The phone number associated with an address that a Snowball is to be delivered to.
+     *        The phone number associated with an address that a Snow device is to be delivered to.
      */
 
     public void setPhoneNumber(String phoneNumber) {
@@ -612,10 +612,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The phone number associated with an address that a Snowball is to be delivered to.
+     * The phone number associated with an address that a Snow device is to be delivered to.
      * </p>
      * 
-     * @return The phone number associated with an address that a Snowball is to be delivered to.
+     * @return The phone number associated with an address that a Snow device is to be delivered to.
      */
 
     public String getPhoneNumber() {
@@ -624,11 +624,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The phone number associated with an address that a Snowball is to be delivered to.
+     * The phone number associated with an address that a Snow device is to be delivered to.
      * </p>
      * 
      * @param phoneNumber
-     *        The phone number associated with an address that a Snowball is to be delivered to.
+     *        The phone number associated with an address that a Snow device is to be delivered to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

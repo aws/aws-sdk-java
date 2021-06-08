@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,8 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
     private java.util.List<String> resourceArns;
     /**
      * <p>
-     * The principals.
+     * The principals to associate with the resource share. The possible values are IDs of AWS accounts, and the ARNs of
+     * organizational units (OU) or organizations from AWS Organizations.
      * </p>
      */
     private java.util.List<String> principals;
@@ -162,10 +163,12 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principals.
+     * The principals to associate with the resource share. The possible values are IDs of AWS accounts, and the ARNs of
+     * organizational units (OU) or organizations from AWS Organizations.
      * </p>
      * 
-     * @return The principals.
+     * @return The principals to associate with the resource share. The possible values are IDs of AWS accounts, and the
+     *         ARNs of organizational units (OU) or organizations from AWS Organizations.
      */
 
     public java.util.List<String> getPrincipals() {
@@ -174,11 +177,13 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principals.
+     * The principals to associate with the resource share. The possible values are IDs of AWS accounts, and the ARNs of
+     * organizational units (OU) or organizations from AWS Organizations.
      * </p>
      * 
      * @param principals
-     *        The principals.
+     *        The principals to associate with the resource share. The possible values are IDs of AWS accounts, and the
+     *        ARNs of organizational units (OU) or organizations from AWS Organizations.
      */
 
     public void setPrincipals(java.util.Collection<String> principals) {
@@ -192,7 +197,8 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principals.
+     * The principals to associate with the resource share. The possible values are IDs of AWS accounts, and the ARNs of
+     * organizational units (OU) or organizations from AWS Organizations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -201,7 +207,8 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param principals
-     *        The principals.
+     *        The principals to associate with the resource share. The possible values are IDs of AWS accounts, and the
+     *        ARNs of organizational units (OU) or organizations from AWS Organizations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,11 +224,13 @@ public class AssociateResourceShareRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The principals.
+     * The principals to associate with the resource share. The possible values are IDs of AWS accounts, and the ARNs of
+     * organizational units (OU) or organizations from AWS Organizations.
      * </p>
      * 
      * @param principals
-     *        The principals.
+     *        The principals to associate with the resource share. The possible values are IDs of AWS accounts, and the
+     *        ARNs of organizational units (OU) or organizations from AWS Organizations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

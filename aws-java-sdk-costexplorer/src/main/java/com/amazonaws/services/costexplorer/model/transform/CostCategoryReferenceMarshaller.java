@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.costexplorer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,12 @@ public class CostCategoryReferenceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EffectiveEnd").build();
     private static final MarshallingInfo<Integer> NUMBEROFRULES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfRules").build();
+    private static final MarshallingInfo<List> PROCESSINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProcessingStatus").build();
+    private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Values").build();
+    private static final MarshallingInfo<String> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultValue").build();
 
     private static final CostCategoryReferenceMarshaller instance = new CostCategoryReferenceMarshaller();
 
@@ -59,6 +66,9 @@ public class CostCategoryReferenceMarshaller {
             protocolMarshaller.marshall(costCategoryReference.getEffectiveStart(), EFFECTIVESTART_BINDING);
             protocolMarshaller.marshall(costCategoryReference.getEffectiveEnd(), EFFECTIVEEND_BINDING);
             protocolMarshaller.marshall(costCategoryReference.getNumberOfRules(), NUMBEROFRULES_BINDING);
+            protocolMarshaller.marshall(costCategoryReference.getProcessingStatus(), PROCESSINGSTATUS_BINDING);
+            protocolMarshaller.marshall(costCategoryReference.getValues(), VALUES_BINDING);
+            protocolMarshaller.marshall(costCategoryReference.getDefaultValue(), DEFAULTVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.rds.model.transform;
+
+import java.util.ArrayList;
 
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
@@ -65,6 +67,26 @@ public class UpgradeTargetStaxUnmarshaller implements Unmarshaller<UpgradeTarget
 
                 if (context.testExpression("IsMajorVersionUpgrade", targetDepth)) {
                     upgradeTarget.setIsMajorVersionUpgrade(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportedEngineModes", targetDepth)) {
+                    upgradeTarget.withSupportedEngineModes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedEngineModes/member", targetDepth)) {
+                    upgradeTarget.withSupportedEngineModes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsParallelQuery", targetDepth)) {
+                    upgradeTarget.setSupportsParallelQuery(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsGlobalDatabases", targetDepth)) {
+                    upgradeTarget.setSupportsGlobalDatabases(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

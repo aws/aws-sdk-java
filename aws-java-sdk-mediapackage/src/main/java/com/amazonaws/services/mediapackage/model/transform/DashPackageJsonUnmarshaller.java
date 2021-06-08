@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,9 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("adTriggers", targetDepth)) {
                     context.nextToken();
-                    dashPackage.setAdTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dashPackage.setAdTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("adsOnDeliveryRestrictions", targetDepth)) {
                     context.nextToken();
@@ -78,7 +80,9 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
                 }
                 if (context.testExpression("periodTriggers", targetDepth)) {
                     context.nextToken();
-                    dashPackage.setPeriodTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dashPackage.setPeriodTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("profile", targetDepth)) {
                     context.nextToken();
@@ -99,6 +103,14 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
                 if (context.testExpression("suggestedPresentationDelaySeconds", targetDepth)) {
                     context.nextToken();
                     dashPackage.setSuggestedPresentationDelaySeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("utcTiming", targetDepth)) {
+                    context.nextToken();
+                    dashPackage.setUtcTiming(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("utcTimingUri", targetDepth)) {
+                    context.nextToken();
+                    dashPackage.setUtcTimingUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

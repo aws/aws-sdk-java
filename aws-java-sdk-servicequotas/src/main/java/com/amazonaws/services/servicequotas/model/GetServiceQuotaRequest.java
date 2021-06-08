@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * Identifies the service quota you want to select.
+     * The quota identifier.
      * </p>
      */
     private String quotaCode;
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -53,10 +53,10 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
-     * @return Specifies the service that you want to use.
+     * @return The service identifier.
      */
 
     public String getServiceCode() {
@@ -65,11 +65,11 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies the service quota you want to select.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        Identifies the service quota you want to select.
+     *        The quota identifier.
      */
 
     public void setQuotaCode(String quotaCode) {
@@ -93,10 +93,10 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies the service quota you want to select.
+     * The quota identifier.
      * </p>
      * 
-     * @return Identifies the service quota you want to select.
+     * @return The quota identifier.
      */
 
     public String getQuotaCode() {
@@ -105,11 +105,11 @@ public class GetServiceQuotaRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies the service quota you want to select.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        Identifies the service quota you want to select.
+     *        The quota identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

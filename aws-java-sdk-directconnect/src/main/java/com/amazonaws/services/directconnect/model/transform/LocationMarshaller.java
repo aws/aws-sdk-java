@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class LocationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availablePortSpeeds").build();
     private static final MarshallingInfo<List> AVAILABLEPROVIDERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availableProviders").build();
+    private static final MarshallingInfo<List> AVAILABLEMACSECPORTSPEEDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availableMacSecPortSpeeds").build();
 
     private static final LocationMarshaller instance = new LocationMarshaller();
 
@@ -60,6 +62,7 @@ public class LocationMarshaller {
             protocolMarshaller.marshall(location.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(location.getAvailablePortSpeeds(), AVAILABLEPORTSPEEDS_BINDING);
             protocolMarshaller.marshall(location.getAvailableProviders(), AVAILABLEPROVIDERS_BINDING);
+            protocolMarshaller.marshall(location.getAvailableMacSecPortSpeeds(), AVAILABLEMACSECPORTSPEEDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

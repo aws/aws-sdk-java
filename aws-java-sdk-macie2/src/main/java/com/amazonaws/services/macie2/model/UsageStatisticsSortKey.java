@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,14 +16,16 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The field to use to sort the results of a query for account quotas and usage data.
+ * The field to use to sort the results of a query for Amazon Macie account quotas and usage data. Valid values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum UsageStatisticsSortKey {
 
     AccountId("accountId"),
-    Total("total");
+    Total("total"),
+    ServiceLimitValue("serviceLimitValue"),
+    FreeTrialStartDate("freeTrialStartDate");
 
     private String value;
 

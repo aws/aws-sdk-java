@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,17 +51,28 @@ public class DataLakeSettingsJsonUnmarshaller implements Unmarshaller<DataLakeSe
                 if (context.testExpression("DataLakeAdmins", targetDepth)) {
                     context.nextToken();
                     dataLakeSettings.setDataLakeAdmins(new ListUnmarshaller<DataLakePrincipal>(DataLakePrincipalJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreateDatabaseDefaultPermissions", targetDepth)) {
                     context.nextToken();
                     dataLakeSettings.setCreateDatabaseDefaultPermissions(new ListUnmarshaller<PrincipalPermissions>(PrincipalPermissionsJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreateTableDefaultPermissions", targetDepth)) {
                     context.nextToken();
                     dataLakeSettings.setCreateTableDefaultPermissions(new ListUnmarshaller<PrincipalPermissions>(PrincipalPermissionsJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("TrustedResourceOwners", targetDepth)) {
+                    context.nextToken();
+                    dataLakeSettings.setTrustedResourceOwners(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

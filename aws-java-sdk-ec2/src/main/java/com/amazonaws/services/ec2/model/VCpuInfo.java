@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,13 +45,13 @@ public class VCpuInfo implements Serializable, Cloneable {
     private Integer defaultThreadsPerCore;
     /**
      * <p>
-     * List of the valid number of cores that can be configured for the instance type.
+     * The valid number of cores that can be configured for the instance type.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Integer> validCores;
     /**
      * <p>
-     * List of the valid number of threads per core that can be configured for the instance type.
+     * The valid number of threads per core that can be configured for the instance type.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Integer> validThreadsPerCore;
@@ -178,10 +178,10 @@ public class VCpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of the valid number of cores that can be configured for the instance type.
+     * The valid number of cores that can be configured for the instance type.
      * </p>
      * 
-     * @return List of the valid number of cores that can be configured for the instance type.
+     * @return The valid number of cores that can be configured for the instance type.
      */
 
     public java.util.List<Integer> getValidCores() {
@@ -193,11 +193,11 @@ public class VCpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of the valid number of cores that can be configured for the instance type.
+     * The valid number of cores that can be configured for the instance type.
      * </p>
      * 
      * @param validCores
-     *        List of the valid number of cores that can be configured for the instance type.
+     *        The valid number of cores that can be configured for the instance type.
      */
 
     public void setValidCores(java.util.Collection<Integer> validCores) {
@@ -211,7 +211,7 @@ public class VCpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of the valid number of cores that can be configured for the instance type.
+     * The valid number of cores that can be configured for the instance type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -220,7 +220,7 @@ public class VCpuInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param validCores
-     *        List of the valid number of cores that can be configured for the instance type.
+     *        The valid number of cores that can be configured for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,11 +236,11 @@ public class VCpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of the valid number of cores that can be configured for the instance type.
+     * The valid number of cores that can be configured for the instance type.
      * </p>
      * 
      * @param validCores
-     *        List of the valid number of cores that can be configured for the instance type.
+     *        The valid number of cores that can be configured for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,10 +251,10 @@ public class VCpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of the valid number of threads per core that can be configured for the instance type.
+     * The valid number of threads per core that can be configured for the instance type.
      * </p>
      * 
-     * @return List of the valid number of threads per core that can be configured for the instance type.
+     * @return The valid number of threads per core that can be configured for the instance type.
      */
 
     public java.util.List<Integer> getValidThreadsPerCore() {
@@ -266,11 +266,11 @@ public class VCpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of the valid number of threads per core that can be configured for the instance type.
+     * The valid number of threads per core that can be configured for the instance type.
      * </p>
      * 
      * @param validThreadsPerCore
-     *        List of the valid number of threads per core that can be configured for the instance type.
+     *        The valid number of threads per core that can be configured for the instance type.
      */
 
     public void setValidThreadsPerCore(java.util.Collection<Integer> validThreadsPerCore) {
@@ -284,7 +284,7 @@ public class VCpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of the valid number of threads per core that can be configured for the instance type.
+     * The valid number of threads per core that can be configured for the instance type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -293,7 +293,7 @@ public class VCpuInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param validThreadsPerCore
-     *        List of the valid number of threads per core that can be configured for the instance type.
+     *        The valid number of threads per core that can be configured for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,11 +309,11 @@ public class VCpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * List of the valid number of threads per core that can be configured for the instance type.
+     * The valid number of threads per core that can be configured for the instance type.
      * </p>
      * 
      * @param validThreadsPerCore
-     *        List of the valid number of threads per core that can be configured for the instance type.
+     *        The valid number of threads per core that can be configured for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

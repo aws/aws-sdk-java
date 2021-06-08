@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,15 +15,20 @@
 package com.amazonaws.services.s3.internal.crypto;
 
 class AesCtr extends ContentCryptoScheme {
-    @Override String getKeyGeneratorAlgorithm() { return AES_GCM.getKeyGeneratorAlgorithm(); }
-    @Override String getCipherAlgorithm() { return "AES/CTR/NoPadding"; }
-    @Override int getKeyLengthInBits() { return AES_GCM.getKeyLengthInBits(); }
-    @Override int getBlockSizeInBytes() { return AES_GCM.getBlockSizeInBytes(); }
-    @Override int getIVLengthInBytes() { return 16; }
+    @Override
+    public String getKeyGeneratorAlgorithm() { return AES_GCM.getKeyGeneratorAlgorithm(); }
+    @Override
+    public String getCipherAlgorithm() { return "AES/CTR/NoPadding"; }
+    @Override
+    public int getKeyLengthInBits() { return AES_GCM.getKeyLengthInBits(); }
+    @Override
+    public int getBlockSizeInBytes() { return AES_GCM.getBlockSizeInBytes(); }
+    @Override
+    public int getIVLengthInBytes() { return 16; }
     @Override long getMaxPlaintextSize() {  return MAX_CTR_BYTES;  }
 
     @Override
-    byte[] adjustIV(byte[] iv, long byteOffset) {
+    public byte[] adjustIV(byte[] iv, long byteOffset) {
         // currently only support iv of length 12 for AES/GCM.
         // Anything else is quite a bit complicated.
         if (iv.length != 12)

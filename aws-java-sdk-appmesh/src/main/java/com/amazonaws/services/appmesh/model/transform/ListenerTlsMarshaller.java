@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ListenerTlsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificate").build();
     private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("mode").build();
+    private static final MarshallingInfo<StructuredPojo> VALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("validation").build();
 
     private static final ListenerTlsMarshaller instance = new ListenerTlsMarshaller();
 
@@ -50,6 +52,7 @@ public class ListenerTlsMarshaller {
         try {
             protocolMarshaller.marshall(listenerTls.getCertificate(), CERTIFICATE_BINDING);
             protocolMarshaller.marshall(listenerTls.getMode(), MODE_BINDING);
+            protocolMarshaller.marshall(listenerTls.getValidation(), VALIDATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

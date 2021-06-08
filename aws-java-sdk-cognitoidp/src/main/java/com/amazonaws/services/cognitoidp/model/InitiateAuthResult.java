@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,8 +66,21 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -75,9 +88,9 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
     private String challengeName;
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
-     * determines that the caller needs to go through another challenge, they return a session with other challenge
-     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
+     * go through another challenge, they return a session with other challenge parameters. This session should be
+     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      */
     private String session;
@@ -141,8 +154,21 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -186,9 +212,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after
-     *        successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other
-     *        required attributes.
+     *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
+     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
+     *        attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
+     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        value.
+     *        </p>
+     *        <p>
+     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
+     *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
+     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
      * @see ChallengeNameType
@@ -238,8 +278,21 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -282,9 +335,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after
-     *         successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other
-     *         required attributes.
+     *         <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
+     *         first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
+     *         attributes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The
+     *         MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *         value.
+     *         </p>
+     *         <p>
+     *         To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *         <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
+     *         an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
+     *         sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *         account and then call <code>InitiateAuth</code> again to restart sign-in.
      *         </p>
      *         </li>
      * @see ChallengeNameType
@@ -334,8 +401,21 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -379,9 +459,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after
-     *        successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other
-     *        required attributes.
+     *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
+     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
+     *        attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
+     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        value.
+     *        </p>
+     *        <p>
+     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
+     *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
+     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -433,8 +527,21 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -478,9 +585,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after
-     *        successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other
-     *        required attributes.
+     *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
+     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
+     *        attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
+     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        value.
+     *        </p>
+     *        <p>
+     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
+     *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
+     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
      * @see ChallengeNameType
@@ -530,8 +651,21 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -575,9 +709,23 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after
-     *        successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other
-     *        required attributes.
+     *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
+     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
+     *        attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
+     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        value.
+     *        </p>
+     *        <p>
+     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
+     *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
+     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -591,16 +739,15 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
-     * determines that the caller needs to go through another challenge, they return a session with other challenge
-     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
+     * go through another challenge, they return a session with other challenge parameters. This session should be
+     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If the or API
-     *        call determines that the caller needs to go through another challenge, they return a session with other
-     *        challenge parameters. This session should be passed as it is to the next
-     *        <code>RespondToAuthChallenge</code> API call.
+     *        The session which should be passed both ways in challenge-response calls to the service. If the caller
+     *        needs to go through another challenge, they return a session with other challenge parameters. This session
+     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      */
 
     public void setSession(String session) {
@@ -609,15 +756,14 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
-     * determines that the caller needs to go through another challenge, they return a session with other challenge
-     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
+     * go through another challenge, they return a session with other challenge parameters. This session should be
+     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
-     * @return The session which should be passed both ways in challenge-response calls to the service. If the or API
-     *         call determines that the caller needs to go through another challenge, they return a session with other
-     *         challenge parameters. This session should be passed as it is to the next
-     *         <code>RespondToAuthChallenge</code> API call.
+     * @return The session which should be passed both ways in challenge-response calls to the service. If the caller
+     *         needs to go through another challenge, they return a session with other challenge parameters. This
+     *         session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      */
 
     public String getSession() {
@@ -626,16 +772,15 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
-     * determines that the caller needs to go through another challenge, they return a session with other challenge
-     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
+     * go through another challenge, they return a session with other challenge parameters. This session should be
+     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If the or API
-     *        call determines that the caller needs to go through another challenge, they return a session with other
-     *        challenge parameters. This session should be passed as it is to the next
-     *        <code>RespondToAuthChallenge</code> API call.
+     *        The session which should be passed both ways in challenge-response calls to the service. If the caller
+     *        needs to go through another challenge, they return a session with other challenge parameters. This session
+     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,11 +55,14 @@ public class CompareFacesResultJsonUnmarshaller implements Unmarshaller<CompareF
                 if (context.testExpression("FaceMatches", targetDepth)) {
                     context.nextToken();
                     compareFacesResult.setFaceMatches(new ListUnmarshaller<CompareFacesMatch>(CompareFacesMatchJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnmatchedFaces", targetDepth)) {
                     context.nextToken();
-                    compareFacesResult.setUnmatchedFaces(new ListUnmarshaller<ComparedFace>(ComparedFaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    compareFacesResult.setUnmatchedFaces(new ListUnmarshaller<ComparedFace>(ComparedFaceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SourceImageOrientationCorrection", targetDepth)) {
                     context.nextToken();

@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -560,6 +561,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.request.DeleteLexiconRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -615,7 +617,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>\n@param name The name of the lexicon to delete. Must be an existing lexicon in the region.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -628,6 +630,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>\n@param name The name of the lexicon to delete. Must be an existing lexicon in the region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -685,7 +688,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>\n@param name The name of the lexicon to delete. Must be an existing lexicon in the region.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -698,6 +701,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>\n@param name The name of the lexicon to delete. Must be an existing lexicon in the region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -713,6 +717,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
@@ -744,6 +749,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.response.DeleteLexiconResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -752,6 +758,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -786,6 +793,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.request.DescribeVoicesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -854,6 +862,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input text for speech synthesis. </p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input text for speech synthesis.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
@@ -922,6 +931,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>\n@param languageCode The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -990,6 +1000,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>\n@param includeAdditionalLanguageCodes Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1058,6 +1069,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>\n@param nextToken An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1128,6 +1140,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input text for speech synthesis. </p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly when processing input text for speech synthesis.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
@@ -1197,6 +1210,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</p>\n@param includeAdditionalLanguageCodes Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1266,6 +1280,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>\n@param languageCode The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -1335,6 +1350,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>\n@param nextToken An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1350,6 +1366,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1381,6 +1398,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.response.DescribeVoicesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1481,6 +1499,7 @@
               "variableSetterType" : "Voice"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1525,6 +1544,7 @@
           "variableSetterType" : "java.util.Collection<Voice>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of voices with their properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVoices(java.util.Collection)} or {@link #withVoices(java.util.Collection)} if you want to override the existing values.</p>\n@param voices A list of voices with their properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1593,6 +1613,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1663,6 +1684,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1771,6 +1793,7 @@
                 "variableSetterType" : "Voice"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1815,6 +1838,7 @@
             "variableSetterType" : "java.util.Collection<Voice>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of voices with their properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVoices(java.util.Collection)} or {@link #withVoices(java.util.Collection)} if you want to override the existing values.</p>\n@param voices A list of voices with their properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1830,6 +1854,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1870,6 +1895,7 @@
         "value" : "neural"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.enum.Engine",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1878,6 +1904,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1912,6 +1939,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "EngineNotSupportedException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.EngineNotSupportedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1920,6 +1948,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1957,6 +1986,7 @@
         "value" : "Male"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.enum.Gender",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1965,6 +1995,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1999,6 +2030,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.request.GetLexiconRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2054,7 +2086,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -2067,6 +2099,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2124,7 +2157,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -2137,6 +2170,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2152,6 +2186,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
@@ -2183,6 +2218,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.response.GetLexiconResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2244,6 +2280,7 @@
           "variableSetterType" : "Lexicon"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lexicon object that provides name and the string content of the lexicon. </p>\n@param lexicon Lexicon object that provides name and the string content of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2312,6 +2349,7 @@
           "variableSetterType" : "LexiconAttributes"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>\n@param lexiconAttributes Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2382,6 +2420,7 @@
             "variableSetterType" : "Lexicon"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lexicon object that provides name and the string content of the lexicon. </p>\n@param lexicon Lexicon object that provides name and the string content of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2451,6 +2490,7 @@
             "variableSetterType" : "LexiconAttributes"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>\n@param lexiconAttributes Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2466,6 +2506,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2500,6 +2541,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.request.GetSpeechSynthesisTaskRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2568,6 +2610,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Polly generated identifier for a speech synthesis task.</p>\n@param taskId The Amazon Polly generated identifier for a speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2638,6 +2681,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Polly generated identifier for a speech synthesis task.</p>\n@param taskId The Amazon Polly generated identifier for a speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2653,6 +2697,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "TaskId" ],
@@ -2684,6 +2729,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.response.GetSpeechSynthesisTaskResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2745,6 +2791,7 @@
           "variableSetterType" : "SynthesisTask"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>\n@param synthesisTask SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2815,6 +2862,7 @@
             "variableSetterType" : "SynthesisTask"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>\n@param synthesisTask SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2830,6 +2878,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2864,6 +2913,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidLexiconException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.InvalidLexiconException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2872,6 +2922,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2903,6 +2954,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidNextTokenException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.InvalidNextTokenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2911,6 +2963,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2942,6 +2995,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidS3BucketException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.InvalidS3BucketException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2950,6 +3004,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2981,6 +3036,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidS3KeyException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.InvalidS3KeyException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2989,6 +3045,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3020,6 +3077,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidSampleRateException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.InvalidSampleRateException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3028,6 +3086,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3059,6 +3118,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidSnsTopicArnException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.InvalidSnsTopicArnException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3067,6 +3127,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3098,6 +3159,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidSsmlException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.InvalidSsmlException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3106,6 +3168,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3137,6 +3200,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidTaskIdException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.InvalidTaskIdException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3145,6 +3209,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3263,6 +3328,7 @@
         "value" : "tr-TR"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.enum.LanguageCode",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3271,6 +3337,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3305,6 +3372,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LanguageNotSupportedException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.LanguageNotSupportedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3313,6 +3381,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3344,6 +3413,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.model.Lexicon",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3392,7 +3462,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Content",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>\n@param content Lexicon content in string format. The content of a lexicon must be in PLS format.*/",
         "setterMethodName" : "setContent",
         "setterModel" : {
@@ -3405,6 +3475,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>\n@param content Lexicon content in string format. The content of a lexicon must be in PLS format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3460,7 +3531,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -3473,6 +3544,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3530,7 +3602,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Content",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>\n@param content Lexicon content in string format. The content of a lexicon must be in PLS format.*/",
           "setterMethodName" : "setContent",
           "setterModel" : {
@@ -3543,6 +3615,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>\n@param content Lexicon content in string format. The content of a lexicon must be in PLS format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3599,7 +3672,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -3612,6 +3685,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3627,6 +3701,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3661,6 +3736,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.model.LexiconAttributes",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3722,6 +3798,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>\n@param alphabet Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3790,6 +3867,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>\n@param languageCode Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -3858,6 +3936,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Date lexicon was last modified (a timestamp value).</p>\n@param lastModified Date lexicon was last modified (a timestamp value).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3926,6 +4005,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the lexicon.</p>\n@param lexiconArn Amazon Resource Name (ARN) of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3994,6 +4074,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Number of lexemes in the lexicon.</p>\n@param lexemesCount Number of lexemes in the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4062,6 +4143,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Total size of the lexicon, in characters.</p>\n@param size Total size of the lexicon, in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4132,6 +4214,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>\n@param alphabet Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4201,6 +4284,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>\n@param languageCode Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -4270,6 +4354,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Date lexicon was last modified (a timestamp value).</p>\n@param lastModified Date lexicon was last modified (a timestamp value).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4339,6 +4424,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Number of lexemes in the lexicon.</p>\n@param lexemesCount Number of lexemes in the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4408,6 +4494,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the lexicon.</p>\n@param lexiconArn Amazon Resource Name (ARN) of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4477,6 +4564,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Total size of the lexicon, in characters.</p>\n@param size Total size of the lexicon, in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4492,6 +4580,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4526,6 +4615,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.model.LexiconDescription",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4574,7 +4664,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -4587,6 +4677,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4655,6 +4746,7 @@
           "variableSetterType" : "LexiconAttributes"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Provides lexicon metadata.</p>\n@param attributes Provides lexicon metadata.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4725,6 +4817,7 @@
             "variableSetterType" : "LexiconAttributes"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Provides lexicon metadata.</p>\n@param attributes Provides lexicon metadata.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4781,7 +4874,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -4794,6 +4887,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4809,6 +4903,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4843,6 +4938,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LexiconNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.LexiconNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4851,6 +4947,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4882,6 +4979,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LexiconSizeExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.LexiconSizeExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4890,6 +4988,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4921,6 +5020,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.request.ListLexiconsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4989,6 +5089,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.</p>\n@param nextToken An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5059,6 +5160,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.</p>\n@param nextToken An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5074,6 +5176,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5105,6 +5208,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.response.ListLexiconsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5205,6 +5309,7 @@
               "variableSetterType" : "LexiconDescription"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5249,6 +5354,7 @@
           "variableSetterType" : "java.util.Collection<LexiconDescription>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of lexicon names and attributes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexicons(java.util.Collection)} or {@link #withLexicons(java.util.Collection)} if you want to override the existing values.</p>\n@param lexicons A list of lexicon names and attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5317,6 +5423,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5426,6 +5533,7 @@
                 "variableSetterType" : "LexiconDescription"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5470,6 +5578,7 @@
             "variableSetterType" : "java.util.Collection<LexiconDescription>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of lexicon names and attributes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexicons(java.util.Collection)} or {@link #withLexicons(java.util.Collection)} if you want to override the existing values.</p>\n@param lexicons A list of lexicon names and attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5539,6 +5648,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5554,6 +5664,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5588,6 +5699,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.request.ListSpeechSynthesisTasksRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5656,6 +5768,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Maximum number of speech synthesis tasks returned in a List operation.</p>\n@param maxResults Maximum number of speech synthesis tasks returned in a List operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5724,6 +5837,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>\n@param nextToken The pagination token to use in the next request to continue the listing of speech synthesis tasks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5792,6 +5906,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Status of the speech synthesis tasks returned in a List operation</p>\n@param status Status of the speech synthesis tasks returned in a List operation\n@return Returns a reference to this object so that method calls can be chained together.\n@see TaskStatus*/",
@@ -5862,6 +5977,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Maximum number of speech synthesis tasks returned in a List operation.</p>\n@param maxResults Maximum number of speech synthesis tasks returned in a List operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5931,6 +6047,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of speech synthesis tasks. </p>\n@param nextToken The pagination token to use in the next request to continue the listing of speech synthesis tasks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6000,6 +6117,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Status of the speech synthesis tasks returned in a List operation</p>\n@param status Status of the speech synthesis tasks returned in a List operation\n@return Returns a reference to this object so that method calls can be chained together.\n@see TaskStatus*/",
@@ -6015,6 +6133,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6046,6 +6165,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.response.ListSpeechSynthesisTasksResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6107,6 +6227,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>\n@param nextToken An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6214,6 +6335,7 @@
               "variableSetterType" : "SynthesisTask"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6258,6 +6380,7 @@
           "variableSetterType" : "java.util.Collection<SynthesisTask>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSynthesisTasks(java.util.Collection)} or {@link #withSynthesisTasks(java.util.Collection)} if you want to override the existing values.</p>\n@param synthesisTasks List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6328,6 +6451,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>\n@param nextToken An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6436,6 +6560,7 @@
                 "variableSetterType" : "SynthesisTask"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6480,6 +6605,7 @@
             "variableSetterType" : "java.util.Collection<SynthesisTask>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSynthesisTasks(java.util.Collection)} or {@link #withSynthesisTasks(java.util.Collection)} if you want to override the existing values.</p>\n@param synthesisTasks List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6495,6 +6621,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6529,6 +6656,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "MarksNotSupportedForFormatException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.MarksNotSupportedForFormatException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6537,6 +6665,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6568,6 +6697,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "MaxLexemeLengthExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.MaxLexemeLengthExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6576,6 +6706,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6607,6 +6738,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "MaxLexiconsNumberExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.MaxLexiconsNumberExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6615,6 +6747,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6658,6 +6791,7 @@
         "value" : "pcm"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.enum.OutputFormat",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6666,6 +6800,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6700,6 +6835,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.request.PutLexiconRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6755,7 +6891,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>\n@param name Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
@@ -6768,6 +6904,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>\n@param name Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6823,7 +6960,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Content",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>Content of the PLS lexicon as string data.</p>\n@param content Content of the PLS lexicon as string data.*/",
         "setterMethodName" : "setContent",
         "setterModel" : {
@@ -6836,6 +6973,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Content of the PLS lexicon as string data.</p>\n@param content Content of the PLS lexicon as string data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6893,7 +7031,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Content",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>Content of the PLS lexicon as string data.</p>\n@param content Content of the PLS lexicon as string data.*/",
           "setterMethodName" : "setContent",
           "setterModel" : {
@@ -6906,6 +7044,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Content of the PLS lexicon as string data.</p>\n@param content Content of the PLS lexicon as string data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6962,7 +7101,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>\n@param name Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
@@ -6975,6 +7114,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>\n@param name Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6990,6 +7130,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Content" ],
@@ -7021,6 +7162,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.response.PutLexiconResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7029,6 +7171,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7063,6 +7206,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceFailureException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.ServiceFailureException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7071,6 +7215,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7114,6 +7259,7 @@
         "value" : "word"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.enum.SpeechMarkType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7122,6 +7268,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7156,6 +7303,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "SsmlMarksNotSupportedForTextTypeException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.SsmlMarksNotSupportedForTextTypeException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7164,6 +7312,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7195,6 +7344,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.request.StartSpeechSynthesisTaskRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7263,6 +7413,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
@@ -7331,6 +7482,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>\n@param languageCode Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -7425,7 +7577,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
-            "sensitive" : true,
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -7438,6 +7590,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7469,7 +7622,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "LexiconNames",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.*/",
         "setterMethodName" : "setLexiconNames",
         "setterModel" : {
@@ -7482,6 +7635,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexiconNames(java.util.Collection)} or {@link #withLexiconNames(java.util.Collection)} if you want to override the existing values.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7550,6 +7704,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
@@ -7618,6 +7773,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Amazon S3 bucket name to which the output file will be saved.</p>\n@param outputS3BucketName Amazon S3 bucket name to which the output file will be saved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7686,6 +7842,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon S3 key prefix for the output speech file.</p>\n@param outputS3KeyPrefix The Amazon S3 key prefix for the output speech file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7754,6 +7911,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7822,6 +7980,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>\n@param snsTopicArn ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7929,6 +8088,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -7973,6 +8133,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSpeechMarkTypes(java.util.Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -8041,6 +8202,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text. </p>\n@param text The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8109,6 +8271,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TextType*/",
@@ -8177,6 +8340,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Voice ID to use for the synthesis. </p>\n@param voiceId Voice ID to use for the synthesis.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -8247,6 +8411,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
@@ -8316,6 +8481,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>\n@param languageCode Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -8411,7 +8577,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
-              "sensitive" : true,
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -8424,6 +8590,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8455,7 +8622,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "LexiconNames",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.*/",
           "setterMethodName" : "setLexiconNames",
           "setterModel" : {
@@ -8468,6 +8635,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexiconNames(java.util.Collection)} or {@link #withLexiconNames(java.util.Collection)} if you want to override the existing values.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8537,6 +8705,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
@@ -8606,6 +8775,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Amazon S3 bucket name to which the output file will be saved.</p>\n@param outputS3BucketName Amazon S3 bucket name to which the output file will be saved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8675,6 +8845,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon S3 key prefix for the output speech file.</p>\n@param outputS3KeyPrefix The Amazon S3 key prefix for the output speech file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8744,6 +8915,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8813,6 +8985,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>\n@param snsTopicArn ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8921,6 +9094,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -8965,6 +9139,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSpeechMarkTypes(java.util.Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -9034,6 +9209,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text. </p>\n@param text The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9103,6 +9279,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TextType*/",
@@ -9172,6 +9349,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Voice ID to use for the synthesis. </p>\n@param voiceId Voice ID to use for the synthesis.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -9187,6 +9365,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "OutputFormat", "OutputS3BucketName", "Text", "VoiceId" ],
@@ -9218,6 +9397,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.response.StartSpeechSynthesisTaskResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9279,6 +9459,7 @@
           "variableSetterType" : "SynthesisTask"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>\n@param synthesisTask SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9349,6 +9530,7 @@
             "variableSetterType" : "SynthesisTask"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>\n@param synthesisTask SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9364,6 +9546,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9398,6 +9581,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.model.SynthesisTask",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9459,6 +9643,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
@@ -9527,6 +9712,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Polly generated identifier for a speech synthesis task.</p>\n@param taskId The Amazon Polly generated identifier for a speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9595,6 +9781,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Current status of the individual speech synthesis task.</p>\n@param taskStatus Current status of the individual speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TaskStatus*/",
@@ -9663,6 +9850,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>\n@param taskStatusReason Reason for the current status of a specific speech synthesis task, including errors if the task has failed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9731,6 +9919,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Pathway for the output speech file.</p>\n@param outputUri Pathway for the output speech file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9799,6 +9988,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Timestamp for the time the synthesis task was started.</p>\n@param creationTime Timestamp for the time the synthesis task was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9867,6 +10057,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Number of billable characters synthesized.</p>\n@param requestCharacters Number of billable characters synthesized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9935,6 +10126,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>\n@param snsTopicArn ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10029,7 +10221,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
-            "sensitive" : true,
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10042,6 +10234,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10073,7 +10266,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "LexiconNames",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.*/",
         "setterMethodName" : "setLexiconNames",
         "setterModel" : {
@@ -10086,6 +10279,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexiconNames(java.util.Collection)} or {@link #withLexiconNames(java.util.Collection)} if you want to override the existing values.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10154,6 +10348,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
@@ -10222,6 +10417,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10329,6 +10525,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -10373,6 +10570,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSpeechMarkTypes(java.util.Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -10441,6 +10639,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TextType*/",
@@ -10509,6 +10708,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Voice ID to use for the synthesis. </p>\n@param voiceId Voice ID to use for the synthesis.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -10577,6 +10777,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>\n@param languageCode Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -10647,6 +10848,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Timestamp for the time the synthesis task was started.</p>\n@param creationTime Timestamp for the time the synthesis task was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10716,6 +10918,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
@@ -10785,6 +10988,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>\n@param languageCode Optional language code for a synthesis task. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -10880,7 +11084,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
-              "sensitive" : true,
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10893,6 +11097,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10924,7 +11129,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "LexiconNames",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.*/",
           "setterMethodName" : "setLexiconNames",
           "setterModel" : {
@@ -10937,6 +11142,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexiconNames(java.util.Collection)} or {@link #withLexiconNames(java.util.Collection)} if you want to override the existing values.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11006,6 +11212,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
@@ -11075,6 +11282,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Pathway for the output speech file.</p>\n@param outputUri Pathway for the output speech file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11144,6 +11352,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Number of billable characters synthesized.</p>\n@param requestCharacters Number of billable characters synthesized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11213,6 +11422,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11282,6 +11492,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.</p>\n@param snsTopicArn ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11390,6 +11601,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -11434,6 +11646,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSpeechMarkTypes(java.util.Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -11503,6 +11716,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Polly generated identifier for a speech synthesis task.</p>\n@param taskId The Amazon Polly generated identifier for a speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11572,6 +11786,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Current status of the individual speech synthesis task.</p>\n@param taskStatus Current status of the individual speech synthesis task.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TaskStatus*/",
@@ -11641,6 +11856,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Reason for the current status of a specific speech synthesis task, including errors if the task has failed.</p>\n@param taskStatusReason Reason for the current status of a specific speech synthesis task, including errors if the task has failed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11710,6 +11926,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether the input text is plain text or SSML. The default value is plain text. </p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TextType*/",
@@ -11779,6 +11996,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Voice ID to use for the synthesis. </p>\n@param voiceId Voice ID to use for the synthesis.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -11794,6 +12012,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11828,6 +12047,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "SynthesisTaskNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.SynthesisTaskNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11836,6 +12056,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11867,6 +12088,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.request.SynthesizeSpeechRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11884,12 +12106,12 @@
         "c2jName" : "Engine",
         "c2jShape" : "Engine",
         "deprecated" : false,
-        "documentation" : "<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>",
+        "documentation" : "<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>",
         "endpointDiscoveryId" : false,
         "enumType" : "Engine",
-        "fluentSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
+        "fluentSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
         "fluentSetterMethodName" : "withEngine",
-        "getterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@return Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@see Engine*/",
+        "getterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>\n@return Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error.\n@see Engine*/",
         "getterMethodName" : "getEngine",
         "getterModel" : {
           "returnType" : "String",
@@ -11923,7 +12145,7 @@
         "marshallingType" : "STRING",
         "name" : "Engine",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@see Engine*/",
+        "setterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error.\n@see Engine*/",
         "setterMethodName" : "setEngine",
         "setterModel" : {
           "timestampFormat" : null,
@@ -11935,15 +12157,16 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
+        "varargSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "engine",
           "variableType" : "String",
-          "documentation" : "<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>",
+          "documentation" : "<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -12003,6 +12226,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>\n@param languageCode Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -12097,7 +12321,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
-            "sensitive" : true,
+            "sensitive" : false,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -12110,6 +12334,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12141,7 +12366,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "LexiconNames",
-        "sensitive" : true,
+        "sensitive" : false,
         "setterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.*/",
         "setterMethodName" : "setLexiconNames",
         "setterModel" : {
@@ -12154,6 +12379,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexiconNames(java.util.Collection)} or {@link #withLexiconNames(java.util.Collection)} if you want to override the existing values.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12222,6 +12448,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
@@ -12290,6 +12517,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12397,6 +12625,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -12441,6 +12670,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSpeechMarkTypes(java.util.Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -12509,6 +12739,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>\n@param text Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12577,6 +12808,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.</p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TextType*/",
@@ -12645,6 +12877,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation. </p>\n@param voiceId Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -12664,12 +12897,12 @@
           "c2jName" : "Engine",
           "c2jShape" : "Engine",
           "deprecated" : false,
-          "documentation" : "<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>",
+          "documentation" : "<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>",
           "endpointDiscoveryId" : false,
           "enumType" : "Engine",
-          "fluentSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
+          "fluentSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
           "fluentSetterMethodName" : "withEngine",
-          "getterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@return Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@see Engine*/",
+          "getterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>\n@return Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error.\n@see Engine*/",
           "getterMethodName" : "getEngine",
           "getterModel" : {
             "returnType" : "String",
@@ -12703,7 +12936,7 @@
           "marshallingType" : "STRING",
           "name" : "Engine",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@see Engine*/",
+          "setterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error.\n@see Engine*/",
           "setterMethodName" : "setEngine",
           "setterModel" : {
             "timestampFormat" : null,
@@ -12715,15 +12948,16 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
+          "varargSetterDocumentation" : "/**<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>\n@param engine Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "engine",
             "variableType" : "String",
-            "documentation" : "<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.</p>",
+            "documentation" : "<p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and both standard and NTTS formats, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/voicelist.html\">Available Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>, this will result in an error. </p> <p>Type: String</p> <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and an NTTS-only voice is selected, this will result in an error. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -12784,6 +13018,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.</p>\n@param languageCode Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -12879,7 +13114,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
-              "sensitive" : true,
+              "sensitive" : false,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12892,6 +13127,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12923,7 +13159,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "LexiconNames",
-          "sensitive" : true,
+          "sensitive" : false,
           "setterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.*/",
           "setterMethodName" : "setLexiconNames",
           "setterModel" : {
@@ -12936,6 +13172,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexiconNames(java.util.Collection)} or {@link #withLexiconNames(java.util.Collection)} if you want to override the existing values.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13005,6 +13242,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p> <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
@@ -13074,6 +13312,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz.</p> <p>The valid values for mp3 and ogg_vorbis are \"8000\", \"16000\", \"22050\", and \"24000\". The default value for standard voices is \"22050\". The default value for neural voices is \"24000\".</p> <p>Valid values for pcm are \"8000\" and \"16000\" The default value is \"16000\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13182,6 +13421,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -13226,6 +13466,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSpeechMarkTypes(java.util.Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -13295,6 +13536,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>\n@param text Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13364,6 +13606,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.</p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"https://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TextType*/",
@@ -13433,6 +13676,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation. </p>\n@param voiceId Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -13448,6 +13692,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "OutputFormat", "Text", "VoiceId" ],
@@ -13479,6 +13724,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.response.SynthesizeSpeechResult",
       "hasHeaderMember" : true,
       "hasPayloadMember" : true,
       "hasRequiresLengthMember" : false,
@@ -13540,6 +13786,7 @@
           "variableSetterType" : "java.io.InputStream"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Stream containing the synthesized speech. </p>\n@param audioStream Stream containing the synthesized speech.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13608,6 +13855,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13676,6 +13924,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Number of characters synthesized.</p>\n@param requestCharacters Number of characters synthesized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13746,6 +13995,7 @@
             "variableSetterType" : "java.io.InputStream"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Stream containing the synthesized speech. </p>\n@param audioStream Stream containing the synthesized speech.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13815,6 +14065,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13884,6 +14135,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Number of characters synthesized.</p>\n@param requestCharacters Number of characters synthesized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13899,6 +14151,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13945,6 +14198,7 @@
         "value" : "failed"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.enum.TaskStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13953,6 +14207,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13987,6 +14242,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "TextLengthExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.TextLengthExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13995,6 +14251,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14032,6 +14289,7 @@
         "value" : "text"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.enum.TextType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14040,6 +14298,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14074,6 +14333,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "UnsupportedPlsAlphabetException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.UnsupportedPlsAlphabetException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14082,6 +14342,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14113,6 +14374,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "UnsupportedPlsLanguageException",
+      "fullyQualifiedName" : "com.amazonaws.services.polly.exception.UnsupportedPlsLanguageException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14121,6 +14383,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14152,6 +14415,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.model.Voice",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14213,6 +14477,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Gender of the voice.</p>\n@param gender Gender of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Gender*/",
@@ -14281,6 +14546,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>\n@param id Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -14349,6 +14615,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Language code of the voice.</p>\n@param languageCode Language code of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -14417,6 +14684,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Human readable name of the language in English.</p>\n@param languageName Human readable name of the language in English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14485,6 +14753,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>\n@param name Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14592,6 +14861,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -14636,6 +14906,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Additional codes for languages available for the specified voice in addition to its default language. </p> <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalLanguageCodes(java.util.Collection)} or {@link #withAdditionalLanguageCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalLanguageCodes Additional codes for languages available for the specified voice in addition to its default language. </p> <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -14743,6 +15014,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
@@ -14787,6 +15059,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSupportedEngines(java.util.Collection)} or {@link #withSupportedEngines(java.util.Collection)} if you want to override the existing values.</p>\n@param supportedEngines Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
@@ -14896,6 +15169,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -14940,6 +15214,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Additional codes for languages available for the specified voice in addition to its default language. </p> <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalLanguageCodes(java.util.Collection)} or {@link #withAdditionalLanguageCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalLanguageCodes Additional codes for languages available for the specified voice in addition to its default language. </p> <p>For example, the default language for Aditi is Indian English (en-IN) because it was first used for that language. Since Aditi is bilingual and fluent in both Indian English and Hindi, this parameter would show the code <code>hi-IN</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -15009,6 +15284,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Gender of the voice.</p>\n@param gender Gender of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Gender*/",
@@ -15078,6 +15354,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>\n@param id Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -15147,6 +15424,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Language code of the voice.</p>\n@param languageCode Language code of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -15216,6 +15494,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Human readable name of the language in English.</p>\n@param languageName Human readable name of the language in English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15285,6 +15564,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>\n@param name Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15393,6 +15673,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
@@ -15437,6 +15718,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSupportedEngines(java.util.Collection)} or {@link #withSupportedEngines(java.util.Collection)} if you want to override the existing values.</p>\n@param supportedEngines Specifies which engines (<code>standard</code> or <code>neural</code>) that are supported by a given voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Engine*/",
@@ -15452,6 +15734,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.polly.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15536,6 +15819,9 @@
         "name" : "Filiz",
         "value" : "Filiz"
       }, {
+        "name" : "Gabrielle",
+        "value" : "Gabrielle"
+      }, {
         "name" : "Geraint",
         "value" : "Geraint"
       }, {
@@ -15574,6 +15860,9 @@
       }, {
         "name" : "Kendra",
         "value" : "Kendra"
+      }, {
+        "name" : "Kevin",
+        "value" : "Kevin"
       }, {
         "name" : "Kimberly",
         "value" : "Kimberly"
@@ -15626,6 +15915,9 @@
         "name" : "Nicole",
         "value" : "Nicole"
       }, {
+        "name" : "Olivia",
+        "value" : "Olivia"
+      }, {
         "name" : "Penelope",
         "value" : "Penelope"
       }, {
@@ -15666,6 +15958,7 @@
         "value" : "Zhiyu"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.polly.enum.VoiceId",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15674,6 +15967,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.polly.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15834,7 +16128,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonPollyException",

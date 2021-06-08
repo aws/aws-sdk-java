@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkProtectedApi;
 
+import com.amazonaws.retry.RetryMode;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.auth.AuthScope;
@@ -47,6 +48,8 @@ public class RuntimeHttpUtils {
 
     private static final String AWS_EXECUTION_ENV_PREFIX = "exec-env/";
     private static final String AWS_EXECUTION_ENV_NAME = "AWS_EXECUTION_ENV";
+
+    private static final String RETRY_MODE_PREFIX = "cfg/retry-mode/";
 
 
     /**
@@ -109,14 +112,27 @@ public class RuntimeHttpUtils {
     }
 
     public static String getUserAgent(final ClientConfiguration config, final String userAgentMarker) {
-        String userDefinedPrefix = config != null ? config.getUserAgentPrefix() : "";
-        String userDefinedSuffix = config != null ? config.getUserAgentSuffix() : "";
+
+        String userDefinedPrefix = "";
+        String userDefinedSuffix = "";
+        String retryModeName = "";
         String awsExecutionEnvironment = getEnvironmentVariable(AWS_EXECUTION_ENV_NAME);
+
+        if (config != null) {
+            userDefinedPrefix = config.getUserAgentPrefix();
+            userDefinedSuffix = config.getUserAgentSuffix();
+            RetryMode retryMode = config.getRetryMode() == null ? config.getRetryPolicy().getRetryMode() : config.getRetryMode();
+            retryModeName = retryMode != null ? retryMode.getName() : "";
+        }
 
         StringBuilder userAgent = new StringBuilder(userDefinedPrefix.trim());
 
         if(!ClientConfiguration.DEFAULT_USER_AGENT.equals(userDefinedPrefix)) {
             userAgent.append(COMMA).append(ClientConfiguration.DEFAULT_USER_AGENT);
+        }
+
+        if(StringUtils.hasValue(retryModeName)) {
+            userAgent.append(SPACE).append(RETRY_MODE_PREFIX).append(retryModeName.trim());
         }
 
         if(StringUtils.hasValue(userDefinedSuffix)) {

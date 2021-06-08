@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,11 +50,15 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("attachments", targetDepth)) {
                     context.nextToken();
-                    task.setAttachments(new ListUnmarshaller<Attachment>(AttachmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    task.setAttachments(new ListUnmarshaller<Attachment>(AttachmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    task.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    task.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("availabilityZone", targetDepth)) {
                     context.nextToken();
@@ -82,7 +86,9 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                 }
                 if (context.testExpression("containers", targetDepth)) {
                     context.nextToken();
-                    task.setContainers(new ListUnmarshaller<Container>(ContainerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    task.setContainers(new ListUnmarshaller<Container>(ContainerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
                     context.nextToken();
@@ -95,6 +101,10 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                 if (context.testExpression("desiredStatus", targetDepth)) {
                     context.nextToken();
                     task.setDesiredStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("enableExecuteCommand", targetDepth)) {
+                    context.nextToken();
+                    task.setEnableExecuteCommand(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("executionStoppedAt", targetDepth)) {
                     context.nextToken();
@@ -111,7 +121,8 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                 if (context.testExpression("inferenceAccelerators", targetDepth)) {
                     context.nextToken();
                     task.setInferenceAccelerators(new ListUnmarshaller<InferenceAccelerator>(InferenceAcceleratorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
@@ -167,7 +178,9 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    task.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    task.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("taskArn", targetDepth)) {
                     context.nextToken();
@@ -180,6 +193,10 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
                     task.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ephemeralStorage", targetDepth)) {
+                    context.nextToken();
+                    task.setEphemeralStorage(EphemeralStorageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

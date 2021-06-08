@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class CreateAutoMLJobResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * When a job is created, it is assigned a unique ARN.
+     * The unique ARN that is assigned to the AutoML job when it is created.
      * </p>
      */
     private String autoMLJobArn;
 
     /**
      * <p>
-     * When a job is created, it is assigned a unique ARN.
+     * The unique ARN that is assigned to the AutoML job when it is created.
      * </p>
      * 
      * @param autoMLJobArn
-     *        When a job is created, it is assigned a unique ARN.
+     *        The unique ARN that is assigned to the AutoML job when it is created.
      */
 
     public void setAutoMLJobArn(String autoMLJobArn) {
@@ -45,10 +45,10 @@ public class CreateAutoMLJobResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * When a job is created, it is assigned a unique ARN.
+     * The unique ARN that is assigned to the AutoML job when it is created.
      * </p>
      * 
-     * @return When a job is created, it is assigned a unique ARN.
+     * @return The unique ARN that is assigned to the AutoML job when it is created.
      */
 
     public String getAutoMLJobArn() {
@@ -57,11 +57,11 @@ public class CreateAutoMLJobResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * When a job is created, it is assigned a unique ARN.
+     * The unique ARN that is assigned to the AutoML job when it is created.
      * </p>
      * 
      * @param autoMLJobArn
-     *        When a job is created, it is assigned a unique ARN.
+     *        The unique ARN that is assigned to the AutoML job when it is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

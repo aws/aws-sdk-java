@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class DescribeInstancesRequestMarshaller {
             .marshallLocationName("Limit").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
 
     private static final DescribeInstancesRequestMarshaller instance = new DescribeInstancesRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class DescribeInstancesRequestMarshaller {
             protocolMarshaller.marshall(describeInstancesRequest.getInstanceId(), INSTANCEID_BINDING);
             protocolMarshaller.marshall(describeInstancesRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(describeInstancesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeInstancesRequest.getLocation(), LOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

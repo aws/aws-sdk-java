@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * In an <a>UpdateResolverRule</a> request, information about the changes that you want to make.
+ * In an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html">
+ * UpdateResolverRule</a> request, information about the changes that you want to make.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ResolverRuleConfig" target="_top">AWS
@@ -30,7 +31,7 @@ public class ResolverRuleConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The new name for the resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53
+     * The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53
      * console.
      * </p>
      */
@@ -43,7 +44,7 @@ public class ResolverRuleConfig implements Serializable, Cloneable, StructuredPo
     private java.util.List<TargetAddress> targetIps;
     /**
      * <p>
-     * The ID of the new outbound resolver endpoint that you want to use to route DNS queries to the IP addresses that
+     * The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that
      * you specify in <code>TargetIps</code>.
      * </p>
      */
@@ -51,12 +52,12 @@ public class ResolverRuleConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The new name for the resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53
+     * The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53
      * console.
      * </p>
      * 
      * @param name
-     *        The new name for the resolver rule. The name that you specify appears in the Resolver dashboard in the
+     *        The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the
      *        Route 53 console.
      */
 
@@ -66,11 +67,11 @@ public class ResolverRuleConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The new name for the resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53
+     * The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53
      * console.
      * </p>
      * 
-     * @return The new name for the resolver rule. The name that you specify appears in the Resolver dashboard in the
+     * @return The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the
      *         Route 53 console.
      */
 
@@ -80,12 +81,12 @@ public class ResolverRuleConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The new name for the resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53
+     * The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the Route 53
      * console.
      * </p>
      * 
      * @param name
-     *        The new name for the resolver rule. The name that you specify appears in the Resolver dashboard in the
+     *        The new name for the Resolver rule. The name that you specify appears in the Resolver dashboard in the
      *        Route 53 console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -171,12 +172,12 @@ public class ResolverRuleConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the new outbound resolver endpoint that you want to use to route DNS queries to the IP addresses that
+     * The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that
      * you specify in <code>TargetIps</code>.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the new outbound resolver endpoint that you want to use to route DNS queries to the IP addresses
+     *        The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses
      *        that you specify in <code>TargetIps</code>.
      */
 
@@ -186,11 +187,11 @@ public class ResolverRuleConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the new outbound resolver endpoint that you want to use to route DNS queries to the IP addresses that
+     * The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that
      * you specify in <code>TargetIps</code>.
      * </p>
      * 
-     * @return The ID of the new outbound resolver endpoint that you want to use to route DNS queries to the IP
+     * @return The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP
      *         addresses that you specify in <code>TargetIps</code>.
      */
 
@@ -200,12 +201,12 @@ public class ResolverRuleConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the new outbound resolver endpoint that you want to use to route DNS queries to the IP addresses that
+     * The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that
      * you specify in <code>TargetIps</code>.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the new outbound resolver endpoint that you want to use to route DNS queries to the IP addresses
+     *        The ID of the new outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses
      *        that you specify in <code>TargetIps</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

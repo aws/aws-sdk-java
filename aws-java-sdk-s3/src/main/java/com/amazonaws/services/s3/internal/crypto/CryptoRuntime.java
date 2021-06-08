@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,17 +14,15 @@
  */
 package com.amazonaws.services.s3.internal.crypto;
 
-import static com.amazonaws.services.s3.internal.crypto.S3KeyWrapScheme.RSA_ECB_OAEPWithSHA256AndMGF1Padding;
-
 import java.security.Provider;
 import java.security.Security;
 
+import com.amazonaws.services.s3.internal.crypto.v1.S3KeyWrapScheme;
 import javax.crypto.Cipher;
-
 import org.apache.commons.logging.LogFactory;
 
 public class CryptoRuntime {
-    static final String BOUNCY_CASTLE_PROVIDER = "BC";
+    public static final String BOUNCY_CASTLE_PROVIDER = "BC";
     private static final String BC_PROVIDER_FQCN = "org.bouncycastle.jce.provider.BouncyCastleProvider";
 
     public static synchronized boolean isBouncyCastleAvailable() {
@@ -50,7 +48,7 @@ public class CryptoRuntime {
      * Used only for unit test when the same class loader is used across
      * multiple unit tests.
      */
-    static void recheck() {
+    public static void recheck() {
         recheckAesGcmAvailablility();
         recheckRsaKeyWrapAvailablility();
     }
@@ -58,7 +56,7 @@ public class CryptoRuntime {
     public static boolean isAesGcmAvailable() { return AesGcm.isAvailable; }
     public static void recheckAesGcmAvailablility() { AesGcm.recheck(); }
 
-    static boolean isRsaKeyWrapAvailable() {
+    public static boolean isRsaKeyWrapAvailable() {
         return RsaEcbOaepWithSHA256AndMGF1Padding.isAvailable;
     }
 
@@ -72,8 +70,8 @@ public class CryptoRuntime {
         private static boolean check() {
             try {
                 Cipher.getInstance(
-                        ContentCryptoScheme.AES_GCM.getCipherAlgorithm(),
-                        BOUNCY_CASTLE_PROVIDER);
+                    ContentCryptoScheme.AES_GCM.getCipherAlgorithm(),
+                    BOUNCY_CASTLE_PROVIDER);
                 return true;
             } catch (Exception e) {
                 return false;
@@ -85,8 +83,8 @@ public class CryptoRuntime {
         static boolean recheck() { return isAvailable = check(); }
         private static boolean check() {
             try {
-                Cipher.getInstance(RSA_ECB_OAEPWithSHA256AndMGF1Padding,
-                        BOUNCY_CASTLE_PROVIDER);
+                Cipher.getInstance(S3KeyWrapScheme.RSA_ECB_OAEPWithSHA256AndMGF1Padding,
+                                   BOUNCY_CASTLE_PROVIDER);
                 return true;
             } catch (Exception e) {
                 return false;

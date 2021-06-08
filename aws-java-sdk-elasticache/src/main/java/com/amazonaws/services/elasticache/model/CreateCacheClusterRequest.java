@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,8 +90,8 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * The EC2 Availability Zone in which the cluster is created.
      * </p>
      * <p>
-     * All nodes belonging to this Memcached cluster are placed in the preferred Availability Zone. If you want to
-     * create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
+     * All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to create your
+     * nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
      * </p>
      * <p>
      * Default: System chosen Availability Zone.
@@ -130,10 +130,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * <p>
-     * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
+     * If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
      * form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us
      * /elasticache-node-limit-request/</a>.
@@ -159,6 +159,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Current generation:
      * </p>
+     * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
      * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -216,6 +232,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Current generation:
      * </p>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -336,7 +368,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource.
+     * A list of tags to be added to this resource.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -373,53 +405,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
      * Valid values for <code>ddd</code> are:
-     * </p>
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * </p>
-     * <p>
-     * Valid values for <code>ddd</code> are:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>sun</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>mon</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tue</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>wed</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>thu</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>fri</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>sat</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      */
     private String preferredMaintenanceWindow;
@@ -510,6 +495,30 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String authToken;
+    /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     */
+    private String outpostMode;
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     */
+    private String preferredOutpostArn;
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> preferredOutpostArns;
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest> logDeliveryConfigurations;
 
     /**
      * Default constructor for CreateCacheClusterRequest object. Callers should use the setter or fluent setter
@@ -547,10 +556,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        The initial number of cache nodes that the cluster has.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      *        </p>
      *        <p>
-     *        If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
+     *        If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
      *        Request form at <a
      *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon
      *        .com/contact-us/elasticache-node-limit-request/</a>.
@@ -572,6 +581,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        Current generation:
      *        </p>
+     *        <p>
+     *        <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward).
+     *        </p>
+     *        <p>
+     *        <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     *        <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     *        <code>cache.m6g.16xlarge</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
+     *        </p>
+     *        </note>
      *        <p>
      *        <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *        <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
@@ -632,6 +657,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        Current generation:
      *        </p>
+     *        <p>
+     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward).
+     *        </p>
+     *        <p>
+     *        <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     *        <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     *        <code>cache.r6g.16xlarge</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
+     *        </p>
+     *        </note>
      *        <p>
      *        <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *        <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -1120,8 +1161,8 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * The EC2 Availability Zone in which the cluster is created.
      * </p>
      * <p>
-     * All nodes belonging to this Memcached cluster are placed in the preferred Availability Zone. If you want to
-     * create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
+     * All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to create your
+     * nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
      * </p>
      * <p>
      * Default: System chosen Availability Zone.
@@ -1130,8 +1171,8 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * @param preferredAvailabilityZone
      *        The EC2 Availability Zone in which the cluster is created.</p>
      *        <p>
-     *        All nodes belonging to this Memcached cluster are placed in the preferred Availability Zone. If you want
-     *        to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
+     *        All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to create
+     *        your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
      *        </p>
      *        <p>
      *        Default: System chosen Availability Zone.
@@ -1146,8 +1187,8 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * The EC2 Availability Zone in which the cluster is created.
      * </p>
      * <p>
-     * All nodes belonging to this Memcached cluster are placed in the preferred Availability Zone. If you want to
-     * create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
+     * All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to create your
+     * nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
      * </p>
      * <p>
      * Default: System chosen Availability Zone.
@@ -1155,8 +1196,8 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @return The EC2 Availability Zone in which the cluster is created.</p>
      *         <p>
-     *         All nodes belonging to this Memcached cluster are placed in the preferred Availability Zone. If you want
-     *         to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
+     *         All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to create
+     *         your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
      *         </p>
      *         <p>
      *         Default: System chosen Availability Zone.
@@ -1171,8 +1212,8 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * The EC2 Availability Zone in which the cluster is created.
      * </p>
      * <p>
-     * All nodes belonging to this Memcached cluster are placed in the preferred Availability Zone. If you want to
-     * create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
+     * All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to create your
+     * nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
      * </p>
      * <p>
      * Default: System chosen Availability Zone.
@@ -1181,8 +1222,8 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * @param preferredAvailabilityZone
      *        The EC2 Availability Zone in which the cluster is created.</p>
      *        <p>
-     *        All nodes belonging to this Memcached cluster are placed in the preferred Availability Zone. If you want
-     *        to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
+     *        All nodes belonging to this cluster are placed in the preferred Availability Zone. If you want to create
+     *        your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.
      *        </p>
      *        <p>
      *        Default: System chosen Availability Zone.
@@ -1429,10 +1470,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * <p>
-     * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
+     * If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
      * form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us
      * /elasticache-node-limit-request/</a>.
@@ -1442,10 +1483,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        The initial number of cache nodes that the cluster has.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      *        </p>
      *        <p>
-     *        If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
+     *        If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
      *        Request form at <a
      *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon
      *        .com/contact-us/elasticache-node-limit-request/</a>.
@@ -1461,10 +1502,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * <p>
-     * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
+     * If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
      * form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us
      * /elasticache-node-limit-request/</a>.
@@ -1473,10 +1514,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * @return The initial number of cache nodes that the cluster has.</p>
      *         <p>
      *         For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *         between 1 and 20.
+     *         between 1 and 40.
      *         </p>
      *         <p>
-     *         If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
+     *         If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
      *         Request form at <a
      *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon
      *         .com/contact-us/elasticache-node-limit-request/</a>.
@@ -1492,10 +1533,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * <p>
-     * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
+     * If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
      * form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us
      * /elasticache-node-limit-request/</a>.
@@ -1505,10 +1546,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        The initial number of cache nodes that the cluster has.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      *        </p>
      *        <p>
-     *        If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
+     *        If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
      *        Request form at <a
      *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon
      *        .com/contact-us/elasticache-node-limit-request/</a>.
@@ -1539,6 +1580,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Current generation:
      * </p>
+     * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
      * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -1596,6 +1653,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Current generation:
      * </p>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -1665,6 +1738,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Current generation:
      *        </p>
      *        <p>
+     *        <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward).
+     *        </p>
+     *        <p>
+     *        <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     *        <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     *        <code>cache.m6g.16xlarge</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
+     *        </p>
+     *        </note>
+     *        <p>
      *        <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *        <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
      *        <code>cache.m5.24xlarge</code>
@@ -1724,6 +1813,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        Current generation:
      *        </p>
+     *        <p>
+     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward).
+     *        </p>
+     *        <p>
+     *        <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     *        <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     *        <code>cache.r6g.16xlarge</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
+     *        </p>
+     *        </note>
      *        <p>
      *        <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *        <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -1802,6 +1907,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Current generation:
      * </p>
      * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
+     * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
      * </p>
@@ -1858,6 +1979,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Current generation:
      * </p>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -1926,6 +2063,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         Current generation:
      *         </p>
      *         <p>
+     *         <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *         version 1.5.16 onward).
+     *         </p>
+     *         <p>
+     *         <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     *         <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     *         <code>cache.m6g.16xlarge</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         For region availability, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *         >Supported Node Types</a>
+     *         </p>
+     *         </note>
+     *         <p>
      *         <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *         <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
      *         <code>cache.m5.24xlarge</code>
@@ -1985,6 +2138,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         Current generation:
      *         </p>
+     *         <p>
+     *         <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *         version 1.5.16 onward).
+     *         </p>
+     *         <p>
+     *         <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     *         <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     *         <code>cache.r6g.16xlarge</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         For region availability, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *         >Supported Node Types</a>
+     *         </p>
+     *         </note>
      *         <p>
      *         <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *         <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -2063,6 +2232,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * Current generation:
      * </p>
      * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
+     * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
      * </p>
@@ -2119,6 +2304,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Current generation:
      * </p>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward).
+     * </p>
+     * <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
+     * <note>
+     * <p>
+     * For region availability, see <a href=
+     * "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     * >Supported Node Types</a>
+     * </p>
+     * </note>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -2188,6 +2389,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        Current generation:
      *        </p>
      *        <p>
+     *        <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward).
+     *        </p>
+     *        <p>
+     *        <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     *        <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     *        <code>cache.m6g.16xlarge</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
+     *        </p>
+     *        </note>
+     *        <p>
      *        <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *        <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
      *        <code>cache.m5.24xlarge</code>
@@ -2247,6 +2464,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        Current generation:
      *        </p>
+     *        <p>
+     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward).
+     *        </p>
+     *        <p>
+     *        <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     *        <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     *        <code>cache.r6g.16xlarge</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        For region availability, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion"
+     *        >Supported Node Types</a>
+     *        </p>
+     *        </note>
      *        <p>
      *        <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *        <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -2794,10 +3027,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource.
+     * A list of tags to be added to this resource.
      * </p>
      * 
-     * @return A list of cost allocation tags to be added to this resource.
+     * @return A list of tags to be added to this resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -2809,11 +3042,11 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource.
+     * A list of tags to be added to this resource.
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource.
+     *        A list of tags to be added to this resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -2827,7 +3060,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource.
+     * A list of tags to be added to this resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2836,7 +3069,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource.
+     *        A list of tags to be added to this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2852,11 +3085,11 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource.
+     * A list of tags to be added to this resource.
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource.
+     *        A list of tags to be added to this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3086,105 +3319,11 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
      * Valid values for <code>ddd</code> are:
      * </p>
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * </p>
-     * <p>
-     * Valid values for <code>ddd</code> are:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>sun</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>mon</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tue</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>wed</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>thu</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>fri</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>sat</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
      * 
      * @param preferredMaintenanceWindow
      *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
      *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period. Valid values for <code>ddd</code> are:</p>
-     *        <p>
-     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
-     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period.
-     *        </p>
-     *        <p>
-     *        Valid values for <code>ddd</code> are:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>sun</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>mon</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tue</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>wed</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>thu</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>fri</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>sat</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Example: <code>sun:23:00-mon:01:30</code>
+     *        period. Valid values for <code>ddd</code> are:
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -3197,104 +3336,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
      * Valid values for <code>ddd</code> are:
      * </p>
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * </p>
-     * <p>
-     * Valid values for <code>ddd</code> are:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>sun</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>mon</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tue</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>wed</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>thu</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>fri</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>sat</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
      * 
      * @return Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
      *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
-     *         minute period. Valid values for <code>ddd</code> are:</p>
-     *         <p>
-     *         Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
-     *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
-     *         minute period.
-     *         </p>
-     *         <p>
-     *         Valid values for <code>ddd</code> are:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>sun</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>mon</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>tue</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>wed</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>thu</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>fri</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>sat</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         Example: <code>sun:23:00-mon:01:30</code>
+     *         minute period. Valid values for <code>ddd</code> are:
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -3307,105 +3352,11 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
      * Valid values for <code>ddd</code> are:
      * </p>
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * </p>
-     * <p>
-     * Valid values for <code>ddd</code> are:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>sun</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>mon</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tue</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>wed</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>thu</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>fri</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>sat</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
      * 
      * @param preferredMaintenanceWindow
      *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
      *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period. Valid values for <code>ddd</code> are:</p>
-     *        <p>
-     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
-     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period.
-     *        </p>
-     *        <p>
-     *        Valid values for <code>ddd</code> are:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>sun</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>mon</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tue</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>wed</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>thu</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>fri</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>sat</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        Example: <code>sun:23:00-mon:01:30</code>
+     *        period. Valid values for <code>ddd</code> are:
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3961,6 +3912,265 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     * 
+     * @param outpostMode
+     *        Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * @see OutpostMode
+     */
+
+    public void setOutpostMode(String outpostMode) {
+        this.outpostMode = outpostMode;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     * 
+     * @return Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * @see OutpostMode
+     */
+
+    public String getOutpostMode() {
+        return this.outpostMode;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     * 
+     * @param outpostMode
+     *        Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutpostMode
+     */
+
+    public CreateCacheClusterRequest withOutpostMode(String outpostMode) {
+        setOutpostMode(outpostMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     * 
+     * @param outpostMode
+     *        Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * @see OutpostMode
+     */
+
+    public void setOutpostMode(OutpostMode outpostMode) {
+        withOutpostMode(outpostMode);
+    }
+
+    /**
+     * <p>
+     * Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * </p>
+     * 
+     * @param outpostMode
+     *        Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutpostMode
+     */
+
+    public CreateCacheClusterRequest withOutpostMode(OutpostMode outpostMode) {
+        this.outpostMode = outpostMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The outpost ARN in which the cache cluster is created.
+     */
+
+    public void setPreferredOutpostArn(String preferredOutpostArn) {
+        this.preferredOutpostArn = preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @return The outpost ARN in which the cache cluster is created.
+     */
+
+    public String getPreferredOutpostArn() {
+        return this.preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The outpost ARN in which the cache cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withPreferredOutpostArn(String preferredOutpostArn) {
+        setPreferredOutpostArn(preferredOutpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * 
+     * @return The outpost ARNs in which the cache cluster is created.
+     */
+
+    public java.util.List<String> getPreferredOutpostArns() {
+        if (preferredOutpostArns == null) {
+            preferredOutpostArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return preferredOutpostArns;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArns
+     *        The outpost ARNs in which the cache cluster is created.
+     */
+
+    public void setPreferredOutpostArns(java.util.Collection<String> preferredOutpostArns) {
+        if (preferredOutpostArns == null) {
+            this.preferredOutpostArns = null;
+            return;
+        }
+
+        this.preferredOutpostArns = new com.amazonaws.internal.SdkInternalList<String>(preferredOutpostArns);
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPreferredOutpostArns(java.util.Collection)} or {@link #withPreferredOutpostArns(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param preferredOutpostArns
+     *        The outpost ARNs in which the cache cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withPreferredOutpostArns(String... preferredOutpostArns) {
+        if (this.preferredOutpostArns == null) {
+            setPreferredOutpostArns(new com.amazonaws.internal.SdkInternalList<String>(preferredOutpostArns.length));
+        }
+        for (String ele : preferredOutpostArns) {
+            this.preferredOutpostArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outpost ARNs in which the cache cluster is created.
+     * </p>
+     * 
+     * @param preferredOutpostArns
+     *        The outpost ARNs in which the cache cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withPreferredOutpostArns(java.util.Collection<String> preferredOutpostArns) {
+        setPreferredOutpostArns(preferredOutpostArns);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @return Specifies the destination, format and type of the logs.
+     */
+
+    public java.util.List<LogDeliveryConfigurationRequest> getLogDeliveryConfigurations() {
+        if (logDeliveryConfigurations == null) {
+            logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>();
+        }
+        return logDeliveryConfigurations;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     */
+
+    public void setLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfigurationRequest> logDeliveryConfigurations) {
+        if (logDeliveryConfigurations == null) {
+            this.logDeliveryConfigurations = null;
+            return;
+        }
+
+        this.logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>(logDeliveryConfigurations);
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLogDeliveryConfigurations(java.util.Collection)} or
+     * {@link #withLogDeliveryConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withLogDeliveryConfigurations(LogDeliveryConfigurationRequest... logDeliveryConfigurations) {
+        if (this.logDeliveryConfigurations == null) {
+            setLogDeliveryConfigurations(new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>(logDeliveryConfigurations.length));
+        }
+        for (LogDeliveryConfigurationRequest ele : logDeliveryConfigurations) {
+            this.logDeliveryConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfigurationRequest> logDeliveryConfigurations) {
+        setLogDeliveryConfigurations(logDeliveryConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4017,7 +4227,15 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         if (getSnapshotWindow() != null)
             sb.append("SnapshotWindow: ").append(getSnapshotWindow()).append(",");
         if (getAuthToken() != null)
-            sb.append("AuthToken: ").append(getAuthToken());
+            sb.append("AuthToken: ").append(getAuthToken()).append(",");
+        if (getOutpostMode() != null)
+            sb.append("OutpostMode: ").append(getOutpostMode()).append(",");
+        if (getPreferredOutpostArn() != null)
+            sb.append("PreferredOutpostArn: ").append(getPreferredOutpostArn()).append(",");
+        if (getPreferredOutpostArns() != null)
+            sb.append("PreferredOutpostArns: ").append(getPreferredOutpostArns()).append(",");
+        if (getLogDeliveryConfigurations() != null)
+            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -4124,6 +4342,22 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getAuthToken() != null && other.getAuthToken().equals(this.getAuthToken()) == false)
             return false;
+        if (other.getOutpostMode() == null ^ this.getOutpostMode() == null)
+            return false;
+        if (other.getOutpostMode() != null && other.getOutpostMode().equals(this.getOutpostMode()) == false)
+            return false;
+        if (other.getPreferredOutpostArn() == null ^ this.getPreferredOutpostArn() == null)
+            return false;
+        if (other.getPreferredOutpostArn() != null && other.getPreferredOutpostArn().equals(this.getPreferredOutpostArn()) == false)
+            return false;
+        if (other.getPreferredOutpostArns() == null ^ this.getPreferredOutpostArns() == null)
+            return false;
+        if (other.getPreferredOutpostArns() != null && other.getPreferredOutpostArns().equals(this.getPreferredOutpostArns()) == false)
+            return false;
+        if (other.getLogDeliveryConfigurations() == null ^ this.getLogDeliveryConfigurations() == null)
+            return false;
+        if (other.getLogDeliveryConfigurations() != null && other.getLogDeliveryConfigurations().equals(this.getLogDeliveryConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -4155,6 +4389,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
         hashCode = prime * hashCode + ((getAuthToken() == null) ? 0 : getAuthToken().hashCode());
+        hashCode = prime * hashCode + ((getOutpostMode() == null) ? 0 : getOutpostMode().hashCode());
+        hashCode = prime * hashCode + ((getPreferredOutpostArn() == null) ? 0 : getPreferredOutpostArn().hashCode());
+        hashCode = prime * hashCode + ((getPreferredOutpostArns() == null) ? 0 : getPreferredOutpostArns().hashCode());
+        hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         return hashCode;
     }
 

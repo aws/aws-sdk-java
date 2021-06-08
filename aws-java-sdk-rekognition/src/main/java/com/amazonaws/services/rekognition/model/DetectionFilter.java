@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class DetectionFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Sets confidence of word detection. Words with detection confidence below this will be excluded from the result.
-     * Values should be between 0.5 and 1 as Text in Video will not return any result below 0.5.
+     * Sets the confidence of word detection. Words with detection confidence below this will be excluded from the
+     * result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
      * </p>
      */
     private Float minConfidence;
@@ -49,13 +49,13 @@ public class DetectionFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Sets confidence of word detection. Words with detection confidence below this will be excluded from the result.
-     * Values should be between 0.5 and 1 as Text in Video will not return any result below 0.5.
+     * Sets the confidence of word detection. Words with detection confidence below this will be excluded from the
+     * result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
      * </p>
      * 
      * @param minConfidence
-     *        Sets confidence of word detection. Words with detection confidence below this will be excluded from the
-     *        result. Values should be between 0.5 and 1 as Text in Video will not return any result below 0.5.
+     *        Sets the confidence of word detection. Words with detection confidence below this will be excluded from
+     *        the result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
      */
 
     public void setMinConfidence(Float minConfidence) {
@@ -64,12 +64,12 @@ public class DetectionFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Sets confidence of word detection. Words with detection confidence below this will be excluded from the result.
-     * Values should be between 0.5 and 1 as Text in Video will not return any result below 0.5.
+     * Sets the confidence of word detection. Words with detection confidence below this will be excluded from the
+     * result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
      * </p>
      * 
-     * @return Sets confidence of word detection. Words with detection confidence below this will be excluded from the
-     *         result. Values should be between 0.5 and 1 as Text in Video will not return any result below 0.5.
+     * @return Sets the confidence of word detection. Words with detection confidence below this will be excluded from
+     *         the result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
      */
 
     public Float getMinConfidence() {
@@ -78,13 +78,13 @@ public class DetectionFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Sets confidence of word detection. Words with detection confidence below this will be excluded from the result.
-     * Values should be between 0.5 and 1 as Text in Video will not return any result below 0.5.
+     * Sets the confidence of word detection. Words with detection confidence below this will be excluded from the
+     * result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
      * </p>
      * 
      * @param minConfidence
-     *        Sets confidence of word detection. Words with detection confidence below this will be excluded from the
-     *        result. Values should be between 0.5 and 1 as Text in Video will not return any result below 0.5.
+     *        Sets the confidence of word detection. Words with detection confidence below this will be excluded from
+     *        the result. Values should be between 50 and 100 as Text in Video will not return any result below 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
