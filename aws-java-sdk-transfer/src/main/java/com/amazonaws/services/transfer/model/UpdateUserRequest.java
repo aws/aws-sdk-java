@@ -27,11 +27,10 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies the landing directory (folder) for a user when they log in to the server using their file transfer
-     * protocol client.
+     * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
-     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      */
     private String homeDirectory;
@@ -75,12 +74,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<HomeDirectoryMapEntry> homeDirectoryMappings;
     /**
      * <p>
-     * Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple users.
-     * The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * <note>
+     * <p>
+     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
+     * </p>
      * <p>
      * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
@@ -109,10 +111,11 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private PosixProfile posixProfile;
     /**
      * <p>
-     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
-     * determine the level of access you want to provide your users when transferring files into and out of your S3
-     * bucket or buckets. The IAM role should also contain a trust relationship that allows the server to access your
-     * resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      */
     private String role;
@@ -134,18 +137,16 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies the landing directory (folder) for a user when they log in to the server using their file transfer
-     * protocol client.
+     * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
-     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      * 
      * @param homeDirectory
-     *        Specifies the landing directory (folder) for a user when they log in to the server using their file
-     *        transfer protocol client.</p>
+     *        The landing directory (folder) for a user when they log in to the server using the client.</p>
      *        <p>
-     *        An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     *        A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      */
 
     public void setHomeDirectory(String homeDirectory) {
@@ -154,17 +155,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies the landing directory (folder) for a user when they log in to the server using their file transfer
-     * protocol client.
+     * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
-     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      * 
-     * @return Specifies the landing directory (folder) for a user when they log in to the server using their file
-     *         transfer protocol client.</p>
+     * @return The landing directory (folder) for a user when they log in to the server using the client.</p>
      *         <p>
-     *         An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     *         A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      */
 
     public String getHomeDirectory() {
@@ -173,18 +172,16 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies the landing directory (folder) for a user when they log in to the server using their file transfer
-     * protocol client.
+     * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
-     * An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      * 
      * @param homeDirectory
-     *        Specifies the landing directory (folder) for a user when they log in to the server using their file
-     *        transfer protocol client.</p>
+     *        The landing directory (folder) for a user when they log in to the server using the client.</p>
      *        <p>
-     *        An example is <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.
+     *        A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -532,12 +529,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple users.
-     * The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * <note>
+     * <p>
+     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
+     * </p>
      * <p>
      * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
@@ -555,10 +555,13 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param policy
-     *        Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple
-     *        users. The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use
-     *        inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     *        A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy
+     *        scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this
+     *        policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      *        <code>${Transfer:HomeBucket}</code>.</p> <note>
+     *        <p>
+     *        This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
+     *        </p>
      *        <p>
      *        For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
      *        Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
@@ -582,12 +585,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple users.
-     * The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * <note>
+     * <p>
+     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
+     * </p>
      * <p>
      * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
@@ -604,10 +610,14 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * 
-     * @return Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple
-     *         users. The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use
-     *         inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * @return A scope-down policy for your user so that you can use the same IAM role across multiple users. This
+     *         policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside
+     *         this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      *         <code>${Transfer:HomeBucket}</code>.</p> <note>
+     *         <p>
+     *         This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down
+     *         policies.
+     *         </p>
      *         <p>
      *         For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
      *         Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
@@ -631,12 +641,15 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple users.
-     * The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * <note>
+     * <p>
+     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
+     * </p>
      * <p>
      * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
      * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
@@ -654,10 +667,13 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param policy
-     *        Allows you to supply a scope-down policy for your user so you can use the same IAM role across multiple
-     *        users. The policy scopes down user access to portions of your Amazon S3 bucket. Variables you can use
-     *        inside this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     *        A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy
+     *        scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this
+     *        policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      *        <code>${Transfer:HomeBucket}</code>.</p> <note>
+     *        <p>
+     *        This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
+     *        </p>
      *        <p>
      *        For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
      *        Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
@@ -744,17 +760,19 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
-     * determine the level of access you want to provide your users when transferring files into and out of your S3
-     * bucket or buckets. The IAM role should also contain a trust relationship that allows the server to access your
-     * resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
      * @param role
-     *        The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
-     *        determine the level of access you want to provide your users when transferring files into and out of your
-     *        S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the server to
-     *        access your resources when servicing your users' transfer requests.
+     *        Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *        S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *        want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *        system. The IAM role should also contain a trust relationship that allows the server to access your
+     *        resources when servicing your users' transfer requests.
      */
 
     public void setRole(String role) {
@@ -763,16 +781,18 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
-     * determine the level of access you want to provide your users when transferring files into and out of your S3
-     * bucket or buckets. The IAM role should also contain a trust relationship that allows the server to access your
-     * resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
-     * @return The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
-     *         role determine the level of access you want to provide your users when transferring files into and out of
-     *         your S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the server
-     *         to access your resources when servicing your users' transfer requests.
+     * @return Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *         S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *         want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *         system. The IAM role should also contain a trust relationship that allows the server to access your
+     *         resources when servicing your users' transfer requests.
      */
 
     public String getRole() {
@@ -781,17 +801,19 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
-     * determine the level of access you want to provide your users when transferring files into and out of your S3
-     * bucket or buckets. The IAM role should also contain a trust relationship that allows the server to access your
-     * resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
      * @param role
-     *        The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
-     *        determine the level of access you want to provide your users when transferring files into and out of your
-     *        S3 bucket or buckets. The IAM role should also contain a trust relationship that allows the server to
-     *        access your resources when servicing your users' transfer requests.
+     *        Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *        S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *        want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *        system. The IAM role should also contain a trust relationship that allows the server to access your
+     *        resources when servicing your users' transfer requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

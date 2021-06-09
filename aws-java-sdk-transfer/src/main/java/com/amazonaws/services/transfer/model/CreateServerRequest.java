@@ -113,10 +113,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
-     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
-     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
-     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
+     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
+     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -751,10 +751,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
-     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
-     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
-     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
+     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
+     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -774,9 +774,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
      *        attaching Elastic IP addresses directly to it.</p> <note>
      *        <p>
-     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
-     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
-     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
      *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      *        </p>
      *        <p>
@@ -805,10 +805,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
-     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
-     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
-     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
+     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
+     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -827,10 +827,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         can restrict access to your server and resources only within your VPC or choose to make it internet
      *         facing by attaching Elastic IP addresses directly to it.</p> <note>
      *         <p>
-     *         After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code>
-     *         in your AWS account if your account hasn't already done so before March 31, 2021. If you have already
-     *         created servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31,
-     *         2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *         After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *         your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
+     *         servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
+     *         will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      *         </p>
      *         <p>
      *         For more information, see
@@ -858,10 +858,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
-     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
-     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
-     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
+     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
+     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -881,9 +881,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
      *        attaching Elastic IP addresses directly to it.</p> <note>
      *        <p>
-     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
-     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
-     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
      *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      *        </p>
      *        <p>
@@ -914,10 +914,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
-     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
-     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
-     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your AWS
+     * account if your account hasn't already done so before May 19, 2021. If you have already created servers with
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you will not be affected.
+     * After this date, use <code>EndpointType</code>=<code>VPC</code>.
      * </p>
      * <p>
      * For more information, see
@@ -937,9 +937,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
      *        attaching Elastic IP addresses directly to it.</p> <note>
      *        <p>
-     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
-     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
-     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        After May 19, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before May 19, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May 19, 2021, you
      *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
      *        </p>
      *        <p>

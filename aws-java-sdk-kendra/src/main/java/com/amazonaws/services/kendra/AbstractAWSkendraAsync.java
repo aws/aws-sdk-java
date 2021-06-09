@@ -40,6 +40,19 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetDocumentStatusResult> batchGetDocumentStatusAsync(BatchGetDocumentStatusRequest request) {
+
+        return batchGetDocumentStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDocumentStatusResult> batchGetDocumentStatusAsync(BatchGetDocumentStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetDocumentStatusRequest, BatchGetDocumentStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchPutDocumentResult> batchPutDocumentAsync(BatchPutDocumentRequest request) {
 
         return batchPutDocumentAsync(request, null);

@@ -39,7 +39,7 @@ public class DeleteAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Windows PowerShell.
      * </p>
      * <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      * </p>
      * <p>
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -100,7 +100,7 @@ public class DeleteAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Windows PowerShell.
      * </p>
      * <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      * </p>
      * <p>
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -117,7 +117,7 @@ public class DeleteAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        using AWS Transfer Family. If you know the group name, you can view the SID values by running the
      *        following command using Windows PowerShell.</p>
      *        <p>
-     *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *        </p>
      *        <p>
      *        In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -140,7 +140,7 @@ public class DeleteAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Windows PowerShell.
      * </p>
      * <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      * </p>
      * <p>
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -156,7 +156,7 @@ public class DeleteAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         using AWS Transfer Family. If you know the group name, you can view the SID values by running the
      *         following command using Windows PowerShell.</p>
      *         <p>
-     *         <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     *         <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *         </p>
      *         <p>
      *         In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -179,7 +179,7 @@ public class DeleteAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Windows PowerShell.
      * </p>
      * <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      * </p>
      * <p>
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -196,7 +196,7 @@ public class DeleteAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        using AWS Transfer Family. If you know the group name, you can view the SID values by running the
      *        following command using Windows PowerShell.</p>
      *        <p>
-     *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *        </p>
      *        <p>
      *        In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.

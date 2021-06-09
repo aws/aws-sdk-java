@@ -37,9 +37,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file
-     * transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      */
     private String homeDirectoryType;
@@ -83,8 +83,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<HomeDirectoryMapEntry> homeDirectoryMappings;
     /**
      * <p>
-     * A scope-down policy for your user so you can use the same IAM role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
@@ -120,10 +120,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private PosixProfile posixProfile;
     /**
      * <p>
-     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies
-     * attached to this role will determine the level of access you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship
-     * that allows the server to access your resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      */
     private String role;
@@ -215,17 +216,17 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file
-     * transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in
-     *        their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
-     *        mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
-     *        your users.
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths
+     *        visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -236,16 +237,16 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file
-     * transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
      * @return The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *         server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     *         in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
-     *         mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
-     *         your users.
+     *         server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *         as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *         provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
+     *         paths visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -256,17 +257,17 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file
-     * transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in
-     *        their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
-     *        mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
-     *        your users.
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths
+     *        visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -279,17 +280,17 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
-     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their file
-     * transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
      *        The type of landing directory (folder) you want your users' home directory to be when they log into the
-     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in
-     *        their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
-     *        mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to
-     *        your users.
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths
+     *        visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -627,8 +628,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A scope-down policy for your user so you can use the same IAM role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
@@ -653,7 +654,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param policy
-     *        A scope-down policy for your user so you can use the same IAM role across multiple users. This policy
+     *        A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy
      *        scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this
      *        policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      *        <code>${Transfer:HomeBucket}</code>.</p> <note>
@@ -683,8 +684,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A scope-down policy for your user so you can use the same IAM role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
@@ -708,9 +709,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * 
-     * @return A scope-down policy for your user so you can use the same IAM role across multiple users. This policy
-     *         scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this
-     *         policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * @return A scope-down policy for your user so that you can use the same IAM role across multiple users. This
+     *         policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside
+     *         this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      *         <code>${Transfer:HomeBucket}</code>.</p> <note>
      *         <p>
      *         This only applies when domain of ServerId is S3. EFS does not use scope down policy.
@@ -738,8 +739,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A scope-down policy for your user so you can use the same IAM role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.
      * </p>
@@ -764,7 +765,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param policy
-     *        A scope-down policy for your user so you can use the same IAM role across multiple users. This policy
+     *        A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy
      *        scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this
      *        policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      *        <code>${Transfer:HomeBucket}</code>.</p> <note>
@@ -854,18 +855,19 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies
-     * attached to this role will determine the level of access you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship
-     * that allows the server to access your resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
      * @param role
-     *        Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The
-     *        policies attached to this role will determine the level of access you want to provide your users when
-     *        transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     *        contain a trust relationship that allows the server to access your resources when servicing your users'
-     *        transfer requests.
+     *        Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *        S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *        want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *        system. The IAM role should also contain a trust relationship that allows the server to access your
+     *        resources when servicing your users' transfer requests.
      */
 
     public void setRole(String role) {
@@ -874,17 +876,18 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies
-     * attached to this role will determine the level of access you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship
-     * that allows the server to access your resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
-     * @return Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The
-     *         policies attached to this role will determine the level of access you want to provide your users when
-     *         transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     *         contain a trust relationship that allows the server to access your resources when servicing your users'
-     *         transfer requests.
+     * @return Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *         S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *         want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *         system. The IAM role should also contain a trust relationship that allows the server to access your
+     *         resources when servicing your users' transfer requests.
      */
 
     public String getRole() {
@@ -893,18 +896,19 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies
-     * attached to this role will determine the level of access you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship
-     * that allows the server to access your resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
      * @param role
-     *        Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The
-     *        policies attached to this role will determine the level of access you want to provide your users when
-     *        transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     *        contain a trust relationship that allows the server to access your resources when servicing your users'
-     *        transfer requests.
+     *        Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *        S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *        want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *        system. The IAM role should also contain a trust relationship that allows the server to access your
+     *        resources when servicing your users' transfer requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

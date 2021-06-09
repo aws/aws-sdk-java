@@ -107,6 +107,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetDocumentStatusResult> batchGetDocumentStatusAsync(BatchGetDocumentStatusRequest request) {
+
+        return batchGetDocumentStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDocumentStatusResult> batchGetDocumentStatusAsync(final BatchGetDocumentStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetDocumentStatusRequest, BatchGetDocumentStatusResult> asyncHandler) {
+        final BatchGetDocumentStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetDocumentStatusResult>() {
+            @Override
+            public BatchGetDocumentStatusResult call() throws Exception {
+                BatchGetDocumentStatusResult result = null;
+
+                try {
+                    result = executeBatchGetDocumentStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchPutDocumentResult> batchPutDocumentAsync(BatchPutDocumentRequest request) {
 
         return batchPutDocumentAsync(request, null);

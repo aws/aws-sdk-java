@@ -30,16 +30,16 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
-     * A <code>HomeDirectory</code> example is <code>/directory_name/home/mydirectory</code>.
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      */
     private String homeDirectory;
     /**
      * <p>
-     * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
-     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
-     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you must provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      */
     private String homeDirectoryType;
@@ -84,9 +84,6 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The end of the key name must end in a <code>/</code> for it to be considered a folder.
      * </p>
      * </note>
-     * <p>
-     * Required: No
-     * </p>
      */
     private java.util.List<HomeDirectoryMapEntry> homeDirectoryMappings;
     /**
@@ -98,7 +95,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.
+     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
      * </p>
      * <p>
      * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -121,10 +118,11 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
     private PosixProfile posixProfile;
     /**
      * <p>
-     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies
-     * attached to this role determine the level of access that you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship
-     * that allows the server to access your resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      */
     private String role;
@@ -143,7 +141,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Windows PowerShell.
      * </p>
      * <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      * </p>
      * <p>
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -161,13 +159,13 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
-     * A <code>HomeDirectory</code> example is <code>/directory_name/home/mydirectory</code>.
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      * 
      * @param homeDirectory
      *        The landing directory (folder) for a user when they log in to the server using the client.</p>
      *        <p>
-     *        A <code>HomeDirectory</code> example is <code>/directory_name/home/mydirectory</code>.
+     *        A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      */
 
     public void setHomeDirectory(String homeDirectory) {
@@ -179,12 +177,12 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
-     * A <code>HomeDirectory</code> example is <code>/directory_name/home/mydirectory</code>.
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      * 
      * @return The landing directory (folder) for a user when they log in to the server using the client.</p>
      *         <p>
-     *         A <code>HomeDirectory</code> example is <code>/directory_name/home/mydirectory</code>.
+     *         A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      */
 
     public String getHomeDirectory() {
@@ -196,13 +194,13 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The landing directory (folder) for a user when they log in to the server using the client.
      * </p>
      * <p>
-     * A <code>HomeDirectory</code> example is <code>/directory_name/home/mydirectory</code>.
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      * 
      * @param homeDirectory
      *        The landing directory (folder) for a user when they log in to the server using the client.</p>
      *        <p>
-     *        A <code>HomeDirectory</code> example is <code>/directory_name/home/mydirectory</code>.
+     *        A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,17 +211,18 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
-     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
-     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you must provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) that you want your users' home directory to be when they log in to
-     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
-     *        is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you must provide mappings
-     *        in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths
+     *        visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -233,16 +232,17 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
-     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
-     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you must provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
-     * @return The type of landing directory (folder) that you want your users' home directory to be when they log in to
-     *         the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
-     *         is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you must provide mappings
-     *         in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     * @return The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *         server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *         as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *         provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
+     *         paths visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -252,17 +252,18 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
-     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
-     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you must provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) that you want your users' home directory to be when they log in to
-     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
-     *        is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you must provide mappings
-     *        in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths
+     *        visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -274,17 +275,18 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of landing directory (folder) that you want your users' home directory to be when they log in to the
-     * server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is in their
-     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you must provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        The type of landing directory (folder) that you want your users' home directory to be when they log in to
-     *        the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as
-     *        is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you must provide mappings
-     *        in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths visible to your users.
+     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths
+     *        visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -335,9 +337,6 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The end of the key name must end in a <code>/</code> for it to be considered a folder.
      * </p>
      * </note>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @return Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
      *         your user and how you want to make them visible. You must specify the <code>Entry</code> and
@@ -377,9 +376,6 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         The end of the key name must end in a <code>/</code> for it to be considered a folder.
      *         </p>
-     *         </note>
-     *         <p>
-     *         Required: No
      */
 
     public java.util.List<HomeDirectoryMapEntry> getHomeDirectoryMappings() {
@@ -427,9 +423,6 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The end of the key name must end in a <code>/</code> for it to be considered a folder.
      * </p>
      * </note>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param homeDirectoryMappings
      *        Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
@@ -470,9 +463,6 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        The end of the key name must end in a <code>/</code> for it to be considered a folder.
      *        </p>
-     *        </note>
-     *        <p>
-     *        Required: No
      */
 
     public void setHomeDirectoryMappings(java.util.Collection<HomeDirectoryMapEntry> homeDirectoryMappings) {
@@ -526,9 +516,6 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * <p>
-     * Required: No
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setHomeDirectoryMappings(java.util.Collection)} or
      * {@link #withHomeDirectoryMappings(java.util.Collection)} if you want to override the existing values.
@@ -573,9 +560,6 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        The end of the key name must end in a <code>/</code> for it to be considered a folder.
      *        </p>
-     *        </note>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -630,9 +614,6 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The end of the key name must end in a <code>/</code> for it to be considered a folder.
      * </p>
      * </note>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @param homeDirectoryMappings
      *        Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should be visible to
@@ -673,9 +654,6 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        The end of the key name must end in a <code>/</code> for it to be considered a folder.
      *        </p>
-     *        </note>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -693,7 +671,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.
+     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
      * </p>
      * <p>
      * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -717,7 +695,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      *        <code>${Transfer:HomeBucket}</code>.</p> <note>
      *        <p>
-     *        This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.
+     *        This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
      *        </p>
      *        <p>
      *        For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
@@ -749,7 +727,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.
+     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
      * </p>
      * <p>
      * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -772,7 +750,8 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      *         <code>${Transfer:HomeBucket}</code>.</p> <note>
      *         <p>
-     *         This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.
+     *         This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down
+     *         policies.
      *         </p>
      *         <p>
      *         For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
@@ -804,7 +783,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.
+     * This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
      * </p>
      * <p>
      * For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
@@ -828,7 +807,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      *        <code>${Transfer:HomeBucket}</code>.</p> <note>
      *        <p>
-     *        This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.
+     *        This only applies when domain of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.
      *        </p>
      *        <p>
      *        For scope-down policies, AWS Transfer Family stores the policy as a JSON blob, instead of the Amazon
@@ -881,18 +860,19 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies
-     * attached to this role determine the level of access that you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship
-     * that allows the server to access your resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
      * @param role
-     *        Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The
-     *        policies attached to this role determine the level of access that you want to provide your users when
-     *        transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     *        contain a trust relationship that allows the server to access your resources when servicing your users'
-     *        transfer requests.
+     *        Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *        S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *        want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *        system. The IAM role should also contain a trust relationship that allows the server to access your
+     *        resources when servicing your users' transfer requests.
      */
 
     public void setRole(String role) {
@@ -901,17 +881,18 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies
-     * attached to this role determine the level of access that you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship
-     * that allows the server to access your resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
-     * @return Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The
-     *         policies attached to this role determine the level of access that you want to provide your users when
-     *         transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     *         contain a trust relationship that allows the server to access your resources when servicing your users'
-     *         transfer requests.
+     * @return Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *         S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *         want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *         system. The IAM role should also contain a trust relationship that allows the server to access your
+     *         resources when servicing your users' transfer requests.
      */
 
     public String getRole() {
@@ -920,18 +901,19 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The policies
-     * attached to this role determine the level of access that you want to provide your users when transferring files
-     * into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship
-     * that allows the server to access your resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
      * @param role
-     *        Specifies the IAM role that controls your users' access to your Amazon S3 bucket or EFS file system. The
-     *        policies attached to this role determine the level of access that you want to provide your users when
-     *        transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     *        contain a trust relationship that allows the server to access your resources when servicing your users'
-     *        transfer requests.
+     *        Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *        S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *        want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *        system. The IAM role should also contain a trust relationship that allows the server to access your
+     *        resources when servicing your users' transfer requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -994,7 +976,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Windows PowerShell.
      * </p>
      * <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      * </p>
      * <p>
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -1011,7 +993,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        using AWS Transfer Family. If you know the group name, you can view the SID values by running the
      *        following command using Windows PowerShell.</p>
      *        <p>
-     *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *        </p>
      *        <p>
      *        In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -1034,7 +1016,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Windows PowerShell.
      * </p>
      * <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      * </p>
      * <p>
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -1050,7 +1032,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         using AWS Transfer Family. If you know the group name, you can view the SID values by running the
      *         following command using Windows PowerShell.</p>
      *         <p>
-     *         <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     *         <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *         </p>
      *         <p>
      *         In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -1073,7 +1055,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Windows PowerShell.
      * </p>
      * <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      * </p>
      * <p>
      * In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.
@@ -1090,7 +1072,7 @@ public class CreateAccessRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        using AWS Transfer Family. If you know the group name, you can view the SID values by running the
      *        following command using Windows PowerShell.</p>
      *        <p>
-     *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamaccountName,ObjectSid</code>
+     *        <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
      *        </p>
      *        <p>
      *        In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.

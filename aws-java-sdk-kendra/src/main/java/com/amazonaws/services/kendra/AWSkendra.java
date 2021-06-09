@@ -67,6 +67,36 @@ public interface AWSkendra {
 
     /**
      * <p>
+     * Returns the indexing status for one or more documents submitted with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html"> BatchPutDocument</a> operation.
+     * </p>
+     * <p>
+     * When you use the <code>BatchPutDocument</code> operation, documents are indexed asynchronously. You can use the
+     * <code>BatchGetDocumentStatus</code> operation to get the current status of a list of documents so that you can
+     * determine if they have been successfully indexed.
+     * </p>
+     * <p>
+     * You can also use the <code>BatchGetDocumentStatus</code> operation to check the status of the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html"> BatchDeleteDocument</a>
+     * operation. When a document is deleted from the index, Amazon Kendra returns <code>NOT_FOUND</code> as the status.
+     * </p>
+     * 
+     * @param batchGetDocumentStatusRequest
+     * @return Result of the BatchGetDocumentStatus operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.BatchGetDocumentStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchGetDocumentStatusResult batchGetDocumentStatus(BatchGetDocumentStatusRequest batchGetDocumentStatusRequest);
+
+    /**
+     * <p>
      * Adds one or more documents to an index.
      * </p>
      * <p>

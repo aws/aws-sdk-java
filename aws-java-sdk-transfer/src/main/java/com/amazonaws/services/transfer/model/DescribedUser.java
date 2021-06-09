@@ -36,9 +36,10 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * Specifies the landing directory (or folder), which is the location that files are written to or read from in an
-     * Amazon S3 bucket, for the described user. An example is <i>
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
+     * The landing directory (folder) for a user when they log in to the server using the client.
+     * </p>
+     * <p>
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      */
     private String homeDirectory;
@@ -60,17 +61,19 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<HomeDirectoryMapEntry> homeDirectoryMappings;
     /**
      * <p>
-     * Specifies the type of landing directory (folder) you mapped for your users to see when they log into the file
-     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
-     * bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will
-     * need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
-     * paths visible to your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      */
     private String homeDirectoryType;
     /**
      * <p>
-     * Specifies the name of the policy in use for the described user.
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.
      * </p>
      */
     private String policy;
@@ -86,10 +89,11 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
     private PosixProfile posixProfile;
     /**
      * <p>
-     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
-     * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a server to access your
-     * resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      */
     private String role;
@@ -156,15 +160,16 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the landing directory (or folder), which is the location that files are written to or read from in an
-     * Amazon S3 bucket, for the described user. An example is <i>
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
+     * The landing directory (folder) for a user when they log in to the server using the client.
+     * </p>
+     * <p>
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      * 
      * @param homeDirectory
-     *        Specifies the landing directory (or folder), which is the location that files are written to or read from
-     *        in an Amazon S3 bucket, for the described user. An example is <i>
-     *        <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
+     *        The landing directory (folder) for a user when they log in to the server using the client.</p>
+     *        <p>
+     *        A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      */
 
     public void setHomeDirectory(String homeDirectory) {
@@ -173,14 +178,15 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the landing directory (or folder), which is the location that files are written to or read from in an
-     * Amazon S3 bucket, for the described user. An example is <i>
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
+     * The landing directory (folder) for a user when they log in to the server using the client.
+     * </p>
+     * <p>
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      * 
-     * @return Specifies the landing directory (or folder), which is the location that files are written to or read from
-     *         in an Amazon S3 bucket, for the described user. An example is <i>
-     *         <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
+     * @return The landing directory (folder) for a user when they log in to the server using the client.</p>
+     *         <p>
+     *         A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      */
 
     public String getHomeDirectory() {
@@ -189,15 +195,16 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the landing directory (or folder), which is the location that files are written to or read from in an
-     * Amazon S3 bucket, for the described user. An example is <i>
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
+     * The landing directory (folder) for a user when they log in to the server using the client.
+     * </p>
+     * <p>
+     * A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * </p>
      * 
      * @param homeDirectory
-     *        Specifies the landing directory (or folder), which is the location that files are written to or read from
-     *        in an Amazon S3 bucket, for the described user. An example is <i>
-     *        <code>your-Amazon-S3-bucket-name&gt;/home/username</code> </i>.
+     *        The landing directory (folder) for a user when they log in to the server using the client.</p>
+     *        <p>
+     *        A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,19 +361,18 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of landing directory (folder) you mapped for your users to see when they log into the file
-     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
-     * bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will
-     * need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
-     * paths visible to your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        Specifies the type of landing directory (folder) you mapped for your users to see when they log into the
-     *        file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
-     *        Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it
-     *        <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how
-     *        you want to make Amazon S3 or EFS paths visible to your users.
+     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths
+     *        visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -376,18 +382,17 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of landing directory (folder) you mapped for your users to see when they log into the file
-     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
-     * bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will
-     * need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
-     * paths visible to your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
-     * @return Specifies the type of landing directory (folder) you mapped for your users to see when they log into the
-     *         file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
-     *         Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it
-     *         <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how
-     *         you want to make Amazon S3 or EFS paths visible to your users.
+     * @return The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *         server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *         as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *         provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
+     *         paths visible to your users.
      * @see HomeDirectoryType
      */
 
@@ -397,19 +402,18 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of landing directory (folder) you mapped for your users to see when they log into the file
-     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
-     * bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will
-     * need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
-     * paths visible to your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        Specifies the type of landing directory (folder) you mapped for your users to see when they log into the
-     *        file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
-     *        Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it
-     *        <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how
-     *        you want to make Amazon S3 or EFS paths visible to your users.
+     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths
+     *        visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -421,19 +425,18 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the type of landing directory (folder) you mapped for your users to see when they log into the file
-     * transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3
-     * bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will
-     * need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
-     * paths visible to your users.
+     * The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+     * If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their
+     * file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings in the
+     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths visible to your users.
      * </p>
      * 
      * @param homeDirectoryType
-     *        Specifies the type of landing directory (folder) you mapped for your users to see when they log into the
-     *        file transfer protocol-enabled server. If you set it to <code>PATH</code>, the user will see the absolute
-     *        Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it
-     *        <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code> for how
-     *        you want to make Amazon S3 or EFS paths visible to your users.
+     *        The type of landing directory (folder) you want your users' home directory to be when they log into the
+     *        server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths
+     *        as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you will need to
+     *        provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS paths
+     *        visible to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HomeDirectoryType
      */
@@ -445,11 +448,17 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the name of the policy in use for the described user.
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * 
      * @param policy
-     *        Specifies the name of the policy in use for the described user.
+     *        A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy
+     *        scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this
+     *        policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     *        <code>${Transfer:HomeBucket}</code>.
      */
 
     public void setPolicy(String policy) {
@@ -458,10 +467,16 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the name of the policy in use for the described user.
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * 
-     * @return Specifies the name of the policy in use for the described user.
+     * @return A scope-down policy for your user so that you can use the same IAM role across multiple users. This
+     *         policy scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside
+     *         this policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     *         <code>${Transfer:HomeBucket}</code>.
      */
 
     public String getPolicy() {
@@ -470,11 +485,17 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the name of the policy in use for the described user.
+     * A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy scopes
+     * down user access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.
      * </p>
      * 
      * @param policy
-     *        Specifies the name of the policy in use for the described user.
+     *        A scope-down policy for your user so that you can use the same IAM role across multiple users. This policy
+     *        scopes down user access to portions of their Amazon S3 bucket. Variables that you can use inside this
+     *        policy include <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     *        <code>${Transfer:HomeBucket}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -549,17 +570,19 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
-     * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a server to access your
-     * resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
      * @param role
-     *        The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
-     *        will determine the level of access you want to provide your users when transferring files into and out of
-     *        your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a
-     *        server to access your resources when servicing your users' transfer requests.
+     *        Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *        S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *        want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *        system. The IAM role should also contain a trust relationship that allows the server to access your
+     *        resources when servicing your users' transfer requests.
      */
 
     public void setRole(String role) {
@@ -568,16 +591,18 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
-     * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a server to access your
-     * resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
-     * @return The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this
-     *         role will determine the level of access you want to provide your users when transferring files into and
-     *         out of your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that
-     *         allows a server to access your resources when servicing your users' transfer requests.
+     * @return Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *         S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *         want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *         system. The IAM role should also contain a trust relationship that allows the server to access your
+     *         resources when servicing your users' transfer requests.
      */
 
     public String getRole() {
@@ -586,17 +611,19 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role will
-     * determine the level of access you want to provide your users when transferring files into and out of your Amazon
-     * S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a server to access your
-     * resources when servicing your users' transfer requests.
+     * Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3
+     * bucket or EFS file system. The policies attached to this role determine the level of access that you want to
+     * provide your users when transferring files into and out of your Amazon S3 bucket or EFS file system. The IAM role
+     * should also contain a trust relationship that allows the server to access your resources when servicing your
+     * users' transfer requests.
      * </p>
      * 
      * @param role
-     *        The IAM role that controls your users' access to your Amazon S3 bucket. The policies attached to this role
-     *        will determine the level of access you want to provide your users when transferring files into and out of
-     *        your Amazon S3 bucket or buckets. The IAM role should also contain a trust relationship that allows a
-     *        server to access your resources when servicing your users' transfer requests.
+     *        Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon
+     *        S3 bucket or EFS file system. The policies attached to this role determine the level of access that you
+     *        want to provide your users when transferring files into and out of your Amazon S3 bucket or EFS file
+     *        system. The IAM role should also contain a trust relationship that allows the server to access your
+     *        resources when servicing your users' transfer requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

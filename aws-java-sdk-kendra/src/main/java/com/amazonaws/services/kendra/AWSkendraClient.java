@@ -222,6 +222,79 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
+     * Returns the indexing status for one or more documents submitted with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html"> BatchPutDocument</a> operation.
+     * </p>
+     * <p>
+     * When you use the <code>BatchPutDocument</code> operation, documents are indexed asynchronously. You can use the
+     * <code>BatchGetDocumentStatus</code> operation to get the current status of a list of documents so that you can
+     * determine if they have been successfully indexed.
+     * </p>
+     * <p>
+     * You can also use the <code>BatchGetDocumentStatus</code> operation to check the status of the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html"> BatchDeleteDocument</a>
+     * operation. When a document is deleted from the index, Amazon Kendra returns <code>NOT_FOUND</code> as the status.
+     * </p>
+     * 
+     * @param batchGetDocumentStatusRequest
+     * @return Result of the BatchGetDocumentStatus operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.BatchGetDocumentStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public BatchGetDocumentStatusResult batchGetDocumentStatus(BatchGetDocumentStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetDocumentStatus(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetDocumentStatusResult executeBatchGetDocumentStatus(BatchGetDocumentStatusRequest batchGetDocumentStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetDocumentStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetDocumentStatusRequest> request = null;
+        Response<BatchGetDocumentStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetDocumentStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetDocumentStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetDocumentStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetDocumentStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetDocumentStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds one or more documents to an index.
      * </p>
      * <p>

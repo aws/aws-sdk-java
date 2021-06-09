@@ -33,6 +33,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public BatchGetDocumentStatusResult batchGetDocumentStatus(BatchGetDocumentStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchPutDocumentResult batchPutDocument(BatchPutDocumentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
