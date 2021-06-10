@@ -35,6 +35,8 @@ public class AssociateResourceSharePermissionRequestMarshaller {
             .marshallLocationName("replace").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken").build();
+    private static final MarshallingInfo<Integer> PERMISSIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("permissionVersion").build();
 
     private static final AssociateResourceSharePermissionRequestMarshaller instance = new AssociateResourceSharePermissionRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class AssociateResourceSharePermissionRequestMarshaller {
             protocolMarshaller.marshall(associateResourceSharePermissionRequest.getPermissionArn(), PERMISSIONARN_BINDING);
             protocolMarshaller.marshall(associateResourceSharePermissionRequest.getReplace(), REPLACE_BINDING);
             protocolMarshaller.marshall(associateResourceSharePermissionRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(associateResourceSharePermissionRequest.getPermissionVersion(), PERMISSIONVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

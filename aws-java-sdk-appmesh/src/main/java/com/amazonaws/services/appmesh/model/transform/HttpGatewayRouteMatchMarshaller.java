@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appmesh.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,8 +28,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class HttpGatewayRouteMatchMarshaller {
 
+    private static final MarshallingInfo<List> HEADERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("headers").build();
+    private static final MarshallingInfo<StructuredPojo> HOSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostname").build();
+    private static final MarshallingInfo<String> METHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("method").build();
+    private static final MarshallingInfo<StructuredPojo> PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("path").build();
     private static final MarshallingInfo<String> PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("prefix").build();
+    private static final MarshallingInfo<List> QUERYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("queryParameters").build();
 
     private static final HttpGatewayRouteMatchMarshaller instance = new HttpGatewayRouteMatchMarshaller();
 
@@ -46,7 +57,12 @@ public class HttpGatewayRouteMatchMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(httpGatewayRouteMatch.getHeaders(), HEADERS_BINDING);
+            protocolMarshaller.marshall(httpGatewayRouteMatch.getHostname(), HOSTNAME_BINDING);
+            protocolMarshaller.marshall(httpGatewayRouteMatch.getMethod(), METHOD_BINDING);
+            protocolMarshaller.marshall(httpGatewayRouteMatch.getPath(), PATH_BINDING);
             protocolMarshaller.marshall(httpGatewayRouteMatch.getPrefix(), PREFIX_BINDING);
+            protocolMarshaller.marshall(httpGatewayRouteMatch.getQueryParameters(), QUERYPARAMETERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

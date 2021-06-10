@@ -31,6 +31,10 @@ public class EdgeOutputConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3OutputLocation").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<String> PRESETDEPLOYMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PresetDeploymentType").build();
+    private static final MarshallingInfo<String> PRESETDEPLOYMENTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PresetDeploymentConfig").build();
 
     private static final EdgeOutputConfigMarshaller instance = new EdgeOutputConfigMarshaller();
 
@@ -50,6 +54,8 @@ public class EdgeOutputConfigMarshaller {
         try {
             protocolMarshaller.marshall(edgeOutputConfig.getS3OutputLocation(), S3OUTPUTLOCATION_BINDING);
             protocolMarshaller.marshall(edgeOutputConfig.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(edgeOutputConfig.getPresetDeploymentType(), PRESETDEPLOYMENTTYPE_BINDING);
+            protocolMarshaller.marshall(edgeOutputConfig.getPresetDeploymentConfig(), PRESETDEPLOYMENTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

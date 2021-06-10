@@ -30,7 +30,7 @@ public class ServiceDiscovery implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies any AWS Cloud Map information for the virtual node.
+     * Specifies any Cloud Map information for the virtual node.
      * </p>
      */
     private AwsCloudMapServiceDiscovery awsCloudMap;
@@ -43,11 +43,11 @@ public class ServiceDiscovery implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies any AWS Cloud Map information for the virtual node.
+     * Specifies any Cloud Map information for the virtual node.
      * </p>
      * 
      * @param awsCloudMap
-     *        Specifies any AWS Cloud Map information for the virtual node.
+     *        Specifies any Cloud Map information for the virtual node.
      */
 
     public void setAwsCloudMap(AwsCloudMapServiceDiscovery awsCloudMap) {
@@ -56,10 +56,10 @@ public class ServiceDiscovery implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies any AWS Cloud Map information for the virtual node.
+     * Specifies any Cloud Map information for the virtual node.
      * </p>
      * 
-     * @return Specifies any AWS Cloud Map information for the virtual node.
+     * @return Specifies any Cloud Map information for the virtual node.
      */
 
     public AwsCloudMapServiceDiscovery getAwsCloudMap() {
@@ -68,11 +68,11 @@ public class ServiceDiscovery implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies any AWS Cloud Map information for the virtual node.
+     * Specifies any Cloud Map information for the virtual node.
      * </p>
      * 
      * @param awsCloudMap
-     *        Specifies any AWS Cloud Map information for the virtual node.
+     *        Specifies any Cloud Map information for the virtual node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

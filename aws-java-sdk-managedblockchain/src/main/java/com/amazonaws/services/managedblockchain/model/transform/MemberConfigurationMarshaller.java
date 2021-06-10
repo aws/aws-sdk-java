@@ -39,6 +39,8 @@ public class MemberConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingConfiguration").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> KMSKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyArn").build();
 
     private static final MemberConfigurationMarshaller instance = new MemberConfigurationMarshaller();
 
@@ -61,6 +63,7 @@ public class MemberConfigurationMarshaller {
             protocolMarshaller.marshall(memberConfiguration.getFrameworkConfiguration(), FRAMEWORKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(memberConfiguration.getLogPublishingConfiguration(), LOGPUBLISHINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(memberConfiguration.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(memberConfiguration.getKmsKeyArn(), KMSKEYARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

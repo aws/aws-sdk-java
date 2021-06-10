@@ -161,6 +161,12 @@ public class NatGateway implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Indicates whether the NAT gateway supports public or private connectivity.
+     * </p>
+     */
+    private String connectivityType;
 
     /**
      * <p>
@@ -1231,6 +1237,79 @@ public class NatGateway implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the NAT gateway supports public or private connectivity.
+     * </p>
+     * 
+     * @param connectivityType
+     *        Indicates whether the NAT gateway supports public or private connectivity.
+     * @see ConnectivityType
+     */
+
+    public void setConnectivityType(String connectivityType) {
+        this.connectivityType = connectivityType;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the NAT gateway supports public or private connectivity.
+     * </p>
+     * 
+     * @return Indicates whether the NAT gateway supports public or private connectivity.
+     * @see ConnectivityType
+     */
+
+    public String getConnectivityType() {
+        return this.connectivityType;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the NAT gateway supports public or private connectivity.
+     * </p>
+     * 
+     * @param connectivityType
+     *        Indicates whether the NAT gateway supports public or private connectivity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectivityType
+     */
+
+    public NatGateway withConnectivityType(String connectivityType) {
+        setConnectivityType(connectivityType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the NAT gateway supports public or private connectivity.
+     * </p>
+     * 
+     * @param connectivityType
+     *        Indicates whether the NAT gateway supports public or private connectivity.
+     * @see ConnectivityType
+     */
+
+    public void setConnectivityType(ConnectivityType connectivityType) {
+        withConnectivityType(connectivityType);
+    }
+
+    /**
+     * <p>
+     * Indicates whether the NAT gateway supports public or private connectivity.
+     * </p>
+     * 
+     * @param connectivityType
+     *        Indicates whether the NAT gateway supports public or private connectivity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectivityType
+     */
+
+    public NatGateway withConnectivityType(ConnectivityType connectivityType) {
+        this.connectivityType = connectivityType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1263,7 +1342,9 @@ public class NatGateway implements Serializable, Cloneable {
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getConnectivityType() != null)
+            sb.append("ConnectivityType: ").append(getConnectivityType());
         sb.append("}");
         return sb.toString();
     }
@@ -1322,6 +1403,10 @@ public class NatGateway implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getConnectivityType() == null ^ this.getConnectivityType() == null)
+            return false;
+        if (other.getConnectivityType() != null && other.getConnectivityType().equals(this.getConnectivityType()) == false)
+            return false;
         return true;
     }
 
@@ -1341,6 +1426,7 @@ public class NatGateway implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getConnectivityType() == null) ? 0 : getConnectivityType().hashCode());
         return hashCode;
     }
 

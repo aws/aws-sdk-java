@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The properties that are applied when Zendesk is used as a destination.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ZendeskDestinationProperties"
  *      target="_top">AWS API Documentation</a>
@@ -25,6 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ZendeskDestinationProperties implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The object specified in the Zendesk flow destination.
+     * </p>
+     */
     private String object;
 
     private java.util.List<String> idFieldNames;
@@ -34,7 +42,12 @@ public class ZendeskDestinationProperties implements Serializable, Cloneable, St
     private String writeOperationType;
 
     /**
+     * <p>
+     * The object specified in the Zendesk flow destination.
+     * </p>
+     * 
      * @param object
+     *        The object specified in the Zendesk flow destination.
      */
 
     public void setObject(String object) {
@@ -42,7 +55,11 @@ public class ZendeskDestinationProperties implements Serializable, Cloneable, St
     }
 
     /**
-     * @return
+     * <p>
+     * The object specified in the Zendesk flow destination.
+     * </p>
+     * 
+     * @return The object specified in the Zendesk flow destination.
      */
 
     public String getObject() {
@@ -50,7 +67,12 @@ public class ZendeskDestinationProperties implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * The object specified in the Zendesk flow destination.
+     * </p>
+     * 
      * @param object
+     *        The object specified in the Zendesk flow destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

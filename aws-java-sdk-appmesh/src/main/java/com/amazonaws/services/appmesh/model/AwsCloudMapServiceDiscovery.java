@@ -19,11 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that represents the AWS Cloud Map service discovery information for your virtual node.
+ * An object that represents the Cloud Map service discovery information for your virtual node.
  * </p>
  * <note>
  * <p>
- * AWS Cloud Map is not available in the eu-south-1 Region.
+ * Cloud Map is not available in the eu-south-1 Region.
  * </p>
  * </note>
  * 
@@ -43,13 +43,13 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
     private java.util.List<AwsCloudMapInstanceAttribute> attributes;
     /**
      * <p>
-     * The name of the AWS Cloud Map namespace to use.
+     * The name of the Cloud Map namespace to use.
      * </p>
      */
     private String namespaceName;
     /**
      * <p>
-     * The name of the AWS Cloud Map service to use.
+     * The name of the Cloud Map service to use.
      * </p>
      */
     private String serviceName;
@@ -142,11 +142,11 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the AWS Cloud Map namespace to use.
+     * The name of the Cloud Map namespace to use.
      * </p>
      * 
      * @param namespaceName
-     *        The name of the AWS Cloud Map namespace to use.
+     *        The name of the Cloud Map namespace to use.
      */
 
     public void setNamespaceName(String namespaceName) {
@@ -155,10 +155,10 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the AWS Cloud Map namespace to use.
+     * The name of the Cloud Map namespace to use.
      * </p>
      * 
-     * @return The name of the AWS Cloud Map namespace to use.
+     * @return The name of the Cloud Map namespace to use.
      */
 
     public String getNamespaceName() {
@@ -167,11 +167,11 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the AWS Cloud Map namespace to use.
+     * The name of the Cloud Map namespace to use.
      * </p>
      * 
      * @param namespaceName
-     *        The name of the AWS Cloud Map namespace to use.
+     *        The name of the Cloud Map namespace to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +182,11 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the AWS Cloud Map service to use.
+     * The name of the Cloud Map service to use.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS Cloud Map service to use.
+     *        The name of the Cloud Map service to use.
      */
 
     public void setServiceName(String serviceName) {
@@ -195,10 +195,10 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the AWS Cloud Map service to use.
+     * The name of the Cloud Map service to use.
      * </p>
      * 
-     * @return The name of the AWS Cloud Map service to use.
+     * @return The name of the Cloud Map service to use.
      */
 
     public String getServiceName() {
@@ -207,11 +207,11 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the AWS Cloud Map service to use.
+     * The name of the Cloud Map service to use.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS Cloud Map service to use.
+     *        The name of the Cloud Map service to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -433,6 +433,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public RevokeTokenResult revokeToken(RevokeTokenRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetRiskConfigurationResult setRiskConfiguration(SetRiskConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -33,6 +33,8 @@ public class GatewayRouteSpecMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("http2Route").build();
     private static final MarshallingInfo<StructuredPojo> HTTPROUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("httpRoute").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("priority").build();
 
     private static final GatewayRouteSpecMarshaller instance = new GatewayRouteSpecMarshaller();
 
@@ -53,6 +55,7 @@ public class GatewayRouteSpecMarshaller {
             protocolMarshaller.marshall(gatewayRouteSpec.getGrpcRoute(), GRPCROUTE_BINDING);
             protocolMarshaller.marshall(gatewayRouteSpec.getHttp2Route(), HTTP2ROUTE_BINDING);
             protocolMarshaller.marshall(gatewayRouteSpec.getHttpRoute(), HTTPROUTE_BINDING);
+            protocolMarshaller.marshall(gatewayRouteSpec.getPriority(), PRIORITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

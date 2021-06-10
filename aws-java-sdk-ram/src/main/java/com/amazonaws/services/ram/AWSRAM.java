@@ -270,6 +270,8 @@ public interface AWSRAM {
      *         The service is not available.
      * @throws OperationNotPermittedException
      *         The requested operation is not permitted.
+     * @throws InvalidStateTransitionException
+     *         The requested state transition is not valid.
      * @sample AWSRAM.DisassociateResourceSharePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission"
      *      target="_top">AWS API Documentation</a>
@@ -378,7 +380,7 @@ public interface AWSRAM {
 
     /**
      * <p>
-     * Gets the invitations for resource sharing that you've received.
+     * Gets the invitations that you have received for resource shares.
      * </p>
      * 
      * @param getResourceShareInvitationsRequest
@@ -609,6 +611,8 @@ public interface AWSRAM {
      * @return Result of the PromoteResourceShareCreatedFromPolicy operation returned by the service.
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
+     * @throws ResourceShareLimitExceededException
+     *         The requested resource share exceeds the limit for your account.
      * @throws OperationNotPermittedException
      *         The requested operation is not permitted.
      * @throws InvalidParameterException
@@ -673,6 +677,8 @@ public interface AWSRAM {
      *         A parameter is not valid.
      * @throws MalformedArnException
      *         The format of an Amazon Resource Name (ARN) is not valid.
+     * @throws UnknownResourceException
+     *         A specified resource was not found.
      * @throws TagLimitExceededException
      *         The requested tags exceed the limit for your account.
      * @throws ResourceArnNotFoundException

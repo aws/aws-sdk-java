@@ -5765,6 +5765,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @return Result of the ModifyAquaConfiguration operation returned by the service.
      * @throws ClusterNotFoundException
      *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
      * @throws UnsupportedOperationException
      *         The requested operation isn't supported.
      * @sample AmazonRedshift.ModifyAquaConfiguration

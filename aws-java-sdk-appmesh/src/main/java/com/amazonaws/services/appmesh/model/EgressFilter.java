@@ -31,9 +31,9 @@ public class EgressFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual
-     * nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for AWS API
-     * calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or
-     * outside of the service mesh.
+     * nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon
+     * Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any
+     * endpoint inside or outside of the service mesh.
      * </p>
      */
     private String type;
@@ -41,15 +41,15 @@ public class EgressFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual
-     * nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for AWS API
-     * calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or
-     * outside of the service mesh.
+     * nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon
+     * Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any
+     * endpoint inside or outside of the service mesh.
      * </p>
      * 
      * @param type
      *        The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from
      *        virtual nodes to other defined resources in the service mesh (and any traffic to
-     *        <code>*.amazonaws.com</code> for AWS API calls). You can set the egress filter type to
+     *        <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to
      *        <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.
      * @see EgressFilterType
      */
@@ -61,14 +61,14 @@ public class EgressFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual
-     * nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for AWS API
-     * calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or
-     * outside of the service mesh.
+     * nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon
+     * Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any
+     * endpoint inside or outside of the service mesh.
      * </p>
      * 
      * @return The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from
      *         virtual nodes to other defined resources in the service mesh (and any traffic to
-     *         <code>*.amazonaws.com</code> for AWS API calls). You can set the egress filter type to
+     *         <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to
      *         <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.
      * @see EgressFilterType
      */
@@ -80,15 +80,15 @@ public class EgressFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual
-     * nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for AWS API
-     * calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or
-     * outside of the service mesh.
+     * nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon
+     * Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any
+     * endpoint inside or outside of the service mesh.
      * </p>
      * 
      * @param type
      *        The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from
      *        virtual nodes to other defined resources in the service mesh (and any traffic to
-     *        <code>*.amazonaws.com</code> for AWS API calls). You can set the egress filter type to
+     *        <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to
      *        <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EgressFilterType
@@ -102,15 +102,15 @@ public class EgressFilter implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual
-     * nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for AWS API
-     * calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or
-     * outside of the service mesh.
+     * nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon
+     * Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any
+     * endpoint inside or outside of the service mesh.
      * </p>
      * 
      * @param type
      *        The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from
      *        virtual nodes to other defined resources in the service mesh (and any traffic to
-     *        <code>*.amazonaws.com</code> for AWS API calls). You can set the egress filter type to
+     *        <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to
      *        <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EgressFilterType

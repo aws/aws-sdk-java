@@ -83,6 +83,10 @@ public class ResourceShareInvitationJsonUnmarshaller implements Unmarshaller<Res
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("receiverArn", targetDepth)) {
+                    context.nextToken();
+                    resourceShareInvitation.setReceiverArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

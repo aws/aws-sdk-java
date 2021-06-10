@@ -89,6 +89,10 @@ public class MemberJsonUnmarshaller implements Unmarshaller<Member, JsonUnmarsha
                     context.nextToken();
                     member.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("KmsKeyArn", targetDepth)) {
+                    context.nextToken();
+                    member.setKmsKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

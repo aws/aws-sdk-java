@@ -68,6 +68,37 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for
+     * encryption at rest in the member. This parameter is inherited by any nodes that this member creates.
+     * </p>
+     * <p>
+     * Use one of the following options to specify this parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     * </p>
+     * <p>
+     * Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String kmsKeyArn;
 
     /**
      * <p>
@@ -337,6 +368,196 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for
+     * encryption at rest in the member. This parameter is inherited by any nodes that this member creates.
+     * </p>
+     * <p>
+     * Use one of the following options to specify this parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     * </p>
+     * <p>
+     * Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use
+     *        for encryption at rest in the member. This parameter is inherited by any nodes that this member
+     *        creates.</p>
+     *        <p>
+     *        Use one of the following options to specify this parameter:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     *        </p>
+     *        <p>
+     *        Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+     *        asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The following is an example of a KMS key ARN:
+     *        <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setKmsKeyArn(String kmsKeyArn) {
+        this.kmsKeyArn = kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for
+     * encryption at rest in the member. This parameter is inherited by any nodes that this member creates.
+     * </p>
+     * <p>
+     * Use one of the following options to specify this parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     * </p>
+     * <p>
+     * Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use
+     *         for encryption at rest in the member. This parameter is inherited by any nodes that this member
+     *         creates.</p>
+     *         <p>
+     *         Use one of the following options to specify this parameter:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     *         </p>
+     *         <p>
+     *         Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
+     *         and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         The following is an example of a KMS key ARN:
+     *         <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getKmsKeyArn() {
+        return this.kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use for
+     * encryption at rest in the member. This parameter is inherited by any nodes that this member creates.
+     * </p>
+     * <p>
+     * Use one of the following options to specify this parameter:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     * </p>
+     * <p>
+     * Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * The following is an example of a KMS key ARN:
+     * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) to use
+     *        for encryption at rest in the member. This parameter is inherited by any nodes that this member
+     *        creates.</p>
+     *        <p>
+     *        Use one of the following options to specify this parameter:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Undefined or empty string</b> - The member uses an AWS owned KMS key for encryption by default.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>A valid symmetric customer managed KMS key</b> - The member uses the specified key for encryption.
+     *        </p>
+     *        <p>
+     *        Amazon Managed Blockchain doesn't support asymmetric keys. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+     *        asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The following is an example of a KMS key ARN:
+     *        <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberConfiguration withKmsKeyArn(String kmsKeyArn) {
+        setKmsKeyArn(kmsKeyArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -357,7 +578,9 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
         if (getLogPublishingConfiguration() != null)
             sb.append("LogPublishingConfiguration: ").append(getLogPublishingConfiguration()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getKmsKeyArn() != null)
+            sb.append("KmsKeyArn: ").append(getKmsKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -392,6 +615,10 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
+            return false;
+        if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
+            return false;
         return true;
     }
 
@@ -405,6 +632,7 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getFrameworkConfiguration() == null) ? 0 : getFrameworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingConfiguration() == null) ? 0 : getLogPublishingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         return hashCode;
     }
 

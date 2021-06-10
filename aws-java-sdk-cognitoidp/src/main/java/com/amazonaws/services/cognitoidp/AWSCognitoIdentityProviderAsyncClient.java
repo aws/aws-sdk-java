@@ -2879,6 +2879,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<RevokeTokenResult> revokeTokenAsync(RevokeTokenRequest request) {
+
+        return revokeTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeTokenResult> revokeTokenAsync(final RevokeTokenRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RevokeTokenRequest, RevokeTokenResult> asyncHandler) {
+        final RevokeTokenRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RevokeTokenResult>() {
+            @Override
+            public RevokeTokenResult call() throws Exception {
+                RevokeTokenResult result = null;
+
+                try {
+                    result = executeRevokeToken(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SetRiskConfigurationResult> setRiskConfigurationAsync(SetRiskConfigurationRequest request) {
 
         return setRiskConfigurationAsync(request, null);

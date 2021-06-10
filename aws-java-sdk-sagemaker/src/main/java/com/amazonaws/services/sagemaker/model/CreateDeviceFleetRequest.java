@@ -55,6 +55,17 @@ public class CreateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated will
+     * match this pattern: "SageMakerEdge-{DeviceFleetName}".
+     * </p>
+     * <p>
+     * For example, if your device fleet is called "demo-fleet", the name of the role alias will be
+     * "SageMakerEdge-demo-fleet".
+     * </p>
+     */
+    private Boolean enableIotRoleAlias;
 
     /**
      * <p>
@@ -287,6 +298,94 @@ public class CreateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated will
+     * match this pattern: "SageMakerEdge-{DeviceFleetName}".
+     * </p>
+     * <p>
+     * For example, if your device fleet is called "demo-fleet", the name of the role alias will be
+     * "SageMakerEdge-demo-fleet".
+     * </p>
+     * 
+     * @param enableIotRoleAlias
+     *        Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated
+     *        will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+     *        <p>
+     *        For example, if your device fleet is called "demo-fleet", the name of the role alias will be
+     *        "SageMakerEdge-demo-fleet".
+     */
+
+    public void setEnableIotRoleAlias(Boolean enableIotRoleAlias) {
+        this.enableIotRoleAlias = enableIotRoleAlias;
+    }
+
+    /**
+     * <p>
+     * Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated will
+     * match this pattern: "SageMakerEdge-{DeviceFleetName}".
+     * </p>
+     * <p>
+     * For example, if your device fleet is called "demo-fleet", the name of the role alias will be
+     * "SageMakerEdge-demo-fleet".
+     * </p>
+     * 
+     * @return Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias
+     *         generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+     *         <p>
+     *         For example, if your device fleet is called "demo-fleet", the name of the role alias will be
+     *         "SageMakerEdge-demo-fleet".
+     */
+
+    public Boolean getEnableIotRoleAlias() {
+        return this.enableIotRoleAlias;
+    }
+
+    /**
+     * <p>
+     * Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated will
+     * match this pattern: "SageMakerEdge-{DeviceFleetName}".
+     * </p>
+     * <p>
+     * For example, if your device fleet is called "demo-fleet", the name of the role alias will be
+     * "SageMakerEdge-demo-fleet".
+     * </p>
+     * 
+     * @param enableIotRoleAlias
+     *        Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated
+     *        will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+     *        <p>
+     *        For example, if your device fleet is called "demo-fleet", the name of the role alias will be
+     *        "SageMakerEdge-demo-fleet".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeviceFleetRequest withEnableIotRoleAlias(Boolean enableIotRoleAlias) {
+        setEnableIotRoleAlias(enableIotRoleAlias);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias generated will
+     * match this pattern: "SageMakerEdge-{DeviceFleetName}".
+     * </p>
+     * <p>
+     * For example, if your device fleet is called "demo-fleet", the name of the role alias will be
+     * "SageMakerEdge-demo-fleet".
+     * </p>
+     * 
+     * @return Whether to create an AWS IoT Role Alias during device fleet creation. The name of the role alias
+     *         generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+     *         <p>
+     *         For example, if your device fleet is called "demo-fleet", the name of the role alias will be
+     *         "SageMakerEdge-demo-fleet".
+     */
+
+    public Boolean isEnableIotRoleAlias() {
+        return this.enableIotRoleAlias;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -307,7 +406,9 @@ public class CreateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getOutputConfig() != null)
             sb.append("OutputConfig: ").append(getOutputConfig()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getEnableIotRoleAlias() != null)
+            sb.append("EnableIotRoleAlias: ").append(getEnableIotRoleAlias());
         sb.append("}");
         return sb.toString();
     }
@@ -342,6 +443,10 @@ public class CreateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getEnableIotRoleAlias() == null ^ this.getEnableIotRoleAlias() == null)
+            return false;
+        if (other.getEnableIotRoleAlias() != null && other.getEnableIotRoleAlias().equals(this.getEnableIotRoleAlias()) == false)
+            return false;
         return true;
     }
 
@@ -355,6 +460,7 @@ public class CreateDeviceFleetRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getEnableIotRoleAlias() == null) ? 0 : getEnableIotRoleAlias().hashCode());
         return hashCode;
     }
 

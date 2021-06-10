@@ -48,6 +48,10 @@ public class GrpcGatewayRouteActionJsonUnmarshaller implements Unmarshaller<Grpc
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("rewrite", targetDepth)) {
+                    context.nextToken();
+                    grpcGatewayRouteAction.setRewrite(GrpcGatewayRouteRewriteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("target", targetDepth)) {
                     context.nextToken();
                     grpcGatewayRouteAction.setTarget(GatewayRouteTargetJsonUnmarshaller.getInstance().unmarshall(context));

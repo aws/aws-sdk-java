@@ -406,12 +406,12 @@ public interface AmazonChime {
      * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the product type or the calling name.
      * </p>
      * <p>
-     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the US,
-     * you must use the Amazon Chime SIP Media Application Dial-In product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the
+     * U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
-     * be complete before you can request another update.
+     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
+     * must be complete before you can request another update.
      * </p>
      * 
      * @param batchUpdatePhoneNumberRequest
@@ -977,7 +977,7 @@ public interface AmazonChime {
     /**
      * <p>
      * Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot use the Amazon Chime
-     * Business Calling product type. For numbers outside the US, you must use the Amazon Chime SIP Media Application
+     * Business Calling product type. For numbers outside the U.S., you must use the Amazon Chime SIP Media Application
      * Dial-In product type.
      * </p>
      * 
@@ -4981,8 +4981,8 @@ public interface AmazonChime {
 
     /**
      * <p>
-     * Updates account details for the specified Amazon Chime account. Currently, only account name updates are
-     * supported for this action.
+     * Updates account details for the specified Amazon Chime account. Currently, only account name and default license
+     * updates are supported for this action.
      * </p>
      * 
      * @param updateAccountRequest

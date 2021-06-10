@@ -108,6 +108,12 @@ public class DescribeEdgePackagingJobResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String modelSignature;
+    /**
+     * <p>
+     * The output of a SageMaker Edge Manager deployable resource.
+     * </p>
+     */
+    private EdgePresetDeploymentOutput presetDeploymentOutput;
 
     /**
      * <p>
@@ -698,6 +704,46 @@ public class DescribeEdgePackagingJobResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The output of a SageMaker Edge Manager deployable resource.
+     * </p>
+     * 
+     * @param presetDeploymentOutput
+     *        The output of a SageMaker Edge Manager deployable resource.
+     */
+
+    public void setPresetDeploymentOutput(EdgePresetDeploymentOutput presetDeploymentOutput) {
+        this.presetDeploymentOutput = presetDeploymentOutput;
+    }
+
+    /**
+     * <p>
+     * The output of a SageMaker Edge Manager deployable resource.
+     * </p>
+     * 
+     * @return The output of a SageMaker Edge Manager deployable resource.
+     */
+
+    public EdgePresetDeploymentOutput getPresetDeploymentOutput() {
+        return this.presetDeploymentOutput;
+    }
+
+    /**
+     * <p>
+     * The output of a SageMaker Edge Manager deployable resource.
+     * </p>
+     * 
+     * @param presetDeploymentOutput
+     *        The output of a SageMaker Edge Manager deployable resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEdgePackagingJobResult withPresetDeploymentOutput(EdgePresetDeploymentOutput presetDeploymentOutput) {
+        setPresetDeploymentOutput(presetDeploymentOutput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -736,7 +782,9 @@ public class DescribeEdgePackagingJobResult extends com.amazonaws.AmazonWebServi
         if (getModelArtifact() != null)
             sb.append("ModelArtifact: ").append(getModelArtifact()).append(",");
         if (getModelSignature() != null)
-            sb.append("ModelSignature: ").append(getModelSignature());
+            sb.append("ModelSignature: ").append(getModelSignature()).append(",");
+        if (getPresetDeploymentOutput() != null)
+            sb.append("PresetDeploymentOutput: ").append(getPresetDeploymentOutput());
         sb.append("}");
         return sb.toString();
     }
@@ -808,6 +856,10 @@ public class DescribeEdgePackagingJobResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getModelSignature() != null && other.getModelSignature().equals(this.getModelSignature()) == false)
             return false;
+        if (other.getPresetDeploymentOutput() == null ^ this.getPresetDeploymentOutput() == null)
+            return false;
+        if (other.getPresetDeploymentOutput() != null && other.getPresetDeploymentOutput().equals(this.getPresetDeploymentOutput()) == false)
+            return false;
         return true;
     }
 
@@ -830,6 +882,7 @@ public class DescribeEdgePackagingJobResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getModelArtifact() == null) ? 0 : getModelArtifact().hashCode());
         hashCode = prime * hashCode + ((getModelSignature() == null) ? 0 : getModelSignature().hashCode());
+        hashCode = prime * hashCode + ((getPresetDeploymentOutput() == null) ? 0 : getPresetDeploymentOutput().hashCode());
         return hashCode;
     }
 

@@ -42,7 +42,7 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
     private String version;
     /**
      * <p>
-     * The identifier for the version of the permission that is set as the default version.
+     * Specifies whether the version of the permission is set to the default version for this permission.
      * </p>
      */
     private Boolean defaultVersion;
@@ -78,6 +78,12 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
      * </p>
      */
     private java.util.Date lastUpdatedTime;
+    /**
+     * <p>
+     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * </p>
+     */
+    private Boolean isResourceTypeDefault;
 
     /**
      * <p>
@@ -161,11 +167,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The identifier for the version of the permission that is set as the default version.
+     * Specifies whether the version of the permission is set to the default version for this permission.
      * </p>
      * 
      * @param defaultVersion
-     *        The identifier for the version of the permission that is set as the default version.
+     *        Specifies whether the version of the permission is set to the default version for this permission.
      */
 
     public void setDefaultVersion(Boolean defaultVersion) {
@@ -174,10 +180,10 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The identifier for the version of the permission that is set as the default version.
+     * Specifies whether the version of the permission is set to the default version for this permission.
      * </p>
      * 
-     * @return The identifier for the version of the permission that is set as the default version.
+     * @return Specifies whether the version of the permission is set to the default version for this permission.
      */
 
     public Boolean getDefaultVersion() {
@@ -186,11 +192,11 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The identifier for the version of the permission that is set as the default version.
+     * Specifies whether the version of the permission is set to the default version for this permission.
      * </p>
      * 
      * @param defaultVersion
-     *        The identifier for the version of the permission that is set as the default version.
+     *        Specifies whether the version of the permission is set to the default version for this permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,10 +207,10 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The identifier for the version of the permission that is set as the default version.
+     * Specifies whether the version of the permission is set to the default version for this permission.
      * </p>
      * 
-     * @return The identifier for the version of the permission that is set as the default version.
+     * @return Specifies whether the version of the permission is set to the default version for this permission.
      */
 
     public Boolean isDefaultVersion() {
@@ -424,6 +430,58 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * </p>
+     * 
+     * @param isResourceTypeDefault
+     *        Specifies whether the version of the permission is set to the default version for this resource type.
+     */
+
+    public void setIsResourceTypeDefault(Boolean isResourceTypeDefault) {
+        this.isResourceTypeDefault = isResourceTypeDefault;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * </p>
+     * 
+     * @return Specifies whether the version of the permission is set to the default version for this resource type.
+     */
+
+    public Boolean getIsResourceTypeDefault() {
+        return this.isResourceTypeDefault;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * </p>
+     * 
+     * @param isResourceTypeDefault
+     *        Specifies whether the version of the permission is set to the default version for this resource type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceSharePermissionDetail withIsResourceTypeDefault(Boolean isResourceTypeDefault) {
+        setIsResourceTypeDefault(isResourceTypeDefault);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the version of the permission is set to the default version for this resource type.
+     * </p>
+     * 
+     * @return Specifies whether the version of the permission is set to the default version for this resource type.
+     */
+
+    public Boolean isResourceTypeDefault() {
+        return this.isResourceTypeDefault;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -450,7 +508,9 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
+        if (getIsResourceTypeDefault() != null)
+            sb.append("IsResourceTypeDefault: ").append(getIsResourceTypeDefault());
         sb.append("}");
         return sb.toString();
     }
@@ -497,6 +557,10 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
             return false;
         if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
+        if (other.getIsResourceTypeDefault() == null ^ this.getIsResourceTypeDefault() == null)
+            return false;
+        if (other.getIsResourceTypeDefault() != null && other.getIsResourceTypeDefault().equals(this.getIsResourceTypeDefault()) == false)
+            return false;
         return true;
     }
 
@@ -513,6 +577,7 @@ public class ResourceSharePermissionDetail implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getPermission() == null) ? 0 : getPermission().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getIsResourceTypeDefault() == null) ? 0 : getIsResourceTypeDefault().hashCode());
         return hashCode;
     }
 

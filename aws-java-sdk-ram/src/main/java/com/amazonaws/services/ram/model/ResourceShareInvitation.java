@@ -79,6 +79,12 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
      */
     @Deprecated
     private java.util.List<ResourceShareAssociation> resourceShareAssociations;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     * </p>
+     */
+    private String receiverArn;
 
     /**
      * <p>
@@ -466,6 +472,46 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     * </p>
+     * 
+     * @param receiverArn
+     *        The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     */
+
+    public void setReceiverArn(String receiverArn) {
+        this.receiverArn = receiverArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     */
+
+    public String getReceiverArn() {
+        return this.receiverArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     * </p>
+     * 
+     * @param receiverArn
+     *        The Amazon Resource Name (ARN) of the IAM user or IAM role that received the invitation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceShareInvitation withReceiverArn(String receiverArn) {
+        setReceiverArn(receiverArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -492,7 +538,9 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getResourceShareAssociations() != null)
-            sb.append("ResourceShareAssociations: ").append(getResourceShareAssociations());
+            sb.append("ResourceShareAssociations: ").append(getResourceShareAssociations()).append(",");
+        if (getReceiverArn() != null)
+            sb.append("ReceiverArn: ").append(getReceiverArn());
         sb.append("}");
         return sb.toString();
     }
@@ -539,6 +587,10 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
             return false;
         if (other.getResourceShareAssociations() != null && other.getResourceShareAssociations().equals(this.getResourceShareAssociations()) == false)
             return false;
+        if (other.getReceiverArn() == null ^ this.getReceiverArn() == null)
+            return false;
+        if (other.getReceiverArn() != null && other.getReceiverArn().equals(this.getReceiverArn()) == false)
+            return false;
         return true;
     }
 
@@ -555,6 +607,7 @@ public class ResourceShareInvitation implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getInvitationTimestamp() == null) ? 0 : getInvitationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getResourceShareAssociations() == null) ? 0 : getResourceShareAssociations().hashCode());
+        hashCode = prime * hashCode + ((getReceiverArn() == null) ? 0 : getReceiverArn().hashCode());
         return hashCode;
     }
 

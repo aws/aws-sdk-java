@@ -57,7 +57,7 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
      * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
+     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
      * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
      * </p>
      */
@@ -265,7 +265,7 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
      * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
+     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
      * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
      * </p>
      * 
@@ -282,8 +282,7 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> |
      *        <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> |
      *        <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     *        <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> |
-     *        <code>route53resolver:ResolverRule</code>
+     *        <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
      */
 
     public void setResourceType(String resourceType) {
@@ -304,7 +303,7 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
      * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
+     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
      * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
      * </p>
      * 
@@ -321,8 +320,7 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> |
      *         <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> |
      *         <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     *         <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> |
-     *         <code>route53resolver:ResolverRule</code>
+     *         <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
      */
 
     public String getResourceType() {
@@ -343,7 +341,7 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
      * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
-     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
+     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
      * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
      * </p>
      * 
@@ -360,8 +358,7 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> |
      *        <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> |
      *        <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     *        <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> |
-     *        <code>route53resolver:ResolverRule</code>
+     *        <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

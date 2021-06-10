@@ -1059,6 +1059,19 @@ public class AbstractAWSCognitoIdentityProviderAsync extends AbstractAWSCognitoI
     }
 
     @Override
+    public java.util.concurrent.Future<RevokeTokenResult> revokeTokenAsync(RevokeTokenRequest request) {
+
+        return revokeTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeTokenResult> revokeTokenAsync(RevokeTokenRequest request,
+            com.amazonaws.handlers.AsyncHandler<RevokeTokenRequest, RevokeTokenResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SetRiskConfigurationResult> setRiskConfigurationAsync(SetRiskConfigurationRequest request) {
 
         return setRiskConfigurationAsync(request, null);

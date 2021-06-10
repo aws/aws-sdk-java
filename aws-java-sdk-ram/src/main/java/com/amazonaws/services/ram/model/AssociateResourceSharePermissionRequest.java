@@ -33,7 +33,7 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
     private String resourceShareArn;
     /**
      * <p>
-     * The ARN of the AWS RAM permission to associate with the resource share.
+     * The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with the resource share.
      * </p>
      */
     private String permissionArn;
@@ -51,6 +51,12 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * The version of the AWS RAM permissions to associate with the resource share.
+     * </p>
+     */
+    private Integer permissionVersion;
 
     /**
      * <p>
@@ -94,11 +100,11 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the AWS RAM permission to associate with the resource share.
+     * The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with the resource share.
      * </p>
      * 
      * @param permissionArn
-     *        The ARN of the AWS RAM permission to associate with the resource share.
+     *        The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with the resource share.
      */
 
     public void setPermissionArn(String permissionArn) {
@@ -107,10 +113,10 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the AWS RAM permission to associate with the resource share.
+     * The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with the resource share.
      * </p>
      * 
-     * @return The ARN of the AWS RAM permission to associate with the resource share.
+     * @return The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with the resource share.
      */
 
     public String getPermissionArn() {
@@ -119,11 +125,11 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the AWS RAM permission to associate with the resource share.
+     * The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with the resource share.
      * </p>
      * 
      * @param permissionArn
-     *        The ARN of the AWS RAM permission to associate with the resource share.
+     *        The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,6 +247,46 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * The version of the AWS RAM permissions to associate with the resource share.
+     * </p>
+     * 
+     * @param permissionVersion
+     *        The version of the AWS RAM permissions to associate with the resource share.
+     */
+
+    public void setPermissionVersion(Integer permissionVersion) {
+        this.permissionVersion = permissionVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the AWS RAM permissions to associate with the resource share.
+     * </p>
+     * 
+     * @return The version of the AWS RAM permissions to associate with the resource share.
+     */
+
+    public Integer getPermissionVersion() {
+        return this.permissionVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the AWS RAM permissions to associate with the resource share.
+     * </p>
+     * 
+     * @param permissionVersion
+     *        The version of the AWS RAM permissions to associate with the resource share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateResourceSharePermissionRequest withPermissionVersion(Integer permissionVersion) {
+        setPermissionVersion(permissionVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -259,7 +305,9 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
         if (getReplace() != null)
             sb.append("Replace: ").append(getReplace()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getPermissionVersion() != null)
+            sb.append("PermissionVersion: ").append(getPermissionVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -290,6 +338,10 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getPermissionVersion() == null ^ this.getPermissionVersion() == null)
+            return false;
+        if (other.getPermissionVersion() != null && other.getPermissionVersion().equals(this.getPermissionVersion()) == false)
+            return false;
         return true;
     }
 
@@ -302,6 +354,7 @@ public class AssociateResourceSharePermissionRequest extends com.amazonaws.Amazo
         hashCode = prime * hashCode + ((getPermissionArn() == null) ? 0 : getPermissionArn().hashCode());
         hashCode = prime * hashCode + ((getReplace() == null) ? 0 : getReplace().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getPermissionVersion() == null) ? 0 : getPermissionVersion().hashCode());
         return hashCode;
     }
 

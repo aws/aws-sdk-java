@@ -71,6 +71,11 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>UPDATING</code> - The member is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the
      * AWS account that owns the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -81,6 +86,18 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      * <code>DELETED</code> - The member can no longer participate on the network and all associated resources are
      * deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest.
+     * Either the KMS key was disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -249,6 +266,11 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>UPDATING</code> - The member is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the
      * AWS account that owns the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -259,6 +281,18 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      * <code>DELETED</code> - The member can no longer participate on the network and all associated resources are
      * deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest.
+     * Either the KMS key was disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -283,6 +317,11 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>UPDATING</code> - The member is in the process of being updated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>DELETING</code> - The member and all associated resources are in the process of being deleted.
      *        Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an
      *        <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -293,6 +332,18 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      *        <code>DELETED</code> - The member can no longer participate on the network and all associated resources
      *        are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the
      *        result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected
+     *        because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for
+     *        encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.
+     *        </p>
+     *        <p>
+     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might
+     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *        deleting and recreating the resource.
      *        </p>
      *        </li>
      * @see MemberStatus
@@ -324,6 +375,11 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>UPDATING</code> - The member is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the
      * AWS account that owns the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -334,6 +390,18 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      * <code>DELETED</code> - The member can no longer participate on the network and all associated resources are
      * deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest.
+     * Either the KMS key was disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -357,6 +425,11 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
+     *         <code>UPDATING</code> - The member is in the process of being updated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>DELETING</code> - The member and all associated resources are in the process of being deleted.
      *         Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      *         an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -367,6 +440,18 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      *         <code>DELETED</code> - The member can no longer participate on the network and all associated resources
      *         are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as
      *         the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected
+     *         because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for
+     *         encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.
+     *         </p>
+     *         <p>
+     *         The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource
+     *         might take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *         deleting and recreating the resource.
      *         </p>
      *         </li>
      * @see MemberStatus
@@ -398,6 +483,11 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>UPDATING</code> - The member is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the
      * AWS account that owns the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -408,6 +498,18 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      * <code>DELETED</code> - The member can no longer participate on the network and all associated resources are
      * deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest.
+     * Either the KMS key was disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -432,6 +534,11 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>UPDATING</code> - The member is in the process of being updated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>DELETING</code> - The member and all associated resources are in the process of being deleted.
      *        Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an
      *        <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -442,6 +549,18 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      *        <code>DELETED</code> - The member can no longer participate on the network and all associated resources
      *        are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the
      *        result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected
+     *        because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for
+     *        encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.
+     *        </p>
+     *        <p>
+     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might
+     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *        deleting and recreating the resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -475,6 +594,11 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>UPDATING</code> - The member is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the
      * AWS account that owns the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -485,6 +609,18 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      * <code>DELETED</code> - The member can no longer participate on the network and all associated resources are
      * deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for encryption at rest.
+     * Either the KMS key was disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -509,6 +645,11 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>UPDATING</code> - The member is in the process of being updated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>DELETING</code> - The member and all associated resources are in the process of being deleted.
      *        Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an
      *        <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -519,6 +660,18 @@ public class MemberSummary implements Serializable, Cloneable, StructuredPojo {
      *        <code>DELETED</code> - The member can no longer participate on the network and all associated resources
      *        are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the
      *        result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected
+     *        because it cannot access the specified customer managed key in AWS Key Management Service (AWS KMS) for
+     *        encryption at rest. Either the KMS key was disabled or deleted, or the grants on the key were revoked.
+     *        </p>
+     *        <p>
+     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might
+     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *        deleting and recreating the resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

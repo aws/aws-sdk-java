@@ -42,6 +42,61 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version 2
+     * components.
+     * </p>
+     */
+    private String presetDeploymentType;
+    /**
+     * <p>
+     * The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The
+     * available configuration options for each type are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name
+     * generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComponentDescription</code> (optional) - Description of the component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComponentVersion</code> (optional) - The version of the component.
+     * </p>
+     * <note>
+     * <p>
+     * AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i>
+     * number system. For example, version 1.0.0 represents the first major release for a component. For more
+     * information, see the <a href="https://semver.org/">semantic version specification</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms
+     * include Windows and Linux.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.
+     * </p>
+     * <p>
+     * Supported architectures Windows include: Windows32_x86, Windows64_x64.
+     * </p>
+     * <p>
+     * Supported architectures for Linux include: Linux x86_64, Linux ARMV8.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String presetDeploymentConfig;
 
     /**
      * <p>
@@ -136,6 +191,366 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version 2
+     * components.
+     * </p>
+     * 
+     * @param presetDeploymentType
+     *        The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version
+     *        2 components.
+     * @see EdgePresetDeploymentType
+     */
+
+    public void setPresetDeploymentType(String presetDeploymentType) {
+        this.presetDeploymentType = presetDeploymentType;
+    }
+
+    /**
+     * <p>
+     * The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version 2
+     * components.
+     * </p>
+     * 
+     * @return The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass
+     *         Version 2 components.
+     * @see EdgePresetDeploymentType
+     */
+
+    public String getPresetDeploymentType() {
+        return this.presetDeploymentType;
+    }
+
+    /**
+     * <p>
+     * The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version 2
+     * components.
+     * </p>
+     * 
+     * @param presetDeploymentType
+     *        The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version
+     *        2 components.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EdgePresetDeploymentType
+     */
+
+    public EdgeOutputConfig withPresetDeploymentType(String presetDeploymentType) {
+        setPresetDeploymentType(presetDeploymentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version 2
+     * components.
+     * </p>
+     * 
+     * @param presetDeploymentType
+     *        The deployment type SageMaker Edge Manager will create. Currently only supports AWS IoT Greengrass Version
+     *        2 components.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EdgePresetDeploymentType
+     */
+
+    public EdgeOutputConfig withPresetDeploymentType(EdgePresetDeploymentType presetDeploymentType) {
+        this.presetDeploymentType = presetDeploymentType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The
+     * available configuration options for each type are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name
+     * generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComponentDescription</code> (optional) - Description of the component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComponentVersion</code> (optional) - The version of the component.
+     * </p>
+     * <note>
+     * <p>
+     * AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i>
+     * number system. For example, version 1.0.0 represents the first major release for a component. For more
+     * information, see the <a href="https://semver.org/">semantic version specification</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms
+     * include Windows and Linux.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.
+     * </p>
+     * <p>
+     * Supported architectures Windows include: Windows32_x86, Windows64_x64.
+     * </p>
+     * <p>
+     * Supported architectures for Linux include: Linux x86_64, Linux ARMV8.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param presetDeploymentConfig
+     *        The configuration used to create deployment artifacts. Specify configuration options with a JSON string.
+     *        The available configuration options for each type are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default
+     *        name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
+     *        job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ComponentDescription</code> (optional) - Description of the component.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ComponentVersion</code> (optional) - The version of the component.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     *        major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a
+     *        component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported
+     *        platforms include Windows and Linux.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.
+     *        </p>
+     *        <p>
+     *        Supported architectures Windows include: Windows32_x86, Windows64_x64.
+     *        </p>
+     *        <p>
+     *        Supported architectures for Linux include: Linux x86_64, Linux ARMV8.
+     *        </p>
+     *        </li>
+     */
+
+    public void setPresetDeploymentConfig(String presetDeploymentConfig) {
+        this.presetDeploymentConfig = presetDeploymentConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The
+     * available configuration options for each type are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name
+     * generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComponentDescription</code> (optional) - Description of the component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComponentVersion</code> (optional) - The version of the component.
+     * </p>
+     * <note>
+     * <p>
+     * AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i>
+     * number system. For example, version 1.0.0 represents the first major release for a component. For more
+     * information, see the <a href="https://semver.org/">semantic version specification</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms
+     * include Windows and Linux.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.
+     * </p>
+     * <p>
+     * Supported architectures Windows include: Windows32_x86, Windows64_x64.
+     * </p>
+     * <p>
+     * Supported architectures for Linux include: Linux x86_64, Linux ARMV8.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The configuration used to create deployment artifacts. Specify configuration options with a JSON string.
+     *         The available configuration options for each type are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the
+     *         default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager
+     *         packaging job.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ComponentDescription</code> (optional) - Description of the component.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ComponentVersion</code> (optional) - The version of the component.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     *         major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a
+     *         component. For more information, see the <a href="https://semver.org/">semantic version
+     *         specification</a>.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported
+     *         platforms include Windows and Linux.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.
+     *         </p>
+     *         <p>
+     *         Supported architectures Windows include: Windows32_x86, Windows64_x64.
+     *         </p>
+     *         <p>
+     *         Supported architectures for Linux include: Linux x86_64, Linux ARMV8.
+     *         </p>
+     *         </li>
+     */
+
+    public String getPresetDeploymentConfig() {
+        return this.presetDeploymentConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The
+     * available configuration options for each type are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name
+     * generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComponentDescription</code> (optional) - Description of the component.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ComponentVersion</code> (optional) - The version of the component.
+     * </p>
+     * <note>
+     * <p>
+     * AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i> major.minor.patch</i>
+     * number system. For example, version 1.0.0 represents the first major release for a component. For more
+     * information, see the <a href="https://semver.org/">semantic version specification</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms
+     * include Windows and Linux.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.
+     * </p>
+     * <p>
+     * Supported architectures Windows include: Windows32_x86, Windows64_x64.
+     * </p>
+     * <p>
+     * Supported architectures for Linux include: Linux x86_64, Linux ARMV8.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param presetDeploymentConfig
+     *        The configuration used to create deployment artifacts. Specify configuration options with a JSON string.
+     *        The available configuration options for each type are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default
+     *        name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
+     *        job.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ComponentDescription</code> (optional) - Description of the component.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ComponentVersion</code> (optional) - The version of the component.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        AWS IoT Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     *        major.minor.patch</i> number system. For example, version 1.0.0 represents the first major release for a
+     *        component. For more information, see the <a href="https://semver.org/">semantic version specification</a>.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported
+     *        platforms include Windows and Linux.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform.
+     *        </p>
+     *        <p>
+     *        Supported architectures Windows include: Windows32_x86, Windows64_x64.
+     *        </p>
+     *        <p>
+     *        Supported architectures for Linux include: Linux x86_64, Linux ARMV8.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EdgeOutputConfig withPresetDeploymentConfig(String presetDeploymentConfig) {
+        setPresetDeploymentConfig(presetDeploymentConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -150,7 +565,11 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
         if (getS3OutputLocation() != null)
             sb.append("S3OutputLocation: ").append(getS3OutputLocation()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getPresetDeploymentType() != null)
+            sb.append("PresetDeploymentType: ").append(getPresetDeploymentType()).append(",");
+        if (getPresetDeploymentConfig() != null)
+            sb.append("PresetDeploymentConfig: ").append(getPresetDeploymentConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -173,6 +592,14 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getPresetDeploymentType() == null ^ this.getPresetDeploymentType() == null)
+            return false;
+        if (other.getPresetDeploymentType() != null && other.getPresetDeploymentType().equals(this.getPresetDeploymentType()) == false)
+            return false;
+        if (other.getPresetDeploymentConfig() == null ^ this.getPresetDeploymentConfig() == null)
+            return false;
+        if (other.getPresetDeploymentConfig() != null && other.getPresetDeploymentConfig().equals(this.getPresetDeploymentConfig()) == false)
+            return false;
         return true;
     }
 
@@ -183,6 +610,8 @@ public class EdgeOutputConfig implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getS3OutputLocation() == null) ? 0 : getS3OutputLocation().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getPresetDeploymentType() == null) ? 0 : getPresetDeploymentType().hashCode());
+        hashCode = prime * hashCode + ((getPresetDeploymentConfig() == null) ? 0 : getPresetDeploymentConfig().hashCode());
         return hashCode;
     }
 

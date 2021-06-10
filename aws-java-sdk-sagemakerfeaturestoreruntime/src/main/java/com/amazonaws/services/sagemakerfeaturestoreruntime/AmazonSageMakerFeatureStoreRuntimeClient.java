@@ -109,20 +109,20 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalFailure").withExceptionUnmarshaller(
-                                    com.amazonaws.services.sagemakerfeaturestoreruntime.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationError").withExceptionUnmarshaller(
                                     com.amazonaws.services.sagemakerfeaturestoreruntime.model.transform.ValidationErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailable").withExceptionUnmarshaller(
                                     com.amazonaws.services.sagemakerfeaturestoreruntime.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withExceptionUnmarshaller(
-                                    com.amazonaws.services.sagemakerfeaturestoreruntime.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessForbidden").withExceptionUnmarshaller(
                                     com.amazonaws.services.sagemakerfeaturestoreruntime.model.transform.AccessForbiddenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalFailure").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sagemakerfeaturestoreruntime.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sagemakerfeaturestoreruntime.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.sagemakerfeaturestoreruntime.model.AmazonSageMakerFeatureStoreRuntimeException.class));
 
     public static AmazonSageMakerFeatureStoreRuntimeClientBuilder builder() {
@@ -171,6 +171,70 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/sagemakerfeaturestoreruntime/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/sagemakerfeaturestoreruntime/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Retrieves a batch of <code>Records</code> from a <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @param batchGetRecordRequest
+     * @return Result of the BatchGetRecord operation returned by the service.
+     * @throws ValidationErrorException
+     *         There was an error validating your request.
+     * @throws InternalFailureException
+     *         An internal failure occurred. Try your request again. If the problem persists, contact AWS customer
+     *         support.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws AccessForbiddenException
+     *         You do not have permission to perform an action.
+     * @sample AmazonSageMakerFeatureStoreRuntime.BatchGetRecord
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetRecordResult batchGetRecord(BatchGetRecordRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetRecord(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetRecordResult executeBatchGetRecord(BatchGetRecordRequest batchGetRecordRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetRecordRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetRecordRequest> request = null;
+        Response<BatchGetRecordResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetRecordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetRecordRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker FeatureStore Runtime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetRecord");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetRecordResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchGetRecordResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**

@@ -48,6 +48,10 @@ public class HttpGatewayRouteActionJsonUnmarshaller implements Unmarshaller<Http
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("rewrite", targetDepth)) {
+                    context.nextToken();
+                    httpGatewayRouteAction.setRewrite(HttpGatewayRouteRewriteJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("target", targetDepth)) {
                     context.nextToken();
                     httpGatewayRouteAction.setTarget(GatewayRouteTargetJsonUnmarshaller.getInstance().unmarshall(context));

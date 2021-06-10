@@ -82,7 +82,11 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
      * </p>
      */
     private CustomerProfilesDestinationProperties customerProfiles;
-
+    /**
+     * <p>
+     * The properties required to query Zendesk.
+     * </p>
+     */
     private ZendeskDestinationProperties zendesk;
 
     /**
@@ -446,7 +450,12 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The properties required to query Zendesk.
+     * </p>
+     * 
      * @param zendesk
+     *        The properties required to query Zendesk.
      */
 
     public void setZendesk(ZendeskDestinationProperties zendesk) {
@@ -454,7 +463,11 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The properties required to query Zendesk.
+     * </p>
+     * 
+     * @return The properties required to query Zendesk.
      */
 
     public ZendeskDestinationProperties getZendesk() {
@@ -462,7 +475,12 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The properties required to query Zendesk.
+     * </p>
+     * 
      * @param zendesk
+     *        The properties required to query Zendesk.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1359,6 +1359,7 @@
       },
       "errors":[
         {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"},
         {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Modifies whether a cluster can use AQUA (Advanced Query Accelerator). </p>"

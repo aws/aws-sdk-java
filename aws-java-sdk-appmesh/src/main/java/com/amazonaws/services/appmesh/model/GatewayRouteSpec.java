@@ -46,6 +46,12 @@ public class GatewayRouteSpec implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private HttpGatewayRoute httpRoute;
+    /**
+     * <p>
+     * The ordering of the gateway routes spec.
+     * </p>
+     */
+    private Integer priority;
 
     /**
      * <p>
@@ -168,6 +174,46 @@ public class GatewayRouteSpec implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The ordering of the gateway routes spec.
+     * </p>
+     * 
+     * @param priority
+     *        The ordering of the gateway routes spec.
+     */
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    /**
+     * <p>
+     * The ordering of the gateway routes spec.
+     * </p>
+     * 
+     * @return The ordering of the gateway routes spec.
+     */
+
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * <p>
+     * The ordering of the gateway routes spec.
+     * </p>
+     * 
+     * @param priority
+     *        The ordering of the gateway routes spec.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GatewayRouteSpec withPriority(Integer priority) {
+        setPriority(priority);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +230,9 @@ public class GatewayRouteSpec implements Serializable, Cloneable, StructuredPojo
         if (getHttp2Route() != null)
             sb.append("Http2Route: ").append(getHttp2Route()).append(",");
         if (getHttpRoute() != null)
-            sb.append("HttpRoute: ").append(getHttpRoute());
+            sb.append("HttpRoute: ").append(getHttpRoute()).append(",");
+        if (getPriority() != null)
+            sb.append("Priority: ").append(getPriority());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +259,10 @@ public class GatewayRouteSpec implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getHttpRoute() != null && other.getHttpRoute().equals(this.getHttpRoute()) == false)
             return false;
+        if (other.getPriority() == null ^ this.getPriority() == null)
+            return false;
+        if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +274,7 @@ public class GatewayRouteSpec implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getGrpcRoute() == null) ? 0 : getGrpcRoute().hashCode());
         hashCode = prime * hashCode + ((getHttp2Route() == null) ? 0 : getHttp2Route().hashCode());
         hashCode = prime * hashCode + ((getHttpRoute() == null) ? 0 : getHttpRoute().hashCode());
+        hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         return hashCode;
     }
 

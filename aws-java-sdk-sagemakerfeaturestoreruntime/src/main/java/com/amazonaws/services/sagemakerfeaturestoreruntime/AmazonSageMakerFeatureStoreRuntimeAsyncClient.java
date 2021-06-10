@@ -107,6 +107,39 @@ public class AmazonSageMakerFeatureStoreRuntimeAsyncClient extends AmazonSageMak
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetRecordResult> batchGetRecordAsync(BatchGetRecordRequest request) {
+
+        return batchGetRecordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetRecordResult> batchGetRecordAsync(final BatchGetRecordRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetRecordRequest, BatchGetRecordResult> asyncHandler) {
+        final BatchGetRecordRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetRecordResult>() {
+            @Override
+            public BatchGetRecordResult call() throws Exception {
+                BatchGetRecordResult result = null;
+
+                try {
+                    result = executeBatchGetRecord(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRecordResult> deleteRecordAsync(DeleteRecordRequest request) {
 
         return deleteRecordAsync(request, null);

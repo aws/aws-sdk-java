@@ -30,7 +30,7 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the client request headers to match on.
+     * The client request headers to match on.
      * </p>
      */
     private java.util.List<HttpRouteHeader> headers;
@@ -42,6 +42,12 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
     private String method;
     /**
      * <p>
+     * The client request path to match on.
+     * </p>
+     */
+    private HttpPathMatch path;
+    /**
+     * <p>
      * Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself
      * matches all requests to the virtual service name. You can also match for path-based routing of requests. For
      * example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests
@@ -51,17 +57,23 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
     private String prefix;
     /**
      * <p>
-     * The client request scheme to match on. Specify only one.
+     * The client request query parameters to match on.
+     * </p>
+     */
+    private java.util.List<HttpQueryParameter> queryParameters;
+    /**
+     * <p>
+     * The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.
      * </p>
      */
     private String scheme;
 
     /**
      * <p>
-     * An object that represents the client request headers to match on.
+     * The client request headers to match on.
      * </p>
      * 
-     * @return An object that represents the client request headers to match on.
+     * @return The client request headers to match on.
      */
 
     public java.util.List<HttpRouteHeader> getHeaders() {
@@ -70,11 +82,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the client request headers to match on.
+     * The client request headers to match on.
      * </p>
      * 
      * @param headers
-     *        An object that represents the client request headers to match on.
+     *        The client request headers to match on.
      */
 
     public void setHeaders(java.util.Collection<HttpRouteHeader> headers) {
@@ -88,7 +100,7 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the client request headers to match on.
+     * The client request headers to match on.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,7 +109,7 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param headers
-     *        An object that represents the client request headers to match on.
+     *        The client request headers to match on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +125,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object that represents the client request headers to match on.
+     * The client request headers to match on.
      * </p>
      * 
      * @param headers
-     *        An object that represents the client request headers to match on.
+     *        The client request headers to match on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,6 +199,46 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The client request path to match on.
+     * </p>
+     * 
+     * @param path
+     *        The client request path to match on.
+     */
+
+    public void setPath(HttpPathMatch path) {
+        this.path = path;
+    }
+
+    /**
+     * <p>
+     * The client request path to match on.
+     * </p>
+     * 
+     * @return The client request path to match on.
+     */
+
+    public HttpPathMatch getPath() {
+        return this.path;
+    }
+
+    /**
+     * <p>
+     * The client request path to match on.
+     * </p>
+     * 
+     * @param path
+     *        The client request path to match on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HttpRouteMatch withPath(HttpPathMatch path) {
+        setPath(path);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself
      * matches all requests to the virtual service name. You can also match for path-based routing of requests. For
      * example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests
@@ -248,11 +300,81 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request scheme to match on. Specify only one.
+     * The client request query parameters to match on.
+     * </p>
+     * 
+     * @return The client request query parameters to match on.
+     */
+
+    public java.util.List<HttpQueryParameter> getQueryParameters() {
+        return queryParameters;
+    }
+
+    /**
+     * <p>
+     * The client request query parameters to match on.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The client request query parameters to match on.
+     */
+
+    public void setQueryParameters(java.util.Collection<HttpQueryParameter> queryParameters) {
+        if (queryParameters == null) {
+            this.queryParameters = null;
+            return;
+        }
+
+        this.queryParameters = new java.util.ArrayList<HttpQueryParameter>(queryParameters);
+    }
+
+    /**
+     * <p>
+     * The client request query parameters to match on.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setQueryParameters(java.util.Collection)} or {@link #withQueryParameters(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The client request query parameters to match on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HttpRouteMatch withQueryParameters(HttpQueryParameter... queryParameters) {
+        if (this.queryParameters == null) {
+            setQueryParameters(new java.util.ArrayList<HttpQueryParameter>(queryParameters.length));
+        }
+        for (HttpQueryParameter ele : queryParameters) {
+            this.queryParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client request query parameters to match on.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The client request query parameters to match on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HttpRouteMatch withQueryParameters(java.util.Collection<HttpQueryParameter> queryParameters) {
+        setQueryParameters(queryParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.
      * </p>
      * 
      * @param scheme
-     *        The client request scheme to match on. Specify only one.
+     *        The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.
      * @see HttpScheme
      */
 
@@ -262,10 +384,10 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request scheme to match on. Specify only one.
+     * The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.
      * </p>
      * 
-     * @return The client request scheme to match on. Specify only one.
+     * @return The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.
      * @see HttpScheme
      */
 
@@ -275,11 +397,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request scheme to match on. Specify only one.
+     * The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.
      * </p>
      * 
      * @param scheme
-     *        The client request scheme to match on. Specify only one.
+     *        The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpScheme
      */
@@ -291,11 +413,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request scheme to match on. Specify only one.
+     * The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.
      * </p>
      * 
      * @param scheme
-     *        The client request scheme to match on. Specify only one.
+     *        The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpScheme
      */
@@ -321,8 +443,12 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
             sb.append("Headers: ").append(getHeaders()).append(",");
         if (getMethod() != null)
             sb.append("Method: ").append(getMethod()).append(",");
+        if (getPath() != null)
+            sb.append("Path: ").append(getPath()).append(",");
         if (getPrefix() != null)
             sb.append("Prefix: ").append(getPrefix()).append(",");
+        if (getQueryParameters() != null)
+            sb.append("QueryParameters: ").append(getQueryParameters()).append(",");
         if (getScheme() != null)
             sb.append("Scheme: ").append(getScheme());
         sb.append("}");
@@ -347,9 +473,17 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMethod() != null && other.getMethod().equals(this.getMethod()) == false)
             return false;
+        if (other.getPath() == null ^ this.getPath() == null)
+            return false;
+        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
+            return false;
         if (other.getPrefix() == null ^ this.getPrefix() == null)
             return false;
         if (other.getPrefix() != null && other.getPrefix().equals(this.getPrefix()) == false)
+            return false;
+        if (other.getQueryParameters() == null ^ this.getQueryParameters() == null)
+            return false;
+        if (other.getQueryParameters() != null && other.getQueryParameters().equals(this.getQueryParameters()) == false)
             return false;
         if (other.getScheme() == null ^ this.getScheme() == null)
             return false;
@@ -365,7 +499,9 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         hashCode = prime * hashCode + ((getMethod() == null) ? 0 : getMethod().hashCode());
+        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode());
+        hashCode = prime * hashCode + ((getQueryParameters() == null) ? 0 : getQueryParameters().hashCode());
         hashCode = prime * hashCode + ((getScheme() == null) ? 0 : getScheme().hashCode());
         return hashCode;
     }

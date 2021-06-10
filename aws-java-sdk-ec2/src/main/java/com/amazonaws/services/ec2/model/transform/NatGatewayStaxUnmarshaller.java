@@ -110,6 +110,10 @@ public class NatGatewayStaxUnmarshaller implements Unmarshaller<NatGateway, Stax
                     continue;
                 }
 
+                if (context.testExpression("connectivityType", targetDepth)) {
+                    natGateway.setConnectivityType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return natGateway;

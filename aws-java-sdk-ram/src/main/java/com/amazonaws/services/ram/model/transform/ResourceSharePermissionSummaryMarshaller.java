@@ -43,6 +43,8 @@ public class ResourceSharePermissionSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Boolean> ISRESOURCETYPEDEFAULT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isResourceTypeDefault").build();
 
     private static final ResourceSharePermissionSummaryMarshaller instance = new ResourceSharePermissionSummaryMarshaller();
 
@@ -68,6 +70,7 @@ public class ResourceSharePermissionSummaryMarshaller {
             protocolMarshaller.marshall(resourceSharePermissionSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(resourceSharePermissionSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(resourceSharePermissionSummary.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
+            protocolMarshaller.marshall(resourceSharePermissionSummary.getIsResourceTypeDefault(), ISRESOURCETYPEDEFAULT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

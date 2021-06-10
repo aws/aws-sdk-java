@@ -48,6 +48,16 @@ public class GrpcGatewayRouteMatchJsonUnmarshaller implements Unmarshaller<GrpcG
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("hostname", targetDepth)) {
+                    context.nextToken();
+                    grpcGatewayRouteMatch.setHostname(GatewayRouteHostnameMatchJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("metadata", targetDepth)) {
+                    context.nextToken();
+                    grpcGatewayRouteMatch.setMetadata(new ListUnmarshaller<GrpcGatewayRouteMetadata>(GrpcGatewayRouteMetadataJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("serviceName", targetDepth)) {
                     context.nextToken();
                     grpcGatewayRouteMatch.setServiceName(context.getUnmarshaller(String.class).unmarshall(context));

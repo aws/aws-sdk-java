@@ -31,6 +31,8 @@ public class UpdateAccountRequestMarshaller {
             .marshallLocationName("accountId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DEFAULTLICENSE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultLicense").build();
 
     private static final UpdateAccountRequestMarshaller instance = new UpdateAccountRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class UpdateAccountRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateAccountRequest.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(updateAccountRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateAccountRequest.getDefaultLicense(), DEFAULTLICENSE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -48,9 +48,33 @@ public class HttpGatewayRouteMatchJsonUnmarshaller implements Unmarshaller<HttpG
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("headers", targetDepth)) {
+                    context.nextToken();
+                    httpGatewayRouteMatch.setHeaders(new ListUnmarshaller<HttpGatewayRouteHeader>(HttpGatewayRouteHeaderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("hostname", targetDepth)) {
+                    context.nextToken();
+                    httpGatewayRouteMatch.setHostname(GatewayRouteHostnameMatchJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("method", targetDepth)) {
+                    context.nextToken();
+                    httpGatewayRouteMatch.setMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("path", targetDepth)) {
+                    context.nextToken();
+                    httpGatewayRouteMatch.setPath(HttpPathMatchJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("prefix", targetDepth)) {
                     context.nextToken();
                     httpGatewayRouteMatch.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("queryParameters", targetDepth)) {
+                    context.nextToken();
+                    httpGatewayRouteMatch.setQueryParameters(new ListUnmarshaller<HttpQueryParameter>(HttpQueryParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -56,6 +56,14 @@ public class EdgeOutputConfigJsonUnmarshaller implements Unmarshaller<EdgeOutput
                     context.nextToken();
                     edgeOutputConfig.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PresetDeploymentType", targetDepth)) {
+                    context.nextToken();
+                    edgeOutputConfig.setPresetDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PresetDeploymentConfig", targetDepth)) {
+                    context.nextToken();
+                    edgeOutputConfig.setPresetDeploymentConfig(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

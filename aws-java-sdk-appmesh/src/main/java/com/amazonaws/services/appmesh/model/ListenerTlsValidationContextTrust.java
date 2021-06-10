@@ -28,6 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListenerTlsValidationContextTrust implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
+     * </p>
+     */
     private TlsValidationContextFileTrust file;
     /**
      * <p>
@@ -38,7 +43,12 @@ public class ListenerTlsValidationContextTrust implements Serializable, Cloneabl
     private TlsValidationContextSdsTrust sds;
 
     /**
+     * <p>
+     * An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
+     * </p>
+     * 
      * @param file
+     *        An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
      */
 
     public void setFile(TlsValidationContextFileTrust file) {
@@ -46,7 +56,11 @@ public class ListenerTlsValidationContextTrust implements Serializable, Cloneabl
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
+     * </p>
+     * 
+     * @return An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
      */
 
     public TlsValidationContextFileTrust getFile() {
@@ -54,7 +68,12 @@ public class ListenerTlsValidationContextTrust implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
+     * </p>
+     * 
      * @param file
+     *        An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class HttpGatewayRouteActionMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> REWRITE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rewrite").build();
     private static final MarshallingInfo<StructuredPojo> TARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("target").build();
 
@@ -46,6 +48,7 @@ public class HttpGatewayRouteActionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(httpGatewayRouteAction.getRewrite(), REWRITE_BINDING);
             protocolMarshaller.marshall(httpGatewayRouteAction.getTarget(), TARGET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

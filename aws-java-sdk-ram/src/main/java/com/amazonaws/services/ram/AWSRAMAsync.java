@@ -410,7 +410,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the invitations for resource sharing that you've received.
+     * Gets the invitations that you have received for resource shares.
      * </p>
      * 
      * @param getResourceShareInvitationsRequest
@@ -424,7 +424,7 @@ public interface AWSRAMAsync extends AWSRAM {
 
     /**
      * <p>
-     * Gets the invitations for resource sharing that you've received.
+     * Gets the invitations that you have received for resource shares.
      * </p>
      * 
      * @param getResourceShareInvitationsRequest

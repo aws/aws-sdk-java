@@ -303,6 +303,15 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </note>
      */
     private String preventUserExistenceErrors;
+    /**
+     * <p>
+     * Indicates whether token revocation is enabled for the user pool client. When you create a new user pool client,
+     * token revocation is enabled by default. For more information about revoking tokens, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
+     * >RevokeToken</a>.
+     * </p>
+     */
+    private Boolean enableTokenRevocation;
 
     /**
      * <p>
@@ -2665,6 +2674,82 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Indicates whether token revocation is enabled for the user pool client. When you create a new user pool client,
+     * token revocation is enabled by default. For more information about revoking tokens, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
+     * >RevokeToken</a>.
+     * </p>
+     * 
+     * @param enableTokenRevocation
+     *        Indicates whether token revocation is enabled for the user pool client. When you create a new user pool
+     *        client, token revocation is enabled by default. For more information about revoking tokens, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
+     *        >RevokeToken</a>.
+     */
+
+    public void setEnableTokenRevocation(Boolean enableTokenRevocation) {
+        this.enableTokenRevocation = enableTokenRevocation;
+    }
+
+    /**
+     * <p>
+     * Indicates whether token revocation is enabled for the user pool client. When you create a new user pool client,
+     * token revocation is enabled by default. For more information about revoking tokens, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
+     * >RevokeToken</a>.
+     * </p>
+     * 
+     * @return Indicates whether token revocation is enabled for the user pool client. When you create a new user pool
+     *         client, token revocation is enabled by default. For more information about revoking tokens, see <a
+     *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
+     *         >RevokeToken</a>.
+     */
+
+    public Boolean getEnableTokenRevocation() {
+        return this.enableTokenRevocation;
+    }
+
+    /**
+     * <p>
+     * Indicates whether token revocation is enabled for the user pool client. When you create a new user pool client,
+     * token revocation is enabled by default. For more information about revoking tokens, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
+     * >RevokeToken</a>.
+     * </p>
+     * 
+     * @param enableTokenRevocation
+     *        Indicates whether token revocation is enabled for the user pool client. When you create a new user pool
+     *        client, token revocation is enabled by default. For more information about revoking tokens, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
+     *        >RevokeToken</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolClientType withEnableTokenRevocation(Boolean enableTokenRevocation) {
+        setEnableTokenRevocation(enableTokenRevocation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether token revocation is enabled for the user pool client. When you create a new user pool client,
+     * token revocation is enabled by default. For more information about revoking tokens, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
+     * >RevokeToken</a>.
+     * </p>
+     * 
+     * @return Indicates whether token revocation is enabled for the user pool client. When you create a new user pool
+     *         client, token revocation is enabled by default. For more information about revoking tokens, see <a
+     *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html"
+     *         >RevokeToken</a>.
+     */
+
+    public Boolean isEnableTokenRevocation() {
+        return this.enableTokenRevocation;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2719,7 +2804,9 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
         if (getAnalyticsConfiguration() != null)
             sb.append("AnalyticsConfiguration: ").append(getAnalyticsConfiguration()).append(",");
         if (getPreventUserExistenceErrors() != null)
-            sb.append("PreventUserExistenceErrors: ").append(getPreventUserExistenceErrors());
+            sb.append("PreventUserExistenceErrors: ").append(getPreventUserExistenceErrors()).append(",");
+        if (getEnableTokenRevocation() != null)
+            sb.append("EnableTokenRevocation: ").append(getEnableTokenRevocation());
         sb.append("}");
         return sb.toString();
     }
@@ -2823,6 +2910,10 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getPreventUserExistenceErrors() != null && other.getPreventUserExistenceErrors().equals(this.getPreventUserExistenceErrors()) == false)
             return false;
+        if (other.getEnableTokenRevocation() == null ^ this.getEnableTokenRevocation() == null)
+            return false;
+        if (other.getEnableTokenRevocation() != null && other.getEnableTokenRevocation().equals(this.getEnableTokenRevocation()) == false)
+            return false;
         return true;
     }
 
@@ -2853,6 +2944,7 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getAllowedOAuthFlowsUserPoolClient() == null) ? 0 : getAllowedOAuthFlowsUserPoolClient().hashCode());
         hashCode = prime * hashCode + ((getAnalyticsConfiguration() == null) ? 0 : getAnalyticsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPreventUserExistenceErrors() == null) ? 0 : getPreventUserExistenceErrors().hashCode());
+        hashCode = prime * hashCode + ((getEnableTokenRevocation() == null) ? 0 : getEnableTokenRevocation().hashCode());
         return hashCode;
     }
 

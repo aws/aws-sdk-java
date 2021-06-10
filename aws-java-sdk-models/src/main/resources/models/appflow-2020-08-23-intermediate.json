@@ -28936,12 +28936,12 @@
         "c2jName" : "Zendesk",
         "c2jShape" : "ZendeskDestinationProperties",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The properties required to query Zendesk.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param zendesk \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The properties required to query Zendesk.</p>\n@param zendesk The properties required to query Zendesk.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withZendesk",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The properties required to query Zendesk.</p>\n@return The properties required to query Zendesk.*/",
         "getterMethodName" : "getZendesk",
         "getterModel" : {
           "returnType" : "ZendeskDestinationProperties",
@@ -28975,7 +28975,7 @@
         "marshallingType" : "STRUCTURED",
         "name" : "Zendesk",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param zendesk */",
+        "setterDocumentation" : "/**<p>The properties required to query Zendesk.</p>\n@param zendesk The properties required to query Zendesk.*/",
         "setterMethodName" : "setZendesk",
         "setterModel" : {
           "timestampFormat" : null,
@@ -28990,13 +28990,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param zendesk \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The properties required to query Zendesk.</p>\n@param zendesk The properties required to query Zendesk.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "ZendeskDestinationProperties",
           "variableName" : "zendesk",
           "variableType" : "ZendeskDestinationProperties",
-          "documentation" : "",
+          "documentation" : "<p>The properties required to query Zendesk.</p>",
           "simpleType" : "ZendeskDestinationProperties",
           "variableSetterType" : "ZendeskDestinationProperties"
         },
@@ -29637,12 +29637,12 @@
           "c2jName" : "Zendesk",
           "c2jShape" : "ZendeskDestinationProperties",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The properties required to query Zendesk.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param zendesk \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The properties required to query Zendesk.</p>\n@param zendesk The properties required to query Zendesk.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withZendesk",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The properties required to query Zendesk.</p>\n@return The properties required to query Zendesk.*/",
           "getterMethodName" : "getZendesk",
           "getterModel" : {
             "returnType" : "ZendeskDestinationProperties",
@@ -29676,7 +29676,7 @@
           "marshallingType" : "STRUCTURED",
           "name" : "Zendesk",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param zendesk */",
+          "setterDocumentation" : "/**<p>The properties required to query Zendesk.</p>\n@param zendesk The properties required to query Zendesk.*/",
           "setterMethodName" : "setZendesk",
           "setterModel" : {
             "timestampFormat" : null,
@@ -29691,13 +29691,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param zendesk \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The properties required to query Zendesk.</p>\n@param zendesk The properties required to query Zendesk.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "ZendeskDestinationProperties",
             "variableName" : "zendesk",
             "variableType" : "ZendeskDestinationProperties",
-            "documentation" : "",
+            "documentation" : "<p>The properties required to query Zendesk.</p>",
             "simpleType" : "ZendeskDestinationProperties",
             "variableSetterType" : "ZendeskDestinationProperties"
           },
@@ -45531,6 +45531,9 @@
       }, {
         "name" : "SUBFIELD_CATEGORY_MAP",
         "value" : "SUBFIELD_CATEGORY_MAP"
+      }, {
+        "name" : "EXCLUDE_SOURCE_FIELDS_LIST",
+        "value" : "EXCLUDE_SOURCE_FIELDS_LIST"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.appflow.enum.OperatorPropertiesKeys",
@@ -63873,6 +63876,9 @@
         "name" : "Map",
         "value" : "Map"
       }, {
+        "name" : "Map_all",
+        "value" : "Map_all"
+      }, {
         "name" : "Mask",
         "value" : "Mask"
       }, {
@@ -70436,7 +70442,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "",
+      "documentation" : "<p>The properties that are applied when Zendesk is used as a destination.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -70451,12 +70457,12 @@
         "c2jName" : "object",
         "c2jShape" : "Object",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The object specified in the Zendesk flow destination.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param object \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The object specified in the Zendesk flow destination.</p>\n@param object The object specified in the Zendesk flow destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withObject",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The object specified in the Zendesk flow destination.</p>\n@return The object specified in the Zendesk flow destination.*/",
         "getterMethodName" : "getObject",
         "getterModel" : {
           "returnType" : "String",
@@ -70490,7 +70496,7 @@
         "marshallingType" : "STRING",
         "name" : "Object",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param object */",
+        "setterDocumentation" : "/**<p>The object specified in the Zendesk flow destination.</p>\n@param object The object specified in the Zendesk flow destination.*/",
         "setterMethodName" : "setObject",
         "setterModel" : {
           "timestampFormat" : null,
@@ -70505,13 +70511,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param object \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The object specified in the Zendesk flow destination.</p>\n@param object The object specified in the Zendesk flow destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "object",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The object specified in the Zendesk flow destination.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -71037,12 +71043,12 @@
           "c2jName" : "object",
           "c2jShape" : "Object",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The object specified in the Zendesk flow destination.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param object \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The object specified in the Zendesk flow destination.</p>\n@param object The object specified in the Zendesk flow destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withObject",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The object specified in the Zendesk flow destination.</p>\n@return The object specified in the Zendesk flow destination.*/",
           "getterMethodName" : "getObject",
           "getterModel" : {
             "returnType" : "String",
@@ -71076,7 +71082,7 @@
           "marshallingType" : "STRING",
           "name" : "Object",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param object */",
+          "setterDocumentation" : "/**<p>The object specified in the Zendesk flow destination.</p>\n@param object The object specified in the Zendesk flow destination.*/",
           "setterMethodName" : "setObject",
           "setterModel" : {
             "timestampFormat" : null,
@@ -71091,13 +71097,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param object \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The object specified in the Zendesk flow destination.</p>\n@param object The object specified in the Zendesk flow destination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "object",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The object specified in the Zendesk flow destination.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

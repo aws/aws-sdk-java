@@ -27,7 +27,8 @@ public enum NodeStatus {
     UPDATING("UPDATING"),
     DELETING("DELETING"),
     DELETED("DELETED"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    INACCESSIBLE_ENCRYPTION_KEY("INACCESSIBLE_ENCRYPTION_KEY");
 
     private String value;
 

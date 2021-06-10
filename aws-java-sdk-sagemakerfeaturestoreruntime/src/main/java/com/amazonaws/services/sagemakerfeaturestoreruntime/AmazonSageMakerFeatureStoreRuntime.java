@@ -74,6 +74,28 @@ public interface AmazonSageMakerFeatureStoreRuntime {
 
     /**
      * <p>
+     * Retrieves a batch of <code>Records</code> from a <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @param batchGetRecordRequest
+     * @return Result of the BatchGetRecord operation returned by the service.
+     * @throws ValidationErrorException
+     *         There was an error validating your request.
+     * @throws InternalFailureException
+     *         An internal failure occurred. Try your request again. If the problem persists, contact AWS customer
+     *         support.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws AccessForbiddenException
+     *         You do not have permission to perform an action.
+     * @sample AmazonSageMakerFeatureStoreRuntime.BatchGetRecord
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchGetRecordResult batchGetRecord(BatchGetRecordRequest batchGetRecordRequest);
+
+    /**
+     * <p>
      * Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record will show up in the
      * <code>OfflineStore</code> when the <code>DeleteRecord</code> API is called. This record will have a value of
      * <code>True</code> in the <code>is_deleted</code> column.

@@ -28,6 +28,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VirtualGatewayClientTlsCertificate implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An object that represents a local file certificate. The certificate must meet specific requirements and you must
+     * have proxy authorization enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html"> Transport Layer Security (TLS) </a>.
+     * </p>
+     */
     private VirtualGatewayListenerTlsFileCertificate file;
     /**
      * <p>
@@ -37,7 +44,17 @@ public class VirtualGatewayClientTlsCertificate implements Serializable, Cloneab
     private VirtualGatewayListenerTlsSdsCertificate sds;
 
     /**
+     * <p>
+     * An object that represents a local file certificate. The certificate must meet specific requirements and you must
+     * have proxy authorization enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html"> Transport Layer Security (TLS) </a>.
+     * </p>
+     * 
      * @param file
+     *        An object that represents a local file certificate. The certificate must meet specific requirements and
+     *        you must have proxy authorization enabled. For more information, see <a
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html"> Transport Layer Security (TLS)
+     *        </a>.
      */
 
     public void setFile(VirtualGatewayListenerTlsFileCertificate file) {
@@ -45,7 +62,16 @@ public class VirtualGatewayClientTlsCertificate implements Serializable, Cloneab
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents a local file certificate. The certificate must meet specific requirements and you must
+     * have proxy authorization enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html"> Transport Layer Security (TLS) </a>.
+     * </p>
+     * 
+     * @return An object that represents a local file certificate. The certificate must meet specific requirements and
+     *         you must have proxy authorization enabled. For more information, see <a
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html"> Transport Layer Security (TLS)
+     *         </a>.
      */
 
     public VirtualGatewayListenerTlsFileCertificate getFile() {
@@ -53,7 +79,17 @@ public class VirtualGatewayClientTlsCertificate implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * An object that represents a local file certificate. The certificate must meet specific requirements and you must
+     * have proxy authorization enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html"> Transport Layer Security (TLS) </a>.
+     * </p>
+     * 
      * @param file
+     *        An object that represents a local file certificate. The certificate must meet specific requirements and
+     *        you must have proxy authorization enabled. For more information, see <a
+     *        href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html"> Transport Layer Security (TLS)
+     *        </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

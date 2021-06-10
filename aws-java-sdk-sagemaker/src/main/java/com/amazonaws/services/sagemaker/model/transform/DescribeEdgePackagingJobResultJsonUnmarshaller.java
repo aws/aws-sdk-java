@@ -104,6 +104,10 @@ public class DescribeEdgePackagingJobResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     describeEdgePackagingJobResult.setModelSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PresetDeploymentOutput", targetDepth)) {
+                    context.nextToken();
+                    describeEdgePackagingJobResult.setPresetDeploymentOutput(EdgePresetDeploymentOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

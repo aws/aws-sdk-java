@@ -26,13 +26,14 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor and control microservices. App
- * Mesh standardizes how your microservices communicate, giving you end-to-end visibility and helping to ensure high
+ * App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor and control microservices. App Mesh
+ * standardizes how your microservices communicate, giving you end-to-end visibility and helping to ensure high
  * availability for your applications.
  * </p>
  * <p>
  * App Mesh gives you consistent visibility and network traffic controls for every microservice in an application. You
- * can use App Mesh with AWS Fargate, Amazon ECS, Amazon EKS, Kubernetes on AWS, and Amazon EC2.
+ * can use App Mesh with Amazon Web Services Fargate, Amazon ECS, Amazon EKS, Kubernetes on Amazon Web Services, and
+ * Amazon EC2.
  * </p>
  * <note>
  * <p>

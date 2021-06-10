@@ -29,6 +29,8 @@ public class DnsServiceDiscoveryMarshaller {
 
     private static final MarshallingInfo<String> HOSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("hostname").build();
+    private static final MarshallingInfo<String> RESPONSETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("responseType").build();
 
     private static final DnsServiceDiscoveryMarshaller instance = new DnsServiceDiscoveryMarshaller();
 
@@ -47,6 +49,7 @@ public class DnsServiceDiscoveryMarshaller {
 
         try {
             protocolMarshaller.marshall(dnsServiceDiscovery.getHostname(), HOSTNAME_BINDING);
+            protocolMarshaller.marshall(dnsServiceDiscovery.getResponseType(), RESPONSETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

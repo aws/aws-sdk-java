@@ -23,6 +23,7 @@ public enum TaskType {
     Arithmetic("Arithmetic"),
     Filter("Filter"),
     Map("Map"),
+    Map_all("Map_all"),
     Mask("Mask"),
     Merge("Merge"),
     Truncate("Truncate"),

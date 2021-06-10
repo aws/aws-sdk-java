@@ -65,6 +65,37 @@ public interface AmazonSageMakerFeatureStoreRuntimeAsync extends AmazonSageMaker
 
     /**
      * <p>
+     * Retrieves a batch of <code>Records</code> from a <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @param batchGetRecordRequest
+     * @return A Java Future containing the result of the BatchGetRecord operation returned by the service.
+     * @sample AmazonSageMakerFeatureStoreRuntimeAsync.BatchGetRecord
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetRecordResult> batchGetRecordAsync(BatchGetRecordRequest batchGetRecordRequest);
+
+    /**
+     * <p>
+     * Retrieves a batch of <code>Records</code> from a <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @param batchGetRecordRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetRecord operation returned by the service.
+     * @sample AmazonSageMakerFeatureStoreRuntimeAsyncHandler.BatchGetRecord
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetRecordResult> batchGetRecordAsync(BatchGetRecordRequest batchGetRecordRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetRecordRequest, BatchGetRecordResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record will show up in the
      * <code>OfflineStore</code> when the <code>DeleteRecord</code> API is called. This record will have a value of
      * <code>True</code> in the <code>is_deleted</code> column.

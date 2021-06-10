@@ -29,6 +29,19 @@ public class AbstractAmazonSageMakerFeatureStoreRuntimeAsync extends AbstractAma
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetRecordResult> batchGetRecordAsync(BatchGetRecordRequest request) {
+
+        return batchGetRecordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetRecordResult> batchGetRecordAsync(BatchGetRecordRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetRecordRequest, BatchGetRecordResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRecordResult> deleteRecordAsync(DeleteRecordRequest request) {
 
         return deleteRecordAsync(request, null);

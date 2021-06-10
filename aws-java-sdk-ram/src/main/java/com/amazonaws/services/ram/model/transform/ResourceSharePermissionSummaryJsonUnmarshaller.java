@@ -80,6 +80,10 @@ public class ResourceSharePermissionSummaryJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     resourceSharePermissionSummary.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("isResourceTypeDefault", targetDepth)) {
+                    context.nextToken();
+                    resourceSharePermissionSummary.setIsResourceTypeDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

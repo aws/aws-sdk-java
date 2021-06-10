@@ -41,6 +41,10 @@ public class CreateNatGatewayRequestMarshaller implements Marshaller<Request<Cre
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (createNatGatewayRequest.getAllocationId() != null) {
+            request.addParameter("AllocationId", StringUtils.fromString(createNatGatewayRequest.getAllocationId()));
+        }
+
         request.addParameter("ClientToken", IdempotentUtils.resolveString(createNatGatewayRequest.getClientToken()));
 
         if (createNatGatewayRequest.getSubnetId() != null) {
@@ -82,8 +86,8 @@ public class CreateNatGatewayRequestMarshaller implements Marshaller<Request<Cre
             }
         }
 
-        if (createNatGatewayRequest.getAllocationId() != null) {
-            request.addParameter("AllocationId", StringUtils.fromString(createNatGatewayRequest.getAllocationId()));
+        if (createNatGatewayRequest.getConnectivityType() != null) {
+            request.addParameter("ConnectivityType", StringUtils.fromString(createNatGatewayRequest.getConnectivityType()));
         }
 
         return request;

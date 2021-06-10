@@ -30,8 +30,8 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an AWS
-     * Certicate Manager (ACM) certificate.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
+     * Certificate Manager certificate.
      * </p>
      */
     private TlsValidationContextAcmTrust acm;
@@ -51,13 +51,13 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an AWS
-     * Certicate Manager (ACM) certificate.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
+     * Certificate Manager certificate.
      * </p>
      * 
      * @param acm
      *        A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
-     *        AWS Certicate Manager (ACM) certificate.
+     *        Certificate Manager certificate.
      */
 
     public void setAcm(TlsValidationContextAcmTrust acm) {
@@ -66,12 +66,12 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an AWS
-     * Certicate Manager (ACM) certificate.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
+     * Certificate Manager certificate.
      * </p>
      * 
      * @return A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
-     *         AWS Certicate Manager (ACM) certificate.
+     *         Certificate Manager certificate.
      */
 
     public TlsValidationContextAcmTrust getAcm() {
@@ -80,13 +80,13 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an AWS
-     * Certicate Manager (ACM) certificate.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
+     * Certificate Manager certificate.
      * </p>
      * 
      * @param acm
      *        A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
-     *        AWS Certicate Manager (ACM) certificate.
+     *        Certificate Manager certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

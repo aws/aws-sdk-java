@@ -37,6 +37,12 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The default license applied when you add users to an Amazon Chime account.
+     * </p>
+     */
+    private String defaultLicense;
 
     /**
      * <p>
@@ -119,6 +125,65 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The default license applied when you add users to an Amazon Chime account.
+     * </p>
+     * 
+     * @param defaultLicense
+     *        The default license applied when you add users to an Amazon Chime account.
+     * @see License
+     */
+
+    public void setDefaultLicense(String defaultLicense) {
+        this.defaultLicense = defaultLicense;
+    }
+
+    /**
+     * <p>
+     * The default license applied when you add users to an Amazon Chime account.
+     * </p>
+     * 
+     * @return The default license applied when you add users to an Amazon Chime account.
+     * @see License
+     */
+
+    public String getDefaultLicense() {
+        return this.defaultLicense;
+    }
+
+    /**
+     * <p>
+     * The default license applied when you add users to an Amazon Chime account.
+     * </p>
+     * 
+     * @param defaultLicense
+     *        The default license applied when you add users to an Amazon Chime account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see License
+     */
+
+    public UpdateAccountRequest withDefaultLicense(String defaultLicense) {
+        setDefaultLicense(defaultLicense);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default license applied when you add users to an Amazon Chime account.
+     * </p>
+     * 
+     * @param defaultLicense
+     *        The default license applied when you add users to an Amazon Chime account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see License
+     */
+
+    public UpdateAccountRequest withDefaultLicense(License defaultLicense) {
+        this.defaultLicense = defaultLicense.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +198,9 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDefaultLicense() != null)
+            sb.append("DefaultLicense: ").append(getDefaultLicense());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +223,10 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDefaultLicense() == null ^ this.getDefaultLicense() == null)
+            return false;
+        if (other.getDefaultLicense() != null && other.getDefaultLicense().equals(this.getDefaultLicense()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +237,7 @@ public class UpdateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDefaultLicense() == null) ? 0 : getDefaultLicense().hashCode());
         return hashCode;
     }
 

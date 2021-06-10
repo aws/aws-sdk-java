@@ -4545,12 +4545,22 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a NAT gateway in the specified public subnet. This action creates a network interface in the specified
-     * subnet with a private IP address from the IP address range of the subnet. Internet-bound traffic from a private
-     * subnet can be routed to the NAT gateway, therefore enabling instances in the private subnet to connect to the
-     * internet. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT Gateways</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * Creates a NAT gateway in the specified subnet. This action creates a network interface in the specified subnet
+     * with a private IP address from the IP address range of the subnet. You can create either a public NAT gateway or
+     * a private NAT gateway.
+     * </p>
+     * <p>
+     * With a public NAT gateway, internet-bound traffic from a private subnet can be routed to the NAT gateway, so that
+     * instances in a private subnet can connect to the internet.
+     * </p>
+     * <p>
+     * With a private NAT gateway, private communication is routed across VPCs and on-premises networks through a
+     * transit gateway or virtual private gateway. Common use cases include running large workloads behind a small pool
+     * of allowlisted IPv4 addresses, preserving private IPv4 addresses, and communicating between overlapping networks.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
+     * Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param createNatGatewayRequest
@@ -8306,8 +8316,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its Elastic IP address, but does not
-     * release the address from your account. Deleting a NAT gateway does not delete any NAT gateway routes in your
+     * Deletes the specified NAT gateway. Deleting a public NAT gateway disassociates its Elastic IP address, but does
+     * not release the address from your account. Deleting a NAT gateway does not delete any NAT gateway routes in your
      * route tables.
      * </p>
      * 

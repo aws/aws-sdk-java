@@ -28,6 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     */
     private GrpcTimeout grpc;
     /**
      * <p>
@@ -49,7 +54,12 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     private TcpTimeout tcp;
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param grpc
+     *        An object that represents types of timeouts.
      */
 
     public void setGrpc(GrpcTimeout grpc) {
@@ -57,7 +67,11 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @return An object that represents types of timeouts.
      */
 
     public GrpcTimeout getGrpc() {
@@ -65,7 +79,12 @@ public class ListenerTimeout implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
      * @param grpc
+     *        An object that represents types of timeouts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

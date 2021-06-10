@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appmesh.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GrpcGatewayRouteMatchMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> HOSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostname").build();
+    private static final MarshallingInfo<List> METADATA_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("metadata").build();
     private static final MarshallingInfo<String> SERVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceName").build();
 
@@ -46,6 +51,8 @@ public class GrpcGatewayRouteMatchMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(grpcGatewayRouteMatch.getHostname(), HOSTNAME_BINDING);
+            protocolMarshaller.marshall(grpcGatewayRouteMatch.getMetadata(), METADATA_BINDING);
             protocolMarshaller.marshall(grpcGatewayRouteMatch.getServiceName(), SERVICENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -87,6 +87,62 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the node.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - The AWS account is in the process of creating a node.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The node has been created and can participate in the network.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain
+     * automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to
+     * <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - The node is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - The node is in the process of being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The node can no longer participate on the network.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
+     * disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
@@ -116,6 +172,17 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the node
+     * uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
+     * AWS owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
+     */
+    private String kmsKeyArn;
 
     /**
      * <p>
@@ -501,9 +568,120 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the node.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - The AWS account is in the process of creating a node.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The node has been created and can participate in the network.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain
+     * automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to
+     * <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - The node is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - The node is in the process of being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The node can no longer participate on the network.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
+     * disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the node.
+     *        The status of the node.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - The AWS account is in the process of creating a node.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - The node has been created and can participate in the network.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed
+     *        Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it
+     *        returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - The node is in the process of being updated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> - The node is in the process of being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The node can no longer participate on the network.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because
+     *        it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key
+     *        was disabled or deleted, or the grants on the key were revoked.
+     *        </p>
+     *        <p>
+     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might
+     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *        deleting and recreating the resource.
+     *        </p>
+     *        </li>
      * @see NodeStatus
      */
 
@@ -515,8 +693,119 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the node.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - The AWS account is in the process of creating a node.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The node has been created and can participate in the network.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain
+     * automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to
+     * <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - The node is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - The node is in the process of being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The node can no longer participate on the network.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
+     * disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the node.
+     * @return The status of the node.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CREATING</code> - The AWS account is in the process of creating a node.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AVAILABLE</code> - The node has been created and can participate in the network.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed
+     *         Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable,
+     *         it returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATING</code> - The node is in the process of being updated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETING</code> - The node is in the process of being deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETED</code> - The node can no longer participate on the network.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected
+     *         because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the
+     *         KMS key was disabled or deleted, or the grants on the key were revoked.
+     *         </p>
+     *         <p>
+     *         The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might
+     *         take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *         deleting and recreating the resource.
+     *         </p>
+     *         </li>
      * @see NodeStatus
      */
 
@@ -528,9 +817,120 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the node.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - The AWS account is in the process of creating a node.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The node has been created and can participate in the network.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain
+     * automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to
+     * <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - The node is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - The node is in the process of being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The node can no longer participate on the network.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
+     * disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the node.
+     *        The status of the node.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - The AWS account is in the process of creating a node.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - The node has been created and can participate in the network.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed
+     *        Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it
+     *        returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - The node is in the process of being updated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> - The node is in the process of being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The node can no longer participate on the network.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because
+     *        it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key
+     *        was disabled or deleted, or the grants on the key were revoked.
+     *        </p>
+     *        <p>
+     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might
+     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *        deleting and recreating the resource.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NodeStatus
      */
@@ -544,9 +944,120 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the node.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - The AWS account is in the process of creating a node.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The node has been created and can participate in the network.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed Blockchain
+     * automatically finds nodes in this state and tries to recover them. If a node is recoverable, it returns to
+     * <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - The node is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - The node is in the process of being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The node can no longer participate on the network.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
+     * disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the node.
+     *        The status of the node.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - The AWS account is in the process of creating a node.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - The node has been created and can participate in the network.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNHEALTHY</code> - The node is impaired and might not function as expected. Amazon Managed
+     *        Blockchain automatically finds nodes in this state and tries to recover them. If a node is recoverable, it
+     *        returns to <code>AVAILABLE</code>. Otherwise, it moves to <code>FAILED</code> status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_FAILED</code> - The AWS account attempted to create a node and creation failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - The node is in the process of being updated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> - The node is in the process of being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The node can no longer participate on the network.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - The node is no longer functional, cannot be recovered, and must be deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function as expected because
+     *        it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key
+     *        was disabled or deleted, or the grants on the key were revoked.
+     *        </p>
+     *        <p>
+     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The node resource might
+     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *        deleting and recreating the resource.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NodeStatus
      */
@@ -756,6 +1267,76 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the node
+     * uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
+     * AWS owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that
+     *        the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>,
+     *        the node uses an AWS owned KMS key for encryption. The node inherits this parameter from the member that
+     *        it belongs to.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
+     */
+
+    public void setKmsKeyArn(String kmsKeyArn) {
+        this.kmsKeyArn = kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the node
+     * uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
+     * AWS owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that
+     *         the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>,
+     *         the node uses an AWS owned KMS key for encryption. The node inherits this parameter from the member that
+     *         it belongs to.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric.
+     */
+
+    public String getKmsKeyArn() {
+        return this.kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the node
+     * uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the node uses an
+     * AWS owned KMS key for encryption. The node inherits this parameter from the member that it belongs to.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that
+     *        the node uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>,
+     *        the node uses an AWS owned KMS key for encryption. The node inherits this parameter from the member that
+     *        it belongs to.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node withKmsKeyArn(String kmsKeyArn) {
+        setKmsKeyArn(kmsKeyArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -790,7 +1371,9 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getArn() != null)
-            sb.append("Arn: ").append(getArn());
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getKmsKeyArn() != null)
+            sb.append("KmsKeyArn: ").append(getKmsKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -853,6 +1436,10 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
+            return false;
+        if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
+            return false;
         return true;
     }
 
@@ -873,6 +1460,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         return hashCode;
     }
 

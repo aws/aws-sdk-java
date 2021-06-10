@@ -28,6 +28,11 @@ public class AbstractAmazonSageMakerFeatureStoreRuntime implements AmazonSageMak
     }
 
     @Override
+    public BatchGetRecordResult batchGetRecord(BatchGetRecordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRecordResult deleteRecord(DeleteRecordRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

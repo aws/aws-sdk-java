@@ -27,7 +27,7 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * The ARNs of the resource shares.
      * </p>
      */
     private java.util.List<String> resourceShareArns;
@@ -68,13 +68,19 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the resource share.
+     * </p>
+     */
+    private String permissionArn;
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * The ARNs of the resource shares.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the resource shares.
+     * @return The ARNs of the resource shares.
      */
 
     public java.util.List<String> getResourceShareArns() {
@@ -83,11 +89,11 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * The ARNs of the resource shares.
      * </p>
      * 
      * @param resourceShareArns
-     *        The Amazon Resource Names (ARN) of the resource shares.
+     *        The ARNs of the resource shares.
      */
 
     public void setResourceShareArns(java.util.Collection<String> resourceShareArns) {
@@ -101,7 +107,7 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * The ARNs of the resource shares.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -110,7 +116,7 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param resourceShareArns
-     *        The Amazon Resource Names (ARN) of the resource shares.
+     *        The ARNs of the resource shares.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +132,11 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the resource shares.
+     * The ARNs of the resource shares.
      * </p>
      * 
      * @param resourceShareArns
-     *        The Amazon Resource Names (ARN) of the resource shares.
+     *        The ARNs of the resource shares.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -454,6 +460,46 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the resource share.
+     * </p>
+     * 
+     * @param permissionArn
+     *        The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the resource share.
+     */
+
+    public void setPermissionArn(String permissionArn) {
+        this.permissionArn = permissionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the resource share.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the resource share.
+     */
+
+    public String getPermissionArn() {
+        return this.permissionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the resource share.
+     * </p>
+     * 
+     * @param permissionArn
+     *        The Amazon Resource Name (ARN) of the AWS RAM permission that is associated with the resource share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourceSharesRequest withPermissionArn(String permissionArn) {
+        setPermissionArn(permissionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -478,7 +524,9 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getPermissionArn() != null)
+            sb.append("PermissionArn: ").append(getPermissionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -521,6 +569,10 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getPermissionArn() == null ^ this.getPermissionArn() == null)
+            return false;
+        if (other.getPermissionArn() != null && other.getPermissionArn().equals(this.getPermissionArn()) == false)
+            return false;
         return true;
     }
 
@@ -536,6 +588,7 @@ public class GetResourceSharesRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getTagFilters() == null) ? 0 : getTagFilters().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getPermissionArn() == null) ? 0 : getPermissionArn().hashCode());
         return hashCode;
     }
 

@@ -53,6 +53,8 @@ public class NodeMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<String> KMSKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyArn").build();
 
     private static final NodeMarshaller instance = new NodeMarshaller();
 
@@ -82,6 +84,7 @@ public class NodeMarshaller {
             protocolMarshaller.marshall(node.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(node.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(node.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(node.getKmsKeyArn(), KMSKEYARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

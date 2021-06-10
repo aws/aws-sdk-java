@@ -30,7 +30,7 @@ public class VirtualGatewayListenerTlsCertificate implements Serializable, Clone
 
     /**
      * <p>
-     * A reference to an object that represents an AWS Certicate Manager (ACM) certificate.
+     * A reference to an object that represents an Certificate Manager certificate.
      * </p>
      */
     private VirtualGatewayListenerTlsAcmCertificate acm;
@@ -49,11 +49,11 @@ public class VirtualGatewayListenerTlsCertificate implements Serializable, Clone
 
     /**
      * <p>
-     * A reference to an object that represents an AWS Certicate Manager (ACM) certificate.
+     * A reference to an object that represents an Certificate Manager certificate.
      * </p>
      * 
      * @param acm
-     *        A reference to an object that represents an AWS Certicate Manager (ACM) certificate.
+     *        A reference to an object that represents an Certificate Manager certificate.
      */
 
     public void setAcm(VirtualGatewayListenerTlsAcmCertificate acm) {
@@ -62,10 +62,10 @@ public class VirtualGatewayListenerTlsCertificate implements Serializable, Clone
 
     /**
      * <p>
-     * A reference to an object that represents an AWS Certicate Manager (ACM) certificate.
+     * A reference to an object that represents an Certificate Manager certificate.
      * </p>
      * 
-     * @return A reference to an object that represents an AWS Certicate Manager (ACM) certificate.
+     * @return A reference to an object that represents an Certificate Manager certificate.
      */
 
     public VirtualGatewayListenerTlsAcmCertificate getAcm() {
@@ -74,11 +74,11 @@ public class VirtualGatewayListenerTlsCertificate implements Serializable, Clone
 
     /**
      * <p>
-     * A reference to an object that represents an AWS Certicate Manager (ACM) certificate.
+     * A reference to an object that represents an Certificate Manager certificate.
      * </p>
      * 
      * @param acm
-     *        A reference to an object that represents an AWS Certicate Manager (ACM) certificate.
+     *        A reference to an object that represents an Certificate Manager certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,6 +38,8 @@ public class CreateDeviceFleetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputConfig").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<Boolean> ENABLEIOTROLEALIAS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableIotRoleAlias").build();
 
     private static final CreateDeviceFleetRequestMarshaller instance = new CreateDeviceFleetRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class CreateDeviceFleetRequestMarshaller {
             protocolMarshaller.marshall(createDeviceFleetRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createDeviceFleetRequest.getOutputConfig(), OUTPUTCONFIG_BINDING);
             protocolMarshaller.marshall(createDeviceFleetRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDeviceFleetRequest.getEnableIotRoleAlias(), ENABLEIOTROLEALIAS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

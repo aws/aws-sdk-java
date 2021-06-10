@@ -89,6 +89,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>UPDATING</code> - The member is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the
      * AWS account that owns the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -99,6 +104,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <code>DELETED</code> - The member can no longer participate on the network and all associated resources are
      * deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
+     * disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -127,6 +144,14 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the
+     * member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the
+     * member uses an AWS owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.
+     * </p>
+     */
+    private String kmsKeyArn;
 
     /**
      * <p>
@@ -390,6 +415,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>UPDATING</code> - The member is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the
      * AWS account that owns the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -400,6 +430,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <code>DELETED</code> - The member can no longer participate on the network and all associated resources are
      * deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
+     * disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -424,6 +466,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>UPDATING</code> - The member is in the process of being updated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>DELETING</code> - The member and all associated resources are in the process of being deleted.
      *        Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an
      *        <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -434,6 +481,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        <code>DELETED</code> - The member can no longer participate on the network and all associated resources
      *        are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the
      *        result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected
+     *        because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the
+     *        KMS key was disabled or deleted, or the grants on the key were revoked.
+     *        </p>
+     *        <p>
+     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might
+     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *        deleting and recreating the resource.
      *        </p>
      *        </li>
      * @see MemberStatus
@@ -465,6 +524,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>UPDATING</code> - The member is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the
      * AWS account that owns the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -475,6 +539,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <code>DELETED</code> - The member can no longer participate on the network and all associated resources are
      * deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
+     * disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -498,6 +574,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
+     *         <code>UPDATING</code> - The member is in the process of being updated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>DELETING</code> - The member and all associated resources are in the process of being deleted.
      *         Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      *         an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -508,6 +589,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *         <code>DELETED</code> - The member can no longer participate on the network and all associated resources
      *         are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as
      *         the result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected
+     *         because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the
+     *         KMS key was disabled or deleted, or the grants on the key were revoked.
+     *         </p>
+     *         <p>
+     *         The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource
+     *         might take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *         deleting and recreating the resource.
      *         </p>
      *         </li>
      * @see MemberStatus
@@ -539,6 +632,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>UPDATING</code> - The member is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the
      * AWS account that owns the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -549,6 +647,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <code>DELETED</code> - The member can no longer participate on the network and all associated resources are
      * deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
+     * disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -573,6 +683,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>UPDATING</code> - The member is in the process of being updated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>DELETING</code> - The member and all associated resources are in the process of being deleted.
      *        Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an
      *        <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -583,6 +698,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        <code>DELETED</code> - The member can no longer participate on the network and all associated resources
      *        are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the
      *        result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected
+     *        because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the
+     *        KMS key was disabled or deleted, or the grants on the key were revoked.
+     *        </p>
+     *        <p>
+     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might
+     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *        deleting and recreating the resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -616,6 +743,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>UPDATING</code> - The member is in the process of being updated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETING</code> - The member and all associated resources are in the process of being deleted. Either the
      * AWS account that owns the member deleted it, or the member is being deleted as the result of an
      * <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -626,6 +758,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <code>DELETED</code> - The member can no longer participate on the network and all associated resources are
      * deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the result of
      * an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected because it
+     * cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the KMS key was
+     * disabled or deleted, or the grants on the key were revoked.
+     * </p>
+     * <p>
+     * The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might take
+     * some time to find that the key is inaccessible. When a resource is in this state, we recommend deleting and
+     * recreating the resource.
      * </p>
      * </li>
      * </ul>
@@ -650,6 +794,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>UPDATING</code> - The member is in the process of being updated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>DELETING</code> - The member and all associated resources are in the process of being deleted.
      *        Either the AWS account that owns the member deleted it, or the member is being deleted as the result of an
      *        <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
@@ -660,6 +809,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        <code>DELETED</code> - The member can no longer participate on the network and all associated resources
      *        are deleted. Either the AWS account that owns the member deleted it, or the member is being deleted as the
      *        result of an <code>APPROVED</code> <code>PROPOSAL</code> to remove the member.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function as expected
+     *        because it cannot access the specified customer managed key in AWS KMS for encryption at rest. Either the
+     *        KMS key was disabled or deleted, or the grants on the key were revoked.
+     *        </p>
+     *        <p>
+     *        The effect of disabling or deleting a key, or revoking a grant is not immediate. The member resource might
+     *        take some time to find that the key is inaccessible. When a resource is in this state, we recommend
+     *        deleting and recreating the resource.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -850,6 +1011,61 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the
+     * member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the
+     * member uses an AWS owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that
+     *        the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>
+     *        , the member uses an AWS owned KMS key for encryption. This parameter is inherited by the nodes that this
+     *        member owns.
+     */
+
+    public void setKmsKeyArn(String kmsKeyArn) {
+        this.kmsKeyArn = kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the
+     * member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the
+     * member uses an AWS owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that
+     *         the member uses for encryption at rest. If the value of this parameter is
+     *         <code>"AWS Owned KMS Key"</code>, the member uses an AWS owned KMS key for encryption. This parameter is
+     *         inherited by the nodes that this member owns.
+     */
+
+    public String getKmsKeyArn() {
+        return this.kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that the
+     * member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>, the
+     * member uses an AWS owned KMS key for encryption. This parameter is inherited by the nodes that this member owns.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name (ARN) of the customer managed key in AWS Key Management Service (AWS KMS) that
+     *        the member uses for encryption at rest. If the value of this parameter is <code>"AWS Owned KMS Key"</code>
+     *        , the member uses an AWS owned KMS key for encryption. This parameter is inherited by the nodes that this
+     *        member owns.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Member withKmsKeyArn(String kmsKeyArn) {
+        setKmsKeyArn(kmsKeyArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -880,7 +1096,9 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getArn() != null)
-            sb.append("Arn: ").append(getArn());
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getKmsKeyArn() != null)
+            sb.append("KmsKeyArn: ").append(getKmsKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -935,6 +1153,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
+            return false;
+        if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
+            return false;
         return true;
     }
 
@@ -953,6 +1175,7 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         return hashCode;
     }
 

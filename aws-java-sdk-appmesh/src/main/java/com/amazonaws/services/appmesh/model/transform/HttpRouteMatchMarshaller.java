@@ -32,8 +32,12 @@ public class HttpRouteMatchMarshaller {
             .marshallLocationName("headers").build();
     private static final MarshallingInfo<String> METHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("method").build();
+    private static final MarshallingInfo<StructuredPojo> PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("path").build();
     private static final MarshallingInfo<String> PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("prefix").build();
+    private static final MarshallingInfo<List> QUERYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("queryParameters").build();
     private static final MarshallingInfo<String> SCHEME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("scheme").build();
 
@@ -55,7 +59,9 @@ public class HttpRouteMatchMarshaller {
         try {
             protocolMarshaller.marshall(httpRouteMatch.getHeaders(), HEADERS_BINDING);
             protocolMarshaller.marshall(httpRouteMatch.getMethod(), METHOD_BINDING);
+            protocolMarshaller.marshall(httpRouteMatch.getPath(), PATH_BINDING);
             protocolMarshaller.marshall(httpRouteMatch.getPrefix(), PREFIX_BINDING);
+            protocolMarshaller.marshall(httpRouteMatch.getQueryParameters(), QUERYPARAMETERS_BINDING);
             protocolMarshaller.marshall(httpRouteMatch.getScheme(), SCHEME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

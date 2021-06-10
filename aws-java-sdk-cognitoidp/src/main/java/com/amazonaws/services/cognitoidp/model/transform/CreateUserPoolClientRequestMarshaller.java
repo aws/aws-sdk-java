@@ -66,6 +66,8 @@ public class CreateUserPoolClientRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnalyticsConfiguration").build();
     private static final MarshallingInfo<String> PREVENTUSEREXISTENCEERRORS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreventUserExistenceErrors").build();
+    private static final MarshallingInfo<Boolean> ENABLETOKENREVOCATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableTokenRevocation").build();
 
     private static final CreateUserPoolClientRequestMarshaller instance = new CreateUserPoolClientRequestMarshaller();
 
@@ -102,6 +104,7 @@ public class CreateUserPoolClientRequestMarshaller {
             protocolMarshaller.marshall(createUserPoolClientRequest.getAllowedOAuthFlowsUserPoolClient(), ALLOWEDOAUTHFLOWSUSERPOOLCLIENT_BINDING);
             protocolMarshaller.marshall(createUserPoolClientRequest.getAnalyticsConfiguration(), ANALYTICSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createUserPoolClientRequest.getPreventUserExistenceErrors(), PREVENTUSEREXISTENCEERRORS_BINDING);
+            protocolMarshaller.marshall(createUserPoolClientRequest.getEnableTokenRevocation(), ENABLETOKENREVOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

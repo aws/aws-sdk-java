@@ -30,10 +30,56 @@ public class GrpcGatewayRouteAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * The gateway route action to rewrite.
+     * </p>
+     */
+    private GrpcGatewayRouteRewrite rewrite;
+    /**
+     * <p>
      * An object that represents the target that traffic is routed to when a request matches the gateway route.
      * </p>
      */
     private GatewayRouteTarget target;
+
+    /**
+     * <p>
+     * The gateway route action to rewrite.
+     * </p>
+     * 
+     * @param rewrite
+     *        The gateway route action to rewrite.
+     */
+
+    public void setRewrite(GrpcGatewayRouteRewrite rewrite) {
+        this.rewrite = rewrite;
+    }
+
+    /**
+     * <p>
+     * The gateway route action to rewrite.
+     * </p>
+     * 
+     * @return The gateway route action to rewrite.
+     */
+
+    public GrpcGatewayRouteRewrite getRewrite() {
+        return this.rewrite;
+    }
+
+    /**
+     * <p>
+     * The gateway route action to rewrite.
+     * </p>
+     * 
+     * @param rewrite
+     *        The gateway route action to rewrite.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GrpcGatewayRouteAction withRewrite(GrpcGatewayRouteRewrite rewrite) {
+        setRewrite(rewrite);
+        return this;
+    }
 
     /**
      * <p>
@@ -87,6 +133,8 @@ public class GrpcGatewayRouteAction implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getRewrite() != null)
+            sb.append("Rewrite: ").append(getRewrite()).append(",");
         if (getTarget() != null)
             sb.append("Target: ").append(getTarget());
         sb.append("}");
@@ -103,6 +151,10 @@ public class GrpcGatewayRouteAction implements Serializable, Cloneable, Structur
         if (obj instanceof GrpcGatewayRouteAction == false)
             return false;
         GrpcGatewayRouteAction other = (GrpcGatewayRouteAction) obj;
+        if (other.getRewrite() == null ^ this.getRewrite() == null)
+            return false;
+        if (other.getRewrite() != null && other.getRewrite().equals(this.getRewrite()) == false)
+            return false;
         if (other.getTarget() == null ^ this.getTarget() == null)
             return false;
         if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
@@ -115,6 +167,7 @@ public class GrpcGatewayRouteAction implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getRewrite() == null) ? 0 : getRewrite().hashCode());
         hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
         return hashCode;
     }

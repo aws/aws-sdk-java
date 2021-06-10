@@ -34,6 +34,12 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String hostname;
+    /**
+     * <p>
+     * Specifies the DNS response type for the virtual node.
+     * </p>
+     */
+    private String responseType;
 
     /**
      * <p>
@@ -76,6 +82,65 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Specifies the DNS response type for the virtual node.
+     * </p>
+     * 
+     * @param responseType
+     *        Specifies the DNS response type for the virtual node.
+     * @see DnsResponseType
+     */
+
+    public void setResponseType(String responseType) {
+        this.responseType = responseType;
+    }
+
+    /**
+     * <p>
+     * Specifies the DNS response type for the virtual node.
+     * </p>
+     * 
+     * @return Specifies the DNS response type for the virtual node.
+     * @see DnsResponseType
+     */
+
+    public String getResponseType() {
+        return this.responseType;
+    }
+
+    /**
+     * <p>
+     * Specifies the DNS response type for the virtual node.
+     * </p>
+     * 
+     * @param responseType
+     *        Specifies the DNS response type for the virtual node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DnsResponseType
+     */
+
+    public DnsServiceDiscovery withResponseType(String responseType) {
+        setResponseType(responseType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the DNS response type for the virtual node.
+     * </p>
+     * 
+     * @param responseType
+     *        Specifies the DNS response type for the virtual node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DnsResponseType
+     */
+
+    public DnsServiceDiscovery withResponseType(DnsResponseType responseType) {
+        this.responseType = responseType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +153,9 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getHostname() != null)
-            sb.append("Hostname: ").append(getHostname());
+            sb.append("Hostname: ").append(getHostname()).append(",");
+        if (getResponseType() != null)
+            sb.append("ResponseType: ").append(getResponseType());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +174,10 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getHostname() != null && other.getHostname().equals(this.getHostname()) == false)
             return false;
+        if (other.getResponseType() == null ^ this.getResponseType() == null)
+            return false;
+        if (other.getResponseType() != null && other.getResponseType().equals(this.getResponseType()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +187,7 @@ public class DnsServiceDiscovery implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode());
+        hashCode = prime * hashCode + ((getResponseType() == null) ? 0 : getResponseType().hashCode());
         return hashCode;
     }
 

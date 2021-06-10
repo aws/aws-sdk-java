@@ -44,6 +44,8 @@ public class ResourceShareInvitationMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<List> RESOURCESHAREASSOCIATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceShareAssociations").build();
+    private static final MarshallingInfo<String> RECEIVERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("receiverArn").build();
 
     private static final ResourceShareInvitationMarshaller instance = new ResourceShareInvitationMarshaller();
 
@@ -69,6 +71,7 @@ public class ResourceShareInvitationMarshaller {
             protocolMarshaller.marshall(resourceShareInvitation.getInvitationTimestamp(), INVITATIONTIMESTAMP_BINDING);
             protocolMarshaller.marshall(resourceShareInvitation.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(resourceShareInvitation.getResourceShareAssociations(), RESOURCESHAREASSOCIATIONS_BINDING);
+            protocolMarshaller.marshall(resourceShareInvitation.getReceiverArn(), RECEIVERARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

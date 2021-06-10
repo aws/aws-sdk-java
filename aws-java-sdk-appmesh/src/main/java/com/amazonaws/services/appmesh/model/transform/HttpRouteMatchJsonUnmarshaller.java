@@ -58,9 +58,19 @@ public class HttpRouteMatchJsonUnmarshaller implements Unmarshaller<HttpRouteMat
                     context.nextToken();
                     httpRouteMatch.setMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("path", targetDepth)) {
+                    context.nextToken();
+                    httpRouteMatch.setPath(HttpPathMatchJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("prefix", targetDepth)) {
                     context.nextToken();
                     httpRouteMatch.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("queryParameters", targetDepth)) {
+                    context.nextToken();
+                    httpRouteMatch.setQueryParameters(new ListUnmarshaller<HttpQueryParameter>(HttpQueryParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("scheme", targetDepth)) {
                     context.nextToken();

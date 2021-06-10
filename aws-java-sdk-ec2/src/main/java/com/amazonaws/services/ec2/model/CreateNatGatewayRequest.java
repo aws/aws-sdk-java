@@ -27,6 +27,14 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
+     * [Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway. You
+     * cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with
+     * another resource, you must first disassociate it.
+     * </p>
+     */
+    private String allocationId;
+    /**
+     * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
@@ -51,11 +59,62 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
     /**
      * <p>
-     * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
-     * associated with another resource, you must first disassociate it.
+     * Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.
      * </p>
      */
-    private String allocationId;
+    private String connectivityType;
+
+    /**
+     * <p>
+     * [Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway. You
+     * cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with
+     * another resource, you must first disassociate it.
+     * </p>
+     * 
+     * @param allocationId
+     *        [Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway.
+     *        You cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is
+     *        associated with another resource, you must first disassociate it.
+     */
+
+    public void setAllocationId(String allocationId) {
+        this.allocationId = allocationId;
+    }
+
+    /**
+     * <p>
+     * [Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway. You
+     * cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with
+     * another resource, you must first disassociate it.
+     * </p>
+     * 
+     * @return [Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway.
+     *         You cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is
+     *         associated with another resource, you must first disassociate it.
+     */
+
+    public String getAllocationId() {
+        return this.allocationId;
+    }
+
+    /**
+     * <p>
+     * [Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway. You
+     * cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is associated with
+     * another resource, you must first disassociate it.
+     * </p>
+     * 
+     * @param allocationId
+     *        [Public NAT gateways only] The allocation ID of an Elastic IP address to associate with the NAT gateway.
+     *        You cannot specify an Elastic IP address with a private NAT gateway. If the Elastic IP address is
+     *        associated with another resource, you must first disassociate it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNatGatewayRequest withAllocationId(String allocationId) {
+        setAllocationId(allocationId);
+        return this;
+    }
 
     /**
      * <p>
@@ -245,47 +304,64 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
-     * associated with another resource, you must first disassociate it.
+     * Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.
      * </p>
      * 
-     * @param allocationId
-     *        The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
-     *        associated with another resource, you must first disassociate it.
+     * @param connectivityType
+     *        Indicates whether the NAT gateway supports public or private connectivity. The default is public
+     *        connectivity.
+     * @see ConnectivityType
      */
 
-    public void setAllocationId(String allocationId) {
-        this.allocationId = allocationId;
+    public void setConnectivityType(String connectivityType) {
+        this.connectivityType = connectivityType;
     }
 
     /**
      * <p>
-     * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
-     * associated with another resource, you must first disassociate it.
+     * Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.
      * </p>
      * 
-     * @return The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address
-     *         is associated with another resource, you must first disassociate it.
+     * @return Indicates whether the NAT gateway supports public or private connectivity. The default is public
+     *         connectivity.
+     * @see ConnectivityType
      */
 
-    public String getAllocationId() {
-        return this.allocationId;
+    public String getConnectivityType() {
+        return this.connectivityType;
     }
 
     /**
      * <p>
-     * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
-     * associated with another resource, you must first disassociate it.
+     * Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.
      * </p>
      * 
-     * @param allocationId
-     *        The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
-     *        associated with another resource, you must first disassociate it.
+     * @param connectivityType
+     *        Indicates whether the NAT gateway supports public or private connectivity. The default is public
+     *        connectivity.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectivityType
      */
 
-    public CreateNatGatewayRequest withAllocationId(String allocationId) {
-        setAllocationId(allocationId);
+    public CreateNatGatewayRequest withConnectivityType(String connectivityType) {
+        setConnectivityType(connectivityType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.
+     * </p>
+     * 
+     * @param connectivityType
+     *        Indicates whether the NAT gateway supports public or private connectivity. The default is public
+     *        connectivity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectivityType
+     */
+
+    public CreateNatGatewayRequest withConnectivityType(ConnectivityType connectivityType) {
+        this.connectivityType = connectivityType.toString();
         return this;
     }
 
@@ -312,14 +388,16 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAllocationId() != null)
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getSubnetId() != null)
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
-        if (getAllocationId() != null)
-            sb.append("AllocationId: ").append(getAllocationId());
+        if (getConnectivityType() != null)
+            sb.append("ConnectivityType: ").append(getConnectivityType());
         sb.append("}");
         return sb.toString();
     }
@@ -334,6 +412,10 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
         if (obj instanceof CreateNatGatewayRequest == false)
             return false;
         CreateNatGatewayRequest other = (CreateNatGatewayRequest) obj;
+        if (other.getAllocationId() == null ^ this.getAllocationId() == null)
+            return false;
+        if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -346,9 +428,9 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
             return false;
-        if (other.getAllocationId() == null ^ this.getAllocationId() == null)
+        if (other.getConnectivityType() == null ^ this.getConnectivityType() == null)
             return false;
-        if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
+        if (other.getConnectivityType() != null && other.getConnectivityType().equals(this.getConnectivityType()) == false)
             return false;
         return true;
     }
@@ -358,10 +440,11 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
-        hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
+        hashCode = prime * hashCode + ((getConnectivityType() == null) ? 0 : getConnectivityType().hashCode());
         return hashCode;
     }
 
