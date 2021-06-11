@@ -11332,6 +11332,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DisableImageDeprecationResult> disableImageDeprecationAsync(DisableImageDeprecationRequest request) {
+
+        return disableImageDeprecationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableImageDeprecationResult> disableImageDeprecationAsync(final DisableImageDeprecationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableImageDeprecationRequest, DisableImageDeprecationResult> asyncHandler) {
+        final DisableImageDeprecationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableImageDeprecationResult>() {
+            @Override
+            public DisableImageDeprecationResult call() throws Exception {
+                DisableImageDeprecationResult result = null;
+
+                try {
+                    result = executeDisableImageDeprecation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableSerialConsoleAccessResult> disableSerialConsoleAccessAsync(DisableSerialConsoleAccessRequest request) {
 
         return disableSerialConsoleAccessAsync(request, null);
@@ -11857,6 +11890,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeEnableFastSnapshotRestores(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableImageDeprecationResult> enableImageDeprecationAsync(EnableImageDeprecationRequest request) {
+
+        return enableImageDeprecationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableImageDeprecationResult> enableImageDeprecationAsync(final EnableImageDeprecationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableImageDeprecationRequest, EnableImageDeprecationResult> asyncHandler) {
+        final EnableImageDeprecationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableImageDeprecationResult>() {
+            @Override
+            public EnableImageDeprecationResult call() throws Exception {
+                EnableImageDeprecationResult result = null;
+
+                try {
+                    result = executeEnableImageDeprecation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

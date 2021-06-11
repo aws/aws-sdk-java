@@ -35,6 +35,8 @@ public class HlsInputSettingsMarshaller {
             .marshallLocationName("retries").build();
     private static final MarshallingInfo<Integer> RETRYINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retryInterval").build();
+    private static final MarshallingInfo<String> SCTE35SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scte35Source").build();
 
     private static final HlsInputSettingsMarshaller instance = new HlsInputSettingsMarshaller();
 
@@ -56,6 +58,7 @@ public class HlsInputSettingsMarshaller {
             protocolMarshaller.marshall(hlsInputSettings.getBufferSegments(), BUFFERSEGMENTS_BINDING);
             protocolMarshaller.marshall(hlsInputSettings.getRetries(), RETRIES_BINDING);
             protocolMarshaller.marshall(hlsInputSettings.getRetryInterval(), RETRYINTERVAL_BINDING);
+            protocolMarshaller.marshall(hlsInputSettings.getScte35Source(), SCTE35SOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

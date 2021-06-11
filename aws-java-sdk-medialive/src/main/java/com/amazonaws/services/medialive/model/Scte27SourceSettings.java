@@ -27,6 +27,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class Scte27SourceSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * If you will configure a WebVTT caption description that references this caption selector, use this field to
+     * provide the language to consider when translating the image-based source to text.
+     */
+    private String ocrLanguage;
+    /**
      * The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and
      * Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language:
      * Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that
@@ -34,6 +39,65 @@ public class Scte27SourceSettings implements Serializable, Cloneable, Structured
      * languages will be passed through.
      */
     private Integer pid;
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption selector, use this field to
+     * provide the language to consider when translating the image-based source to text.
+     * 
+     * @param ocrLanguage
+     *        If you will configure a WebVTT caption description that references this caption selector, use this field
+     *        to provide the language to consider when translating the image-based source to text.
+     * @see Scte27OcrLanguage
+     */
+
+    public void setOcrLanguage(String ocrLanguage) {
+        this.ocrLanguage = ocrLanguage;
+    }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption selector, use this field to
+     * provide the language to consider when translating the image-based source to text.
+     * 
+     * @return If you will configure a WebVTT caption description that references this caption selector, use this field
+     *         to provide the language to consider when translating the image-based source to text.
+     * @see Scte27OcrLanguage
+     */
+
+    public String getOcrLanguage() {
+        return this.ocrLanguage;
+    }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption selector, use this field to
+     * provide the language to consider when translating the image-based source to text.
+     * 
+     * @param ocrLanguage
+     *        If you will configure a WebVTT caption description that references this caption selector, use this field
+     *        to provide the language to consider when translating the image-based source to text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Scte27OcrLanguage
+     */
+
+    public Scte27SourceSettings withOcrLanguage(String ocrLanguage) {
+        setOcrLanguage(ocrLanguage);
+        return this;
+    }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption selector, use this field to
+     * provide the language to consider when translating the image-based source to text.
+     * 
+     * @param ocrLanguage
+     *        If you will configure a WebVTT caption description that references this caption selector, use this field
+     *        to provide the language to consider when translating the image-based source to text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Scte27OcrLanguage
+     */
+
+    public Scte27SourceSettings withOcrLanguage(Scte27OcrLanguage ocrLanguage) {
+        this.ocrLanguage = ocrLanguage.toString();
+        return this;
+    }
 
     /**
      * The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and
@@ -105,6 +169,8 @@ public class Scte27SourceSettings implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getOcrLanguage() != null)
+            sb.append("OcrLanguage: ").append(getOcrLanguage()).append(",");
         if (getPid() != null)
             sb.append("Pid: ").append(getPid());
         sb.append("}");
@@ -121,6 +187,10 @@ public class Scte27SourceSettings implements Serializable, Cloneable, Structured
         if (obj instanceof Scte27SourceSettings == false)
             return false;
         Scte27SourceSettings other = (Scte27SourceSettings) obj;
+        if (other.getOcrLanguage() == null ^ this.getOcrLanguage() == null)
+            return false;
+        if (other.getOcrLanguage() != null && other.getOcrLanguage().equals(this.getOcrLanguage()) == false)
+            return false;
         if (other.getPid() == null ^ this.getPid() == null)
             return false;
         if (other.getPid() != null && other.getPid().equals(this.getPid()) == false)
@@ -133,6 +203,7 @@ public class Scte27SourceSettings implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getOcrLanguage() == null) ? 0 : getOcrLanguage().hashCode());
         hashCode = prime * hashCode + ((getPid() == null) ? 0 : getPid().hashCode());
         return hashCode;
     }

@@ -4398,8 +4398,8 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * Recently deregistered images appear in the returned results for a short interval and then return empty results.
-     * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image results in
-     * an error indicating that the AMI ID cannot be found.
+     * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will
+     * eventually return an error indicating that the AMI ID cannot be found.
      * </p>
      * 
      * @param describeImagesRequest
@@ -6339,6 +6339,24 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Cancels the deprecation of the specified AMI.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageDeprecationRequest
+     * @return Result of the DisableImageDeprecation operation returned by the service.
+     * @sample AmazonEC2.DisableImageDeprecation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DisableImageDeprecationResult disableImageDeprecation(DisableImageDeprecationRequest disableImageDeprecationRequest);
+
+    /**
+     * <p>
      * Disables access to the EC2 serial console of all instances for your account. By default, access to the EC2 serial
      * console is disabled for your account. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
@@ -6641,6 +6659,24 @@ public interface AmazonEC2 {
      *      API Documentation</a>
      */
     EnableFastSnapshotRestoresResult enableFastSnapshotRestores(EnableFastSnapshotRestoresRequest enableFastSnapshotRestoresRequest);
+
+    /**
+     * <p>
+     * Enables deprecation of the specified AMI at the specified date and time.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageDeprecationRequest
+     * @return Result of the EnableImageDeprecation operation returned by the service.
+     * @sample AmazonEC2.EnableImageDeprecation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    EnableImageDeprecationResult enableImageDeprecation(EnableImageDeprecationRequest enableImageDeprecationRequest);
 
     /**
      * <p>

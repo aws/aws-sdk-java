@@ -201,6 +201,14 @@ public class Image implements Serializable, Cloneable {
      * </p>
      */
     private String bootMode;
+    /**
+     * <p>
+     * The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified a value for seconds, Amazon EC2
+     * rounds the seconds to the nearest minute.
+     * </p>
+     */
+    private String deprecationTime;
 
     /**
      * <p>
@@ -1772,6 +1780,58 @@ public class Image implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified a value for seconds, Amazon EC2
+     * rounds the seconds to the nearest minute.
+     * </p>
+     * 
+     * @param deprecationTime
+     *        The date and time to deprecate the AMI, in UTC, in the following format:
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified a value for seconds,
+     *        Amazon EC2 rounds the seconds to the nearest minute.
+     */
+
+    public void setDeprecationTime(String deprecationTime) {
+        this.deprecationTime = deprecationTime;
+    }
+
+    /**
+     * <p>
+     * The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified a value for seconds, Amazon EC2
+     * rounds the seconds to the nearest minute.
+     * </p>
+     * 
+     * @return The date and time to deprecate the AMI, in UTC, in the following format:
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified a value for seconds,
+     *         Amazon EC2 rounds the seconds to the nearest minute.
+     */
+
+    public String getDeprecationTime() {
+        return this.deprecationTime;
+    }
+
+    /**
+     * <p>
+     * The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified a value for seconds, Amazon EC2
+     * rounds the seconds to the nearest minute.
+     * </p>
+     * 
+     * @param deprecationTime
+     *        The date and time to deprecate the AMI, in UTC, in the following format:
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified a value for seconds,
+     *        Amazon EC2 rounds the seconds to the nearest minute.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withDeprecationTime(String deprecationTime) {
+        setDeprecationTime(deprecationTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1836,7 +1896,9 @@ public class Image implements Serializable, Cloneable {
         if (getVirtualizationType() != null)
             sb.append("VirtualizationType: ").append(getVirtualizationType()).append(",");
         if (getBootMode() != null)
-            sb.append("BootMode: ").append(getBootMode());
+            sb.append("BootMode: ").append(getBootMode()).append(",");
+        if (getDeprecationTime() != null)
+            sb.append("DeprecationTime: ").append(getDeprecationTime());
         sb.append("}");
         return sb.toString();
     }
@@ -1959,6 +2021,10 @@ public class Image implements Serializable, Cloneable {
             return false;
         if (other.getBootMode() != null && other.getBootMode().equals(this.getBootMode()) == false)
             return false;
+        if (other.getDeprecationTime() == null ^ this.getDeprecationTime() == null)
+            return false;
+        if (other.getDeprecationTime() != null && other.getDeprecationTime().equals(this.getDeprecationTime()) == false)
+            return false;
         return true;
     }
 
@@ -1994,6 +2060,7 @@ public class Image implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode());
         hashCode = prime * hashCode + ((getBootMode() == null) ? 0 : getBootMode().hashCode());
+        hashCode = prime * hashCode + ((getDeprecationTime() == null) ? 0 : getDeprecationTime().hashCode());
         return hashCode;
     }
 

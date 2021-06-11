@@ -1,3 +1,16 @@
+# __1.12.5__ __2021-06-11__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS MediaLive now supports OCR-based conversion of DVB-Sub and SCTE-27 image-based source captions to WebVTT, and supports ingest of ad avail decorations in HLS input manifests.
+
+## __AWS MediaConnect__
+  - ### Features
+    - When you enable source failover, you can now designate one of two sources as the primary source. You can choose between two failover modes to prevent any disruption to the video stream. Merge combines the sources into a single stream. Failover allows switching between a primary and a backup stream.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon EC2 adds new AMI property to flag outdated AMIs
+
 # __1.12.4__ __2021-06-10__
 ## __AWS App Mesh__
   - ### Features

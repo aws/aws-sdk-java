@@ -44,6 +44,12 @@ public class HlsInputSettings implements Serializable, Cloneable, StructuredPojo
     private Integer retries;
     /** The number of seconds between retries when an attempt to read a manifest or segment fails. */
     private Integer retryInterval;
+    /**
+     * Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the
+     * content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35
+     * information in the source that is not selected.
+     */
+    private String scte35Source;
 
     /**
      * When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen,
@@ -209,6 +215,73 @@ public class HlsInputSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the
+     * content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35
+     * information in the source that is not selected.
+     * 
+     * @param scte35Source
+     *        Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from
+     *        the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores
+     *        SCTE-35 information in the source that is not selected.
+     * @see HlsScte35SourceType
+     */
+
+    public void setScte35Source(String scte35Source) {
+        this.scte35Source = scte35Source;
+    }
+
+    /**
+     * Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the
+     * content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35
+     * information in the source that is not selected.
+     * 
+     * @return Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from
+     *         the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores
+     *         SCTE-35 information in the source that is not selected.
+     * @see HlsScte35SourceType
+     */
+
+    public String getScte35Source() {
+        return this.scte35Source;
+    }
+
+    /**
+     * Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the
+     * content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35
+     * information in the source that is not selected.
+     * 
+     * @param scte35Source
+     *        Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from
+     *        the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores
+     *        SCTE-35 information in the source that is not selected.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsScte35SourceType
+     */
+
+    public HlsInputSettings withScte35Source(String scte35Source) {
+        setScte35Source(scte35Source);
+        return this;
+    }
+
+    /**
+     * Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the
+     * content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35
+     * information in the source that is not selected.
+     * 
+     * @param scte35Source
+     *        Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from
+     *        the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores
+     *        SCTE-35 information in the source that is not selected.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsScte35SourceType
+     */
+
+    public HlsInputSettings withScte35Source(HlsScte35SourceType scte35Source) {
+        this.scte35Source = scte35Source.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -227,7 +300,9 @@ public class HlsInputSettings implements Serializable, Cloneable, StructuredPojo
         if (getRetries() != null)
             sb.append("Retries: ").append(getRetries()).append(",");
         if (getRetryInterval() != null)
-            sb.append("RetryInterval: ").append(getRetryInterval());
+            sb.append("RetryInterval: ").append(getRetryInterval()).append(",");
+        if (getScte35Source() != null)
+            sb.append("Scte35Source: ").append(getScte35Source());
         sb.append("}");
         return sb.toString();
     }
@@ -258,6 +333,10 @@ public class HlsInputSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getRetryInterval() != null && other.getRetryInterval().equals(this.getRetryInterval()) == false)
             return false;
+        if (other.getScte35Source() == null ^ this.getScte35Source() == null)
+            return false;
+        if (other.getScte35Source() != null && other.getScte35Source().equals(this.getScte35Source()) == false)
+            return false;
         return true;
     }
 
@@ -270,6 +349,7 @@ public class HlsInputSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getBufferSegments() == null) ? 0 : getBufferSegments().hashCode());
         hashCode = prime * hashCode + ((getRetries() == null) ? 0 : getRetries().hashCode());
         hashCode = prime * hashCode + ((getRetryInterval() == null) ? 0 : getRetryInterval().hashCode());
+        hashCode = prime * hashCode + ((getScte35Source() == null) ? 0 : getScte35Source().hashCode());
         return hashCode;
     }
 

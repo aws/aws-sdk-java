@@ -27,8 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FailoverConfigMarshaller {
 
+    private static final MarshallingInfo<String> FAILOVERMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failoverMode").build();
     private static final MarshallingInfo<Integer> RECOVERYWINDOW_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recoveryWindow").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCEPRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourcePriority").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
 
@@ -48,7 +52,9 @@ public class FailoverConfigMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(failoverConfig.getFailoverMode(), FAILOVERMODE_BINDING);
             protocolMarshaller.marshall(failoverConfig.getRecoveryWindow(), RECOVERYWINDOW_BINDING);
+            protocolMarshaller.marshall(failoverConfig.getSourcePriority(), SOURCEPRIORITY_BINDING);
             protocolMarshaller.marshall(failoverConfig.getState(), STATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

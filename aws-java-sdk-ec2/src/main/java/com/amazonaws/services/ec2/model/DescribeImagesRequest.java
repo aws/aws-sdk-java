@@ -226,6 +226,19 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> owners;
+    /**
+     * <p>
+     * If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no deprecated AMIs
+     * are included in the response. If no value is specified, the default value is <code>false</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (<code>true</code>
+     * or <code>false</code>) that you set for this parameter.
+     * </p>
+     * </note>
+     */
+    private Boolean includeDeprecated;
 
     /**
      * <p>
@@ -1945,6 +1958,110 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * <p>
+     * If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no deprecated AMIs
+     * are included in the response. If no value is specified, the default value is <code>false</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (<code>true</code>
+     * or <code>false</code>) that you set for this parameter.
+     * </p>
+     * </note>
+     * 
+     * @param includeDeprecated
+     *        If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no
+     *        deprecated AMIs are included in the response. If no value is specified, the default value is
+     *        <code>false</code>.</p> <note>
+     *        <p>
+     *        If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (
+     *        <code>true</code> or <code>false</code>) that you set for this parameter.
+     *        </p>
+     */
+
+    public void setIncludeDeprecated(Boolean includeDeprecated) {
+        this.includeDeprecated = includeDeprecated;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no deprecated AMIs
+     * are included in the response. If no value is specified, the default value is <code>false</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (<code>true</code>
+     * or <code>false</code>) that you set for this parameter.
+     * </p>
+     * </note>
+     * 
+     * @return If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no
+     *         deprecated AMIs are included in the response. If no value is specified, the default value is
+     *         <code>false</code>.</p> <note>
+     *         <p>
+     *         If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (
+     *         <code>true</code> or <code>false</code>) that you set for this parameter.
+     *         </p>
+     */
+
+    public Boolean getIncludeDeprecated() {
+        return this.includeDeprecated;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no deprecated AMIs
+     * are included in the response. If no value is specified, the default value is <code>false</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (<code>true</code>
+     * or <code>false</code>) that you set for this parameter.
+     * </p>
+     * </note>
+     * 
+     * @param includeDeprecated
+     *        If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no
+     *        deprecated AMIs are included in the response. If no value is specified, the default value is
+     *        <code>false</code>.</p> <note>
+     *        <p>
+     *        If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (
+     *        <code>true</code> or <code>false</code>) that you set for this parameter.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesRequest withIncludeDeprecated(Boolean includeDeprecated) {
+        setIncludeDeprecated(includeDeprecated);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no deprecated AMIs
+     * are included in the response. If no value is specified, the default value is <code>false</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (<code>true</code>
+     * or <code>false</code>) that you set for this parameter.
+     * </p>
+     * </note>
+     * 
+     * @return If <code>true</code>, all deprecated AMIs are included in the response. If <code>false</code>, no
+     *         deprecated AMIs are included in the response. If no value is specified, the default value is
+     *         <code>false</code>.</p> <note>
+     *         <p>
+     *         If you are the AMI owner, all deprecated AMIs appear in the response regardless of the value (
+     *         <code>true</code> or <code>false</code>) that you set for this parameter.
+     *         </p>
+     */
+
+    public Boolean isIncludeDeprecated() {
+        return this.includeDeprecated;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1974,7 +2091,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
         if (getImageIds() != null)
             sb.append("ImageIds: ").append(getImageIds()).append(",");
         if (getOwners() != null)
-            sb.append("Owners: ").append(getOwners());
+            sb.append("Owners: ").append(getOwners()).append(",");
+        if (getIncludeDeprecated() != null)
+            sb.append("IncludeDeprecated: ").append(getIncludeDeprecated());
         sb.append("}");
         return sb.toString();
     }
@@ -2005,6 +2124,10 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
             return false;
         if (other.getOwners() != null && other.getOwners().equals(this.getOwners()) == false)
             return false;
+        if (other.getIncludeDeprecated() == null ^ this.getIncludeDeprecated() == null)
+            return false;
+        if (other.getIncludeDeprecated() != null && other.getIncludeDeprecated().equals(this.getIncludeDeprecated()) == false)
+            return false;
         return true;
     }
 
@@ -2017,6 +2140,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
         hashCode = prime * hashCode + ((getOwners() == null) ? 0 : getOwners().hashCode());
+        hashCode = prime * hashCode + ((getIncludeDeprecated() == null) ? 0 : getIncludeDeprecated().hashCode());
         return hashCode;
     }
 

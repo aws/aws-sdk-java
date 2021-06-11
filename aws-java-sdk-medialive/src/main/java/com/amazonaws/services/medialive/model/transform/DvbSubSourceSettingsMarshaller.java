@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DvbSubSourceSettingsMarshaller {
 
+    private static final MarshallingInfo<String> OCRLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ocrLanguage").build();
     private static final MarshallingInfo<Integer> PID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("pid").build();
 
@@ -46,6 +48,7 @@ public class DvbSubSourceSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(dvbSubSourceSettings.getOcrLanguage(), OCRLANGUAGE_BINDING);
             protocolMarshaller.marshall(dvbSubSourceSettings.getPid(), PID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -48,6 +48,10 @@ public class Scte27SourceSettingsJsonUnmarshaller implements Unmarshaller<Scte27
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ocrLanguage", targetDepth)) {
+                    context.nextToken();
+                    scte27SourceSettings.setOcrLanguage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("pid", targetDepth)) {
                     context.nextToken();
                     scte27SourceSettings.setPid(context.getUnmarshaller(Integer.class).unmarshall(context));

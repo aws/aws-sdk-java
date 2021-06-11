@@ -15,13 +15,15 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Special features, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+ * Special features, 'ADVANCED_AUDIO' 'AUDIO_NORMALIZATION' 'MGHD' or 'MGUHD'
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ReservationSpecialFeature {
 
     ADVANCED_AUDIO("ADVANCED_AUDIO"),
-    AUDIO_NORMALIZATION("AUDIO_NORMALIZATION");
+    AUDIO_NORMALIZATION("AUDIO_NORMALIZATION"),
+    MGHD("MGHD"),
+    MGUHD("MGUHD");
 
     private String value;
 

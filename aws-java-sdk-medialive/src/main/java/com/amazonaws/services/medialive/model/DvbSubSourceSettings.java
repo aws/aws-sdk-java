@@ -27,10 +27,74 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class DvbSubSourceSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * If you will configure a WebVTT caption description that references this caption selector, use this field to
+     * provide the language to consider when translating the image-based source to text.
+     */
+    private String ocrLanguage;
+    /**
      * When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough.
      * All DVB-Sub content is passed through, regardless of selectors.
      */
     private Integer pid;
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption selector, use this field to
+     * provide the language to consider when translating the image-based source to text.
+     * 
+     * @param ocrLanguage
+     *        If you will configure a WebVTT caption description that references this caption selector, use this field
+     *        to provide the language to consider when translating the image-based source to text.
+     * @see DvbSubOcrLanguage
+     */
+
+    public void setOcrLanguage(String ocrLanguage) {
+        this.ocrLanguage = ocrLanguage;
+    }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption selector, use this field to
+     * provide the language to consider when translating the image-based source to text.
+     * 
+     * @return If you will configure a WebVTT caption description that references this caption selector, use this field
+     *         to provide the language to consider when translating the image-based source to text.
+     * @see DvbSubOcrLanguage
+     */
+
+    public String getOcrLanguage() {
+        return this.ocrLanguage;
+    }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption selector, use this field to
+     * provide the language to consider when translating the image-based source to text.
+     * 
+     * @param ocrLanguage
+     *        If you will configure a WebVTT caption description that references this caption selector, use this field
+     *        to provide the language to consider when translating the image-based source to text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DvbSubOcrLanguage
+     */
+
+    public DvbSubSourceSettings withOcrLanguage(String ocrLanguage) {
+        setOcrLanguage(ocrLanguage);
+        return this;
+    }
+
+    /**
+     * If you will configure a WebVTT caption description that references this caption selector, use this field to
+     * provide the language to consider when translating the image-based source to text.
+     * 
+     * @param ocrLanguage
+     *        If you will configure a WebVTT caption description that references this caption selector, use this field
+     *        to provide the language to consider when translating the image-based source to text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DvbSubOcrLanguage
+     */
+
+    public DvbSubSourceSettings withOcrLanguage(DvbSubOcrLanguage ocrLanguage) {
+        this.ocrLanguage = ocrLanguage.toString();
+        return this;
+    }
 
     /**
      * When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough.
@@ -84,6 +148,8 @@ public class DvbSubSourceSettings implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getOcrLanguage() != null)
+            sb.append("OcrLanguage: ").append(getOcrLanguage()).append(",");
         if (getPid() != null)
             sb.append("Pid: ").append(getPid());
         sb.append("}");
@@ -100,6 +166,10 @@ public class DvbSubSourceSettings implements Serializable, Cloneable, Structured
         if (obj instanceof DvbSubSourceSettings == false)
             return false;
         DvbSubSourceSettings other = (DvbSubSourceSettings) obj;
+        if (other.getOcrLanguage() == null ^ this.getOcrLanguage() == null)
+            return false;
+        if (other.getOcrLanguage() != null && other.getOcrLanguage().equals(this.getOcrLanguage()) == false)
+            return false;
         if (other.getPid() == null ^ this.getPid() == null)
             return false;
         if (other.getPid() != null && other.getPid().equals(this.getPid()) == false)
@@ -112,6 +182,7 @@ public class DvbSubSourceSettings implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getOcrLanguage() == null) ? 0 : getOcrLanguage().hashCode());
         hashCode = prime * hashCode + ((getPid() == null) ? 0 : getPid().hashCode());
         return hashCode;
     }

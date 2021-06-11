@@ -48,9 +48,17 @@ public class FailoverConfigJsonUnmarshaller implements Unmarshaller<FailoverConf
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("failoverMode", targetDepth)) {
+                    context.nextToken();
+                    failoverConfig.setFailoverMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("recoveryWindow", targetDepth)) {
                     context.nextToken();
                     failoverConfig.setRecoveryWindow(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("sourcePriority", targetDepth)) {
+                    context.nextToken();
+                    failoverConfig.setSourcePriority(SourcePriorityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();

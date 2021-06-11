@@ -64,6 +64,10 @@ public class HlsInputSettingsJsonUnmarshaller implements Unmarshaller<HlsInputSe
                     context.nextToken();
                     hlsInputSettings.setRetryInterval(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("scte35Source", targetDepth)) {
+                    context.nextToken();
+                    hlsInputSettings.setScte35Source(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

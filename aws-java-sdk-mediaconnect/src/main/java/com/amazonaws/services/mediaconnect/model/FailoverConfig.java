@@ -26,10 +26,83 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FailoverConfig implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing
+     * graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+     */
+    private String failoverMode;
     /** Search window time to look for dash-7 packets */
     private Integer recoveryWindow;
+    /**
+     * The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally
+     * prioritized streams.
+     */
+    private SourcePriority sourcePriority;
 
     private String state;
+
+    /**
+     * The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing
+     * graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+     * 
+     * @param failoverMode
+     *        The type of failover you choose for this flow. MERGE combines the source streams into a single stream,
+     *        allowing graceful recovery from any single-source loss. FAILOVER allows switching between different
+     *        streams.
+     * @see FailoverMode
+     */
+
+    public void setFailoverMode(String failoverMode) {
+        this.failoverMode = failoverMode;
+    }
+
+    /**
+     * The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing
+     * graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+     * 
+     * @return The type of failover you choose for this flow. MERGE combines the source streams into a single stream,
+     *         allowing graceful recovery from any single-source loss. FAILOVER allows switching between different
+     *         streams.
+     * @see FailoverMode
+     */
+
+    public String getFailoverMode() {
+        return this.failoverMode;
+    }
+
+    /**
+     * The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing
+     * graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+     * 
+     * @param failoverMode
+     *        The type of failover you choose for this flow. MERGE combines the source streams into a single stream,
+     *        allowing graceful recovery from any single-source loss. FAILOVER allows switching between different
+     *        streams.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FailoverMode
+     */
+
+    public FailoverConfig withFailoverMode(String failoverMode) {
+        setFailoverMode(failoverMode);
+        return this;
+    }
+
+    /**
+     * The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing
+     * graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
+     * 
+     * @param failoverMode
+     *        The type of failover you choose for this flow. MERGE combines the source streams into a single stream,
+     *        allowing graceful recovery from any single-source loss. FAILOVER allows switching between different
+     *        streams.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FailoverMode
+     */
+
+    public FailoverConfig withFailoverMode(FailoverMode failoverMode) {
+        this.failoverMode = failoverMode.toString();
+        return this;
+    }
 
     /**
      * Search window time to look for dash-7 packets
@@ -62,6 +135,46 @@ public class FailoverConfig implements Serializable, Cloneable, StructuredPojo {
 
     public FailoverConfig withRecoveryWindow(Integer recoveryWindow) {
         setRecoveryWindow(recoveryWindow);
+        return this;
+    }
+
+    /**
+     * The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally
+     * prioritized streams.
+     * 
+     * @param sourcePriority
+     *        The priority you want to assign to a source. You can have a primary stream and a backup stream or two
+     *        equally prioritized streams.
+     */
+
+    public void setSourcePriority(SourcePriority sourcePriority) {
+        this.sourcePriority = sourcePriority;
+    }
+
+    /**
+     * The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally
+     * prioritized streams.
+     * 
+     * @return The priority you want to assign to a source. You can have a primary stream and a backup stream or two
+     *         equally prioritized streams.
+     */
+
+    public SourcePriority getSourcePriority() {
+        return this.sourcePriority;
+    }
+
+    /**
+     * The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally
+     * prioritized streams.
+     * 
+     * @param sourcePriority
+     *        The priority you want to assign to a source. You can have a primary stream and a backup stream or two
+     *        equally prioritized streams.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FailoverConfig withSourcePriority(SourcePriority sourcePriority) {
+        setSourcePriority(sourcePriority);
         return this;
     }
 
@@ -117,8 +230,12 @@ public class FailoverConfig implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFailoverMode() != null)
+            sb.append("FailoverMode: ").append(getFailoverMode()).append(",");
         if (getRecoveryWindow() != null)
             sb.append("RecoveryWindow: ").append(getRecoveryWindow()).append(",");
+        if (getSourcePriority() != null)
+            sb.append("SourcePriority: ").append(getSourcePriority()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState());
         sb.append("}");
@@ -135,9 +252,17 @@ public class FailoverConfig implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof FailoverConfig == false)
             return false;
         FailoverConfig other = (FailoverConfig) obj;
+        if (other.getFailoverMode() == null ^ this.getFailoverMode() == null)
+            return false;
+        if (other.getFailoverMode() != null && other.getFailoverMode().equals(this.getFailoverMode()) == false)
+            return false;
         if (other.getRecoveryWindow() == null ^ this.getRecoveryWindow() == null)
             return false;
         if (other.getRecoveryWindow() != null && other.getRecoveryWindow().equals(this.getRecoveryWindow()) == false)
+            return false;
+        if (other.getSourcePriority() == null ^ this.getSourcePriority() == null)
+            return false;
+        if (other.getSourcePriority() != null && other.getSourcePriority().equals(this.getSourcePriority()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
@@ -151,7 +276,9 @@ public class FailoverConfig implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFailoverMode() == null) ? 0 : getFailoverMode().hashCode());
         hashCode = prime * hashCode + ((getRecoveryWindow() == null) ? 0 : getRecoveryWindow().hashCode());
+        hashCode = prime * hashCode + ((getSourcePriority() == null) ? 0 : getSourcePriority().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }

@@ -9845,8 +9845,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * Recently deregistered images appear in the returned results for a short interval and then return empty results.
-     * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image results in
-     * an error indicating that the AMI ID cannot be found.
+     * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will
+     * eventually return an error indicating that the AMI ID cannot be found.
      * </p>
      * 
      * @param describeImagesRequest
@@ -9867,8 +9867,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * Recently deregistered images appear in the returned results for a short interval and then return empty results.
-     * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image results in
-     * an error indicating that the AMI ID cannot be found.
+     * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will
+     * eventually return an error indicating that the AMI ID cannot be found.
      * </p>
      * 
      * @param describeImagesRequest
@@ -14383,6 +14383,47 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Cancels the deprecation of the specified AMI.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageDeprecationRequest
+     * @return A Java Future containing the result of the DisableImageDeprecation operation returned by the service.
+     * @sample AmazonEC2Async.DisableImageDeprecation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableImageDeprecationResult> disableImageDeprecationAsync(DisableImageDeprecationRequest disableImageDeprecationRequest);
+
+    /**
+     * <p>
+     * Cancels the deprecation of the specified AMI.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageDeprecationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableImageDeprecation operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DisableImageDeprecation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableImageDeprecationResult> disableImageDeprecationAsync(DisableImageDeprecationRequest disableImageDeprecationRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableImageDeprecationRequest, DisableImageDeprecationResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables access to the EC2 serial console of all instances for your account. By default, access to the EC2 serial
      * console is disabled for your account. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
@@ -15100,6 +15141,47 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<EnableFastSnapshotRestoresResult> enableFastSnapshotRestoresAsync(
             EnableFastSnapshotRestoresRequest enableFastSnapshotRestoresRequest,
             com.amazonaws.handlers.AsyncHandler<EnableFastSnapshotRestoresRequest, EnableFastSnapshotRestoresResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables deprecation of the specified AMI at the specified date and time.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageDeprecationRequest
+     * @return A Java Future containing the result of the EnableImageDeprecation operation returned by the service.
+     * @sample AmazonEC2Async.EnableImageDeprecation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableImageDeprecationResult> enableImageDeprecationAsync(EnableImageDeprecationRequest enableImageDeprecationRequest);
+
+    /**
+     * <p>
+     * Enables deprecation of the specified AMI at the specified date and time.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageDeprecationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableImageDeprecation operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.EnableImageDeprecation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableImageDeprecationResult> enableImageDeprecationAsync(EnableImageDeprecationRequest enableImageDeprecationRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableImageDeprecationRequest, EnableImageDeprecationResult> asyncHandler);
 
     /**
      * <p>

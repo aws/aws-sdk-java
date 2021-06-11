@@ -13210,8 +13210,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * Recently deregistered images appear in the returned results for a short interval and then return empty results.
-     * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image results in
-     * an error indicating that the AMI ID cannot be found.
+     * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will
+     * eventually return an error indicating that the AMI ID cannot be found.
      * </p>
      * 
      * @param describeImagesRequest
@@ -19064,6 +19064,67 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Cancels the deprecation of the specified AMI.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageDeprecationRequest
+     * @return Result of the DisableImageDeprecation operation returned by the service.
+     * @sample AmazonEC2.DisableImageDeprecation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeprecation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DisableImageDeprecationResult disableImageDeprecation(DisableImageDeprecationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableImageDeprecation(request);
+    }
+
+    @SdkInternalApi
+    final DisableImageDeprecationResult executeDisableImageDeprecation(DisableImageDeprecationRequest disableImageDeprecationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableImageDeprecationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableImageDeprecationRequest> request = null;
+        Response<DisableImageDeprecationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableImageDeprecationRequestMarshaller().marshall(super.beforeMarshalling(disableImageDeprecationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableImageDeprecation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisableImageDeprecationResult> responseHandler = new StaxResponseHandler<DisableImageDeprecationResult>(
+                    new DisableImageDeprecationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disables access to the EC2 serial console of all instances for your account. By default, access to the EC2 serial
      * console is disabled for your account. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
@@ -20050,6 +20111,67 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableFastSnapshotRestoresResult> responseHandler = new StaxResponseHandler<EnableFastSnapshotRestoresResult>(
                     new EnableFastSnapshotRestoresResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables deprecation of the specified AMI at the specified date and time.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageDeprecationRequest
+     * @return Result of the EnableImageDeprecation operation returned by the service.
+     * @sample AmazonEC2.EnableImageDeprecation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeprecation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public EnableImageDeprecationResult enableImageDeprecation(EnableImageDeprecationRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableImageDeprecation(request);
+    }
+
+    @SdkInternalApi
+    final EnableImageDeprecationResult executeEnableImageDeprecation(EnableImageDeprecationRequest enableImageDeprecationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableImageDeprecationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableImageDeprecationRequest> request = null;
+        Response<EnableImageDeprecationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableImageDeprecationRequestMarshaller().marshall(super.beforeMarshalling(enableImageDeprecationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableImageDeprecation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EnableImageDeprecationResult> responseHandler = new StaxResponseHandler<EnableImageDeprecationResult>(
+                    new EnableImageDeprecationResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
