@@ -28,6 +28,36 @@ public class AbstractAWSGreengrassV2Async extends AbstractAWSGreengrassV2 implem
     }
 
     @Override
+    public java.util.concurrent.Future<BatchAssociateClientDeviceWithCoreDeviceResult> batchAssociateClientDeviceWithCoreDeviceAsync(
+            BatchAssociateClientDeviceWithCoreDeviceRequest request) {
+
+        return batchAssociateClientDeviceWithCoreDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchAssociateClientDeviceWithCoreDeviceResult> batchAssociateClientDeviceWithCoreDeviceAsync(
+            BatchAssociateClientDeviceWithCoreDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchAssociateClientDeviceWithCoreDeviceRequest, BatchAssociateClientDeviceWithCoreDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateClientDeviceFromCoreDeviceResult> batchDisassociateClientDeviceFromCoreDeviceAsync(
+            BatchDisassociateClientDeviceFromCoreDeviceRequest request) {
+
+        return batchDisassociateClientDeviceFromCoreDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateClientDeviceFromCoreDeviceResult> batchDisassociateClientDeviceFromCoreDeviceAsync(
+            BatchDisassociateClientDeviceFromCoreDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDisassociateClientDeviceFromCoreDeviceRequest, BatchDisassociateClientDeviceFromCoreDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelDeploymentResult> cancelDeploymentAsync(CancelDeploymentRequest request) {
 
         return cancelDeploymentAsync(request, null);
@@ -153,6 +183,21 @@ public class AbstractAWSGreengrassV2Async extends AbstractAWSGreengrassV2 implem
     @Override
     public java.util.concurrent.Future<GetDeploymentResult> getDeploymentAsync(GetDeploymentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDeploymentRequest, GetDeploymentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClientDevicesAssociatedWithCoreDeviceResult> listClientDevicesAssociatedWithCoreDeviceAsync(
+            ListClientDevicesAssociatedWithCoreDeviceRequest request) {
+
+        return listClientDevicesAssociatedWithCoreDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClientDevicesAssociatedWithCoreDeviceResult> listClientDevicesAssociatedWithCoreDeviceAsync(
+            ListClientDevicesAssociatedWithCoreDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListClientDevicesAssociatedWithCoreDeviceRequest, ListClientDevicesAssociatedWithCoreDeviceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

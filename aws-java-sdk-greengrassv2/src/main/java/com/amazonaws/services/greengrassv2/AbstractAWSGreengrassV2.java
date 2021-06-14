@@ -28,6 +28,17 @@ public class AbstractAWSGreengrassV2 implements AWSGreengrassV2 {
     }
 
     @Override
+    public BatchAssociateClientDeviceWithCoreDeviceResult batchAssociateClientDeviceWithCoreDevice(BatchAssociateClientDeviceWithCoreDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchDisassociateClientDeviceFromCoreDeviceResult batchDisassociateClientDeviceFromCoreDevice(
+            BatchDisassociateClientDeviceFromCoreDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelDeploymentResult cancelDeployment(CancelDeploymentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +85,11 @@ public class AbstractAWSGreengrassV2 implements AWSGreengrassV2 {
 
     @Override
     public GetDeploymentResult getDeployment(GetDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListClientDevicesAssociatedWithCoreDeviceResult listClientDevicesAssociatedWithCoreDevice(ListClientDevicesAssociatedWithCoreDeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

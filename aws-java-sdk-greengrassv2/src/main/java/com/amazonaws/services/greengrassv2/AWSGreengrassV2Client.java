@@ -162,6 +162,164 @@ public class AWSGreengrassV2Client extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Associate a list of client devices with a core device. Use this API operation to specify which client devices can
+     * discover a core device through cloud discovery. With cloud discovery, client devices connect to AWS IoT
+     * Greengrass to retrieve associated core devices' connectivity information and certificates. For more information,
+     * see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
+     * cloud discovery</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * Client devices are local IoT devices that connect to and communicate with an AWS IoT Greengrass core device over
+     * MQTT. You can connect client devices to a core device to sync MQTT messages and data to AWS IoT Core and interact
+     * with client devices in AWS IoT Greengrass components. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact
+     * with local IoT devices</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param batchAssociateClientDeviceWithCoreDeviceRequest
+     * @return Result of the BatchAssociateClientDeviceWithCoreDevice operation returned by the service.
+     * @throws ValidationException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws AccessDeniedException
+     *         You don't have permission to perform the action.
+     * @throws InternalServerException
+     *         AWS IoT Greengrass can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that
+     *         you can retrieve device or deployment status per second.
+     * @sample AWSGreengrassV2.BatchAssociateClientDeviceWithCoreDevice
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchAssociateClientDeviceWithCoreDeviceResult batchAssociateClientDeviceWithCoreDevice(BatchAssociateClientDeviceWithCoreDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchAssociateClientDeviceWithCoreDevice(request);
+    }
+
+    @SdkInternalApi
+    final BatchAssociateClientDeviceWithCoreDeviceResult executeBatchAssociateClientDeviceWithCoreDevice(
+            BatchAssociateClientDeviceWithCoreDeviceRequest batchAssociateClientDeviceWithCoreDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchAssociateClientDeviceWithCoreDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchAssociateClientDeviceWithCoreDeviceRequest> request = null;
+        Response<BatchAssociateClientDeviceWithCoreDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchAssociateClientDeviceWithCoreDeviceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchAssociateClientDeviceWithCoreDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GreengrassV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchAssociateClientDeviceWithCoreDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchAssociateClientDeviceWithCoreDeviceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new BatchAssociateClientDeviceWithCoreDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociate a list of client devices from a core device. After you disassociate a client device from a core
+     * device, the client device won't be able to use cloud discovery to retrieve the core device's connectivity
+     * information and certificates.
+     * </p>
+     * 
+     * @param batchDisassociateClientDeviceFromCoreDeviceRequest
+     * @return Result of the BatchDisassociateClientDeviceFromCoreDevice operation returned by the service.
+     * @throws ValidationException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws AccessDeniedException
+     *         You don't have permission to perform the action.
+     * @throws InternalServerException
+     *         AWS IoT Greengrass can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that
+     *         you can retrieve device or deployment status per second.
+     * @sample AWSGreengrassV2.BatchDisassociateClientDeviceFromCoreDevice
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchDisassociateClientDeviceFromCoreDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchDisassociateClientDeviceFromCoreDeviceResult batchDisassociateClientDeviceFromCoreDevice(
+            BatchDisassociateClientDeviceFromCoreDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDisassociateClientDeviceFromCoreDevice(request);
+    }
+
+    @SdkInternalApi
+    final BatchDisassociateClientDeviceFromCoreDeviceResult executeBatchDisassociateClientDeviceFromCoreDevice(
+            BatchDisassociateClientDeviceFromCoreDeviceRequest batchDisassociateClientDeviceFromCoreDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDisassociateClientDeviceFromCoreDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDisassociateClientDeviceFromCoreDeviceRequest> request = null;
+        Response<BatchDisassociateClientDeviceFromCoreDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDisassociateClientDeviceFromCoreDeviceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchDisassociateClientDeviceFromCoreDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GreengrassV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDisassociateClientDeviceFromCoreDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDisassociateClientDeviceFromCoreDeviceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new BatchDisassociateClientDeviceFromCoreDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels a deployment. This operation cancels the deployment for devices that haven't yet received it. If a device
      * already received the deployment, this operation doesn't change anything for that device.
      * </p>
@@ -948,7 +1106,78 @@ public class AWSGreengrassV2Client extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Retrieves a paginated list of all versions for a component.
+     * Retrieves a paginated list of client devices that are associated with a core device.
+     * </p>
+     * 
+     * @param listClientDevicesAssociatedWithCoreDeviceRequest
+     * @return Result of the ListClientDevicesAssociatedWithCoreDevice operation returned by the service.
+     * @throws ValidationException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws AccessDeniedException
+     *         You don't have permission to perform the action.
+     * @throws InternalServerException
+     *         AWS IoT Greengrass can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a request rate quota. For example, you might have exceeded the amount of times that
+     *         you can retrieve device or deployment status per second.
+     * @sample AWSGreengrassV2.ListClientDevicesAssociatedWithCoreDevice
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListClientDevicesAssociatedWithCoreDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListClientDevicesAssociatedWithCoreDeviceResult listClientDevicesAssociatedWithCoreDevice(ListClientDevicesAssociatedWithCoreDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListClientDevicesAssociatedWithCoreDevice(request);
+    }
+
+    @SdkInternalApi
+    final ListClientDevicesAssociatedWithCoreDeviceResult executeListClientDevicesAssociatedWithCoreDevice(
+            ListClientDevicesAssociatedWithCoreDeviceRequest listClientDevicesAssociatedWithCoreDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listClientDevicesAssociatedWithCoreDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListClientDevicesAssociatedWithCoreDeviceRequest> request = null;
+        Response<ListClientDevicesAssociatedWithCoreDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListClientDevicesAssociatedWithCoreDeviceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listClientDevicesAssociatedWithCoreDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GreengrassV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClientDevicesAssociatedWithCoreDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListClientDevicesAssociatedWithCoreDeviceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListClientDevicesAssociatedWithCoreDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a paginated list of all versions for a component. Greater versions are listed first.
      * </p>
      * 
      * @param listComponentVersionsRequest

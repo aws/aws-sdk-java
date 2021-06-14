@@ -77,6 +77,12 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String fileFormatType;
+    /**
+     * <p>
+     * Contains information about the partitions in a data store.
+     * </p>
+     */
+    private DatastorePartitions datastorePartitions;
 
     /**
      * <p>
@@ -436,6 +442,46 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Contains information about the partitions in a data store.
+     * </p>
+     * 
+     * @param datastorePartitions
+     *        Contains information about the partitions in a data store.
+     */
+
+    public void setDatastorePartitions(DatastorePartitions datastorePartitions) {
+        this.datastorePartitions = datastorePartitions;
+    }
+
+    /**
+     * <p>
+     * Contains information about the partitions in a data store.
+     * </p>
+     * 
+     * @return Contains information about the partitions in a data store.
+     */
+
+    public DatastorePartitions getDatastorePartitions() {
+        return this.datastorePartitions;
+    }
+
+    /**
+     * <p>
+     * Contains information about the partitions in a data store.
+     * </p>
+     * 
+     * @param datastorePartitions
+     *        Contains information about the partitions in a data store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatastoreSummary withDatastorePartitions(DatastorePartitions datastorePartitions) {
+        setDatastorePartitions(datastorePartitions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -460,7 +506,9 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
         if (getLastMessageArrivalTime() != null)
             sb.append("LastMessageArrivalTime: ").append(getLastMessageArrivalTime()).append(",");
         if (getFileFormatType() != null)
-            sb.append("FileFormatType: ").append(getFileFormatType());
+            sb.append("FileFormatType: ").append(getFileFormatType()).append(",");
+        if (getDatastorePartitions() != null)
+            sb.append("DatastorePartitions: ").append(getDatastorePartitions());
         sb.append("}");
         return sb.toString();
     }
@@ -503,6 +551,10 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getFileFormatType() != null && other.getFileFormatType().equals(this.getFileFormatType()) == false)
             return false;
+        if (other.getDatastorePartitions() == null ^ this.getDatastorePartitions() == null)
+            return false;
+        if (other.getDatastorePartitions() != null && other.getDatastorePartitions().equals(this.getDatastorePartitions()) == false)
+            return false;
         return true;
     }
 
@@ -518,6 +570,7 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
         hashCode = prime * hashCode + ((getLastMessageArrivalTime() == null) ? 0 : getLastMessageArrivalTime().hashCode());
         hashCode = prime * hashCode + ((getFileFormatType() == null) ? 0 : getFileFormatType().hashCode());
+        hashCode = prime * hashCode + ((getDatastorePartitions() == null) ? 0 : getDatastorePartitions().hashCode());
         return hashCode;
     }
 

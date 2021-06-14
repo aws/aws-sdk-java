@@ -48,6 +48,110 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
+     * Associate a list of client devices with a core device. Use this API operation to specify which client devices can
+     * discover a core device through cloud discovery. With cloud discovery, client devices connect to AWS IoT
+     * Greengrass to retrieve associated core devices' connectivity information and certificates. For more information,
+     * see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
+     * cloud discovery</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * Client devices are local IoT devices that connect to and communicate with an AWS IoT Greengrass core device over
+     * MQTT. You can connect client devices to a core device to sync MQTT messages and data to AWS IoT Core and interact
+     * with client devices in AWS IoT Greengrass components. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact
+     * with local IoT devices</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param batchAssociateClientDeviceWithCoreDeviceRequest
+     * @return A Java Future containing the result of the BatchAssociateClientDeviceWithCoreDevice operation returned by
+     *         the service.
+     * @sample AWSGreengrassV2Async.BatchAssociateClientDeviceWithCoreDevice
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateClientDeviceWithCoreDeviceResult> batchAssociateClientDeviceWithCoreDeviceAsync(
+            BatchAssociateClientDeviceWithCoreDeviceRequest batchAssociateClientDeviceWithCoreDeviceRequest);
+
+    /**
+     * <p>
+     * Associate a list of client devices with a core device. Use this API operation to specify which client devices can
+     * discover a core device through cloud discovery. With cloud discovery, client devices connect to AWS IoT
+     * Greengrass to retrieve associated core devices' connectivity information and certificates. For more information,
+     * see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
+     * cloud discovery</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * Client devices are local IoT devices that connect to and communicate with an AWS IoT Greengrass core device over
+     * MQTT. You can connect client devices to a core device to sync MQTT messages and data to AWS IoT Core and interact
+     * with client devices in AWS IoT Greengrass components. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact
+     * with local IoT devices</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param batchAssociateClientDeviceWithCoreDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchAssociateClientDeviceWithCoreDevice operation returned by
+     *         the service.
+     * @sample AWSGreengrassV2AsyncHandler.BatchAssociateClientDeviceWithCoreDevice
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateClientDeviceWithCoreDeviceResult> batchAssociateClientDeviceWithCoreDeviceAsync(
+            BatchAssociateClientDeviceWithCoreDeviceRequest batchAssociateClientDeviceWithCoreDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchAssociateClientDeviceWithCoreDeviceRequest, BatchAssociateClientDeviceWithCoreDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociate a list of client devices from a core device. After you disassociate a client device from a core
+     * device, the client device won't be able to use cloud discovery to retrieve the core device's connectivity
+     * information and certificates.
+     * </p>
+     * 
+     * @param batchDisassociateClientDeviceFromCoreDeviceRequest
+     * @return A Java Future containing the result of the BatchDisassociateClientDeviceFromCoreDevice operation returned
+     *         by the service.
+     * @sample AWSGreengrassV2Async.BatchDisassociateClientDeviceFromCoreDevice
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchDisassociateClientDeviceFromCoreDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateClientDeviceFromCoreDeviceResult> batchDisassociateClientDeviceFromCoreDeviceAsync(
+            BatchDisassociateClientDeviceFromCoreDeviceRequest batchDisassociateClientDeviceFromCoreDeviceRequest);
+
+    /**
+     * <p>
+     * Disassociate a list of client devices from a core device. After you disassociate a client device from a core
+     * device, the client device won't be able to use cloud discovery to retrieve the core device's connectivity
+     * information and certificates.
+     * </p>
+     * 
+     * @param batchDisassociateClientDeviceFromCoreDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDisassociateClientDeviceFromCoreDevice operation returned
+     *         by the service.
+     * @sample AWSGreengrassV2AsyncHandler.BatchDisassociateClientDeviceFromCoreDevice
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchDisassociateClientDeviceFromCoreDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateClientDeviceFromCoreDeviceResult> batchDisassociateClientDeviceFromCoreDeviceAsync(
+            BatchDisassociateClientDeviceFromCoreDeviceRequest batchDisassociateClientDeviceFromCoreDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDisassociateClientDeviceFromCoreDeviceRequest, BatchDisassociateClientDeviceFromCoreDeviceResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels a deployment. This operation cancels the deployment for devices that haven't yet received it. If a device
      * already received the deployment, this operation doesn't change anything for that device.
      * </p>
@@ -560,7 +664,44 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
-     * Retrieves a paginated list of all versions for a component.
+     * Retrieves a paginated list of client devices that are associated with a core device.
+     * </p>
+     * 
+     * @param listClientDevicesAssociatedWithCoreDeviceRequest
+     * @return A Java Future containing the result of the ListClientDevicesAssociatedWithCoreDevice operation returned
+     *         by the service.
+     * @sample AWSGreengrassV2Async.ListClientDevicesAssociatedWithCoreDevice
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListClientDevicesAssociatedWithCoreDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListClientDevicesAssociatedWithCoreDeviceResult> listClientDevicesAssociatedWithCoreDeviceAsync(
+            ListClientDevicesAssociatedWithCoreDeviceRequest listClientDevicesAssociatedWithCoreDeviceRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of client devices that are associated with a core device.
+     * </p>
+     * 
+     * @param listClientDevicesAssociatedWithCoreDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListClientDevicesAssociatedWithCoreDevice operation returned
+     *         by the service.
+     * @sample AWSGreengrassV2AsyncHandler.ListClientDevicesAssociatedWithCoreDevice
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListClientDevicesAssociatedWithCoreDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListClientDevicesAssociatedWithCoreDeviceResult> listClientDevicesAssociatedWithCoreDeviceAsync(
+            ListClientDevicesAssociatedWithCoreDeviceRequest listClientDevicesAssociatedWithCoreDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListClientDevicesAssociatedWithCoreDeviceRequest, ListClientDevicesAssociatedWithCoreDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of all versions for a component. Greater versions are listed first.
      * </p>
      * 
      * @param listComponentVersionsRequest
@@ -573,7 +714,7 @@ public interface AWSGreengrassV2Async extends AWSGreengrassV2 {
 
     /**
      * <p>
-     * Retrieves a paginated list of all versions for a component.
+     * Retrieves a paginated list of all versions for a component. Greater versions are listed first.
      * </p>
      * 
      * @param listComponentVersionsRequest

@@ -184,7 +184,8 @@ public interface AWSIoTAnalytics {
 
     /**
      * <p>
-     * Creates a data store, which is a repository for messages.
+     * Creates a data store, which is a repository for messages. Only data stores that are used to save pipeline data
+     * can be configured with <code>ParquetConfiguration</code>.
      * </p>
      * 
      * @param createDatastoreRequest

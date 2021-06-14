@@ -33,7 +33,7 @@ public class SchemaDefinition implements Serializable, Cloneable, StructuredPojo
      * Specifies one or more columns that store your data.
      * </p>
      * <p>
-     * Each schema can have up to 100 columns. Each column can have up to 100 nested types
+     * Each schema can have up to 100 columns. Each column can have up to 100 nested types.
      * </p>
      */
     private java.util.List<Column> columns;
@@ -43,12 +43,12 @@ public class SchemaDefinition implements Serializable, Cloneable, StructuredPojo
      * Specifies one or more columns that store your data.
      * </p>
      * <p>
-     * Each schema can have up to 100 columns. Each column can have up to 100 nested types
+     * Each schema can have up to 100 columns. Each column can have up to 100 nested types.
      * </p>
      * 
      * @return Specifies one or more columns that store your data.</p>
      *         <p>
-     *         Each schema can have up to 100 columns. Each column can have up to 100 nested types
+     *         Each schema can have up to 100 columns. Each column can have up to 100 nested types.
      */
 
     public java.util.List<Column> getColumns() {
@@ -60,13 +60,13 @@ public class SchemaDefinition implements Serializable, Cloneable, StructuredPojo
      * Specifies one or more columns that store your data.
      * </p>
      * <p>
-     * Each schema can have up to 100 columns. Each column can have up to 100 nested types
+     * Each schema can have up to 100 columns. Each column can have up to 100 nested types.
      * </p>
      * 
      * @param columns
      *        Specifies one or more columns that store your data.</p>
      *        <p>
-     *        Each schema can have up to 100 columns. Each column can have up to 100 nested types
+     *        Each schema can have up to 100 columns. Each column can have up to 100 nested types.
      */
 
     public void setColumns(java.util.Collection<Column> columns) {
@@ -83,7 +83,7 @@ public class SchemaDefinition implements Serializable, Cloneable, StructuredPojo
      * Specifies one or more columns that store your data.
      * </p>
      * <p>
-     * Each schema can have up to 100 columns. Each column can have up to 100 nested types
+     * Each schema can have up to 100 columns. Each column can have up to 100 nested types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -94,7 +94,7 @@ public class SchemaDefinition implements Serializable, Cloneable, StructuredPojo
      * @param columns
      *        Specifies one or more columns that store your data.</p>
      *        <p>
-     *        Each schema can have up to 100 columns. Each column can have up to 100 nested types
+     *        Each schema can have up to 100 columns. Each column can have up to 100 nested types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,13 +113,13 @@ public class SchemaDefinition implements Serializable, Cloneable, StructuredPojo
      * Specifies one or more columns that store your data.
      * </p>
      * <p>
-     * Each schema can have up to 100 columns. Each column can have up to 100 nested types
+     * Each schema can have up to 100 columns. Each column can have up to 100 nested types.
      * </p>
      * 
      * @param columns
      *        Specifies one or more columns that store your data.</p>
      *        <p>
-     *        Each schema can have up to 100 columns. Each column can have up to 100 nested types
+     *        Each schema can have up to 100 columns. Each column can have up to 100 nested types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

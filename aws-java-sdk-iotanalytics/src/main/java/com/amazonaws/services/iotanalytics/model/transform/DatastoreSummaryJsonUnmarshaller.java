@@ -76,6 +76,10 @@ public class DatastoreSummaryJsonUnmarshaller implements Unmarshaller<DatastoreS
                     context.nextToken();
                     datastoreSummary.setFileFormatType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("datastorePartitions", targetDepth)) {
+                    context.nextToken();
+                    datastoreSummary.setDatastorePartitions(DatastorePartitionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -61,7 +61,7 @@ public class DescribeMetricSetResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date lastModificationTime;
     /**
      * <p>
-     * The offset for the dataset.
+     * The offset in seconds. Only supported for S3 and Redshift datasources.
      * </p>
      */
     private Integer offset;
@@ -344,11 +344,11 @@ public class DescribeMetricSetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The offset for the dataset.
+     * The offset in seconds. Only supported for S3 and Redshift datasources.
      * </p>
      * 
      * @param offset
-     *        The offset for the dataset.
+     *        The offset in seconds. Only supported for S3 and Redshift datasources.
      */
 
     public void setOffset(Integer offset) {
@@ -357,10 +357,10 @@ public class DescribeMetricSetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The offset for the dataset.
+     * The offset in seconds. Only supported for S3 and Redshift datasources.
      * </p>
      * 
-     * @return The offset for the dataset.
+     * @return The offset in seconds. Only supported for S3 and Redshift datasources.
      */
 
     public Integer getOffset() {
@@ -369,11 +369,11 @@ public class DescribeMetricSetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The offset for the dataset.
+     * The offset in seconds. Only supported for S3 and Redshift datasources.
      * </p>
      * 
      * @param offset
-     *        The offset for the dataset.
+     *        The offset in seconds. Only supported for S3 and Redshift datasources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

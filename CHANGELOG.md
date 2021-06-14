@@ -1,3 +1,16 @@
+# __1.12.6__ __2021-06-14__
+## __AWS IoT Analytics__
+  - ### Features
+    - Adds support for data store partitions.
+
+## __AWS IoT Greengrass V2__
+  - ### Features
+    - We have verified the APIs being released here and are ready to release
+
+## __Amazon Lookout for Metrics__
+  - ### Features
+    - Added "LEARNING" status for anomaly detector and updated description for "Offset" parameter in MetricSet APIs.
+
 # __1.12.5__ __2021-06-11__
 ## __AWS Elemental MediaLive__
   - ### Features

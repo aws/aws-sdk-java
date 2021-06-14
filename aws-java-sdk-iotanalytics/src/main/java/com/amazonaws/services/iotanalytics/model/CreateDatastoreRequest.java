@@ -65,6 +65,12 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private FileFormatConfiguration fileFormatConfiguration;
+    /**
+     * <p>
+     * Contains information about the partitions in a data store.
+     * </p>
+     */
+    private DatastorePartitions datastorePartitions;
 
     /**
      * <p>
@@ -354,6 +360,46 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Contains information about the partitions in a data store.
+     * </p>
+     * 
+     * @param datastorePartitions
+     *        Contains information about the partitions in a data store.
+     */
+
+    public void setDatastorePartitions(DatastorePartitions datastorePartitions) {
+        this.datastorePartitions = datastorePartitions;
+    }
+
+    /**
+     * <p>
+     * Contains information about the partitions in a data store.
+     * </p>
+     * 
+     * @return Contains information about the partitions in a data store.
+     */
+
+    public DatastorePartitions getDatastorePartitions() {
+        return this.datastorePartitions;
+    }
+
+    /**
+     * <p>
+     * Contains information about the partitions in a data store.
+     * </p>
+     * 
+     * @param datastorePartitions
+     *        Contains information about the partitions in a data store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatastoreRequest withDatastorePartitions(DatastorePartitions datastorePartitions) {
+        setDatastorePartitions(datastorePartitions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -374,7 +420,9 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getFileFormatConfiguration() != null)
-            sb.append("FileFormatConfiguration: ").append(getFileFormatConfiguration());
+            sb.append("FileFormatConfiguration: ").append(getFileFormatConfiguration()).append(",");
+        if (getDatastorePartitions() != null)
+            sb.append("DatastorePartitions: ").append(getDatastorePartitions());
         sb.append("}");
         return sb.toString();
     }
@@ -409,6 +457,10 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getFileFormatConfiguration() != null && other.getFileFormatConfiguration().equals(this.getFileFormatConfiguration()) == false)
             return false;
+        if (other.getDatastorePartitions() == null ^ this.getDatastorePartitions() == null)
+            return false;
+        if (other.getDatastorePartitions() != null && other.getDatastorePartitions().equals(this.getDatastorePartitions()) == false)
+            return false;
         return true;
     }
 
@@ -422,6 +474,7 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getFileFormatConfiguration() == null) ? 0 : getFileFormatConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDatastorePartitions() == null) ? 0 : getDatastorePartitions().hashCode());
         return hashCode;
     }
 

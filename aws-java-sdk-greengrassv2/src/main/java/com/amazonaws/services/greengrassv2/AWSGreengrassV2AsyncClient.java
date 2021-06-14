@@ -90,6 +90,76 @@ public class AWSGreengrassV2AsyncClient extends AWSGreengrassV2Client implements
     }
 
     @Override
+    public java.util.concurrent.Future<BatchAssociateClientDeviceWithCoreDeviceResult> batchAssociateClientDeviceWithCoreDeviceAsync(
+            BatchAssociateClientDeviceWithCoreDeviceRequest request) {
+
+        return batchAssociateClientDeviceWithCoreDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchAssociateClientDeviceWithCoreDeviceResult> batchAssociateClientDeviceWithCoreDeviceAsync(
+            final BatchAssociateClientDeviceWithCoreDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchAssociateClientDeviceWithCoreDeviceRequest, BatchAssociateClientDeviceWithCoreDeviceResult> asyncHandler) {
+        final BatchAssociateClientDeviceWithCoreDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchAssociateClientDeviceWithCoreDeviceResult>() {
+            @Override
+            public BatchAssociateClientDeviceWithCoreDeviceResult call() throws Exception {
+                BatchAssociateClientDeviceWithCoreDeviceResult result = null;
+
+                try {
+                    result = executeBatchAssociateClientDeviceWithCoreDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateClientDeviceFromCoreDeviceResult> batchDisassociateClientDeviceFromCoreDeviceAsync(
+            BatchDisassociateClientDeviceFromCoreDeviceRequest request) {
+
+        return batchDisassociateClientDeviceFromCoreDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateClientDeviceFromCoreDeviceResult> batchDisassociateClientDeviceFromCoreDeviceAsync(
+            final BatchDisassociateClientDeviceFromCoreDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDisassociateClientDeviceFromCoreDeviceRequest, BatchDisassociateClientDeviceFromCoreDeviceResult> asyncHandler) {
+        final BatchDisassociateClientDeviceFromCoreDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDisassociateClientDeviceFromCoreDeviceResult>() {
+            @Override
+            public BatchDisassociateClientDeviceFromCoreDeviceResult call() throws Exception {
+                BatchDisassociateClientDeviceFromCoreDeviceResult result = null;
+
+                try {
+                    result = executeBatchDisassociateClientDeviceFromCoreDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelDeploymentResult> cancelDeploymentAsync(CancelDeploymentRequest request) {
 
         return cancelDeploymentAsync(request, null);
@@ -404,6 +474,41 @@ public class AWSGreengrassV2AsyncClient extends AWSGreengrassV2Client implements
 
                 try {
                     result = executeGetDeployment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClientDevicesAssociatedWithCoreDeviceResult> listClientDevicesAssociatedWithCoreDeviceAsync(
+            ListClientDevicesAssociatedWithCoreDeviceRequest request) {
+
+        return listClientDevicesAssociatedWithCoreDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClientDevicesAssociatedWithCoreDeviceResult> listClientDevicesAssociatedWithCoreDeviceAsync(
+            final ListClientDevicesAssociatedWithCoreDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListClientDevicesAssociatedWithCoreDeviceRequest, ListClientDevicesAssociatedWithCoreDeviceResult> asyncHandler) {
+        final ListClientDevicesAssociatedWithCoreDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListClientDevicesAssociatedWithCoreDeviceResult>() {
+            @Override
+            public ListClientDevicesAssociatedWithCoreDeviceResult call() throws Exception {
+                ListClientDevicesAssociatedWithCoreDeviceResult result = null;
+
+                try {
+                    result = executeListClientDevicesAssociatedWithCoreDevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

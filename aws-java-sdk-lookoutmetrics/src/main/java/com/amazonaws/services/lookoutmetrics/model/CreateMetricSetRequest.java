@@ -51,7 +51,8 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<Metric> metricList;
     /**
      * <p>
-     * After an interval ends, the amount of time that the detector waits before importing data.
+     * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
+     * supported for S3 and Redshift datasources.
      * </p>
      */
     private Integer offset;
@@ -285,11 +286,13 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * After an interval ends, the amount of time that the detector waits before importing data.
+     * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
+     * supported for S3 and Redshift datasources.
      * </p>
      * 
      * @param offset
-     *        After an interval ends, the amount of time that the detector waits before importing data.
+     *        After an interval ends, the amount of seconds that the detector waits before importing data. Offset is
+     *        only supported for S3 and Redshift datasources.
      */
 
     public void setOffset(Integer offset) {
@@ -298,10 +301,12 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * After an interval ends, the amount of time that the detector waits before importing data.
+     * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
+     * supported for S3 and Redshift datasources.
      * </p>
      * 
-     * @return After an interval ends, the amount of time that the detector waits before importing data.
+     * @return After an interval ends, the amount of seconds that the detector waits before importing data. Offset is
+     *         only supported for S3 and Redshift datasources.
      */
 
     public Integer getOffset() {
@@ -310,11 +315,13 @@ public class CreateMetricSetRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * After an interval ends, the amount of time that the detector waits before importing data.
+     * After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only
+     * supported for S3 and Redshift datasources.
      * </p>
      * 
      * @param offset
-     *        After an interval ends, the amount of time that the detector waits before importing data.
+     *        After an interval ends, the amount of seconds that the detector waits before importing data. Offset is
+     *        only supported for S3 and Redshift datasources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

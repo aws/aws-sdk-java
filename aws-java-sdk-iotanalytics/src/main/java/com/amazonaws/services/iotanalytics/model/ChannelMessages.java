@@ -33,6 +33,13 @@ public class ChannelMessages implements Serializable, Cloneable, StructuredPojo 
      * Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
      * channel messages.
      * </p>
+     * <p>
+     * You must use the full path for the key.
+     * </p>
+     * <p>
+     * Example path:
+     * <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
+     * </p>
      */
     private java.util.List<String> s3Paths;
 
@@ -41,9 +48,22 @@ public class ChannelMessages implements Serializable, Cloneable, StructuredPojo 
      * Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
      * channel messages.
      * </p>
+     * <p>
+     * You must use the full path for the key.
+     * </p>
+     * <p>
+     * Example path:
+     * <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
+     * </p>
      * 
      * @return Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save
-     *         your channel messages.
+     *         your channel messages.</p>
+     *         <p>
+     *         You must use the full path for the key.
+     *         </p>
+     *         <p>
+     *         Example path:
+     *         <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
      */
 
     public java.util.List<String> getS3Paths() {
@@ -55,10 +75,23 @@ public class ChannelMessages implements Serializable, Cloneable, StructuredPojo 
      * Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
      * channel messages.
      * </p>
+     * <p>
+     * You must use the full path for the key.
+     * </p>
+     * <p>
+     * Example path:
+     * <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
+     * </p>
      * 
      * @param s3Paths
      *        Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save
-     *        your channel messages.
+     *        your channel messages.</p>
+     *        <p>
+     *        You must use the full path for the key.
+     *        </p>
+     *        <p>
+     *        Example path:
+     *        <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
      */
 
     public void setS3Paths(java.util.Collection<String> s3Paths) {
@@ -76,6 +109,13 @@ public class ChannelMessages implements Serializable, Cloneable, StructuredPojo 
      * channel messages.
      * </p>
      * <p>
+     * You must use the full path for the key.
+     * </p>
+     * <p>
+     * Example path:
+     * <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setS3Paths(java.util.Collection)} or {@link #withS3Paths(java.util.Collection)} if you want to override
      * the existing values.
@@ -83,7 +123,13 @@ public class ChannelMessages implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param s3Paths
      *        Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save
-     *        your channel messages.
+     *        your channel messages.</p>
+     *        <p>
+     *        You must use the full path for the key.
+     *        </p>
+     *        <p>
+     *        Example path:
+     *        <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,10 +148,23 @@ public class ChannelMessages implements Serializable, Cloneable, StructuredPojo 
      * Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
      * channel messages.
      * </p>
+     * <p>
+     * You must use the full path for the key.
+     * </p>
+     * <p>
+     * Example path:
+     * <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
+     * </p>
      * 
      * @param s3Paths
      *        Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save
-     *        your channel messages.
+     *        your channel messages.</p>
+     *        <p>
+     *        You must use the full path for the key.
+     *        </p>
+     *        <p>
+     *        Example path:
+     *        <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

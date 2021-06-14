@@ -369,17 +369,37 @@ public abstract class AbstractAWSSigner implements Signer {
         return getCanonicalizedResourcePath(resourcePath, true);
     }
 
+    /**
+     * This method takes in a resourcePath and canonicalizes it by adding an initial slash ("\") if
+     * that isn't already present. Trailing slashes are preserved.
+     *
+     * If urlEncode is true, the path is also urlEncoded (double url encoding) and normalized.
+     * The urlEncoding will preserve the slash character. Normalization collapses paths with
+     * dots according to RFC 3986.
+     *
+     * @param resourcePath a path that may be urlEncoded
+     * @param urlEncode true if canonicalization should include double url encode
+     * @return the canonical path
+     */
     protected String getCanonicalizedResourcePath(String resourcePath, boolean urlEncode) {
-        if (resourcePath == null || resourcePath.isEmpty()) {
-            return "/";
-        } else {
-            String value = urlEncode ? SdkHttpUtils.urlEncode(resourcePath, true) : resourcePath;
-            if (value.startsWith("/")) {
-                return value;
-            } else {
-                return "/".concat(value);
+        String value = resourcePath;
+        if (urlEncode) {
+            value = SdkHttpUtils.urlEncode(resourcePath, true);
+
+            URI normalize = URI.create(value).normalize();
+            value = normalize.getRawPath();
+
+            // Normalization can leave a trailing slash at the end of the resource path,
+            // even if the input path doesn't end with one. Example input: /foo/bar/.
+            // Remove the trailing slash if the input path doesn't end with one.
+            if (!resourcePath.endsWith("/") && value.endsWith("/")) {
+                value = value.substring(0, value.length() - 1);
             }
         }
+        if (!value.startsWith("/")) {
+            value = "/" + value;
+        }
+        return value;
     }
 
     protected String getCanonicalizedEndpoint(URI endpoint) {
