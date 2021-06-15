@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.redshiftdataapi.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class ExecuteStatementRequestMarshaller {
             .marshallLocationName("Database").build();
     private static final MarshallingInfo<String> DBUSER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DbUser").build();
+    private static final MarshallingInfo<List> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Parameters").build();
     private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SecretArn").build();
     private static final MarshallingInfo<String> SQL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,6 +64,7 @@ public class ExecuteStatementRequestMarshaller {
             protocolMarshaller.marshall(executeStatementRequest.getClusterIdentifier(), CLUSTERIDENTIFIER_BINDING);
             protocolMarshaller.marshall(executeStatementRequest.getDatabase(), DATABASE_BINDING);
             protocolMarshaller.marshall(executeStatementRequest.getDbUser(), DBUSER_BINDING);
+            protocolMarshaller.marshall(executeStatementRequest.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(executeStatementRequest.getSecretArn(), SECRETARN_BINDING);
             protocolMarshaller.marshall(executeStatementRequest.getSql(), SQL_BINDING);
             protocolMarshaller.marshall(executeStatementRequest.getStatementName(), STATEMENTNAME_BINDING);

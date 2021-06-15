@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The current intent that Amazon Lex is attempting to fulfill.
+ * The current intent that Amazon Lex V2 is attempting to fulfill.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/Intent" target="_top">AWS API

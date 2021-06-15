@@ -52,6 +52,16 @@ public class SlotJsonUnmarshaller implements Unmarshaller<Slot, JsonUnmarshaller
                     context.nextToken();
                     slot.setValue(ValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("shape", targetDepth)) {
+                    context.nextToken();
+                    slot.setShape(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("values", targetDepth)) {
+                    context.nextToken();
+                    slot.setValues(new ListUnmarshaller<Slot>(SlotJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

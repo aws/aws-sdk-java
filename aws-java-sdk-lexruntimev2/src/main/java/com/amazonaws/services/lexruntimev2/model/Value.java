@@ -36,9 +36,9 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
     private String originalValue;
     /**
      * <p>
-     * The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection
-     * strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the
-     * first value in the <code>resolvedValues</code> list.
+     * The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value
+     * selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex
+     * V2 choose the first value in the <code>resolvedValues</code> list.
      * </p>
      */
     private String interpretedValue;
@@ -91,15 +91,15 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection
-     * strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the
-     * first value in the <code>resolvedValues</code> list.
+     * The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value
+     * selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex
+     * V2 choose the first value in the <code>resolvedValues</code> list.
      * </p>
      * 
      * @param interpretedValue
-     *        The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value
+     *        The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value
      *        selection strategy for the bot. You can choose to use the value entered by the user, or you can have
-     *        Amazon Lex choose the first value in the <code>resolvedValues</code> list.
+     *        Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.
      */
 
     public void setInterpretedValue(String interpretedValue) {
@@ -108,14 +108,14 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection
-     * strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the
-     * first value in the <code>resolvedValues</code> list.
+     * The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value
+     * selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex
+     * V2 choose the first value in the <code>resolvedValues</code> list.
      * </p>
      * 
-     * @return The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value
-     *         selection strategy for the bot. You can choose to use the value entered by the user, or you can have
-     *         Amazon Lex choose the first value in the <code>resolvedValues</code> list.
+     * @return The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the
+     *         value selection strategy for the bot. You can choose to use the value entered by the user, or you can
+     *         have Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.
      */
 
     public String getInterpretedValue() {
@@ -124,15 +124,15 @@ public class Value implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value selection
-     * strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex choose the
-     * first value in the <code>resolvedValues</code> list.
+     * The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value
+     * selection strategy for the bot. You can choose to use the value entered by the user, or you can have Amazon Lex
+     * V2 choose the first value in the <code>resolvedValues</code> list.
      * </p>
      * 
      * @param interpretedValue
-     *        The value that Amazon Lex determines for the slot. The actual value depends on the setting of the value
+     *        The value that Amazon Lex V2 determines for the slot. The actual value depends on the setting of the value
      *        selection strategy for the bot. You can choose to use the value entered by the user, or you can have
-     *        Amazon Lex choose the first value in the <code>resolvedValues</code> list.
+     *        Amazon Lex V2 choose the first value in the <code>resolvedValues</code> list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

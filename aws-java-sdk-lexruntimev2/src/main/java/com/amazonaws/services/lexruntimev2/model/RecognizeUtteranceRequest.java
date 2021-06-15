@@ -53,18 +53,26 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and
-     * dialog action. Use the dialog action to determine the next step that Amazon Lex should use in the conversation
+     * dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation
      * with the user.
+     * </p>
+     * <p>
+     * The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to
+     * Amazon Lex V2.
      * </p>
      */
     private String sessionState;
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex
+     * Request-specific information passed between the client application and Amazon Lex V2
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for
      * prefix <code>x-amz-lex:</code>.
+     * </p>
+     * <p>
+     * The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to
+     * Amazon Lex V2.
      * </p>
      */
     private String requestAttributes;
@@ -125,21 +133,21 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
     private String requestContentType;
     /**
      * <p>
-     * The message that Amazon Lex returns in the response can be either text or speech based on the
+     * The message that Amazon Lex V2 returns in the response can be either text or speech based on the
      * <code>responseContentType</code> value.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in the response.
+     * If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon
-     * Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code>
-     * parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the
-     * MPEG format.
+     * If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses
+     * Amazon Polly to generate the speech using the configuration that you specified in the
+     * <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
+     * Amazon Lex V2 returns speech in the MPEG format.
      * </p>
      * </li>
      * <li>
@@ -354,14 +362,21 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and
-     * dialog action. Use the dialog action to determine the next step that Amazon Lex should use in the conversation
+     * dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation
      * with the user.
+     * </p>
+     * <p>
+     * The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to
+     * Amazon Lex V2.
      * </p>
      * 
      * @param sessionState
      *        Sets the state of the session with the user. You can use this to set the current intent, attributes,
-     *        context, and dialog action. Use the dialog action to determine the next step that Amazon Lex should use in
-     *        the conversation with the user.
+     *        context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use
+     *        in the conversation with the user.</p>
+     *        <p>
+     *        The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending
+     *        to Amazon Lex V2.
      */
 
     public void setSessionState(String sessionState) {
@@ -371,13 +386,20 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and
-     * dialog action. Use the dialog action to determine the next step that Amazon Lex should use in the conversation
+     * dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation
      * with the user.
+     * </p>
+     * <p>
+     * The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to
+     * Amazon Lex V2.
      * </p>
      * 
      * @return Sets the state of the session with the user. You can use this to set the current intent, attributes,
-     *         context, and dialog action. Use the dialog action to determine the next step that Amazon Lex should use
-     *         in the conversation with the user.
+     *         context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should
+     *         use in the conversation with the user.</p>
+     *         <p>
+     *         The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending
+     *         to Amazon Lex V2.
      */
 
     public String getSessionState() {
@@ -387,14 +409,21 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and
-     * dialog action. Use the dialog action to determine the next step that Amazon Lex should use in the conversation
+     * dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation
      * with the user.
+     * </p>
+     * <p>
+     * The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to
+     * Amazon Lex V2.
      * </p>
      * 
      * @param sessionState
      *        Sets the state of the session with the user. You can use this to set the current intent, attributes,
-     *        context, and dialog action. Use the dialog action to determine the next step that Amazon Lex should use in
-     *        the conversation with the user.
+     *        context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use
+     *        in the conversation with the user.</p>
+     *        <p>
+     *        The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending
+     *        to Amazon Lex V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,18 +434,26 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex
+     * Request-specific information passed between the client application and Amazon Lex V2
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for
      * prefix <code>x-amz-lex:</code>.
      * </p>
+     * <p>
+     * The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to
+     * Amazon Lex V2.
+     * </p>
      * 
      * @param requestAttributes
-     *        Request-specific information passed between the client application and Amazon Lex </p>
+     *        Request-specific information passed between the client application and Amazon Lex V2 </p>
      *        <p>
      *        The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request
      *        attributes for prefix <code>x-amz-lex:</code>.
+     *        </p>
+     *        <p>
+     *        The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before
+     *        sending to Amazon Lex V2.
      */
 
     public void setRequestAttributes(String requestAttributes) {
@@ -425,17 +462,25 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex
+     * Request-specific information passed between the client application and Amazon Lex V2
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for
      * prefix <code>x-amz-lex:</code>.
      * </p>
+     * <p>
+     * The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to
+     * Amazon Lex V2.
+     * </p>
      * 
-     * @return Request-specific information passed between the client application and Amazon Lex </p>
+     * @return Request-specific information passed between the client application and Amazon Lex V2 </p>
      *         <p>
      *         The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request
      *         attributes for prefix <code>x-amz-lex:</code>.
+     *         </p>
+     *         <p>
+     *         The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before
+     *         sending to Amazon Lex V2.
      */
 
     public String getRequestAttributes() {
@@ -444,18 +489,26 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex
+     * Request-specific information passed between the client application and Amazon Lex V2
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for
      * prefix <code>x-amz-lex:</code>.
      * </p>
+     * <p>
+     * The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to
+     * Amazon Lex V2.
+     * </p>
      * 
      * @param requestAttributes
-     *        Request-specific information passed between the client application and Amazon Lex </p>
+     *        Request-specific information passed between the client application and Amazon Lex V2 </p>
      *        <p>
      *        The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request
      *        attributes for prefix <code>x-amz-lex:</code>.
+     *        </p>
+     *        <p>
+     *        The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before
+     *        sending to Amazon Lex V2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -797,21 +850,21 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The message that Amazon Lex returns in the response can be either text or speech based on the
+     * The message that Amazon Lex V2 returns in the response can be either text or speech based on the
      * <code>responseContentType</code> value.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in the response.
+     * If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon
-     * Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code>
-     * parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the
-     * MPEG format.
+     * If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses
+     * Amazon Polly to generate the speech using the configuration that you specified in the
+     * <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
+     * Amazon Lex V2 returns speech in the MPEG format.
      * </p>
      * </li>
      * <li>
@@ -855,20 +908,20 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param responseContentType
-     *        The message that Amazon Lex returns in the response can be either text or speech based on the
+     *        The message that Amazon Lex V2 returns in the response can be either text or speech based on the
      *        <code>responseContentType</code> value.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in the response.
+     *        If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses
-     *        Amazon Polly to generate the speech using the configuration that you specified in the
+     *        If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2
+     *        uses Amazon Polly to generate the speech using the configuration that you specified in the
      *        <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the
-     *        value, Amazon Lex returns speech in the MPEG format.
+     *        value, Amazon Lex V2 returns speech in the MPEG format.
      *        </p>
      *        </li>
      *        <li>
@@ -917,21 +970,21 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The message that Amazon Lex returns in the response can be either text or speech based on the
+     * The message that Amazon Lex V2 returns in the response can be either text or speech based on the
      * <code>responseContentType</code> value.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in the response.
+     * If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon
-     * Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code>
-     * parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the
-     * MPEG format.
+     * If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses
+     * Amazon Polly to generate the speech using the configuration that you specified in the
+     * <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
+     * Amazon Lex V2 returns speech in the MPEG format.
      * </p>
      * </li>
      * <li>
@@ -974,20 +1027,20 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * 
-     * @return The message that Amazon Lex returns in the response can be either text or speech based on the
+     * @return The message that Amazon Lex V2 returns in the response can be either text or speech based on the
      *         <code>responseContentType</code> value.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in the response.
+     *         If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses
-     *         Amazon Polly to generate the speech using the configuration that you specified in the
+     *         If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2
+     *         uses Amazon Polly to generate the speech using the configuration that you specified in the
      *         <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the
-     *         value, Amazon Lex returns speech in the MPEG format.
+     *         value, Amazon Lex V2 returns speech in the MPEG format.
      *         </p>
      *         </li>
      *         <li>
@@ -1036,21 +1089,21 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The message that Amazon Lex returns in the response can be either text or speech based on the
+     * The message that Amazon Lex V2 returns in the response can be either text or speech based on the
      * <code>responseContentType</code> value.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in the response.
+     * If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon
-     * Polly to generate the speech using the configuration that you specified in the <code>requestContentType</code>
-     * parameter. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the
-     * MPEG format.
+     * If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses
+     * Amazon Polly to generate the speech using the configuration that you specified in the
+     * <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
+     * Amazon Lex V2 returns speech in the MPEG format.
      * </p>
      * </li>
      * <li>
@@ -1094,20 +1147,20 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param responseContentType
-     *        The message that Amazon Lex returns in the response can be either text or speech based on the
+     *        The message that Amazon Lex V2 returns in the response can be either text or speech based on the
      *        <code>responseContentType</code> value.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in the response.
+     *        If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses
-     *        Amazon Polly to generate the speech using the configuration that you specified in the
+     *        If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2
+     *        uses Amazon Polly to generate the speech using the configuration that you specified in the
      *        <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the
-     *        value, Amazon Lex returns speech in the MPEG format.
+     *        value, Amazon Lex V2 returns speech in the MPEG format.
      *        </p>
      *        </li>
      *        <li>

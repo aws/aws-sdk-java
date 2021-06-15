@@ -262,7 +262,7 @@ public interface AmazonLexModelsV2 {
      * to the current resource policy. If a policy doesn't exist, a new policy is created.
      * </p>
      * <p>
-     * You can create a resource policy statement that allows cross-account access.
+     * You can't create a resource policy statement that allows cross-account access.
      * </p>
      * 
      * @param createResourcePolicyStatementRequest
@@ -1073,7 +1073,12 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
-     * Updates the password used to encrypt an export zip archive.
+     * Updates the password used to protect an export zip archive.
+     * </p>
+     * <p>
+     * The password is not required. If you don't supply a password, Amazon Lex generates a zip file that is not
+     * protected by a password. This is the archive that is available at the pre-signed S3 URL provided by the
+     * operation.
      * </p>
      * 
      * @param updateExportRequest

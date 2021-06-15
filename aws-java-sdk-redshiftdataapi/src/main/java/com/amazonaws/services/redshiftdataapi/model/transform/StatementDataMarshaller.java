@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.redshiftdataapi.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class StatementDataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
+    private static final MarshallingInfo<List> QUERYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryParameters").build();
     private static final MarshallingInfo<String> QUERYSTRING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryString").build();
     private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,6 +63,7 @@ public class StatementDataMarshaller {
         try {
             protocolMarshaller.marshall(statementData.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(statementData.getId(), ID_BINDING);
+            protocolMarshaller.marshall(statementData.getQueryParameters(), QUERYPARAMETERS_BINDING);
             protocolMarshaller.marshall(statementData.getQueryString(), QUERYSTRING_BINDING);
             protocolMarshaller.marshall(statementData.getSecretArn(), SECRETARN_BINDING);
             protocolMarshaller.marshall(statementData.getStatementName(), STATEMENTNAME_BINDING);

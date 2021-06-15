@@ -43,6 +43,12 @@ public class StatementData implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
+     * The parameters used in a SQL statement.
+     * </p>
+     */
+    private java.util.List<SqlParameter> queryParameters;
+    /**
+     * <p>
      * The SQL statement.
      * </p>
      */
@@ -155,6 +161,76 @@ public class StatementData implements Serializable, Cloneable, StructuredPojo {
 
     public StatementData withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters used in a SQL statement.
+     * </p>
+     * 
+     * @return The parameters used in a SQL statement.
+     */
+
+    public java.util.List<SqlParameter> getQueryParameters() {
+        return queryParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters used in a SQL statement.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The parameters used in a SQL statement.
+     */
+
+    public void setQueryParameters(java.util.Collection<SqlParameter> queryParameters) {
+        if (queryParameters == null) {
+            this.queryParameters = null;
+            return;
+        }
+
+        this.queryParameters = new java.util.ArrayList<SqlParameter>(queryParameters);
+    }
+
+    /**
+     * <p>
+     * The parameters used in a SQL statement.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setQueryParameters(java.util.Collection)} or {@link #withQueryParameters(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The parameters used in a SQL statement.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StatementData withQueryParameters(SqlParameter... queryParameters) {
+        if (this.queryParameters == null) {
+            setQueryParameters(new java.util.ArrayList<SqlParameter>(queryParameters.length));
+        }
+        for (SqlParameter ele : queryParameters) {
+            this.queryParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters used in a SQL statement.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The parameters used in a SQL statement.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StatementData withQueryParameters(java.util.Collection<SqlParameter> queryParameters) {
+        setQueryParameters(queryParameters);
         return this;
     }
 
@@ -393,6 +469,8 @@ public class StatementData implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getQueryParameters() != null)
+            sb.append("QueryParameters: ").append(getQueryParameters()).append(",");
         if (getQueryString() != null)
             sb.append("QueryString: ").append(getQueryString()).append(",");
         if (getSecretArn() != null)
@@ -425,6 +503,10 @@ public class StatementData implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getQueryParameters() == null ^ this.getQueryParameters() == null)
+            return false;
+        if (other.getQueryParameters() != null && other.getQueryParameters().equals(this.getQueryParameters()) == false)
+            return false;
         if (other.getQueryString() == null ^ this.getQueryString() == null)
             return false;
         if (other.getQueryString() != null && other.getQueryString().equals(this.getQueryString()) == false)
@@ -455,6 +537,7 @@ public class StatementData implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getQueryParameters() == null) ? 0 : getQueryParameters().hashCode());
         hashCode = prime * hashCode + ((getQueryString() == null) ? 0 : getQueryString().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
         hashCode = prime * hashCode + ((getStatementName() == null) ? 0 : getStatementName().hashCode());

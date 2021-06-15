@@ -58,14 +58,14 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and
-     * dialog action. Use the dialog action to determine the next step that Amazon Lex should use in the conversation
+     * dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation
      * with the user.
      * </p>
      */
     private SessionState sessionState;
     /**
      * <p>
-     * Request-specific information passed between Amazon Lex and the client application.
+     * Request-specific information passed between Amazon Lex V2 and the client application.
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes
@@ -75,13 +75,13 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.Map<String, String> requestAttributes;
     /**
      * <p>
-     * The message that Amazon Lex returns in the response can be either text or speech depending on the value of this
-     * parameter.
+     * The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of
+     * this parameter.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.
+     * If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      * </p>
      * </li>
      * </ul>
@@ -321,14 +321,14 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and
-     * dialog action. Use the dialog action to determine the next step that Amazon Lex should use in the conversation
+     * dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation
      * with the user.
      * </p>
      * 
      * @param sessionState
      *        Sets the state of the session with the user. You can use this to set the current intent, attributes,
-     *        context, and dialog action. Use the dialog action to determine the next step that Amazon Lex should use in
-     *        the conversation with the user.
+     *        context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use
+     *        in the conversation with the user.
      */
 
     public void setSessionState(SessionState sessionState) {
@@ -338,13 +338,13 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and
-     * dialog action. Use the dialog action to determine the next step that Amazon Lex should use in the conversation
+     * dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation
      * with the user.
      * </p>
      * 
      * @return Sets the state of the session with the user. You can use this to set the current intent, attributes,
-     *         context, and dialog action. Use the dialog action to determine the next step that Amazon Lex should use
-     *         in the conversation with the user.
+     *         context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should
+     *         use in the conversation with the user.
      */
 
     public SessionState getSessionState() {
@@ -354,14 +354,14 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and
-     * dialog action. Use the dialog action to determine the next step that Amazon Lex should use in the conversation
+     * dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation
      * with the user.
      * </p>
      * 
      * @param sessionState
      *        Sets the state of the session with the user. You can use this to set the current intent, attributes,
-     *        context, and dialog action. Use the dialog action to determine the next step that Amazon Lex should use in
-     *        the conversation with the user.
+     *        context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use
+     *        in the conversation with the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,14 +372,14 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Request-specific information passed between Amazon Lex and the client application.
+     * Request-specific information passed between Amazon Lex V2 and the client application.
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes
      * with the prefix <code>x-amz-lex:</code>.
      * </p>
      * 
-     * @return Request-specific information passed between Amazon Lex and the client application.</p>
+     * @return Request-specific information passed between Amazon Lex V2 and the client application.</p>
      *         <p>
      *         The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request
      *         attributes with the prefix <code>x-amz-lex:</code>.
@@ -391,7 +391,7 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Request-specific information passed between Amazon Lex and the client application.
+     * Request-specific information passed between Amazon Lex V2 and the client application.
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes
@@ -399,7 +399,7 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param requestAttributes
-     *        Request-specific information passed between Amazon Lex and the client application.</p>
+     *        Request-specific information passed between Amazon Lex V2 and the client application.</p>
      *        <p>
      *        The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request
      *        attributes with the prefix <code>x-amz-lex:</code>.
@@ -411,7 +411,7 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Request-specific information passed between Amazon Lex and the client application.
+     * Request-specific information passed between Amazon Lex V2 and the client application.
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes
@@ -419,7 +419,7 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param requestAttributes
-     *        Request-specific information passed between Amazon Lex and the client application.</p>
+     *        Request-specific information passed between Amazon Lex V2 and the client application.</p>
      *        <p>
      *        The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request
      *        attributes with the prefix <code>x-amz-lex:</code>.
@@ -461,24 +461,24 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The message that Amazon Lex returns in the response can be either text or speech depending on the value of this
-     * parameter.
+     * The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of
+     * this parameter.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.
+     * If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      * </p>
      * </li>
      * </ul>
      * 
      * @param responseContentType
-     *        The message that Amazon Lex returns in the response can be either text or speech depending on the value of
-     *        this parameter. </p>
+     *        The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value
+     *        of this parameter. </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.
+     *        If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      *        </p>
      *        </li>
      */
@@ -489,23 +489,23 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The message that Amazon Lex returns in the response can be either text or speech depending on the value of this
-     * parameter.
+     * The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of
+     * this parameter.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.
+     * If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The message that Amazon Lex returns in the response can be either text or speech depending on the value
-     *         of this parameter. </p>
+     * @return The message that Amazon Lex V2 returns in the response can be either text or speech depending on the
+     *         value of this parameter. </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.
+     *         If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      *         </p>
      *         </li>
      */
@@ -516,24 +516,24 @@ public class PutSessionRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The message that Amazon Lex returns in the response can be either text or speech depending on the value of this
-     * parameter.
+     * The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of
+     * this parameter.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.
+     * If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      * </p>
      * </li>
      * </ul>
      * 
      * @param responseContentType
-     *        The message that Amazon Lex returns in the response can be either text or speech depending on the value of
-     *        this parameter. </p>
+     *        The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value
+     *        of this parameter. </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.
+     *        If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

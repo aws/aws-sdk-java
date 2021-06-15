@@ -273,6 +273,78 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Allows the specified Amazon Connect instance to access the specified Amazon Lex or Amazon Lex V2 bot.
+     * </p>
+     * 
+     * @param associateBotRequest
+     * @return Result of the AssociateBot operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AssociateBotResult associateBot(AssociateBotRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateBot(request);
+    }
+
+    @SdkInternalApi
+    final AssociateBotResult executeAssociateBot(AssociateBotRequest associateBotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateBotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateBotRequest> request = null;
+        Response<AssociateBotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateBotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateBot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateBotResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateBotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Associates a storage resource type for the first time. You can only associate one type of storage configuration
      * in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing
      * chat transcripts.
@@ -2578,6 +2650,72 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2 bot.
+     * </p>
+     * 
+     * @param disassociateBotRequest
+     * @return Result of the DisassociateBot operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DisassociateBotResult disassociateBot(DisassociateBotRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateBot(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateBotResult executeDisassociateBot(DisassociateBotRequest disassociateBotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateBotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateBotRequest> request = null;
+        Response<DisassociateBotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateBotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateBot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateBotResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisassociateBotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Removes the storage type configurations for the specified resource type and association ID.
      * </p>
      * 
@@ -3325,6 +3463,73 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<ListApprovedOriginsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListApprovedOriginsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated
+     * with the instance.
+     * </p>
+     * 
+     * @param listBotsRequest
+     * @return Result of the ListBots operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListBotsResult listBots(ListBotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBots(request);
+    }
+
+    @SdkInternalApi
+    final ListBotsResult executeListBots(ListBotsRequest listBotsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBotsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBotsRequest> request = null;
+        Response<ListBotsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBotsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBotsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBotsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -95,6 +95,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Allows the specified Amazon Connect instance to access the specified Amazon Lex or Amazon Lex V2 bot.
+     * </p>
+     * 
+     * @param associateBotRequest
+     * @return A Java Future containing the result of the AssociateBot operation returned by the service.
+     * @sample AmazonConnectAsync.AssociateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateBotResult> associateBotAsync(AssociateBotRequest associateBotRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Allows the specified Amazon Connect instance to access the specified Amazon Lex or Amazon Lex V2 bot.
+     * </p>
+     * 
+     * @param associateBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateBot operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.AssociateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateBotResult> associateBotAsync(AssociateBotRequest associateBotRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateBotRequest, AssociateBotResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Associates a storage resource type for the first time. You can only associate one type of storage configuration
      * in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing
      * chat transcripts.
@@ -1344,6 +1381,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2 bot.
+     * </p>
+     * 
+     * @param disassociateBotRequest
+     * @return A Java Future containing the result of the DisassociateBot operation returned by the service.
+     * @sample AmazonConnectAsync.DisassociateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateBotResult> disassociateBotAsync(DisassociateBotRequest disassociateBotRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2 bot.
+     * </p>
+     * 
+     * @param disassociateBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateBot operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DisassociateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateBotResult> disassociateBotAsync(DisassociateBotRequest disassociateBotRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateBotRequest, DisassociateBotResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Removes the storage type configurations for the specified resource type and association ID.
      * </p>
      * 
@@ -1767,6 +1841,45 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<ListApprovedOriginsResult> listApprovedOriginsAsync(ListApprovedOriginsRequest listApprovedOriginsRequest,
             com.amazonaws.handlers.AsyncHandler<ListApprovedOriginsRequest, ListApprovedOriginsResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated
+     * with the instance.
+     * </p>
+     * 
+     * @param listBotsRequest
+     * @return A Java Future containing the result of the ListBots operation returned by the service.
+     * @sample AmazonConnectAsync.ListBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest listBotsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated
+     * with the instance.
+     * </p>
+     * 
+     * @param listBotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBots operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest listBotsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler);
 
     /**
      * <p>

@@ -47,6 +47,8 @@ public class UpdateSlotRequestMarshaller {
             .marshallLocationName("localeId").build();
     private static final MarshallingInfo<String> INTENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("intentId").build();
+    private static final MarshallingInfo<StructuredPojo> MULTIPLEVALUESSETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("multipleValuesSetting").build();
 
     private static final UpdateSlotRequestMarshaller instance = new UpdateSlotRequestMarshaller();
 
@@ -74,6 +76,7 @@ public class UpdateSlotRequestMarshaller {
             protocolMarshaller.marshall(updateSlotRequest.getBotVersion(), BOTVERSION_BINDING);
             protocolMarshaller.marshall(updateSlotRequest.getLocaleId(), LOCALEID_BINDING);
             protocolMarshaller.marshall(updateSlotRequest.getIntentId(), INTENTID_BINDING);
+            protocolMarshaller.marshall(updateSlotRequest.getMultipleValuesSetting(), MULTIPLEVALUESSETTING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

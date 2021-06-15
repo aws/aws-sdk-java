@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The state of the user's session with Amazon Lex.
+ * The state of the user's session with Amazon Lex V2.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/SessionState" target="_top">AWS API
@@ -30,27 +30,27 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The next step that Amazon Lex should take in the conversation with a user.
+     * The next step that Amazon Lex V2 should take in the conversation with a user.
      * </p>
      */
     private DialogAction dialogAction;
     /**
      * <p>
-     * The active intent that Amazon Lex is processing.
+     * The active intent that Amazon Lex V2 is processing.
      * </p>
      */
     private Intent intent;
     /**
      * <p>
-     * One or more contexts that indicate to Amazon Lex the context of a request. When a context is active, Amazon Lex
-     * considers intents with the matching context as a trigger as the next intent in a session.
+     * One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon
+     * Lex V2 considers intents with the matching context as a trigger as the next intent in a session.
      * </p>
      */
     private java.util.List<ActiveContext> activeContexts;
     /**
      * <p>
      * Map of key/value pairs representing session-specific context information. It contains application information
-     * passed between Amazon Lex and a client application.
+     * passed between Amazon Lex V2 and a client application.
      * </p>
      */
     private java.util.Map<String, String> sessionAttributes;
@@ -59,11 +59,11 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The next step that Amazon Lex should take in the conversation with a user.
+     * The next step that Amazon Lex V2 should take in the conversation with a user.
      * </p>
      * 
      * @param dialogAction
-     *        The next step that Amazon Lex should take in the conversation with a user.
+     *        The next step that Amazon Lex V2 should take in the conversation with a user.
      */
 
     public void setDialogAction(DialogAction dialogAction) {
@@ -72,10 +72,10 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The next step that Amazon Lex should take in the conversation with a user.
+     * The next step that Amazon Lex V2 should take in the conversation with a user.
      * </p>
      * 
-     * @return The next step that Amazon Lex should take in the conversation with a user.
+     * @return The next step that Amazon Lex V2 should take in the conversation with a user.
      */
 
     public DialogAction getDialogAction() {
@@ -84,11 +84,11 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The next step that Amazon Lex should take in the conversation with a user.
+     * The next step that Amazon Lex V2 should take in the conversation with a user.
      * </p>
      * 
      * @param dialogAction
-     *        The next step that Amazon Lex should take in the conversation with a user.
+     *        The next step that Amazon Lex V2 should take in the conversation with a user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The active intent that Amazon Lex is processing.
+     * The active intent that Amazon Lex V2 is processing.
      * </p>
      * 
      * @param intent
-     *        The active intent that Amazon Lex is processing.
+     *        The active intent that Amazon Lex V2 is processing.
      */
 
     public void setIntent(Intent intent) {
@@ -112,10 +112,10 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The active intent that Amazon Lex is processing.
+     * The active intent that Amazon Lex V2 is processing.
      * </p>
      * 
-     * @return The active intent that Amazon Lex is processing.
+     * @return The active intent that Amazon Lex V2 is processing.
      */
 
     public Intent getIntent() {
@@ -124,11 +124,11 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The active intent that Amazon Lex is processing.
+     * The active intent that Amazon Lex V2 is processing.
      * </p>
      * 
      * @param intent
-     *        The active intent that Amazon Lex is processing.
+     *        The active intent that Amazon Lex V2 is processing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,12 +139,12 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more contexts that indicate to Amazon Lex the context of a request. When a context is active, Amazon Lex
-     * considers intents with the matching context as a trigger as the next intent in a session.
+     * One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon
+     * Lex V2 considers intents with the matching context as a trigger as the next intent in a session.
      * </p>
      * 
-     * @return One or more contexts that indicate to Amazon Lex the context of a request. When a context is active,
-     *         Amazon Lex considers intents with the matching context as a trigger as the next intent in a session.
+     * @return One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active,
+     *         Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.
      */
 
     public java.util.List<ActiveContext> getActiveContexts() {
@@ -153,13 +153,13 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more contexts that indicate to Amazon Lex the context of a request. When a context is active, Amazon Lex
-     * considers intents with the matching context as a trigger as the next intent in a session.
+     * One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon
+     * Lex V2 considers intents with the matching context as a trigger as the next intent in a session.
      * </p>
      * 
      * @param activeContexts
-     *        One or more contexts that indicate to Amazon Lex the context of a request. When a context is active,
-     *        Amazon Lex considers intents with the matching context as a trigger as the next intent in a session.
+     *        One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active,
+     *        Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.
      */
 
     public void setActiveContexts(java.util.Collection<ActiveContext> activeContexts) {
@@ -173,8 +173,8 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more contexts that indicate to Amazon Lex the context of a request. When a context is active, Amazon Lex
-     * considers intents with the matching context as a trigger as the next intent in a session.
+     * One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon
+     * Lex V2 considers intents with the matching context as a trigger as the next intent in a session.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -183,8 +183,8 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param activeContexts
-     *        One or more contexts that indicate to Amazon Lex the context of a request. When a context is active,
-     *        Amazon Lex considers intents with the matching context as a trigger as the next intent in a session.
+     *        One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active,
+     *        Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,13 +200,13 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more contexts that indicate to Amazon Lex the context of a request. When a context is active, Amazon Lex
-     * considers intents with the matching context as a trigger as the next intent in a session.
+     * One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon
+     * Lex V2 considers intents with the matching context as a trigger as the next intent in a session.
      * </p>
      * 
      * @param activeContexts
-     *        One or more contexts that indicate to Amazon Lex the context of a request. When a context is active,
-     *        Amazon Lex considers intents with the matching context as a trigger as the next intent in a session.
+     *        One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active,
+     *        Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +218,11 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Map of key/value pairs representing session-specific context information. It contains application information
-     * passed between Amazon Lex and a client application.
+     * passed between Amazon Lex V2 and a client application.
      * </p>
      * 
      * @return Map of key/value pairs representing session-specific context information. It contains application
-     *         information passed between Amazon Lex and a client application.
+     *         information passed between Amazon Lex V2 and a client application.
      */
 
     public java.util.Map<String, String> getSessionAttributes() {
@@ -232,12 +232,12 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Map of key/value pairs representing session-specific context information. It contains application information
-     * passed between Amazon Lex and a client application.
+     * passed between Amazon Lex V2 and a client application.
      * </p>
      * 
      * @param sessionAttributes
      *        Map of key/value pairs representing session-specific context information. It contains application
-     *        information passed between Amazon Lex and a client application.
+     *        information passed between Amazon Lex V2 and a client application.
      */
 
     public void setSessionAttributes(java.util.Map<String, String> sessionAttributes) {
@@ -247,12 +247,12 @@ public class SessionState implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Map of key/value pairs representing session-specific context information. It contains application information
-     * passed between Amazon Lex and a client application.
+     * passed between Amazon Lex V2 and a client application.
      * </p>
      * 
      * @param sessionAttributes
      *        Map of key/value pairs representing session-specific context information. It contains application
-     *        information passed between Amazon Lex and a client application.
+     *        information passed between Amazon Lex V2 and a client application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

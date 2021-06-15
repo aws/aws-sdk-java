@@ -46,6 +46,12 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
     private String dbUser;
     /**
      * <p>
+     * The parameters for the SQL statement.
+     * </p>
+     */
+    private java.util.List<SqlParameter> parameters;
+    /**
+     * <p>
      * The name or ARN of the secret that enables access to the database. This parameter is required when authenticating
      * using AWS Secrets Manager.
      * </p>
@@ -193,6 +199,76 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
 
     public ExecuteStatementRequest withDbUser(String dbUser) {
         setDbUser(dbUser);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters for the SQL statement.
+     * </p>
+     * 
+     * @return The parameters for the SQL statement.
+     */
+
+    public java.util.List<SqlParameter> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * <p>
+     * The parameters for the SQL statement.
+     * </p>
+     * 
+     * @param parameters
+     *        The parameters for the SQL statement.
+     */
+
+    public void setParameters(java.util.Collection<SqlParameter> parameters) {
+        if (parameters == null) {
+            this.parameters = null;
+            return;
+        }
+
+        this.parameters = new java.util.ArrayList<SqlParameter>(parameters);
+    }
+
+    /**
+     * <p>
+     * The parameters for the SQL statement.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParameters(java.util.Collection)} or {@link #withParameters(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param parameters
+     *        The parameters for the SQL statement.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecuteStatementRequest withParameters(SqlParameter... parameters) {
+        if (this.parameters == null) {
+            setParameters(new java.util.ArrayList<SqlParameter>(parameters.length));
+        }
+        for (SqlParameter ele : parameters) {
+            this.parameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters for the SQL statement.
+     * </p>
+     * 
+     * @param parameters
+     *        The parameters for the SQL statement.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecuteStatementRequest withParameters(java.util.Collection<SqlParameter> parameters) {
+        setParameters(parameters);
         return this;
     }
 
@@ -396,6 +472,8 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Database: ").append(getDatabase()).append(",");
         if (getDbUser() != null)
             sb.append("DbUser: ").append(getDbUser()).append(",");
+        if (getParameters() != null)
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getSecretArn() != null)
             sb.append("SecretArn: ").append(getSecretArn()).append(",");
         if (getSql() != null)
@@ -430,6 +508,10 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getDbUser() != null && other.getDbUser().equals(this.getDbUser()) == false)
             return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
+            return false;
         if (other.getSecretArn() == null ^ this.getSecretArn() == null)
             return false;
         if (other.getSecretArn() != null && other.getSecretArn().equals(this.getSecretArn()) == false)
@@ -457,6 +539,7 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
         hashCode = prime * hashCode + ((getDbUser() == null) ? 0 : getDbUser().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
         hashCode = prime * hashCode + ((getSql() == null) ? 0 : getSql().hashCode());
         hashCode = prime * hashCode + ((getStatementName() == null) ? 0 : getStatementName().hashCode());

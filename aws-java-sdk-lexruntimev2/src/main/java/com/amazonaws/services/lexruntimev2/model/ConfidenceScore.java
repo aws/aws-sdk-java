@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a score that indicates the confidence that Amazon Lex has that an intent is the one that satisfies the
+ * Provides a score that indicates the confidence that Amazon Lex V2 has that an intent is the one that satisfies the
  * user's intent.
  * </p>
  * 
@@ -31,7 +31,7 @@ public class ConfidenceScore implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between
+     * A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges between
      * 0.00 and 1.00. Higher scores indicate higher confidence.
      * </p>
      */
@@ -39,12 +39,12 @@ public class ConfidenceScore implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between
+     * A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges between
      * 0.00 and 1.00. Higher scores indicate higher confidence.
      * </p>
      * 
      * @param score
-     *        A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges
+     *        A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges
      *        between 0.00 and 1.00. Higher scores indicate higher confidence.
      */
 
@@ -54,11 +54,11 @@ public class ConfidenceScore implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between
+     * A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges between
      * 0.00 and 1.00. Higher scores indicate higher confidence.
      * </p>
      * 
-     * @return A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges
+     * @return A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges
      *         between 0.00 and 1.00. Higher scores indicate higher confidence.
      */
 
@@ -68,12 +68,12 @@ public class ConfidenceScore implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between
+     * A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges between
      * 0.00 and 1.00. Higher scores indicate higher confidence.
      * </p>
      * 
      * @param score
-     *        A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges
+     *        A score that indicates how confident Amazon Lex V2 is that an intent satisfies the user's intent. Ranges
      *        between 0.00 and 1.00. Higher scores indicate higher confidence.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -46,15 +46,14 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
     private String contactFlowId;
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid
-     * for 7 days after creation. If a contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.
+     * for 7 days after creation. If a contact is already started, the contact ID is returned.
      * </p>
      */
     private String clientToken;
@@ -206,11 +205,11 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance.
+     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -219,10 +218,10 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance.
+     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      */
 
     public String getInstanceId() {
@@ -231,11 +230,11 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance.
+     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,14 +246,12 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid
-     * for 7 days after creation. If a contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.
+     * for 7 days after creation. If a contact is already started, the contact ID is returned.
      * </p>
      * 
      * @param clientToken
      *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token
-     *        is valid for 7 days after creation. If a contact is already started, the contact ID is returned. If the
-     *        contact is disconnected, a new contact is started.
+     *        is valid for 7 days after creation. If a contact is already started, the contact ID is returned.
      */
 
     public void setClientToken(String clientToken) {
@@ -264,13 +261,11 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid
-     * for 7 days after creation. If a contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.
+     * for 7 days after creation. If a contact is already started, the contact ID is returned.
      * </p>
      * 
      * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token
-     *         is valid for 7 days after creation. If a contact is already started, the contact ID is returned. If the
-     *         contact is disconnected, a new contact is started.
+     *         is valid for 7 days after creation. If a contact is already started, the contact ID is returned.
      */
 
     public String getClientToken() {
@@ -280,14 +275,12 @@ public class StartOutboundVoiceContactRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token is valid
-     * for 7 days after creation. If a contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.
+     * for 7 days after creation. If a contact is already started, the contact ID is returned.
      * </p>
      * 
      * @param clientToken
      *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. The token
-     *        is valid for 7 days after creation. If a contact is already started, the contact ID is returned. If the
-     *        contact is disconnected, a new contact is started.
+     *        is valid for 7 days after creation. If a contact is already started, the contact ID is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

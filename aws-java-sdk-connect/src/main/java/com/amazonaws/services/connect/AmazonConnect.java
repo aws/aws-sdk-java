@@ -97,6 +97,36 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Allows the specified Amazon Connect instance to access the specified Amazon Lex or Amazon Lex V2 bot.
+     * </p>
+     * 
+     * @param associateBotRequest
+     * @return Result of the AssociateBot operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws LimitExceededException
+     *         The allowed limit for the resource has been exceeded.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.AssociateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AssociateBotResult associateBot(AssociateBotRequest associateBotRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Associates a storage resource type for the first time. You can only associate one type of storage configuration
      * in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing
      * chat transcripts.
@@ -987,6 +1017,30 @@ public interface AmazonConnect {
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
+     * Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2 bot.
+     * </p>
+     * 
+     * @param disassociateBotRequest
+     * @return Result of the DisassociateBot operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DisassociateBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateBot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DisassociateBotResult disassociateBot(DisassociateBotRequest disassociateBotRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
      * Removes the storage type configurations for the specified resource type and association ID.
      * </p>
      * 
@@ -1269,6 +1323,31 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     ListApprovedOriginsResult listApprovedOrigins(ListApprovedOriginsRequest listApprovedOriginsRequest);
+
+    /**
+     * <p>
+     * This API is in preview release for Amazon Connect and is subject to change.
+     * </p>
+     * <p>
+     * For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated
+     * with the instance.
+     * </p>
+     * 
+     * @param listBotsRequest
+     * @return Result of the ListBots operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.ListBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListBots" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListBotsResult listBots(ListBotsRequest listBotsRequest);
 
     /**
      * <p>

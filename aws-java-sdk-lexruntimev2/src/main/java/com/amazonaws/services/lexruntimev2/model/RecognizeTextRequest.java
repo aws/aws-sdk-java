@@ -51,7 +51,7 @@ public class RecognizeTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String sessionId;
     /**
      * <p>
-     * The text that the user entered. Amazon Lex interprets this text.
+     * The text that the user entered. Amazon Lex V2 interprets this text.
      * </p>
      */
     private String text;
@@ -63,7 +63,7 @@ public class RecognizeTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     private SessionState sessionState;
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex
+     * Request-specific information passed between the client application and Amazon Lex V2
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes
@@ -234,11 +234,11 @@ public class RecognizeTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The text that the user entered. Amazon Lex interprets this text.
+     * The text that the user entered. Amazon Lex V2 interprets this text.
      * </p>
      * 
      * @param text
-     *        The text that the user entered. Amazon Lex interprets this text.
+     *        The text that the user entered. Amazon Lex V2 interprets this text.
      */
 
     public void setText(String text) {
@@ -247,10 +247,10 @@ public class RecognizeTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The text that the user entered. Amazon Lex interprets this text.
+     * The text that the user entered. Amazon Lex V2 interprets this text.
      * </p>
      * 
-     * @return The text that the user entered. Amazon Lex interprets this text.
+     * @return The text that the user entered. Amazon Lex V2 interprets this text.
      */
 
     public String getText() {
@@ -259,11 +259,11 @@ public class RecognizeTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The text that the user entered. Amazon Lex interprets this text.
+     * The text that the user entered. Amazon Lex V2 interprets this text.
      * </p>
      * 
      * @param text
-     *        The text that the user entered. Amazon Lex interprets this text.
+     *        The text that the user entered. Amazon Lex V2 interprets this text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,14 +314,14 @@ public class RecognizeTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex
+     * Request-specific information passed between the client application and Amazon Lex V2
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes
      * with the prefix <code>x-amz-lex:</code>.
      * </p>
      * 
-     * @return Request-specific information passed between the client application and Amazon Lex </p>
+     * @return Request-specific information passed between the client application and Amazon Lex V2 </p>
      *         <p>
      *         The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request
      *         attributes with the prefix <code>x-amz-lex:</code>.
@@ -333,7 +333,7 @@ public class RecognizeTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex
+     * Request-specific information passed between the client application and Amazon Lex V2
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes
@@ -341,7 +341,7 @@ public class RecognizeTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param requestAttributes
-     *        Request-specific information passed between the client application and Amazon Lex </p>
+     *        Request-specific information passed between the client application and Amazon Lex V2 </p>
      *        <p>
      *        The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request
      *        attributes with the prefix <code>x-amz-lex:</code>.
@@ -353,7 +353,7 @@ public class RecognizeTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request-specific information passed between the client application and Amazon Lex
+     * Request-specific information passed between the client application and Amazon Lex V2
      * </p>
      * <p>
      * The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes
@@ -361,7 +361,7 @@ public class RecognizeTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param requestAttributes
-     *        Request-specific information passed between the client application and Amazon Lex </p>
+     *        Request-specific information passed between the client application and Amazon Lex V2 </p>
      *        <p>
      *        The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request
      *        attributes with the prefix <code>x-amz-lex:</code>.

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The next action that Amazon Lex should take.
+ * The next action that Amazon Lex V2 should take.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/DialogAction" target="_top">AWS API
@@ -47,7 +47,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>Delegate</code> - The next action is determined by Amazon Lex.
+     * <code>Delegate</code> - The next action is determined by Amazon Lex V2.
      * </p>
      * </li>
      * <li>
@@ -84,7 +84,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>Delegate</code> - The next action is determined by Amazon Lex.
+     * <code>Delegate</code> - The next action is determined by Amazon Lex V2.
      * </p>
      * </li>
      * <li>
@@ -111,7 +111,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Delegate</code> - The next action is determined by Amazon Lex.
+     *        <code>Delegate</code> - The next action is determined by Amazon Lex V2.
      *        </p>
      *        </li>
      *        <li>
@@ -145,7 +145,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>Delegate</code> - The next action is determined by Amazon Lex.
+     * <code>Delegate</code> - The next action is determined by Amazon Lex V2.
      * </p>
      * </li>
      * <li>
@@ -171,7 +171,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Delegate</code> - The next action is determined by Amazon Lex.
+     *         <code>Delegate</code> - The next action is determined by Amazon Lex V2.
      *         </p>
      *         </li>
      *         <li>
@@ -205,7 +205,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>Delegate</code> - The next action is determined by Amazon Lex.
+     * <code>Delegate</code> - The next action is determined by Amazon Lex V2.
      * </p>
      * </li>
      * <li>
@@ -232,7 +232,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Delegate</code> - The next action is determined by Amazon Lex.
+     *        <code>Delegate</code> - The next action is determined by Amazon Lex V2.
      *        </p>
      *        </li>
      *        <li>
@@ -268,7 +268,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>Delegate</code> - The next action is determined by Amazon Lex.
+     * <code>Delegate</code> - The next action is determined by Amazon Lex V2.
      * </p>
      * </li>
      * <li>
@@ -295,7 +295,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Delegate</code> - The next action is determined by Amazon Lex.
+     *        <code>Delegate</code> - The next action is determined by Amazon Lex V2.
      *        </p>
      *        </li>
      *        <li>

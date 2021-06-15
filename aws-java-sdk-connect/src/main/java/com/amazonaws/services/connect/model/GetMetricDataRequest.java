@@ -27,7 +27,7 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      */
     private String instanceId;
@@ -84,6 +84,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
      * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the
+     * documented list).
+     * </p>
+     * </note>
      * <dl>
      * <dt>ABANDON_TIME</dt>
      * <dd>
@@ -336,11 +342,11 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance.
+     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -349,10 +355,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance.
+     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      */
 
     public String getInstanceId() {
@@ -361,11 +367,11 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance.
+     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -737,6 +743,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
      * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the
+     * documented list).
+     * </p>
+     * </note>
      * <dl>
      * <dt>ABANDON_TIME</dt>
      * <dd>
@@ -975,7 +987,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical
      *         metrics are available. For a description of each metric, see <a
      *         href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html"
-     *         >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     *         >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+     *         <p>
+     *         This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from
+     *         the documented list).
+     *         </p>
+     *         </note>
      *         <dl>
      *         <dt>ABANDON_TIME</dt>
      *         <dd>
@@ -1222,6 +1239,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
      * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the
+     * documented list).
+     * </p>
+     * </note>
      * <dl>
      * <dt>ABANDON_TIME</dt>
      * <dd>
@@ -1461,7 +1484,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical
      *        metrics are available. For a description of each metric, see <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html"
-     *        >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     *        >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+     *        <p>
+     *        This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the
+     *        documented list).
+     *        </p>
+     *        </note>
      *        <dl>
      *        <dt>ABANDON_TIME</dt>
      *        <dd>
@@ -1713,6 +1741,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
      * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the
+     * documented list).
+     * </p>
+     * </note>
      * <dl>
      * <dt>ABANDON_TIME</dt>
      * <dd>
@@ -1957,7 +1991,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical
      *        metrics are available. For a description of each metric, see <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html"
-     *        >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     *        >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+     *        <p>
+     *        This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the
+     *        documented list).
+     *        </p>
+     *        </note>
      *        <dl>
      *        <dt>ABANDON_TIME</dt>
      *        <dd>
@@ -2211,6 +2250,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
      * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the
+     * documented list).
+     * </p>
+     * </note>
      * <dl>
      * <dt>ABANDON_TIME</dt>
      * <dd>
@@ -2450,7 +2495,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical
      *        metrics are available. For a description of each metric, see <a
      *        href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html"
-     *        >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+     *        >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note>
+     *        <p>
+     *        This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the
+     *        documented list).
+     *        </p>
+     *        </note>
      *        <dl>
      *        <dt>ABANDON_TIME</dt>
      *        <dd>

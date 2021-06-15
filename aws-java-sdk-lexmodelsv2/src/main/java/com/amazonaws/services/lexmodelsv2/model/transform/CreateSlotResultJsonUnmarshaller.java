@@ -92,6 +92,10 @@ public class CreateSlotResultJsonUnmarshaller implements Unmarshaller<CreateSlot
                     context.nextToken();
                     createSlotResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("multipleValuesSetting", targetDepth)) {
+                    context.nextToken();
+                    createSlotResult.setMultipleValuesSetting(MultipleValuesSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

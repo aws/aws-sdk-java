@@ -96,6 +96,10 @@ public class DescribeSlotResultJsonUnmarshaller implements Unmarshaller<Describe
                     context.nextToken();
                     describeSlotResult.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("multipleValuesSetting", targetDepth)) {
+                    context.nextToken();
+                    describeSlotResult.setMultipleValuesSetting(MultipleValuesSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

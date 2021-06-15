@@ -80,6 +80,12 @@ public class DescribeStatementResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeStatementResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("QueryParameters", targetDepth)) {
+                    context.nextToken();
+                    describeStatementResult.setQueryParameters(new ListUnmarshaller<SqlParameter>(SqlParameterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("QueryString", targetDepth)) {
                     context.nextToken();
                     describeStatementResult.setQueryString(context.getUnmarshaller(String.class).unmarshall(context));

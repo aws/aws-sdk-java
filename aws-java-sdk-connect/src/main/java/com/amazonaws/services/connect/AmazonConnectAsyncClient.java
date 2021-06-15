@@ -128,6 +128,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateBotResult> associateBotAsync(AssociateBotRequest request) {
+
+        return associateBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateBotResult> associateBotAsync(final AssociateBotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateBotRequest, AssociateBotResult> asyncHandler) {
+        final AssociateBotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateBotResult>() {
+            @Override
+            public AssociateBotResult call() throws Exception {
+                AssociateBotResult result = null;
+
+                try {
+                    result = executeAssociateBot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateInstanceStorageConfigResult> associateInstanceStorageConfigAsync(AssociateInstanceStorageConfigRequest request) {
 
         return associateInstanceStorageConfigAsync(request, null);
@@ -1221,6 +1254,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateBotResult> disassociateBotAsync(DisassociateBotRequest request) {
+
+        return disassociateBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateBotResult> disassociateBotAsync(final DisassociateBotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateBotRequest, DisassociateBotResult> asyncHandler) {
+        final DisassociateBotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateBotResult>() {
+            @Override
+            public DisassociateBotResult call() throws Exception {
+                DisassociateBotResult result = null;
+
+                try {
+                    result = executeDisassociateBot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateInstanceStorageConfigResult> disassociateInstanceStorageConfigAsync(
             DisassociateInstanceStorageConfigRequest request) {
 
@@ -1573,6 +1639,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeListApprovedOrigins(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest request) {
+
+        return listBotsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBotsResult> listBotsAsync(final ListBotsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler) {
+        final ListBotsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBotsResult>() {
+            @Override
+            public ListBotsResult call() throws Exception {
+                ListBotsResult result = null;
+
+                try {
+                    result = executeListBots(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

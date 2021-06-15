@@ -74,6 +74,12 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
     private String id;
     /**
      * <p>
+     * The parameters for the SQL statement.
+     * </p>
+     */
+    private java.util.List<SqlParameter> queryParameters;
+    /**
+     * <p>
      * The SQL statement text.
      * </p>
      */
@@ -497,6 +503,76 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
 
     public DescribeStatementResult withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters for the SQL statement.
+     * </p>
+     * 
+     * @return The parameters for the SQL statement.
+     */
+
+    public java.util.List<SqlParameter> getQueryParameters() {
+        return queryParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters for the SQL statement.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The parameters for the SQL statement.
+     */
+
+    public void setQueryParameters(java.util.Collection<SqlParameter> queryParameters) {
+        if (queryParameters == null) {
+            this.queryParameters = null;
+            return;
+        }
+
+        this.queryParameters = new java.util.ArrayList<SqlParameter>(queryParameters);
+    }
+
+    /**
+     * <p>
+     * The parameters for the SQL statement.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setQueryParameters(java.util.Collection)} or {@link #withQueryParameters(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The parameters for the SQL statement.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStatementResult withQueryParameters(SqlParameter... queryParameters) {
+        if (this.queryParameters == null) {
+            setQueryParameters(new java.util.ArrayList<SqlParameter>(queryParameters.length));
+        }
+        for (SqlParameter ele : queryParameters) {
+            this.queryParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters for the SQL statement.
+     * </p>
+     * 
+     * @param queryParameters
+     *        The parameters for the SQL statement.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStatementResult withQueryParameters(java.util.Collection<SqlParameter> queryParameters) {
+        setQueryParameters(queryParameters);
         return this;
     }
 
@@ -1183,6 +1259,8 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("HasResultSet: ").append(getHasResultSet()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getQueryParameters() != null)
+            sb.append("QueryParameters: ").append(getQueryParameters()).append(",");
         if (getQueryString() != null)
             sb.append("QueryString: ").append(getQueryString()).append(",");
         if (getRedshiftPid() != null)
@@ -1245,6 +1323,10 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getQueryParameters() == null ^ this.getQueryParameters() == null)
+            return false;
+        if (other.getQueryParameters() != null && other.getQueryParameters().equals(this.getQueryParameters()) == false)
+            return false;
         if (other.getQueryString() == null ^ this.getQueryString() == null)
             return false;
         if (other.getQueryString() != null && other.getQueryString().equals(this.getQueryString()) == false)
@@ -1293,6 +1375,7 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         hashCode = prime * hashCode + ((getHasResultSet() == null) ? 0 : getHasResultSet().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getQueryParameters() == null) ? 0 : getQueryParameters().hashCode());
         hashCode = prime * hashCode + ((getQueryString() == null) ? 0 : getQueryString().hashCode());
         hashCode = prime * hashCode + ((getRedshiftPid() == null) ? 0 : getRedshiftPid().hashCode());
         hashCode = prime * hashCode + ((getRedshiftQueryId() == null) ? 0 : getRedshiftQueryId().hashCode());

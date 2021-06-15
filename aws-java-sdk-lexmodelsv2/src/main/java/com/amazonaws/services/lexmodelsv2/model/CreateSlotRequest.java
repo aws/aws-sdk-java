@@ -88,6 +88,17 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String intentId;
+    /**
+     * <p>
+     * Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the
+     * en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>ValidationException</code>.
+     * </p>
+     * <p>
+     * If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
+     * </p>
+     */
+    private MultipleValuesSetting multipleValuesSetting;
 
     /**
      * <p>
@@ -504,6 +515,73 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the
+     * en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>ValidationException</code>.
+     * </p>
+     * <p>
+     * If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
+     * </p>
+     * 
+     * @param multipleValuesSetting
+     *        Indicates whether the slot returns multiple values in one response. Multi-value slots are only available
+     *        in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
+     *        <code>ValidationException</code>. </p>
+     *        <p>
+     *        If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
+     */
+
+    public void setMultipleValuesSetting(MultipleValuesSetting multipleValuesSetting) {
+        this.multipleValuesSetting = multipleValuesSetting;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the
+     * en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>ValidationException</code>.
+     * </p>
+     * <p>
+     * If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
+     * </p>
+     * 
+     * @return Indicates whether the slot returns multiple values in one response. Multi-value slots are only available
+     *         in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
+     *         <code>ValidationException</code>. </p>
+     *         <p>
+     *         If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
+     */
+
+    public MultipleValuesSetting getMultipleValuesSetting() {
+        return this.multipleValuesSetting;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the
+     * en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>ValidationException</code>.
+     * </p>
+     * <p>
+     * If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
+     * </p>
+     * 
+     * @param multipleValuesSetting
+     *        Indicates whether the slot returns multiple values in one response. Multi-value slots are only available
+     *        in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
+     *        <code>ValidationException</code>. </p>
+     *        <p>
+     *        If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSlotRequest withMultipleValuesSetting(MultipleValuesSetting multipleValuesSetting) {
+        setMultipleValuesSetting(multipleValuesSetting);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -532,7 +610,9 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getLocaleId() != null)
             sb.append("LocaleId: ").append(getLocaleId()).append(",");
         if (getIntentId() != null)
-            sb.append("IntentId: ").append(getIntentId());
+            sb.append("IntentId: ").append(getIntentId()).append(",");
+        if (getMultipleValuesSetting() != null)
+            sb.append("MultipleValuesSetting: ").append(getMultipleValuesSetting());
         sb.append("}");
         return sb.toString();
     }
@@ -583,6 +663,10 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getIntentId() != null && other.getIntentId().equals(this.getIntentId()) == false)
             return false;
+        if (other.getMultipleValuesSetting() == null ^ this.getMultipleValuesSetting() == null)
+            return false;
+        if (other.getMultipleValuesSetting() != null && other.getMultipleValuesSetting().equals(this.getMultipleValuesSetting()) == false)
+            return false;
         return true;
     }
 
@@ -600,6 +684,7 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getBotVersion() == null) ? 0 : getBotVersion().hashCode());
         hashCode = prime * hashCode + ((getLocaleId() == null) ? 0 : getLocaleId().hashCode());
         hashCode = prime * hashCode + ((getIntentId() == null) ? 0 : getIntentId().hashCode());
+        hashCode = prime * hashCode + ((getMultipleValuesSetting() == null) ? 0 : getMultipleValuesSetting().hashCode());
         return hashCode;
     }
 

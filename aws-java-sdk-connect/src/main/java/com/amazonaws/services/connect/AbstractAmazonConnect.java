@@ -33,6 +33,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public AssociateBotResult associateBot(AssociateBotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateInstanceStorageConfigResult associateInstanceStorageConfig(AssociateInstanceStorageConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -198,6 +203,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public DisassociateBotResult disassociateBot(DisassociateBotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateInstanceStorageConfigResult disassociateInstanceStorageConfig(DisassociateInstanceStorageConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -249,6 +259,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public ListApprovedOriginsResult listApprovedOrigins(ListApprovedOriginsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListBotsResult listBots(ListBotsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

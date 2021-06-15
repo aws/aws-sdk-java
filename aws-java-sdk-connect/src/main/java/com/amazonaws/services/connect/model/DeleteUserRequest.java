@@ -27,7 +27,7 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      */
     private String instanceId;
@@ -40,11 +40,11 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance.
+     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -53,10 +53,10 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance.
+     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      */
 
     public String getInstanceId() {
@@ -65,11 +65,11 @@ public class DeleteUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance.
+     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance.
+     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

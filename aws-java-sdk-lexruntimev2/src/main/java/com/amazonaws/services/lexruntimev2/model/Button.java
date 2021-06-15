@@ -36,7 +36,7 @@ public class Button implements Serializable, Cloneable, StructuredPojo {
     private String text;
     /**
      * <p>
-     * The value returned to Amazon Lex when a user chooses the button.
+     * The value returned to Amazon Lex V2 when a user chooses the button.
      * </p>
      */
     private String value;
@@ -83,11 +83,11 @@ public class Button implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value returned to Amazon Lex when a user chooses the button.
+     * The value returned to Amazon Lex V2 when a user chooses the button.
      * </p>
      * 
      * @param value
-     *        The value returned to Amazon Lex when a user chooses the button.
+     *        The value returned to Amazon Lex V2 when a user chooses the button.
      */
 
     public void setValue(String value) {
@@ -96,10 +96,10 @@ public class Button implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value returned to Amazon Lex when a user chooses the button.
+     * The value returned to Amazon Lex V2 when a user chooses the button.
      * </p>
      * 
-     * @return The value returned to Amazon Lex when a user chooses the button.
+     * @return The value returned to Amazon Lex V2 when a user chooses the button.
      */
 
     public String getValue() {
@@ -108,11 +108,11 @@ public class Button implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value returned to Amazon Lex when a user chooses the button.
+     * The value returned to Amazon Lex V2 when a user chooses the button.
      * </p>
      * 
      * @param value
-     *        The value returned to Amazon Lex when a user chooses the button.
+     *        The value returned to Amazon Lex V2 when a user chooses the button.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

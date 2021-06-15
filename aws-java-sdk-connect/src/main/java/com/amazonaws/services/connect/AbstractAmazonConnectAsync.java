@@ -41,6 +41,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateBotResult> associateBotAsync(AssociateBotRequest request) {
+
+        return associateBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateBotResult> associateBotAsync(AssociateBotRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateBotRequest, AssociateBotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateInstanceStorageConfigResult> associateInstanceStorageConfigAsync(AssociateInstanceStorageConfigRequest request) {
 
         return associateInstanceStorageConfigAsync(request, null);
@@ -470,6 +483,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateBotResult> disassociateBotAsync(DisassociateBotRequest request) {
+
+        return disassociateBotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateBotResult> disassociateBotAsync(DisassociateBotRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateBotRequest, DisassociateBotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateInstanceStorageConfigResult> disassociateInstanceStorageConfigAsync(
             DisassociateInstanceStorageConfigRequest request) {
 
@@ -612,6 +638,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<ListApprovedOriginsResult> listApprovedOriginsAsync(ListApprovedOriginsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListApprovedOriginsRequest, ListApprovedOriginsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest request) {
+
+        return listBotsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBotsResult> listBotsAsync(ListBotsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListBotsRequest, ListBotsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

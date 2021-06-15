@@ -38,10 +38,10 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private java.util.List<Message> messages;
     /**
      * <p>
-     * A list of intents that Amazon Lex determined might satisfy the user's utterance.
+     * A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.
      * </p>
      * <p>
-     * Each interpretation includes the intent, a score that indicates how confident Amazon Lex is that the
+     * Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the
      * interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in
      * the utterance.
      * </p>
@@ -177,17 +177,17 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of intents that Amazon Lex determined might satisfy the user's utterance.
+     * A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.
      * </p>
      * <p>
-     * Each interpretation includes the intent, a score that indicates how confident Amazon Lex is that the
+     * Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the
      * interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in
      * the utterance.
      * </p>
      * 
-     * @return A list of intents that Amazon Lex determined might satisfy the user's utterance. </p>
+     * @return A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
      *         <p>
-     *         Each interpretation includes the intent, a score that indicates how confident Amazon Lex is that the
+     *         Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the
      *         interpretation is the correct one, and an optional sentiment response that indicates the sentiment
      *         expressed in the utterance.
      */
@@ -198,18 +198,18 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of intents that Amazon Lex determined might satisfy the user's utterance.
+     * A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.
      * </p>
      * <p>
-     * Each interpretation includes the intent, a score that indicates how confident Amazon Lex is that the
+     * Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the
      * interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in
      * the utterance.
      * </p>
      * 
      * @param interpretations
-     *        A list of intents that Amazon Lex determined might satisfy the user's utterance. </p>
+     *        A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
      *        <p>
-     *        Each interpretation includes the intent, a score that indicates how confident Amazon Lex is that the
+     *        Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the
      *        interpretation is the correct one, and an optional sentiment response that indicates the sentiment
      *        expressed in the utterance.
      */
@@ -225,10 +225,10 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of intents that Amazon Lex determined might satisfy the user's utterance.
+     * A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.
      * </p>
      * <p>
-     * Each interpretation includes the intent, a score that indicates how confident Amazon Lex is that the
+     * Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the
      * interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in
      * the utterance.
      * </p>
@@ -239,9 +239,9 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param interpretations
-     *        A list of intents that Amazon Lex determined might satisfy the user's utterance. </p>
+     *        A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
      *        <p>
-     *        Each interpretation includes the intent, a score that indicates how confident Amazon Lex is that the
+     *        Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the
      *        interpretation is the correct one, and an optional sentiment response that indicates the sentiment
      *        expressed in the utterance.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -259,18 +259,18 @@ public class GetSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of intents that Amazon Lex determined might satisfy the user's utterance.
+     * A list of intents that Amazon Lex V2 determined might satisfy the user's utterance.
      * </p>
      * <p>
-     * Each interpretation includes the intent, a score that indicates how confident Amazon Lex is that the
+     * Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the
      * interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in
      * the utterance.
      * </p>
      * 
      * @param interpretations
-     *        A list of intents that Amazon Lex determined might satisfy the user's utterance. </p>
+     *        A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
      *        <p>
-     *        Each interpretation includes the intent, a score that indicates how confident Amazon Lex is that the
+     *        Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the
      *        interpretation is the correct one, and an optional sentiment response that indicates the sentiment
      *        expressed in the utterance.
      * @return Returns a reference to this object so that method calls can be chained together.
