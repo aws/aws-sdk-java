@@ -90,8 +90,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     private String keyState;
     /**
      * <p>
-     * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>.
+     * The date and time after which AWS KMS deletes this CMK. This value is present only when the CMK is scheduled for
+     * deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.
+     * </p>
+     * <p>
+     * When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is
+     * <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the
+     * <code>PendingDeletionWindowInDays</code> field.
      * </p>
      */
     private java.util.Date deletionDate;
@@ -158,7 +163,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * AWS KMS.
      * </p>
      * <p>
-     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> encryptionAlgorithms;
@@ -172,6 +177,64 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> signingAlgorithms;
+    /**
+     * <p>
+     * Indicates whether the CMK is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value
+     * is <code>True</code> for multi-Region primary and replica CMKs and <code>False</code> for regional CMKs.
+     * </p>
+     * <p>
+     * For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     */
+    private Boolean multiRegion;
+    /**
+     * <p>
+     * Lists the primary and replica CMKs in same multi-Region CMK. This field is present only when the value of the
+     * <code>MultiRegion</code> field is <code>True</code>.
+     * </p>
+     * <p>
+     * For more information about any listed CMK, use the <a>DescribeKey</a> operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MultiRegionKeyType</code> indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code> key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current CMK
+     * if it is the primary key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current
+     * CMK if it is a replica key.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private MultiRegionConfiguration multiRegionConfiguration;
+    /**
+     * <p>
+     * The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the
+     * last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the CMK is
+     * <code>PendingReplicaDeletion</code>. That indicates that the CMK is the primary key in a multi-Region key, it is
+     * scheduled for deletion, and it still has existing replica keys.
+     * </p>
+     * <p>
+     * When a regional CMK or a replica key in a multi-Region key is scheduled for deletion, its deletion date is
+     * displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is
+     * scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value
+     * displays that waiting period. When the last replica key in the multi-Region key is deleted, the
+     * <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to
+     * <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.
+     * </p>
+     */
+    private Integer pendingDeletionWindowInDays;
 
     /**
      * <p>
@@ -653,13 +716,22 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>.
+     * The date and time after which AWS KMS deletes this CMK. This value is present only when the CMK is scheduled for
+     * deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.
+     * </p>
+     * <p>
+     * When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is
+     * <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the
+     * <code>PendingDeletionWindowInDays</code> field.
      * </p>
      * 
      * @param deletionDate
-     *        The date and time after which AWS KMS deletes the CMK. This value is present only when
-     *        <code>KeyState</code> is <code>PendingDeletion</code>.
+     *        The date and time after which AWS KMS deletes this CMK. This value is present only when the CMK is
+     *        scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+     *        <p>
+     *        When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key
+     *        state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the
+     *        <code>PendingDeletionWindowInDays</code> field.
      */
 
     public void setDeletionDate(java.util.Date deletionDate) {
@@ -668,12 +740,21 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>.
+     * The date and time after which AWS KMS deletes this CMK. This value is present only when the CMK is scheduled for
+     * deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.
+     * </p>
+     * <p>
+     * When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is
+     * <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the
+     * <code>PendingDeletionWindowInDays</code> field.
      * </p>
      * 
-     * @return The date and time after which AWS KMS deletes the CMK. This value is present only when
-     *         <code>KeyState</code> is <code>PendingDeletion</code>.
+     * @return The date and time after which AWS KMS deletes this CMK. This value is present only when the CMK is
+     *         scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+     *         <p>
+     *         When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key
+     *         state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the
+     *         <code>PendingDeletionWindowInDays</code> field.
      */
 
     public java.util.Date getDeletionDate() {
@@ -682,13 +763,22 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>.
+     * The date and time after which AWS KMS deletes this CMK. This value is present only when the CMK is scheduled for
+     * deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.
+     * </p>
+     * <p>
+     * When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is
+     * <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the
+     * <code>PendingDeletionWindowInDays</code> field.
      * </p>
      * 
      * @param deletionDate
-     *        The date and time after which AWS KMS deletes the CMK. This value is present only when
-     *        <code>KeyState</code> is <code>PendingDeletion</code>.
+     *        The date and time after which AWS KMS deletes this CMK. This value is present only when the CMK is
+     *        scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+     *        <p>
+     *        When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key
+     *        state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the
+     *        <code>PendingDeletionWindowInDays</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1237,13 +1327,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * AWS KMS.
      * </p>
      * <p>
-     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * </p>
      * 
      * @return The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
      *         within AWS KMS.</p>
      *         <p>
-     *         This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     *         This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * @see EncryptionAlgorithmSpec
      */
 
@@ -1260,14 +1350,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * AWS KMS.
      * </p>
      * <p>
-     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * </p>
      * 
      * @param encryptionAlgorithms
      *        The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
      *        within AWS KMS.</p>
      *        <p>
-     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     *        This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * @see EncryptionAlgorithmSpec
      */
 
@@ -1286,7 +1376,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * AWS KMS.
      * </p>
      * <p>
-     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1298,7 +1388,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      *        The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
      *        within AWS KMS.</p>
      *        <p>
-     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     *        This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithmSpec
      */
@@ -1319,14 +1409,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * AWS KMS.
      * </p>
      * <p>
-     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * </p>
      * 
      * @param encryptionAlgorithms
      *        The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
      *        within AWS KMS.</p>
      *        <p>
-     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     *        This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithmSpec
      */
@@ -1342,14 +1432,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * AWS KMS.
      * </p>
      * <p>
-     * This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     * This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * </p>
      * 
      * @param encryptionAlgorithms
      *        The encryption algorithms that the CMK supports. You cannot use the CMK with other encryption algorithms
      *        within AWS KMS.</p>
      *        <p>
-     *        This field appears only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
+     *        This value is present only when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithmSpec
      */
@@ -1505,6 +1595,387 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether the CMK is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value
+     * is <code>True</code> for multi-Region primary and replica CMKs and <code>False</code> for regional CMKs.
+     * </p>
+     * <p>
+     * For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param multiRegion
+     *        Indicates whether the CMK is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This
+     *        value is <code>True</code> for multi-Region primary and replica CMKs and <code>False</code> for regional
+     *        CMKs.</p>
+     *        <p>
+     *        For more information about multi-Region keys, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *        multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     */
+
+    public void setMultiRegion(Boolean multiRegion) {
+        this.multiRegion = multiRegion;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the CMK is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value
+     * is <code>True</code> for multi-Region primary and replica CMKs and <code>False</code> for regional CMKs.
+     * </p>
+     * <p>
+     * For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether the CMK is a multi-Region (<code>True</code>) or regional (<code>False</code>) key.
+     *         This value is <code>True</code> for multi-Region primary and replica CMKs and <code>False</code> for
+     *         regional CMKs.</p>
+     *         <p>
+     *         For more information about multi-Region keys, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *         multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean getMultiRegion() {
+        return this.multiRegion;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the CMK is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value
+     * is <code>True</code> for multi-Region primary and replica CMKs and <code>False</code> for regional CMKs.
+     * </p>
+     * <p>
+     * For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param multiRegion
+     *        Indicates whether the CMK is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This
+     *        value is <code>True</code> for multi-Region primary and replica CMKs and <code>False</code> for regional
+     *        CMKs.</p>
+     *        <p>
+     *        For more information about multi-Region keys, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *        multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyMetadata withMultiRegion(Boolean multiRegion) {
+        setMultiRegion(multiRegion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the CMK is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value
+     * is <code>True</code> for multi-Region primary and replica CMKs and <code>False</code> for regional CMKs.
+     * </p>
+     * <p>
+     * For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether the CMK is a multi-Region (<code>True</code>) or regional (<code>False</code>) key.
+     *         This value is <code>True</code> for multi-Region primary and replica CMKs and <code>False</code> for
+     *         regional CMKs.</p>
+     *         <p>
+     *         For more information about multi-Region keys, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *         multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean isMultiRegion() {
+        return this.multiRegion;
+    }
+
+    /**
+     * <p>
+     * Lists the primary and replica CMKs in same multi-Region CMK. This field is present only when the value of the
+     * <code>MultiRegion</code> field is <code>True</code>.
+     * </p>
+     * <p>
+     * For more information about any listed CMK, use the <a>DescribeKey</a> operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MultiRegionKeyType</code> indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code> key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current CMK
+     * if it is the primary key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current
+     * CMK if it is a replica key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param multiRegionConfiguration
+     *        Lists the primary and replica CMKs in same multi-Region CMK. This field is present only when the value of
+     *        the <code>MultiRegion</code> field is <code>True</code>.</p>
+     *        <p>
+     *        For more information about any listed CMK, use the <a>DescribeKey</a> operation.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>MultiRegionKeyType</code> indicates whether the CMK is a <code>PRIMARY</code> or
+     *        <code>REPLICA</code> key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the
+     *        current CMK if it is the primary key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the
+     *        current CMK if it is a replica key.
+     *        </p>
+     *        </li>
+     */
+
+    public void setMultiRegionConfiguration(MultiRegionConfiguration multiRegionConfiguration) {
+        this.multiRegionConfiguration = multiRegionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Lists the primary and replica CMKs in same multi-Region CMK. This field is present only when the value of the
+     * <code>MultiRegion</code> field is <code>True</code>.
+     * </p>
+     * <p>
+     * For more information about any listed CMK, use the <a>DescribeKey</a> operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MultiRegionKeyType</code> indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code> key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current CMK
+     * if it is the primary key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current
+     * CMK if it is a replica key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Lists the primary and replica CMKs in same multi-Region CMK. This field is present only when the value of
+     *         the <code>MultiRegion</code> field is <code>True</code>.</p>
+     *         <p>
+     *         For more information about any listed CMK, use the <a>DescribeKey</a> operation.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>MultiRegionKeyType</code> indicates whether the CMK is a <code>PRIMARY</code> or
+     *         <code>REPLICA</code> key.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the
+     *         current CMK if it is the primary key.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the
+     *         current CMK if it is a replica key.
+     *         </p>
+     *         </li>
+     */
+
+    public MultiRegionConfiguration getMultiRegionConfiguration() {
+        return this.multiRegionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Lists the primary and replica CMKs in same multi-Region CMK. This field is present only when the value of the
+     * <code>MultiRegion</code> field is <code>True</code>.
+     * </p>
+     * <p>
+     * For more information about any listed CMK, use the <a>DescribeKey</a> operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MultiRegionKeyType</code> indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code> key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current CMK
+     * if it is the primary key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current
+     * CMK if it is a replica key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param multiRegionConfiguration
+     *        Lists the primary and replica CMKs in same multi-Region CMK. This field is present only when the value of
+     *        the <code>MultiRegion</code> field is <code>True</code>.</p>
+     *        <p>
+     *        For more information about any listed CMK, use the <a>DescribeKey</a> operation.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>MultiRegionKeyType</code> indicates whether the CMK is a <code>PRIMARY</code> or
+     *        <code>REPLICA</code> key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the
+     *        current CMK if it is the primary key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the
+     *        current CMK if it is a replica key.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyMetadata withMultiRegionConfiguration(MultiRegionConfiguration multiRegionConfiguration) {
+        setMultiRegionConfiguration(multiRegionConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the
+     * last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the CMK is
+     * <code>PendingReplicaDeletion</code>. That indicates that the CMK is the primary key in a multi-Region key, it is
+     * scheduled for deletion, and it still has existing replica keys.
+     * </p>
+     * <p>
+     * When a regional CMK or a replica key in a multi-Region key is scheduled for deletion, its deletion date is
+     * displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is
+     * scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value
+     * displays that waiting period. When the last replica key in the multi-Region key is deleted, the
+     * <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to
+     * <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.
+     * </p>
+     * 
+     * @param pendingDeletionWindowInDays
+     *        The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins
+     *        when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of
+     *        the CMK is <code>PendingReplicaDeletion</code>. That indicates that the CMK is the primary key in a
+     *        multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
+     *        <p>
+     *        When a regional CMK or a replica key in a multi-Region key is scheduled for deletion, its deletion date is
+     *        displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is
+     *        scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This
+     *        value displays that waiting period. When the last replica key in the multi-Region key is deleted, the
+     *        <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to
+     *        <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.
+     */
+
+    public void setPendingDeletionWindowInDays(Integer pendingDeletionWindowInDays) {
+        this.pendingDeletionWindowInDays = pendingDeletionWindowInDays;
+    }
+
+    /**
+     * <p>
+     * The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the
+     * last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the CMK is
+     * <code>PendingReplicaDeletion</code>. That indicates that the CMK is the primary key in a multi-Region key, it is
+     * scheduled for deletion, and it still has existing replica keys.
+     * </p>
+     * <p>
+     * When a regional CMK or a replica key in a multi-Region key is scheduled for deletion, its deletion date is
+     * displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is
+     * scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value
+     * displays that waiting period. When the last replica key in the multi-Region key is deleted, the
+     * <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to
+     * <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.
+     * </p>
+     * 
+     * @return The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins
+     *         when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code>
+     *         of the CMK is <code>PendingReplicaDeletion</code>. That indicates that the CMK is the primary key in a
+     *         multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
+     *         <p>
+     *         When a regional CMK or a replica key in a multi-Region key is scheduled for deletion, its deletion date
+     *         is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key
+     *         is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted.
+     *         This value displays that waiting period. When the last replica key in the multi-Region key is deleted,
+     *         the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code>
+     *         to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.
+     */
+
+    public Integer getPendingDeletionWindowInDays() {
+        return this.pendingDeletionWindowInDays;
+    }
+
+    /**
+     * <p>
+     * The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the
+     * last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the CMK is
+     * <code>PendingReplicaDeletion</code>. That indicates that the CMK is the primary key in a multi-Region key, it is
+     * scheduled for deletion, and it still has existing replica keys.
+     * </p>
+     * <p>
+     * When a regional CMK or a replica key in a multi-Region key is scheduled for deletion, its deletion date is
+     * displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is
+     * scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value
+     * displays that waiting period. When the last replica key in the multi-Region key is deleted, the
+     * <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to
+     * <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.
+     * </p>
+     * 
+     * @param pendingDeletionWindowInDays
+     *        The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins
+     *        when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of
+     *        the CMK is <code>PendingReplicaDeletion</code>. That indicates that the CMK is the primary key in a
+     *        multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
+     *        <p>
+     *        When a regional CMK or a replica key in a multi-Region key is scheduled for deletion, its deletion date is
+     *        displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is
+     *        scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This
+     *        value displays that waiting period. When the last replica key in the multi-Region key is deleted, the
+     *        <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to
+     *        <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyMetadata withPendingDeletionWindowInDays(Integer pendingDeletionWindowInDays) {
+        setPendingDeletionWindowInDays(pendingDeletionWindowInDays);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1551,7 +2022,13 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
         if (getEncryptionAlgorithms() != null)
             sb.append("EncryptionAlgorithms: ").append(getEncryptionAlgorithms()).append(",");
         if (getSigningAlgorithms() != null)
-            sb.append("SigningAlgorithms: ").append(getSigningAlgorithms());
+            sb.append("SigningAlgorithms: ").append(getSigningAlgorithms()).append(",");
+        if (getMultiRegion() != null)
+            sb.append("MultiRegion: ").append(getMultiRegion()).append(",");
+        if (getMultiRegionConfiguration() != null)
+            sb.append("MultiRegionConfiguration: ").append(getMultiRegionConfiguration()).append(",");
+        if (getPendingDeletionWindowInDays() != null)
+            sb.append("PendingDeletionWindowInDays: ").append(getPendingDeletionWindowInDays());
         sb.append("}");
         return sb.toString();
     }
@@ -1638,6 +2115,18 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSigningAlgorithms() != null && other.getSigningAlgorithms().equals(this.getSigningAlgorithms()) == false)
             return false;
+        if (other.getMultiRegion() == null ^ this.getMultiRegion() == null)
+            return false;
+        if (other.getMultiRegion() != null && other.getMultiRegion().equals(this.getMultiRegion()) == false)
+            return false;
+        if (other.getMultiRegionConfiguration() == null ^ this.getMultiRegionConfiguration() == null)
+            return false;
+        if (other.getMultiRegionConfiguration() != null && other.getMultiRegionConfiguration().equals(this.getMultiRegionConfiguration()) == false)
+            return false;
+        if (other.getPendingDeletionWindowInDays() == null ^ this.getPendingDeletionWindowInDays() == null)
+            return false;
+        if (other.getPendingDeletionWindowInDays() != null && other.getPendingDeletionWindowInDays().equals(this.getPendingDeletionWindowInDays()) == false)
+            return false;
         return true;
     }
 
@@ -1664,6 +2153,9 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCustomerMasterKeySpec() == null) ? 0 : getCustomerMasterKeySpec().hashCode());
         hashCode = prime * hashCode + ((getEncryptionAlgorithms() == null) ? 0 : getEncryptionAlgorithms().hashCode());
         hashCode = prime * hashCode + ((getSigningAlgorithms() == null) ? 0 : getSigningAlgorithms().hashCode());
+        hashCode = prime * hashCode + ((getMultiRegion() == null) ? 0 : getMultiRegion().hashCode());
+        hashCode = prime * hashCode + ((getMultiRegionConfiguration() == null) ? 0 : getMultiRegionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPendingDeletionWindowInDays() == null) ? 0 : getPendingDeletionWindowInDays().hashCode());
         return hashCode;
     }
 

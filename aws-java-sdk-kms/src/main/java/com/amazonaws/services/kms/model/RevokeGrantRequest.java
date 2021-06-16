@@ -27,11 +27,11 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the customer master key associated with the grant.
+     * A unique identifier for the customer master key (CMK) associated with the grant. To get the key ID and key ARN
+     * for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -55,18 +55,19 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String keyId;
     /**
      * <p>
-     * Identifier of the grant to be revoked.
+     * Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     * <a>ListRetirableGrants</a>.
      * </p>
      */
     private String grantId;
 
     /**
      * <p>
-     * A unique identifier for the customer master key associated with the grant.
+     * A unique identifier for the customer master key (CMK) associated with the grant. To get the key ID and key ARN
+     * for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -88,10 +89,11 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key associated with the grant.</p>
+     *        A unique identifier for the customer master key (CMK) associated with the grant. To get the key ID and key
+     *        ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
-     *        account, you must use the key ARN.
+     *        Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the
+     *        key ARN.
      *        </p>
      *        <p>
      *        For example:
@@ -118,11 +120,11 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the customer master key associated with the grant.
+     * A unique identifier for the customer master key (CMK) associated with the grant. To get the key ID and key ARN
+     * for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -143,10 +145,11 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * </p>
      * 
-     * @return A unique identifier for the customer master key associated with the grant.</p>
+     * @return A unique identifier for the customer master key (CMK) associated with the grant. To get the key ID and
+     *         key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      *         <p>
-     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
-     *         account, you must use the key ARN.
+     *         Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the
+     *         key ARN.
      *         </p>
      *         <p>
      *         For example:
@@ -173,11 +176,11 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the customer master key associated with the grant.
+     * A unique identifier for the customer master key (CMK) associated with the grant. To get the key ID and key ARN
+     * for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -199,10 +202,11 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key associated with the grant.</p>
+     *        A unique identifier for the customer master key (CMK) associated with the grant. To get the key ID and key
+     *        ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
-     *        account, you must use the key ARN.
+     *        Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the
+     *        key ARN.
      *        </p>
      *        <p>
      *        For example:
@@ -231,11 +235,13 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifier of the grant to be revoked.
+     * Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     * <a>ListRetirableGrants</a>.
      * </p>
      * 
      * @param grantId
-     *        Identifier of the grant to be revoked.
+     *        Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     *        <a>ListRetirableGrants</a>.
      */
 
     public void setGrantId(String grantId) {
@@ -244,10 +250,12 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifier of the grant to be revoked.
+     * Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     * <a>ListRetirableGrants</a>.
      * </p>
      * 
-     * @return Identifier of the grant to be revoked.
+     * @return Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     *         <a>ListRetirableGrants</a>.
      */
 
     public String getGrantId() {
@@ -256,11 +264,13 @@ public class RevokeGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifier of the grant to be revoked.
+     * Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     * <a>ListRetirableGrants</a>.
      * </p>
      * 
      * @param grantId
-     *        Identifier of the grant to be revoked.
+     *        Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     *        <a>ListRetirableGrants</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

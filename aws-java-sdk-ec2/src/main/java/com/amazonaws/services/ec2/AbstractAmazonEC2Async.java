@@ -364,6 +364,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateTrunkInterfaceResult> associateTrunkInterfaceAsync(AssociateTrunkInterfaceRequest request) {
+
+        return associateTrunkInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateTrunkInterfaceResult> associateTrunkInterfaceAsync(AssociateTrunkInterfaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateTrunkInterfaceRequest, AssociateTrunkInterfaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateVpcCidrBlockResult> associateVpcCidrBlockAsync(AssociateVpcCidrBlockRequest request) {
 
         return associateVpcCidrBlockAsync(request, null);
@@ -4661,6 +4674,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTrunkInterfaceAssociationsResult> describeTrunkInterfaceAssociationsAsync(
+            DescribeTrunkInterfaceAssociationsRequest request) {
+
+        return describeTrunkInterfaceAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrunkInterfaceAssociationsResult> describeTrunkInterfaceAssociationsAsync(
+            DescribeTrunkInterfaceAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrunkInterfaceAssociationsRequest, DescribeTrunkInterfaceAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeVolumeAttributeResult> describeVolumeAttributeAsync(DescribeVolumeAttributeRequest request) {
 
         return describeVolumeAttributeAsync(request, null);
@@ -5378,6 +5406,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     public java.util.concurrent.Future<DisassociateTransitGatewayRouteTableResult> disassociateTransitGatewayRouteTableAsync(
             DisassociateTransitGatewayRouteTableRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateTransitGatewayRouteTableRequest, DisassociateTransitGatewayRouteTableResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateTrunkInterfaceResult> disassociateTrunkInterfaceAsync(DisassociateTrunkInterfaceRequest request) {
+
+        return disassociateTrunkInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateTrunkInterfaceResult> disassociateTrunkInterfaceAsync(DisassociateTrunkInterfaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateTrunkInterfaceRequest, DisassociateTrunkInterfaceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

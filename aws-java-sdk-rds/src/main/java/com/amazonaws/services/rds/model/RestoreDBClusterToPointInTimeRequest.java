@@ -324,6 +324,21 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private String domainIAMRoleName;
+    /**
+     * <p>
+     * For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     * </p>
+     */
+    private ScalingConfiguration scalingConfiguration;
+    /**
+     * <p>
+     * The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending on the
+     * type of the cluster you are creating. You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is an Aurora Serverless cluster, the
+     * original cluster must be an Aurora Serverless cluster or an encrypted provisioned cluster.
+     * </p>
+     */
+    private String engineMode;
 
     /**
      * <p>
@@ -2333,6 +2348,107 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     * </p>
+     * 
+     * @param scalingConfiguration
+     *        For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     */
+
+    public void setScalingConfiguration(ScalingConfiguration scalingConfiguration) {
+        this.scalingConfiguration = scalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     * </p>
+     * 
+     * @return For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     */
+
+    public ScalingConfiguration getScalingConfiguration() {
+        return this.scalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     * </p>
+     * 
+     * @param scalingConfiguration
+     *        For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterToPointInTimeRequest withScalingConfiguration(ScalingConfiguration scalingConfiguration) {
+        setScalingConfiguration(scalingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending on the
+     * type of the cluster you are creating. You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is an Aurora Serverless cluster, the
+     * original cluster must be an Aurora Serverless cluster or an encrypted provisioned cluster.
+     * </p>
+     * 
+     * @param engineMode
+     *        The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending
+     *        on the type of the cluster you are creating. You can create an Aurora Serverless clone from a provisioned
+     *        cluster, or a provisioned clone from an Aurora Serverless cluster. To create a clone that is an Aurora
+     *        Serverless cluster, the original cluster must be an Aurora Serverless cluster or an encrypted provisioned
+     *        cluster.
+     */
+
+    public void setEngineMode(String engineMode) {
+        this.engineMode = engineMode;
+    }
+
+    /**
+     * <p>
+     * The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending on the
+     * type of the cluster you are creating. You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is an Aurora Serverless cluster, the
+     * original cluster must be an Aurora Serverless cluster or an encrypted provisioned cluster.
+     * </p>
+     * 
+     * @return The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>,
+     *         depending on the type of the cluster you are creating. You can create an Aurora Serverless clone from a
+     *         provisioned cluster, or a provisioned clone from an Aurora Serverless cluster. To create a clone that is
+     *         an Aurora Serverless cluster, the original cluster must be an Aurora Serverless cluster or an encrypted
+     *         provisioned cluster.
+     */
+
+    public String getEngineMode() {
+        return this.engineMode;
+    }
+
+    /**
+     * <p>
+     * The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending on the
+     * type of the cluster you are creating. You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is an Aurora Serverless cluster, the
+     * original cluster must be an Aurora Serverless cluster or an encrypted provisioned cluster.
+     * </p>
+     * 
+     * @param engineMode
+     *        The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>, depending
+     *        on the type of the cluster you are creating. You can create an Aurora Serverless clone from a provisioned
+     *        cluster, or a provisioned clone from an Aurora Serverless cluster. To create a clone that is an Aurora
+     *        Serverless cluster, the original cluster must be an Aurora Serverless cluster or an encrypted provisioned
+     *        cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterToPointInTimeRequest withEngineMode(String engineMode) {
+        setEngineMode(engineMode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2381,7 +2497,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getDomainIAMRoleName() != null)
-            sb.append("DomainIAMRoleName: ").append(getDomainIAMRoleName());
+            sb.append("DomainIAMRoleName: ").append(getDomainIAMRoleName()).append(",");
+        if (getScalingConfiguration() != null)
+            sb.append("ScalingConfiguration: ").append(getScalingConfiguration()).append(",");
+        if (getEngineMode() != null)
+            sb.append("EngineMode: ").append(getEngineMode());
         sb.append("}");
         return sb.toString();
     }
@@ -2473,6 +2593,14 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
             return false;
         if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false)
             return false;
+        if (other.getScalingConfiguration() == null ^ this.getScalingConfiguration() == null)
+            return false;
+        if (other.getScalingConfiguration() != null && other.getScalingConfiguration().equals(this.getScalingConfiguration()) == false)
+            return false;
+        if (other.getEngineMode() == null ^ this.getEngineMode() == null)
+            return false;
+        if (other.getEngineMode() != null && other.getEngineMode().equals(this.getEngineMode()) == false)
+            return false;
         return true;
     }
 
@@ -2500,6 +2628,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
+        hashCode = prime * hashCode + ((getScalingConfiguration() == null) ? 0 : getScalingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEngineMode() == null) ? 0 : getEngineMode().hashCode());
         return hashCode;
     }
 

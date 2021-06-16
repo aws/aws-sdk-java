@@ -159,7 +159,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the network interface owner.
+     * <code>owner-id</code> - The account ID of the network interface owner.
      * </p>
      * </li>
      * <li>
@@ -174,14 +174,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * <code>requester-id</code> - The alias or account ID of the principal or service that created the network
      * interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is being managed by an AWS service (for
-     * example, AWS Management Console, Auto Scaling, and so on).
+     * <code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web
+     * Service (for example, Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
      * <li>
@@ -381,7 +381,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the network interface owner.
+     * <code>owner-id</code> - The account ID of the network interface owner.
      * </p>
      * </li>
      * <li>
@@ -396,14 +396,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * <code>requester-id</code> - The alias or account ID of the principal or service that created the network
      * interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is being managed by an AWS service (for
-     * example, AWS Management Console, Auto Scaling, and so on).
+     * <code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web
+     * Service (for example, Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
      * <li>
@@ -577,7 +577,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The AWS account ID of the network interface owner.
+     *         <code>owner-id</code> - The account ID of the network interface owner.
      *         </p>
      *         </li>
      *         <li>
@@ -592,14 +592,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
-     *         network interface.
+     *         <code>requester-id</code> - The alias or account ID of the principal or service that created the network
+     *         interface.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>requester-managed</code> - Indicates whether the network interface is being managed by an AWS
-     *         service (for example, AWS Management Console, Auto Scaling, and so on).
+     *         <code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon
+     *         Web Service (for example, Management Console, Auto Scaling, and so on).
      *         </p>
      *         </li>
      *         <li>
@@ -781,7 +781,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the network interface owner.
+     * <code>owner-id</code> - The account ID of the network interface owner.
      * </p>
      * </li>
      * <li>
@@ -796,14 +796,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * <code>requester-id</code> - The alias or account ID of the principal or service that created the network
      * interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is being managed by an AWS service (for
-     * example, AWS Management Console, Auto Scaling, and so on).
+     * <code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web
+     * Service (for example, Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
      * <li>
@@ -978,7 +978,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the network interface owner.
+     *        <code>owner-id</code> - The account ID of the network interface owner.
      *        </p>
      *        </li>
      *        <li>
@@ -993,14 +993,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
-     *        network interface.
+     *        <code>requester-id</code> - The alias or account ID of the principal or service that created the network
+     *        interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-managed</code> - Indicates whether the network interface is being managed by an AWS
-     *        service (for example, AWS Management Console, Auto Scaling, and so on).
+     *        <code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web
+     *        Service (for example, Management Console, Auto Scaling, and so on).
      *        </p>
      *        </li>
      *        <li>
@@ -1184,7 +1184,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the network interface owner.
+     * <code>owner-id</code> - The account ID of the network interface owner.
      * </p>
      * </li>
      * <li>
@@ -1199,14 +1199,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * <code>requester-id</code> - The alias or account ID of the principal or service that created the network
      * interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is being managed by an AWS service (for
-     * example, AWS Management Console, Auto Scaling, and so on).
+     * <code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web
+     * Service (for example, Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
      * <li>
@@ -1386,7 +1386,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the network interface owner.
+     *        <code>owner-id</code> - The account ID of the network interface owner.
      *        </p>
      *        </li>
      *        <li>
@@ -1401,14 +1401,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
-     *        network interface.
+     *        <code>requester-id</code> - The alias or account ID of the principal or service that created the network
+     *        interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-managed</code> - Indicates whether the network interface is being managed by an AWS
-     *        service (for example, AWS Management Console, Auto Scaling, and so on).
+     *        <code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web
+     *        Service (for example, Management Console, Auto Scaling, and so on).
      *        </p>
      *        </li>
      *        <li>
@@ -1594,7 +1594,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the network interface owner.
+     * <code>owner-id</code> - The account ID of the network interface owner.
      * </p>
      * </li>
      * <li>
@@ -1609,14 +1609,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * <code>requester-id</code> - The alias or account ID of the principal or service that created the network
      * interface.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>requester-managed</code> - Indicates whether the network interface is being managed by an AWS service (for
-     * example, AWS Management Console, Auto Scaling, and so on).
+     * <code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web
+     * Service (for example, Management Console, Auto Scaling, and so on).
      * </p>
      * </li>
      * <li>
@@ -1791,7 +1791,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the network interface owner.
+     *        <code>owner-id</code> - The account ID of the network interface owner.
      *        </p>
      *        </li>
      *        <li>
@@ -1806,14 +1806,14 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
-     *        network interface.
+     *        <code>requester-id</code> - The alias or account ID of the principal or service that created the network
+     *        interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-managed</code> - Indicates whether the network interface is being managed by an AWS
-     *        service (for example, AWS Management Console, Auto Scaling, and so on).
+     *        <code>requester-managed</code> - Indicates whether the network interface is being managed by an Amazon Web
+     *        Service (for example, Management Console, Auto Scaling, and so on).
      *        </p>
      *        </li>
      *        <li>

@@ -59,7 +59,7 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
     /**
      * <p>
      * The name of the location from which the address pool is advertised. A network border group is a unique set of
-     * Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     * Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.
      * </p>
      */
     private String networkBorderGroup;
@@ -306,12 +306,12 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
     /**
      * <p>
      * The name of the location from which the address pool is advertised. A network border group is a unique set of
-     * Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     * Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.
      * </p>
      * 
      * @param networkBorderGroup
      *        The name of the location from which the address pool is advertised. A network border group is a unique set
-     *        of Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     *        of Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.
      */
 
     public void setNetworkBorderGroup(String networkBorderGroup) {
@@ -321,11 +321,11 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
     /**
      * <p>
      * The name of the location from which the address pool is advertised. A network border group is a unique set of
-     * Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     * Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.
      * </p>
      * 
      * @return The name of the location from which the address pool is advertised. A network border group is a unique
-     *         set of Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     *         set of Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.
      */
 
     public String getNetworkBorderGroup() {
@@ -335,12 +335,12 @@ public class PublicIpv4Pool implements Serializable, Cloneable {
     /**
      * <p>
      * The name of the location from which the address pool is advertised. A network border group is a unique set of
-     * Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     * Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.
      * </p>
      * 
      * @param networkBorderGroup
      *        The name of the location from which the address pool is advertised. A network border group is a unique set
-     *        of Availability Zones or Local Zones from where AWS advertises public IP addresses.
+     *        of Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

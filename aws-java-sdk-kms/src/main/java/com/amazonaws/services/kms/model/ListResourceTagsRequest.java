@@ -27,10 +27,10 @@ public class ListResourceTagsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Gets tags on the specified customer master key (CMK).
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -77,10 +77,10 @@ public class ListResourceTagsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Gets tags on the specified customer master key (CMK).
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -102,9 +102,9 @@ public class ListResourceTagsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key (CMK).</p>
+     *        Gets tags on the specified customer master key (CMK).</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:
@@ -131,10 +131,10 @@ public class ListResourceTagsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Gets tags on the specified customer master key (CMK).
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -155,9 +155,9 @@ public class ListResourceTagsRequest extends com.amazonaws.AmazonWebServiceReque
      * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * </p>
      * 
-     * @return A unique identifier for the customer master key (CMK).</p>
+     * @return Gets tags on the specified customer master key (CMK).</p>
      *         <p>
-     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         Specify the key ID or key ARN of the CMK.
      *         </p>
      *         <p>
      *         For example:
@@ -184,10 +184,10 @@ public class ListResourceTagsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Gets tags on the specified customer master key (CMK).
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -209,9 +209,9 @@ public class ListResourceTagsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key (CMK).</p>
+     *        Gets tags on the specified customer master key (CMK).</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:

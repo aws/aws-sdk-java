@@ -88,7 +88,7 @@ public class NetworkInterface implements Serializable, Cloneable {
     private String outpostArn;
     /**
      * <p>
-     * The AWS account ID of the owner of the network interface.
+     * The account ID of the owner of the network interface.
      * </p>
      */
     private String ownerId;
@@ -112,13 +112,13 @@ public class NetworkInterface implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<NetworkInterfacePrivateIpAddress> privateIpAddresses;
     /**
      * <p>
-     * The alias or AWS account ID of the principal or service that created the network interface.
+     * The alias or account ID of the principal or service that created the network interface.
      * </p>
      */
     private String requesterId;
     /**
      * <p>
-     * Indicates whether the network interface is being managed by AWS.
+     * Indicates whether the network interface is being managed by Amazon Web Services.
      * </p>
      */
     private Boolean requesterManaged;
@@ -654,11 +654,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the network interface.
+     * The account ID of the owner of the network interface.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the owner of the network interface.
+     *        The account ID of the owner of the network interface.
      */
 
     public void setOwnerId(String ownerId) {
@@ -667,10 +667,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the network interface.
+     * The account ID of the owner of the network interface.
      * </p>
      * 
-     * @return The AWS account ID of the owner of the network interface.
+     * @return The account ID of the owner of the network interface.
      */
 
     public String getOwnerId() {
@@ -679,11 +679,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the network interface.
+     * The account ID of the owner of the network interface.
      * </p>
      * 
      * @param ownerId
-     *        The AWS account ID of the owner of the network interface.
+     *        The account ID of the owner of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -847,11 +847,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The alias or AWS account ID of the principal or service that created the network interface.
+     * The alias or account ID of the principal or service that created the network interface.
      * </p>
      * 
      * @param requesterId
-     *        The alias or AWS account ID of the principal or service that created the network interface.
+     *        The alias or account ID of the principal or service that created the network interface.
      */
 
     public void setRequesterId(String requesterId) {
@@ -860,10 +860,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The alias or AWS account ID of the principal or service that created the network interface.
+     * The alias or account ID of the principal or service that created the network interface.
      * </p>
      * 
-     * @return The alias or AWS account ID of the principal or service that created the network interface.
+     * @return The alias or account ID of the principal or service that created the network interface.
      */
 
     public String getRequesterId() {
@@ -872,11 +872,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The alias or AWS account ID of the principal or service that created the network interface.
+     * The alias or account ID of the principal or service that created the network interface.
      * </p>
      * 
      * @param requesterId
-     *        The alias or AWS account ID of the principal or service that created the network interface.
+     *        The alias or account ID of the principal or service that created the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -887,11 +887,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the network interface is being managed by AWS.
+     * Indicates whether the network interface is being managed by Amazon Web Services.
      * </p>
      * 
      * @param requesterManaged
-     *        Indicates whether the network interface is being managed by AWS.
+     *        Indicates whether the network interface is being managed by Amazon Web Services.
      */
 
     public void setRequesterManaged(Boolean requesterManaged) {
@@ -900,10 +900,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the network interface is being managed by AWS.
+     * Indicates whether the network interface is being managed by Amazon Web Services.
      * </p>
      * 
-     * @return Indicates whether the network interface is being managed by AWS.
+     * @return Indicates whether the network interface is being managed by Amazon Web Services.
      */
 
     public Boolean getRequesterManaged() {
@@ -912,11 +912,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the network interface is being managed by AWS.
+     * Indicates whether the network interface is being managed by Amazon Web Services.
      * </p>
      * 
      * @param requesterManaged
-     *        Indicates whether the network interface is being managed by AWS.
+     *        Indicates whether the network interface is being managed by Amazon Web Services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -927,10 +927,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the network interface is being managed by AWS.
+     * Indicates whether the network interface is being managed by Amazon Web Services.
      * </p>
      * 
-     * @return Indicates whether the network interface is being managed by AWS.
+     * @return Indicates whether the network interface is being managed by Amazon Web Services.
      */
 
     public Boolean isRequesterManaged() {

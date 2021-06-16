@@ -27,11 +27,10 @@ public class GetKeyRotationStatusRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Gets the rotation status for the specified customer master key (CMK).
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -56,11 +55,10 @@ public class GetKeyRotationStatusRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Gets the rotation status for the specified customer master key (CMK).
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -82,10 +80,10 @@ public class GetKeyRotationStatusRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key (CMK).</p>
+     *        Gets the rotation status for the specified customer master key (CMK).</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
-     *        account, you must use the key ARN.
+     *        Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the
+     *        key ARN.
      *        </p>
      *        <p>
      *        For example:
@@ -112,11 +110,10 @@ public class GetKeyRotationStatusRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Gets the rotation status for the specified customer master key (CMK).
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -137,10 +134,10 @@ public class GetKeyRotationStatusRequest extends com.amazonaws.AmazonWebServiceR
      * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * </p>
      * 
-     * @return A unique identifier for the customer master key (CMK).</p>
+     * @return Gets the rotation status for the specified customer master key (CMK).</p>
      *         <p>
-     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
-     *         account, you must use the key ARN.
+     *         Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the
+     *         key ARN.
      *         </p>
      *         <p>
      *         For example:
@@ -167,11 +164,10 @@ public class GetKeyRotationStatusRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Gets the rotation status for the specified customer master key (CMK).
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -193,10 +189,10 @@ public class GetKeyRotationStatusRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key (CMK).</p>
+     *        Gets the rotation status for the specified customer master key (CMK).</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
-     *        account, you must use the key ARN.
+     *        Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the
+     *        key ARN.
      *        </p>
      *        <p>
      *        For example:

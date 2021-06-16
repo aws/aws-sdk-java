@@ -30,9 +30,8 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Identifies the asymmetric CMK that includes the public key.
      * </p>
      * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
-     * alias ARN.
+     * To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
      * </p>
      * <p>
      * For example:
@@ -70,8 +69,9 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved
+     * <i>eventual consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
@@ -82,9 +82,8 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Identifies the asymmetric CMK that includes the public key.
      * </p>
      * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
-     * alias ARN.
+     * To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
      * </p>
      * <p>
      * For example:
@@ -119,9 +118,9 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param keyId
      *        Identifies the asymmetric CMK that includes the public key.</p>
      *        <p>
-     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
-     *        use the key ARN or alias ARN.
+     *        To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it
+     *        with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias
+     *        ARN.
      *        </p>
      *        <p>
      *        For example:
@@ -162,9 +161,8 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Identifies the asymmetric CMK that includes the public key.
      * </p>
      * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
-     * alias ARN.
+     * To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
      * </p>
      * <p>
      * For example:
@@ -198,9 +196,9 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return Identifies the asymmetric CMK that includes the public key.</p>
      *         <p>
-     *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *         alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
-     *         use the key ARN or alias ARN.
+     *         To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it
+     *         with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
+     *         alias ARN.
      *         </p>
      *         <p>
      *         For example:
@@ -241,9 +239,8 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Identifies the asymmetric CMK that includes the public key.
      * </p>
      * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or
-     * alias ARN.
+     * To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with
+     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.
      * </p>
      * <p>
      * For example:
@@ -278,9 +275,9 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param keyId
      *        Identifies the asymmetric CMK that includes the public key.</p>
      *        <p>
-     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must
-     *        use the key ARN or alias ARN.
+     *        To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it
+     *        with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias
+     *        ARN.
      *        </p>
      *        <p>
      *        For example:
@@ -323,16 +320,18 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved
+     * <i>eventual consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return A list of grant tokens.</p>
      *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a>
-     *         in the <i>AWS Key Management Service Developer Guide</i>.
+     *         Use a grant token when your permission to call this operation comes from a new grant that has not yet
+     *         achieved <i>eventual consistency</i>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public java.util.List<String> getGrantTokens() {
@@ -347,16 +346,18 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved
+     * <i>eventual consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        Use a grant token when your permission to call this operation comes from a new grant that has not yet
+     *        achieved <i>eventual consistency</i>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in
      *        the <i>AWS Key Management Service Developer Guide</i>.
      */
 
@@ -374,8 +375,9 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved
+     * <i>eventual consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
@@ -387,8 +389,9 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        Use a grant token when your permission to call this operation comes from a new grant that has not yet
+     *        achieved <i>eventual consistency</i>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in
      *        the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -408,16 +411,18 @@ public class GetPublicKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A list of grant tokens.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in the
+     * Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved
+     * <i>eventual consistency</i>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param grantTokens
      *        A list of grant tokens.</p>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant Tokens</a> in
+     *        Use a grant token when your permission to call this operation comes from a new grant that has not yet
+     *        achieved <i>eventual consistency</i>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in
      *        the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

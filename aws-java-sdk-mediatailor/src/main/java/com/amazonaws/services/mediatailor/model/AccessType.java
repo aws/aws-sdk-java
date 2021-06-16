@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AccessType {
 
-    S3_SIGV4("S3_SIGV4");
+    S3_SIGV4("S3_SIGV4"),
+    SECRETS_MANAGER_ACCESS_TOKEN("SECRETS_MANAGER_ACCESS_TOKEN");
 
     private String value;
 

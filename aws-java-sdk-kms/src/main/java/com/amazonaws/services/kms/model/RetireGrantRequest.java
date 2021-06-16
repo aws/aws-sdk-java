@@ -27,13 +27,20 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Token that identifies the grant to be retired.
+     * Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved
+     * eventual consistency.
+     * </p>
+     * <p>
+     * Only the <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private String grantToken;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK associated with the grant.
+     * The key ARN CMK associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.
      * </p>
      * <p>
      * For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
@@ -42,8 +49,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String keyId;
     /**
      * <p>
-     * Unique identifier of the grant to retire. The grant ID is returned in the response to a <code>CreateGrant</code>
-     * operation.
+     * Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     * <a>ListRetirableGrants</a>.
      * </p>
      * <ul>
      * <li>
@@ -57,11 +64,24 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Token that identifies the grant to be retired.
+     * Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved
+     * eventual consistency.
+     * </p>
+     * <p>
+     * Only the <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param grantToken
-     *        Token that identifies the grant to be retired.
+     *        Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has
+     *        achieved eventual consistency.</p>
+     *        <p>
+     *        Only the <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and
+     *        <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">
+     *        Eventual consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public void setGrantToken(String grantToken) {
@@ -70,10 +90,23 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Token that identifies the grant to be retired.
+     * Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved
+     * eventual consistency.
+     * </p>
+     * <p>
+     * Only the <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return Token that identifies the grant to be retired.
+     * @return Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has
+     *         achieved eventual consistency.</p>
+     *         <p>
+     *         Only the <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and
+     *         <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">
+     *         Eventual consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public String getGrantToken() {
@@ -82,11 +115,24 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Token that identifies the grant to be retired.
+     * Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has achieved
+     * eventual consistency.
+     * </p>
+     * <p>
+     * Only the <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual
+     * consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param grantToken
-     *        Token that identifies the grant to be retired.
+     *        Identifies the grant to be retired. You can use a grant token to identify a new grant even before it has
+     *        achieved eventual consistency.</p>
+     *        <p>
+     *        Only the <a>CreateGrant</a> operation returns a grant token. For details, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and
+     *        <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">
+     *        Eventual consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,14 +143,14 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK associated with the grant.
+     * The key ARN CMK associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.
      * </p>
      * <p>
      * For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * 
      * @param keyId
-     *        The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
+     *        The key ARN CMK associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.</p>
      *        <p>
      *        For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      */
@@ -115,13 +161,13 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK associated with the grant.
+     * The key ARN CMK associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.
      * </p>
      * <p>
      * For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
+     * @return The key ARN CMK associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.</p>
      *         <p>
      *         For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      */
@@ -132,14 +178,14 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK associated with the grant.
+     * The key ARN CMK associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.
      * </p>
      * <p>
      * For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p>
      * 
      * @param keyId
-     *        The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
+     *        The key ARN CMK associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.</p>
      *        <p>
      *        For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -152,8 +198,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the grant to retire. The grant ID is returned in the response to a <code>CreateGrant</code>
-     * operation.
+     * Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     * <a>ListRetirableGrants</a>.
      * </p>
      * <ul>
      * <li>
@@ -164,8 +210,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param grantId
-     *        Unique identifier of the grant to retire. The grant ID is returned in the response to a
-     *        <code>CreateGrant</code> operation.</p>
+     *        Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     *        <a>ListRetirableGrants</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -180,8 +226,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the grant to retire. The grant ID is returned in the response to a <code>CreateGrant</code>
-     * operation.
+     * Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     * <a>ListRetirableGrants</a>.
      * </p>
      * <ul>
      * <li>
@@ -191,8 +237,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return Unique identifier of the grant to retire. The grant ID is returned in the response to a
-     *         <code>CreateGrant</code> operation.</p>
+     * @return Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     *         <a>ListRetirableGrants</a>.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -207,8 +253,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier of the grant to retire. The grant ID is returned in the response to a <code>CreateGrant</code>
-     * operation.
+     * Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     * <a>ListRetirableGrants</a>.
      * </p>
      * <ul>
      * <li>
@@ -219,8 +265,8 @@ public class RetireGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param grantId
-     *        Unique identifier of the grant to retire. The grant ID is returned in the response to a
-     *        <code>CreateGrant</code> operation.</p>
+     *        Identifies the grant to retire. To get the grant ID, use <a>CreateGrant</a>, <a>ListGrants</a>, or
+     *        <a>ListRetirableGrants</a>.</p>
      *        <ul>
      *        <li>
      *        <p>

@@ -1,3 +1,20 @@
+# __1.12.8__ __2021-06-16__
+## __AWS Key Management Service__
+  - ### Features
+    - Adds support for multi-Region keys
+
+## __AWS MediaTailor__
+  - ### Features
+    - Adds AWS Secrets Manager Access Token Authentication for Source Locations
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for VLAN-tagged network traffic over an Elastic Network Interface (ENI). This feature is in limited Preview for this release. Contact your account manager if you are interested in this feature.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release enables fast cloning in Aurora Serverless. You can now clone between Aurora Serverless clusters and Aurora Provisioned clusters.
+
 # __1.12.7__ __2021-06-15__
 ## __AWS SDK for Java__
   - ### Features
@@ -31,6 +48,10 @@
 ## __AWS IoT Greengrass V2__
   - ### Features
     - We have verified the APIs being released here and are ready to release
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Added path normalization when creating a canonical request for signers. Supports pathnames with dots.
 
 ## __Amazon Lookout for Metrics__
   - ### Features

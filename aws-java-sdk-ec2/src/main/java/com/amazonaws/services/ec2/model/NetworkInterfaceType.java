@@ -22,7 +22,8 @@ public enum NetworkInterfaceType {
 
     Interface("interface"),
     NatGateway("natGateway"),
-    Efa("efa");
+    Efa("efa"),
+    Trunk("trunk");
 
     private String value;
 

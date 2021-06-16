@@ -52,6 +52,11 @@ public class AccessConfigurationJsonUnmarshaller implements Unmarshaller<AccessC
                     context.nextToken();
                     accessConfiguration.setAccessType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SecretsManagerAccessTokenConfiguration", targetDepth)) {
+                    context.nextToken();
+                    accessConfiguration.setSecretsManagerAccessTokenConfiguration(SecretsManagerAccessTokenConfigurationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

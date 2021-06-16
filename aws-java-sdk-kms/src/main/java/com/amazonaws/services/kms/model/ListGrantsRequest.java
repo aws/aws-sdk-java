@@ -48,8 +48,7 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Returns only grants for the specified customer master key (CMK). This parameter is required.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -202,8 +201,7 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Returns only grants for the specified customer master key (CMK). This parameter is required.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -227,8 +225,8 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param keyId
      *        Returns only grants for the specified customer master key (CMK). This parameter is required.</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
-     *        account, you must use the key ARN.
+     *        Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the
+     *        key ARN.
      *        </p>
      *        <p>
      *        For example:
@@ -258,8 +256,7 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Returns only grants for the specified customer master key (CMK). This parameter is required.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -282,8 +279,8 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @return Returns only grants for the specified customer master key (CMK). This parameter is required.</p>
      *         <p>
-     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
-     *         account, you must use the key ARN.
+     *         Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the
+     *         key ARN.
      *         </p>
      *         <p>
      *         For example:
@@ -313,8 +310,7 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Returns only grants for the specified customer master key (CMK). This parameter is required.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you
-     * must use the key ARN.
+     * Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the key ARN.
      * </p>
      * <p>
      * For example:
@@ -338,8 +334,8 @@ public class ListGrantsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param keyId
      *        Returns only grants for the specified customer master key (CMK). This parameter is required.</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS
-     *        account, you must use the key ARN.
+     *        Specify the key ID or key ARN of the CMK. To specify a CMK in a different AWS account, you must use the
+     *        key ARN.
      *        </p>
      *        <p>
      *        For example:

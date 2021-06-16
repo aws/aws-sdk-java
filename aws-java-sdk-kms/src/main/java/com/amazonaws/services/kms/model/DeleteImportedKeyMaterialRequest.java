@@ -31,7 +31,7 @@ public class DeleteImportedKeyMaterialRequest extends com.amazonaws.AmazonWebSer
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -60,7 +60,7 @@ public class DeleteImportedKeyMaterialRequest extends com.amazonaws.AmazonWebSer
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -85,7 +85,7 @@ public class DeleteImportedKeyMaterialRequest extends com.amazonaws.AmazonWebSer
      *        Identifies the CMK from which you are deleting imported key material. The <code>Origin</code> of the CMK
      *        must be <code>EXTERNAL</code>.</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:
@@ -116,7 +116,7 @@ public class DeleteImportedKeyMaterialRequest extends com.amazonaws.AmazonWebSer
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -140,7 +140,7 @@ public class DeleteImportedKeyMaterialRequest extends com.amazonaws.AmazonWebSer
      * @return Identifies the CMK from which you are deleting imported key material. The <code>Origin</code> of the CMK
      *         must be <code>EXTERNAL</code>.</p>
      *         <p>
-     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         Specify the key ID or key ARN of the CMK.
      *         </p>
      *         <p>
      *         For example:
@@ -171,7 +171,7 @@ public class DeleteImportedKeyMaterialRequest extends com.amazonaws.AmazonWebSer
      * <code>EXTERNAL</code>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -196,7 +196,7 @@ public class DeleteImportedKeyMaterialRequest extends com.amazonaws.AmazonWebSer
      *        Identifies the CMK from which you are deleting imported key material. The <code>Origin</code> of the CMK
      *        must be <code>EXTERNAL</code>.</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:

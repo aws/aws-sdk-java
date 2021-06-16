@@ -27,10 +27,10 @@ public class EnableKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Identifies the customer master key (CMK) to enable.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -55,10 +55,10 @@ public class EnableKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Identifies the customer master key (CMK) to enable.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -80,9 +80,9 @@ public class EnableKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key (CMK).</p>
+     *        Identifies the customer master key (CMK) to enable.</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:
@@ -109,10 +109,10 @@ public class EnableKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Identifies the customer master key (CMK) to enable.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -133,9 +133,9 @@ public class EnableKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.
      * </p>
      * 
-     * @return A unique identifier for the customer master key (CMK).</p>
+     * @return Identifies the customer master key (CMK) to enable.</p>
      *         <p>
-     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         Specify the key ID or key ARN of the CMK.
      *         </p>
      *         <p>
      *         For example:
@@ -162,10 +162,10 @@ public class EnableKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Identifies the customer master key (CMK) to enable.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -187,9 +187,9 @@ public class EnableKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key (CMK).</p>
+     *        Identifies the customer master key (CMK) to enable.</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:

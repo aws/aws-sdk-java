@@ -1639,6 +1639,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ReplicateKeyResult> replicateKeyAsync(ReplicateKeyRequest request) {
+
+        return replicateKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicateKeyResult> replicateKeyAsync(final ReplicateKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ReplicateKeyRequest, ReplicateKeyResult> asyncHandler) {
+        final ReplicateKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ReplicateKeyResult>() {
+            @Override
+            public ReplicateKeyResult call() throws Exception {
+                ReplicateKeyResult result = null;
+
+                try {
+                    result = executeReplicateKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RetireGrantResult> retireGrantAsync(RetireGrantRequest request) {
 
         return retireGrantAsync(request, null);
@@ -1943,6 +1976,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
 
                 try {
                     result = executeUpdateKeyDescription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrimaryRegionResult> updatePrimaryRegionAsync(UpdatePrimaryRegionRequest request) {
+
+        return updatePrimaryRegionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrimaryRegionResult> updatePrimaryRegionAsync(final UpdatePrimaryRegionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePrimaryRegionRequest, UpdatePrimaryRegionResult> asyncHandler) {
+        final UpdatePrimaryRegionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePrimaryRegionResult>() {
+            @Override
+            public UpdatePrimaryRegionResult call() throws Exception {
+                UpdatePrimaryRegionResult result = null;
+
+                try {
+                    result = executeUpdatePrimaryRegion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

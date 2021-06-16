@@ -53,7 +53,7 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * and ARN</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -173,7 +173,7 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * and ARN</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -207,7 +207,7 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Key ID and ARN</a> in the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:
@@ -247,7 +247,7 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * and ARN</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -280,7 +280,7 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         the Key ID and ARN</a> in the <i>AWS Key Management Service Developer Guide</i>.
      *         </p>
      *         <p>
-     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         Specify the key ID or key ARN of the CMK.
      *         </p>
      *         <p>
      *         For example:
@@ -320,7 +320,7 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * and ARN</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -354,7 +354,7 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Key ID and ARN</a> in the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:

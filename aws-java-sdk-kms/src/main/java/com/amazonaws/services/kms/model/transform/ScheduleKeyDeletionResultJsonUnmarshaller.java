@@ -56,6 +56,14 @@ public class ScheduleKeyDeletionResultJsonUnmarshaller implements Unmarshaller<S
                     context.nextToken();
                     scheduleKeyDeletionResult.setDeletionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("KeyState", targetDepth)) {
+                    context.nextToken();
+                    scheduleKeyDeletionResult.setKeyState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PendingWindowInDays", targetDepth)) {
+                    context.nextToken();
+                    scheduleKeyDeletionResult.setPendingWindowInDays(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

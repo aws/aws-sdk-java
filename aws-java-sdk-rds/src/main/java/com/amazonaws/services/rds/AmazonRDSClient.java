@@ -7216,7 +7216,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
-     * <important>
+     * <note>
+     * <p>
+     * Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without
+     * failover to the DB cluster associated with the parameter group before the change can take effect.
+     * </p>
+     * </note> <important>
      * <p>
      * After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB
      * cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon RDS to fully
@@ -7488,7 +7493,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
      * parameters can be modified in a single request.
      * </p>
-     * <important>
+     * <note>
+     * <p>
+     * Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without
+     * failover to the DB instance associated with the parameter group before the change can take effect.
+     * </p>
+     * </note> <important>
      * <p>
      * After you modify a DB parameter group, you should wait at least 5 minutes before creating your first DB instance
      * that uses that DB parameter group as the default parameter group. This allows Amazon RDS to fully complete the

@@ -56,6 +56,12 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String accessType;
+    /**
+     * <p>
+     * AWS Secrets Manager access token configuration parameters.
+     * </p>
+     */
+    private SecretsManagerAccessTokenConfiguration secretsManagerAccessTokenConfiguration;
 
     /**
      * <p>
@@ -297,6 +303,46 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * AWS Secrets Manager access token configuration parameters.
+     * </p>
+     * 
+     * @param secretsManagerAccessTokenConfiguration
+     *        AWS Secrets Manager access token configuration parameters.
+     */
+
+    public void setSecretsManagerAccessTokenConfiguration(SecretsManagerAccessTokenConfiguration secretsManagerAccessTokenConfiguration) {
+        this.secretsManagerAccessTokenConfiguration = secretsManagerAccessTokenConfiguration;
+    }
+
+    /**
+     * <p>
+     * AWS Secrets Manager access token configuration parameters.
+     * </p>
+     * 
+     * @return AWS Secrets Manager access token configuration parameters.
+     */
+
+    public SecretsManagerAccessTokenConfiguration getSecretsManagerAccessTokenConfiguration() {
+        return this.secretsManagerAccessTokenConfiguration;
+    }
+
+    /**
+     * <p>
+     * AWS Secrets Manager access token configuration parameters.
+     * </p>
+     * 
+     * @param secretsManagerAccessTokenConfiguration
+     *        AWS Secrets Manager access token configuration parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessConfiguration withSecretsManagerAccessTokenConfiguration(SecretsManagerAccessTokenConfiguration secretsManagerAccessTokenConfiguration) {
+        setSecretsManagerAccessTokenConfiguration(secretsManagerAccessTokenConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -309,7 +355,9 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessType() != null)
-            sb.append("AccessType: ").append(getAccessType());
+            sb.append("AccessType: ").append(getAccessType()).append(",");
+        if (getSecretsManagerAccessTokenConfiguration() != null)
+            sb.append("SecretsManagerAccessTokenConfiguration: ").append(getSecretsManagerAccessTokenConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -328,6 +376,11 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAccessType() != null && other.getAccessType().equals(this.getAccessType()) == false)
             return false;
+        if (other.getSecretsManagerAccessTokenConfiguration() == null ^ this.getSecretsManagerAccessTokenConfiguration() == null)
+            return false;
+        if (other.getSecretsManagerAccessTokenConfiguration() != null
+                && other.getSecretsManagerAccessTokenConfiguration().equals(this.getSecretsManagerAccessTokenConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -337,6 +390,7 @@ public class AccessConfiguration implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccessType() == null) ? 0 : getAccessType().hashCode());
+        hashCode = prime * hashCode + ((getSecretsManagerAccessTokenConfiguration() == null) ? 0 : getSecretsManagerAccessTokenConfiguration().hashCode());
         return hashCode;
     }
 

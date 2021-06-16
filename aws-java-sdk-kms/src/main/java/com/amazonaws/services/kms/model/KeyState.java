@@ -20,11 +20,14 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum KeyState {
 
+    Creating("Creating"),
     Enabled("Enabled"),
     Disabled("Disabled"),
     PendingDeletion("PendingDeletion"),
     PendingImport("PendingImport"),
-    Unavailable("Unavailable");
+    PendingReplicaDeletion("PendingReplicaDeletion"),
+    Unavailable("Unavailable"),
+    Updating("Updating");
 
     private String value;
 

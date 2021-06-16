@@ -322,22 +322,22 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Advertises an IPv4 or IPv6 address range that is provisioned for use with your AWS resources through bring your
-     * own IP addresses (BYOIP).
+     * Advertises an IPv4 or IPv6 address range that is provisioned for use with your Amazon Web Services resources
+     * through bring your own IP addresses (BYOIP).
      * </p>
      * <p>
      * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
      * time.
      * </p>
      * <p>
-     * We recommend that you stop advertising the BYOIP CIDR from other locations when you advertise it from AWS. To
-     * minimize down time, you can configure your AWS resources to use an address from a BYOIP CIDR before it is
-     * advertised, and then simultaneously stop advertising it from the current location and start advertising it
-     * through AWS.
+     * We recommend that you stop advertising the BYOIP CIDR from other locations when you advertise it from Amazon Web
+     * Services. To minimize down time, you can configure your Amazon Web Services resources to use an address from a
+     * BYOIP CIDR before it is advertised, and then simultaneously stop advertising it from the current location and
+     * start advertising it through Amazon Web Services.
      * </p>
      * <p>
-     * It can take a few minutes before traffic to the specified addresses starts routing to AWS because of BGP
-     * propagation delays.
+     * It can take a few minutes before traffic to the specified addresses starts routing to Amazon Web Services because
+     * of BGP propagation delays.
      * </p>
      * <p>
      * To stop advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.
@@ -353,22 +353,22 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Advertises an IPv4 or IPv6 address range that is provisioned for use with your AWS resources through bring your
-     * own IP addresses (BYOIP).
+     * Advertises an IPv4 or IPv6 address range that is provisioned for use with your Amazon Web Services resources
+     * through bring your own IP addresses (BYOIP).
      * </p>
      * <p>
      * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
      * time.
      * </p>
      * <p>
-     * We recommend that you stop advertising the BYOIP CIDR from other locations when you advertise it from AWS. To
-     * minimize down time, you can configure your AWS resources to use an address from a BYOIP CIDR before it is
-     * advertised, and then simultaneously stop advertising it from the current location and start advertising it
-     * through AWS.
+     * We recommend that you stop advertising the BYOIP CIDR from other locations when you advertise it from Amazon Web
+     * Services. To minimize down time, you can configure your Amazon Web Services resources to use an address from a
+     * BYOIP CIDR before it is advertised, and then simultaneously stop advertising it from the current location and
+     * start advertising it through Amazon Web Services.
      * </p>
      * <p>
-     * It can take a few minutes before traffic to the specified addresses starts routing to AWS because of BGP
-     * propagation delays.
+     * It can take a few minutes before traffic to the specified addresses starts routing to Amazon Web Services because
+     * of BGP propagation delays.
      * </p>
      * <p>
      * To stop advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.
@@ -389,21 +389,21 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Allocates an Elastic IP address to your AWS account. After you allocate the Elastic IP address you can associate
-     * it with an instance or network interface. After you release an Elastic IP address, it is released to the IP
-     * address pool and can be allocated to a different AWS account.
+     * Allocates an Elastic IP address to your account. After you allocate the Elastic IP address you can associate it
+     * with an instance or network interface. After you release an Elastic IP address, it is released to the IP address
+     * pool and can be allocated to a different account.
      * </p>
      * <p>
-     * You can allocate an Elastic IP address from an address pool owned by AWS or from an address pool created from a
-     * public IPv4 address range that you have brought to AWS for use with your AWS resources using bring your own IP
-     * addresses (BYOIP). For more information, see <a
+     * You can allocate an Elastic IP address from an address pool owned by Amazon Web Services or from an address pool
+     * created from a public IPv4 address range that you have brought to Amazon Web Services for use with your Amazon
+     * Web Services resources using bring your own IP addresses (BYOIP). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP
-     * address that you released after it is allocated to another AWS account. You cannot recover an Elastic IP address
-     * for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.
+     * address that you released after it is allocated to another account. You cannot recover an Elastic IP address for
+     * EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.
      * </p>
      * <p>
      * An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
@@ -429,21 +429,21 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Allocates an Elastic IP address to your AWS account. After you allocate the Elastic IP address you can associate
-     * it with an instance or network interface. After you release an Elastic IP address, it is released to the IP
-     * address pool and can be allocated to a different AWS account.
+     * Allocates an Elastic IP address to your account. After you allocate the Elastic IP address you can associate it
+     * with an instance or network interface. After you release an Elastic IP address, it is released to the IP address
+     * pool and can be allocated to a different account.
      * </p>
      * <p>
-     * You can allocate an Elastic IP address from an address pool owned by AWS or from an address pool created from a
-     * public IPv4 address range that you have brought to AWS for use with your AWS resources using bring your own IP
-     * addresses (BYOIP). For more information, see <a
+     * You can allocate an Elastic IP address from an address pool owned by Amazon Web Services or from an address pool
+     * created from a public IPv4 address range that you have brought to Amazon Web Services for use with your Amazon
+     * Web Services resources using bring your own IP addresses (BYOIP). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP
-     * address that you released after it is allocated to another AWS account. You cannot recover an Elastic IP address
-     * for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.
+     * address that you released after it is allocated to another account. You cannot recover an Elastic IP address for
+     * EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.
      * </p>
      * <p>
      * An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
@@ -1145,6 +1145,59 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<AssociateTransitGatewayRouteTableResult> associateTransitGatewayRouteTableAsync(
             AssociateTransitGatewayRouteTableRequest associateTransitGatewayRouteTableRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateTransitGatewayRouteTableRequest, AssociateTransitGatewayRouteTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a branch network interface with a trunk network interface.
+     * </p>
+     * <p>
+     * Before you create the association, run the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"
+     * >create-network-interface</a> command and set <code>--interface-type</code> to <code>trunk</code>. You must also
+     * create a network interface for each branch network interface that you want to associate with the trunk network
+     * interface.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
+     * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param associateTrunkInterfaceRequest
+     * @return A Java Future containing the result of the AssociateTrunkInterface operation returned by the service.
+     * @sample AmazonEC2Async.AssociateTrunkInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTrunkInterface" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateTrunkInterfaceResult> associateTrunkInterfaceAsync(AssociateTrunkInterfaceRequest associateTrunkInterfaceRequest);
+
+    /**
+     * <p>
+     * Associates a branch network interface with a trunk network interface.
+     * </p>
+     * <p>
+     * Before you create the association, run the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"
+     * >create-network-interface</a> command and set <code>--interface-type</code> to <code>trunk</code>. You must also
+     * create a network interface for each branch network interface that you want to associate with the trunk network
+     * interface.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
+     * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param associateTrunkInterfaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateTrunkInterface operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.AssociateTrunkInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTrunkInterface" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateTrunkInterfaceResult> associateTrunkInterfaceAsync(AssociateTrunkInterfaceRequest associateTrunkInterfaceRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateTrunkInterfaceRequest, AssociateTrunkInterfaceResult> asyncHandler);
 
     /**
      * <p>
@@ -3666,11 +3719,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Grants an AWS-authorized account permission to attach the specified network interface to an instance in their
-     * account.
+     * Grants an Amazon Web Services-authorized account permission to attach the specified network interface to an
+     * instance in their account.
      * </p>
      * <p>
-     * You can grant permission to a single AWS account only, and only one account at a time.
+     * You can grant permission to a single account only, and only one account at a time.
      * </p>
      * 
      * @param createNetworkInterfacePermissionRequest
@@ -3686,11 +3739,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Grants an AWS-authorized account permission to attach the specified network interface to an instance in their
-     * account.
+     * Grants an Amazon Web Services-authorized account permission to attach the specified network interface to an
+     * instance in their account.
      * </p>
      * <p>
-     * You can grant permission to a single AWS account only, and only one account at a time.
+     * You can grant permission to a single account only, and only one account at a time.
      * </p>
      * 
      * @param createNetworkInterfacePermissionRequest
@@ -7909,8 +7962,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Releases the specified address range that you provisioned for use with your AWS resources through bring your own
-     * IP addresses (BYOIP) and deletes the corresponding address pool.
+     * Releases the specified address range that you provisioned for use with your Amazon Web Services resources through
+     * bring your own IP addresses (BYOIP) and deletes the corresponding address pool.
      * </p>
      * <p>
      * Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a> and you must
@@ -7927,8 +7980,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Releases the specified address range that you provisioned for use with your AWS resources through bring your own
-     * IP addresses (BYOIP) and deletes the corresponding address pool.
+     * Releases the specified address range that you provisioned for use with your Amazon Web Services resources through
+     * bring your own IP addresses (BYOIP) and deletes the corresponding address pool.
      * </p>
      * <p>
      * Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a> and you must
@@ -10839,7 +10892,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes your managed prefix lists and any AWS-managed prefix lists.
+     * Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
      * </p>
      * <p>
      * To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
@@ -10856,7 +10909,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes your managed prefix lists and any AWS-managed prefix lists.
+     * Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
      * </p>
      * <p>
      * To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
@@ -11257,8 +11310,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes available AWS services in a prefix list format, which includes the prefix list name and prefix list ID
-     * of the service and the IP address range for the service.
+     * Describes available Amazon Web Services services in a prefix list format, which includes the prefix list name and
+     * prefix list ID of the service and the IP address range for the service.
      * </p>
      * <p>
      * We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
@@ -11274,8 +11327,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes available AWS services in a prefix list format, which includes the prefix list name and prefix list ID
-     * of the service and the IP address range for the service.
+     * Describes available Amazon Web Services services in a prefix list format, which includes the prefix list name and
+     * prefix list ID of the service and the IP address range for the service.
      * </p>
      * <p>
      * We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
@@ -13222,6 +13275,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes one or more network interface trunk associations.
+     * </p>
+     * 
+     * @param describeTrunkInterfaceAssociationsRequest
+     * @return A Java Future containing the result of the DescribeTrunkInterfaceAssociations operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeTrunkInterfaceAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrunkInterfaceAssociationsResult> describeTrunkInterfaceAssociationsAsync(
+            DescribeTrunkInterfaceAssociationsRequest describeTrunkInterfaceAssociationsRequest);
+
+    /**
+     * <p>
+     * Describes one or more network interface trunk associations.
+     * </p>
+     * 
+     * @param describeTrunkInterfaceAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTrunkInterfaceAssociations operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeTrunkInterfaceAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrunkInterfaceAssociationsResult> describeTrunkInterfaceAssociationsAsync(
+            DescribeTrunkInterfaceAssociationsRequest describeTrunkInterfaceAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrunkInterfaceAssociationsRequest, DescribeTrunkInterfaceAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified attribute of the specified volume. You can specify only one attribute at a time.
      * </p>
      * <p>
@@ -14974,6 +15062,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DisassociateTransitGatewayRouteTableResult> disassociateTransitGatewayRouteTableAsync(
             DisassociateTransitGatewayRouteTableRequest disassociateTransitGatewayRouteTableRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateTransitGatewayRouteTableRequest, DisassociateTransitGatewayRouteTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes an association between a branch network interface with a trunk network interface.
+     * </p>
+     * 
+     * @param disassociateTrunkInterfaceRequest
+     * @return A Java Future containing the result of the DisassociateTrunkInterface operation returned by the service.
+     * @sample AmazonEC2Async.DisassociateTrunkInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateTrunkInterfaceResult> disassociateTrunkInterfaceAsync(
+            DisassociateTrunkInterfaceRequest disassociateTrunkInterfaceRequest);
+
+    /**
+     * <p>
+     * Removes an association between a branch network interface with a trunk network interface.
+     * </p>
+     * 
+     * @param disassociateTrunkInterfaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateTrunkInterface operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DisassociateTrunkInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateTrunkInterfaceResult> disassociateTrunkInterfaceAsync(
+            DisassociateTrunkInterfaceRequest disassociateTrunkInterfaceRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateTrunkInterfaceRequest, DisassociateTrunkInterfaceResult> asyncHandler);
 
     /**
      * <p>
@@ -19263,15 +19384,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Provisions an IPv4 or IPv6 address range for use with your AWS resources through bring your own IP addresses
-     * (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is ready to be
-     * advertised using <a>AdvertiseByoipCidr</a>.
+     * Provisions an IPv4 or IPv6 address range for use with your Amazon Web Services resources through bring your own
+     * IP addresses (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is
+     * ready to be advertised using <a>AdvertiseByoipCidr</a>.
      * </p>
      * <p>
-     * AWS verifies that you own the address range and are authorized to advertise it. You must ensure that the address
-     * range is registered to you and that you created an RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise
-     * the address range. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a>
+     * Amazon Web Services verifies that you own the address range and are authorized to advertise it. You must ensure
+     * that the address range is registered to you and that you created an RPKI ROA to authorize Amazon ASNs 16509 and
+     * 14618 to advertise the address range. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring your own IP addresses (BYOIP)</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -19292,15 +19413,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Provisions an IPv4 or IPv6 address range for use with your AWS resources through bring your own IP addresses
-     * (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is ready to be
-     * advertised using <a>AdvertiseByoipCidr</a>.
+     * Provisions an IPv4 or IPv6 address range for use with your Amazon Web Services resources through bring your own
+     * IP addresses (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is
+     * ready to be advertised using <a>AdvertiseByoipCidr</a>.
      * </p>
      * <p>
-     * AWS verifies that you own the address range and are authorized to advertise it. You must ensure that the address
-     * range is registered to you and that you created an RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise
-     * the address range. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a>
+     * Amazon Web Services verifies that you own the address range and are authorized to advertise it. You must ensure
+     * that the address range is registered to you and that you created an RPKI ROA to authorize Amazon ASNs 16509 and
+     * 14618 to advertise the address range. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring your own IP addresses (BYOIP)</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -20059,7 +20180,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * After releasing an Elastic IP address, it is released to the IP address pool. Be sure to update your DNS records
      * and any servers or devices that communicate with the address. If you attempt to release an Elastic IP address
      * that you already released, you'll get an <code>AuthFailure</code> error if the address is already allocated to
-     * another AWS account.
+     * another account.
      * </p>
      * <p>
      * [EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able to recover it. For more
@@ -20090,7 +20211,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * After releasing an Elastic IP address, it is released to the IP address pool. Be sure to update your DNS records
      * and any servers or devices that communicate with the address. If you attempt to release an Elastic IP address
      * that you already released, you'll get an <code>AuthFailure</code> error if the address is already allocated to
-     * another AWS account.
+     * another account.
      * </p>
      * <p>
      * [EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able to recover it. For more
@@ -22147,8 +22268,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * time.
      * </p>
      * <p>
-     * It can take a few minutes before traffic to the specified addresses stops routing to AWS because of BGP
-     * propagation delays.
+     * It can take a few minutes before traffic to the specified addresses stops routing to Amazon Web Services because
+     * of BGP propagation delays.
      * </p>
      * 
      * @param withdrawByoipCidrRequest
@@ -22168,8 +22289,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * time.
      * </p>
      * <p>
-     * It can take a few minutes before traffic to the specified addresses stops routing to AWS because of BGP
-     * propagation delays.
+     * It can take a few minutes before traffic to the specified addresses stops routing to Amazon Web Services because
+     * of BGP propagation delays.
      * </p>
      * 
      * @param withdrawByoipCidrRequest

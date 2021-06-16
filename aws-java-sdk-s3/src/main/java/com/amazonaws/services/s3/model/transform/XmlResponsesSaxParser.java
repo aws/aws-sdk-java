@@ -247,6 +247,7 @@ public class XmlResponsesSaxParser {
      * @throws SAXNotSupportedException
      */
     private void disableExternalResourceFetching(XMLReader reader) throws SAXNotRecognizedException, SAXNotSupportedException {
+        reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
         reader.setFeature("http://xml.org/sax/features/external-general-entities", false);
         reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
         reader.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd",false);

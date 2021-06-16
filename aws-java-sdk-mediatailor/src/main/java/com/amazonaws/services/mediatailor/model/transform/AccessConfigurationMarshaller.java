@@ -29,6 +29,8 @@ public class AccessConfigurationMarshaller {
 
     private static final MarshallingInfo<String> ACCESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessType").build();
+    private static final MarshallingInfo<StructuredPojo> SECRETSMANAGERACCESSTOKENCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessTokenConfiguration").build();
 
     private static final AccessConfigurationMarshaller instance = new AccessConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class AccessConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(accessConfiguration.getAccessType(), ACCESSTYPE_BINDING);
+            protocolMarshaller.marshall(accessConfiguration.getSecretsManagerAccessTokenConfiguration(), SECRETSMANAGERACCESSTOKENCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

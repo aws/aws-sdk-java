@@ -1048,6 +1048,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateTrunkInterfaceResult> associateTrunkInterfaceAsync(AssociateTrunkInterfaceRequest request) {
+
+        return associateTrunkInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateTrunkInterfaceResult> associateTrunkInterfaceAsync(final AssociateTrunkInterfaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateTrunkInterfaceRequest, AssociateTrunkInterfaceResult> asyncHandler) {
+        final AssociateTrunkInterfaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateTrunkInterfaceResult>() {
+            @Override
+            public AssociateTrunkInterfaceResult call() throws Exception {
+                AssociateTrunkInterfaceResult result = null;
+
+                try {
+                    result = executeAssociateTrunkInterface(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateVpcCidrBlockResult> associateVpcCidrBlockAsync(AssociateVpcCidrBlockRequest request) {
 
         return associateVpcCidrBlockAsync(request, null);
@@ -10321,6 +10354,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTrunkInterfaceAssociationsResult> describeTrunkInterfaceAssociationsAsync(
+            DescribeTrunkInterfaceAssociationsRequest request) {
+
+        return describeTrunkInterfaceAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrunkInterfaceAssociationsResult> describeTrunkInterfaceAssociationsAsync(
+            final DescribeTrunkInterfaceAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTrunkInterfaceAssociationsRequest, DescribeTrunkInterfaceAssociationsResult> asyncHandler) {
+        final DescribeTrunkInterfaceAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTrunkInterfaceAssociationsResult>() {
+            @Override
+            public DescribeTrunkInterfaceAssociationsResult call() throws Exception {
+                DescribeTrunkInterfaceAssociationsResult result = null;
+
+                try {
+                    result = executeDescribeTrunkInterfaceAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeVolumeAttributeResult> describeVolumeAttributeAsync(DescribeVolumeAttributeRequest request) {
 
         return describeVolumeAttributeAsync(request, null);
@@ -11791,6 +11859,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDisassociateTransitGatewayRouteTable(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateTrunkInterfaceResult> disassociateTrunkInterfaceAsync(DisassociateTrunkInterfaceRequest request) {
+
+        return disassociateTrunkInterfaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateTrunkInterfaceResult> disassociateTrunkInterfaceAsync(final DisassociateTrunkInterfaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateTrunkInterfaceRequest, DisassociateTrunkInterfaceResult> asyncHandler) {
+        final DisassociateTrunkInterfaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateTrunkInterfaceResult>() {
+            @Override
+            public DisassociateTrunkInterfaceResult call() throws Exception {
+                DisassociateTrunkInterfaceResult result = null;
+
+                try {
+                    result = executeDisassociateTrunkInterface(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -40,13 +40,13 @@ public class NetworkInterfacePermission implements Serializable, Cloneable {
     private String networkInterfaceId;
     /**
      * <p>
-     * The AWS account ID.
+     * The account ID.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The AWS service.
+     * The Amazon Web Service.
      * </p>
      */
     private String awsService;
@@ -145,11 +145,11 @@ public class NetworkInterfacePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID.
+     * The account ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID.
+     *        The account ID.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -158,10 +158,10 @@ public class NetworkInterfacePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID.
+     * The account ID.
      * </p>
      * 
-     * @return The AWS account ID.
+     * @return The account ID.
      */
 
     public String getAwsAccountId() {
@@ -170,11 +170,11 @@ public class NetworkInterfacePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID.
+     * The account ID.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS account ID.
+     *        The account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +185,11 @@ public class NetworkInterfacePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS service.
+     * The Amazon Web Service.
      * </p>
      * 
      * @param awsService
-     *        The AWS service.
+     *        The Amazon Web Service.
      */
 
     public void setAwsService(String awsService) {
@@ -198,10 +198,10 @@ public class NetworkInterfacePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS service.
+     * The Amazon Web Service.
      * </p>
      * 
-     * @return The AWS service.
+     * @return The Amazon Web Service.
      */
 
     public String getAwsService() {
@@ -210,11 +210,11 @@ public class NetworkInterfacePermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS service.
+     * The Amazon Web Service.
      * </p>
      * 
      * @param awsService
-     *        The AWS service.
+     *        The Amazon Web Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

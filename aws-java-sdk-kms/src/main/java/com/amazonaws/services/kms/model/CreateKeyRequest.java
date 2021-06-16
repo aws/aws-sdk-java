@@ -75,7 +75,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A description of the CMK.
      * </p>
      * <p>
-     * Use a description that helps you decide whether the CMK is appropriate for a task.
+     * Use a description that helps you decide whether the CMK is appropriate for a task. The default value is an empty
+     * string (no description).
      * </p>
      */
     private String description;
@@ -212,21 +213,20 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The source of the key material for the CMK. You cannot change the origin after you create the CMK. The default is
-     * <code>AWS_KMS</code>, which means AWS KMS creates the key material.
+     * <code>AWS_KMS</code>, which means that AWS KMS creates the key material.
      * </p>
      * <p>
-     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
-     * import key material from your existing key management infrastructure. For more information about importing key
-     * material into AWS KMS, see <a
+     * To create a CMK with no key material (for imported key material), set the value to <code>EXTERNAL</code>. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
      * the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for symmetric CMKs.
      * </p>
      * <p>
-     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
+     * To create a CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
-     * and creates its key material in the associated AWS CloudHSM cluster. You must also use the
-     * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is valid only for symmetric
-     * CMKs.
+     * and create its key material in the associated AWS CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>.
+     * You must also use the <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is
+     * valid only for symmetric CMKs.
      * </p>
      */
     private String origin;
@@ -240,7 +240,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Zone in the Region.
      * </p>
      * <p>
-     * This parameter is valid only for symmetric CMKs. You cannot create an asymmetric CMK in a custom key store.
+     * This parameter is valid only for symmetric CMKs and regional CMKs. You cannot create an asymmetric CMK or a
+     * multi-Region CMK in a custom key store.
      * </p>
      * <p>
      * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
@@ -282,25 +283,61 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Boolean bypassPolicyLockoutSafetyCheck;
     /**
      * <p>
-     * One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     * required, but the tag value can be an empty (null) string.
+     * Assigns one or more tags to the CMK. Use this parameter to tag the CMK when it is created. To tag an existing
+     * CMK, use the <a>TagResource</a> operation.
      * </p>
+     * <note>
      * <p>
-     * When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs aggregated by
-     * tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     * Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
-     * <p>
-     * Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the <a>TagResource</a>
-     * operation.
-     * </p>
+     * </note>
      * <p>
      * To use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
      * >kms:TagResource</a> permission in an IAM policy.
      * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag
+     * value can be an empty (null) string. You cannot have more than one tag on a CMK with the same tag key. If you
+     * specify an existing tag key with a different tag value, AWS KMS replaces the current tag value with the specified
+     * one.
+     * </p>
+     * <p>
+     * When you assign tags to an AWS resource, AWS generates a cost allocation report with usage and costs aggregated
+     * by tags. Tags can also be used to control access to a CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Creates a multi-Region primary key that you can replicate into other AWS Regions. You cannot change this value
+     * after you create the CMK.
+     * </p>
+     * <p>
+     * For a multi-Region key, set this parameter to <code>True</code>. For a single-Region CMK, omit this parameter or
+     * set it to <code>False</code>. The default value is <code>False</code>.
+     * </p>
+     * <p>
+     * This operation supports <i>multi-Region keys</i>, an AWS KMS feature that lets you create multiple interoperable
+     * CMKs in different AWS Regions. Because these CMKs have the same key ID, key material, and other metadata, you can
+     * use them to encrypt data in one AWS Region and decrypt it in a different AWS Region without making a cross-Region
+     * call or exposing the plaintext data. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the
+     * <a>ReplicateKey</a> operation.
+     * </p>
+     * <p>
+     * You can create a symmetric or asymmetric multi-Region CMK, and you can create a multi-Region CMK with imported
+     * key material. However, you cannot create a multi-Region CMK in a custom key store.
+     * </p>
+     */
+    private Boolean multiRegion;
 
     /**
      * <p>
@@ -581,13 +618,15 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A description of the CMK.
      * </p>
      * <p>
-     * Use a description that helps you decide whether the CMK is appropriate for a task.
+     * Use a description that helps you decide whether the CMK is appropriate for a task. The default value is an empty
+     * string (no description).
      * </p>
      * 
      * @param description
      *        A description of the CMK.</p>
      *        <p>
-     *        Use a description that helps you decide whether the CMK is appropriate for a task.
+     *        Use a description that helps you decide whether the CMK is appropriate for a task. The default value is an
+     *        empty string (no description).
      */
 
     public void setDescription(String description) {
@@ -599,12 +638,14 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A description of the CMK.
      * </p>
      * <p>
-     * Use a description that helps you decide whether the CMK is appropriate for a task.
+     * Use a description that helps you decide whether the CMK is appropriate for a task. The default value is an empty
+     * string (no description).
      * </p>
      * 
      * @return A description of the CMK.</p>
      *         <p>
-     *         Use a description that helps you decide whether the CMK is appropriate for a task.
+     *         Use a description that helps you decide whether the CMK is appropriate for a task. The default value is
+     *         an empty string (no description).
      */
 
     public String getDescription() {
@@ -616,13 +657,15 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A description of the CMK.
      * </p>
      * <p>
-     * Use a description that helps you decide whether the CMK is appropriate for a task.
+     * Use a description that helps you decide whether the CMK is appropriate for a task. The default value is an empty
+     * string (no description).
      * </p>
      * 
      * @param description
      *        A description of the CMK.</p>
      *        <p>
-     *        Use a description that helps you decide whether the CMK is appropriate for a task.
+     *        Use a description that helps you decide whether the CMK is appropriate for a task. The default value is an
+     *        empty string (no description).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1965,40 +2008,38 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The source of the key material for the CMK. You cannot change the origin after you create the CMK. The default is
-     * <code>AWS_KMS</code>, which means AWS KMS creates the key material.
+     * <code>AWS_KMS</code>, which means that AWS KMS creates the key material.
      * </p>
      * <p>
-     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
-     * import key material from your existing key management infrastructure. For more information about importing key
-     * material into AWS KMS, see <a
+     * To create a CMK with no key material (for imported key material), set the value to <code>EXTERNAL</code>. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
      * the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for symmetric CMKs.
      * </p>
      * <p>
-     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
+     * To create a CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
-     * and creates its key material in the associated AWS CloudHSM cluster. You must also use the
-     * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is valid only for symmetric
-     * CMKs.
+     * and create its key material in the associated AWS CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>.
+     * You must also use the <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is
+     * valid only for symmetric CMKs.
      * </p>
      * 
      * @param origin
      *        The source of the key material for the CMK. You cannot change the origin after you create the CMK. The
-     *        default is <code>AWS_KMS</code>, which means AWS KMS creates the key material.</p>
+     *        default is <code>AWS_KMS</code>, which means that AWS KMS creates the key material.</p>
      *        <p>
-     *        When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
-     *        can import key material from your existing key management infrastructure. For more information about
-     *        importing key material into AWS KMS, see <a
+     *        To create a CMK with no key material (for imported key material), set the value to <code>EXTERNAL</code>.
+     *        For more information about importing key material into AWS KMS, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key
      *        Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for
      *        symmetric CMKs.
      *        </p>
      *        <p>
-     *        When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
+     *        To create a CMK in an AWS KMS <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
-     *        store</a> and creates its key material in the associated AWS CloudHSM cluster. You must also use the
-     *        <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is valid only for
-     *        symmetric CMKs.
+     *        store</a> and create its key material in the associated AWS CloudHSM cluster, set this value to
+     *        <code>AWS_CLOUDHSM</code>. You must also use the <code>CustomKeyStoreId</code> parameter to identify the
+     *        custom key store. This value is valid only for symmetric CMKs.
      * @see OriginType
      */
 
@@ -2009,39 +2050,37 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The source of the key material for the CMK. You cannot change the origin after you create the CMK. The default is
-     * <code>AWS_KMS</code>, which means AWS KMS creates the key material.
+     * <code>AWS_KMS</code>, which means that AWS KMS creates the key material.
      * </p>
      * <p>
-     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
-     * import key material from your existing key management infrastructure. For more information about importing key
-     * material into AWS KMS, see <a
+     * To create a CMK with no key material (for imported key material), set the value to <code>EXTERNAL</code>. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
      * the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for symmetric CMKs.
      * </p>
      * <p>
-     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
+     * To create a CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
-     * and creates its key material in the associated AWS CloudHSM cluster. You must also use the
-     * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is valid only for symmetric
-     * CMKs.
+     * and create its key material in the associated AWS CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>.
+     * You must also use the <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is
+     * valid only for symmetric CMKs.
      * </p>
      * 
      * @return The source of the key material for the CMK. You cannot change the origin after you create the CMK. The
-     *         default is <code>AWS_KMS</code>, which means AWS KMS creates the key material.</p>
+     *         default is <code>AWS_KMS</code>, which means that AWS KMS creates the key material.</p>
      *         <p>
-     *         When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
-     *         can import key material from your existing key management infrastructure. For more information about
-     *         importing key material into AWS KMS, see <a
+     *         To create a CMK with no key material (for imported key material), set the value to <code>EXTERNAL</code>.
+     *         For more information about importing key material into AWS KMS, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key
      *         Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for
      *         symmetric CMKs.
      *         </p>
      *         <p>
-     *         When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
+     *         To create a CMK in an AWS KMS <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
-     *         store</a> and creates its key material in the associated AWS CloudHSM cluster. You must also use the
-     *         <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is valid only for
-     *         symmetric CMKs.
+     *         store</a> and create its key material in the associated AWS CloudHSM cluster, set this value to
+     *         <code>AWS_CLOUDHSM</code>. You must also use the <code>CustomKeyStoreId</code> parameter to identify the
+     *         custom key store. This value is valid only for symmetric CMKs.
      * @see OriginType
      */
 
@@ -2052,40 +2091,38 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The source of the key material for the CMK. You cannot change the origin after you create the CMK. The default is
-     * <code>AWS_KMS</code>, which means AWS KMS creates the key material.
+     * <code>AWS_KMS</code>, which means that AWS KMS creates the key material.
      * </p>
      * <p>
-     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
-     * import key material from your existing key management infrastructure. For more information about importing key
-     * material into AWS KMS, see <a
+     * To create a CMK with no key material (for imported key material), set the value to <code>EXTERNAL</code>. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
      * the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for symmetric CMKs.
      * </p>
      * <p>
-     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
+     * To create a CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
-     * and creates its key material in the associated AWS CloudHSM cluster. You must also use the
-     * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is valid only for symmetric
-     * CMKs.
+     * and create its key material in the associated AWS CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>.
+     * You must also use the <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is
+     * valid only for symmetric CMKs.
      * </p>
      * 
      * @param origin
      *        The source of the key material for the CMK. You cannot change the origin after you create the CMK. The
-     *        default is <code>AWS_KMS</code>, which means AWS KMS creates the key material.</p>
+     *        default is <code>AWS_KMS</code>, which means that AWS KMS creates the key material.</p>
      *        <p>
-     *        When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
-     *        can import key material from your existing key management infrastructure. For more information about
-     *        importing key material into AWS KMS, see <a
+     *        To create a CMK with no key material (for imported key material), set the value to <code>EXTERNAL</code>.
+     *        For more information about importing key material into AWS KMS, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key
      *        Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for
      *        symmetric CMKs.
      *        </p>
      *        <p>
-     *        When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
+     *        To create a CMK in an AWS KMS <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
-     *        store</a> and creates its key material in the associated AWS CloudHSM cluster. You must also use the
-     *        <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is valid only for
-     *        symmetric CMKs.
+     *        store</a> and create its key material in the associated AWS CloudHSM cluster, set this value to
+     *        <code>AWS_CLOUDHSM</code>. You must also use the <code>CustomKeyStoreId</code> parameter to identify the
+     *        custom key store. This value is valid only for symmetric CMKs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginType
      */
@@ -2098,40 +2135,38 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The source of the key material for the CMK. You cannot change the origin after you create the CMK. The default is
-     * <code>AWS_KMS</code>, which means AWS KMS creates the key material.
+     * <code>AWS_KMS</code>, which means that AWS KMS creates the key material.
      * </p>
      * <p>
-     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
-     * import key material from your existing key management infrastructure. For more information about importing key
-     * material into AWS KMS, see <a
+     * To create a CMK with no key material (for imported key material), set the value to <code>EXTERNAL</code>. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
      * the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for symmetric CMKs.
      * </p>
      * <p>
-     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
+     * To create a CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
-     * and creates its key material in the associated AWS CloudHSM cluster. You must also use the
-     * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is valid only for symmetric
-     * CMKs.
+     * and create its key material in the associated AWS CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>.
+     * You must also use the <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is
+     * valid only for symmetric CMKs.
      * </p>
      * 
      * @param origin
      *        The source of the key material for the CMK. You cannot change the origin after you create the CMK. The
-     *        default is <code>AWS_KMS</code>, which means AWS KMS creates the key material.</p>
+     *        default is <code>AWS_KMS</code>, which means that AWS KMS creates the key material.</p>
      *        <p>
-     *        When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
-     *        can import key material from your existing key management infrastructure. For more information about
-     *        importing key material into AWS KMS, see <a
+     *        To create a CMK with no key material (for imported key material), set the value to <code>EXTERNAL</code>.
+     *        For more information about importing key material into AWS KMS, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key
      *        Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for
      *        symmetric CMKs.
      *        </p>
      *        <p>
-     *        When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
+     *        To create a CMK in an AWS KMS <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
-     *        store</a> and creates its key material in the associated AWS CloudHSM cluster. You must also use the
-     *        <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is valid only for
-     *        symmetric CMKs.
+     *        store</a> and create its key material in the associated AWS CloudHSM cluster, set this value to
+     *        <code>AWS_CLOUDHSM</code>. You must also use the <code>CustomKeyStoreId</code> parameter to identify the
+     *        custom key store. This value is valid only for symmetric CMKs.
      * @see OriginType
      */
 
@@ -2142,40 +2177,38 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The source of the key material for the CMK. You cannot change the origin after you create the CMK. The default is
-     * <code>AWS_KMS</code>, which means AWS KMS creates the key material.
+     * <code>AWS_KMS</code>, which means that AWS KMS creates the key material.
      * </p>
      * <p>
-     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
-     * import key material from your existing key management infrastructure. For more information about importing key
-     * material into AWS KMS, see <a
+     * To create a CMK with no key material (for imported key material), set the value to <code>EXTERNAL</code>. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
      * the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for symmetric CMKs.
      * </p>
      * <p>
-     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
+     * To create a CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
-     * and creates its key material in the associated AWS CloudHSM cluster. You must also use the
-     * <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is valid only for symmetric
-     * CMKs.
+     * and create its key material in the associated AWS CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>.
+     * You must also use the <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is
+     * valid only for symmetric CMKs.
      * </p>
      * 
      * @param origin
      *        The source of the key material for the CMK. You cannot change the origin after you create the CMK. The
-     *        default is <code>AWS_KMS</code>, which means AWS KMS creates the key material.</p>
+     *        default is <code>AWS_KMS</code>, which means that AWS KMS creates the key material.</p>
      *        <p>
-     *        When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
-     *        can import key material from your existing key management infrastructure. For more information about
-     *        importing key material into AWS KMS, see <a
+     *        To create a CMK with no key material (for imported key material), set the value to <code>EXTERNAL</code>.
+     *        For more information about importing key material into AWS KMS, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key
      *        Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for
      *        symmetric CMKs.
      *        </p>
      *        <p>
-     *        When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
+     *        To create a CMK in an AWS KMS <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
-     *        store</a> and creates its key material in the associated AWS CloudHSM cluster. You must also use the
-     *        <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is valid only for
-     *        symmetric CMKs.
+     *        store</a> and create its key material in the associated AWS CloudHSM cluster, set this value to
+     *        <code>AWS_CLOUDHSM</code>. You must also use the <code>CustomKeyStoreId</code> parameter to identify the
+     *        custom key store. This value is valid only for symmetric CMKs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginType
      */
@@ -2195,7 +2228,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Zone in the Region.
      * </p>
      * <p>
-     * This parameter is valid only for symmetric CMKs. You cannot create an asymmetric CMK in a custom key store.
+     * This parameter is valid only for symmetric CMKs and regional CMKs. You cannot create an asymmetric CMK or a
+     * multi-Region CMK in a custom key store.
      * </p>
      * <p>
      * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
@@ -2218,8 +2252,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        The AWS CloudHSM cluster that is associated with the custom key store must have at least two active HSMs,
      *        each in a different Availability Zone in the Region.</p>
      *        <p>
-     *        This parameter is valid only for symmetric CMKs. You cannot create an asymmetric CMK in a custom key
-     *        store.
+     *        This parameter is valid only for symmetric CMKs and regional CMKs. You cannot create an asymmetric CMK or
+     *        a multi-Region CMK in a custom key store.
      *        </p>
      *        <p>
      *        To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
@@ -2248,7 +2282,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Zone in the Region.
      * </p>
      * <p>
-     * This parameter is valid only for symmetric CMKs. You cannot create an asymmetric CMK in a custom key store.
+     * This parameter is valid only for symmetric CMKs and regional CMKs. You cannot create an asymmetric CMK or a
+     * multi-Region CMK in a custom key store.
      * </p>
      * <p>
      * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
@@ -2270,8 +2305,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         The AWS CloudHSM cluster that is associated with the custom key store must have at least two active HSMs,
      *         each in a different Availability Zone in the Region.</p>
      *         <p>
-     *         This parameter is valid only for symmetric CMKs. You cannot create an asymmetric CMK in a custom key
-     *         store.
+     *         This parameter is valid only for symmetric CMKs and regional CMKs. You cannot create an asymmetric CMK or
+     *         a multi-Region CMK in a custom key store.
      *         </p>
      *         <p>
      *         To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
@@ -2300,7 +2335,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Zone in the Region.
      * </p>
      * <p>
-     * This parameter is valid only for symmetric CMKs. You cannot create an asymmetric CMK in a custom key store.
+     * This parameter is valid only for symmetric CMKs and regional CMKs. You cannot create an asymmetric CMK or a
+     * multi-Region CMK in a custom key store.
      * </p>
      * <p>
      * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
@@ -2323,8 +2359,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        The AWS CloudHSM cluster that is associated with the custom key store must have at least two active HSMs,
      *        each in a different Availability Zone in the Region.</p>
      *        <p>
-     *        This parameter is valid only for symmetric CMKs. You cannot create an asymmetric CMK in a custom key
-     *        store.
+     *        This parameter is valid only for symmetric CMKs and regional CMKs. You cannot create an asymmetric CMK or
+     *        a multi-Region CMK in a custom key store.
      *        </p>
      *        <p>
      *        To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
@@ -2535,39 +2571,56 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     * required, but the tag value can be an empty (null) string.
+     * Assigns one or more tags to the CMK. Use this parameter to tag the CMK when it is created. To tag an existing
+     * CMK, use the <a>TagResource</a> operation.
      * </p>
+     * <note>
      * <p>
-     * When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs aggregated by
-     * tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     * Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
-     * <p>
-     * Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the <a>TagResource</a>
-     * operation.
-     * </p>
+     * </note>
      * <p>
      * To use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
      * >kms:TagResource</a> permission in an IAM policy.
      * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag
+     * value can be an empty (null) string. You cannot have more than one tag on a CMK with the same tag key. If you
+     * specify an existing tag key with a different tag value, AWS KMS replaces the current tag value with the specified
+     * one.
+     * </p>
+     * <p>
+     * When you assign tags to an AWS resource, AWS generates a cost allocation report with usage and costs aggregated
+     * by tags. Tags can also be used to control access to a CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     * </p>
      * 
-     * @return One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     *         required, but the tag value can be an empty (null) string. </p>
+     * @return Assigns one or more tags to the CMK. Use this parameter to tag the CMK when it is created. To tag an
+     *         existing CMK, use the <a>TagResource</a> operation.</p> <note>
      *         <p>
-     *         When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs
-     *         aggregated by tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     *         Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the
+     *         <i>AWS Key Management Service Developer Guide</i>.
      *         </p>
-     *         <p>
-     *         Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the
-     *         <a>TagResource</a> operation.
-     *         </p>
+     *         </note>
      *         <p>
      *         To use this parameter, you must have <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
      *         >kms:TagResource</a> permission in an IAM policy.
+     *         </p>
+     *         <p>
+     *         Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the
+     *         tag value can be an empty (null) string. You cannot have more than one tag on a CMK with the same tag
+     *         key. If you specify an existing tag key with a different tag value, AWS KMS replaces the current tag
+     *         value with the specified one.
+     *         </p>
+     *         <p>
+     *         When you assign tags to an AWS resource, AWS generates a cost allocation report with usage and costs
+     *         aggregated by tags. Tags can also be used to control access to a CMK. For details, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -2579,40 +2632,57 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     * required, but the tag value can be an empty (null) string.
+     * Assigns one or more tags to the CMK. Use this parameter to tag the CMK when it is created. To tag an existing
+     * CMK, use the <a>TagResource</a> operation.
      * </p>
+     * <note>
      * <p>
-     * When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs aggregated by
-     * tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     * Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
-     * <p>
-     * Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the <a>TagResource</a>
-     * operation.
-     * </p>
+     * </note>
      * <p>
      * To use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
      * >kms:TagResource</a> permission in an IAM policy.
      * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag
+     * value can be an empty (null) string. You cannot have more than one tag on a CMK with the same tag key. If you
+     * specify an existing tag key with a different tag value, AWS KMS replaces the current tag value with the specified
+     * one.
+     * </p>
+     * <p>
+     * When you assign tags to an AWS resource, AWS generates a cost allocation report with usage and costs aggregated
+     * by tags. Tags can also be used to control access to a CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     * </p>
      * 
      * @param tags
-     *        One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     *        required, but the tag value can be an empty (null) string. </p>
+     *        Assigns one or more tags to the CMK. Use this parameter to tag the CMK when it is created. To tag an
+     *        existing CMK, use the <a>TagResource</a> operation.</p> <note>
      *        <p>
-     *        When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs
-     *        aggregated by tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     *        Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the
+     *        <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
-     *        <p>
-     *        Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the
-     *        <a>TagResource</a> operation.
-     *        </p>
+     *        </note>
      *        <p>
      *        To use this parameter, you must have <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
      *        >kms:TagResource</a> permission in an IAM policy.
+     *        </p>
+     *        <p>
+     *        Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the
+     *        tag value can be an empty (null) string. You cannot have more than one tag on a CMK with the same tag key.
+     *        If you specify an existing tag key with a different tag value, AWS KMS replaces the current tag value with
+     *        the specified one.
+     *        </p>
+     *        <p>
+     *        When you assign tags to an AWS resource, AWS generates a cost allocation report with usage and costs
+     *        aggregated by tags. Tags can also be used to control access to a CMK. For details, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -2626,22 +2696,31 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     * required, but the tag value can be an empty (null) string.
+     * Assigns one or more tags to the CMK. Use this parameter to tag the CMK when it is created. To tag an existing
+     * CMK, use the <a>TagResource</a> operation.
      * </p>
+     * <note>
      * <p>
-     * When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs aggregated by
-     * tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     * Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
-     * <p>
-     * Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the <a>TagResource</a>
-     * operation.
-     * </p>
+     * </note>
      * <p>
      * To use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
      * >kms:TagResource</a> permission in an IAM policy.
+     * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag
+     * value can be an empty (null) string. You cannot have more than one tag on a CMK with the same tag key. If you
+     * specify an existing tag key with a different tag value, AWS KMS replaces the current tag value with the specified
+     * one.
+     * </p>
+     * <p>
+     * When you assign tags to an AWS resource, AWS generates a cost allocation report with usage and costs aggregated
+     * by tags. Tags can also be used to control access to a CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2650,21 +2729,29 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param tags
-     *        One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     *        required, but the tag value can be an empty (null) string. </p>
+     *        Assigns one or more tags to the CMK. Use this parameter to tag the CMK when it is created. To tag an
+     *        existing CMK, use the <a>TagResource</a> operation.</p> <note>
      *        <p>
-     *        When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs
-     *        aggregated by tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     *        Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the
+     *        <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
-     *        <p>
-     *        Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the
-     *        <a>TagResource</a> operation.
-     *        </p>
+     *        </note>
      *        <p>
      *        To use this parameter, you must have <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
      *        >kms:TagResource</a> permission in an IAM policy.
+     *        </p>
+     *        <p>
+     *        Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the
+     *        tag value can be an empty (null) string. You cannot have more than one tag on a CMK with the same tag key.
+     *        If you specify an existing tag key with a different tag value, AWS KMS replaces the current tag value with
+     *        the specified one.
+     *        </p>
+     *        <p>
+     *        When you assign tags to an AWS resource, AWS generates a cost allocation report with usage and costs
+     *        aggregated by tags. Tags can also be used to control access to a CMK. For details, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2680,46 +2767,283 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     * required, but the tag value can be an empty (null) string.
+     * Assigns one or more tags to the CMK. Use this parameter to tag the CMK when it is created. To tag an existing
+     * CMK, use the <a>TagResource</a> operation.
      * </p>
+     * <note>
      * <p>
-     * When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs aggregated by
-     * tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     * Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
      * </p>
-     * <p>
-     * Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the <a>TagResource</a>
-     * operation.
-     * </p>
+     * </note>
      * <p>
      * To use this parameter, you must have <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
      * >kms:TagResource</a> permission in an IAM policy.
      * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag
+     * value can be an empty (null) string. You cannot have more than one tag on a CMK with the same tag key. If you
+     * specify an existing tag key with a different tag value, AWS KMS replaces the current tag value with the specified
+     * one.
+     * </p>
+     * <p>
+     * When you assign tags to an AWS resource, AWS generates a cost allocation report with usage and costs aggregated
+     * by tags. Tags can also be used to control access to a CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     * </p>
      * 
      * @param tags
-     *        One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
-     *        required, but the tag value can be an empty (null) string. </p>
+     *        Assigns one or more tags to the CMK. Use this parameter to tag the CMK when it is created. To tag an
+     *        existing CMK, use the <a>TagResource</a> operation.</p> <note>
      *        <p>
-     *        When you add tags to an AWS resource, AWS generates a cost allocation report with usage and costs
-     *        aggregated by tags. For information about adding, changing, deleting and listing tags for CMKs, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
+     *        Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the
+     *        <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
-     *        <p>
-     *        Use this parameter to tag the CMK when it is created. To add tags to an existing CMK, use the
-     *        <a>TagResource</a> operation.
-     *        </p>
+     *        </note>
      *        <p>
      *        To use this parameter, you must have <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
      *        >kms:TagResource</a> permission in an IAM policy.
+     *        </p>
+     *        <p>
+     *        Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the
+     *        tag value can be an empty (null) string. You cannot have more than one tag on a CMK with the same tag key.
+     *        If you specify an existing tag key with a different tag value, AWS KMS replaces the current tag value with
+     *        the specified one.
+     *        </p>
+     *        <p>
+     *        When you assign tags to an AWS resource, AWS generates a cost allocation report with usage and costs
+     *        aggregated by tags. Tags can also be used to control access to a CMK. For details, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateKeyRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
         return this;
+    }
+
+    /**
+     * <p>
+     * Creates a multi-Region primary key that you can replicate into other AWS Regions. You cannot change this value
+     * after you create the CMK.
+     * </p>
+     * <p>
+     * For a multi-Region key, set this parameter to <code>True</code>. For a single-Region CMK, omit this parameter or
+     * set it to <code>False</code>. The default value is <code>False</code>.
+     * </p>
+     * <p>
+     * This operation supports <i>multi-Region keys</i>, an AWS KMS feature that lets you create multiple interoperable
+     * CMKs in different AWS Regions. Because these CMKs have the same key ID, key material, and other metadata, you can
+     * use them to encrypt data in one AWS Region and decrypt it in a different AWS Region without making a cross-Region
+     * call or exposing the plaintext data. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the
+     * <a>ReplicateKey</a> operation.
+     * </p>
+     * <p>
+     * You can create a symmetric or asymmetric multi-Region CMK, and you can create a multi-Region CMK with imported
+     * key material. However, you cannot create a multi-Region CMK in a custom key store.
+     * </p>
+     * 
+     * @param multiRegion
+     *        Creates a multi-Region primary key that you can replicate into other AWS Regions. You cannot change this
+     *        value after you create the CMK. </p>
+     *        <p>
+     *        For a multi-Region key, set this parameter to <code>True</code>. For a single-Region CMK, omit this
+     *        parameter or set it to <code>False</code>. The default value is <code>False</code>.
+     *        </p>
+     *        <p>
+     *        This operation supports <i>multi-Region keys</i>, an AWS KMS feature that lets you create multiple
+     *        interoperable CMKs in different AWS Regions. Because these CMKs have the same key ID, key material, and
+     *        other metadata, you can use them to encrypt data in one AWS Region and decrypt it in a different AWS
+     *        Region without making a cross-Region call or exposing the plaintext data. For more information about
+     *        multi-Region keys, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *        multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the
+     *        <a>ReplicateKey</a> operation.
+     *        </p>
+     *        <p>
+     *        You can create a symmetric or asymmetric multi-Region CMK, and you can create a multi-Region CMK with
+     *        imported key material. However, you cannot create a multi-Region CMK in a custom key store.
+     */
+
+    public void setMultiRegion(Boolean multiRegion) {
+        this.multiRegion = multiRegion;
+    }
+
+    /**
+     * <p>
+     * Creates a multi-Region primary key that you can replicate into other AWS Regions. You cannot change this value
+     * after you create the CMK.
+     * </p>
+     * <p>
+     * For a multi-Region key, set this parameter to <code>True</code>. For a single-Region CMK, omit this parameter or
+     * set it to <code>False</code>. The default value is <code>False</code>.
+     * </p>
+     * <p>
+     * This operation supports <i>multi-Region keys</i>, an AWS KMS feature that lets you create multiple interoperable
+     * CMKs in different AWS Regions. Because these CMKs have the same key ID, key material, and other metadata, you can
+     * use them to encrypt data in one AWS Region and decrypt it in a different AWS Region without making a cross-Region
+     * call or exposing the plaintext data. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the
+     * <a>ReplicateKey</a> operation.
+     * </p>
+     * <p>
+     * You can create a symmetric or asymmetric multi-Region CMK, and you can create a multi-Region CMK with imported
+     * key material. However, you cannot create a multi-Region CMK in a custom key store.
+     * </p>
+     * 
+     * @return Creates a multi-Region primary key that you can replicate into other AWS Regions. You cannot change this
+     *         value after you create the CMK. </p>
+     *         <p>
+     *         For a multi-Region key, set this parameter to <code>True</code>. For a single-Region CMK, omit this
+     *         parameter or set it to <code>False</code>. The default value is <code>False</code>.
+     *         </p>
+     *         <p>
+     *         This operation supports <i>multi-Region keys</i>, an AWS KMS feature that lets you create multiple
+     *         interoperable CMKs in different AWS Regions. Because these CMKs have the same key ID, key material, and
+     *         other metadata, you can use them to encrypt data in one AWS Region and decrypt it in a different AWS
+     *         Region without making a cross-Region call or exposing the plaintext data. For more information about
+     *         multi-Region keys, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *         multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the
+     *         <a>ReplicateKey</a> operation.
+     *         </p>
+     *         <p>
+     *         You can create a symmetric or asymmetric multi-Region CMK, and you can create a multi-Region CMK with
+     *         imported key material. However, you cannot create a multi-Region CMK in a custom key store.
+     */
+
+    public Boolean getMultiRegion() {
+        return this.multiRegion;
+    }
+
+    /**
+     * <p>
+     * Creates a multi-Region primary key that you can replicate into other AWS Regions. You cannot change this value
+     * after you create the CMK.
+     * </p>
+     * <p>
+     * For a multi-Region key, set this parameter to <code>True</code>. For a single-Region CMK, omit this parameter or
+     * set it to <code>False</code>. The default value is <code>False</code>.
+     * </p>
+     * <p>
+     * This operation supports <i>multi-Region keys</i>, an AWS KMS feature that lets you create multiple interoperable
+     * CMKs in different AWS Regions. Because these CMKs have the same key ID, key material, and other metadata, you can
+     * use them to encrypt data in one AWS Region and decrypt it in a different AWS Region without making a cross-Region
+     * call or exposing the plaintext data. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the
+     * <a>ReplicateKey</a> operation.
+     * </p>
+     * <p>
+     * You can create a symmetric or asymmetric multi-Region CMK, and you can create a multi-Region CMK with imported
+     * key material. However, you cannot create a multi-Region CMK in a custom key store.
+     * </p>
+     * 
+     * @param multiRegion
+     *        Creates a multi-Region primary key that you can replicate into other AWS Regions. You cannot change this
+     *        value after you create the CMK. </p>
+     *        <p>
+     *        For a multi-Region key, set this parameter to <code>True</code>. For a single-Region CMK, omit this
+     *        parameter or set it to <code>False</code>. The default value is <code>False</code>.
+     *        </p>
+     *        <p>
+     *        This operation supports <i>multi-Region keys</i>, an AWS KMS feature that lets you create multiple
+     *        interoperable CMKs in different AWS Regions. Because these CMKs have the same key ID, key material, and
+     *        other metadata, you can use them to encrypt data in one AWS Region and decrypt it in a different AWS
+     *        Region without making a cross-Region call or exposing the plaintext data. For more information about
+     *        multi-Region keys, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *        multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the
+     *        <a>ReplicateKey</a> operation.
+     *        </p>
+     *        <p>
+     *        You can create a symmetric or asymmetric multi-Region CMK, and you can create a multi-Region CMK with
+     *        imported key material. However, you cannot create a multi-Region CMK in a custom key store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateKeyRequest withMultiRegion(Boolean multiRegion) {
+        setMultiRegion(multiRegion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Creates a multi-Region primary key that you can replicate into other AWS Regions. You cannot change this value
+     * after you create the CMK.
+     * </p>
+     * <p>
+     * For a multi-Region key, set this parameter to <code>True</code>. For a single-Region CMK, omit this parameter or
+     * set it to <code>False</code>. The default value is <code>False</code>.
+     * </p>
+     * <p>
+     * This operation supports <i>multi-Region keys</i>, an AWS KMS feature that lets you create multiple interoperable
+     * CMKs in different AWS Regions. Because these CMKs have the same key ID, key material, and other metadata, you can
+     * use them to encrypt data in one AWS Region and decrypt it in a different AWS Region without making a cross-Region
+     * call or exposing the plaintext data. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the
+     * <a>ReplicateKey</a> operation.
+     * </p>
+     * <p>
+     * You can create a symmetric or asymmetric multi-Region CMK, and you can create a multi-Region CMK with imported
+     * key material. However, you cannot create a multi-Region CMK in a custom key store.
+     * </p>
+     * 
+     * @return Creates a multi-Region primary key that you can replicate into other AWS Regions. You cannot change this
+     *         value after you create the CMK. </p>
+     *         <p>
+     *         For a multi-Region key, set this parameter to <code>True</code>. For a single-Region CMK, omit this
+     *         parameter or set it to <code>False</code>. The default value is <code>False</code>.
+     *         </p>
+     *         <p>
+     *         This operation supports <i>multi-Region keys</i>, an AWS KMS feature that lets you create multiple
+     *         interoperable CMKs in different AWS Regions. Because these CMKs have the same key ID, key material, and
+     *         other metadata, you can use them to encrypt data in one AWS Region and decrypt it in a different AWS
+     *         Region without making a cross-Region call or exposing the plaintext data. For more information about
+     *         multi-Region keys, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *         multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         This value creates a <i>primary key</i>, not a replica. To create a <i>replica key</i>, use the
+     *         <a>ReplicateKey</a> operation.
+     *         </p>
+     *         <p>
+     *         You can create a symmetric or asymmetric multi-Region CMK, and you can create a multi-Region CMK with
+     *         imported key material. However, you cannot create a multi-Region CMK in a custom key store.
+     */
+
+    public Boolean isMultiRegion() {
+        return this.multiRegion;
     }
 
     /**
@@ -2749,7 +3073,9 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getBypassPolicyLockoutSafetyCheck() != null)
             sb.append("BypassPolicyLockoutSafetyCheck: ").append(getBypassPolicyLockoutSafetyCheck()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getMultiRegion() != null)
+            sb.append("MultiRegion: ").append(getMultiRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -2797,6 +3123,10 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getMultiRegion() == null ^ this.getMultiRegion() == null)
+            return false;
+        if (other.getMultiRegion() != null && other.getMultiRegion().equals(this.getMultiRegion()) == false)
+            return false;
         return true;
     }
 
@@ -2813,6 +3143,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getCustomKeyStoreId() == null) ? 0 : getCustomKeyStoreId().hashCode());
         hashCode = prime * hashCode + ((getBypassPolicyLockoutSafetyCheck() == null) ? 0 : getBypassPolicyLockoutSafetyCheck().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getMultiRegion() == null) ? 0 : getMultiRegion().hashCode());
         return hashCode;
     }
 

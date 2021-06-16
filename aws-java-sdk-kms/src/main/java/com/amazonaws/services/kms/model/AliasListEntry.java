@@ -42,13 +42,22 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
     private String aliasArn;
     /**
      * <p>
-     * String that contains the key identifier referred to by the alias.
+     * String that contains the key identifier of the CMK associated with the alias.
      * </p>
      */
     private String targetKeyId;
-
+    /**
+     * <p>
+     * Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.
+     * </p>
+     */
     private java.util.Date creationDate;
-
+    /**
+     * <p>
+     * Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted as Unix
+     * time.
+     * </p>
+     */
     private java.util.Date lastUpdatedDate;
 
     /**
@@ -133,11 +142,11 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * String that contains the key identifier referred to by the alias.
+     * String that contains the key identifier of the CMK associated with the alias.
      * </p>
      * 
      * @param targetKeyId
-     *        String that contains the key identifier referred to by the alias.
+     *        String that contains the key identifier of the CMK associated with the alias.
      */
 
     public void setTargetKeyId(String targetKeyId) {
@@ -146,10 +155,10 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * String that contains the key identifier referred to by the alias.
+     * String that contains the key identifier of the CMK associated with the alias.
      * </p>
      * 
-     * @return String that contains the key identifier referred to by the alias.
+     * @return String that contains the key identifier of the CMK associated with the alias.
      */
 
     public String getTargetKeyId() {
@@ -158,11 +167,11 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * String that contains the key identifier referred to by the alias.
+     * String that contains the key identifier of the CMK associated with the alias.
      * </p>
      * 
      * @param targetKeyId
-     *        String that contains the key identifier referred to by the alias.
+     *        String that contains the key identifier of the CMK associated with the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,7 +181,12 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.
+     * </p>
+     * 
      * @param creationDate
+     *        Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -180,7 +194,11 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.
+     * </p>
+     * 
+     * @return Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.
      */
 
     public java.util.Date getCreationDate() {
@@ -188,7 +206,12 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.
+     * </p>
+     * 
      * @param creationDate
+     *        Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,7 +221,14 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted as Unix
+     * time.
+     * </p>
+     * 
      * @param lastUpdatedDate
+     *        Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted
+     *        as Unix time.
      */
 
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
@@ -206,7 +236,13 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted as Unix
+     * time.
+     * </p>
+     * 
+     * @return Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted
+     *         as Unix time.
      */
 
     public java.util.Date getLastUpdatedDate() {
@@ -214,7 +250,14 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted as Unix
+     * time.
+     * </p>
+     * 
      * @param lastUpdatedDate
+     *        Date and time that the alias was most recently associated with a CMK in the account and Region. Formatted
+     *        as Unix time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

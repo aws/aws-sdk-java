@@ -30,7 +30,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Identifies the CMK from which you are removing tags.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -64,7 +64,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Identifies the CMK from which you are removing tags.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -88,7 +88,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param keyId
      *        Identifies the CMK from which you are removing tags.</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:
@@ -118,7 +118,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Identifies the CMK from which you are removing tags.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -141,7 +141,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return Identifies the CMK from which you are removing tags.</p>
      *         <p>
-     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         Specify the key ID or key ARN of the CMK.
      *         </p>
      *         <p>
      *         For example:
@@ -171,7 +171,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Identifies the CMK from which you are removing tags.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -195,7 +195,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param keyId
      *        Identifies the CMK from which you are removing tags.</p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:

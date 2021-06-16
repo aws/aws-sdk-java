@@ -82,9 +82,6 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * <p>
      * The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.
      * </p>
-     * <p>
-     * Specify a value between 300 and 86,400 seconds.
-     * </p>
      */
     private Integer secondsUntilAutoPause;
     /**
@@ -425,14 +422,9 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * <p>
      * The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.
      * </p>
-     * <p>
-     * Specify a value between 300 and 86,400 seconds.
-     * </p>
      * 
      * @param secondsUntilAutoPause
-     *        The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.</p>
-     *        <p>
-     *        Specify a value between 300 and 86,400 seconds.
+     *        The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.
      */
 
     public void setSecondsUntilAutoPause(Integer secondsUntilAutoPause) {
@@ -443,13 +435,8 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * <p>
      * The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.
      * </p>
-     * <p>
-     * Specify a value between 300 and 86,400 seconds.
-     * </p>
      * 
-     * @return The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.</p>
-     *         <p>
-     *         Specify a value between 300 and 86,400 seconds.
+     * @return The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.
      */
 
     public Integer getSecondsUntilAutoPause() {
@@ -460,14 +447,9 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * <p>
      * The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.
      * </p>
-     * <p>
-     * Specify a value between 300 and 86,400 seconds.
-     * </p>
      * 
      * @param secondsUntilAutoPause
-     *        The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.</p>
-     *        <p>
-     *        Specify a value between 300 and 86,400 seconds.
+     *        The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

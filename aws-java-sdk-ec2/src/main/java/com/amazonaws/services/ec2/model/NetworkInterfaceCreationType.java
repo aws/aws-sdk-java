@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum NetworkInterfaceCreationType {
 
-    Efa("efa");
+    Efa("efa"),
+    Branch("branch"),
+    Trunk("trunk");
 
     private String value;
 

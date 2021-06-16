@@ -54,7 +54,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * where AWS advertises IP addresses.
+     * where Amazon Web Services advertises IP addresses.
      * </p>
      * </li>
      * <li>
@@ -65,7 +65,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.
+     * <code>network-interface-owner-id</code> - The account ID of the owner.
      * </p>
      * </li>
      * <li>
@@ -140,7 +140,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * where AWS advertises IP addresses.
+     * where Amazon Web Services advertises IP addresses.
      * </p>
      * </li>
      * <li>
@@ -151,7 +151,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.
+     * <code>network-interface-owner-id</code> - The account ID of the owner.
      * </p>
      * </li>
      * <li>
@@ -206,7 +206,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones
-     *         from where AWS advertises IP addresses.
+     *         from where Amazon Web Services advertises IP addresses.
      *         </p>
      *         </li>
      *         <li>
@@ -217,7 +217,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface-owner-id</code> - The AWS account ID of the owner.
+     *         <code>network-interface-owner-id</code> - The account ID of the owner.
      *         </p>
      *         </li>
      *         <li>
@@ -283,7 +283,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * where AWS advertises IP addresses.
+     * where Amazon Web Services advertises IP addresses.
      * </p>
      * </li>
      * <li>
@@ -294,7 +294,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.
+     * <code>network-interface-owner-id</code> - The account ID of the owner.
      * </p>
      * </li>
      * <li>
@@ -350,7 +350,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones
-     *        from where AWS advertises IP addresses.
+     *        from where Amazon Web Services advertises IP addresses.
      *        </p>
      *        </li>
      *        <li>
@@ -361,7 +361,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-owner-id</code> - The AWS account ID of the owner.
+     *        <code>network-interface-owner-id</code> - The account ID of the owner.
      *        </p>
      *        </li>
      *        <li>
@@ -428,7 +428,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * where AWS advertises IP addresses.
+     * where Amazon Web Services advertises IP addresses.
      * </p>
      * </li>
      * <li>
@@ -439,7 +439,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.
+     * <code>network-interface-owner-id</code> - The account ID of the owner.
      * </p>
      * </li>
      * <li>
@@ -500,7 +500,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones
-     *        from where AWS advertises IP addresses.
+     *        from where Amazon Web Services advertises IP addresses.
      *        </p>
      *        </li>
      *        <li>
@@ -511,7 +511,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-owner-id</code> - The AWS account ID of the owner.
+     *        <code>network-interface-owner-id</code> - The account ID of the owner.
      *        </p>
      *        </li>
      *        <li>
@@ -580,7 +580,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * where AWS advertises IP addresses.
+     * where Amazon Web Services advertises IP addresses.
      * </p>
      * </li>
      * <li>
@@ -591,7 +591,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface-owner-id</code> - The AWS account ID of the owner.
+     * <code>network-interface-owner-id</code> - The account ID of the owner.
      * </p>
      * </li>
      * <li>
@@ -647,7 +647,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones
-     *        from where AWS advertises IP addresses.
+     *        from where Amazon Web Services advertises IP addresses.
      *        </p>
      *        </li>
      *        <li>
@@ -658,7 +658,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface-owner-id</code> - The AWS account ID of the owner.
+     *        <code>network-interface-owner-id</code> - The account ID of the owner.
      *        </p>
      *        </li>
      *        <li>

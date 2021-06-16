@@ -17,10 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own
- * IP addresses (BYOIP). For more information, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#prepare-for-byoip">Prepare to Bring Your
- * Address Range to Your AWS Account</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * Provides authorization for Amazon to bring a specific IP address range to a specific account using bring your own IP
+ * addresses (BYOIP). For more information, see <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#prepare-for-byoip">Configuring your BYOIP
+ * address range</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CidrAuthorizationContext" target="_top">AWS API

@@ -680,22 +680,22 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Advertises an IPv4 or IPv6 address range that is provisioned for use with your AWS resources through bring your
-     * own IP addresses (BYOIP).
+     * Advertises an IPv4 or IPv6 address range that is provisioned for use with your Amazon Web Services resources
+     * through bring your own IP addresses (BYOIP).
      * </p>
      * <p>
      * You can perform this operation at most once every 10 seconds, even if you specify different address ranges each
      * time.
      * </p>
      * <p>
-     * We recommend that you stop advertising the BYOIP CIDR from other locations when you advertise it from AWS. To
-     * minimize down time, you can configure your AWS resources to use an address from a BYOIP CIDR before it is
-     * advertised, and then simultaneously stop advertising it from the current location and start advertising it
-     * through AWS.
+     * We recommend that you stop advertising the BYOIP CIDR from other locations when you advertise it from Amazon Web
+     * Services. To minimize down time, you can configure your Amazon Web Services resources to use an address from a
+     * BYOIP CIDR before it is advertised, and then simultaneously stop advertising it from the current location and
+     * start advertising it through Amazon Web Services.
      * </p>
      * <p>
-     * It can take a few minutes before traffic to the specified addresses starts routing to AWS because of BGP
-     * propagation delays.
+     * It can take a few minutes before traffic to the specified addresses starts routing to Amazon Web Services because
+     * of BGP propagation delays.
      * </p>
      * <p>
      * To stop advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.
@@ -754,21 +754,21 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Allocates an Elastic IP address to your AWS account. After you allocate the Elastic IP address you can associate
-     * it with an instance or network interface. After you release an Elastic IP address, it is released to the IP
-     * address pool and can be allocated to a different AWS account.
+     * Allocates an Elastic IP address to your account. After you allocate the Elastic IP address you can associate it
+     * with an instance or network interface. After you release an Elastic IP address, it is released to the IP address
+     * pool and can be allocated to a different account.
      * </p>
      * <p>
-     * You can allocate an Elastic IP address from an address pool owned by AWS or from an address pool created from a
-     * public IPv4 address range that you have brought to AWS for use with your AWS resources using bring your own IP
-     * addresses (BYOIP). For more information, see <a
+     * You can allocate an Elastic IP address from an address pool owned by Amazon Web Services or from an address pool
+     * created from a public IPv4 address range that you have brought to Amazon Web Services for use with your Amazon
+     * Web Services resources using bring your own IP addresses (BYOIP). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP
-     * address that you released after it is allocated to another AWS account. You cannot recover an Elastic IP address
-     * for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.
+     * address that you released after it is allocated to another account. You cannot recover an Elastic IP address for
+     * EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.
      * </p>
      * <p>
      * An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
@@ -1682,6 +1682,73 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateTransitGatewayRouteTableResult> responseHandler = new StaxResponseHandler<AssociateTransitGatewayRouteTableResult>(
                     new AssociateTransitGatewayRouteTableResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a branch network interface with a trunk network interface.
+     * </p>
+     * <p>
+     * Before you create the association, run the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"
+     * >create-network-interface</a> command and set <code>--interface-type</code> to <code>trunk</code>. You must also
+     * create a network interface for each branch network interface that you want to associate with the trunk network
+     * interface.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eni-trunking.html">
+     * Network interface trunking</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param associateTrunkInterfaceRequest
+     * @return Result of the AssociateTrunkInterface operation returned by the service.
+     * @sample AmazonEC2.AssociateTrunkInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTrunkInterface" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AssociateTrunkInterfaceResult associateTrunkInterface(AssociateTrunkInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateTrunkInterface(request);
+    }
+
+    @SdkInternalApi
+    final AssociateTrunkInterfaceResult executeAssociateTrunkInterface(AssociateTrunkInterfaceRequest associateTrunkInterfaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateTrunkInterfaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateTrunkInterfaceRequest> request = null;
+        Response<AssociateTrunkInterfaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateTrunkInterfaceRequestMarshaller().marshall(super.beforeMarshalling(associateTrunkInterfaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateTrunkInterface");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AssociateTrunkInterfaceResult> responseHandler = new StaxResponseHandler<AssociateTrunkInterfaceResult>(
+                    new AssociateTrunkInterfaceResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -4873,11 +4940,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Grants an AWS-authorized account permission to attach the specified network interface to an instance in their
-     * account.
+     * Grants an Amazon Web Services-authorized account permission to attach the specified network interface to an
+     * instance in their account.
      * </p>
      * <p>
-     * You can grant permission to a single AWS account only, and only one account at a time.
+     * You can grant permission to a single account only, and only one account at a time.
      * </p>
      * 
      * @param createNetworkInterfacePermissionRequest
@@ -10581,8 +10648,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Releases the specified address range that you provisioned for use with your AWS resources through bring your own
-     * IP addresses (BYOIP) and deletes the corresponding address pool.
+     * Releases the specified address range that you provisioned for use with your Amazon Web Services resources through
+     * bring your own IP addresses (BYOIP) and deletes the corresponding address pool.
      * </p>
      * <p>
      * Before you can release an address range, you must stop advertising it using <a>WithdrawByoipCidr</a> and you must
@@ -14533,7 +14600,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes your managed prefix lists and any AWS-managed prefix lists.
+     * Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
      * </p>
      * <p>
      * To view the entries for your prefix list, use <a>GetManagedPrefixListEntries</a>.
@@ -15131,8 +15198,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes available AWS services in a prefix list format, which includes the prefix list name and prefix list ID
-     * of the service and the IP address range for the service.
+     * Describes available Amazon Web Services services in a prefix list format, which includes the prefix list name and
+     * prefix list ID of the service and the IP address range for the service.
      * </p>
      * <p>
      * We recommend that you use <a>DescribeManagedPrefixLists</a> instead.
@@ -17547,6 +17614,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes one or more network interface trunk associations.
+     * </p>
+     * 
+     * @param describeTrunkInterfaceAssociationsRequest
+     * @return Result of the DescribeTrunkInterfaceAssociations operation returned by the service.
+     * @sample AmazonEC2.DescribeTrunkInterfaceAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTrunkInterfaceAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTrunkInterfaceAssociationsResult describeTrunkInterfaceAssociations(DescribeTrunkInterfaceAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrunkInterfaceAssociations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrunkInterfaceAssociationsResult executeDescribeTrunkInterfaceAssociations(
+            DescribeTrunkInterfaceAssociationsRequest describeTrunkInterfaceAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTrunkInterfaceAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrunkInterfaceAssociationsRequest> request = null;
+        Response<DescribeTrunkInterfaceAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrunkInterfaceAssociationsRequestMarshaller()
+                        .marshall(super.beforeMarshalling(describeTrunkInterfaceAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrunkInterfaceAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTrunkInterfaceAssociationsResult> responseHandler = new StaxResponseHandler<DescribeTrunkInterfaceAssociationsResult>(
+                    new DescribeTrunkInterfaceAssociationsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified attribute of the specified volume. You can specify only one attribute at a time.
      * </p>
      * <p>
@@ -19909,6 +20034,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DisassociateTransitGatewayRouteTableResult> responseHandler = new StaxResponseHandler<DisassociateTransitGatewayRouteTableResult>(
                     new DisassociateTransitGatewayRouteTableResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes an association between a branch network interface with a trunk network interface.
+     * </p>
+     * 
+     * @param disassociateTrunkInterfaceRequest
+     * @return Result of the DisassociateTrunkInterface operation returned by the service.
+     * @sample AmazonEC2.DisassociateTrunkInterface
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTrunkInterface" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DisassociateTrunkInterfaceResult disassociateTrunkInterface(DisassociateTrunkInterfaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateTrunkInterface(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateTrunkInterfaceResult executeDisassociateTrunkInterface(DisassociateTrunkInterfaceRequest disassociateTrunkInterfaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateTrunkInterfaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateTrunkInterfaceRequest> request = null;
+        Response<DisassociateTrunkInterfaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateTrunkInterfaceRequestMarshaller().marshall(super.beforeMarshalling(disassociateTrunkInterfaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateTrunkInterface");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisassociateTrunkInterfaceResult> responseHandler = new StaxResponseHandler<DisassociateTrunkInterfaceResult>(
+                    new DisassociateTrunkInterfaceResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -25624,15 +25805,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Provisions an IPv4 or IPv6 address range for use with your AWS resources through bring your own IP addresses
-     * (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is ready to be
-     * advertised using <a>AdvertiseByoipCidr</a>.
+     * Provisions an IPv4 or IPv6 address range for use with your Amazon Web Services resources through bring your own
+     * IP addresses (BYOIP) and creates a corresponding address pool. After the address range is provisioned, it is
+     * ready to be advertised using <a>AdvertiseByoipCidr</a>.
      * </p>
      * <p>
-     * AWS verifies that you own the address range and are authorized to advertise it. You must ensure that the address
-     * range is registered to you and that you created an RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise
-     * the address range. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a>
+     * Amazon Web Services verifies that you own the address range and are authorized to advertise it. You must ensure
+     * that the address range is registered to you and that you created an RPKI ROA to authorize Amazon ASNs 16509 and
+     * 14618 to advertise the address range. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring your own IP addresses (BYOIP)</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -26593,7 +26774,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * After releasing an Elastic IP address, it is released to the IP address pool. Be sure to update your DNS records
      * and any servers or devices that communicate with the address. If you attempt to release an Elastic IP address
      * that you already released, you'll get an <code>AuthFailure</code> error if the address is already allocated to
-     * another AWS account.
+     * another account.
      * </p>
      * <p>
      * [EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able to recover it. For more
@@ -29232,8 +29413,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * time.
      * </p>
      * <p>
-     * It can take a few minutes before traffic to the specified addresses stops routing to AWS because of BGP
-     * propagation delays.
+     * It can take a few minutes before traffic to the specified addresses stops routing to Amazon Web Services because
+     * of BGP propagation delays.
      * </p>
      * 
      * @param withdrawByoipCidrRequest

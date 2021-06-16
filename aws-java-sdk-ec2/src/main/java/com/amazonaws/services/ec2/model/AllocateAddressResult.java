@@ -31,8 +31,8 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
     private String publicIp;
     /**
      * <p>
-     * [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in
-     * a VPC.
+     * [EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use
+     * with instances in a VPC.
      * </p>
      */
     private String allocationId;
@@ -117,13 +117,13 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in
-     * a VPC.
+     * [EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use
+     * with instances in a VPC.
      * </p>
      * 
      * @param allocationId
-     *        [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with
-     *        instances in a VPC.
+     *        [EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address
+     *        for use with instances in a VPC.
      */
 
     public void setAllocationId(String allocationId) {
@@ -132,12 +132,12 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in
-     * a VPC.
+     * [EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use
+     * with instances in a VPC.
      * </p>
      * 
-     * @return [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with
-     *         instances in a VPC.
+     * @return [EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address
+     *         for use with instances in a VPC.
      */
 
     public String getAllocationId() {
@@ -146,13 +146,13 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in
-     * a VPC.
+     * [EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address for use
+     * with instances in a VPC.
      * </p>
      * 
      * @param allocationId
-     *        [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with
-     *        instances in a VPC.
+     *        [EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the Elastic IP address
+     *        for use with instances in a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

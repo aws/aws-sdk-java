@@ -27,6 +27,13 @@ public class ListResourceTagsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * A list of tags. Each tag consists of a tag key and a tag value.
      * </p>
+     * <note>
+     * <p>
+     * Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
@@ -52,8 +59,20 @@ public class ListResourceTagsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * A list of tags. Each tag consists of a tag key and a tag value.
      * </p>
+     * <note>
+     * <p>
+     * Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
+     * </p>
+     * </note>
      * 
-     * @return A list of tags. Each tag consists of a tag key and a tag value.
+     * @return A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
+     *         <p>
+     *         Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the
+     *         <i>AWS Key Management Service Developer Guide</i>.
+     *         </p>
      */
 
     public java.util.List<Tag> getTags() {
@@ -67,9 +86,21 @@ public class ListResourceTagsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * A list of tags. Each tag consists of a tag key and a tag value.
      * </p>
+     * <note>
+     * <p>
+     * Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        A list of tags. Each tag consists of a tag key and a tag value.
+     *        A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
+     *        <p>
+     *        Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the
+     *        <i>AWS Key Management Service Developer Guide</i>.
+     *        </p>
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -85,6 +116,13 @@ public class ListResourceTagsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * A list of tags. Each tag consists of a tag key and a tag value.
      * </p>
+     * <note>
+     * <p>
+     * Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -92,7 +130,12 @@ public class ListResourceTagsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param tags
-     *        A list of tags. Each tag consists of a tag key and a tag value.
+     *        A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
+     *        <p>
+     *        Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the
+     *        <i>AWS Key Management Service Developer Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,9 +153,21 @@ public class ListResourceTagsResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * A list of tags. Each tag consists of a tag key and a tag value.
      * </p>
+     * <note>
+     * <p>
+     * Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS
+     * Key Management Service Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        A list of tags. Each tag consists of a tag key and a tag value.
+     *        A list of tags. Each tag consists of a tag key and a tag value.</p> <note>
+     *        <p>
+     *        Tagging or untagging a CMK can allow or deny permission to the CMK. For details, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the
+     *        <i>AWS Key Management Service Developer Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

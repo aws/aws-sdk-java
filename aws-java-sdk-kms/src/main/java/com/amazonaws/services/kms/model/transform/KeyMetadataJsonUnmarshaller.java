@@ -124,6 +124,18 @@ public class KeyMetadataJsonUnmarshaller implements Unmarshaller<KeyMetadata, Js
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("MultiRegion", targetDepth)) {
+                    context.nextToken();
+                    keyMetadata.setMultiRegion(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("MultiRegionConfiguration", targetDepth)) {
+                    context.nextToken();
+                    keyMetadata.setMultiRegionConfiguration(MultiRegionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PendingDeletionWindowInDays", targetDepth)) {
+                    context.nextToken();
+                    keyMetadata.setPendingDeletionWindowInDays(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information about an address range that is provisioned for use with your AWS resources through bring your own IP
- * addresses (BYOIP).
+ * Information about an address range that is provisioned for use with your Amazon Web Services resources through bring
+ * your own IP addresses (BYOIP).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ByoipCidr" target="_top">AWS API

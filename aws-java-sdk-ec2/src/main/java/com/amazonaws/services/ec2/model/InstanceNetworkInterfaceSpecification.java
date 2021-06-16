@@ -130,7 +130,8 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * </p>
      * <p>
      * You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For
-     * more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer Guide.
+     * more information about carrier IP addresses, see Carrier IP addresses in the Amazon Web Services Wavelength
+     * Developer Guide.
      * </p>
      */
     private Boolean associateCarrierIpAddress;
@@ -142,9 +143,6 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon
      * Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      * </p>
      * <p>
      * Valid values: <code>interface</code> | <code>efa</code>
@@ -949,15 +947,16 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * </p>
      * <p>
      * You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For
-     * more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer Guide.
+     * more information about carrier IP addresses, see Carrier IP addresses in the Amazon Web Services Wavelength
+     * Developer Guide.
      * </p>
      * 
      * @param associateCarrierIpAddress
      *        Indicates whether to assign a carrier IP address to the network interface.</p>
      *        <p>
      *        You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone.
-     *        For more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
-     *        Guide.
+     *        For more information about carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     *        Wavelength Developer Guide.
      */
 
     public void setAssociateCarrierIpAddress(Boolean associateCarrierIpAddress) {
@@ -970,14 +969,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * </p>
      * <p>
      * You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For
-     * more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer Guide.
+     * more information about carrier IP addresses, see Carrier IP addresses in the Amazon Web Services Wavelength
+     * Developer Guide.
      * </p>
      * 
      * @return Indicates whether to assign a carrier IP address to the network interface.</p>
      *         <p>
      *         You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone.
-     *         For more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
-     *         Guide.
+     *         For more information about carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     *         Wavelength Developer Guide.
      */
 
     public Boolean getAssociateCarrierIpAddress() {
@@ -990,15 +990,16 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * </p>
      * <p>
      * You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For
-     * more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer Guide.
+     * more information about carrier IP addresses, see Carrier IP addresses in the Amazon Web Services Wavelength
+     * Developer Guide.
      * </p>
      * 
      * @param associateCarrierIpAddress
      *        Indicates whether to assign a carrier IP address to the network interface.</p>
      *        <p>
      *        You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone.
-     *        For more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
-     *        Guide.
+     *        For more information about carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     *        Wavelength Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1013,14 +1014,15 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * </p>
      * <p>
      * You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For
-     * more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer Guide.
+     * more information about carrier IP addresses, see Carrier IP addresses in the Amazon Web Services Wavelength
+     * Developer Guide.
      * </p>
      * 
      * @return Indicates whether to assign a carrier IP address to the network interface.</p>
      *         <p>
      *         You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone.
-     *         For more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
-     *         Guide.
+     *         For more information about carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     *         Wavelength Developer Guide.
      */
 
     public Boolean isAssociateCarrierIpAddress() {
@@ -1037,9 +1039,6 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
-     * </p>
-     * <p>
      * Valid values: <code>interface</code> | <code>efa</code>
      * </p>
      * 
@@ -1049,9 +1048,6 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      *        To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.
-     *        </p>
-     *        <p>
-     *        If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      *        </p>
      *        <p>
      *        Valid values: <code>interface</code> | <code>efa</code>
@@ -1071,9 +1067,6 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
-     * </p>
-     * <p>
      * Valid values: <code>interface</code> | <code>efa</code>
      * </p>
      * 
@@ -1082,9 +1075,6 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      *         To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the
      *         <i>Amazon Elastic Compute Cloud User Guide</i>.
-     *         </p>
-     *         <p>
-     *         If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      *         </p>
      *         <p>
      *         Valid values: <code>interface</code> | <code>efa</code>
@@ -1104,9 +1094,6 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      * Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
-     * </p>
-     * <p>
      * Valid values: <code>interface</code> | <code>efa</code>
      * </p>
      * 
@@ -1116,9 +1103,6 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
      *        To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.
-     *        </p>
-     *        <p>
-     *        If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
      *        </p>
      *        <p>
      *        Valid values: <code>interface</code> | <code>efa</code>

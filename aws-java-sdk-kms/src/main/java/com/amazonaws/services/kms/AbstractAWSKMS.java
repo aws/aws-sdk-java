@@ -238,6 +238,11 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
+    public ReplicateKeyResult replicateKey(ReplicateKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RetireGrantResult retireGrant(RetireGrantRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -284,6 +289,11 @@ public class AbstractAWSKMS implements AWSKMS {
 
     @Override
     public UpdateKeyDescriptionResult updateKeyDescription(UpdateKeyDescriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePrimaryRegionResult updatePrimaryRegion(UpdatePrimaryRegionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

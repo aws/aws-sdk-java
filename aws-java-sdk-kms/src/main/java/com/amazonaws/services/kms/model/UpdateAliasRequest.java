@@ -44,7 +44,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -131,7 +131,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -166,7 +166,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        type as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
      *        </p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:
@@ -206,7 +206,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -241,7 +241,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         usage.
      *         </p>
      *         <p>
-     *         Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *         Specify the key ID or key ARN of the CMK.
      *         </p>
      *         <p>
      *         For example:
@@ -281,7 +281,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
      * </p>
      * <p>
-     * Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     * Specify the key ID or key ARN of the CMK.
      * </p>
      * <p>
      * For example:
@@ -316,7 +316,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        type as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
      *        </p>
      *        <p>
-     *        Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+     *        Specify the key ID or key ARN of the CMK.
      *        </p>
      *        <p>
      *        For example:

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes prefixes for AWS services.
+ * Describes prefixes for Amazon Web Services services.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrefixList" target="_top">AWS API
@@ -28,7 +28,7 @@ public class PrefixList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address range of the AWS service.
+     * The IP address range of the Amazon Web Service.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> cidrs;
@@ -47,10 +47,10 @@ public class PrefixList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address range of the AWS service.
+     * The IP address range of the Amazon Web Service.
      * </p>
      * 
-     * @return The IP address range of the AWS service.
+     * @return The IP address range of the Amazon Web Service.
      */
 
     public java.util.List<String> getCidrs() {
@@ -62,11 +62,11 @@ public class PrefixList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address range of the AWS service.
+     * The IP address range of the Amazon Web Service.
      * </p>
      * 
      * @param cidrs
-     *        The IP address range of the AWS service.
+     *        The IP address range of the Amazon Web Service.
      */
 
     public void setCidrs(java.util.Collection<String> cidrs) {
@@ -80,7 +80,7 @@ public class PrefixList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address range of the AWS service.
+     * The IP address range of the Amazon Web Service.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +89,7 @@ public class PrefixList implements Serializable, Cloneable {
      * </p>
      * 
      * @param cidrs
-     *        The IP address range of the AWS service.
+     *        The IP address range of the Amazon Web Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +105,11 @@ public class PrefixList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address range of the AWS service.
+     * The IP address range of the Amazon Web Service.
      * </p>
      * 
      * @param cidrs
-     *        The IP address range of the AWS service.
+     *        The IP address range of the Amazon Web Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

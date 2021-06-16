@@ -64,7 +64,7 @@ public class Address implements Serializable, Cloneable {
     private String networkInterfaceId;
     /**
      * <p>
-     * The ID of the AWS account that owns the network interface.
+     * The ID of the account that owns the network interface.
      * </p>
      */
     private String networkInterfaceOwnerId;
@@ -398,11 +398,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the network interface.
+     * The ID of the account that owns the network interface.
      * </p>
      * 
      * @param networkInterfaceOwnerId
-     *        The ID of the AWS account that owns the network interface.
+     *        The ID of the account that owns the network interface.
      */
 
     public void setNetworkInterfaceOwnerId(String networkInterfaceOwnerId) {
@@ -411,10 +411,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the network interface.
+     * The ID of the account that owns the network interface.
      * </p>
      * 
-     * @return The ID of the AWS account that owns the network interface.
+     * @return The ID of the account that owns the network interface.
      */
 
     public String getNetworkInterfaceOwnerId() {
@@ -423,11 +423,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account that owns the network interface.
+     * The ID of the account that owns the network interface.
      * </p>
      * 
      * @param networkInterfaceOwnerId
-     *        The ID of the AWS account that owns the network interface.
+     *        The ID of the account that owns the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

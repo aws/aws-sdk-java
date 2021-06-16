@@ -157,6 +157,36 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             request.addParameter("DomainIAMRoleName", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getDomainIAMRoleName()));
         }
 
+        {
+            ScalingConfiguration scalingConfiguration = restoreDBClusterToPointInTimeRequest.getScalingConfiguration();
+            if (scalingConfiguration != null) {
+
+                if (scalingConfiguration.getMinCapacity() != null) {
+                    request.addParameter("ScalingConfiguration.MinCapacity", StringUtils.fromInteger(scalingConfiguration.getMinCapacity()));
+                }
+
+                if (scalingConfiguration.getMaxCapacity() != null) {
+                    request.addParameter("ScalingConfiguration.MaxCapacity", StringUtils.fromInteger(scalingConfiguration.getMaxCapacity()));
+                }
+
+                if (scalingConfiguration.getAutoPause() != null) {
+                    request.addParameter("ScalingConfiguration.AutoPause", StringUtils.fromBoolean(scalingConfiguration.getAutoPause()));
+                }
+
+                if (scalingConfiguration.getSecondsUntilAutoPause() != null) {
+                    request.addParameter("ScalingConfiguration.SecondsUntilAutoPause", StringUtils.fromInteger(scalingConfiguration.getSecondsUntilAutoPause()));
+                }
+
+                if (scalingConfiguration.getTimeoutAction() != null) {
+                    request.addParameter("ScalingConfiguration.TimeoutAction", StringUtils.fromString(scalingConfiguration.getTimeoutAction()));
+                }
+            }
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getEngineMode() != null) {
+            request.addParameter("EngineMode", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getEngineMode()));
+        }
+
         return request;
     }
 

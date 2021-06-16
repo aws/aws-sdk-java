@@ -64,7 +64,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
     private String instanceId;
     /**
      * <p>
-     * The AWS account ID of the owner of the instance.
+     * The account ID of the owner of the instance.
      * </p>
      */
     private String instanceOwnerId;
@@ -329,11 +329,11 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the instance.
+     * The account ID of the owner of the instance.
      * </p>
      * 
      * @param instanceOwnerId
-     *        The AWS account ID of the owner of the instance.
+     *        The account ID of the owner of the instance.
      */
 
     public void setInstanceOwnerId(String instanceOwnerId) {
@@ -342,10 +342,10 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the instance.
+     * The account ID of the owner of the instance.
      * </p>
      * 
-     * @return The AWS account ID of the owner of the instance.
+     * @return The account ID of the owner of the instance.
      */
 
     public String getInstanceOwnerId() {
@@ -354,11 +354,11 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the instance.
+     * The account ID of the owner of the instance.
      * </p>
      * 
      * @param instanceOwnerId
-     *        The AWS account ID of the owner of the instance.
+     *        The account ID of the owner of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
