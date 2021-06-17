@@ -133,11 +133,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster
+     * snapshot.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      */
     private String kmsKeyId;
@@ -156,8 +157,8 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private String sourceDBClusterSnapshotArn;
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -891,19 +892,20 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster
+     * snapshot.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
-     *        snapshot.</p>
+     *        If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     *        cluster snapshot.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -912,18 +914,19 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster
+     * snapshot.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
-     *         snapshot.</p>
+     * @return If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     *         cluster snapshot.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK).
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -932,19 +935,20 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster
+     * snapshot.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
-     *        snapshot.</p>
+     *        If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     *        cluster snapshot.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1041,13 +1045,13 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.
+     *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *        is enabled, and otherwise false.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -1056,12 +1060,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.
+     * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *         is enabled, and otherwise false.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -1070,13 +1074,13 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.
+     *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *        is enabled, and otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1087,12 +1091,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.
+     * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *         is enabled, and otherwise false.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {

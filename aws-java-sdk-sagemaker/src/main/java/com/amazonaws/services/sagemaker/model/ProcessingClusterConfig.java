@@ -46,6 +46,20 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
      * The size of the ML storage volume in gigabytes that you want to provision. You must specify sufficient ML storage
      * for your scenario.
      * </p>
+     * <note>
+     * <p>
+     * Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When
+     * using these instances for processing, Amazon SageMaker mounts the local instance storage instead of Amazon EBS
+     * gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance
+     * storage.
+     * </p>
+     * <p>
+     * For a list of instance types that support local instance storage, including the total size per instance type, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.
+     * </p>
+     * </note>
      */
     private Integer volumeSizeInGB;
     /**
@@ -53,6 +67,23 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
      * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
      * attached to the ML compute instance(s) that run the processing job.
      * </p>
+     * <note>
+     * <p>
+     * Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an
+     * instance type with local storage.
+     * </p>
+     * <p>
+     * For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.
+     * </p>
+     * <p>
+     * For more information about local instance storage encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store
+     * Volumes</a>.
+     * </p>
+     * </note>
      */
     private String volumeKmsKeyId;
 
@@ -166,10 +197,36 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
      * The size of the ML storage volume in gigabytes that you want to provision. You must specify sufficient ML storage
      * for your scenario.
      * </p>
+     * <note>
+     * <p>
+     * Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When
+     * using these instances for processing, Amazon SageMaker mounts the local instance storage instead of Amazon EBS
+     * gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance
+     * storage.
+     * </p>
+     * <p>
+     * For a list of instance types that support local instance storage, including the total size per instance type, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.
+     * </p>
+     * </note>
      * 
      * @param volumeSizeInGB
      *        The size of the ML storage volume in gigabytes that you want to provision. You must specify sufficient ML
-     *        storage for your scenario.
+     *        storage for your scenario.</p> <note>
+     *        <p>
+     *        Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance
+     *        type. When using these instances for processing, Amazon SageMaker mounts the local instance storage
+     *        instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total
+     *        size of the local instance storage.
+     *        </p>
+     *        <p>
+     *        For a list of instance types that support local instance storage, including the total size per instance
+     *        type, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes"
+     *        >Instance Store Volumes</a>.
+     *        </p>
      */
 
     public void setVolumeSizeInGB(Integer volumeSizeInGB) {
@@ -181,9 +238,35 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
      * The size of the ML storage volume in gigabytes that you want to provision. You must specify sufficient ML storage
      * for your scenario.
      * </p>
+     * <note>
+     * <p>
+     * Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When
+     * using these instances for processing, Amazon SageMaker mounts the local instance storage instead of Amazon EBS
+     * gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance
+     * storage.
+     * </p>
+     * <p>
+     * For a list of instance types that support local instance storage, including the total size per instance type, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.
+     * </p>
+     * </note>
      * 
      * @return The size of the ML storage volume in gigabytes that you want to provision. You must specify sufficient ML
-     *         storage for your scenario.
+     *         storage for your scenario.</p> <note>
+     *         <p>
+     *         Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance
+     *         type. When using these instances for processing, Amazon SageMaker mounts the local instance storage
+     *         instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total
+     *         size of the local instance storage.
+     *         </p>
+     *         <p>
+     *         For a list of instance types that support local instance storage, including the total size per instance
+     *         type, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes"
+     *         >Instance Store Volumes</a>.
+     *         </p>
      */
 
     public Integer getVolumeSizeInGB() {
@@ -195,10 +278,36 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
      * The size of the ML storage volume in gigabytes that you want to provision. You must specify sufficient ML storage
      * for your scenario.
      * </p>
+     * <note>
+     * <p>
+     * Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance type. When
+     * using these instances for processing, Amazon SageMaker mounts the local instance storage instead of Amazon EBS
+     * gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total size of the local instance
+     * storage.
+     * </p>
+     * <p>
+     * For a list of instance types that support local instance storage, including the total size per instance type, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.
+     * </p>
+     * </note>
      * 
      * @param volumeSizeInGB
      *        The size of the ML storage volume in gigabytes that you want to provision. You must specify sufficient ML
-     *        storage for your scenario.
+     *        storage for your scenario.</p> <note>
+     *        <p>
+     *        Certain Nitro-based instances include local storage with a fixed total size, dependent on the instance
+     *        type. When using these instances for processing, Amazon SageMaker mounts the local instance storage
+     *        instead of Amazon EBS gp2 storage. You can't request a <code>VolumeSizeInGB</code> greater than the total
+     *        size of the local instance storage.
+     *        </p>
+     *        <p>
+     *        For a list of instance types that support local instance storage, including the total size per instance
+     *        type, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes"
+     *        >Instance Store Volumes</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,10 +321,42 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
      * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
      * attached to the ML compute instance(s) that run the processing job.
      * </p>
+     * <note>
+     * <p>
+     * Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an
+     * instance type with local storage.
+     * </p>
+     * <p>
+     * For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.
+     * </p>
+     * <p>
+     * For more information about local instance storage encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store
+     * Volumes</a>.
+     * </p>
+     * </note>
      * 
      * @param volumeKmsKeyId
      *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that run the processing job.
+     *        volume attached to the ML compute instance(s) that run the processing job. </p> <note>
+     *        <p>
+     *        Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes
+     *        are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code>
+     *        when using an instance type with local storage.
+     *        </p>
+     *        <p>
+     *        For a list of instance types that support local instance storage, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes"
+     *        >Instance Store Volumes</a>.
+     *        </p>
+     *        <p>
+     *        For more information about local instance storage encryption, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store
+     *        Volumes</a>.
+     *        </p>
      */
 
     public void setVolumeKmsKeyId(String volumeKmsKeyId) {
@@ -227,9 +368,41 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
      * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
      * attached to the ML compute instance(s) that run the processing job.
      * </p>
+     * <note>
+     * <p>
+     * Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an
+     * instance type with local storage.
+     * </p>
+     * <p>
+     * For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.
+     * </p>
+     * <p>
+     * For more information about local instance storage encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store
+     * Volumes</a>.
+     * </p>
+     * </note>
      * 
      * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *         volume attached to the ML compute instance(s) that run the processing job.
+     *         volume attached to the ML compute instance(s) that run the processing job. </p> <note>
+     *         <p>
+     *         Certain Nitro-based instances include local storage, dependent on the instance type. Local storage
+     *         volumes are encrypted using a hardware module on the instance. You can't request a
+     *         <code>VolumeKmsKeyId</code> when using an instance type with local storage.
+     *         </p>
+     *         <p>
+     *         For a list of instance types that support local instance storage, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes"
+     *         >Instance Store Volumes</a>.
+     *         </p>
+     *         <p>
+     *         For more information about local instance storage encryption, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store
+     *         Volumes</a>.
+     *         </p>
      */
 
     public String getVolumeKmsKeyId() {
@@ -241,10 +414,42 @@ public class ProcessingClusterConfig implements Serializable, Cloneable, Structu
      * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
      * attached to the ML compute instance(s) that run the processing job.
      * </p>
+     * <note>
+     * <p>
+     * Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code> when using an
+     * instance type with local storage.
+     * </p>
+     * <p>
+     * For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.
+     * </p>
+     * <p>
+     * For more information about local instance storage encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store
+     * Volumes</a>.
+     * </p>
+     * </note>
      * 
      * @param volumeKmsKeyId
      *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that run the processing job.
+     *        volume attached to the ML compute instance(s) that run the processing job. </p> <note>
+     *        <p>
+     *        Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes
+     *        are encrypted using a hardware module on the instance. You can't request a <code>VolumeKmsKeyId</code>
+     *        when using an instance type with local storage.
+     *        </p>
+     *        <p>
+     *        For a list of instance types that support local instance storage, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes"
+     *        >Instance Store Volumes</a>.
+     *        </p>
+     *        <p>
+     *        For more information about local instance storage encryption, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store
+     *        Volumes</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

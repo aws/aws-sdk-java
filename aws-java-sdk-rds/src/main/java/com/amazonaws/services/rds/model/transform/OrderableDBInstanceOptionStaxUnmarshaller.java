@@ -190,6 +190,16 @@ public class OrderableDBInstanceOptionStaxUnmarshaller implements Unmarshaller<O
                     continue;
                 }
 
+                if (context.testExpression("SupportedActivityStreamModes", targetDepth)) {
+                    orderableDBInstanceOption.withSupportedActivityStreamModes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedActivityStreamModes/member", targetDepth)) {
+                    orderableDBInstanceOption.withSupportedActivityStreamModes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("SupportsGlobalDatabases", targetDepth)) {
                     orderableDBInstanceOption.setSupportsGlobalDatabases(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

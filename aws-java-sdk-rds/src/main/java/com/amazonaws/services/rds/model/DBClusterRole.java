@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster.
+ * Describes an Amazon Web Services Identity and Access Management (IAM) role that is associated with a DB cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBClusterRole" target="_top">AWS API
@@ -40,8 +40,8 @@ public class DBClusterRole implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon
+     * Web Services on your behalf.
      * </p>
      * </li>
      * <li>
@@ -52,7 +52,7 @@ public class DBClusterRole implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume
-     * the IAM role in order to access other AWS services on your behalf.
+     * the IAM role in order to access other Amazon Web Services on your behalf.
      * </p>
      * </li>
      * </ul>
@@ -60,8 +60,8 @@ public class DBClusterRole implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     * supported feature names, see <a>DBEngineVersion</a>.
+     * The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For
+     * the list of supported feature names, see <a>DBEngineVersion</a>.
      * </p>
      */
     private String featureName;
@@ -114,8 +114,8 @@ public class DBClusterRole implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon
+     * Web Services on your behalf.
      * </p>
      * </li>
      * <li>
@@ -126,7 +126,7 @@ public class DBClusterRole implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume
-     * the IAM role in order to access other AWS services on your behalf.
+     * the IAM role in order to access other Amazon Web Services on your behalf.
      * </p>
      * </li>
      * </ul>
@@ -138,7 +138,7 @@ public class DBClusterRole implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other
-     *        AWS services on your behalf.
+     *        Amazon Web Services on your behalf.
      *        </p>
      *        </li>
      *        <li>
@@ -149,7 +149,7 @@ public class DBClusterRole implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to
-     *        assume the IAM role in order to access other AWS services on your behalf.
+     *        assume the IAM role in order to access other Amazon Web Services on your behalf.
      *        </p>
      *        </li>
      */
@@ -166,8 +166,8 @@ public class DBClusterRole implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon
+     * Web Services on your behalf.
      * </p>
      * </li>
      * <li>
@@ -178,7 +178,7 @@ public class DBClusterRole implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume
-     * the IAM role in order to access other AWS services on your behalf.
+     * the IAM role in order to access other Amazon Web Services on your behalf.
      * </p>
      * </li>
      * </ul>
@@ -189,7 +189,7 @@ public class DBClusterRole implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other
-     *         AWS services on your behalf.
+     *         Amazon Web Services on your behalf.
      *         </p>
      *         </li>
      *         <li>
@@ -200,7 +200,7 @@ public class DBClusterRole implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable
-     *         to assume the IAM role in order to access other AWS services on your behalf.
+     *         to assume the IAM role in order to access other Amazon Web Services on your behalf.
      *         </p>
      *         </li>
      */
@@ -217,8 +217,8 @@ public class DBClusterRole implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other Amazon
+     * Web Services on your behalf.
      * </p>
      * </li>
      * <li>
@@ -229,7 +229,7 @@ public class DBClusterRole implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume
-     * the IAM role in order to access other AWS services on your behalf.
+     * the IAM role in order to access other Amazon Web Services on your behalf.
      * </p>
      * </li>
      * </ul>
@@ -241,7 +241,7 @@ public class DBClusterRole implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>ACTIVE</code> - the IAM role ARN is associated with the DB cluster and can be used to access other
-     *        AWS services on your behalf.
+     *        Amazon Web Services on your behalf.
      *        </p>
      *        </li>
      *        <li>
@@ -252,7 +252,7 @@ public class DBClusterRole implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>INVALID</code> - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to
-     *        assume the IAM role in order to access other AWS services on your behalf.
+     *        assume the IAM role in order to access other Amazon Web Services on your behalf.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -265,13 +265,13 @@ public class DBClusterRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     * supported feature names, see <a>DBEngineVersion</a>.
+     * The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For
+     * the list of supported feature names, see <a>DBEngineVersion</a>.
      * </p>
      * 
      * @param featureName
-     *        The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     *        supported feature names, see <a>DBEngineVersion</a>.
+     *        The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
+     *        For the list of supported feature names, see <a>DBEngineVersion</a>.
      */
 
     public void setFeatureName(String featureName) {
@@ -280,12 +280,12 @@ public class DBClusterRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     * supported feature names, see <a>DBEngineVersion</a>.
+     * The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For
+     * the list of supported feature names, see <a>DBEngineVersion</a>.
      * </p>
      * 
-     * @return The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list
-     *         of supported feature names, see <a>DBEngineVersion</a>.
+     * @return The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM)
+     *         role. For the list of supported feature names, see <a>DBEngineVersion</a>.
      */
 
     public String getFeatureName() {
@@ -294,13 +294,13 @@ public class DBClusterRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     * supported feature names, see <a>DBEngineVersion</a>.
+     * The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For
+     * the list of supported feature names, see <a>DBEngineVersion</a>.
      * </p>
      * 
      * @param featureName
-     *        The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     *        supported feature names, see <a>DBEngineVersion</a>.
+     *        The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
+     *        For the list of supported feature names, see <a>DBEngineVersion</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

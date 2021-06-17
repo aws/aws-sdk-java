@@ -39,8 +39,8 @@ public class Subnet implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web
+     * Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private Outpost subnetOutpost;
@@ -123,16 +123,16 @@ public class Subnet implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web
+     * Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param subnetOutpost
      *        If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
      *        <p>
      *        For more information about RDS on Outposts, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
-     *        Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon
+     *        Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setSubnetOutpost(Outpost subnetOutpost) {
@@ -145,15 +145,15 @@ public class Subnet implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web
+     * Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
      *         <p>
      *         For more information about RDS on Outposts, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
-     *         Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon
+     *         Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public Outpost getSubnetOutpost() {
@@ -166,16 +166,16 @@ public class Subnet implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web
+     * Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param subnetOutpost
      *        If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
      *        <p>
      *        For more information about RDS on Outposts, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
-     *        Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon
+     *        Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

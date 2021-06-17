@@ -430,6 +430,31 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     dBInstance.setAwsBackupRecoveryPointArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ActivityStreamStatus", targetDepth)) {
+                    dBInstance.setActivityStreamStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ActivityStreamKmsKeyId", targetDepth)) {
+                    dBInstance.setActivityStreamKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ActivityStreamKinesisStreamName", targetDepth)) {
+                    dBInstance.setActivityStreamKinesisStreamName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ActivityStreamMode", targetDepth)) {
+                    dBInstance.setActivityStreamMode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ActivityStreamEngineNativeAuditFieldsIncluded", targetDepth)) {
+                    dBInstance.setActivityStreamEngineNativeAuditFieldsIncluded(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBInstance;

@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains an AWS Region name as the result of a successful call to the <code>DescribeSourceRegions</code> action.
+ * Contains an Amazon Web Services Region name as the result of a successful call to the
+ * <code>DescribeSourceRegions</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SourceRegion" target="_top">AWS API
@@ -28,36 +29,37 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the source AWS Region.
+     * The name of the source Amazon Web Services Region.
      * </p>
      */
     private String regionName;
     /**
      * <p>
-     * The endpoint for the source AWS Region endpoint.
+     * The endpoint for the source Amazon Web Services Region endpoint.
      * </p>
      */
     private String endpoint;
     /**
      * <p>
-     * The status of the source AWS Region.
+     * The status of the source Amazon Web Services Region.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web
+     * Services Region.
      * </p>
      */
     private Boolean supportsDBInstanceAutomatedBackupsReplication;
 
     /**
      * <p>
-     * The name of the source AWS Region.
+     * The name of the source Amazon Web Services Region.
      * </p>
      * 
      * @param regionName
-     *        The name of the source AWS Region.
+     *        The name of the source Amazon Web Services Region.
      */
 
     public void setRegionName(String regionName) {
@@ -66,10 +68,10 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the source AWS Region.
+     * The name of the source Amazon Web Services Region.
      * </p>
      * 
-     * @return The name of the source AWS Region.
+     * @return The name of the source Amazon Web Services Region.
      */
 
     public String getRegionName() {
@@ -78,11 +80,11 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the source AWS Region.
+     * The name of the source Amazon Web Services Region.
      * </p>
      * 
      * @param regionName
-     *        The name of the source AWS Region.
+     *        The name of the source Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +95,11 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The endpoint for the source AWS Region endpoint.
+     * The endpoint for the source Amazon Web Services Region endpoint.
      * </p>
      * 
      * @param endpoint
-     *        The endpoint for the source AWS Region endpoint.
+     *        The endpoint for the source Amazon Web Services Region endpoint.
      */
 
     public void setEndpoint(String endpoint) {
@@ -106,10 +108,10 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The endpoint for the source AWS Region endpoint.
+     * The endpoint for the source Amazon Web Services Region endpoint.
      * </p>
      * 
-     * @return The endpoint for the source AWS Region endpoint.
+     * @return The endpoint for the source Amazon Web Services Region endpoint.
      */
 
     public String getEndpoint() {
@@ -118,11 +120,11 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The endpoint for the source AWS Region endpoint.
+     * The endpoint for the source Amazon Web Services Region endpoint.
      * </p>
      * 
      * @param endpoint
-     *        The endpoint for the source AWS Region endpoint.
+     *        The endpoint for the source Amazon Web Services Region endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +135,11 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the source AWS Region.
+     * The status of the source Amazon Web Services Region.
      * </p>
      * 
      * @param status
-     *        The status of the source AWS Region.
+     *        The status of the source Amazon Web Services Region.
      */
 
     public void setStatus(String status) {
@@ -146,10 +148,10 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the source AWS Region.
+     * The status of the source Amazon Web Services Region.
      * </p>
      * 
-     * @return The status of the source AWS Region.
+     * @return The status of the source Amazon Web Services Region.
      */
 
     public String getStatus() {
@@ -158,11 +160,11 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the source AWS Region.
+     * The status of the source Amazon Web Services Region.
      * </p>
      * 
      * @param status
-     *        The status of the source AWS Region.
+     *        The status of the source Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,11 +175,13 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param supportsDBInstanceAutomatedBackupsReplication
-     *        Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     *        Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon
+     *        Web Services Region.
      */
 
     public void setSupportsDBInstanceAutomatedBackupsReplication(Boolean supportsDBInstanceAutomatedBackupsReplication) {
@@ -186,10 +190,12 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web
+     * Services Region.
      * </p>
      * 
-     * @return Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * @return Whether the source Amazon Web Services Region supports replicating automated backups to the current
+     *         Amazon Web Services Region.
      */
 
     public Boolean getSupportsDBInstanceAutomatedBackupsReplication() {
@@ -198,11 +204,13 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param supportsDBInstanceAutomatedBackupsReplication
-     *        Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     *        Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon
+     *        Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,10 +221,12 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * Whether the source Amazon Web Services Region supports replicating automated backups to the current Amazon Web
+     * Services Region.
      * </p>
      * 
-     * @return Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * @return Whether the source Amazon Web Services Region supports replicating automated backups to the current
+     *         Amazon Web Services Region.
      */
 
     public Boolean isSupportsDBInstanceAutomatedBackupsReplication() {

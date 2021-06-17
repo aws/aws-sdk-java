@@ -470,8 +470,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Associates an Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
-     * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon Aurora User
-     * Guide</i>.
+     * >Authorizing Amazon Aurora MySQL to Access Other Amazon Web Services Services on Your Behalf</a> in the <i>Amazon
+     * Aurora User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -540,7 +540,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Associates an AWS Identity and Access Management (IAM) role with a DB instance.
+     * Associates an Amazon Web Services Identity and Access Management (IAM) role with a DB instance.
      * </p>
      * <note>
      * <p>
@@ -558,8 +558,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBInstanceStateException
      *         The DB instance isn't in a valid state.
      * @throws DBInstanceRoleQuotaExceededException
-     *         You can't associate any more AWS Identity and Access Management (IAM) roles with the DB instance because
-     *         the quota has been reached.
+     *         You can't associate any more Amazon Web Services Identity and Access Management (IAM) roles with the DB
+     *         instance because the quota has been reached.
      * @sample AmazonRDS.AddRoleToDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -688,11 +688,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBSnapshotNotFoundException
      *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyTargetGroupNotFoundException
-     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified target group isn't available for a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @sample AmazonRDS.AddTagsToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource" target="_top">AWS API
      *      Documentation</a>
@@ -814,8 +814,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <note>
      * <p>
-     * You can't authorize ingress from an EC2 security group in one AWS Region to an Amazon RDS DB instance in another.
-     * You can't authorize ingress from a VPC security group in one VPC to an Amazon RDS DB instance in another.
+     * You can't authorize ingress from an EC2 security group in one Amazon Web Services Region to an Amazon RDS DB
+     * instance in another. You can't authorize ingress from a VPC security group in one VPC to an Amazon RDS DB
+     * instance in another.
      * </p>
      * </note>
      * <p>
@@ -1090,24 +1091,25 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * snapshot.
      * </p>
      * <p>
-     * You can copy an encrypted DB cluster snapshot from another AWS Region. In that case, the AWS Region where you
-     * call the <code>CopyDBClusterSnapshot</code> action is the destination AWS Region for the encrypted DB cluster
-     * snapshot to be copied to. To copy an encrypted DB cluster snapshot from another AWS Region, you must provide the
-     * following values:
+     * You can copy an encrypted DB cluster snapshot from another Amazon Web Services Region. In that case, the Amazon
+     * Web Services Region where you call the <code>CopyDBClusterSnapshot</code> action is the destination Amazon Web
+     * Services Region for the encrypted DB cluster snapshot to be copied to. To copy an encrypted DB cluster snapshot
+     * from another Amazon Web Services Region, you must provide the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS Key Management System (AWS KMS) key identifier for the key to use to encrypt the
-     * copy of the DB cluster snapshot in the destination AWS Region.
+     * <code>KmsKeyId</code> - The Amazon Web Services Key Management System (Amazon Web Services KMS) key identifier
+     * for the key to use to encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request for the
-     * <code>CopyDBClusterSnapshot</code> action to be called in the source AWS Region where the DB cluster snapshot is
-     * copied from. The pre-signed URL must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
-     * that can be executed in the source AWS Region that contains the encrypted DB cluster snapshot to be copied.
+     * <code>CopyDBClusterSnapshot</code> action to be called in the source Amazon Web Services Region where the DB
+     * cluster snapshot is copied from. The pre-signed URL must be a valid request for the
+     * <code>CopyDBClusterSnapshot</code> API action that can be executed in the source Amazon Web Services Region that
+     * contains the encrypted DB cluster snapshot to be copied.
      * </p>
      * <p>
      * The pre-signed URL request must contain the following parameter values:
@@ -1115,23 +1117,24 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy
-     * of the DB cluster snapshot in the destination AWS Region. This is the same identifier for both the
-     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS Region, and the action contained
-     * in the pre-signed URL.
+     * <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the customer master key (CMK) to use to
+     * encrypt the copy of the DB cluster snapshot in the destination Amazon Web Services Region. This is the same
+     * identifier for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination Amazon Web
+     * Services Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster snapshot is to be created in.
+     * <code>DestinationRegion</code> - The name of the Amazon Web Services Region that the DB cluster snapshot is to be
+     * created in.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
-     * snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS
-     * Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 AWS Region, then your
-     * <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example:
+     * snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web
+     * Services Region. For example, if you are copying an encrypted DB cluster snapshot from the us-west-2 Amazon Web
+     * Services Region, then your <code>SourceDBClusterSnapshotIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.
      * </p>
      * </li>
@@ -1139,29 +1142,29 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      * Process</a>.
      * </p>
      * <note>
      * <p>
-     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
-     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
-     * Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation
-     * that can be executed in the source AWS Region.
+     * If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying
+     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be
+     * executed in the source Amazon Web Services Region.
      * </p>
      * </note></li>
      * <li>
      * <p>
      * <code>TargetDBClusterSnapshotIdentifier</code> - The identifier for the new copy of the DB cluster snapshot in
-     * the destination AWS Region.
+     * the destination Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot identifier for the encrypted DB cluster
-     * snapshot to be copied. This identifier must be in the ARN format for the source AWS Region and is the same value
-     * as the <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL.
+     * snapshot to be copied. This identifier must be in the ARN format for the source Amazon Web Services Region and is
+     * the same value as the <code>SourceDBClusterSnapshotIdentifier</code> in the pre-signed URL.
      * </p>
      * </li>
      * </ul>
@@ -1170,8 +1173,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is in "copying" status.
      * </p>
      * <p>
-     * For more information on copying encrypted DB cluster snapshots from one AWS Region to another, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html"> Copying a
+     * For more information on copying encrypted DB cluster snapshots from one Amazon Web Services Region to another,
+     * see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html"> Copying a
      * Snapshot</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
@@ -1198,7 +1201,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @sample AmazonRDS.CopyDBClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot" target="_top">AWS API
      *      Documentation</a>
@@ -1313,8 +1316,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code> state.
      * </p>
      * <p>
-     * You can copy a snapshot from one AWS Region to another. In that case, the AWS Region where you call the
-     * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB snapshot copy.
+     * You can copy a snapshot from one Amazon Web Services Region to another. In that case, the Amazon Web Services
+     * Region where you call the <code>CopyDBSnapshot</code> action is the destination Amazon Web Services Region for
+     * the DB snapshot copy.
      * </p>
      * <p>
      * For more information about copying snapshots, see <a
@@ -1333,7 +1337,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws SnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws CustomAvailabilityZoneNotFoundException
      *         <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.
      * @sample AmazonRDS.CopyDBSnapshot
@@ -1396,7 +1400,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws OptionGroupQuotaExceededException
-     *         The quota of 20 option groups was exceeded for this AWS account.
+     *         The quota of 20 option groups was exceeded for this Amazon Web Services account.
      * @sample AmazonRDS.CopyOptionGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup" target="_top">AWS API
      *      Documentation</a>
@@ -1465,7 +1469,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws CustomAvailabilityZoneQuotaExceededException
      *         You have exceeded the maximum number of custom Availability Zones.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @sample AmazonRDS.CreateCustomAvailabilityZone
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomAvailabilityZone"
      *      target="_top">AWS API Documentation</a>
@@ -1521,9 +1525,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a read replica of
-     * another DB cluster or Amazon RDS MySQL DB instance. For cross-region replication where the DB cluster identified
-     * by <code>ReplicationSourceIdentifier</code> is encrypted, you must also specify the <code>PreSignedUrl</code>
-     * parameter.
+     * another DB cluster or Amazon RDS MySQL or PostgreSQL DB instance. For cross-region replication where the DB
+     * cluster identified by <code>ReplicationSourceIdentifier</code> is encrypted, you must also specify the
+     * <code>PreSignedUrl</code> parameter.
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
@@ -1564,7 +1568,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterParameterGroupNotFoundException
      *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @throws DBInstanceNotFoundException
@@ -1909,7 +1913,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         <p>
      *         Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DomainNotFoundException
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
@@ -2023,7 +2027,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws StorageTypeNotSupportedException
      *         Storage of the <code>StorageType</code> specified can't be associated with the DB instance.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DomainNotFoundException
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
      * @sample AmazonRDS.CreateDBInstanceReadReplica
@@ -2162,10 +2166,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws DBProxyAlreadyExistsException
-     *         The specified proxy name must be unique for all proxies owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name must be unique for all proxies owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyQuotaExceededException
-     *         Your AWS account already has the maximum number of proxies in the specified AWS Region.
+     *         Your Amazon Web Services account already has the maximum number of proxies in the specified Amazon Web
+     *         Services Region.
      * @sample AmazonRDS.CreateDBProxy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy" target="_top">AWS API
      *      Documentation</a>
@@ -2226,11 +2231,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyEndpointAlreadyExistsException
-     *         The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your AWS account
-     *         in the specified AWS Region.
+     *         The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your Amazon Web
+     *         Services account in the specified Amazon Web Services Region.
      * @throws DBProxyEndpointQuotaExceededException
      *         The DB proxy already has the maximum number of endpoints.
      * @throws InvalidDBProxyStateException
@@ -2416,8 +2421,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the AWS
-     * Region.
+     * Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the
+     * Amazon Web Services Region.
      * </p>
      * 
      * @param createDBSubnetGroupRequest
@@ -2575,9 +2580,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Creates an Aurora global database spread across multiple AWS Regions. The global database contains a single
-     * primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary
-     * cluster through high-speed replication performed by the Aurora storage subsystem.
+     * Creates an Aurora global database spread across multiple Amazon Web Services Regions. The global database
+     * contains a single primary cluster with read-write capability, and a read-only secondary cluster that receives
+     * data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.
      * </p>
      * <p>
      * You can create a global database that is initially empty, and then add a primary cluster and a secondary cluster
@@ -2659,7 +2664,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws OptionGroupAlreadyExistsException
      *         The option group you are trying to create already exists.
      * @throws OptionGroupQuotaExceededException
-     *         The quota of 20 option groups was exceeded for this AWS account.
+     *         The quota of 20 option groups was exceeded for this Amazon Web Services account.
      * @sample AmazonRDS.CreateOptionGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup" target="_top">AWS API
      *      Documentation</a>
@@ -2726,7 +2731,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws CustomAvailabilityZoneNotFoundException
      *         <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @sample AmazonRDS.DeleteCustomAvailabilityZone
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomAvailabilityZone"
      *      target="_top">AWS API Documentation</a>
@@ -3301,8 +3306,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param deleteDBProxyRequest
      * @return Result of the DeleteDBProxy operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.DeleteDBProxy
@@ -3863,14 +3868,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param deregisterDBProxyTargetsRequest
      * @return Result of the DeregisterDBProxyTargets operation returned by the service.
      * @throws DBProxyTargetNotFoundException
-     *         The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your AWS account
-     *         in the specified AWS Region.
+     *         The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your Amazon Web
+     *         Services account in the specified Amazon Web Services Region.
      * @throws DBProxyTargetGroupNotFoundException
-     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified target group isn't available for a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.DeregisterDBProxyTargets
@@ -3990,7 +3995,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Lists the set of CA certificates provided by Amazon RDS for this AWS account.
+     * Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services account.
      * </p>
      * 
      * @param describeCertificatesRequest
@@ -4400,14 +4405,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.
      * </p>
      * <p>
-     * When sharing snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the
-     * <code>restore</code> attribute and a list of IDs for the AWS accounts that are authorized to copy or restore the
-     * manual DB cluster snapshot. If <code>all</code> is included in the list of values for the <code>restore</code>
-     * attribute, then the manual DB cluster snapshot is public and can be copied or restored by all AWS accounts.
+     * When sharing snapshots with other Amazon Web Services accounts, <code>DescribeDBClusterSnapshotAttributes</code>
+     * returns the <code>restore</code> attribute and a list of IDs for the Amazon Web Services accounts that are
+     * authorized to copy or restore the manual DB cluster snapshot. If <code>all</code> is included in the list of
+     * values for the <code>restore</code> attribute, then the manual DB cluster snapshot is public and can be copied or
+     * restored by all Amazon Web Services accounts.
      * </p>
      * <p>
-     * To add or remove access for an AWS account to copy or restore a manual DB cluster snapshot, or to make the manual
-     * DB cluster snapshot public or private, use the <code>ModifyDBClusterSnapshotAttribute</code> API action.
+     * To add or remove access for an Amazon Web Services account to copy or restore a manual DB cluster snapshot, or to
+     * make the manual DB cluster snapshot public or private, use the <code>ModifyDBClusterSnapshotAttribute</code> API
+     * action.
      * </p>
      * <note>
      * <p>
@@ -5000,8 +5007,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeDBProxiesRequest
      * @return Result of the DescribeDBProxies operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @sample AmazonRDS.DescribeDBProxies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies" target="_top">AWS API
      *      Documentation</a>
@@ -5059,8 +5066,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeDBProxyEndpointsRequest
      * @return Result of the DescribeDBProxyEndpoints operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyEndpointNotFoundException
      *         The DB proxy endpoint doesn't exist.
      * @sample AmazonRDS.DescribeDBProxyEndpoints
@@ -5120,11 +5127,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeDBProxyTargetGroupsRequest
      * @return Result of the DescribeDBProxyTargetGroups operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyTargetGroupNotFoundException
-     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified target group isn't available for a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.DescribeDBProxyTargetGroups
@@ -5184,14 +5191,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeDBProxyTargetsRequest
      * @return Result of the DescribeDBProxyTargets operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyTargetNotFoundException
-     *         The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your AWS account
-     *         in the specified AWS Region.
+     *         The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your Amazon Web
+     *         Services account in the specified Amazon Web Services Region.
      * @throws DBProxyTargetGroupNotFoundException
-     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified target group isn't available for a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.DescribeDBProxyTargets
@@ -5312,14 +5319,15 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Returns a list of DB snapshot attribute names and values for a manual DB snapshot.
      * </p>
      * <p>
-     * When sharing snapshots with other AWS accounts, <code>DescribeDBSnapshotAttributes</code> returns the
-     * <code>restore</code> attribute and a list of IDs for the AWS accounts that are authorized to copy or restore the
-     * manual DB snapshot. If <code>all</code> is included in the list of values for the <code>restore</code> attribute,
-     * then the manual DB snapshot is public and can be copied or restored by all AWS accounts.
+     * When sharing snapshots with other Amazon Web Services accounts, <code>DescribeDBSnapshotAttributes</code> returns
+     * the <code>restore</code> attribute and a list of IDs for the Amazon Web Services accounts that are authorized to
+     * copy or restore the manual DB snapshot. If <code>all</code> is included in the list of values for the
+     * <code>restore</code> attribute, then the manual DB snapshot is public and can be copied or restored by all Amazon
+     * Web Services accounts.
      * </p>
      * <p>
-     * To add or remove access for an AWS account to copy or restore a manual DB snapshot, or to make the manual DB
-     * snapshot public or private, use the <code>ModifyDBSnapshotAttribute</code> API action.
+     * To add or remove access for an Amazon Web Services account to copy or restore a manual DB snapshot, or to make
+     * the manual DB snapshot public or private, use the <code>ModifyDBSnapshotAttribute</code> API action.
      * </p>
      * 
      * @param describeDBSnapshotAttributesRequest
@@ -6385,8 +6393,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Returns a list of the source AWS Regions where the current AWS Region can create a read replica, copy a DB
-     * snapshot from, or replicate automated backups from. This API action supports pagination.
+     * Returns a list of the source Amazon Web Services Regions where the current Amazon Web Services Region can create
+     * a read replica, copy a DB snapshot from, or replicate automated backups from. This API action supports
+     * pagination.
      * </p>
      * 
      * @param describeSourceRegionsRequest
@@ -6810,11 +6819,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyTargetGroupNotFoundException
-     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified target group isn't available for a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @sample AmazonRDS.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -6881,14 +6890,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <li>
      * <p>
      * You already migrated your applications to support the latest certificate authority (CA) certificate, but the new
-     * CA certificate is not yet the RDS default CA certificate for the specified AWS Region.
+     * CA certificate is not yet the RDS default CA certificate for the specified Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RDS has already moved to a new default CA certificate for the specified AWS Region, but you are still in the
-     * process of supporting the new CA certificate. In this case, you temporarily need additional time to finish your
-     * application changes.
+     * RDS has already moved to a new default CA certificate for the specified Amazon Web Services Region, but you are
+     * still in the process of supporting the new CA certificate. In this case, you temporarily need additional time to
+     * finish your application changes.
      * </p>
      * </li>
      * </ul>
@@ -7216,12 +7225,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
-     * <note>
-     * <p>
-     * Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without
-     * failover to the DB cluster associated with the parameter group before the change can take effect.
-     * </p>
-     * </note> <important>
+     * <important>
      * <p>
      * After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB
      * cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon RDS to fully
@@ -7304,26 +7308,27 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.
      * </p>
      * <p>
-     * To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code> as the
-     * <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
-     * accounts that are authorized to restore the manual DB cluster snapshot. Use the value <code>all</code> to make
-     * the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts.
+     * To share a manual DB cluster snapshot with other Amazon Web Services accounts, specify <code>restore</code> as
+     * the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the Amazon
+     * Web Services accounts that are authorized to restore the manual DB cluster snapshot. Use the value
+     * <code>all</code> to make the manual DB cluster snapshot public, which means that it can be copied or restored by
+     * all Amazon Web Services accounts.
      * </p>
      * <note>
      * <p>
      * Don't add the <code>all</code> value for any manual DB cluster snapshots that contain private information that
-     * you don't want available to all AWS accounts.
+     * you don't want available to all Amazon Web Services accounts.
      * </p>
      * </note>
      * <p>
-     * If a manual DB cluster snapshot is encrypted, it can be shared, but only by specifying a list of authorized AWS
-     * account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value for that
-     * parameter in this case.
+     * If a manual DB cluster snapshot is encrypted, it can be shared, but only by specifying a list of authorized
+     * Amazon Web Services account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a
+     * value for that parameter in this case.
      * </p>
      * <p>
-     * To view which AWS accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB
-     * cluster snapshot is public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action. The
-     * accounts are returned as values for the <code>restore</code> attribute.
+     * To view which Amazon Web Services accounts have access to copy or restore a manual DB cluster snapshot, or
+     * whether a manual DB cluster snapshot is public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API
+     * action. The accounts are returned as values for the <code>restore</code> attribute.
      * </p>
      * <note>
      * <p>
@@ -7436,7 +7441,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws InvalidDBClusterStateException
      *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.ModifyDBInstance
@@ -7493,12 +7498,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
      * parameters can be modified in a single request.
      * </p>
-     * <note>
-     * <p>
-     * Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without
-     * failover to the DB instance associated with the parameter group before the change can take effect.
-     * </p>
-     * </note> <important>
+     * <important>
      * <p>
      * After you modify a DB parameter group, you should wait at least 5 minutes before creating your first DB instance
      * that uses that DB parameter group as the default parameter group. This allows Amazon RDS to fully complete the
@@ -7574,11 +7574,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param modifyDBProxyRequest
      * @return Result of the ModifyDBProxy operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyAlreadyExistsException
-     *         The specified proxy name must be unique for all proxies owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name must be unique for all proxies owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.ModifyDBProxy
@@ -7639,8 +7639,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBProxyEndpointNotFoundException
      *         The DB proxy endpoint doesn't exist.
      * @throws DBProxyEndpointAlreadyExistsException
-     *         The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your AWS account
-     *         in the specified AWS Region.
+     *         The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your Amazon Web
+     *         Services account in the specified Amazon Web Services Region.
      * @throws InvalidDBProxyEndpointStateException
      *         You can't perform this operation while the DB proxy endpoint is in a particular state.
      * @throws InvalidDBProxyStateException
@@ -7702,11 +7702,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param modifyDBProxyTargetGroupRequest
      * @return Result of the ModifyDBProxyTargetGroup operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyTargetGroupNotFoundException
-     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified target group isn't available for a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
      * @sample AmazonRDS.ModifyDBProxyTargetGroup
@@ -7824,26 +7824,26 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Adds an attribute and values to, or removes an attribute and values from, a manual DB snapshot.
      * </p>
      * <p>
-     * To share a manual DB snapshot with other AWS accounts, specify <code>restore</code> as the
-     * <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
-     * accounts that are authorized to restore the manual DB snapshot. Uses the value <code>all</code> to make the
-     * manual DB snapshot public, which means it can be copied or restored by all AWS accounts.
+     * To share a manual DB snapshot with other Amazon Web Services accounts, specify <code>restore</code> as the
+     * <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the Amazon Web
+     * Services accounts that are authorized to restore the manual DB snapshot. Uses the value <code>all</code> to make
+     * the manual DB snapshot public, which means it can be copied or restored by all Amazon Web Services accounts.
      * </p>
      * <note>
      * <p>
      * Don't add the <code>all</code> value for any manual DB snapshots that contain private information that you don't
-     * want available to all AWS accounts.
+     * want available to all Amazon Web Services accounts.
      * </p>
      * </note>
      * <p>
-     * If the manual DB snapshot is encrypted, it can be shared, but only by specifying a list of authorized AWS account
-     * IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value for that parameter in
-     * this case.
+     * If the manual DB snapshot is encrypted, it can be shared, but only by specifying a list of authorized Amazon Web
+     * Services account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value for
+     * that parameter in this case.
      * </p>
      * <p>
-     * To view which AWS accounts have access to copy or restore a manual DB snapshot, or whether a manual DB snapshot
-     * public or private, use the <a>DescribeDBSnapshotAttributes</a> API action. The accounts are returned as values
-     * for the <code>restore</code> attribute.
+     * To view which Amazon Web Services accounts have access to copy or restore a manual DB snapshot, or whether a
+     * manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a> API action. The accounts are
+     * returned as values for the <code>restore</code> attribute.
      * </p>
      * 
      * @param modifyDBSnapshotAttributeRequest
@@ -7906,7 +7906,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     /**
      * <p>
      * Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in
-     * the AWS Region.
+     * the Amazon Web Services Region.
      * </p>
      * 
      * @param modifyDBSubnetGroupRequest
@@ -8455,11 +8455,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param registerDBProxyTargetsRequest
      * @return Result of the RegisterDBProxyTargets operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyTargetGroupNotFoundException
-     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified target group isn't available for a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @throws DBInstanceNotFoundException
@@ -8595,11 +8595,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more
-     * information, see <a
+     * Disassociates an Amazon Web Services Identity and Access Management (IAM) role from an Amazon Aurora DB cluster.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
-     * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon Aurora User
-     * Guide</i>.
+     * >Authorizing Amazon Aurora MySQL to Access Other Amazon Web Services Services on Your Behalf </a> in the
+     * <i>Amazon Aurora User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -8666,7 +8666,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
+     * Disassociates an Amazon Web Services Identity and Access Management (IAM) role from a DB instance.
      * </p>
      * 
      * @param removeRoleFromDBInstanceRequest
@@ -8806,11 +8806,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @throws DBProxyTargetGroupNotFoundException
-     *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
-     *         Region.
+     *         The specified target group isn't available for a proxy owned by your Amazon Web Services account in the
+     *         specified Amazon Web Services Region.
      * @sample AmazonRDS.RemoveTagsFromResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource" target="_top">AWS API
      *      Documentation</a>
@@ -9060,7 +9060,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterParameterGroupNotFoundException
      *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @throws DomainNotFoundException
@@ -9183,7 +9183,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DomainNotFoundException
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
      * @throws DBClusterParameterGroupNotFoundException
@@ -9293,7 +9293,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidVPCNetworkStateException
      *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws StorageQuotaExceededException
@@ -9415,7 +9415,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         <p>
      *         Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DBSecurityGroupNotFoundException
      *         <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
      * @throws DomainNotFoundException
@@ -9520,7 +9520,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         <p>
      *         Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws BackupPolicyNotFoundException
      * @sample AmazonRDS.RestoreDBInstanceFromS3
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3" target="_top">AWS
@@ -9631,7 +9631,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         <p>
      *         Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DBSecurityGroupNotFoundException
      *         <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
      * @throws DomainNotFoundException
@@ -9775,7 +9775,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBInstanceNotFoundException
      *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @sample AmazonRDS.StartActivityStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartActivityStream" target="_top">AWS API
      *      Documentation</a>
@@ -9827,8 +9827,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Starts an Amazon Aurora DB cluster that was stopped using the AWS console, the stop-db-cluster AWS CLI command,
-     * or the StopDBCluster action.
+     * Starts an Amazon Aurora DB cluster that was stopped using the Amazon Web Services console, the stop-db-cluster
+     * CLI command, or the StopDBCluster action.
      * </p>
      * <p>
      * For more information, see <a
@@ -9899,8 +9899,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Starts an Amazon RDS DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or
-     * the StopDBInstance action.
+     * Starts an Amazon RDS DB instance that was stopped using the Amazon Web Services console, the stop-db-instance CLI
+     * command, or the StopDBInstance action.
      * </p>
      * <p>
      * For more information, see <a
@@ -9941,7 +9941,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         <p>
      *         Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @sample AmazonRDS.StartDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -9992,12 +9992,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Enables replication of automated backups to a different AWS Region.
+     * Enables replication of automated backups to a different Amazon Web Services Region.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html"> Replicating Automated
-     * Backups to Another AWS Region</a> in the <i>Amazon RDS User Guide.</i>
+     * Backups to Another Amazon Web Services Region</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param startDBInstanceAutomatedBackupsReplicationRequest
@@ -10007,7 +10007,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidDBInstanceStateException
      *         The DB instance isn't in a valid state.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DBInstanceAutomatedBackupQuotaExceededException
      *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
      *         automated backups. The retained automated backups quota is the same as your DB Instance quota.
@@ -10088,7 +10088,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws InvalidExportOnlyException
      *         The export is invalid for exporting to an Amazon S3 bucket.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred accessing an AWS KMS key.
+     *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws InvalidExportSourceStateException
      *         The state of the export snapshot is invalid for exporting to an Amazon S3 bucket.
      * @sample AmazonRDS.StartExportTask
@@ -10142,8 +10142,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Stops a database activity stream that was started using the AWS console, the <code>start-activity-stream</code>
-     * AWS CLI command, or the <code>StartActivityStream</code> action.
+     * Stops a database activity stream that was started using the Amazon Web Services console, the
+     * <code>start-activity-stream</code> CLI command, or the <code>StartActivityStream</code> action.
      * </p>
      * <p>
      * For more information, see <a
@@ -10370,7 +10370,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html"> Replicating Automated
-     * Backups to Another AWS Region</a> in the <i>Amazon RDS User Guide.</i>
+     * Backups to Another Amazon Web Services Region</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param stopDBInstanceAutomatedBackupsReplicationRequest

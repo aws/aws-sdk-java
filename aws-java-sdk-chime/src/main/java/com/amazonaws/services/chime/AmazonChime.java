@@ -3138,7 +3138,7 @@ public interface AmazonChime {
     /**
      * <p>
      * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated
-     * <code>VoiceConnectorItems</code> .
+     * <code>VoiceConnectorItems</code>.
      * </p>
      * 
      * @param getVoiceConnectorGroupRequest
@@ -3820,7 +3820,7 @@ public interface AmazonChime {
      * <p>
      * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i> .
+     * <i>Amazon Chime Developer Guide</i>.
      * </p>
      * 
      * @param listMeetingsRequest
@@ -4304,13 +4304,13 @@ public interface AmazonChime {
      * Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to
      * monitor usage of this API for your account. For more information, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS
-     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i> .
+     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
      * To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b>
      * field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in
-     * the <i>Amazon Chime Administration Guide</i> .
+     * the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * 
      * @param putRetentionSettingsRequest
@@ -5424,6 +5424,36 @@ public interface AmazonChime {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateSipMediaApplicationResult updateSipMediaApplication(UpdateSipMediaApplicationRequest updateSipMediaApplicationRequest);
+
+    /**
+     * <p>
+     * Allows you to trigger a Lambda function at any time while a call is active, and replace the current actions with
+     * new actions returned by the invocation.
+     * </p>
+     * 
+     * @param updateSipMediaApplicationCallRequest
+     * @return Result of the UpdateSipMediaApplicationCall operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateSipMediaApplicationCall
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplicationCall"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSipMediaApplicationCallResult updateSipMediaApplicationCall(UpdateSipMediaApplicationCallRequest updateSipMediaApplicationCallRequest);
 
     /**
      * <p>

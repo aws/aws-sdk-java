@@ -79,13 +79,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * If the source DB instance is in the same AWS Region as the read replica, specify a valid DB instance identifier.
+     * If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB
+     * instance identifier.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source DB instance is in a different AWS Region from the read replica, specify a valid DB instance ARN.
-     * For more information, see <a href=
+     * If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB
+     * instance ARN. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * >Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server,
      * which doesn't support cross-region replicas.
@@ -97,8 +98,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The compute and memory capacity of the read replica, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -112,7 +113,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The Availability Zone (AZ) where the read replica will be created.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
@@ -239,7 +240,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     * Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web Services
+     * Region.
      * </p>
      * </li>
      * <li>
@@ -249,12 +251,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * The specified DB subnet group must be in the same AWS Region in which the operation is running.
+     * The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is running.
      * </p>
      * </li>
      * <li>
      * <p>
-     * All read replicas in one AWS Region that are created from the same source DB instance must either:&gt;
+     * All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
+     * either:&gt;
      * </p>
      * <ul>
      * <li>
@@ -336,20 +339,22 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private String monitoringRoleArn;
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted read replica.
+     * The Amazon Web Services KMS key identifier for an encrypted read replica.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
-     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
-     * source DB instance.
+     * If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance, then do
+     * not specify a value for this parameter. A read replica in the same Region is always encrypted with the same
+     * Amazon Web Services KMS CMK as the source DB instance.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
-     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
-     * can't use CMKs from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a Amazon
+     * Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are
+     * specific to the Amazon Web Services Region that they are created in, and you can't use CMKs from one Amazon Web
+     * Services Region in another Amazon Web Services Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
@@ -359,46 +364,47 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API
-     * action in the source AWS Region that contains the source DB instance.
+     * action in the source Amazon Web Services Region that contains the source DB instance.
      * </p>
      * <p>
-     * You must specify this parameter when you create an encrypted read replica from another AWS Region by using the
-     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
-     * same AWS Region.
+     * You must specify this parameter when you create an encrypted read replica from another Amazon Web Services Region
+     * by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read
+     * replica in the same Amazon Web Services Region.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source AWS Region that contains the encrypted source DB instance. The presigned URL request must
-     * contain the following parameter values:
+     * executed in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned
+     * URL request must contain the following parameter values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted read replica is created in. This AWS Region is
-     * the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned
-     * URL.
+     * <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in.
+     * This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is
+     * called that contains this presigned URL.
      * </p>
      * <p>
-     * For example, if you create an encrypted DB instance in the us-west-1 AWS Region, from a source DB instance in the
-     * us-east-2 AWS Region, then you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1 AWS
-     * Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in
-     * the us-west-2 AWS Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set
-     * to the us-east-1 AWS Region.
+     * For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB
+     * instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code>
+     * action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the
+     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web Services Region. For this example,
+     * the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the read replica in the
-     * destination AWS Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> action
-     * that is called in the destination AWS Region, and the action contained in the presigned URL.
+     * <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the read replica
+     * in the destination Amazon Web Services Region. This is the same identifier for both the
+     * <code>CreateDBInstanceReadReplica</code> action that is called in the destination Amazon Web Services Region, and
+     * the action contained in the presigned URL.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be
-     * replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
-     * example, if you are creating an encrypted read replica from a DB instance in the us-west-2 AWS Region, then your
-     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services
+     * Region. For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 Amazon Web
+     * Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
      * </p>
      * </li>
@@ -406,16 +412,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
      * <note>
      * <p>
-     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
-     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
-     * Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.
+     * If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can be
+     * executed in the source Amazon Web Services Region.
      * </p>
      * <p>
      * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS doesn't support
@@ -426,8 +432,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private String preSignedUrl;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -449,16 +455,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -611,14 +617,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB instance is in the same AWS Region as the read replica, specify a valid DB instance
-     *        identifier.
+     *        If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid
+     *        DB instance identifier.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB instance is in a different AWS Region from the read replica, specify a valid DB instance
-     *        ARN. For more information, see <a href=
+     *        If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a
+     *        valid DB instance ARN. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        >Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL
      *        Server, which doesn't support cross-region replicas.
@@ -723,13 +729,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * If the source DB instance is in the same AWS Region as the read replica, specify a valid DB instance identifier.
+     * If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB
+     * instance identifier.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source DB instance is in a different AWS Region from the read replica, specify a valid DB instance ARN.
-     * For more information, see <a href=
+     * If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB
+     * instance ARN. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * >Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server,
      * which doesn't support cross-region replicas.
@@ -782,14 +789,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB instance is in the same AWS Region as the read replica, specify a valid DB instance
-     *        identifier.
+     *        If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid
+     *        DB instance identifier.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB instance is in a different AWS Region from the read replica, specify a valid DB instance
-     *        ARN. For more information, see <a href=
+     *        If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a
+     *        valid DB instance ARN. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        >Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL
      *        Server, which doesn't support cross-region replicas.
@@ -848,13 +855,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * If the source DB instance is in the same AWS Region as the read replica, specify a valid DB instance identifier.
+     * If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB
+     * instance identifier.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source DB instance is in a different AWS Region from the read replica, specify a valid DB instance ARN.
-     * For more information, see <a href=
+     * If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB
+     * instance ARN. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * >Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server,
      * which doesn't support cross-region replicas.
@@ -906,14 +914,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         If the source DB instance is in the same AWS Region as the read replica, specify a valid DB instance
-     *         identifier.
+     *         If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid
+     *         DB instance identifier.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source DB instance is in a different AWS Region from the read replica, specify a valid DB instance
-     *         ARN. For more information, see <a href=
+     *         If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a
+     *         valid DB instance ARN. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *         >Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL
      *         Server, which doesn't support cross-region replicas.
@@ -972,13 +980,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * If the source DB instance is in the same AWS Region as the read replica, specify a valid DB instance identifier.
+     * If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid DB
+     * instance identifier.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source DB instance is in a different AWS Region from the read replica, specify a valid DB instance ARN.
-     * For more information, see <a href=
+     * If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a valid DB
+     * instance ARN. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      * >Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL Server,
      * which doesn't support cross-region replicas.
@@ -1031,14 +1040,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB instance is in the same AWS Region as the read replica, specify a valid DB instance
-     *        identifier.
+     *        If the source DB instance is in the same Amazon Web Services Region as the read replica, specify a valid
+     *        DB instance identifier.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source DB instance is in a different AWS Region from the read replica, specify a valid DB instance
-     *        ARN. For more information, see <a href=
+     *        If the source DB instance is in a different Amazon Web Services Region from the read replica, specify a
+     *        valid DB instance ARN. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
      *        >Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. This doesn't apply to SQL
      *        Server, which doesn't support cross-region replicas.
@@ -1055,8 +1064,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The compute and memory capacity of the read replica, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1066,8 +1075,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the read replica, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *        instance classes, and availability for your engine, see <a
+     *        instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *        full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
@@ -1081,8 +1090,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The compute and memory capacity of the read replica, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1091,8 +1100,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @return The compute and memory capacity of the read replica, for example, <code>db.m4.large</code>. Not all DB
-     *         instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *         instance classes, and availability for your engine, see <a
+     *         instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *         full list of DB instance classes, and availability for your engine, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *         Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
@@ -1106,8 +1115,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The compute and memory capacity of the read replica, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1117,8 +1126,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the read replica, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *        instance classes, and availability for your engine, see <a
+     *        instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *        full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
@@ -1136,7 +1145,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The Availability Zone (AZ) where the read replica will be created.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
@@ -1145,7 +1154,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * @param availabilityZone
      *        The Availability Zone (AZ) where the read replica will be created.</p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
@@ -1160,7 +1169,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The Availability Zone (AZ) where the read replica will be created.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
@@ -1168,7 +1177,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The Availability Zone (AZ) where the read replica will be created.</p>
      *         <p>
-     *         Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *         Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      *         </p>
      *         <p>
      *         Example: <code>us-east-1d</code>
@@ -1183,7 +1192,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * The Availability Zone (AZ) where the read replica will be created.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
@@ -1192,7 +1201,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * @param availabilityZone
      *        The Availability Zone (AZ) where the read replica will be created.</p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
@@ -1996,7 +2005,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     * Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web Services
+     * Region.
      * </p>
      * </li>
      * <li>
@@ -2006,12 +2016,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * The specified DB subnet group must be in the same AWS Region in which the operation is running.
+     * The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is running.
      * </p>
      * </li>
      * <li>
      * <p>
-     * All read replicas in one AWS Region that are created from the same source DB instance must either:&gt;
+     * All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
+     * either:&gt;
      * </p>
      * <ul>
      * <li>
@@ -2041,7 +2052,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     *        Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web
+     *        Services Region.
      *        </p>
      *        </li>
      *        <li>
@@ -2051,12 +2063,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        The specified DB subnet group must be in the same AWS Region in which the operation is running.
+     *        The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is
+     *        running.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        All read replicas in one AWS Region that are created from the same source DB instance must either:&gt;
+     *        All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
+     *        either:&gt;
      *        </p>
      *        <ul>
      *        <li>
@@ -2091,7 +2105,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     * Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web Services
+     * Region.
      * </p>
      * </li>
      * <li>
@@ -2101,12 +2116,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * The specified DB subnet group must be in the same AWS Region in which the operation is running.
+     * The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is running.
      * </p>
      * </li>
      * <li>
      * <p>
-     * All read replicas in one AWS Region that are created from the same source DB instance must either:&gt;
+     * All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
+     * either:&gt;
      * </p>
      * <ul>
      * <li>
@@ -2135,7 +2151,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         <ul>
      *         <li>
      *         <p>
-     *         Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     *         Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web
+     *         Services Region.
      *         </p>
      *         </li>
      *         <li>
@@ -2145,12 +2162,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         The specified DB subnet group must be in the same AWS Region in which the operation is running.
+     *         The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is
+     *         running.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         All read replicas in one AWS Region that are created from the same source DB instance must either:&gt;
+     *         All read replicas in one Amazon Web Services Region that are created from the same source DB instance
+     *         must either:&gt;
      *         </p>
      *         <ul>
      *         <li>
@@ -2185,7 +2204,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     * Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web Services
+     * Region.
      * </p>
      * </li>
      * <li>
@@ -2195,12 +2215,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * The specified DB subnet group must be in the same AWS Region in which the operation is running.
+     * The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is running.
      * </p>
      * </li>
      * <li>
      * <p>
-     * All read replicas in one AWS Region that are created from the same source DB instance must either:&gt;
+     * All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
+     * either:&gt;
      * </p>
      * <ul>
      * <li>
@@ -2230,7 +2251,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Can only be specified if the source DB instance identifier specifies a DB instance in another AWS Region.
+     *        Can only be specified if the source DB instance identifier specifies a DB instance in another Amazon Web
+     *        Services Region.
      *        </p>
      *        </li>
      *        <li>
@@ -2240,12 +2262,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        The specified DB subnet group must be in the same AWS Region in which the operation is running.
+     *        The specified DB subnet group must be in the same Amazon Web Services Region in which the operation is
+     *        running.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        All read replicas in one AWS Region that are created from the same source DB instance must either:&gt;
+     *        All read replicas in one Amazon Web Services Region that are created from the same source DB instance must
+     *        either:&gt;
      *        </p>
      *        <ul>
      *        <li>
@@ -2687,39 +2711,43 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted read replica.
+     * The Amazon Web Services KMS key identifier for an encrypted read replica.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
-     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
-     * source DB instance.
+     * If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance, then do
+     * not specify a value for this parameter. A read replica in the same Region is always encrypted with the same
+     * Amazon Web Services KMS CMK as the source DB instance.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
-     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
-     * can't use CMKs from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a Amazon
+     * Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are
+     * specific to the Amazon Web Services Region that they are created in, and you can't use CMKs from one Amazon Web
+     * Services Region in another Amazon Web Services Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted read replica.</p>
+     *        The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS CMK.
      *        </p>
      *        <p>
-     *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not
-     *        specify a value for this parameter. A read replica in the same Region is always encrypted with the same
-     *        AWS KMS CMK as the source DB instance.
+     *        If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance,
+     *        then do not specify a value for this parameter. A read replica in the same Region is always encrypted with
+     *        the same Amazon Web Services KMS CMK as the source DB instance.
      *        </p>
      *        <p>
-     *        If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key
-     *        identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
-     *        created in, and you can't use CMKs from one AWS Region in another AWS Region.
+     *        If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a
+     *        Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services
+     *        KMS CMKs are specific to the Amazon Web Services Region that they are created in, and you can't use CMKs
+     *        from one Amazon Web Services Region in another Amazon Web Services Region.
      *        </p>
      *        <p>
      *        You can't create an encrypted read replica from an unencrypted DB instance.
@@ -2731,38 +2759,42 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted read replica.
+     * The Amazon Web Services KMS key identifier for an encrypted read replica.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
-     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
-     * source DB instance.
+     * If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance, then do
+     * not specify a value for this parameter. A read replica in the same Region is always encrypted with the same
+     * Amazon Web Services KMS CMK as the source DB instance.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
-     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
-     * can't use CMKs from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a Amazon
+     * Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are
+     * specific to the Amazon Web Services Region that they are created in, and you can't use CMKs from one Amazon Web
+     * Services Region in another Amazon Web Services Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
      * </p>
      * 
-     * @return The AWS KMS key identifier for an encrypted read replica.</p>
+     * @return The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS CMK.
      *         </p>
      *         <p>
-     *         If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not
-     *         specify a value for this parameter. A read replica in the same Region is always encrypted with the same
-     *         AWS KMS CMK as the source DB instance.
+     *         If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance,
+     *         then do not specify a value for this parameter. A read replica in the same Region is always encrypted
+     *         with the same Amazon Web Services KMS CMK as the source DB instance.
      *         </p>
      *         <p>
-     *         If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key
-     *         identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
-     *         created in, and you can't use CMKs from one AWS Region in another AWS Region.
+     *         If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify
+     *         a Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web
+     *         Services KMS CMKs are specific to the Amazon Web Services Region that they are created in, and you can't
+     *         use CMKs from one Amazon Web Services Region in another Amazon Web Services Region.
      *         </p>
      *         <p>
      *         You can't create an encrypted read replica from an unencrypted DB instance.
@@ -2774,39 +2806,43 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted read replica.
+     * The Amazon Web Services KMS key identifier for an encrypted read replica.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS CMK.
      * </p>
      * <p>
-     * If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not specify a
-     * value for this parameter. A read replica in the same Region is always encrypted with the same AWS KMS CMK as the
-     * source DB instance.
+     * If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance, then do
+     * not specify a value for this parameter. A read replica in the same Region is always encrypted with the same
+     * Amazon Web Services KMS CMK as the source DB instance.
      * </p>
      * <p>
-     * If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key identifier
-     * for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are created in, and you
-     * can't use CMKs from one AWS Region in another AWS Region.
+     * If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a Amazon
+     * Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services KMS CMKs are
+     * specific to the Amazon Web Services Region that they are created in, and you can't use CMKs from one Amazon Web
+     * Services Region in another Amazon Web Services Region.
      * </p>
      * <p>
      * You can't create an encrypted read replica from an unencrypted DB instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted read replica.</p>
+     *        The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS CMK.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS CMK.
      *        </p>
      *        <p>
-     *        If you create an encrypted read replica in the same AWS Region as the source DB instance, then do not
-     *        specify a value for this parameter. A read replica in the same Region is always encrypted with the same
-     *        AWS KMS CMK as the source DB instance.
+     *        If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance,
+     *        then do not specify a value for this parameter. A read replica in the same Region is always encrypted with
+     *        the same Amazon Web Services KMS CMK as the source DB instance.
      *        </p>
      *        <p>
-     *        If you create an encrypted read replica in a different AWS Region, then you must specify a AWS KMS key
-     *        identifier for the destination AWS Region. AWS KMS CMKs are specific to the AWS Region that they are
-     *        created in, and you can't use CMKs from one AWS Region in another AWS Region.
+     *        If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a
+     *        Amazon Web Services KMS key identifier for the destination Amazon Web Services Region. Amazon Web Services
+     *        KMS CMKs are specific to the Amazon Web Services Region that they are created in, and you can't use CMKs
+     *        from one Amazon Web Services Region in another Amazon Web Services Region.
      *        </p>
      *        <p>
      *        You can't create an encrypted read replica from an unencrypted DB instance.
@@ -2821,46 +2857,47 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API
-     * action in the source AWS Region that contains the source DB instance.
+     * action in the source Amazon Web Services Region that contains the source DB instance.
      * </p>
      * <p>
-     * You must specify this parameter when you create an encrypted read replica from another AWS Region by using the
-     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
-     * same AWS Region.
+     * You must specify this parameter when you create an encrypted read replica from another Amazon Web Services Region
+     * by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read
+     * replica in the same Amazon Web Services Region.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source AWS Region that contains the encrypted source DB instance. The presigned URL request must
-     * contain the following parameter values:
+     * executed in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned
+     * URL request must contain the following parameter values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted read replica is created in. This AWS Region is
-     * the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned
-     * URL.
+     * <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in.
+     * This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is
+     * called that contains this presigned URL.
      * </p>
      * <p>
-     * For example, if you create an encrypted DB instance in the us-west-1 AWS Region, from a source DB instance in the
-     * us-east-2 AWS Region, then you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1 AWS
-     * Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in
-     * the us-west-2 AWS Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set
-     * to the us-east-1 AWS Region.
+     * For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB
+     * instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code>
+     * action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the
+     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web Services Region. For this example,
+     * the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the read replica in the
-     * destination AWS Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> action
-     * that is called in the destination AWS Region, and the action contained in the presigned URL.
+     * <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the read replica
+     * in the destination Amazon Web Services Region. This is the same identifier for both the
+     * <code>CreateDBInstanceReadReplica</code> action that is called in the destination Amazon Web Services Region, and
+     * the action contained in the presigned URL.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be
-     * replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
-     * example, if you are creating an encrypted read replica from a DB instance in the us-west-2 AWS Region, then your
-     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services
+     * Region. For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 Amazon Web
+     * Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
      * </p>
      * </li>
@@ -2868,16 +2905,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
      * <note>
      * <p>
-     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
-     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
-     * Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.
+     * If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can be
+     * executed in the source Amazon Web Services Region.
      * </p>
      * <p>
      * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS doesn't support
@@ -2887,63 +2924,65 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * 
      * @param preSignedUrl
      *        The URL that contains a Signature Version 4 signed request for the
-     *        <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region that contains the source DB
-     *        instance. </p>
+     *        <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web Services Region that contains
+     *        the source DB instance. </p>
      *        <p>
-     *        You must specify this parameter when you create an encrypted read replica from another AWS Region by using
-     *        the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read
-     *        replica in the same AWS Region.
+     *        You must specify this parameter when you create an encrypted read replica from another Amazon Web Services
+     *        Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an
+     *        encrypted read replica in the same Amazon Web Services Region.
      *        </p>
      *        <p>
      *        The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that
-     *        can be executed in the source AWS Region that contains the encrypted source DB instance. The presigned URL
-     *        request must contain the following parameter values:
+     *        can be executed in the source Amazon Web Services Region that contains the encrypted source DB instance.
+     *        The presigned URL request must contain the following parameter values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The AWS Region that the encrypted read replica is created in. This AWS
-     *        Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains
-     *        this presigned URL.
+     *        <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created
+     *        in. This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code>
+     *        action is called that contains this presigned URL.
      *        </p>
      *        <p>
-     *        For example, if you create an encrypted DB instance in the us-west-1 AWS Region, from a source DB instance
-     *        in the us-east-2 AWS Region, then you call the <code>CreateDBInstanceReadReplica</code> action in the
-     *        us-east-1 AWS Region and provide a presigned URL that contains a call to the
-     *        <code>CreateDBInstanceReadReplica</code> action in the us-west-2 AWS Region. For this example, the
-     *        <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 AWS Region.
+     *        For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a
+     *        source DB instance in the us-east-2 Amazon Web Services Region, then you call the
+     *        <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web Services Region and provide a
+     *        presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in the us-west-2
+     *        Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must
+     *        be set to the us-east-1 Amazon Web Services Region.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the read replica in the
-     *        destination AWS Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code>
-     *        action that is called in the destination AWS Region, and the action contained in the presigned URL.
+     *        <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the read
+     *        replica in the destination Amazon Web Services Region. This is the same identifier for both the
+     *        <code>CreateDBInstanceReadReplica</code> action that is called in the destination Amazon Web Services
+     *        Region, and the action contained in the presigned URL.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be
-     *        replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region.
-     *        For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 AWS Region,
-     *        then your <code>SourceDBInstanceIdentifier</code> looks like the following example:
-     *        <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
+     *        replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web
+     *        Services Region. For example, if you are creating an encrypted read replica from a DB instance in the
+     *        us-west-2 Amazon Web Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the
+     *        following example: <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        To learn how to generate a Signature Version 4 signed request, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     *        Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      *        Process</a>.
      *        </p>
      *        <note>
      *        <p>
-     *        If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
-     *        <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     *        If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
+     *        <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually.
      *        Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the
-     *        operation that can be executed in the source AWS Region.
+     *        operation that can be executed in the source Amazon Web Services Region.
      *        </p>
      *        <p>
      *        <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS doesn't support
@@ -2958,46 +2997,47 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API
-     * action in the source AWS Region that contains the source DB instance.
+     * action in the source Amazon Web Services Region that contains the source DB instance.
      * </p>
      * <p>
-     * You must specify this parameter when you create an encrypted read replica from another AWS Region by using the
-     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
-     * same AWS Region.
+     * You must specify this parameter when you create an encrypted read replica from another Amazon Web Services Region
+     * by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read
+     * replica in the same Amazon Web Services Region.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source AWS Region that contains the encrypted source DB instance. The presigned URL request must
-     * contain the following parameter values:
+     * executed in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned
+     * URL request must contain the following parameter values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted read replica is created in. This AWS Region is
-     * the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned
-     * URL.
+     * <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in.
+     * This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is
+     * called that contains this presigned URL.
      * </p>
      * <p>
-     * For example, if you create an encrypted DB instance in the us-west-1 AWS Region, from a source DB instance in the
-     * us-east-2 AWS Region, then you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1 AWS
-     * Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in
-     * the us-west-2 AWS Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set
-     * to the us-east-1 AWS Region.
+     * For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB
+     * instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code>
+     * action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the
+     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web Services Region. For this example,
+     * the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the read replica in the
-     * destination AWS Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> action
-     * that is called in the destination AWS Region, and the action contained in the presigned URL.
+     * <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the read replica
+     * in the destination Amazon Web Services Region. This is the same identifier for both the
+     * <code>CreateDBInstanceReadReplica</code> action that is called in the destination Amazon Web Services Region, and
+     * the action contained in the presigned URL.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be
-     * replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
-     * example, if you are creating an encrypted read replica from a DB instance in the us-west-2 AWS Region, then your
-     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services
+     * Region. For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 Amazon Web
+     * Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
      * </p>
      * </li>
@@ -3005,16 +3045,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
      * <note>
      * <p>
-     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
-     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
-     * Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.
+     * If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can be
+     * executed in the source Amazon Web Services Region.
      * </p>
      * <p>
      * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS doesn't support
@@ -3023,63 +3063,65 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </note>
      * 
      * @return The URL that contains a Signature Version 4 signed request for the
-     *         <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region that contains the source DB
-     *         instance. </p>
+     *         <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web Services Region that
+     *         contains the source DB instance. </p>
      *         <p>
-     *         You must specify this parameter when you create an encrypted read replica from another AWS Region by
-     *         using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read
-     *         replica in the same AWS Region.
+     *         You must specify this parameter when you create an encrypted read replica from another Amazon Web
+     *         Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are
+     *         creating an encrypted read replica in the same Amazon Web Services Region.
      *         </p>
      *         <p>
      *         The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action
-     *         that can be executed in the source AWS Region that contains the encrypted source DB instance. The
-     *         presigned URL request must contain the following parameter values:
+     *         that can be executed in the source Amazon Web Services Region that contains the encrypted source DB
+     *         instance. The presigned URL request must contain the following parameter values:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>DestinationRegion</code> - The AWS Region that the encrypted read replica is created in. This AWS
-     *         Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains
-     *         this presigned URL.
+     *         <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is
+     *         created in. This Amazon Web Services Region is the same one where the
+     *         <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned URL.
      *         </p>
      *         <p>
-     *         For example, if you create an encrypted DB instance in the us-west-1 AWS Region, from a source DB
-     *         instance in the us-east-2 AWS Region, then you call the <code>CreateDBInstanceReadReplica</code> action
-     *         in the us-east-1 AWS Region and provide a presigned URL that contains a call to the
-     *         <code>CreateDBInstanceReadReplica</code> action in the us-west-2 AWS Region. For this example, the
-     *         <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 AWS Region.
+     *         For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a
+     *         source DB instance in the us-east-2 Amazon Web Services Region, then you call the
+     *         <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web Services Region and provide a
+     *         presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in the
+     *         us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the
+     *         presigned URL must be set to the us-east-1 Amazon Web Services Region.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the read replica in the
-     *         destination AWS Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code>
-     *         action that is called in the destination AWS Region, and the action contained in the presigned URL.
+     *         <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the read
+     *         replica in the destination Amazon Web Services Region. This is the same identifier for both the
+     *         <code>CreateDBInstanceReadReplica</code> action that is called in the destination Amazon Web Services
+     *         Region, and the action contained in the presigned URL.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be
-     *         replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region.
-     *         For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 AWS
-     *         Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following example:
-     *         <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
+     *         replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web
+     *         Services Region. For example, if you are creating an encrypted read replica from a DB instance in the
+     *         us-west-2 Amazon Web Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the
+     *         following example: <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         To learn how to generate a Signature Version 4 signed request, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     *         Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     *         Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      *         Process</a>.
      *         </p>
      *         <note>
      *         <p>
-     *         If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
-     *         <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     *         If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code>
+     *         (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually.
      *         Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the
-     *         operation that can be executed in the source AWS Region.
+     *         operation that can be executed in the source Amazon Web Services Region.
      *         </p>
      *         <p>
      *         <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS doesn't
@@ -3094,46 +3136,47 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API
-     * action in the source AWS Region that contains the source DB instance.
+     * action in the source Amazon Web Services Region that contains the source DB instance.
      * </p>
      * <p>
-     * You must specify this parameter when you create an encrypted read replica from another AWS Region by using the
-     * Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
-     * same AWS Region.
+     * You must specify this parameter when you create an encrypted read replica from another Amazon Web Services Region
+     * by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read
+     * replica in the same Amazon Web Services Region.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source AWS Region that contains the encrypted source DB instance. The presigned URL request must
-     * contain the following parameter values:
+     * executed in the source Amazon Web Services Region that contains the encrypted source DB instance. The presigned
+     * URL request must contain the following parameter values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The AWS Region that the encrypted read replica is created in. This AWS Region is
-     * the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains this presigned
-     * URL.
+     * <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created in.
+     * This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is
+     * called that contains this presigned URL.
      * </p>
      * <p>
-     * For example, if you create an encrypted DB instance in the us-west-1 AWS Region, from a source DB instance in the
-     * us-east-2 AWS Region, then you call the <code>CreateDBInstanceReadReplica</code> action in the us-east-1 AWS
-     * Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in
-     * the us-west-2 AWS Region. For this example, the <code>DestinationRegion</code> in the presigned URL must be set
-     * to the us-east-1 AWS Region.
+     * For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a source DB
+     * instance in the us-east-2 Amazon Web Services Region, then you call the <code>CreateDBInstanceReadReplica</code>
+     * action in the us-east-1 Amazon Web Services Region and provide a presigned URL that contains a call to the
+     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web Services Region. For this example,
+     * the <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 Amazon Web Services Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the read replica in the
-     * destination AWS Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code> action
-     * that is called in the destination AWS Region, and the action contained in the presigned URL.
+     * <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the read replica
+     * in the destination Amazon Web Services Region. This is the same identifier for both the
+     * <code>CreateDBInstanceReadReplica</code> action that is called in the destination Amazon Web Services Region, and
+     * the action contained in the presigned URL.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be
-     * replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
-     * example, if you are creating an encrypted read replica from a DB instance in the us-west-2 AWS Region, then your
-     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services
+     * Region. For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 Amazon Web
+     * Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
      * </p>
      * </li>
@@ -3141,16 +3184,16 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
+     * Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
      * <note>
      * <p>
-     * If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
-     * <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
-     * Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that
-     * can be executed in the source AWS Region.
+     * If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
+     * <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can be
+     * executed in the source Amazon Web Services Region.
      * </p>
      * <p>
      * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS doesn't support
@@ -3160,63 +3203,65 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * 
      * @param preSignedUrl
      *        The URL that contains a Signature Version 4 signed request for the
-     *        <code>CreateDBInstanceReadReplica</code> API action in the source AWS Region that contains the source DB
-     *        instance. </p>
+     *        <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web Services Region that contains
+     *        the source DB instance. </p>
      *        <p>
-     *        You must specify this parameter when you create an encrypted read replica from another AWS Region by using
-     *        the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an encrypted read
-     *        replica in the same AWS Region.
+     *        You must specify this parameter when you create an encrypted read replica from another Amazon Web Services
+     *        Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code> when you are creating an
+     *        encrypted read replica in the same Amazon Web Services Region.
      *        </p>
      *        <p>
      *        The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code> API action that
-     *        can be executed in the source AWS Region that contains the encrypted source DB instance. The presigned URL
-     *        request must contain the following parameter values:
+     *        can be executed in the source Amazon Web Services Region that contains the encrypted source DB instance.
+     *        The presigned URL request must contain the following parameter values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The AWS Region that the encrypted read replica is created in. This AWS
-     *        Region is the same one where the <code>CreateDBInstanceReadReplica</code> action is called that contains
-     *        this presigned URL.
+     *        <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted read replica is created
+     *        in. This Amazon Web Services Region is the same one where the <code>CreateDBInstanceReadReplica</code>
+     *        action is called that contains this presigned URL.
      *        </p>
      *        <p>
-     *        For example, if you create an encrypted DB instance in the us-west-1 AWS Region, from a source DB instance
-     *        in the us-east-2 AWS Region, then you call the <code>CreateDBInstanceReadReplica</code> action in the
-     *        us-east-1 AWS Region and provide a presigned URL that contains a call to the
-     *        <code>CreateDBInstanceReadReplica</code> action in the us-west-2 AWS Region. For this example, the
-     *        <code>DestinationRegion</code> in the presigned URL must be set to the us-east-1 AWS Region.
+     *        For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services Region, from a
+     *        source DB instance in the us-east-2 Amazon Web Services Region, then you call the
+     *        <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web Services Region and provide a
+     *        presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code> action in the us-west-2
+     *        Amazon Web Services Region. For this example, the <code>DestinationRegion</code> in the presigned URL must
+     *        be set to the us-east-1 Amazon Web Services Region.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the read replica in the
-     *        destination AWS Region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code>
-     *        action that is called in the destination AWS Region, and the action contained in the presigned URL.
+     *        <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the key to use to encrypt the read
+     *        replica in the destination Amazon Web Services Region. This is the same identifier for both the
+     *        <code>CreateDBInstanceReadReplica</code> action that is called in the destination Amazon Web Services
+     *        Region, and the action contained in the presigned URL.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted DB instance to be
-     *        replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region.
-     *        For example, if you are creating an encrypted read replica from a DB instance in the us-west-2 AWS Region,
-     *        then your <code>SourceDBInstanceIdentifier</code> looks like the following example:
-     *        <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
+     *        replicated. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web
+     *        Services Region. For example, if you are creating an encrypted read replica from a DB instance in the
+     *        us-west-2 Amazon Web Services Region, then your <code>SourceDBInstanceIdentifier</code> looks like the
+     *        following example: <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        To learn how to generate a Signature Version 4 signed request, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
+     *        Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> and <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      *        Process</a>.
      *        </p>
      *        <note>
      *        <p>
-     *        If you are using an AWS SDK tool or the AWS CLI, you can specify <code>SourceRegion</code> (or
-     *        <code>--source-region</code> for the AWS CLI) instead of specifying <code>PreSignedUrl</code> manually.
+     *        If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
+     *        <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually.
      *        Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the
-     *        operation that can be executed in the source AWS Region.
+     *        operation that can be executed in the source Amazon Web Services Region.
      *        </p>
      *        <p>
      *        <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on Amazon RDS doesn't support
@@ -3232,8 +3277,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3242,8 +3287,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3256,8 +3301,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3265,8 +3310,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3279,8 +3324,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3289,8 +3334,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3305,8 +3350,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3314,8 +3359,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3416,28 +3461,28 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
-     *        each AWS Region.
+     *        default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
+     *        has a different default CMK for each Amazon Web Services Region.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -3446,27 +3491,27 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * @return The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK).
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK).
      *         </p>
      *         <p>
      *         If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *         default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK
-     *         for each AWS Region.
+     *         default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services
+     *         account has a different default CMK for each Amazon Web Services Region.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -3475,28 +3520,28 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
-     *        each AWS Region.
+     *        default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
+     *        has a different default CMK for each Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

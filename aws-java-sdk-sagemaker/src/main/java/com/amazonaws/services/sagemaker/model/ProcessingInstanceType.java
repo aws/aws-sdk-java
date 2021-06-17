@@ -57,7 +57,13 @@ public enum ProcessingInstanceType {
     MlR58xlarge("ml.r5.8xlarge"),
     MlR512xlarge("ml.r5.12xlarge"),
     MlR516xlarge("ml.r5.16xlarge"),
-    MlR524xlarge("ml.r5.24xlarge");
+    MlR524xlarge("ml.r5.24xlarge"),
+    MlG4dnXlarge("ml.g4dn.xlarge"),
+    MlG4dn2xlarge("ml.g4dn.2xlarge"),
+    MlG4dn4xlarge("ml.g4dn.4xlarge"),
+    MlG4dn8xlarge("ml.g4dn.8xlarge"),
+    MlG4dn12xlarge("ml.g4dn.12xlarge"),
+    MlG4dn16xlarge("ml.g4dn.16xlarge");
 
     private String value;
 

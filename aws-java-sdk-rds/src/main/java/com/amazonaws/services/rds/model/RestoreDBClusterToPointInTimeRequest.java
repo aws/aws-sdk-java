@@ -181,16 +181,18 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB
+     * cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK that is different than the
-     * AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS KMS CMK
-     * identified by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK that is
+     * different than the Amazon Web Services KMS key used to encrypt the source DB cluster. The new DB cluster is
+     * encrypted with the Amazon Web Services KMS CMK identified by the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -198,8 +200,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS CMK that was used to
-     * encrypt the source DB cluster.
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the Amazon Web Services KMS CMK
+     * that was used to encrypt the source DB cluster.
      * </p>
      * </li>
      * <li>
@@ -216,8 +218,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String kmsKeyId;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -1370,16 +1372,18 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB
+     * cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK that is different than the
-     * AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS KMS CMK
-     * identified by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK that is
+     * different than the Amazon Web Services KMS key used to encrypt the source DB cluster. The new DB cluster is
+     * encrypted with the Amazon Web Services KMS CMK identified by the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1387,8 +1391,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS CMK that was used to
-     * encrypt the source DB cluster.
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the Amazon Web Services KMS CMK
+     * that was used to encrypt the source DB cluster.
      * </p>
      * </li>
      * <li>
@@ -1403,15 +1407,18 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+     *        The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted
+     *        DB cluster.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account,
+     *        specify the key ARN or alias ARN.
      *        </p>
      *        <p>
-     *        You can restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK that is different
-     *        than the AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS
-     *        KMS CMK identified by the <code>KmsKeyId</code> parameter.
+     *        You can restore to a new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK that
+     *        is different than the Amazon Web Services KMS key used to encrypt the source DB cluster. The new DB
+     *        cluster is encrypted with the Amazon Web Services KMS CMK identified by the <code>KmsKeyId</code>
+     *        parameter.
      *        </p>
      *        <p>
      *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1419,8 +1426,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS CMK that was
-     *        used to encrypt the source DB cluster.
+     *        If the DB cluster is encrypted, then the restored DB cluster is encrypted using the Amazon Web Services
+     *        KMS CMK that was used to encrypt the source DB cluster.
      *        </p>
      *        </li>
      *        <li>
@@ -1440,16 +1447,18 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB
+     * cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK that is different than the
-     * AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS KMS CMK
-     * identified by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK that is
+     * different than the Amazon Web Services KMS key used to encrypt the source DB cluster. The new DB cluster is
+     * encrypted with the Amazon Web Services KMS CMK identified by the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1457,8 +1466,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS CMK that was used to
-     * encrypt the source DB cluster.
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the Amazon Web Services KMS CMK
+     * that was used to encrypt the source DB cluster.
      * </p>
      * </li>
      * <li>
@@ -1472,16 +1481,18 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * rejected.
      * </p>
      * 
-     * @return The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB
-     *         cluster.</p>
+     * @return The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an
+     *         encrypted DB cluster.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services
+     *         account, specify the key ARN or alias ARN.
      *         </p>
      *         <p>
-     *         You can restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK that is different
-     *         than the AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS
-     *         KMS CMK identified by the <code>KmsKeyId</code> parameter.
+     *         You can restore to a new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK
+     *         that is different than the Amazon Web Services KMS key used to encrypt the source DB cluster. The new DB
+     *         cluster is encrypted with the Amazon Web Services KMS CMK identified by the <code>KmsKeyId</code>
+     *         parameter.
      *         </p>
      *         <p>
      *         If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1489,8 +1500,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS CMK that was
-     *         used to encrypt the source DB cluster.
+     *         If the DB cluster is encrypted, then the restored DB cluster is encrypted using the Amazon Web Services
+     *         KMS CMK that was used to encrypt the source DB cluster.
      *         </p>
      *         </li>
      *         <li>
@@ -1510,16 +1521,18 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
+     * The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB
+     * cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
-     * You can restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK that is different than the
-     * AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS KMS CMK
-     * identified by the <code>KmsKeyId</code> parameter.
+     * You can restore to a new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK that is
+     * different than the Amazon Web Services KMS key used to encrypt the source DB cluster. The new DB cluster is
+     * encrypted with the Amazon Web Services KMS CMK identified by the <code>KmsKeyId</code> parameter.
      * </p>
      * <p>
      * If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1527,8 +1540,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS CMK that was used to
-     * encrypt the source DB cluster.
+     * If the DB cluster is encrypted, then the restored DB cluster is encrypted using the Amazon Web Services KMS CMK
+     * that was used to encrypt the source DB cluster.
      * </p>
      * </li>
      * <li>
@@ -1543,15 +1556,18 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
+     *        The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted
+     *        DB cluster.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account,
+     *        specify the key ARN or alias ARN.
      *        </p>
      *        <p>
-     *        You can restore to a new DB cluster and encrypt the new DB cluster with a AWS KMS CMK that is different
-     *        than the AWS KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the AWS
-     *        KMS CMK identified by the <code>KmsKeyId</code> parameter.
+     *        You can restore to a new DB cluster and encrypt the new DB cluster with a Amazon Web Services KMS CMK that
+     *        is different than the Amazon Web Services KMS key used to encrypt the source DB cluster. The new DB
+     *        cluster is encrypted with the Amazon Web Services KMS CMK identified by the <code>KmsKeyId</code>
+     *        parameter.
      *        </p>
      *        <p>
      *        If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1559,8 +1575,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        If the DB cluster is encrypted, then the restored DB cluster is encrypted using the AWS KMS CMK that was
-     *        used to encrypt the source DB cluster.
+     *        If the DB cluster is encrypted, then the restored DB cluster is encrypted using the Amazon Web Services
+     *        KMS CMK that was used to encrypt the source DB cluster.
      *        </p>
      *        </li>
      *        <li>
@@ -1582,8 +1598,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -1592,8 +1608,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -1606,8 +1622,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -1615,8 +1631,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -1629,8 +1645,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -1639,8 +1655,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -1655,8 +1671,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -1664,8 +1680,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM

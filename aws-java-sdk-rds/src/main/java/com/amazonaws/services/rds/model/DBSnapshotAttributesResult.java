@@ -20,8 +20,8 @@ import javax.annotation.Generated;
  * Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.
  * </p>
  * <p>
- * Manual DB snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB snapshot. For
- * more information, see the <code>ModifyDBSnapshotAttribute</code> API action.
+ * Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB
+ * snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSnapshotAttributesResult" target="_top">AWS API

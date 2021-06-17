@@ -33,7 +33,7 @@ public class DescribeInstallationMediaResult extends com.amazonaws.AmazonWebServ
     private String marker;
     /**
      * <p>
-     * The list of <a>InstallationMedia</a> objects for the AWS account.
+     * The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstallationMedia> installationMedia;
@@ -92,10 +92,10 @@ public class DescribeInstallationMediaResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of <a>InstallationMedia</a> objects for the AWS account.
+     * The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.
      * </p>
      * 
-     * @return The list of <a>InstallationMedia</a> objects for the AWS account.
+     * @return The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.
      */
 
     public java.util.List<InstallationMedia> getInstallationMedia() {
@@ -107,11 +107,11 @@ public class DescribeInstallationMediaResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of <a>InstallationMedia</a> objects for the AWS account.
+     * The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.
      * </p>
      * 
      * @param installationMedia
-     *        The list of <a>InstallationMedia</a> objects for the AWS account.
+     *        The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.
      */
 
     public void setInstallationMedia(java.util.Collection<InstallationMedia> installationMedia) {
@@ -125,7 +125,7 @@ public class DescribeInstallationMediaResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of <a>InstallationMedia</a> objects for the AWS account.
+     * The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -134,7 +134,7 @@ public class DescribeInstallationMediaResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param installationMedia
-     *        The list of <a>InstallationMedia</a> objects for the AWS account.
+     *        The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,11 +150,11 @@ public class DescribeInstallationMediaResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of <a>InstallationMedia</a> objects for the AWS account.
+     * The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.
      * </p>
      * 
      * @param installationMedia
-     *        The list of <a>InstallationMedia</a> objects for the AWS account.
+     *        The list of <a>InstallationMedia</a> objects for the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

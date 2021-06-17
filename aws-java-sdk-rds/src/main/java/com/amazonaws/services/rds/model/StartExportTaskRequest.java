@@ -52,10 +52,10 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
     private String iamRoleArn;
     /**
      * <p>
-     * The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations. These can be set in the AWS KMS
-     * key policy:
+     * The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon
+     * S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK). The caller of this operation must be authorized to execute the
+     * following operations. These can be set in the Amazon Web Services KMS key policy:
      * </p>
      * <ul>
      * <li>
@@ -313,10 +313,10 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations. These can be set in the AWS KMS
-     * key policy:
+     * The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon
+     * S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK). The caller of this operation must be authorized to execute the
+     * following operations. These can be set in the Amazon Web Services KMS key policy:
      * </p>
      * <ul>
      * <li>
@@ -367,10 +367,10 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param kmsKeyId
-     *        The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The
-     *        AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
-     *        key (CMK). The caller of this operation must be authorized to execute the following operations. These can
-     *        be set in the AWS KMS key policy: </p>
+     *        The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt the snapshot exported to
+     *        Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     *        the Amazon Web Services KMS customer master key (CMK). The caller of this operation must be authorized to
+     *        execute the following operations. These can be set in the Amazon Web Services KMS key policy: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -425,10 +425,10 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations. These can be set in the AWS KMS
-     * key policy:
+     * The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon
+     * S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK). The caller of this operation must be authorized to execute the
+     * following operations. These can be set in the Amazon Web Services KMS key policy:
      * </p>
      * <ul>
      * <li>
@@ -478,10 +478,11 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The
-     *         AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
-     *         key (CMK). The caller of this operation must be authorized to execute the following operations. These can
-     *         be set in the AWS KMS key policy: </p>
+     * @return The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt the snapshot exported
+     *         to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name
+     *         for the Amazon Web Services KMS customer master key (CMK). The caller of this operation must be
+     *         authorized to execute the following operations. These can be set in the Amazon Web Services KMS key
+     *         policy: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -536,10 +537,10 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations. These can be set in the AWS KMS
-     * key policy:
+     * The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon
+     * S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK). The caller of this operation must be authorized to execute the
+     * following operations. These can be set in the Amazon Web Services KMS key policy:
      * </p>
      * <ul>
      * <li>
@@ -590,10 +591,10 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param kmsKeyId
-     *        The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The
-     *        AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
-     *        key (CMK). The caller of this operation must be authorized to execute the following operations. These can
-     *        be set in the AWS KMS key policy: </p>
+     *        The ID of the Amazon Web Services KMS customer master key (CMK) to use to encrypt the snapshot exported to
+     *        Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     *        the Amazon Web Services KMS customer master key (CMK). The caller of this operation must be authorized to
+     *        execute the following operations. These can be set in the Amazon Web Services KMS key policy: </p>
      *        <ul>
      *        <li>
      *        <p>

@@ -35,13 +35,14 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     private String dBInstanceArn;
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      */
     private String dbiResourceId;
     /**
      * <p>
-     * The AWS Region associated with the automated backup.
+     * The Amazon Web Services Region associated with the automated backup.
      * </p>
      */
     private String region;
@@ -100,8 +101,8 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     private Integer port;
     /**
      * <p>
-     * The Availability Zone that the automated backup was created in. For information on AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone that the automated backup was created in. For information on Amazon Web Services Regions
+     * and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
@@ -176,11 +177,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     private String storageType;
     /**
      * <p>
-     * The AWS KMS key ID for an automated backup.
+     * The Amazon Web Services KMS key ID for an automated backup.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      */
     private String kmsKeyId;
@@ -194,8 +195,8 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     private String timezone;
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -213,7 +214,7 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     private String dBInstanceAutomatedBackupsArn;
     /**
      * <p>
-     * The list of replications to different AWS Regions associated with the automated backup.
+     * The list of replications to different Amazon Web Services Regions associated with the automated backup.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications;
@@ -260,11 +261,13 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      * 
      * @param dbiResourceId
-     *        The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     *        The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     *        Services Region.
      */
 
     public void setDbiResourceId(String dbiResourceId) {
@@ -273,10 +276,12 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      * 
-     * @return The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * @return The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     *         Services Region.
      */
 
     public String getDbiResourceId() {
@@ -285,11 +290,13 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      * 
      * @param dbiResourceId
-     *        The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     *        The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     *        Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,11 +307,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region associated with the automated backup.
+     * The Amazon Web Services Region associated with the automated backup.
      * </p>
      * 
      * @param region
-     *        The AWS Region associated with the automated backup.
+     *        The Amazon Web Services Region associated with the automated backup.
      */
 
     public void setRegion(String region) {
@@ -313,10 +320,10 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region associated with the automated backup.
+     * The Amazon Web Services Region associated with the automated backup.
      * </p>
      * 
-     * @return The AWS Region associated with the automated backup.
+     * @return The Amazon Web Services Region associated with the automated backup.
      */
 
     public String getRegion() {
@@ -325,11 +332,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region associated with the automated backup.
+     * The Amazon Web Services Region associated with the automated backup.
      * </p>
      * 
      * @param region
-     *        The AWS Region associated with the automated backup.
+     *        The Amazon Web Services Region associated with the automated backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -675,15 +682,15 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone that the automated backup was created in. For information on AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone that the automated backup was created in. For information on Amazon Web Services Regions
+     * and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone that the automated backup was created in. For information on AWS Regions and
-     *        Availability Zones, see <a
+     *        The Availability Zone that the automated backup was created in. For information on Amazon Web Services
+     *        Regions and Availability Zones, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>.
      */
@@ -694,14 +701,14 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone that the automated backup was created in. For information on AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone that the automated backup was created in. For information on Amazon Web Services Regions
+     * and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * 
-     * @return The Availability Zone that the automated backup was created in. For information on AWS Regions and
-     *         Availability Zones, see <a
+     * @return The Availability Zone that the automated backup was created in. For information on Amazon Web Services
+     *         Regions and Availability Zones, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *         >Regions and Availability Zones</a>.
      */
@@ -712,15 +719,15 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zone that the automated backup was created in. For information on AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone that the automated backup was created in. For information on Amazon Web Services Regions
+     * and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone that the automated backup was created in. For information on AWS Regions and
-     *        Availability Zones, see <a
+     *        The Availability Zone that the automated backup was created in. For information on Amazon Web Services
+     *        Regions and Availability Zones, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1191,18 +1198,18 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key ID for an automated backup.
+     * The Amazon Web Services KMS key ID for an automated backup.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key ID for an automated backup.</p>
+     *        The Amazon Web Services KMS key ID for an automated backup.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1211,17 +1218,17 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key ID for an automated backup.
+     * The Amazon Web Services KMS key ID for an automated backup.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
-     * @return The AWS KMS key ID for an automated backup.</p>
+     * @return The Amazon Web Services KMS key ID for an automated backup.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK).
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -1230,18 +1237,18 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key ID for an automated backup.
+     * The Amazon Web Services KMS key ID for an automated backup.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key ID for an automated backup.</p>
+     *        The Amazon Web Services KMS key ID for an automated backup.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1304,13 +1311,13 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.
+     *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *        is enabled, and otherwise false.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -1319,12 +1326,12 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.
+     * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *         is enabled, and otherwise false.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -1333,13 +1340,13 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.
+     *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *        is enabled, and otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1350,12 +1357,12 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.
+     * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *         is enabled, and otherwise false.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {
@@ -1444,10 +1451,10 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of replications to different AWS Regions associated with the automated backup.
+     * The list of replications to different Amazon Web Services Regions associated with the automated backup.
      * </p>
      * 
-     * @return The list of replications to different AWS Regions associated with the automated backup.
+     * @return The list of replications to different Amazon Web Services Regions associated with the automated backup.
      */
 
     public java.util.List<DBInstanceAutomatedBackupsReplication> getDBInstanceAutomatedBackupsReplications() {
@@ -1459,11 +1466,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of replications to different AWS Regions associated with the automated backup.
+     * The list of replications to different Amazon Web Services Regions associated with the automated backup.
      * </p>
      * 
      * @param dBInstanceAutomatedBackupsReplications
-     *        The list of replications to different AWS Regions associated with the automated backup.
+     *        The list of replications to different Amazon Web Services Regions associated with the automated backup.
      */
 
     public void setDBInstanceAutomatedBackupsReplications(java.util.Collection<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications) {
@@ -1478,7 +1485,7 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of replications to different AWS Regions associated with the automated backup.
+     * The list of replications to different Amazon Web Services Regions associated with the automated backup.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1488,7 +1495,7 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBInstanceAutomatedBackupsReplications
-     *        The list of replications to different AWS Regions associated with the automated backup.
+     *        The list of replications to different Amazon Web Services Regions associated with the automated backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1505,11 +1512,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The list of replications to different AWS Regions associated with the automated backup.
+     * The list of replications to different Amazon Web Services Regions associated with the automated backup.
      * </p>
      * 
      * @param dBInstanceAutomatedBackupsReplications
-     *        The list of replications to different AWS Regions associated with the automated backup.
+     *        The list of replications to different Amazon Web Services Regions associated with the automated backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

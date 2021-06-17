@@ -43,6 +43,8 @@ public class DataSourceConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfluenceConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> GOOGLEDRIVECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GoogleDriveConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> WEBCRAWLERCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WebCrawlerConfiguration").build();
 
     private static final DataSourceConfigurationMarshaller instance = new DataSourceConfigurationMarshaller();
 
@@ -68,6 +70,7 @@ public class DataSourceConfigurationMarshaller {
             protocolMarshaller.marshall(dataSourceConfiguration.getServiceNowConfiguration(), SERVICENOWCONFIGURATION_BINDING);
             protocolMarshaller.marshall(dataSourceConfiguration.getConfluenceConfiguration(), CONFLUENCECONFIGURATION_BINDING);
             protocolMarshaller.marshall(dataSourceConfiguration.getGoogleDriveConfiguration(), GOOGLEDRIVECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataSourceConfiguration.getWebCrawlerConfiguration(), WEBCRAWLERCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

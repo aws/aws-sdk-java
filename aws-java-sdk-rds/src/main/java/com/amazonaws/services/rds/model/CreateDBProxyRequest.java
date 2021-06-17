@@ -27,9 +27,9 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified
-     * AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it
-     * can't end with a hyphen or contain two consecutive hyphens.
+     * The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account
+     * in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII
+     * letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      */
     private String dBProxyName;
@@ -49,7 +49,8 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<UserAuthConfig> auth;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.
+     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services
+     * Secrets Manager.
      * </p>
      */
     private String roleArn;
@@ -98,15 +99,16 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified
-     * AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it
-     * can't end with a hyphen or contain two consecutive hyphens.
+     * The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account
+     * in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII
+     * letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param dBProxyName
-     *        The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the
-     *        specified AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits,
-     *        and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
+     *        The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services
+     *        account in the specified Amazon Web Services Region. An identifier must begin with a letter and must
+     *        contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     *        hyphens.
      */
 
     public void setDBProxyName(String dBProxyName) {
@@ -115,14 +117,15 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified
-     * AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it
-     * can't end with a hyphen or contain two consecutive hyphens.
+     * The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account
+     * in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII
+     * letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
-     * @return The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the
-     *         specified AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits,
-     *         and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
+     * @return The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services
+     *         account in the specified Amazon Web Services Region. An identifier must begin with a letter and must
+     *         contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     *         hyphens.
      */
 
     public String getDBProxyName() {
@@ -131,15 +134,16 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified
-     * AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it
-     * can't end with a hyphen or contain two consecutive hyphens.
+     * The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account
+     * in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII
+     * letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * 
      * @param dBProxyName
-     *        The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the
-     *        specified AWS Region. An identifier must begin with a letter and must contain only ASCII letters, digits,
-     *        and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
+     *        The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services
+     *        account in the specified Amazon Web Services Region. An identifier must begin with a letter and must
+     *        contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     *        hyphens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,12 +302,13 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.
+     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services
+     * Secrets Manager.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets
-     *        Manager.
+     *        The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web
+     *        Services Secrets Manager.
      */
 
     public void setRoleArn(String roleArn) {
@@ -312,11 +317,12 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.
+     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services
+     * Secrets Manager.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets
-     *         Manager.
+     * @return The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web
+     *         Services Secrets Manager.
      */
 
     public String getRoleArn() {
@@ -325,12 +331,13 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.
+     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services
+     * Secrets Manager.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets
-     *        Manager.
+     *        The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web
+     *        Services Secrets Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

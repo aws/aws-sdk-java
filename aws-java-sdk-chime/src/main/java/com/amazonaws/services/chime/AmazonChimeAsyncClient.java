@@ -6063,6 +6063,40 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSipMediaApplicationCallResult> updateSipMediaApplicationCallAsync(UpdateSipMediaApplicationCallRequest request) {
+
+        return updateSipMediaApplicationCallAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSipMediaApplicationCallResult> updateSipMediaApplicationCallAsync(
+            final UpdateSipMediaApplicationCallRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSipMediaApplicationCallRequest, UpdateSipMediaApplicationCallResult> asyncHandler) {
+        final UpdateSipMediaApplicationCallRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSipMediaApplicationCallResult>() {
+            @Override
+            public UpdateSipMediaApplicationCallResult call() throws Exception {
+                UpdateSipMediaApplicationCallResult result = null;
+
+                try {
+                    result = executeUpdateSipMediaApplicationCall(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSipRuleResult> updateSipRuleAsync(UpdateSipRuleRequest request) {
 
         return updateSipRuleAsync(request, null);

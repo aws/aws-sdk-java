@@ -925,6 +925,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public UpdateSipMediaApplicationCallResult updateSipMediaApplicationCall(UpdateSipMediaApplicationCallRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateSipRuleResult updateSipRule(UpdateSipRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

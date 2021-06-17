@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Automated backups of a DB instance replicated to another AWS Region. They consist of system backups, transaction
- * logs, and database instance properties.
+ * Automated backups of a DB instance replicated to another Amazon Web Services Region. They consist of system backups,
+ * transaction logs, and database instance properties.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstanceAutomatedBackupsReplication"

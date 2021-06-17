@@ -77,6 +77,8 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      */
     private GoogleDriveConfiguration googleDriveConfiguration;
 
+    private WebCrawlerConfiguration webCrawlerConfiguration;
+
     /**
      * <p>
      * Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
@@ -398,6 +400,32 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * @param webCrawlerConfiguration
+     */
+
+    public void setWebCrawlerConfiguration(WebCrawlerConfiguration webCrawlerConfiguration) {
+        this.webCrawlerConfiguration = webCrawlerConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public WebCrawlerConfiguration getWebCrawlerConfiguration() {
+        return this.webCrawlerConfiguration;
+    }
+
+    /**
+     * @param webCrawlerConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withWebCrawlerConfiguration(WebCrawlerConfiguration webCrawlerConfiguration) {
+        setWebCrawlerConfiguration(webCrawlerConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -424,7 +452,9 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         if (getConfluenceConfiguration() != null)
             sb.append("ConfluenceConfiguration: ").append(getConfluenceConfiguration()).append(",");
         if (getGoogleDriveConfiguration() != null)
-            sb.append("GoogleDriveConfiguration: ").append(getGoogleDriveConfiguration());
+            sb.append("GoogleDriveConfiguration: ").append(getGoogleDriveConfiguration()).append(",");
+        if (getWebCrawlerConfiguration() != null)
+            sb.append("WebCrawlerConfiguration: ").append(getWebCrawlerConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -471,6 +501,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getGoogleDriveConfiguration() != null && other.getGoogleDriveConfiguration().equals(this.getGoogleDriveConfiguration()) == false)
             return false;
+        if (other.getWebCrawlerConfiguration() == null ^ this.getWebCrawlerConfiguration() == null)
+            return false;
+        if (other.getWebCrawlerConfiguration() != null && other.getWebCrawlerConfiguration().equals(this.getWebCrawlerConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -487,6 +521,7 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getServiceNowConfiguration() == null) ? 0 : getServiceNowConfiguration().hashCode());
         hashCode = prime * hashCode + ((getConfluenceConfiguration() == null) ? 0 : getConfluenceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getGoogleDriveConfiguration() == null) ? 0 : getGoogleDriveConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWebCrawlerConfiguration() == null) ? 0 : getWebCrawlerConfiguration().hashCode());
         return hashCode;
     }
 

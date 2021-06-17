@@ -70,7 +70,8 @@ public class ModifyDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Boolean debugLogging;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.
+     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services
+     * Secrets Manager.
      * </p>
      */
     private String roleArn;
@@ -436,12 +437,13 @@ public class ModifyDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.
+     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services
+     * Secrets Manager.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets
-     *        Manager.
+     *        The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web
+     *        Services Secrets Manager.
      */
 
     public void setRoleArn(String roleArn) {
@@ -450,11 +452,12 @@ public class ModifyDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.
+     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services
+     * Secrets Manager.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets
-     *         Manager.
+     * @return The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web
+     *         Services Secrets Manager.
      */
 
     public String getRoleArn() {
@@ -463,12 +466,13 @@ public class ModifyDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets Manager.
+     * The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services
+     * Secrets Manager.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in AWS Secrets
-     *        Manager.
+     *        The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web
+     *        Services Secrets Manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

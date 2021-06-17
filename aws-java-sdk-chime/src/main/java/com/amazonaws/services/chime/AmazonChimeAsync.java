@@ -3932,7 +3932,7 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated
-     * <code>VoiceConnectorItems</code> .
+     * <code>VoiceConnectorItems</code>.
      * </p>
      * 
      * @param getVoiceConnectorGroupRequest
@@ -3946,7 +3946,7 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated
-     * <code>VoiceConnectorItems</code> .
+     * <code>VoiceConnectorItems</code>.
      * </p>
      * 
      * @param getVoiceConnectorGroupRequest
@@ -4824,7 +4824,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i> .
+     * <i>Amazon Chime Developer Guide</i>.
      * </p>
      * 
      * @param listMeetingsRequest
@@ -4839,7 +4839,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i> .
+     * <i>Amazon Chime Developer Guide</i>.
      * </p>
      * 
      * @param listMeetingsRequest
@@ -5413,13 +5413,13 @@ public interface AmazonChimeAsync extends AmazonChime {
      * Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to
      * monitor usage of this API for your account. For more information, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS
-     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i> .
+     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
      * To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b>
      * field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in
-     * the <i>Amazon Chime Administration Guide</i> .
+     * the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * 
      * @param putRetentionSettingsRequest
@@ -5435,13 +5435,13 @@ public interface AmazonChimeAsync extends AmazonChime {
      * Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to
      * monitor usage of this API for your account. For more information, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS
-     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i> .
+     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
      * To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b>
      * field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in
-     * the <i>Amazon Chime Administration Guide</i> .
+     * the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * 
      * @param putRetentionSettingsRequest
@@ -6799,6 +6799,43 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<UpdateSipMediaApplicationResult> updateSipMediaApplicationAsync(
             UpdateSipMediaApplicationRequest updateSipMediaApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSipMediaApplicationRequest, UpdateSipMediaApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows you to trigger a Lambda function at any time while a call is active, and replace the current actions with
+     * new actions returned by the invocation.
+     * </p>
+     * 
+     * @param updateSipMediaApplicationCallRequest
+     * @return A Java Future containing the result of the UpdateSipMediaApplicationCall operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.UpdateSipMediaApplicationCall
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplicationCall"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSipMediaApplicationCallResult> updateSipMediaApplicationCallAsync(
+            UpdateSipMediaApplicationCallRequest updateSipMediaApplicationCallRequest);
+
+    /**
+     * <p>
+     * Allows you to trigger a Lambda function at any time while a call is active, and replace the current actions with
+     * new actions returned by the invocation.
+     * </p>
+     * 
+     * @param updateSipMediaApplicationCallRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSipMediaApplicationCall operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.UpdateSipMediaApplicationCall
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplicationCall"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSipMediaApplicationCallResult> updateSipMediaApplicationCallAsync(
+            UpdateSipMediaApplicationCallRequest updateSipMediaApplicationCallRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSipMediaApplicationCallRequest, UpdateSipMediaApplicationCallResult> asyncHandler);
 
     /**
      * <p>

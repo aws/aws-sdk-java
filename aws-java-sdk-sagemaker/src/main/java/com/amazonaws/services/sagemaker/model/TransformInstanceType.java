@@ -45,7 +45,13 @@ public enum TransformInstanceType {
     MlM52xlarge("ml.m5.2xlarge"),
     MlM54xlarge("ml.m5.4xlarge"),
     MlM512xlarge("ml.m5.12xlarge"),
-    MlM524xlarge("ml.m5.24xlarge");
+    MlM524xlarge("ml.m5.24xlarge"),
+    MlG4dnXlarge("ml.g4dn.xlarge"),
+    MlG4dn2xlarge("ml.g4dn.2xlarge"),
+    MlG4dn4xlarge("ml.g4dn.4xlarge"),
+    MlG4dn8xlarge("ml.g4dn.8xlarge"),
+    MlG4dn12xlarge("ml.g4dn.12xlarge"),
+    MlG4dn16xlarge("ml.g4dn.16xlarge");
 
     private String value;
 

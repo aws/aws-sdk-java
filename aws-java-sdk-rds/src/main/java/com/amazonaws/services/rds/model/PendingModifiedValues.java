@@ -119,7 +119,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
     /**
      * <p>
-     * Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
+     * Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -778,11 +779,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
+     * Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
+     *        Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *        is enabled.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -791,10 +794,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
+     * Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled.
      * </p>
      * 
-     * @return Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
+     * @return Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *         is enabled.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -803,11 +808,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
+     * Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
+     *        Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *        is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -818,10 +825,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
+     * Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled.
      * </p>
      * 
-     * @return Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
+     * @return Whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *         is enabled.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {

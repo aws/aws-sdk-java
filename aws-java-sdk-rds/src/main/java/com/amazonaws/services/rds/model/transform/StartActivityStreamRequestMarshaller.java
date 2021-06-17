@@ -56,6 +56,10 @@ public class StartActivityStreamRequestMarshaller implements Marshaller<Request<
             request.addParameter("ApplyImmediately", StringUtils.fromBoolean(startActivityStreamRequest.getApplyImmediately()));
         }
 
+        if (startActivityStreamRequest.getEngineNativeAuditFieldsIncluded() != null) {
+            request.addParameter("EngineNativeAuditFieldsIncluded", StringUtils.fromBoolean(startActivityStreamRequest.getEngineNativeAuditFieldsIncluded()));
+        }
+
         return request;
     }
 

@@ -85,7 +85,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
-     * other AWS accounts.
+     * other Amazon Web Services accounts.
      * </p>
      */
     private Boolean includeShared;
@@ -490,12 +490,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
-     * other AWS accounts.
+     * other Amazon Web Services accounts.
      * </p>
      * 
      * @param includeShared
      *        Optional Boolean parameter that specifies whether the output includes information about clusters shared
-     *        from other AWS accounts.
+     *        from other Amazon Web Services accounts.
      */
 
     public void setIncludeShared(Boolean includeShared) {
@@ -505,11 +505,11 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
-     * other AWS accounts.
+     * other Amazon Web Services accounts.
      * </p>
      * 
      * @return Optional Boolean parameter that specifies whether the output includes information about clusters shared
-     *         from other AWS accounts.
+     *         from other Amazon Web Services accounts.
      */
 
     public Boolean getIncludeShared() {
@@ -519,12 +519,12 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
-     * other AWS accounts.
+     * other Amazon Web Services accounts.
      * </p>
      * 
      * @param includeShared
      *        Optional Boolean parameter that specifies whether the output includes information about clusters shared
-     *        from other AWS accounts.
+     *        from other Amazon Web Services accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -536,11 +536,11 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * Optional Boolean parameter that specifies whether the output includes information about clusters shared from
-     * other AWS accounts.
+     * other Amazon Web Services accounts.
      * </p>
      * 
      * @return Optional Boolean parameter that specifies whether the output includes information about clusters shared
-     *         from other AWS accounts.
+     *         from other Amazon Web Services accounts.
      */
 
     public Boolean isIncludeShared() {

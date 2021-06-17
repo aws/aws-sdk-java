@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Your AWS account already has the maximum number of proxies in the specified AWS Region.
+ * Your Amazon Web Services account already has the maximum number of proxies in the specified Amazon Web Services
+ * Region.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

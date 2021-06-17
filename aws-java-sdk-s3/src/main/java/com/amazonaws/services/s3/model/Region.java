@@ -269,18 +269,6 @@ public enum Region {
     SA_SaoPaulo("sa-east-1"),
 
     /**
-     * The India (Begumpet) Region. This region uses Amazon S3 servers
-     * located in Begumpet.
-     * <p>
-     * When using buckets in this region, set the client endpoint to
-     * <code>s3.in-amazon-1.amazonaws.com</code> on all requests to these buckets
-     * to reduce any latency experienced after the first hour of creating a
-     * bucket in this region.
-     * </p>
-     */
-    IN_Amazon_1("in-amazon-1"),
-
-    /**
      * The Canada (Central) Region. This region uses Amazon S3 servers
      * located in Canada.
      * <p>

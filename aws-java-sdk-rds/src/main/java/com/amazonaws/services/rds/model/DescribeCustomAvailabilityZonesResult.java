@@ -34,7 +34,7 @@ public class DescribeCustomAvailabilityZonesResult extends com.amazonaws.AmazonW
     private String marker;
     /**
      * <p>
-     * The list of <a>CustomAvailabilityZone</a> objects for the AWS account.
+     * The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CustomAvailabilityZone> customAvailabilityZones;
@@ -93,10 +93,10 @@ public class DescribeCustomAvailabilityZonesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The list of <a>CustomAvailabilityZone</a> objects for the AWS account.
+     * The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.
      * </p>
      * 
-     * @return The list of <a>CustomAvailabilityZone</a> objects for the AWS account.
+     * @return The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.
      */
 
     public java.util.List<CustomAvailabilityZone> getCustomAvailabilityZones() {
@@ -108,11 +108,11 @@ public class DescribeCustomAvailabilityZonesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The list of <a>CustomAvailabilityZone</a> objects for the AWS account.
+     * The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.
      * </p>
      * 
      * @param customAvailabilityZones
-     *        The list of <a>CustomAvailabilityZone</a> objects for the AWS account.
+     *        The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.
      */
 
     public void setCustomAvailabilityZones(java.util.Collection<CustomAvailabilityZone> customAvailabilityZones) {
@@ -126,7 +126,7 @@ public class DescribeCustomAvailabilityZonesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The list of <a>CustomAvailabilityZone</a> objects for the AWS account.
+     * The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -135,7 +135,7 @@ public class DescribeCustomAvailabilityZonesResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param customAvailabilityZones
-     *        The list of <a>CustomAvailabilityZone</a> objects for the AWS account.
+     *        The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,11 +151,11 @@ public class DescribeCustomAvailabilityZonesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The list of <a>CustomAvailabilityZone</a> objects for the AWS account.
+     * The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.
      * </p>
      * 
      * @param customAvailabilityZones
-     *        The list of <a>CustomAvailabilityZone</a> objects for the AWS account.
+     *        The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

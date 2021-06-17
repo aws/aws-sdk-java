@@ -238,8 +238,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
-     * the time blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. To view the time blocks available, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
      * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
@@ -278,8 +278,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. To see the time blocks available, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
      * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
@@ -301,23 +301,24 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private Boolean storageEncrypted;
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The Amazon Web Services KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default CMK. There is a default CMK for your AWS account. Your AWS
-     * account has a different default CMK for each AWS Region.
+     * parameter, then Amazon RDS will use your default CMK. There is a default CMK for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -363,8 +364,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private String s3Prefix;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon RDS to
-     * access the Amazon S3 bucket on your behalf.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+     * authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.
      * </p>
      */
     private String s3IngestionRoleArn;
@@ -1781,8 +1782,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
-     * the time blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. To view the time blocks available, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
      * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
@@ -1816,8 +1817,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        view the time blocks available, see <a href=
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *        Services Region. To view the time blocks available, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
      *        > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
@@ -1857,8 +1858,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
-     * the time blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. To view the time blocks available, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
      * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
@@ -1891,8 +1892,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * @return The daily time range during which automated backups are created if automated backups are enabled using
      *         the <code>BackupRetentionPeriod</code> parameter. </p>
      *         <p>
-     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *         view the time blocks available, see <a href=
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *         Services Region. To view the time blocks available, see <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
      *         > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      *         </p>
@@ -1932,8 +1933,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
-     * the time blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. To view the time blocks available, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
      * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
@@ -1967,8 +1968,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        view the time blocks available, see <a href=
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *        Services Region. To view the time blocks available, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
      *        > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
@@ -2012,8 +2013,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. To see the time blocks available, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
      * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
@@ -2030,8 +2031,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *        occurring on a random day of the week. To see the time blocks available, see <a href=
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *        Services Region, occurring on a random day of the week. To see the time blocks available, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
      *        > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
@@ -2054,8 +2055,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. To see the time blocks available, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
      * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
@@ -2071,8 +2072,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *         occurring on a random day of the week. To see the time blocks available, see <a href=
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *         Services Region, occurring on a random day of the week. To see the time blocks available, see <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
      *         > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      *         </p>
@@ -2095,8 +2096,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a href=
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. To see the time blocks available, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
      * > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
@@ -2113,8 +2114,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *        occurring on a random day of the week. To see the time blocks available, see <a href=
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *        Services Region, occurring on a random day of the week. To see the time blocks available, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
      *        > Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
@@ -2240,28 +2241,30 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The Amazon Web Services KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default CMK. There is a default CMK for your AWS account. Your AWS
-     * account has a different default CMK for each AWS Region.
+     * parameter, then Amazon RDS will use your default CMK. There is a default CMK for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB cluster.</p>
+     *        The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account,
+     *        specify the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then Amazon RDS will use your default CMK. There is a default CMK for your AWS account. Your
-     *        AWS account has a different default CMK for each AWS Region.
+     *        parameter, then Amazon RDS will use your default CMK. There is a default CMK for your Amazon Web Services
+     *        account. Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2270,27 +2273,30 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The Amazon Web Services KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default CMK. There is a default CMK for your AWS account. Your AWS
-     * account has a different default CMK for each AWS Region.
+     * parameter, then Amazon RDS will use your default CMK. There is a default CMK for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for an encrypted DB cluster.</p>
+     * @return The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services
+     *         account, specify the key ARN or alias ARN.
      *         </p>
      *         <p>
      *         If the StorageEncrypted parameter is enabled, and you do not specify a value for the
      *         <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for
-     *         your AWS account. Your AWS account has a different default CMK for each AWS Region.
+     *         your Amazon Web Services account. Your Amazon Web Services account has a different default CMK for each
+     *         Amazon Web Services Region.
      */
 
     public String getKmsKeyId() {
@@ -2299,28 +2305,30 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The Amazon Web Services KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default CMK. There is a default CMK for your AWS account. Your AWS
-     * account has a different default CMK for each AWS Region.
+     * parameter, then Amazon RDS will use your default CMK. There is a default CMK for your Amazon Web Services
+     * account. Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB cluster.</p>
+     *        The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account,
+     *        specify the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        If the StorageEncrypted parameter is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then Amazon RDS will use your default CMK. There is a default CMK for your AWS account. Your
-     *        AWS account has a different default CMK for each AWS Region.
+     *        parameter, then Amazon RDS will use your default CMK. There is a default CMK for your Amazon Web Services
+     *        account. Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2331,8 +2339,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2341,8 +2349,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2355,8 +2363,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2364,8 +2372,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2378,8 +2386,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2388,8 +2396,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2404,8 +2412,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2413,8 +2421,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2650,13 +2658,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon RDS to
-     * access the Amazon S3 bucket on your behalf.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+     * authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.
      * </p>
      * 
      * @param s3IngestionRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon
-     *        RDS to access the Amazon S3 bucket on your behalf.
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+     *        authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.
      */
 
     public void setS3IngestionRoleArn(String s3IngestionRoleArn) {
@@ -2665,12 +2673,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon RDS to
-     * access the Amazon S3 bucket on your behalf.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+     * authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes
-     *         Amazon RDS to access the Amazon S3 bucket on your behalf.
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+     *         authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.
      */
 
     public String getS3IngestionRoleArn() {
@@ -2679,13 +2687,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon RDS to
-     * access the Amazon S3 bucket on your behalf.
+     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+     * authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.
      * </p>
      * 
      * @param s3IngestionRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon
-     *        RDS to access the Amazon S3 bucket on your behalf.
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+     *        authorizes Amazon RDS to access the Amazon S3 bucket on your behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

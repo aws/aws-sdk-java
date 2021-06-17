@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS website.
+ * Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web Services
+ * website.
  * </p>
  * <p>
  * For more information about RDS on VMware, see the <a
@@ -45,7 +46,7 @@ public class VpnDetails implements Serializable, Cloneable {
     private String vpnTunnelOriginatorIP;
     /**
      * <p>
-     * The IP address of network traffic from AWS to your on-premises data center.
+     * The IP address of network traffic from Amazon Web Services to your on-premises data center.
      * </p>
      */
     private String vpnGatewayIp;
@@ -153,11 +154,11 @@ public class VpnDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of network traffic from AWS to your on-premises data center.
+     * The IP address of network traffic from Amazon Web Services to your on-premises data center.
      * </p>
      * 
      * @param vpnGatewayIp
-     *        The IP address of network traffic from AWS to your on-premises data center.
+     *        The IP address of network traffic from Amazon Web Services to your on-premises data center.
      */
 
     public void setVpnGatewayIp(String vpnGatewayIp) {
@@ -166,10 +167,10 @@ public class VpnDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of network traffic from AWS to your on-premises data center.
+     * The IP address of network traffic from Amazon Web Services to your on-premises data center.
      * </p>
      * 
-     * @return The IP address of network traffic from AWS to your on-premises data center.
+     * @return The IP address of network traffic from Amazon Web Services to your on-premises data center.
      */
 
     public String getVpnGatewayIp() {
@@ -178,11 +179,11 @@ public class VpnDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of network traffic from AWS to your on-premises data center.
+     * The IP address of network traffic from Amazon Web Services to your on-premises data center.
      * </p>
      * 
      * @param vpnGatewayIp
-     *        The IP address of network traffic from AWS to your on-premises data center.
+     *        The IP address of network traffic from Amazon Web Services to your on-premises data center.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

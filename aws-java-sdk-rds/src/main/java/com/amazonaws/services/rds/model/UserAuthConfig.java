@@ -53,8 +53,8 @@ public class UserAuthConfig implements Serializable, Cloneable {
     private String secretArn;
     /**
      * <p>
-     * Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to the
-     * proxy.
+     * Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
+     * connections to the proxy.
      * </p>
      */
     private String iAMAuth;
@@ -249,13 +249,13 @@ public class UserAuthConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to the
-     * proxy.
+     * Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
+     * connections to the proxy.
      * </p>
      * 
      * @param iAMAuth
-     *        Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to
-     *        the proxy.
+     *        Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
+     *        connections to the proxy.
      * @see IAMAuthMode
      */
 
@@ -265,12 +265,12 @@ public class UserAuthConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to the
-     * proxy.
+     * Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
+     * connections to the proxy.
      * </p>
      * 
-     * @return Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to
-     *         the proxy.
+     * @return Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication
+     *         for connections to the proxy.
      * @see IAMAuthMode
      */
 
@@ -280,13 +280,13 @@ public class UserAuthConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to the
-     * proxy.
+     * Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
+     * connections to the proxy.
      * </p>
      * 
      * @param iAMAuth
-     *        Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to
-     *        the proxy.
+     *        Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
+     *        connections to the proxy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IAMAuthMode
      */
@@ -298,13 +298,13 @@ public class UserAuthConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to the
-     * proxy.
+     * Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
+     * connections to the proxy.
      * </p>
      * 
      * @param iAMAuth
-     *        Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to
-     *        the proxy.
+     *        Whether to require or disallow Amazon Web Services Identity and Access Management (IAM) authentication for
+     *        connections to the proxy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IAMAuthMode
      */

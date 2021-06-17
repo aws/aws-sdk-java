@@ -54,7 +54,8 @@ public class CustomAvailabilityZone implements Serializable, Cloneable {
     private String customAvailabilityZoneStatus;
     /**
      * <p>
-     * Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS website.
+     * Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web
+     * Services website.
      * </p>
      */
     private VpnDetails vpnDetails;
@@ -196,12 +197,13 @@ public class CustomAvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS website.
+     * Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web
+     * Services website.
      * </p>
      * 
      * @param vpnDetails
-     *        Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS
-     *        website.
+     *        Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web
+     *        Services website.
      */
 
     public void setVpnDetails(VpnDetails vpnDetails) {
@@ -210,11 +212,12 @@ public class CustomAvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS website.
+     * Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web
+     * Services website.
      * </p>
      * 
-     * @return Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS
-     *         website.
+     * @return Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web
+     *         Services website.
      */
 
     public VpnDetails getVpnDetails() {
@@ -223,12 +226,13 @@ public class CustomAvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS website.
+     * Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web
+     * Services website.
      * </p>
      * 
      * @param vpnDetails
-     *        Information about the virtual private network (VPN) between the VMware vSphere cluster and the AWS
-     *        website.
+     *        Information about the virtual private network (VPN) between the VMware vSphere cluster and the Amazon Web
+     *        Services website.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

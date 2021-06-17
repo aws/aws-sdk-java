@@ -390,8 +390,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -402,7 +402,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Not every database engine is available for every AWS Region.
+     * Not every database engine is available for every Amazon Web Services Region.
      * </p>
      * <p>
      * Valid Values:
@@ -440,17 +440,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -696,20 +696,21 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The Availability Zone (AZ) where the database will be created. For information on AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and
+     * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ
-     * deployment. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current
+     * endpoint.
      * </p>
      * <note>
      * <p>
@@ -744,8 +745,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -817,7 +818,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. For more information, see <a href=
+     * block of time for each Amazon Web Services Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      * >Backup window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
@@ -943,7 +944,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * The following are the database engines and links to information about the major and minor versions that are
-     * available with Amazon RDS. Not every database engine is available for every AWS Region.
+     * available with Amazon RDS. Not every database engine is available for every Amazon Web Services Region.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -1159,23 +1160,24 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean storageEncrypted;
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon Web Services KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.
+     * Not applicable. The Amazon Web Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
-     * has a different default CMK for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your Amazon Web Services account.
+     * Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      * </p>
      */
     private String kmsKeyId;
@@ -1264,12 +1266,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String timezone;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
-     * cluster.
+     * This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is
+     * managed by the DB cluster.
      * </p>
      * <p>
      * For more information, see <a
@@ -1291,16 +1293,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -1402,13 +1404,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      */
     private Boolean enableCustomerOwnedIp;
@@ -1613,14 +1615,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *        instance classes, and availability for your engine, see <a
+     *        instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *        full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i>
      * @param engine
      *        The name of the database engine to be used for this instance. </p>
      *        <p>
-     *        Not every database engine is available for every AWS Region.
+     *        Not every database engine is available for every Amazon Web Services Region.
      *        </p>
      *        <p>
      *        Valid Values:
@@ -1658,17 +1660,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
+     *        <code>oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>oracle-se2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>oracle-se1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>oracle-se</code>
+     *        <code>oracle-se2-cdb</code>
      *        </p>
      *        </li>
      *        <li>
@@ -4062,16 +4064,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *        instance classes, and availability for your engine, see <a
+     *        instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *        full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i>
      */
@@ -4083,15 +4085,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *         instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *         instance classes, and availability for your engine, see <a
+     *         instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *         full list of DB instance classes, and availability for your engine, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *         Class</a> in the <i>Amazon RDS User Guide.</i>
      */
@@ -4103,16 +4105,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *        instance classes, and availability for your engine, see <a
+     *        instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *        full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -4128,7 +4130,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Not every database engine is available for every AWS Region.
+     * Not every database engine is available for every Amazon Web Services Region.
      * </p>
      * <p>
      * Valid Values:
@@ -4166,17 +4168,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -4209,7 +4211,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param engine
      *        The name of the database engine to be used for this instance. </p>
      *        <p>
-     *        Not every database engine is available for every AWS Region.
+     *        Not every database engine is available for every Amazon Web Services Region.
      *        </p>
      *        <p>
      *        Valid Values:
@@ -4247,17 +4249,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
+     *        <code>oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>oracle-se2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>oracle-se1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>oracle-se</code>
+     *        <code>oracle-se2-cdb</code>
      *        </p>
      *        </li>
      *        <li>
@@ -4296,7 +4298,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Not every database engine is available for every AWS Region.
+     * Not every database engine is available for every Amazon Web Services Region.
      * </p>
      * <p>
      * Valid Values:
@@ -4334,17 +4336,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -4376,7 +4378,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The name of the database engine to be used for this instance. </p>
      *         <p>
-     *         Not every database engine is available for every AWS Region.
+     *         Not every database engine is available for every Amazon Web Services Region.
      *         </p>
      *         <p>
      *         Valid Values:
@@ -4414,17 +4416,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
+     *         <code>oracle-ee-cdb</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>oracle-se2</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>oracle-se1</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>oracle-se</code>
+     *         <code>oracle-se2-cdb</code>
      *         </p>
      *         </li>
      *         <li>
@@ -4463,7 +4465,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Not every database engine is available for every AWS Region.
+     * Not every database engine is available for every Amazon Web Services Region.
      * </p>
      * <p>
      * Valid Values:
@@ -4501,17 +4503,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -4544,7 +4546,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param engine
      *        The name of the database engine to be used for this instance. </p>
      *        <p>
-     *        Not every database engine is available for every AWS Region.
+     *        Not every database engine is available for every Amazon Web Services Region.
      *        </p>
      *        <p>
      *        Valid Values:
@@ -4582,17 +4584,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
+     *        <code>oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>oracle-se2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>oracle-se1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>oracle-se</code>
+     *        <code>oracle-se2-cdb</code>
      *        </p>
      *        </li>
      *        <li>
@@ -6003,20 +6005,21 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Availability Zone (AZ) where the database will be created. For information on AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and
+     * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ
-     * deployment. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current
+     * endpoint.
      * </p>
      * <note>
      * <p>
@@ -6031,20 +6034,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </note>
      * 
      * @param availabilityZone
-     *        The Availability Zone (AZ) where the database will be created. For information on AWS Regions and
-     *        Availability Zones, see <a
+     *        The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services
+     *        Regions and Availability Zones, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>. </p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
      *        </p>
      *        <p>
      *        Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a
-     *        Multi-AZ deployment. The specified Availability Zone must be in the same AWS Region as the current
-     *        endpoint.
+     *        Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the
+     *        current endpoint.
      *        </p>
      *        <note>
      *        <p>
@@ -6064,20 +6067,21 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Availability Zone (AZ) where the database will be created. For information on AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and
+     * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ
-     * deployment. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current
+     * endpoint.
      * </p>
      * <note>
      * <p>
@@ -6091,20 +6095,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </note>
      * 
-     * @return The Availability Zone (AZ) where the database will be created. For information on AWS Regions and
-     *         Availability Zones, see <a
+     * @return The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services
+     *         Regions and Availability Zones, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *         >Regions and Availability Zones</a>. </p>
      *         <p>
-     *         Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *         Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      *         </p>
      *         <p>
      *         Example: <code>us-east-1d</code>
      *         </p>
      *         <p>
      *         Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a
-     *         Multi-AZ deployment. The specified Availability Zone must be in the same AWS Region as the current
-     *         endpoint.
+     *         Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as
+     *         the current endpoint.
      *         </p>
      *         <note>
      *         <p>
@@ -6124,20 +6128,21 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Availability Zone (AZ) where the database will be created. For information on AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services Regions and
+     * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ
-     * deployment. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current
+     * endpoint.
      * </p>
      * <note>
      * <p>
@@ -6152,20 +6157,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </note>
      * 
      * @param availabilityZone
-     *        The Availability Zone (AZ) where the database will be created. For information on AWS Regions and
-     *        Availability Zones, see <a
+     *        The Availability Zone (AZ) where the database will be created. For information on Amazon Web Services
+     *        Regions and Availability Zones, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a>. </p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
      *        </p>
      *        <p>
      *        Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a
-     *        Multi-AZ deployment. The specified Availability Zone must be in the same AWS Region as the current
-     *        endpoint.
+     *        Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the
+     *        current endpoint.
      *        </p>
      *        <note>
      *        <p>
@@ -6251,8 +6256,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -6270,8 +6275,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *        occurring on a random day of the week.
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *        Services Region, occurring on a random day of the week.
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -6295,8 +6300,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -6313,8 +6318,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *         occurring on a random day of the week.
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *         Services Region, occurring on a random day of the week.
      *         </p>
      *         <p>
      *         Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -6338,8 +6343,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -6357,8 +6362,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *        occurring on a random day of the week.
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *        Services Region, occurring on a random day of the week.
      *        </p>
      *        <p>
      *        Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -6727,7 +6732,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. For more information, see <a href=
+     * block of time for each Amazon Web Services Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      * >Backup window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
@@ -6766,7 +6771,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled, using
      *        the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random
-     *        from an 8-hour block of time for each AWS Region. For more information, see <a href=
+     *        from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      *        >Backup window</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
@@ -6809,7 +6814,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. For more information, see <a href=
+     * block of time for each Amazon Web Services Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      * >Backup window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
@@ -6847,7 +6852,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The daily time range during which automated backups are created if automated backups are enabled, using
      *         the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random
-     *         from an 8-hour block of time for each AWS Region. For more information, see <a href=
+     *         from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      *         >Backup window</a> in the <i>Amazon RDS User Guide</i>. </p>
      *         <p>
@@ -6890,7 +6895,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
      * <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. For more information, see <a href=
+     * block of time for each Amazon Web Services Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      * >Backup window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
@@ -6929,7 +6934,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled, using
      *        the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random
-     *        from an 8-hour block of time for each AWS Region. For more information, see <a href=
+     *        from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      *        >Backup window</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
@@ -7478,7 +7483,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * The following are the database engines and links to information about the major and minor versions that are
-     * available with Amazon RDS. Not every database engine is available for every AWS Region.
+     * available with Amazon RDS. Not every database engine is available for every Amazon Web Services Region.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -7534,7 +7539,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        The following are the database engines and links to information about the major and minor versions that
-     *        are available with Amazon RDS. Not every database engine is available for every AWS Region.
+     *        are available with Amazon RDS. Not every database engine is available for every Amazon Web Services
+     *        Region.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -7597,7 +7603,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * The following are the database engines and links to information about the major and minor versions that are
-     * available with Amazon RDS. Not every database engine is available for every AWS Region.
+     * available with Amazon RDS. Not every database engine is available for every Amazon Web Services Region.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -7652,7 +7658,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         The following are the database engines and links to information about the major and minor versions that
-     *         are available with Amazon RDS. Not every database engine is available for every AWS Region.
+     *         are available with Amazon RDS. Not every database engine is available for every Amazon Web Services
+     *         Region.
      *         </p>
      *         <p>
      *         <b>Amazon Aurora</b>
@@ -7715,7 +7722,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * The following are the database engines and links to information about the major and minor versions that are
-     * available with Amazon RDS. Not every database engine is available for every AWS Region.
+     * available with Amazon RDS. Not every database engine is available for every Amazon Web Services Region.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -7771,7 +7778,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        The following are the database engines and links to information about the major and minor versions that
-     *        are available with Amazon RDS. Not every database engine is available for every AWS Region.
+     *        are available with Amazon RDS. Not every database engine is available for every Amazon Web Services
+     *        Region.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -9027,42 +9035,44 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon Web Services KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.
+     * Not applicable. The Amazon Web Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
-     * has a different default CMK for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your Amazon Web Services account.
+     * Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB instance.</p>
+     *        The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account,
+     *        specify the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
      *        <p>
-     *        Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
-     *        <code>CreateDBCluster</code>.
+     *        Not applicable. The Amazon Web Services KMS key identifier is managed by the DB cluster. For more
+     *        information, see <code>CreateDBCluster</code>.
      *        </p>
      *        <p>
      *        If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS
-     *        account has a different default CMK for each AWS Region.
+     *        parameter, then Amazon RDS uses your default CMK. There is a default CMK for your Amazon Web Services
+     *        account. Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -9071,41 +9081,44 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon Web Services KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.
+     * Not applicable. The Amazon Web Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
-     * has a different default CMK for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your Amazon Web Services account.
+     * Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for an encrypted DB instance.</p>
+     * @return The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services
+     *         account, specify the key ARN or alias ARN.
      *         </p>
      *         <p>
      *         <b>Amazon Aurora</b>
      *         </p>
      *         <p>
-     *         Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
-     *         <code>CreateDBCluster</code>.
+     *         Not applicable. The Amazon Web Services KMS key identifier is managed by the DB cluster. For more
+     *         information, see <code>CreateDBCluster</code>.
      *         </p>
      *         <p>
      *         If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *         parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS
-     *         account has a different default CMK for each AWS Region.
+     *         parameter, then Amazon RDS uses your default CMK. There is a default CMK for your Amazon Web Services
+     *         account. Your Amazon Web Services account has a different default CMK for each Amazon Web Services
+     *         Region.
      */
 
     public String getKmsKeyId() {
@@ -9114,42 +9127,44 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon Web Services KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.
+     * Not applicable. The Amazon Web Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
-     * has a different default CMK for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your Amazon Web Services account.
+     * Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB instance.</p>
+     *        The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account,
+     *        specify the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
      *        <p>
-     *        Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
-     *        <code>CreateDBCluster</code>.
+     *        Not applicable. The Amazon Web Services KMS key identifier is managed by the DB cluster. For more
+     *        information, see <code>CreateDBCluster</code>.
      *        </p>
      *        <p>
      *        If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS
-     *        account has a different default CMK for each AWS Region.
+     *        parameter, then Amazon RDS uses your default CMK. There is a default CMK for your Amazon Web Services
+     *        account. Your Amazon Web Services account has a different default CMK for each Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -9698,12 +9713,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
-     * cluster.
+     * This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is
+     * managed by the DB cluster.
      * </p>
      * <p>
      * For more information, see <a
@@ -9712,11 +9727,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
-     *        This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
-     *        the DB cluster.
+     *        This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts
+     *        is managed by the DB cluster.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -9730,12 +9745,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
-     * cluster.
+     * This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is
+     * managed by the DB cluster.
      * </p>
      * <p>
      * For more information, see <a
@@ -9743,11 +9758,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
-     *         This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
-     *         the DB cluster.
+     *         This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database
+     *         accounts is managed by the DB cluster.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -9761,12 +9776,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
-     * cluster.
+     * This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is
+     * managed by the DB cluster.
      * </p>
      * <p>
      * For more information, see <a
@@ -9775,11 +9790,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
-     *        This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
-     *        the DB cluster.
+     *        This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts
+     *        is managed by the DB cluster.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -9795,12 +9810,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
-     * cluster.
+     * This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is
+     * managed by the DB cluster.
      * </p>
      * <p>
      * For more information, see <a
@@ -9808,11 +9823,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
-     *         This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
-     *         the DB cluster.
+     *         This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database
+     *         accounts is managed by the DB cluster.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -9914,28 +9929,28 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
-     *        each AWS Region.
+     *        default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
+     *        has a different default CMK for each Amazon Web Services Region.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -9944,27 +9959,27 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * @return The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK).
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK).
      *         </p>
      *         <p>
      *         If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *         default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK
-     *         for each AWS Region.
+     *         default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services
+     *         account has a different default CMK for each Amazon Web Services Region.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -9973,28 +9988,28 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
-     *        each AWS Region.
+     *        default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
+     *        has a different default CMK for each Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -10742,13 +10757,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param enableCustomerOwnedIp
@@ -10762,12 +10777,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        For more information about RDS on Outposts, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
-     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        For more information about CoIPs, see <a href=
      *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public void setEnableCustomerOwnedIp(Boolean enableCustomerOwnedIp) {
@@ -10785,13 +10800,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
@@ -10804,12 +10819,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         For more information about RDS on Outposts, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
-     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         For more information about CoIPs, see <a href=
      *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean getEnableCustomerOwnedIp() {
@@ -10827,13 +10842,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param enableCustomerOwnedIp
@@ -10847,12 +10862,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        For more information about RDS on Outposts, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
-     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        For more information about CoIPs, see <a href=
      *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -10872,13 +10887,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
@@ -10891,12 +10906,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         For more information about RDS on Outposts, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
-     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         For more information about CoIPs, see <a href=
      *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean isEnableCustomerOwnedIp() {

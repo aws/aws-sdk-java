@@ -123,7 +123,7 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     * Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.
      * </p>
      * </note>
      */
@@ -780,14 +780,14 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     * Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.
      * </p>
      * </note>
      * 
      * @param leaseId
      *        The unique identifier for the lease associated with the reserved DB instance.</p> <note>
      *        <p>
-     *        AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     *        Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.
      *        </p>
      */
 
@@ -801,13 +801,13 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     * Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.
      * </p>
      * </note>
      * 
      * @return The unique identifier for the lease associated with the reserved DB instance.</p> <note>
      *         <p>
-     *         AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     *         Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.
      *         </p>
      */
 
@@ -821,14 +821,14 @@ public class ReservedDBInstance implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     * Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.
      * </p>
      * </note>
      * 
      * @param leaseId
      *        The unique identifier for the lease associated with the reserved DB instance.</p> <note>
      *        <p>
-     *        AWS Support might request the lease ID for an issue related to a reserved DB instance.
+     *        Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

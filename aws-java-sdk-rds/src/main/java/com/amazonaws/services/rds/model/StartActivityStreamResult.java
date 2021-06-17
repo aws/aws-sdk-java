@@ -25,7 +25,7 @@ public class StartActivityStreamResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of messages in the database activity stream.
+     * The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.
      * </p>
      */
     private String kmsKeyId;
@@ -54,14 +54,20 @@ public class StartActivityStreamResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private Boolean applyImmediately;
+    /**
+     * <p>
+     * Indicates whether engine-native audit fields are included in the database activity stream.
+     * </p>
+     */
+    private Boolean engineNativeAuditFieldsIncluded;
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of messages in the database activity stream.
+     * The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for encryption of messages in the database activity stream.
+     *        The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -70,10 +76,10 @@ public class StartActivityStreamResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of messages in the database activity stream.
+     * The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of messages in the database activity stream.
+     * @return The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.
      */
 
     public String getKmsKeyId() {
@@ -82,11 +88,11 @@ public class StartActivityStreamResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of messages in the database activity stream.
+     * The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for encryption of messages in the database activity stream.
+     *        The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,6 +320,58 @@ public class StartActivityStreamResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Indicates whether engine-native audit fields are included in the database activity stream.
+     * </p>
+     * 
+     * @param engineNativeAuditFieldsIncluded
+     *        Indicates whether engine-native audit fields are included in the database activity stream.
+     */
+
+    public void setEngineNativeAuditFieldsIncluded(Boolean engineNativeAuditFieldsIncluded) {
+        this.engineNativeAuditFieldsIncluded = engineNativeAuditFieldsIncluded;
+    }
+
+    /**
+     * <p>
+     * Indicates whether engine-native audit fields are included in the database activity stream.
+     * </p>
+     * 
+     * @return Indicates whether engine-native audit fields are included in the database activity stream.
+     */
+
+    public Boolean getEngineNativeAuditFieldsIncluded() {
+        return this.engineNativeAuditFieldsIncluded;
+    }
+
+    /**
+     * <p>
+     * Indicates whether engine-native audit fields are included in the database activity stream.
+     * </p>
+     * 
+     * @param engineNativeAuditFieldsIncluded
+     *        Indicates whether engine-native audit fields are included in the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartActivityStreamResult withEngineNativeAuditFieldsIncluded(Boolean engineNativeAuditFieldsIncluded) {
+        setEngineNativeAuditFieldsIncluded(engineNativeAuditFieldsIncluded);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether engine-native audit fields are included in the database activity stream.
+     * </p>
+     * 
+     * @return Indicates whether engine-native audit fields are included in the database activity stream.
+     */
+
+    public Boolean isEngineNativeAuditFieldsIncluded() {
+        return this.engineNativeAuditFieldsIncluded;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -334,7 +392,9 @@ public class StartActivityStreamResult extends com.amazonaws.AmazonWebServiceRes
         if (getMode() != null)
             sb.append("Mode: ").append(getMode()).append(",");
         if (getApplyImmediately() != null)
-            sb.append("ApplyImmediately: ").append(getApplyImmediately());
+            sb.append("ApplyImmediately: ").append(getApplyImmediately()).append(",");
+        if (getEngineNativeAuditFieldsIncluded() != null)
+            sb.append("EngineNativeAuditFieldsIncluded: ").append(getEngineNativeAuditFieldsIncluded());
         sb.append("}");
         return sb.toString();
     }
@@ -369,6 +429,11 @@ public class StartActivityStreamResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getApplyImmediately() != null && other.getApplyImmediately().equals(this.getApplyImmediately()) == false)
             return false;
+        if (other.getEngineNativeAuditFieldsIncluded() == null ^ this.getEngineNativeAuditFieldsIncluded() == null)
+            return false;
+        if (other.getEngineNativeAuditFieldsIncluded() != null
+                && other.getEngineNativeAuditFieldsIncluded().equals(this.getEngineNativeAuditFieldsIncluded()) == false)
+            return false;
         return true;
     }
 
@@ -382,6 +447,7 @@ public class StartActivityStreamResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         hashCode = prime * hashCode + ((getApplyImmediately() == null) ? 0 : getApplyImmediately().hashCode());
+        hashCode = prime * hashCode + ((getEngineNativeAuditFieldsIncluded() == null) ? 0 : getEngineNativeAuditFieldsIncluded().hashCode());
         return hashCode;
     }
 

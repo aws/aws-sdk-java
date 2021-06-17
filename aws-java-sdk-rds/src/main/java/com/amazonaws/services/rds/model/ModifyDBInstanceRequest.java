@@ -59,8 +59,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
-     * classes, and availability for your engine, see <a
+     * instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list
+     * of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -282,7 +282,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The daily time range during which automated backups are created if automated backups are enabled, as determined
      * by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the
      * change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from
-     * an 8-hour block of time for each AWS Region. For more information, see <a href=
+     * an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -700,12 +700,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer promotionTier;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
-     * cluster.
+     * This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is
+     * managed by the DB cluster.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -727,16 +727,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -854,19 +854,19 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      */
     private Boolean enableCustomerOwnedIp;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      * </p>
      */
     private String awsBackupRecoveryPointArn;
@@ -1083,8 +1083,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
-     * classes, and availability for your engine, see <a
+     * instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list
+     * of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1098,8 +1098,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBInstanceClass
      *        The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *        instance classes, and availability for your engine, see <a
+     *        instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *        full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
@@ -1117,8 +1117,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
-     * classes, and availability for your engine, see <a
+     * instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list
+     * of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1131,8 +1131,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *         instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *         instance classes, and availability for your engine, see <a
+     *         instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *         full list of DB instance classes, and availability for your engine, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *         Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
@@ -1150,8 +1150,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
-     * classes, and availability for your engine, see <a
+     * instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list
+     * of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1165,8 +1165,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBInstanceClass
      *        The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *        instance classes, and availability for your engine, see <a
+     *        instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *        full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
@@ -2574,7 +2574,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The daily time range during which automated backups are created if automated backups are enabled, as determined
      * by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the
      * change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from
-     * an 8-hour block of time for each AWS Region. For more information, see <a href=
+     * an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -2615,7 +2615,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        The daily time range during which automated backups are created if automated backups are enabled, as
      *        determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in
      *        an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window
-     *        selected at random from an 8-hour block of time for each AWS Region. For more information, see <a href=
+     *        selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information,
+     *        see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      *        >Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
@@ -2660,7 +2661,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The daily time range during which automated backups are created if automated backups are enabled, as determined
      * by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the
      * change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from
-     * an 8-hour block of time for each AWS Region. For more information, see <a href=
+     * an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -2700,7 +2701,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @return The daily time range during which automated backups are created if automated backups are enabled, as
      *         determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in
      *         an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window
-     *         selected at random from an 8-hour block of time for each AWS Region. For more information, see <a href=
+     *         selected at random from an 8-hour block of time for each Amazon Web Services Region. For more
+     *         information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      *         >Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
@@ -2745,7 +2747,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The daily time range during which automated backups are created if automated backups are enabled, as determined
      * by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the
      * change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from
-     * an 8-hour block of time for each AWS Region. For more information, see <a href=
+     * an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -2786,7 +2788,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        The daily time range during which automated backups are created if automated backups are enabled, as
      *        determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in
      *        an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window
-     *        selected at random from an 8-hour block of time for each AWS Region. For more information, see <a href=
+     *        selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information,
+     *        see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
      *        >Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
@@ -5286,12 +5289,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
-     * cluster.
+     * This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is
+     * managed by the DB cluster.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -5300,11 +5303,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
-     *        This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
-     *        the DB cluster.
+     *        This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts
+     *        is managed by the DB cluster.
      *        </p>
      *        <p>
      *        For more information about IAM database authentication, see <a
@@ -5318,12 +5321,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
-     * cluster.
+     * This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is
+     * managed by the DB cluster.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -5331,11 +5334,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
-     *         This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
-     *         the DB cluster.
+     *         This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database
+     *         accounts is managed by the DB cluster.
      *         </p>
      *         <p>
      *         For more information about IAM database authentication, see <a
@@ -5349,12 +5352,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
-     * cluster.
+     * This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is
+     * managed by the DB cluster.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -5363,11 +5366,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
-     *        This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
-     *        the DB cluster.
+     *        This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts
+     *        is managed by the DB cluster.
      *        </p>
      *        <p>
      *        For more information about IAM database authentication, see <a
@@ -5383,12 +5386,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
-     * cluster.
+     * This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database accounts is
+     * managed by the DB cluster.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -5396,11 +5399,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
-     *         This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
-     *         the DB cluster.
+     *         This setting doesn't apply to Amazon Aurora. Mapping Amazon Web Services IAM accounts to database
+     *         accounts is managed by the DB cluster.
      *         </p>
      *         <p>
      *         For more information about IAM database authentication, see <a
@@ -5502,28 +5505,28 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
-     *        each AWS Region.
+     *        default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
+     *        has a different default CMK for each Amazon Web Services Region.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -5532,27 +5535,27 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * @return The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK).
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK).
      *         </p>
      *         <p>
      *         If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *         default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK
-     *         for each AWS Region.
+     *         default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services
+     *         account has a different default CMK for each Amazon Web Services Region.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -5561,28 +5564,28 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
-     *        each AWS Region.
+     *        default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
+     *        has a different default CMK for each Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -6423,13 +6426,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param enableCustomerOwnedIp
@@ -6443,12 +6446,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        For more information about RDS on Outposts, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
-     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        For more information about CoIPs, see <a href=
      *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public void setEnableCustomerOwnedIp(Boolean enableCustomerOwnedIp) {
@@ -6466,13 +6469,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
@@ -6485,12 +6488,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         For more information about RDS on Outposts, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
-     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         For more information about CoIPs, see <a href=
      *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean getEnableCustomerOwnedIp() {
@@ -6508,13 +6511,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param enableCustomerOwnedIp
@@ -6528,12 +6531,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        For more information about RDS on Outposts, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
-     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        For more information about CoIPs, see <a href=
      *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -6553,13 +6556,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
@@ -6572,12 +6575,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         For more information about RDS on Outposts, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
-     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         For more information about CoIPs, see <a href=
      *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean isEnableCustomerOwnedIp() {
@@ -6586,11 +6589,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      * </p>
      * 
      * @param awsBackupRecoveryPointArn
-     *        The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     *        The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      */
 
     public void setAwsBackupRecoveryPointArn(String awsBackupRecoveryPointArn) {
@@ -6599,10 +6602,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * @return The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      */
 
     public String getAwsBackupRecoveryPointArn() {
@@ -6611,11 +6614,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      * </p>
      * 
      * @param awsBackupRecoveryPointArn
-     *        The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     *        The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

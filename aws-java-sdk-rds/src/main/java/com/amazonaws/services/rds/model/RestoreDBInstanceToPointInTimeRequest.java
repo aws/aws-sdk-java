@@ -108,8 +108,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
-     * classes, and availability for your engine, see <a
+     * instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list
+     * of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -249,17 +249,17 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -382,8 +382,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     private String domainIAMRoleName;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -492,13 +492,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      */
     private Boolean enableCustomerOwnedIp;
@@ -1052,8 +1052,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
-     * classes, and availability for your engine, see <a
+     * instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list
+     * of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1063,8 +1063,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
-     *        all DB instance classes are available in all AWS Regions, or for all database engines. For the full list
-     *        of DB instance classes, and availability for your engine, see <a
+     *        all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For
+     *        the full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
@@ -1078,8 +1078,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
-     * classes, and availability for your engine, see <a
+     * instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list
+     * of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1088,8 +1088,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @return The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
-     *         all DB instance classes are available in all AWS Regions, or for all database engines. For the full list
-     *         of DB instance classes, and availability for your engine, see <a
+     *         all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
+     *         For the full list of DB instance classes, and availability for your engine, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *         Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
@@ -1103,8 +1103,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not all DB
-     * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
-     * classes, and availability for your engine, see <a
+     * instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list
+     * of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1114,8 +1114,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the Amazon RDS DB instance, for example, <code>db.m4.large</code>. Not
-     *        all DB instance classes are available in all AWS Regions, or for all database engines. For the full list
-     *        of DB instance classes, and availability for your engine, see <a
+     *        all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For
+     *        the full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
@@ -1837,17 +1837,17 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -1906,17 +1906,17 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        </li>
      *        <li>
      *        <p>
+     *        <code>oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>oracle-se2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>oracle-se1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>oracle-se</code>
+     *        <code>oracle-se2-cdb</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1981,17 +1981,17 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -2049,17 +2049,17 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *         </li>
      *         <li>
      *         <p>
+     *         <code>oracle-ee-cdb</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>oracle-se2</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>oracle-se1</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>oracle-se</code>
+     *         <code>oracle-se2-cdb</code>
      *         </p>
      *         </li>
      *         <li>
@@ -2124,17 +2124,17 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -2193,17 +2193,17 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        </li>
      *        <li>
      *        <p>
+     *        <code>oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>oracle-se2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>oracle-se1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>oracle-se</code>
+     *        <code>oracle-se2-cdb</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2900,8 +2900,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -2910,8 +2910,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -2924,8 +2924,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -2933,8 +2933,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -2947,8 +2947,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -2957,8 +2957,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -2973,8 +2973,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -2982,8 +2982,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3678,13 +3678,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param enableCustomerOwnedIp
@@ -3698,12 +3698,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        <p>
      *        For more information about RDS on Outposts, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
-     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        For more information about CoIPs, see <a href=
      *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public void setEnableCustomerOwnedIp(Boolean enableCustomerOwnedIp) {
@@ -3721,13 +3721,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
@@ -3740,12 +3740,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *         <p>
      *         For more information about RDS on Outposts, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
-     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         For more information about CoIPs, see <a href=
      *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean getEnableCustomerOwnedIp() {
@@ -3763,13 +3763,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param enableCustomerOwnedIp
@@ -3783,12 +3783,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        <p>
      *        For more information about RDS on Outposts, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
-     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        For more information about CoIPs, see <a href=
      *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3808,13 +3808,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
@@ -3827,12 +3827,12 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *         <p>
      *         For more information about RDS on Outposts, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
-     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         For more information about CoIPs, see <a href=
      *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean isEnableCustomerOwnedIp() {

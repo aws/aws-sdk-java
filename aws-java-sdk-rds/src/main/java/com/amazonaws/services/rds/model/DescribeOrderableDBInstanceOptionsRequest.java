@@ -66,17 +66,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -134,7 +134,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * for the Local Zones in the group.
      * </p>
      * <p>
-     * Omit this parameter to show the available offerings in the specified AWS Region.
+     * Omit this parameter to show the available offerings in the specified Amazon Web Services Region.
      * </p>
      */
     private String availabilityZoneGroup;
@@ -213,17 +213,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -291,17 +291,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      *        </li>
      *        <li>
      *        <p>
+     *        <code>oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>oracle-se2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>oracle-se1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>oracle-se</code>
+     *        <code>oracle-se2-cdb</code>
      *        </p>
      *        </li>
      *        <li>
@@ -375,17 +375,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -452,17 +452,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      *         </li>
      *         <li>
      *         <p>
+     *         <code>oracle-ee-cdb</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>oracle-se2</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>oracle-se1</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>oracle-se</code>
+     *         <code>oracle-se2-cdb</code>
      *         </p>
      *         </li>
      *         <li>
@@ -536,17 +536,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -614,17 +614,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      *        </li>
      *        <li>
      *        <p>
+     *        <code>oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>oracle-se2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>oracle-se1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>oracle-se</code>
+     *        <code>oracle-se2-cdb</code>
      *        </p>
      *        </li>
      *        <li>
@@ -804,14 +804,14 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * for the Local Zones in the group.
      * </p>
      * <p>
-     * Omit this parameter to show the available offerings in the specified AWS Region.
+     * Omit this parameter to show the available offerings in the specified Amazon Web Services Region.
      * </p>
      * 
      * @param availabilityZoneGroup
      *        The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available
      *        offerings for the Local Zones in the group.</p>
      *        <p>
-     *        Omit this parameter to show the available offerings in the specified AWS Region.
+     *        Omit this parameter to show the available offerings in the specified Amazon Web Services Region.
      */
 
     public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
@@ -824,13 +824,13 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * for the Local Zones in the group.
      * </p>
      * <p>
-     * Omit this parameter to show the available offerings in the specified AWS Region.
+     * Omit this parameter to show the available offerings in the specified Amazon Web Services Region.
      * </p>
      * 
      * @return The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available
      *         offerings for the Local Zones in the group.</p>
      *         <p>
-     *         Omit this parameter to show the available offerings in the specified AWS Region.
+     *         Omit this parameter to show the available offerings in the specified Amazon Web Services Region.
      */
 
     public String getAvailabilityZoneGroup() {
@@ -843,14 +843,14 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * for the Local Zones in the group.
      * </p>
      * <p>
-     * Omit this parameter to show the available offerings in the specified AWS Region.
+     * Omit this parameter to show the available offerings in the specified Amazon Web Services Region.
      * </p>
      * 
      * @param availabilityZoneGroup
      *        The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available
      *        offerings for the Local Zones in the group.</p>
      *        <p>
-     *        Omit this parameter to show the available offerings in the specified AWS Region.
+     *        Omit this parameter to show the available offerings in the specified Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,8 @@ public class DeleteDBInstanceAutomatedBackupRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      */
     private String dbiResourceId;
@@ -44,11 +45,13 @@ public class DeleteDBInstanceAutomatedBackupRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      * 
      * @param dbiResourceId
-     *        The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     *        The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     *        Services Region.
      */
 
     public void setDbiResourceId(String dbiResourceId) {
@@ -57,10 +60,12 @@ public class DeleteDBInstanceAutomatedBackupRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      * 
-     * @return The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * @return The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     *         Services Region.
      */
 
     public String getDbiResourceId() {
@@ -69,11 +74,13 @@ public class DeleteDBInstanceAutomatedBackupRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      * 
      * @param dbiResourceId
-     *        The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.
+     *        The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     *        Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

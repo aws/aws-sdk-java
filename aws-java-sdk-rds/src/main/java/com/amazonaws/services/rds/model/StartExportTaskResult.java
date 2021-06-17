@@ -111,9 +111,10 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
     private String iamRoleArn;
     /**
      * <p>
-     * The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to use this AWS KMS CMK.
+     * The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot
+     * when it's exported to Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or
+     * alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this
+     * Amazon Web Services KMS CMK.
      * </p>
      */
     private String kmsKeyId;
@@ -745,16 +746,17 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to use this AWS KMS CMK.
+     * The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot
+     * when it's exported to Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or
+     * alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this
+     * Amazon Web Services KMS CMK.
      * </p>
      * 
      * @param kmsKeyId
-     *        The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's
-     *        exported to Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The
-     *        IAM role used for the snapshot export must have encryption and decryption permissions to use this AWS KMS
-     *        CMK.
+     *        The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the
+     *        snapshot when it's exported to Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key
+     *        ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and
+     *        decryption permissions to use this Amazon Web Services KMS CMK.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -763,15 +765,16 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to use this AWS KMS CMK.
+     * The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot
+     * when it's exported to Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or
+     * alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this
+     * Amazon Web Services KMS CMK.
      * </p>
      * 
-     * @return The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when
-     *         it's exported to Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name.
-     *         The IAM role used for the snapshot export must have encryption and decryption permissions to use this AWS
-     *         KMS CMK.
+     * @return The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the
+     *         snapshot when it's exported to Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key
+     *         ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and
+     *         decryption permissions to use this Amazon Web Services KMS CMK.
      */
 
     public String getKmsKeyId() {
@@ -780,16 +783,17 @@ public class StartExportTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's
-     * exported to Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role
-     * used for the snapshot export must have encryption and decryption permissions to use this AWS KMS CMK.
+     * The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the snapshot
+     * when it's exported to Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key ID, alias ARN, or
+     * alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this
+     * Amazon Web Services KMS CMK.
      * </p>
      * 
      * @param kmsKeyId
-     *        The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's
-     *        exported to Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The
-     *        IAM role used for the snapshot export must have encryption and decryption permissions to use this AWS KMS
-     *        CMK.
+     *        The key identifier of the Amazon Web Services KMS customer master key (CMK) that is used to encrypt the
+     *        snapshot when it's exported to Amazon S3. The Amazon Web Services KMS CMK identifier is its key ARN, key
+     *        ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and
+     *        decryption permissions to use this Amazon Web Services KMS CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a quota for an AWS account.
+ * Describes a quota for an Amazon Web Services account.
  * </p>
  * <p>
  * The following are account quotas:
@@ -51,9 +51,9 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * <code>DBClusterRoles</code> - The number of associated AWS Identity and Access Management (IAM) roles per DB cluster.
- * The used value is the highest number of associated IAM roles for a DB cluster in the account. Other DB clusters in
- * the account might have a lower number of associated IAM roles.
+ * <code>DBClusterRoles</code> - The number of associated Amazon Web Services Identity and Access Management (IAM) roles
+ * per DB cluster. The used value is the highest number of associated IAM roles for a DB cluster in the account. Other
+ * DB clusters in the account might have a lower number of associated IAM roles.
  * </p>
  * </li>
  * <li>
@@ -157,7 +157,7 @@ public class AccountQuota implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon RDS quota for this AWS account.
+     * The name of the Amazon RDS quota for this Amazon Web Services account.
      * </p>
      */
     private String accountQuotaName;
@@ -176,11 +176,11 @@ public class AccountQuota implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon RDS quota for this AWS account.
+     * The name of the Amazon RDS quota for this Amazon Web Services account.
      * </p>
      * 
      * @param accountQuotaName
-     *        The name of the Amazon RDS quota for this AWS account.
+     *        The name of the Amazon RDS quota for this Amazon Web Services account.
      */
 
     public void setAccountQuotaName(String accountQuotaName) {
@@ -189,10 +189,10 @@ public class AccountQuota implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon RDS quota for this AWS account.
+     * The name of the Amazon RDS quota for this Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the Amazon RDS quota for this AWS account.
+     * @return The name of the Amazon RDS quota for this Amazon Web Services account.
      */
 
     public String getAccountQuotaName() {
@@ -201,11 +201,11 @@ public class AccountQuota implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Amazon RDS quota for this AWS account.
+     * The name of the Amazon RDS quota for this Amazon Web Services account.
      * </p>
      * 
      * @param accountQuotaName
-     *        The name of the Amazon RDS quota for this AWS account.
+     *        The name of the Amazon RDS quota for this Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,8 +30,8 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified
-     * AWS Region.
+     * The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account
+     * in the specified Amazon Web Services Region.
      * </p>
      */
     private String dBProxyName;
@@ -137,13 +137,13 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified
-     * AWS Region.
+     * The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account
+     * in the specified Amazon Web Services Region.
      * </p>
      * 
      * @param dBProxyName
-     *        The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the
-     *        specified AWS Region.
+     *        The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services
+     *        account in the specified Amazon Web Services Region.
      */
 
     public void setDBProxyName(String dBProxyName) {
@@ -152,12 +152,12 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified
-     * AWS Region.
+     * The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account
+     * in the specified Amazon Web Services Region.
      * </p>
      * 
-     * @return The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the
-     *         specified AWS Region.
+     * @return The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services
+     *         account in the specified Amazon Web Services Region.
      */
 
     public String getDBProxyName() {
@@ -166,13 +166,13 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified
-     * AWS Region.
+     * The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account
+     * in the specified Amazon Web Services Region.
      * </p>
      * 
      * @param dBProxyName
-     *        The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the
-     *        specified AWS Region.
+     *        The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services
+     *        account in the specified Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

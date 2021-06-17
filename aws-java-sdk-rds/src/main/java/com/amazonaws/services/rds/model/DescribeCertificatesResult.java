@@ -28,7 +28,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of <code>Certificate</code> objects for the AWS account.
+     * The list of <code>Certificate</code> objects for the Amazon Web Services account.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Certificate> certificates;
@@ -43,10 +43,10 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of <code>Certificate</code> objects for the AWS account.
+     * The list of <code>Certificate</code> objects for the Amazon Web Services account.
      * </p>
      * 
-     * @return The list of <code>Certificate</code> objects for the AWS account.
+     * @return The list of <code>Certificate</code> objects for the Amazon Web Services account.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -58,11 +58,11 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of <code>Certificate</code> objects for the AWS account.
+     * The list of <code>Certificate</code> objects for the Amazon Web Services account.
      * </p>
      * 
      * @param certificates
-     *        The list of <code>Certificate</code> objects for the AWS account.
+     *        The list of <code>Certificate</code> objects for the Amazon Web Services account.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -76,7 +76,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of <code>Certificate</code> objects for the AWS account.
+     * The list of <code>Certificate</code> objects for the Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +85,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param certificates
-     *        The list of <code>Certificate</code> objects for the AWS account.
+     *        The list of <code>Certificate</code> objects for the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The list of <code>Certificate</code> objects for the AWS account.
+     * The list of <code>Certificate</code> objects for the Amazon Web Services account.
      * </p>
      * 
      * @param certificates
-     *        The list of <code>Certificate</code> objects for the AWS account.
+     *        The list of <code>Certificate</code> objects for the Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

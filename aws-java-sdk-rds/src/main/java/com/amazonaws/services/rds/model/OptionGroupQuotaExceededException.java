@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The quota of 20 option groups was exceeded for this AWS account.
+ * The quota of 20 option groups was exceeded for this Amazon Web Services account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

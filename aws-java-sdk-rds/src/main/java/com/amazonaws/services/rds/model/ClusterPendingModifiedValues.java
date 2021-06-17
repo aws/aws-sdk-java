@@ -42,8 +42,8 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
     private String masterUserPassword;
     /**
      * <p>
-     * A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-     * is enabled.
+     * A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts is enabled.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -162,13 +162,13 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-     * is enabled.
+     * A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database
-     *        accounts is enabled.
+     *        A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     *        accounts to database accounts is enabled.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -177,12 +177,12 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-     * is enabled.
+     * A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts is enabled.
      * </p>
      * 
-     * @return A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database
-     *         accounts is enabled.
+     * @return A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     *         accounts to database accounts is enabled.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -191,13 +191,13 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-     * is enabled.
+     * A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database
-     *        accounts is enabled.
+     *        A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     *        accounts to database accounts is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,12 +208,12 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts
-     * is enabled.
+     * A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts is enabled.
      * </p>
      * 
-     * @return A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database
-     *         accounts is enabled.
+     * @return A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     *         accounts to database accounts is enabled.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {

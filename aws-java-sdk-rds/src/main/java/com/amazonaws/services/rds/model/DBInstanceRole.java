@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an AWS Identity and Access Management (IAM) role that is associated with a DB instance.
+ * Describes an Amazon Web Services Identity and Access Management (IAM) role that is associated with a DB instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstanceRole" target="_top">AWS API
@@ -34,8 +34,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
     private String roleArn;
     /**
      * <p>
-     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     * supported feature names, see <code>DBEngineVersion</code>.
+     * The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For
+     * the list of supported feature names, see <code>DBEngineVersion</code>.
      * </p>
      */
     private String featureName;
@@ -47,8 +47,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon
+     * Web Services services on your behalf.
      * </p>
      * </li>
      * <li>
@@ -59,7 +59,7 @@ public class DBInstanceRole implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to
-     * assume the IAM role in order to access other AWS services on your behalf.
+     * assume the IAM role in order to access other Amazon Web Services services on your behalf.
      * </p>
      * </li>
      * </ul>
@@ -108,13 +108,13 @@ public class DBInstanceRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     * supported feature names, see <code>DBEngineVersion</code>.
+     * The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For
+     * the list of supported feature names, see <code>DBEngineVersion</code>.
      * </p>
      * 
      * @param featureName
-     *        The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     *        supported feature names, see <code>DBEngineVersion</code>.
+     *        The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
+     *        For the list of supported feature names, see <code>DBEngineVersion</code>.
      */
 
     public void setFeatureName(String featureName) {
@@ -123,12 +123,12 @@ public class DBInstanceRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     * supported feature names, see <code>DBEngineVersion</code>.
+     * The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For
+     * the list of supported feature names, see <code>DBEngineVersion</code>.
      * </p>
      * 
-     * @return The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list
-     *         of supported feature names, see <code>DBEngineVersion</code>.
+     * @return The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM)
+     *         role. For the list of supported feature names, see <code>DBEngineVersion</code>.
      */
 
     public String getFeatureName() {
@@ -137,13 +137,13 @@ public class DBInstanceRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     * supported feature names, see <code>DBEngineVersion</code>.
+     * The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role. For
+     * the list of supported feature names, see <code>DBEngineVersion</code>.
      * </p>
      * 
      * @param featureName
-     *        The name of the feature associated with the AWS Identity and Access Management (IAM) role. For the list of
-     *        supported feature names, see <code>DBEngineVersion</code>.
+     *        The name of the feature associated with the Amazon Web Services Identity and Access Management (IAM) role.
+     *        For the list of supported feature names, see <code>DBEngineVersion</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,8 +160,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon
+     * Web Services services on your behalf.
      * </p>
      * </li>
      * <li>
@@ -172,7 +172,7 @@ public class DBInstanceRole implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to
-     * assume the IAM role in order to access other AWS services on your behalf.
+     * assume the IAM role in order to access other Amazon Web Services services on your behalf.
      * </p>
      * </li>
      * </ul>
@@ -184,7 +184,7 @@ public class DBInstanceRole implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other
-     *        AWS services on your behalf.
+     *        Amazon Web Services services on your behalf.
      *        </p>
      *        </li>
      *        <li>
@@ -195,7 +195,7 @@ public class DBInstanceRole implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable
-     *        to assume the IAM role in order to access other AWS services on your behalf.
+     *        to assume the IAM role in order to access other Amazon Web Services services on your behalf.
      *        </p>
      *        </li>
      */
@@ -212,8 +212,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon
+     * Web Services services on your behalf.
      * </p>
      * </li>
      * <li>
@@ -224,7 +224,7 @@ public class DBInstanceRole implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to
-     * assume the IAM role in order to access other AWS services on your behalf.
+     * assume the IAM role in order to access other Amazon Web Services services on your behalf.
      * </p>
      * </li>
      * </ul>
@@ -235,7 +235,7 @@ public class DBInstanceRole implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other
-     *         AWS services on your behalf.
+     *         Amazon Web Services services on your behalf.
      *         </p>
      *         </li>
      *         <li>
@@ -246,7 +246,7 @@ public class DBInstanceRole implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable
-     *         to assume the IAM role in order to access other AWS services on your behalf.
+     *         to assume the IAM role in order to access other Amazon Web Services services on your behalf.
      *         </p>
      *         </li>
      */
@@ -263,8 +263,8 @@ public class DBInstanceRole implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other Amazon
+     * Web Services services on your behalf.
      * </p>
      * </li>
      * <li>
@@ -275,7 +275,7 @@ public class DBInstanceRole implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable to
-     * assume the IAM role in order to access other AWS services on your behalf.
+     * assume the IAM role in order to access other Amazon Web Services services on your behalf.
      * </p>
      * </li>
      * </ul>
@@ -287,7 +287,7 @@ public class DBInstanceRole implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can be used to access other
-     *        AWS services on your behalf.
+     *        Amazon Web Services services on your behalf.
      *        </p>
      *        </li>
      *        <li>
@@ -298,7 +298,7 @@ public class DBInstanceRole implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the DB instance is unable
-     *        to assume the IAM role in order to access other AWS services on your behalf.
+     *        to assume the IAM role in order to access other Amazon Web Services services on your behalf.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

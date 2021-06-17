@@ -219,18 +219,20 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB
+     * cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS CMK for the DB cluster is accessed.
+     * The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found in
+     * Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS CMK for the DB cluster is
+     * accessed.
      * </p>
      */
     private String dbClusterResourceId;
@@ -242,16 +244,16 @@ public class DBCluster implements Serializable, Cloneable {
     private String dBClusterArn;
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
-     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
-     * on your behalf.
+     * Provides a list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated with
+     * the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
+     * other Amazon Web Services on your behalf.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBClusterRole> associatedRoles;
     /**
      * <p>
-     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts is enabled.
+     * A value that indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     * to database accounts is enabled.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -358,11 +360,11 @@ public class DBCluster implements Serializable, Cloneable {
     private String activityStreamStatus;
     /**
      * <p>
-     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      */
     private String activityStreamKmsKeyId;
@@ -380,7 +382,7 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean copyTagsToSnapshot;
     /**
      * <p>
-     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services account.
      * </p>
      */
     private Boolean crossAccountClone;
@@ -1884,18 +1886,20 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB
+     * cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.</p>
+     *        If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted
+     *        DB cluster.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1904,17 +1908,19 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB
+     * cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.</p>
+     * @return If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted
+     *         DB cluster.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK).
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -1923,18 +1929,20 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB
+     * cluster.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.</p>
+     *        If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted
+     *        DB cluster.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1945,13 +1953,15 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS CMK for the DB cluster is accessed.
+     * The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found in
+     * Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS CMK for the DB cluster is
+     * accessed.
      * </p>
      * 
      * @param dbClusterResourceId
-     *        The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail
-     *        log entries whenever the AWS KMS CMK for the DB cluster is accessed.
+     *        The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found
+     *        in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS CMK for the DB cluster
+     *        is accessed.
      */
 
     public void setDbClusterResourceId(String dbClusterResourceId) {
@@ -1960,12 +1970,14 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS CMK for the DB cluster is accessed.
+     * The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found in
+     * Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS CMK for the DB cluster is
+     * accessed.
      * </p>
      * 
-     * @return The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS
-     *         CloudTrail log entries whenever the AWS KMS CMK for the DB cluster is accessed.
+     * @return The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found
+     *         in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS CMK for the DB cluster
+     *         is accessed.
      */
 
     public String getDbClusterResourceId() {
@@ -1974,13 +1986,15 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS CMK for the DB cluster is accessed.
+     * The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found in
+     * Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS CMK for the DB cluster is
+     * accessed.
      * </p>
      * 
      * @param dbClusterResourceId
-     *        The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail
-     *        log entries whenever the AWS KMS CMK for the DB cluster is accessed.
+     *        The Amazon Web Services Region-unique, immutable identifier for the DB cluster. This identifier is found
+     *        in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS CMK for the DB cluster
+     *        is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2031,14 +2045,14 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
-     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
-     * on your behalf.
+     * Provides a list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated with
+     * the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
+     * other Amazon Web Services on your behalf.
      * </p>
      * 
-     * @return Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
-     *         cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
-     *         other AWS services on your behalf.
+     * @return Provides a list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated
+     *         with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster
+     *         to access other Amazon Web Services on your behalf.
      */
 
     public java.util.List<DBClusterRole> getAssociatedRoles() {
@@ -2050,15 +2064,15 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
-     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
-     * on your behalf.
+     * Provides a list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated with
+     * the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
+     * other Amazon Web Services on your behalf.
      * </p>
      * 
      * @param associatedRoles
-     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
-     *        cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
-     *        other AWS services on your behalf.
+     *        Provides a list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated
+     *        with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster
+     *        to access other Amazon Web Services on your behalf.
      */
 
     public void setAssociatedRoles(java.util.Collection<DBClusterRole> associatedRoles) {
@@ -2072,9 +2086,9 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
-     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
-     * on your behalf.
+     * Provides a list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated with
+     * the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
+     * other Amazon Web Services on your behalf.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2083,9 +2097,9 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param associatedRoles
-     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
-     *        cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
-     *        other AWS services on your behalf.
+     *        Provides a list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated
+     *        with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster
+     *        to access other Amazon Web Services on your behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2101,15 +2115,15 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
-     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
-     * on your behalf.
+     * Provides a list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated with
+     * the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
+     * other Amazon Web Services on your behalf.
      * </p>
      * 
      * @param associatedRoles
-     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
-     *        cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
-     *        other AWS services on your behalf.
+     *        Provides a list of the Amazon Web Services Identity and Access Management (IAM) roles that are associated
+     *        with the DB cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster
+     *        to access other Amazon Web Services on your behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2120,13 +2134,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts is enabled.
+     * A value that indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     * to database accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts is enabled.
+     *        A value that indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM)
+     *        accounts to database accounts is enabled.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -2135,12 +2149,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts is enabled.
+     * A value that indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     * to database accounts is enabled.
      * </p>
      * 
-     * @return A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts is enabled.
+     * @return A value that indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM)
+     *         accounts to database accounts is enabled.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -2149,13 +2163,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts is enabled.
+     * A value that indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     * to database accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts is enabled.
+     *        A value that indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM)
+     *        accounts to database accounts is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2166,12 +2180,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts is enabled.
+     * A value that indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     * to database accounts is enabled.
      * </p>
      * 
-     * @return A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts is enabled.
+     * @return A value that indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM)
+     *         accounts to database accounts is enabled.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {
@@ -2971,18 +2985,19 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param activityStreamKmsKeyId
-     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
+     *        The Amazon Web Services KMS key identifier used for encrypting messages in the database activity
+     *        stream.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      */
 
     public void setActivityStreamKmsKeyId(String activityStreamKmsKeyId) {
@@ -2991,17 +3006,18 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
-     * @return The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
+     * @return The Amazon Web Services KMS key identifier used for encrypting messages in the database activity
+     *         stream.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK).
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK).
      */
 
     public String getActivityStreamKmsKeyId() {
@@ -3010,18 +3026,19 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param activityStreamKmsKeyId
-     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
+     *        The Amazon Web Services KMS key identifier used for encrypting messages in the database activity
+     *        stream.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3124,11 +3141,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services account.
      * </p>
      * 
      * @param crossAccountClone
-     *        Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     *        Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services
+     *        account.
      */
 
     public void setCrossAccountClone(Boolean crossAccountClone) {
@@ -3137,10 +3155,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services account.
      * </p>
      * 
-     * @return Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * @return Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services
+     *         account.
      */
 
     public Boolean getCrossAccountClone() {
@@ -3149,11 +3168,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services account.
      * </p>
      * 
      * @param crossAccountClone
-     *        Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     *        Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3164,10 +3184,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services account.
      * </p>
      * 
-     * @return Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.
+     * @return Specifies whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services
+     *         account.
      */
 
     public Boolean isCrossAccountClone() {

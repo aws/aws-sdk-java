@@ -52,9 +52,9 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private String dBInstanceStatus;
@@ -322,18 +322,20 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     * instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
+     * The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in
+     * Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key (CMK) for the
+     * DB instance is accessed.
      * </p>
      */
     private String dbiResourceId;
@@ -406,8 +408,8 @@ public class DBInstance implements Serializable, Cloneable {
     private String timezone;
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * <p>
      * IAM database authentication can be enabled for the following database engines
@@ -439,11 +441,11 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean performanceInsightsEnabled;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -481,7 +483,7 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean deletionProtection;
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DBInstanceRole> associatedRoles;
@@ -516,22 +518,55 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      */
     private Boolean customerOwnedIpEnabled;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      * </p>
      */
     private String awsBackupRecoveryPointArn;
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     */
+    private String activityStreamStatus;
+    /**
+     * <p>
+     * The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream. The
+     * Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
+     * </p>
+     */
+    private String activityStreamKmsKeyId;
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     */
+    private String activityStreamKinesisStreamName;
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. RDS for Oracle always handles these events asynchronously.
+     * </p>
+     */
+    private String activityStreamMode;
+    /**
+     * <p>
+     * Indicates whether engine-native audit fields are included in the database activity stream.
+     * </p>
+     */
+    private Boolean activityStreamEngineNativeAuditFieldsIncluded;
 
     /**
      * <p>
@@ -661,17 +696,17 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param dBInstanceStatus
      *        Specifies the current state of this database.</p>
      *        <p>
-     *        For information about DB instance statuses, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     *        Status</a> in the <i>Amazon RDS User Guide.</i>
+     *        For information about DB instance statuses, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     *        >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setDBInstanceStatus(String dBInstanceStatus) {
@@ -683,16 +718,16 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return Specifies the current state of this database.</p>
      *         <p>
-     *         For information about DB instance statuses, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     *         Status</a> in the <i>Amazon RDS User Guide.</i>
+     *         For information about DB instance statuses, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     *         >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public String getDBInstanceStatus() {
@@ -704,17 +739,17 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param dBInstanceStatus
      *        Specifies the current state of this database.</p>
      *        <p>
-     *        For information about DB instance statuses, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     *        Status</a> in the <i>Amazon RDS User Guide.</i>
+     *        For information about DB instance statuses, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     *        >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2775,18 +2810,20 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     * instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance. </p>
+     *        If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     *        instance. </p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2795,17 +2832,19 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     * instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance. </p>
+     * @return If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     *         instance. </p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK).
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -2814,18 +2853,20 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     * If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     * instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance. </p>
+     *        If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB
+     *        instance. </p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2836,13 +2877,15 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
+     * The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in
+     * Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key (CMK) for the
+     * DB instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
-     *        The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *        CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
+     *        The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found
+     *        in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key
+     *        (CMK) for the DB instance is accessed.
      */
 
     public void setDbiResourceId(String dbiResourceId) {
@@ -2851,12 +2894,14 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
+     * The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in
+     * Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key (CMK) for the
+     * DB instance is accessed.
      * </p>
      * 
-     * @return The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *         CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
+     * @return The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found
+     *         in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key
+     *         (CMK) for the DB instance is accessed.
      */
 
     public String getDbiResourceId() {
@@ -2865,13 +2910,15 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
+     * The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found in
+     * Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key (CMK) for the
+     * DB instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
-     *        The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *        CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
+     *        The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is found
+     *        in Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS customer master key
+     *        (CMK) for the DB instance is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3378,8 +3425,8 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * <p>
      * IAM database authentication can be enabled for the following database engines
@@ -3403,8 +3450,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </ul>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.</p>
+     *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *        is enabled, and otherwise false.</p>
      *        <p>
      *        IAM database authentication can be enabled for the following database engines
      *        </p>
@@ -3432,8 +3479,8 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * <p>
      * IAM database authentication can be enabled for the following database engines
@@ -3456,8 +3503,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.</p>
+     * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *         is enabled, and otherwise false.</p>
      *         <p>
      *         IAM database authentication can be enabled for the following database engines
      *         </p>
@@ -3485,8 +3532,8 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * <p>
      * IAM database authentication can be enabled for the following database engines
@@ -3510,8 +3557,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </ul>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.</p>
+     *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *        is enabled, and otherwise false.</p>
      *        <p>
      *        IAM database authentication can be enabled for the following database engines
      *        </p>
@@ -3541,8 +3588,8 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     * otherwise false.
+     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
+     * enabled, and otherwise false.
      * </p>
      * <p>
      * IAM database authentication can be enabled for the following database engines
@@ -3565,8 +3612,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.</p>
+     * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
+     *         is enabled, and otherwise false.</p>
      *         <p>
      *         IAM database authentication can be enabled for the following database engines
      *         </p>
@@ -3646,18 +3693,18 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -3666,17 +3713,17 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * @return The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK).
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK).
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -3685,18 +3732,18 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4005,10 +4052,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.
      * </p>
      * 
-     * @return The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * @return The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.
      */
 
     public java.util.List<DBInstanceRole> getAssociatedRoles() {
@@ -4020,11 +4067,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.
      * </p>
      * 
      * @param associatedRoles
-     *        The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     *        The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.
      */
 
     public void setAssociatedRoles(java.util.Collection<DBInstanceRole> associatedRoles) {
@@ -4038,7 +4085,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -4047,7 +4094,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param associatedRoles
-     *        The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     *        The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4063,11 +4110,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.
      * </p>
      * 
      * @param associatedRoles
-     *        The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     *        The Amazon Web Services Identity and Access Management (IAM) roles associated with the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4299,13 +4346,13 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param customerOwnedIpEnabled
@@ -4318,12 +4365,12 @@ public class DBInstance implements Serializable, Cloneable {
      *        <p>
      *        For more information about RDS on Outposts, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
-     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        For more information about CoIPs, see <a href=
      *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public void setCustomerOwnedIpEnabled(Boolean customerOwnedIpEnabled) {
@@ -4341,13 +4388,13 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
@@ -4359,12 +4406,12 @@ public class DBInstance implements Serializable, Cloneable {
      *         <p>
      *         For more information about RDS on Outposts, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
-     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         For more information about CoIPs, see <a href=
      *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean getCustomerOwnedIpEnabled() {
@@ -4382,13 +4429,13 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param customerOwnedIpEnabled
@@ -4401,12 +4448,12 @@ public class DBInstance implements Serializable, Cloneable {
      *        <p>
      *        For more information about RDS on Outposts, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
-     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        For more information about CoIPs, see <a href=
      *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4426,13 +4473,13 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
-     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on
+     * Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
@@ -4444,12 +4491,12 @@ public class DBInstance implements Serializable, Cloneable {
      *         <p>
      *         For more information about RDS on Outposts, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
-     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         For more information about CoIPs, see <a href=
      *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean isCustomerOwnedIpEnabled() {
@@ -4458,11 +4505,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      * </p>
      * 
      * @param awsBackupRecoveryPointArn
-     *        The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     *        The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      */
 
     public void setAwsBackupRecoveryPointArn(String awsBackupRecoveryPointArn) {
@@ -4471,10 +4518,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * @return The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      */
 
     public String getAwsBackupRecoveryPointArn() {
@@ -4483,17 +4530,287 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      * </p>
      * 
      * @param awsBackupRecoveryPointArn
-     *        The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     *        The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBInstance withAwsBackupRecoveryPointArn(String awsBackupRecoveryPointArn) {
         setAwsBackupRecoveryPointArn(awsBackupRecoveryPointArn);
         return this;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamStatus
+     *        The status of the database activity stream.
+     * @see ActivityStreamStatus
+     */
+
+    public void setActivityStreamStatus(String activityStreamStatus) {
+        this.activityStreamStatus = activityStreamStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @return The status of the database activity stream.
+     * @see ActivityStreamStatus
+     */
+
+    public String getActivityStreamStatus() {
+        return this.activityStreamStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamStatus
+     *        The status of the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamStatus
+     */
+
+    public DBInstance withActivityStreamStatus(String activityStreamStatus) {
+        setActivityStreamStatus(activityStreamStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamStatus
+     *        The status of the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamStatus
+     */
+
+    public DBInstance withActivityStreamStatus(ActivityStreamStatus activityStreamStatus) {
+        this.activityStreamStatus = activityStreamStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream. The
+     * Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
+     * </p>
+     * 
+     * @param activityStreamKmsKeyId
+     *        The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
+     */
+
+    public void setActivityStreamKmsKeyId(String activityStreamKmsKeyId) {
+        this.activityStreamKmsKeyId = activityStreamKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream. The
+     * Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
+     * </p>
+     * 
+     * @return The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK).
+     */
+
+    public String getActivityStreamKmsKeyId() {
+        return this.activityStreamKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream. The
+     * Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
+     * </p>
+     * 
+     * @param activityStreamKmsKeyId
+     *        The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withActivityStreamKmsKeyId(String activityStreamKmsKeyId) {
+        setActivityStreamKmsKeyId(activityStreamKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamKinesisStreamName
+     *        The name of the Amazon Kinesis data stream used for the database activity stream.
+     */
+
+    public void setActivityStreamKinesisStreamName(String activityStreamKinesisStreamName) {
+        this.activityStreamKinesisStreamName = activityStreamKinesisStreamName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     * 
+     * @return The name of the Amazon Kinesis data stream used for the database activity stream.
+     */
+
+    public String getActivityStreamKinesisStreamName() {
+        return this.activityStreamKinesisStreamName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Kinesis data stream used for the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamKinesisStreamName
+     *        The name of the Amazon Kinesis data stream used for the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withActivityStreamKinesisStreamName(String activityStreamKinesisStreamName) {
+        setActivityStreamKinesisStreamName(activityStreamKinesisStreamName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. RDS for Oracle always handles these events asynchronously.
+     * </p>
+     * 
+     * @param activityStreamMode
+     *        The mode of the database activity stream. Database events such as a change or access generate an activity
+     *        stream event. RDS for Oracle always handles these events asynchronously.
+     * @see ActivityStreamMode
+     */
+
+    public void setActivityStreamMode(String activityStreamMode) {
+        this.activityStreamMode = activityStreamMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. RDS for Oracle always handles these events asynchronously.
+     * </p>
+     * 
+     * @return The mode of the database activity stream. Database events such as a change or access generate an activity
+     *         stream event. RDS for Oracle always handles these events asynchronously.
+     * @see ActivityStreamMode
+     */
+
+    public String getActivityStreamMode() {
+        return this.activityStreamMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. RDS for Oracle always handles these events asynchronously.
+     * </p>
+     * 
+     * @param activityStreamMode
+     *        The mode of the database activity stream. Database events such as a change or access generate an activity
+     *        stream event. RDS for Oracle always handles these events asynchronously.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamMode
+     */
+
+    public DBInstance withActivityStreamMode(String activityStreamMode) {
+        setActivityStreamMode(activityStreamMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode of the database activity stream. Database events such as a change or access generate an activity stream
+     * event. RDS for Oracle always handles these events asynchronously.
+     * </p>
+     * 
+     * @param activityStreamMode
+     *        The mode of the database activity stream. Database events such as a change or access generate an activity
+     *        stream event. RDS for Oracle always handles these events asynchronously.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActivityStreamMode
+     */
+
+    public DBInstance withActivityStreamMode(ActivityStreamMode activityStreamMode) {
+        this.activityStreamMode = activityStreamMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether engine-native audit fields are included in the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamEngineNativeAuditFieldsIncluded
+     *        Indicates whether engine-native audit fields are included in the database activity stream.
+     */
+
+    public void setActivityStreamEngineNativeAuditFieldsIncluded(Boolean activityStreamEngineNativeAuditFieldsIncluded) {
+        this.activityStreamEngineNativeAuditFieldsIncluded = activityStreamEngineNativeAuditFieldsIncluded;
+    }
+
+    /**
+     * <p>
+     * Indicates whether engine-native audit fields are included in the database activity stream.
+     * </p>
+     * 
+     * @return Indicates whether engine-native audit fields are included in the database activity stream.
+     */
+
+    public Boolean getActivityStreamEngineNativeAuditFieldsIncluded() {
+        return this.activityStreamEngineNativeAuditFieldsIncluded;
+    }
+
+    /**
+     * <p>
+     * Indicates whether engine-native audit fields are included in the database activity stream.
+     * </p>
+     * 
+     * @param activityStreamEngineNativeAuditFieldsIncluded
+     *        Indicates whether engine-native audit fields are included in the database activity stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withActivityStreamEngineNativeAuditFieldsIncluded(Boolean activityStreamEngineNativeAuditFieldsIncluded) {
+        setActivityStreamEngineNativeAuditFieldsIncluded(activityStreamEngineNativeAuditFieldsIncluded);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether engine-native audit fields are included in the database activity stream.
+     * </p>
+     * 
+     * @return Indicates whether engine-native audit fields are included in the database activity stream.
+     */
+
+    public Boolean isActivityStreamEngineNativeAuditFieldsIncluded() {
+        return this.activityStreamEngineNativeAuditFieldsIncluded;
     }
 
     /**
@@ -4635,7 +4952,17 @@ public class DBInstance implements Serializable, Cloneable {
         if (getCustomerOwnedIpEnabled() != null)
             sb.append("CustomerOwnedIpEnabled: ").append(getCustomerOwnedIpEnabled()).append(",");
         if (getAwsBackupRecoveryPointArn() != null)
-            sb.append("AwsBackupRecoveryPointArn: ").append(getAwsBackupRecoveryPointArn());
+            sb.append("AwsBackupRecoveryPointArn: ").append(getAwsBackupRecoveryPointArn()).append(",");
+        if (getActivityStreamStatus() != null)
+            sb.append("ActivityStreamStatus: ").append(getActivityStreamStatus()).append(",");
+        if (getActivityStreamKmsKeyId() != null)
+            sb.append("ActivityStreamKmsKeyId: ").append(getActivityStreamKmsKeyId()).append(",");
+        if (getActivityStreamKinesisStreamName() != null)
+            sb.append("ActivityStreamKinesisStreamName: ").append(getActivityStreamKinesisStreamName()).append(",");
+        if (getActivityStreamMode() != null)
+            sb.append("ActivityStreamMode: ").append(getActivityStreamMode()).append(",");
+        if (getActivityStreamEngineNativeAuditFieldsIncluded() != null)
+            sb.append("ActivityStreamEngineNativeAuditFieldsIncluded: ").append(getActivityStreamEngineNativeAuditFieldsIncluded());
         sb.append("}");
         return sb.toString();
     }
@@ -4913,6 +5240,28 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getAwsBackupRecoveryPointArn() != null && other.getAwsBackupRecoveryPointArn().equals(this.getAwsBackupRecoveryPointArn()) == false)
             return false;
+        if (other.getActivityStreamStatus() == null ^ this.getActivityStreamStatus() == null)
+            return false;
+        if (other.getActivityStreamStatus() != null && other.getActivityStreamStatus().equals(this.getActivityStreamStatus()) == false)
+            return false;
+        if (other.getActivityStreamKmsKeyId() == null ^ this.getActivityStreamKmsKeyId() == null)
+            return false;
+        if (other.getActivityStreamKmsKeyId() != null && other.getActivityStreamKmsKeyId().equals(this.getActivityStreamKmsKeyId()) == false)
+            return false;
+        if (other.getActivityStreamKinesisStreamName() == null ^ this.getActivityStreamKinesisStreamName() == null)
+            return false;
+        if (other.getActivityStreamKinesisStreamName() != null
+                && other.getActivityStreamKinesisStreamName().equals(this.getActivityStreamKinesisStreamName()) == false)
+            return false;
+        if (other.getActivityStreamMode() == null ^ this.getActivityStreamMode() == null)
+            return false;
+        if (other.getActivityStreamMode() != null && other.getActivityStreamMode().equals(this.getActivityStreamMode()) == false)
+            return false;
+        if (other.getActivityStreamEngineNativeAuditFieldsIncluded() == null ^ this.getActivityStreamEngineNativeAuditFieldsIncluded() == null)
+            return false;
+        if (other.getActivityStreamEngineNativeAuditFieldsIncluded() != null
+                && other.getActivityStreamEngineNativeAuditFieldsIncluded().equals(this.getActivityStreamEngineNativeAuditFieldsIncluded()) == false)
+            return false;
         return true;
     }
 
@@ -4985,6 +5334,12 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBInstanceAutomatedBackupsReplications() == null) ? 0 : getDBInstanceAutomatedBackupsReplications().hashCode());
         hashCode = prime * hashCode + ((getCustomerOwnedIpEnabled() == null) ? 0 : getCustomerOwnedIpEnabled().hashCode());
         hashCode = prime * hashCode + ((getAwsBackupRecoveryPointArn() == null) ? 0 : getAwsBackupRecoveryPointArn().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamStatus() == null) ? 0 : getActivityStreamStatus().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamKmsKeyId() == null) ? 0 : getActivityStreamKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamKinesisStreamName() == null) ? 0 : getActivityStreamKinesisStreamName().hashCode());
+        hashCode = prime * hashCode + ((getActivityStreamMode() == null) ? 0 : getActivityStreamMode().hashCode());
+        hashCode = prime * hashCode
+                + ((getActivityStreamEngineNativeAuditFieldsIncluded() == null) ? 0 : getActivityStreamEngineNativeAuditFieldsIncluded().hashCode());
         return hashCode;
     }
 

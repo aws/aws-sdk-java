@@ -30,7 +30,7 @@ public class ModifyCertificatesRequest extends com.amazonaws.AmazonWebServiceReq
      * The new default certificate identifier to override the current one with.
      * </p>
      * <p>
-     * To determine the valid values, use the <code>describe-certificates</code> AWS CLI command or the
+     * To determine the valid values, use the <code>describe-certificates</code> CLI command or the
      * <code>DescribeCertificates</code> API operation.
      * </p>
      */
@@ -48,14 +48,14 @@ public class ModifyCertificatesRequest extends com.amazonaws.AmazonWebServiceReq
      * The new default certificate identifier to override the current one with.
      * </p>
      * <p>
-     * To determine the valid values, use the <code>describe-certificates</code> AWS CLI command or the
+     * To determine the valid values, use the <code>describe-certificates</code> CLI command or the
      * <code>DescribeCertificates</code> API operation.
      * </p>
      * 
      * @param certificateIdentifier
      *        The new default certificate identifier to override the current one with.</p>
      *        <p>
-     *        To determine the valid values, use the <code>describe-certificates</code> AWS CLI command or the
+     *        To determine the valid values, use the <code>describe-certificates</code> CLI command or the
      *        <code>DescribeCertificates</code> API operation.
      */
 
@@ -68,13 +68,13 @@ public class ModifyCertificatesRequest extends com.amazonaws.AmazonWebServiceReq
      * The new default certificate identifier to override the current one with.
      * </p>
      * <p>
-     * To determine the valid values, use the <code>describe-certificates</code> AWS CLI command or the
+     * To determine the valid values, use the <code>describe-certificates</code> CLI command or the
      * <code>DescribeCertificates</code> API operation.
      * </p>
      * 
      * @return The new default certificate identifier to override the current one with.</p>
      *         <p>
-     *         To determine the valid values, use the <code>describe-certificates</code> AWS CLI command or the
+     *         To determine the valid values, use the <code>describe-certificates</code> CLI command or the
      *         <code>DescribeCertificates</code> API operation.
      */
 
@@ -87,14 +87,14 @@ public class ModifyCertificatesRequest extends com.amazonaws.AmazonWebServiceReq
      * The new default certificate identifier to override the current one with.
      * </p>
      * <p>
-     * To determine the valid values, use the <code>describe-certificates</code> AWS CLI command or the
+     * To determine the valid values, use the <code>describe-certificates</code> CLI command or the
      * <code>DescribeCertificates</code> API operation.
      * </p>
      * 
      * @param certificateIdentifier
      *        The new default certificate identifier to override the current one with.</p>
      *        <p>
-     *        To determine the valid values, use the <code>describe-certificates</code> AWS CLI command or the
+     *        To determine the valid values, use the <code>describe-certificates</code> CLI command or the
      *        <code>DescribeCertificates</code> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

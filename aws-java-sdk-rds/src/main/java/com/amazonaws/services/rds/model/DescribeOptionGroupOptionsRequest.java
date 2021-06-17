@@ -51,17 +51,17 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -151,17 +151,17 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -214,17 +214,17 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
+     *        <code>oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>oracle-se2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>oracle-se1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>oracle-se</code>
+     *        <code>oracle-se2-cdb</code>
      *        </p>
      *        </li>
      *        <li>
@@ -283,17 +283,17 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -345,17 +345,17 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
      *         </li>
      *         <li>
      *         <p>
+     *         <code>oracle-ee-cdb</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>oracle-se2</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>oracle-se1</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>oracle-se</code>
+     *         <code>oracle-se2-cdb</code>
      *         </p>
      *         </li>
      *         <li>
@@ -414,17 +414,17 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
+     * <code>oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>oracle-se2</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>oracle-se1</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>oracle-se</code>
+     * <code>oracle-se2-cdb</code>
      * </p>
      * </li>
      * <li>
@@ -477,17 +477,17 @@ public class DescribeOptionGroupOptionsRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
+     *        <code>oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>oracle-se2</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>oracle-se1</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>oracle-se</code>
+     *        <code>oracle-se2-cdb</code>
      *        </p>
      *        </li>
      *        <li>

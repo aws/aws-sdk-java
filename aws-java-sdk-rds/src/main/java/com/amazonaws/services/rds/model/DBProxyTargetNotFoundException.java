@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your AWS account in the
- * specified AWS Region.
+ * The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your Amazon Web Services
+ * account in the specified Amazon Web Services Region.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

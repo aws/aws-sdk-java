@@ -73,17 +73,18 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS for my
-     * AWS account.
+     * Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
+     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon Web Services
+     * account.
      * </p>
      * </li>
      * <li>
@@ -161,19 +162,20 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
     private String marker;
     /**
      * <p>
-     * A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that this
-     * AWS account has been given permission to copy or restore. By default, these snapshots are not included.
+     * A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services
+     * accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these
+     * snapshots are not included.
      * </p>
      * <p>
-     * You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by the
-     * <code>ModifyDBClusterSnapshotAttribute</code> API action.
+     * You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from another
+     * Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
      * </p>
      */
     private Boolean includeShared;
     /**
      * <p>
      * A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
-     * restored by any AWS account. By default, the public snapshots are not included.
+     * restored by any Amazon Web Services account. By default, the public snapshots are not included.
      * </p>
      * <p>
      * You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
@@ -432,17 +434,18 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS for my
-     * AWS account.
+     * Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
+     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon Web Services
+     * account.
      * </p>
      * </li>
      * <li>
@@ -470,17 +473,19 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      *        <li>
      *        <p>
      *        <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS
-     *        for my AWS account.
+     *        for my Amazon Web Services account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
+     *        <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon Web Services
+     *        account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
+     *        <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon Web
+     *        Services account.
      *        </p>
      *        </li>
      *        <li>
@@ -515,17 +520,18 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS for my
-     * AWS account.
+     * Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
+     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon Web Services
+     * account.
      * </p>
      * </li>
      * <li>
@@ -552,17 +558,19 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      *         <li>
      *         <p>
      *         <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS
-     *         for my AWS account.
+     *         for my Amazon Web Services account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
+     *         <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon Web Services
+     *         account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
+     *         <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon Web
+     *         Services account.
      *         </p>
      *         </li>
      *         <li>
@@ -597,17 +605,18 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS for my
-     * AWS account.
+     * Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
+     * <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
+     * <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon Web Services
+     * account.
      * </p>
      * </li>
      * <li>
@@ -635,17 +644,19 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      *        <li>
      *        <p>
      *        <code>automated</code> - Return all DB cluster snapshots that have been automatically taken by Amazon RDS
-     *        for my AWS account.
+     *        for my Amazon Web Services account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>manual</code> - Return all DB cluster snapshots that have been taken by my AWS account.
+     *        <code>manual</code> - Return all DB cluster snapshots that have been taken by my Amazon Web Services
+     *        account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my AWS account.
+     *        <code>shared</code> - Return all manual DB cluster snapshots that have been shared to my Amazon Web
+     *        Services account.
      *        </p>
      *        </li>
      *        <li>
@@ -1082,21 +1093,22 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that this
-     * AWS account has been given permission to copy or restore. By default, these snapshots are not included.
+     * A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services
+     * accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these
+     * snapshots are not included.
      * </p>
      * <p>
-     * You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by the
-     * <code>ModifyDBClusterSnapshotAttribute</code> API action.
+     * You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from another
+     * Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
      * </p>
      * 
      * @param includeShared
-     *        A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that
-     *        this AWS account has been given permission to copy or restore. By default, these snapshots are not
-     *        included.</p>
+     *        A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web
+     *        Services accounts that this Amazon Web Services account has been given permission to copy or restore. By
+     *        default, these snapshots are not included.</p>
      *        <p>
-     *        You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by
-     *        the <code>ModifyDBClusterSnapshotAttribute</code> API action.
+     *        You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from
+     *        another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
      */
 
     public void setIncludeShared(Boolean includeShared) {
@@ -1105,20 +1117,21 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that this
-     * AWS account has been given permission to copy or restore. By default, these snapshots are not included.
+     * A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services
+     * accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these
+     * snapshots are not included.
      * </p>
      * <p>
-     * You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by the
-     * <code>ModifyDBClusterSnapshotAttribute</code> API action.
+     * You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from another
+     * Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
      * </p>
      * 
-     * @return A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that
-     *         this AWS account has been given permission to copy or restore. By default, these snapshots are not
-     *         included.</p>
+     * @return A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web
+     *         Services accounts that this Amazon Web Services account has been given permission to copy or restore. By
+     *         default, these snapshots are not included.</p>
      *         <p>
-     *         You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account
-     *         by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
+     *         You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from
+     *         another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
      */
 
     public Boolean getIncludeShared() {
@@ -1127,21 +1140,22 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that this
-     * AWS account has been given permission to copy or restore. By default, these snapshots are not included.
+     * A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services
+     * accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these
+     * snapshots are not included.
      * </p>
      * <p>
-     * You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by the
-     * <code>ModifyDBClusterSnapshotAttribute</code> API action.
+     * You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from another
+     * Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
      * </p>
      * 
      * @param includeShared
-     *        A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that
-     *        this AWS account has been given permission to copy or restore. By default, these snapshots are not
-     *        included.</p>
+     *        A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web
+     *        Services accounts that this Amazon Web Services account has been given permission to copy or restore. By
+     *        default, these snapshots are not included.</p>
      *        <p>
-     *        You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by
-     *        the <code>ModifyDBClusterSnapshotAttribute</code> API action.
+     *        You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from
+     *        another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1152,20 +1166,21 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that this
-     * AWS account has been given permission to copy or restore. By default, these snapshots are not included.
+     * A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web Services
+     * accounts that this Amazon Web Services account has been given permission to copy or restore. By default, these
+     * snapshots are not included.
      * </p>
      * <p>
-     * You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account by the
-     * <code>ModifyDBClusterSnapshotAttribute</code> API action.
+     * You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from another
+     * Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
      * </p>
      * 
-     * @return A value that indicates whether to include shared manual DB cluster snapshots from other AWS accounts that
-     *         this AWS account has been given permission to copy or restore. By default, these snapshots are not
-     *         included.</p>
+     * @return A value that indicates whether to include shared manual DB cluster snapshots from other Amazon Web
+     *         Services accounts that this Amazon Web Services account has been given permission to copy or restore. By
+     *         default, these snapshots are not included.</p>
      *         <p>
-     *         You can give an AWS account permission to restore a manual DB cluster snapshot from another AWS account
-     *         by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
+     *         You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from
+     *         another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.
      */
 
     public Boolean isIncludeShared() {
@@ -1175,7 +1190,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
-     * restored by any AWS account. By default, the public snapshots are not included.
+     * restored by any Amazon Web Services account. By default, the public snapshots are not included.
      * </p>
      * <p>
      * You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
@@ -1184,7 +1199,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param includePublic
      *        A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
-     *        restored by any AWS account. By default, the public snapshots are not included.</p>
+     *        restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
      *        <p>
      *        You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
      *        API action.
@@ -1197,7 +1212,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
-     * restored by any AWS account. By default, the public snapshots are not included.
+     * restored by any Amazon Web Services account. By default, the public snapshots are not included.
      * </p>
      * <p>
      * You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
@@ -1205,7 +1220,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @return A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
-     *         or restored by any AWS account. By default, the public snapshots are not included.</p>
+     *         or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
      *         <p>
      *         You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
      *         API action.
@@ -1218,7 +1233,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
-     * restored by any AWS account. By default, the public snapshots are not included.
+     * restored by any Amazon Web Services account. By default, the public snapshots are not included.
      * </p>
      * <p>
      * You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
@@ -1227,7 +1242,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param includePublic
      *        A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
-     *        restored by any AWS account. By default, the public snapshots are not included.</p>
+     *        restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
      *        <p>
      *        You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
      *        API action.
@@ -1242,7 +1257,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * A value that indicates whether to include manual DB cluster snapshots that are public and can be copied or
-     * restored by any AWS account. By default, the public snapshots are not included.
+     * restored by any Amazon Web Services account. By default, the public snapshots are not included.
      * </p>
      * <p>
      * You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
@@ -1250,7 +1265,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @return A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
-     *         or restored by any AWS account. By default, the public snapshots are not included.</p>
+     *         or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
      *         <p>
      *         You can share a manual DB cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
      *         API action.

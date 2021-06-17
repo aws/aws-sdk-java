@@ -38,8 +38,8 @@ public class DBProxyTargetGroup implements Serializable, Cloneable {
     private String dBProxyName;
     /**
      * <p>
-     * The identifier for the target group. This name must be unique for all target groups owned by your AWS account in
-     * the specified AWS Region.
+     * The identifier for the target group. This name must be unique for all target groups owned by your Amazon Web
+     * Services account in the specified Amazon Web Services Region.
      * </p>
      */
     private String targetGroupName;
@@ -125,13 +125,13 @@ public class DBProxyTargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the target group. This name must be unique for all target groups owned by your AWS account in
-     * the specified AWS Region.
+     * The identifier for the target group. This name must be unique for all target groups owned by your Amazon Web
+     * Services account in the specified Amazon Web Services Region.
      * </p>
      * 
      * @param targetGroupName
-     *        The identifier for the target group. This name must be unique for all target groups owned by your AWS
-     *        account in the specified AWS Region.
+     *        The identifier for the target group. This name must be unique for all target groups owned by your Amazon
+     *        Web Services account in the specified Amazon Web Services Region.
      */
 
     public void setTargetGroupName(String targetGroupName) {
@@ -140,12 +140,12 @@ public class DBProxyTargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the target group. This name must be unique for all target groups owned by your AWS account in
-     * the specified AWS Region.
+     * The identifier for the target group. This name must be unique for all target groups owned by your Amazon Web
+     * Services account in the specified Amazon Web Services Region.
      * </p>
      * 
-     * @return The identifier for the target group. This name must be unique for all target groups owned by your AWS
-     *         account in the specified AWS Region.
+     * @return The identifier for the target group. This name must be unique for all target groups owned by your Amazon
+     *         Web Services account in the specified Amazon Web Services Region.
      */
 
     public String getTargetGroupName() {
@@ -154,13 +154,13 @@ public class DBProxyTargetGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the target group. This name must be unique for all target groups owned by your AWS account in
-     * the specified AWS Region.
+     * The identifier for the target group. This name must be unique for all target groups owned by your Amazon Web
+     * Services account in the specified Amazon Web Services Region.
      * </p>
      * 
      * @param targetGroupName
-     *        The identifier for the target group. This name must be unique for all target groups owned by your AWS
-     *        account in the specified AWS Region.
+     *        The identifier for the target group. This name must be unique for all target groups owned by your Amazon
+     *        Web Services account in the specified Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

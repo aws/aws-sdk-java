@@ -41,8 +41,9 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
     private String mode;
     /**
      * <p>
-     * The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key identifier is
-     * the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
+     * The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).
      * </p>
      */
     private String kmsKeyId;
@@ -53,6 +54,13 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Boolean applyImmediately;
+    /**
+     * <p>
+     * Specifies whether the database activity stream includes engine-native audit fields. This option only applies to
+     * an Oracle DB instance. By default, no engine-native audit fields are included.
+     * </p>
+     */
+    private Boolean engineNativeAuditFieldsIncluded;
 
     /**
      * <p>
@@ -173,13 +181,15 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key identifier is
-     * the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
+     * The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key
-     *        identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
+     *        The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The
+     *        Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     *        Services KMS customer master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -188,12 +198,14 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key identifier is
-     * the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
+     * The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).
      * </p>
      * 
-     * @return The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key
-     *         identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
+     * @return The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The
+     *         Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *         Web Services KMS customer master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -202,13 +214,15 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key identifier is
-     * the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
+     * The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The Amazon
+     * Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for encrypting messages in the database activity stream. The AWS KMS key
-     *        identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).
+     *        The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream. The
+     *        Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     *        Services KMS customer master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,6 +292,66 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specifies whether the database activity stream includes engine-native audit fields. This option only applies to
+     * an Oracle DB instance. By default, no engine-native audit fields are included.
+     * </p>
+     * 
+     * @param engineNativeAuditFieldsIncluded
+     *        Specifies whether the database activity stream includes engine-native audit fields. This option only
+     *        applies to an Oracle DB instance. By default, no engine-native audit fields are included.
+     */
+
+    public void setEngineNativeAuditFieldsIncluded(Boolean engineNativeAuditFieldsIncluded) {
+        this.engineNativeAuditFieldsIncluded = engineNativeAuditFieldsIncluded;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the database activity stream includes engine-native audit fields. This option only applies to
+     * an Oracle DB instance. By default, no engine-native audit fields are included.
+     * </p>
+     * 
+     * @return Specifies whether the database activity stream includes engine-native audit fields. This option only
+     *         applies to an Oracle DB instance. By default, no engine-native audit fields are included.
+     */
+
+    public Boolean getEngineNativeAuditFieldsIncluded() {
+        return this.engineNativeAuditFieldsIncluded;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the database activity stream includes engine-native audit fields. This option only applies to
+     * an Oracle DB instance. By default, no engine-native audit fields are included.
+     * </p>
+     * 
+     * @param engineNativeAuditFieldsIncluded
+     *        Specifies whether the database activity stream includes engine-native audit fields. This option only
+     *        applies to an Oracle DB instance. By default, no engine-native audit fields are included.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartActivityStreamRequest withEngineNativeAuditFieldsIncluded(Boolean engineNativeAuditFieldsIncluded) {
+        setEngineNativeAuditFieldsIncluded(engineNativeAuditFieldsIncluded);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the database activity stream includes engine-native audit fields. This option only applies to
+     * an Oracle DB instance. By default, no engine-native audit fields are included.
+     * </p>
+     * 
+     * @return Specifies whether the database activity stream includes engine-native audit fields. This option only
+     *         applies to an Oracle DB instance. By default, no engine-native audit fields are included.
+     */
+
+    public Boolean isEngineNativeAuditFieldsIncluded() {
+        return this.engineNativeAuditFieldsIncluded;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -296,7 +370,9 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getApplyImmediately() != null)
-            sb.append("ApplyImmediately: ").append(getApplyImmediately());
+            sb.append("ApplyImmediately: ").append(getApplyImmediately()).append(",");
+        if (getEngineNativeAuditFieldsIncluded() != null)
+            sb.append("EngineNativeAuditFieldsIncluded: ").append(getEngineNativeAuditFieldsIncluded());
         sb.append("}");
         return sb.toString();
     }
@@ -327,6 +403,11 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getApplyImmediately() != null && other.getApplyImmediately().equals(this.getApplyImmediately()) == false)
             return false;
+        if (other.getEngineNativeAuditFieldsIncluded() == null ^ this.getEngineNativeAuditFieldsIncluded() == null)
+            return false;
+        if (other.getEngineNativeAuditFieldsIncluded() != null
+                && other.getEngineNativeAuditFieldsIncluded().equals(this.getEngineNativeAuditFieldsIncluded()) == false)
+            return false;
         return true;
     }
 
@@ -339,6 +420,7 @@ public class StartActivityStreamRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getApplyImmediately() == null) ? 0 : getApplyImmediately().hashCode());
+        hashCode = prime * hashCode + ((getEngineNativeAuditFieldsIncluded() == null) ? 0 : getEngineNativeAuditFieldsIncluded().hashCode());
         return hashCode;
     }
 

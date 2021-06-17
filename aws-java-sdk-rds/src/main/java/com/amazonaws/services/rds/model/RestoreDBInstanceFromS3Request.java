@@ -77,8 +77,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -148,20 +148,21 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * The Availability Zone that the DB instance is created in. For information about AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and
+     * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ
-     * deployment. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current
+     * endpoint.
      * </p>
      */
     private String availabilityZone;
@@ -370,16 +371,18 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     private Boolean storageEncrypted;
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon Web Services KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for your
+     * Amazon Web Services account. Your Amazon Web Services account has a different default CMK for each Amazon Web
+     * Services Region.
      * </p>
      */
     private String kmsKeyId;
@@ -423,8 +426,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     private String monitoringRoleArn;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -468,7 +471,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     private String s3Prefix;
     /**
      * <p>
-     * An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
+     * An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3
+     * bucket.
      * </p>
      */
     private String s3IngestionRoleArn;
@@ -485,16 +489,16 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -846,8 +850,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -857,8 +861,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *        instance classes, and availability for your engine, see <a
+     *        instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *        full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
@@ -872,8 +876,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -882,8 +886,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @return The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *         instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *         instance classes, and availability for your engine, see <a
+     *         instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *         full list of DB instance classes, and availability for your engine, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *         Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
@@ -897,8 +901,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB
+     * instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
      * in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -908,8 +912,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
-     *        instance classes, and availability for your engine, see <a
+     *        instance classes are available in all Amazon Web Services Regions, or for all database engines. For the
+     *        full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
      *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
@@ -1360,37 +1364,38 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Availability Zone that the DB instance is created in. For information about AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and
+     * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ
-     * deployment. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current
+     * endpoint.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone that the DB instance is created in. For information about AWS Regions and
-     *        Availability Zones, see <a
+     *        The Availability Zone that the DB instance is created in. For information about Amazon Web Services
+     *        Regions and Availability Zones, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
      *        </p>
      *        <p>
      *        Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a
-     *        Multi-AZ deployment. The specified Availability Zone must be in the same AWS Region as the current
-     *        endpoint.
+     *        Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the
+     *        current endpoint.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -1399,36 +1404,37 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Availability Zone that the DB instance is created in. For information about AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and
+     * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ
-     * deployment. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current
+     * endpoint.
      * </p>
      * 
-     * @return The Availability Zone that the DB instance is created in. For information about AWS Regions and
-     *         Availability Zones, see <a
+     * @return The Availability Zone that the DB instance is created in. For information about Amazon Web Services
+     *         Regions and Availability Zones, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *         >Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
-     *         Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *         Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      *         </p>
      *         <p>
      *         Example: <code>us-east-1d</code>
      *         </p>
      *         <p>
      *         Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a
-     *         Multi-AZ deployment. The specified Availability Zone must be in the same AWS Region as the current
-     *         endpoint.
+     *         Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as
+     *         the current endpoint.
      */
 
     public String getAvailabilityZone() {
@@ -1437,37 +1443,38 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Availability Zone that the DB instance is created in. For information about AWS Regions and Availability
-     * Zones, see <a
+     * The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and
+     * Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ
-     * deployment. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current
+     * endpoint.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone that the DB instance is created in. For information about AWS Regions and
-     *        Availability Zones, see <a
+     *        The Availability Zone that the DB instance is created in. For information about Amazon Web Services
+     *        Regions and Availability Zones, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"
      *        >Regions and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
      *        </p>
      *        <p>
      *        Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a
-     *        Multi-AZ deployment. The specified Availability Zone must be in the same AWS Region as the current
-     *        endpoint.
+     *        Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the
+     *        current endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2856,28 +2863,32 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon Web Services KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for your
+     * Amazon Web Services account. Your Amazon Web Services account has a different default CMK for each Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB instance. </p>
+     *        The Amazon Web Services KMS key identifier for an encrypted DB instance. </p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account,
+     *        specify the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        If the <code>StorageEncrypted</code> parameter is enabled, and you do not specify a value for the
      *        <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for
-     *        your AWS account. Your AWS account has a different default CMK for each AWS Region.
+     *        your Amazon Web Services account. Your Amazon Web Services account has a different default CMK for each
+     *        Amazon Web Services Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2886,27 +2897,31 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon Web Services KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for your
+     * Amazon Web Services account. Your Amazon Web Services account has a different default CMK for each Amazon Web
+     * Services Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for an encrypted DB instance. </p>
+     * @return The Amazon Web Services KMS key identifier for an encrypted DB instance. </p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services
+     *         account, specify the key ARN or alias ARN.
      *         </p>
      *         <p>
      *         If the <code>StorageEncrypted</code> parameter is enabled, and you do not specify a value for the
      *         <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for
-     *         your AWS account. Your AWS account has a different default CMK for each AWS Region.
+     *         your Amazon Web Services account. Your Amazon Web Services account has a different default CMK for each
+     *         Amazon Web Services Region.
      */
 
     public String getKmsKeyId() {
@@ -2915,28 +2930,32 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon Web Services KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account, specify the key
+     * ARN or alias ARN.
      * </p>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is enabled, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.
+     * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for your
+     * Amazon Web Services account. Your Amazon Web Services account has a different default CMK for each Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB instance. </p>
+     *        The Amazon Web Services KMS key identifier for an encrypted DB instance. </p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK). To use a CMK in a different Amazon Web Services account,
+     *        specify the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        If the <code>StorageEncrypted</code> parameter is enabled, and you do not specify a value for the
      *        <code>KmsKeyId</code> parameter, then Amazon RDS will use your default CMK. There is a default CMK for
-     *        your AWS account. Your AWS account has a different default CMK for each AWS Region.
+     *        your Amazon Web Services account. Your Amazon Web Services account has a different default CMK for each
+     *        Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3195,8 +3214,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3205,8 +3224,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3219,8 +3238,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3228,8 +3247,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3242,8 +3261,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3252,8 +3271,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *        (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *        <p>
      *        For more information about IAM database authentication, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3268,8 +3287,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts. By default, mapping is disabled.
      * </p>
      * <p>
      * For more information about IAM database authentication, see <a
@@ -3277,8 +3296,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
+     *         (IAM) accounts to database accounts. By default, mapping is disabled.</p>
      *         <p>
      *         For more information about IAM database authentication, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -3499,11 +3518,13 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
+     * An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3
+     * bucket.
      * </p>
      * 
      * @param s3IngestionRoleArn
-     *        An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
+     *        An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon
+     *        S3 bucket.
      */
 
     public void setS3IngestionRoleArn(String s3IngestionRoleArn) {
@@ -3512,10 +3533,12 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
+     * An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3
+     * bucket.
      * </p>
      * 
-     * @return An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
+     * @return An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your
+     *         Amazon S3 bucket.
      */
 
     public String getS3IngestionRoleArn() {
@@ -3524,11 +3547,13 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
+     * An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3
+     * bucket.
      * </p>
      * 
      * @param s3IngestionRoleArn
-     *        An AWS Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
+     *        An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon
+     *        S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3627,28 +3652,28 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
-     *        each AWS Region.
+     *        default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
+     *        has a different default CMK for each Amazon Web Services Region.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -3657,27 +3682,27 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     * @return The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *         <p>
-     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *         master key (CMK).
+     *         The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     *         Amazon Web Services KMS customer master key (CMK).
      *         </p>
      *         <p>
      *         If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *         default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK
-     *         for each AWS Region.
+     *         default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services
+     *         account has a different default CMK for each Amazon Web Services Region.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -3686,28 +3711,28 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
-     * (CMK).
+     * The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
-     * Region.
+     * CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account has a
+     * different default CMK for each Amazon Web Services Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
      *        <p>
-     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
-     *        master key (CMK).
+     *        The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     *        Web Services KMS customer master key (CMK).
      *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
-     *        each AWS Region.
+     *        default CMK. There is a default CMK for your Amazon Web Services account. Your Amazon Web Services account
+     *        has a different default CMK for each Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,18 +40,18 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
     private Integer backupRetentionPeriod;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the Amazon
-     * Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example,
-     * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
+     * The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS key ID is
+     * the Amazon Resource Name (ARN) for the KMS encryption key in the destination Amazon Web Services Region, for
+     * example, <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication
-     * action to be called in the AWS Region of the source DB instance. The presigned URL must be a valid request for
-     * the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the AWS Region that contains
-     * the source DB instance.
+     * action to be called in the Amazon Web Services Region of the source DB instance. The presigned URL must be a
+     * valid request for the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon
+     * Web Services Region that contains the source DB instance.
      * </p>
      */
     private String preSignedUrl;
@@ -146,15 +146,15 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the Amazon
-     * Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example,
-     * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
+     * The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS key ID is
+     * the Amazon Resource Name (ARN) for the KMS encryption key in the destination Amazon Web Services Region, for
+     * example, <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the
-     *        Amazon Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example,
-     *        <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
+     *        The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS key
+     *        ID is the Amazon Resource Name (ARN) for the KMS encryption key in the destination Amazon Web Services
+     *        Region, for example, <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -163,14 +163,14 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the Amazon
-     * Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example,
-     * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
+     * The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS key ID is
+     * the Amazon Resource Name (ARN) for the KMS encryption key in the destination Amazon Web Services Region, for
+     * example, <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the
-     *         Amazon Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example,
-     *         <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
+     * @return The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS
+     *         key ID is the Amazon Resource Name (ARN) for the KMS encryption key in the destination Amazon Web
+     *         Services Region, for example, <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
      */
 
     public String getKmsKeyId() {
@@ -179,15 +179,15 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the Amazon
-     * Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example,
-     * <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
+     * The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS key ID is
+     * the Amazon Resource Name (ARN) for the KMS encryption key in the destination Amazon Web Services Region, for
+     * example, <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the
-     *        Amazon Resource Name (ARN) for the KMS encryption key in the destination AWS Region, for example,
-     *        <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
+     *        The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS key
+     *        ID is the Amazon Resource Name (ARN) for the KMS encryption key in the destination Amazon Web Services
+     *        Region, for example, <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,16 +199,17 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication
-     * action to be called in the AWS Region of the source DB instance. The presigned URL must be a valid request for
-     * the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the AWS Region that contains
-     * the source DB instance.
+     * action to be called in the Amazon Web Services Region of the source DB instance. The presigned URL must be a
+     * valid request for the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon
+     * Web Services Region that contains the source DB instance.
      * </p>
      * 
      * @param preSignedUrl
      *        A URL that contains a Signature Version 4 signed request for the
-     *        StartDBInstanceAutomatedBackupsReplication action to be called in the AWS Region of the source DB
-     *        instance. The presigned URL must be a valid request for the StartDBInstanceAutomatedBackupsReplication API
-     *        action that can be executed in the AWS Region that contains the source DB instance.
+     *        StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web Services Region of the
+     *        source DB instance. The presigned URL must be a valid request for the
+     *        StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon Web Services
+     *        Region that contains the source DB instance.
      */
 
     public void setPreSignedUrl(String preSignedUrl) {
@@ -218,15 +219,16 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication
-     * action to be called in the AWS Region of the source DB instance. The presigned URL must be a valid request for
-     * the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the AWS Region that contains
-     * the source DB instance.
+     * action to be called in the Amazon Web Services Region of the source DB instance. The presigned URL must be a
+     * valid request for the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon
+     * Web Services Region that contains the source DB instance.
      * </p>
      * 
      * @return A URL that contains a Signature Version 4 signed request for the
-     *         StartDBInstanceAutomatedBackupsReplication action to be called in the AWS Region of the source DB
-     *         instance. The presigned URL must be a valid request for the StartDBInstanceAutomatedBackupsReplication
-     *         API action that can be executed in the AWS Region that contains the source DB instance.
+     *         StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web Services Region of the
+     *         source DB instance. The presigned URL must be a valid request for the
+     *         StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon Web Services
+     *         Region that contains the source DB instance.
      */
 
     public String getPreSignedUrl() {
@@ -236,16 +238,17 @@ public class StartDBInstanceAutomatedBackupsReplicationRequest extends com.amazo
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication
-     * action to be called in the AWS Region of the source DB instance. The presigned URL must be a valid request for
-     * the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the AWS Region that contains
-     * the source DB instance.
+     * action to be called in the Amazon Web Services Region of the source DB instance. The presigned URL must be a
+     * valid request for the StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon
+     * Web Services Region that contains the source DB instance.
      * </p>
      * 
      * @param preSignedUrl
      *        A URL that contains a Signature Version 4 signed request for the
-     *        StartDBInstanceAutomatedBackupsReplication action to be called in the AWS Region of the source DB
-     *        instance. The presigned URL must be a valid request for the StartDBInstanceAutomatedBackupsReplication API
-     *        action that can be executed in the AWS Region that contains the source DB instance.
+     *        StartDBInstanceAutomatedBackupsReplication action to be called in the Amazon Web Services Region of the
+     *        source DB instance. The presigned URL must be a valid request for the
+     *        StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon Web Services
+     *        Region that contains the source DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

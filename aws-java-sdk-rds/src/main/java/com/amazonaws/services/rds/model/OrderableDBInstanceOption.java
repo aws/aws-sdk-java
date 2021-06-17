@@ -185,11 +185,19 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web
+     * Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private Boolean outpostCapable;
+    /**
+     * <p>
+     * The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value
+     * <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database
+     * Activity Streams isn't supported, the return value is an empty list.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedActivityStreamModes;
     /**
      * <p>
      * A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine
@@ -1427,16 +1435,16 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web
+     * Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param outpostCapable
      *        Whether a DB instance supports RDS on Outposts.</p>
      *        <p>
      *        For more information about RDS on Outposts, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
-     *        Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon
+     *        Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setOutpostCapable(Boolean outpostCapable) {
@@ -1449,15 +1457,15 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web
+     * Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return Whether a DB instance supports RDS on Outposts.</p>
      *         <p>
      *         For more information about RDS on Outposts, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
-     *         Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon
+     *         Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public Boolean getOutpostCapable() {
@@ -1470,16 +1478,16 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web
+     * Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param outpostCapable
      *        Whether a DB instance supports RDS on Outposts.</p>
      *        <p>
      *        For more information about RDS on Outposts, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
-     *        Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon
+     *        Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1494,19 +1502,108 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about RDS on Outposts, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon Web
+     * Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return Whether a DB instance supports RDS on Outposts.</p>
      *         <p>
      *         For more information about RDS on Outposts, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
-     *         Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on Amazon
+     *         Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public Boolean isOutpostCapable() {
         return this.outpostCapable;
+    }
+
+    /**
+     * <p>
+     * The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value
+     * <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database
+     * Activity Streams isn't supported, the return value is an empty list.
+     * </p>
+     * 
+     * @return The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value
+     *         <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database
+     *         Activity Streams isn't supported, the return value is an empty list.
+     */
+
+    public java.util.List<String> getSupportedActivityStreamModes() {
+        if (supportedActivityStreamModes == null) {
+            supportedActivityStreamModes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedActivityStreamModes;
+    }
+
+    /**
+     * <p>
+     * The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value
+     * <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database
+     * Activity Streams isn't supported, the return value is an empty list.
+     * </p>
+     * 
+     * @param supportedActivityStreamModes
+     *        The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value
+     *        <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database
+     *        Activity Streams isn't supported, the return value is an empty list.
+     */
+
+    public void setSupportedActivityStreamModes(java.util.Collection<String> supportedActivityStreamModes) {
+        if (supportedActivityStreamModes == null) {
+            this.supportedActivityStreamModes = null;
+            return;
+        }
+
+        this.supportedActivityStreamModes = new com.amazonaws.internal.SdkInternalList<String>(supportedActivityStreamModes);
+    }
+
+    /**
+     * <p>
+     * The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value
+     * <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database
+     * Activity Streams isn't supported, the return value is an empty list.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedActivityStreamModes(java.util.Collection)} or
+     * {@link #withSupportedActivityStreamModes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedActivityStreamModes
+     *        The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value
+     *        <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database
+     *        Activity Streams isn't supported, the return value is an empty list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withSupportedActivityStreamModes(String... supportedActivityStreamModes) {
+        if (this.supportedActivityStreamModes == null) {
+            setSupportedActivityStreamModes(new com.amazonaws.internal.SdkInternalList<String>(supportedActivityStreamModes.length));
+        }
+        for (String ele : supportedActivityStreamModes) {
+            this.supportedActivityStreamModes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value
+     * <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database
+     * Activity Streams isn't supported, the return value is an empty list.
+     * </p>
+     * 
+     * @param supportedActivityStreamModes
+     *        The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns the value
+     *        <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code> only. If Database
+     *        Activity Streams isn't supported, the return value is an empty list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withSupportedActivityStreamModes(java.util.Collection<String> supportedActivityStreamModes) {
+        setSupportedActivityStreamModes(supportedActivityStreamModes);
+        return this;
     }
 
     /**
@@ -1633,6 +1730,8 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
             sb.append("SupportsKerberosAuthentication: ").append(getSupportsKerberosAuthentication()).append(",");
         if (getOutpostCapable() != null)
             sb.append("OutpostCapable: ").append(getOutpostCapable()).append(",");
+        if (getSupportedActivityStreamModes() != null)
+            sb.append("SupportedActivityStreamModes: ").append(getSupportedActivityStreamModes()).append(",");
         if (getSupportsGlobalDatabases() != null)
             sb.append("SupportsGlobalDatabases: ").append(getSupportsGlobalDatabases());
         sb.append("}");
@@ -1755,6 +1854,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
             return false;
         if (other.getOutpostCapable() != null && other.getOutpostCapable().equals(this.getOutpostCapable()) == false)
             return false;
+        if (other.getSupportedActivityStreamModes() == null ^ this.getSupportedActivityStreamModes() == null)
+            return false;
+        if (other.getSupportedActivityStreamModes() != null && other.getSupportedActivityStreamModes().equals(this.getSupportedActivityStreamModes()) == false)
+            return false;
         if (other.getSupportsGlobalDatabases() == null ^ this.getSupportsGlobalDatabases() == null)
             return false;
         if (other.getSupportsGlobalDatabases() != null && other.getSupportsGlobalDatabases().equals(this.getSupportsGlobalDatabases()) == false)
@@ -1793,6 +1896,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportsStorageAutoscaling() == null) ? 0 : getSupportsStorageAutoscaling().hashCode());
         hashCode = prime * hashCode + ((getSupportsKerberosAuthentication() == null) ? 0 : getSupportsKerberosAuthentication().hashCode());
         hashCode = prime * hashCode + ((getOutpostCapable() == null) ? 0 : getOutpostCapable().hashCode());
+        hashCode = prime * hashCode + ((getSupportedActivityStreamModes() == null) ? 0 : getSupportedActivityStreamModes().hashCode());
         hashCode = prime * hashCode + ((getSupportsGlobalDatabases() == null) ? 0 : getSupportsGlobalDatabases().hashCode());
         return hashCode;
     }

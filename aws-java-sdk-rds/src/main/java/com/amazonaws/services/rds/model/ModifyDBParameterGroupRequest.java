@@ -44,17 +44,23 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
     private String dBParameterGroupName;
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * An array of parameter names, values, and the application methods for the parameter update. At least one parameter
+     * name, value, and application method method must be supplied; later arguments are optional. A maximum of 20
+     * parameters can be modified in a single request.
      * </p>
      * <p>
      * Valid Values (for the application method): <code>immediate | pending-reboot</code>
      * </p>
      * <note>
      * <p>
-     * You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both
-     * dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.
+     * You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.
+     * </p>
+     * <p>
+     * When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to
+     * the DB instances associated with the parameter group. When the application method is <code>pending-reboot</code>,
+     * changes to dynamic and static parameters are applied after a reboot without failover to the DB instances
+     * associated with the parameter group.
      * </p>
      * </note>
      */
@@ -83,17 +89,22 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </li>
      * @param parameters
-     *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters
-     *        can be modified in a single request.</p>
+     *        An array of parameter names, values, and the application methods for the parameter update. At least one
+     *        parameter name, value, and application method method must be supplied; later arguments are optional. A
+     *        maximum of 20 parameters can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method): <code>immediate | pending-reboot</code>
      *        </p>
      *        <note>
      *        <p>
-     *        You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for
-     *        both dynamic and static parameters, and changes are applied when you reboot the DB instance without
-     *        failover.
+     *        You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>
+     *        pending-reboot</code> value for both dynamic and static parameters.
+     *        </p>
+     *        <p>
+     *        When the application method is <code>immediate</code>, changes to dynamic parameters are applied
+     *        immediately to the DB instances associated with the parameter group. When the application method is <code>
+     *        pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without
+     *        failover to the DB instances associated with the parameter group.
      *        </p>
      */
     public ModifyDBParameterGroupRequest(String dBParameterGroupName, java.util.List<Parameter> parameters) {
@@ -200,31 +211,42 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * An array of parameter names, values, and the application methods for the parameter update. At least one parameter
+     * name, value, and application method method must be supplied; later arguments are optional. A maximum of 20
+     * parameters can be modified in a single request.
      * </p>
      * <p>
      * Valid Values (for the application method): <code>immediate | pending-reboot</code>
      * </p>
      * <note>
      * <p>
-     * You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both
-     * dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.
+     * You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.
+     * </p>
+     * <p>
+     * When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to
+     * the DB instances associated with the parameter group. When the application method is <code>pending-reboot</code>,
+     * changes to dynamic and static parameters are applied after a reboot without failover to the DB instances
+     * associated with the parameter group.
      * </p>
      * </note>
      * 
-     * @return An array of parameter names, values, and the apply method for the parameter update. At least one
-     *         parameter name, value, and apply method must be supplied; later arguments are optional. A maximum of 20
-     *         parameters can be modified in a single request.</p>
+     * @return An array of parameter names, values, and the application methods for the parameter update. At least one
+     *         parameter name, value, and application method method must be supplied; later arguments are optional. A
+     *         maximum of 20 parameters can be modified in a single request.</p>
      *         <p>
      *         Valid Values (for the application method): <code>immediate | pending-reboot</code>
      *         </p>
      *         <note>
      *         <p>
-     *         You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for
-     *         both dynamic and static parameters, and changes are applied when you reboot the DB instance without
-     *         failover.
+     *         You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     *         <code>pending-reboot</code> value for both dynamic and static parameters.
+     *         </p>
+     *         <p>
+     *         When the application method is <code>immediate</code>, changes to dynamic parameters are applied
+     *         immediately to the DB instances associated with the parameter group. When the application method is
+     *         <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without
+     *         failover to the DB instances associated with the parameter group.
      *         </p>
      */
 
@@ -237,32 +259,43 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * An array of parameter names, values, and the application methods for the parameter update. At least one parameter
+     * name, value, and application method method must be supplied; later arguments are optional. A maximum of 20
+     * parameters can be modified in a single request.
      * </p>
      * <p>
      * Valid Values (for the application method): <code>immediate | pending-reboot</code>
      * </p>
      * <note>
      * <p>
-     * You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both
-     * dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.
+     * You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.
+     * </p>
+     * <p>
+     * When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to
+     * the DB instances associated with the parameter group. When the application method is <code>pending-reboot</code>,
+     * changes to dynamic and static parameters are applied after a reboot without failover to the DB instances
+     * associated with the parameter group.
      * </p>
      * </note>
      * 
      * @param parameters
-     *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters
-     *        can be modified in a single request.</p>
+     *        An array of parameter names, values, and the application methods for the parameter update. At least one
+     *        parameter name, value, and application method method must be supplied; later arguments are optional. A
+     *        maximum of 20 parameters can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method): <code>immediate | pending-reboot</code>
      *        </p>
      *        <note>
      *        <p>
-     *        You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for
-     *        both dynamic and static parameters, and changes are applied when you reboot the DB instance without
-     *        failover.
+     *        You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     *        <code>pending-reboot</code> value for both dynamic and static parameters.
+     *        </p>
+     *        <p>
+     *        When the application method is <code>immediate</code>, changes to dynamic parameters are applied
+     *        immediately to the DB instances associated with the parameter group. When the application method is
+     *        <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without
+     *        failover to the DB instances associated with the parameter group.
      *        </p>
      */
 
@@ -277,17 +310,23 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * An array of parameter names, values, and the application methods for the parameter update. At least one parameter
+     * name, value, and application method method must be supplied; later arguments are optional. A maximum of 20
+     * parameters can be modified in a single request.
      * </p>
      * <p>
      * Valid Values (for the application method): <code>immediate | pending-reboot</code>
      * </p>
      * <note>
      * <p>
-     * You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both
-     * dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.
+     * You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.
+     * </p>
+     * <p>
+     * When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to
+     * the DB instances associated with the parameter group. When the application method is <code>pending-reboot</code>,
+     * changes to dynamic and static parameters are applied after a reboot without failover to the DB instances
+     * associated with the parameter group.
      * </p>
      * </note>
      * <p>
@@ -297,17 +336,22 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param parameters
-     *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters
-     *        can be modified in a single request.</p>
+     *        An array of parameter names, values, and the application methods for the parameter update. At least one
+     *        parameter name, value, and application method method must be supplied; later arguments are optional. A
+     *        maximum of 20 parameters can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method): <code>immediate | pending-reboot</code>
      *        </p>
      *        <note>
      *        <p>
-     *        You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for
-     *        both dynamic and static parameters, and changes are applied when you reboot the DB instance without
-     *        failover.
+     *        You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     *        <code>pending-reboot</code> value for both dynamic and static parameters.
+     *        </p>
+     *        <p>
+     *        When the application method is <code>immediate</code>, changes to dynamic parameters are applied
+     *        immediately to the DB instances associated with the parameter group. When the application method is
+     *        <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without
+     *        failover to the DB instances associated with the parameter group.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -324,32 +368,43 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An array of parameter names, values, and the apply method for the parameter update. At least one parameter name,
-     * value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters can be
-     * modified in a single request.
+     * An array of parameter names, values, and the application methods for the parameter update. At least one parameter
+     * name, value, and application method method must be supplied; later arguments are optional. A maximum of 20
+     * parameters can be modified in a single request.
      * </p>
      * <p>
      * Valid Values (for the application method): <code>immediate | pending-reboot</code>
      * </p>
      * <note>
      * <p>
-     * You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both
-     * dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.
+     * You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.
+     * </p>
+     * <p>
+     * When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to
+     * the DB instances associated with the parameter group. When the application method is <code>pending-reboot</code>,
+     * changes to dynamic and static parameters are applied after a reboot without failover to the DB instances
+     * associated with the parameter group.
      * </p>
      * </note>
      * 
      * @param parameters
-     *        An array of parameter names, values, and the apply method for the parameter update. At least one parameter
-     *        name, value, and apply method must be supplied; later arguments are optional. A maximum of 20 parameters
-     *        can be modified in a single request.</p>
+     *        An array of parameter names, values, and the application methods for the parameter update. At least one
+     *        parameter name, value, and application method method must be supplied; later arguments are optional. A
+     *        maximum of 20 parameters can be modified in a single request.</p>
      *        <p>
      *        Valid Values (for the application method): <code>immediate | pending-reboot</code>
      *        </p>
      *        <note>
      *        <p>
-     *        You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for
-     *        both dynamic and static parameters, and changes are applied when you reboot the DB instance without
-     *        failover.
+     *        You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     *        <code>pending-reboot</code> value for both dynamic and static parameters.
+     *        </p>
+     *        <p>
+     *        When the application method is <code>immediate</code>, changes to dynamic parameters are applied
+     *        immediately to the DB instances associated with the parameter group. When the application method is
+     *        <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without
+     *        failover to the DB instances associated with the parameter group.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

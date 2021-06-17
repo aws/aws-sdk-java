@@ -28,7 +28,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source AWS Region name. For example, <code>us-east-1</code>.
+     * The source Amazon Web Services Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -36,7 +36,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must specify a valid AWS Region name.
+     * Must specify a valid Amazon Web Services Region name.
      * </p>
      * </li>
      * </ul>
@@ -73,7 +73,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source AWS Region name. For example, <code>us-east-1</code>.
+     * The source Amazon Web Services Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -81,20 +81,20 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must specify a valid AWS Region name.
+     * Must specify a valid Amazon Web Services Region name.
      * </p>
      * </li>
      * </ul>
      * 
      * @param regionName
-     *        The source AWS Region name. For example, <code>us-east-1</code>.</p>
+     *        The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must specify a valid AWS Region name.
+     *        Must specify a valid Amazon Web Services Region name.
      *        </p>
      *        </li>
      */
@@ -105,7 +105,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source AWS Region name. For example, <code>us-east-1</code>.
+     * The source Amazon Web Services Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -113,19 +113,19 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must specify a valid AWS Region name.
+     * Must specify a valid Amazon Web Services Region name.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The source AWS Region name. For example, <code>us-east-1</code>.</p>
+     * @return The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must specify a valid AWS Region name.
+     *         Must specify a valid Amazon Web Services Region name.
      *         </p>
      *         </li>
      */
@@ -136,7 +136,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source AWS Region name. For example, <code>us-east-1</code>.
+     * The source Amazon Web Services Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -144,20 +144,20 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must specify a valid AWS Region name.
+     * Must specify a valid Amazon Web Services Region name.
      * </p>
      * </li>
      * </ul>
      * 
      * @param regionName
-     *        The source AWS Region name. For example, <code>us-east-1</code>.</p>
+     *        The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must specify a valid AWS Region name.
+     *        Must specify a valid Amazon Web Services Region name.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

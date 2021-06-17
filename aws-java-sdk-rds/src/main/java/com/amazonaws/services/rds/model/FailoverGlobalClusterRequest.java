@@ -47,7 +47,7 @@ public class FailoverGlobalClusterRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database
      * (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the
-     * cluster in its AWS Region.
+     * cluster in its Amazon Web Services Region.
      * </p>
      */
     private String targetDbClusterIdentifier;
@@ -165,13 +165,13 @@ public class FailoverGlobalClusterRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database
      * (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the
-     * cluster in its AWS Region.
+     * cluster in its Amazon Web Services Region.
      * </p>
      * 
      * @param targetDbClusterIdentifier
      *        Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global
      *        database (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can
-     *        locate the cluster in its AWS Region.
+     *        locate the cluster in its Amazon Web Services Region.
      */
 
     public void setTargetDbClusterIdentifier(String targetDbClusterIdentifier) {
@@ -182,12 +182,12 @@ public class FailoverGlobalClusterRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database
      * (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the
-     * cluster in its AWS Region.
+     * cluster in its Amazon Web Services Region.
      * </p>
      * 
      * @return Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global
      *         database (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can
-     *         locate the cluster in its AWS Region.
+     *         locate the cluster in its Amazon Web Services Region.
      */
 
     public String getTargetDbClusterIdentifier() {
@@ -198,13 +198,13 @@ public class FailoverGlobalClusterRequest extends com.amazonaws.AmazonWebService
      * <p>
      * Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database
      * (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the
-     * cluster in its AWS Region.
+     * cluster in its Amazon Web Services Region.
      * </p>
      * 
      * @param targetDbClusterIdentifier
      *        Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global
      *        database (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can
-     *        locate the cluster in its AWS Region.
+     *        locate the cluster in its Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

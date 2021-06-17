@@ -36,7 +36,6 @@ public enum Regions {
     EU_CENTRAL_1("eu-central-1", "EU (Frankfurt)"),
     EU_NORTH_1("eu-north-1", "EU (Stockholm)"),
     EU_SOUTH_1("eu-south-1", "EU (Milan)"),
-    IN_AMAZON_1("in-amazon-1", "India (Begumpet)"),
     AP_EAST_1("ap-east-1", "Asia Pacific (Hong Kong)"),
     AP_SOUTH_1("ap-south-1", "Asia Pacific (Mumbai)"),
     AP_SOUTHEAST_1("ap-southeast-1", "Asia Pacific (Singapore)"),
