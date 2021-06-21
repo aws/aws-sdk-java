@@ -63,6 +63,21 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String versionId;
+    /**
+     * <p>
+     * The publisher ID of the extension publisher.
+     * </p>
+     * <p>
+     * Extensions provided by Amazon are not assigned a publisher ID.
+     * </p>
+     */
+    private String publisherId;
+    /**
+     * <p>
+     * The version number of a public third-party extension.
+     * </p>
+     */
+    private String publicVersionNumber;
 
     /**
      * <p>
@@ -321,6 +336,101 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The publisher ID of the extension publisher.
+     * </p>
+     * <p>
+     * Extensions provided by Amazon are not assigned a publisher ID.
+     * </p>
+     * 
+     * @param publisherId
+     *        The publisher ID of the extension publisher.</p>
+     *        <p>
+     *        Extensions provided by Amazon are not assigned a publisher ID.
+     */
+
+    public void setPublisherId(String publisherId) {
+        this.publisherId = publisherId;
+    }
+
+    /**
+     * <p>
+     * The publisher ID of the extension publisher.
+     * </p>
+     * <p>
+     * Extensions provided by Amazon are not assigned a publisher ID.
+     * </p>
+     * 
+     * @return The publisher ID of the extension publisher.</p>
+     *         <p>
+     *         Extensions provided by Amazon are not assigned a publisher ID.
+     */
+
+    public String getPublisherId() {
+        return this.publisherId;
+    }
+
+    /**
+     * <p>
+     * The publisher ID of the extension publisher.
+     * </p>
+     * <p>
+     * Extensions provided by Amazon are not assigned a publisher ID.
+     * </p>
+     * 
+     * @param publisherId
+     *        The publisher ID of the extension publisher.</p>
+     *        <p>
+     *        Extensions provided by Amazon are not assigned a publisher ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTypeRequest withPublisherId(String publisherId) {
+        setPublisherId(publisherId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version number of a public third-party extension.
+     * </p>
+     * 
+     * @param publicVersionNumber
+     *        The version number of a public third-party extension.
+     */
+
+    public void setPublicVersionNumber(String publicVersionNumber) {
+        this.publicVersionNumber = publicVersionNumber;
+    }
+
+    /**
+     * <p>
+     * The version number of a public third-party extension.
+     * </p>
+     * 
+     * @return The version number of a public third-party extension.
+     */
+
+    public String getPublicVersionNumber() {
+        return this.publicVersionNumber;
+    }
+
+    /**
+     * <p>
+     * The version number of a public third-party extension.
+     * </p>
+     * 
+     * @param publicVersionNumber
+     *        The version number of a public third-party extension.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTypeRequest withPublicVersionNumber(String publicVersionNumber) {
+        setPublicVersionNumber(publicVersionNumber);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -339,7 +449,11 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getVersionId() != null)
-            sb.append("VersionId: ").append(getVersionId());
+            sb.append("VersionId: ").append(getVersionId()).append(",");
+        if (getPublisherId() != null)
+            sb.append("PublisherId: ").append(getPublisherId()).append(",");
+        if (getPublicVersionNumber() != null)
+            sb.append("PublicVersionNumber: ").append(getPublicVersionNumber());
         sb.append("}");
         return sb.toString();
     }
@@ -370,6 +484,14 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getVersionId() != null && other.getVersionId().equals(this.getVersionId()) == false)
             return false;
+        if (other.getPublisherId() == null ^ this.getPublisherId() == null)
+            return false;
+        if (other.getPublisherId() != null && other.getPublisherId().equals(this.getPublisherId()) == false)
+            return false;
+        if (other.getPublicVersionNumber() == null ^ this.getPublicVersionNumber() == null)
+            return false;
+        if (other.getPublicVersionNumber() != null && other.getPublicVersionNumber().equals(this.getPublicVersionNumber()) == false)
+            return false;
         return true;
     }
 
@@ -382,6 +504,8 @@ public class DescribeTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getTypeName() == null) ? 0 : getTypeName().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode());
+        hashCode = prime * hashCode + ((getPublisherId() == null) ? 0 : getPublisherId().hashCode());
+        hashCode = prime * hashCode + ((getPublicVersionNumber() == null) ? 0 : getPublicVersionNumber().hashCode());
         return hashCode;
     }
 

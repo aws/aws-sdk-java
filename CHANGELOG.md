@@ -1,3 +1,8 @@
+# __1.12.10__ __2021-06-21__
+## __AWS CloudFormation__
+  - ### Features
+    - CloudFormation registry service now supports 3rd party public type sharing
+
 # __1.12.9__ __2021-06-17__
 ## __AWS SDK for Java__
   - ### Bugfixes

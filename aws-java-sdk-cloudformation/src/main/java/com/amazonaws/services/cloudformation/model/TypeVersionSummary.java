@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains summary information about a specific version of a CloudFormation type.
+ * Contains summary information about a specific version of a CloudFormation extension.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TypeVersionSummary" target="_top">AWS
@@ -28,32 +28,37 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The kind of type.
+     * The kind of extension.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      */
     private String typeName;
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      */
     private String versionId;
     /**
      * <p>
-     * Whether the specified type version is set as the default version.
+     * Whether the specified extension version is set as the default version.
+     * </p>
+     * <p>
+     * This applies only to private extensions you have registered in your account, and extensions published by Amazon.
+     * For public third-party extensions, whether or not they are activated in your account, CloudFormation returns
+     * <code>null</code>.
      * </p>
      */
     private Boolean isDefaultVersion;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type version.
+     * The Amazon Resource Name (ARN) of the extension version.
      * </p>
      */
     private String arn;
@@ -65,18 +70,34 @@ public class TypeVersionSummary implements Serializable, Cloneable {
     private java.util.Date timeCreated;
     /**
      * <p>
-     * The description of the type version.
+     * The description of the extension version.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * For public extensions that have been activated for this account and region, the version of the public extension
+     * to be used for CloudFormation operations in this account and region. For any extensions other than activated
+     * third-arty extensions, CloudFormation returns <code>null</code>.
+     * </p>
+     * <p>
+     * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
+     * automatically updates the extention in this account and region when a new version is released. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
+     * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
+     * Guide</i>.
+     * </p>
+     */
+    private String publicVersionNumber;
 
     /**
      * <p>
-     * The kind of type.
+     * The kind of extension.
      * </p>
      * 
      * @param type
-     *        The kind of type.
+     *        The kind of extension.
      * @see RegistryType
      */
 
@@ -86,10 +107,10 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The kind of type.
+     * The kind of extension.
      * </p>
      * 
-     * @return The kind of type.
+     * @return The kind of extension.
      * @see RegistryType
      */
 
@@ -99,11 +120,11 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The kind of type.
+     * The kind of extension.
      * </p>
      * 
      * @param type
-     *        The kind of type.
+     *        The kind of extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -115,11 +136,11 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The kind of type.
+     * The kind of extension.
      * </p>
      * 
      * @param type
-     *        The kind of type.
+     *        The kind of extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -131,11 +152,11 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      * 
      * @param typeName
-     *        The name of the type.
+     *        The name of the extension.
      */
 
     public void setTypeName(String typeName) {
@@ -144,10 +165,10 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      * 
-     * @return The name of the type.
+     * @return The name of the extension.
      */
 
     public String getTypeName() {
@@ -156,11 +177,11 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      * 
      * @param typeName
-     *        The name of the type.
+     *        The name of the extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,13 +192,13 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      * 
      * @param versionId
-     *        The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource
-     *        Name (ARN) assigned to the type version when it is registered.
+     *        The ID of a specific version of the extension. The version ID is the value at the end of the Amazon
+     *        Resource Name (ARN) assigned to the extension version when it is registered.
      */
 
     public void setVersionId(String versionId) {
@@ -186,12 +207,12 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      * 
-     * @return The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource
-     *         Name (ARN) assigned to the type version when it is registered.
+     * @return The ID of a specific version of the extension. The version ID is the value at the end of the Amazon
+     *         Resource Name (ARN) assigned to the extension version when it is registered.
      */
 
     public String getVersionId() {
@@ -200,13 +221,13 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      * 
      * @param versionId
-     *        The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource
-     *        Name (ARN) assigned to the type version when it is registered.
+     *        The ID of a specific version of the extension. The version ID is the value at the end of the Amazon
+     *        Resource Name (ARN) assigned to the extension version when it is registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,11 +238,20 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the specified type version is set as the default version.
+     * Whether the specified extension version is set as the default version.
+     * </p>
+     * <p>
+     * This applies only to private extensions you have registered in your account, and extensions published by Amazon.
+     * For public third-party extensions, whether or not they are activated in your account, CloudFormation returns
+     * <code>null</code>.
      * </p>
      * 
      * @param isDefaultVersion
-     *        Whether the specified type version is set as the default version.
+     *        Whether the specified extension version is set as the default version.</p>
+     *        <p>
+     *        This applies only to private extensions you have registered in your account, and extensions published by
+     *        Amazon. For public third-party extensions, whether or not they are activated in your account,
+     *        CloudFormation returns <code>null</code>.
      */
 
     public void setIsDefaultVersion(Boolean isDefaultVersion) {
@@ -230,10 +260,19 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the specified type version is set as the default version.
+     * Whether the specified extension version is set as the default version.
+     * </p>
+     * <p>
+     * This applies only to private extensions you have registered in your account, and extensions published by Amazon.
+     * For public third-party extensions, whether or not they are activated in your account, CloudFormation returns
+     * <code>null</code>.
      * </p>
      * 
-     * @return Whether the specified type version is set as the default version.
+     * @return Whether the specified extension version is set as the default version.</p>
+     *         <p>
+     *         This applies only to private extensions you have registered in your account, and extensions published by
+     *         Amazon. For public third-party extensions, whether or not they are activated in your account,
+     *         CloudFormation returns <code>null</code>.
      */
 
     public Boolean getIsDefaultVersion() {
@@ -242,11 +281,20 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the specified type version is set as the default version.
+     * Whether the specified extension version is set as the default version.
+     * </p>
+     * <p>
+     * This applies only to private extensions you have registered in your account, and extensions published by Amazon.
+     * For public third-party extensions, whether or not they are activated in your account, CloudFormation returns
+     * <code>null</code>.
      * </p>
      * 
      * @param isDefaultVersion
-     *        Whether the specified type version is set as the default version.
+     *        Whether the specified extension version is set as the default version.</p>
+     *        <p>
+     *        This applies only to private extensions you have registered in your account, and extensions published by
+     *        Amazon. For public third-party extensions, whether or not they are activated in your account,
+     *        CloudFormation returns <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,10 +305,19 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the specified type version is set as the default version.
+     * Whether the specified extension version is set as the default version.
+     * </p>
+     * <p>
+     * This applies only to private extensions you have registered in your account, and extensions published by Amazon.
+     * For public third-party extensions, whether or not they are activated in your account, CloudFormation returns
+     * <code>null</code>.
      * </p>
      * 
-     * @return Whether the specified type version is set as the default version.
+     * @return Whether the specified extension version is set as the default version.</p>
+     *         <p>
+     *         This applies only to private extensions you have registered in your account, and extensions published by
+     *         Amazon. For public third-party extensions, whether or not they are activated in your account,
+     *         CloudFormation returns <code>null</code>.
      */
 
     public Boolean isDefaultVersion() {
@@ -269,11 +326,11 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type version.
+     * The Amazon Resource Name (ARN) of the extension version.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the type version.
+     *        The Amazon Resource Name (ARN) of the extension version.
      */
 
     public void setArn(String arn) {
@@ -282,10 +339,10 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type version.
+     * The Amazon Resource Name (ARN) of the extension version.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the type version.
+     * @return The Amazon Resource Name (ARN) of the extension version.
      */
 
     public String getArn() {
@@ -294,11 +351,11 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type version.
+     * The Amazon Resource Name (ARN) of the extension version.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the type version.
+     *        The Amazon Resource Name (ARN) of the extension version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,11 +406,11 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the type version.
+     * The description of the extension version.
      * </p>
      * 
      * @param description
-     *        The description of the type version.
+     *        The description of the extension version.
      */
 
     public void setDescription(String description) {
@@ -362,10 +419,10 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the type version.
+     * The description of the extension version.
      * </p>
      * 
-     * @return The description of the type version.
+     * @return The description of the extension version.
      */
 
     public String getDescription() {
@@ -374,16 +431,113 @@ public class TypeVersionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the type version.
+     * The description of the extension version.
      * </p>
      * 
      * @param description
-     *        The description of the type version.
+     *        The description of the extension version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TypeVersionSummary withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For public extensions that have been activated for this account and region, the version of the public extension
+     * to be used for CloudFormation operations in this account and region. For any extensions other than activated
+     * third-arty extensions, CloudFormation returns <code>null</code>.
+     * </p>
+     * <p>
+     * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
+     * automatically updates the extention in this account and region when a new version is released. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
+     * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param publicVersionNumber
+     *        For public extensions that have been activated for this account and region, the version of the public
+     *        extension to be used for CloudFormation operations in this account and region. For any extensions other
+     *        than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+     *        <p>
+     *        How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
+     *        automatically updates the extention in this account and region when a new version is released. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
+     *        >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
+     *        Guide</i>.
+     */
+
+    public void setPublicVersionNumber(String publicVersionNumber) {
+        this.publicVersionNumber = publicVersionNumber;
+    }
+
+    /**
+     * <p>
+     * For public extensions that have been activated for this account and region, the version of the public extension
+     * to be used for CloudFormation operations in this account and region. For any extensions other than activated
+     * third-arty extensions, CloudFormation returns <code>null</code>.
+     * </p>
+     * <p>
+     * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
+     * automatically updates the extention in this account and region when a new version is released. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
+     * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
+     * Guide</i>.
+     * </p>
+     * 
+     * @return For public extensions that have been activated for this account and region, the version of the public
+     *         extension to be used for CloudFormation operations in this account and region. For any extensions other
+     *         than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+     *         <p>
+     *         How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
+     *         automatically updates the extention in this account and region when a new version is released. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
+     *         >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
+     *         Guide</i>.
+     */
+
+    public String getPublicVersionNumber() {
+        return this.publicVersionNumber;
+    }
+
+    /**
+     * <p>
+     * For public extensions that have been activated for this account and region, the version of the public extension
+     * to be used for CloudFormation operations in this account and region. For any extensions other than activated
+     * third-arty extensions, CloudFormation returns <code>null</code>.
+     * </p>
+     * <p>
+     * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
+     * automatically updates the extention in this account and region when a new version is released. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
+     * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param publicVersionNumber
+     *        For public extensions that have been activated for this account and region, the version of the public
+     *        extension to be used for CloudFormation operations in this account and region. For any extensions other
+     *        than activated third-arty extensions, CloudFormation returns <code>null</code>.</p>
+     *        <p>
+     *        How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
+     *        automatically updates the extention in this account and region when a new version is released. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
+     *        >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
+     *        Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TypeVersionSummary withPublicVersionNumber(String publicVersionNumber) {
+        setPublicVersionNumber(publicVersionNumber);
         return this;
     }
 
@@ -412,7 +566,9 @@ public class TypeVersionSummary implements Serializable, Cloneable {
         if (getTimeCreated() != null)
             sb.append("TimeCreated: ").append(getTimeCreated()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getPublicVersionNumber() != null)
+            sb.append("PublicVersionNumber: ").append(getPublicVersionNumber());
         sb.append("}");
         return sb.toString();
     }
@@ -455,6 +611,10 @@ public class TypeVersionSummary implements Serializable, Cloneable {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getPublicVersionNumber() == null ^ this.getPublicVersionNumber() == null)
+            return false;
+        if (other.getPublicVersionNumber() != null && other.getPublicVersionNumber().equals(this.getPublicVersionNumber()) == false)
+            return false;
         return true;
     }
 
@@ -470,6 +630,7 @@ public class TypeVersionSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getTimeCreated() == null) ? 0 : getTimeCreated().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getPublicVersionNumber() == null) ? 0 : getPublicVersionNumber().hashCode());
         return hashCode;
     }
 

@@ -72,6 +72,41 @@ public class TypeSummaryStaxUnmarshaller implements Unmarshaller<TypeSummary, St
                     typeSummary.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("PublisherId", targetDepth)) {
+                    typeSummary.setPublisherId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OriginalTypeName", targetDepth)) {
+                    typeSummary.setOriginalTypeName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PublicVersionNumber", targetDepth)) {
+                    typeSummary.setPublicVersionNumber(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("LatestPublicVersion", targetDepth)) {
+                    typeSummary.setLatestPublicVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PublisherIdentity", targetDepth)) {
+                    typeSummary.setPublisherIdentity(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PublisherName", targetDepth)) {
+                    typeSummary.setPublisherName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("IsActivated", targetDepth)) {
+                    typeSummary.setIsActivated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return typeSummary;

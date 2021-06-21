@@ -53,6 +53,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
      * <code>FailureTolerancePercentage</code> (but not both).
      * </p>
+     * <p>
+     * By default, <code>0</code> is specified.
+     * </p>
      */
     private Integer failureToleranceCount;
     /**
@@ -69,6 +72,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
      * <code>FailureTolerancePercentage</code>, but not both.
      * </p>
+     * <p>
+     * By default, <code>0</code> is specified.
+     * </p>
      */
     private Integer failureTolerancePercentage;
     /**
@@ -84,6 +90,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <p>
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
+     * </p>
+     * <p>
+     * By default, <code>1</code> is specified.
      * </p>
      */
     private Integer maxConcurrentCount;
@@ -103,6 +112,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * <p>
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
+     * </p>
+     * <p>
+     * By default, <code>1</code> is specified.
      * </p>
      */
     private Integer maxConcurrentPercentage;
@@ -253,6 +265,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
      * <code>FailureTolerancePercentage</code> (but not both).
      * </p>
+     * <p>
+     * By default, <code>0</code> is specified.
+     * </p>
      * 
      * @param failureToleranceCount
      *        The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the
@@ -261,6 +276,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        <p>
      *        Conditional: You must specify either <code>FailureToleranceCount</code> or
      *        <code>FailureTolerancePercentage</code> (but not both).
+     *        </p>
+     *        <p>
+     *        By default, <code>0</code> is specified.
      */
 
     public void setFailureToleranceCount(Integer failureToleranceCount) {
@@ -277,6 +295,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
      * <code>FailureTolerancePercentage</code> (but not both).
      * </p>
+     * <p>
+     * By default, <code>0</code> is specified.
+     * </p>
      * 
      * @return The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the
      *         operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't attempt the
@@ -284,6 +305,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *         <p>
      *         Conditional: You must specify either <code>FailureToleranceCount</code> or
      *         <code>FailureTolerancePercentage</code> (but not both).
+     *         </p>
+     *         <p>
+     *         By default, <code>0</code> is specified.
      */
 
     public Integer getFailureToleranceCount() {
@@ -300,6 +324,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
      * <code>FailureTolerancePercentage</code> (but not both).
      * </p>
+     * <p>
+     * By default, <code>0</code> is specified.
+     * </p>
      * 
      * @param failureToleranceCount
      *        The number of accounts, per Region, for which this operation can fail before AWS CloudFormation stops the
@@ -308,6 +335,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        <p>
      *        Conditional: You must specify either <code>FailureToleranceCount</code> or
      *        <code>FailureTolerancePercentage</code> (but not both).
+     *        </p>
+     *        <p>
+     *        By default, <code>0</code> is specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,6 +360,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
      * <code>FailureTolerancePercentage</code>, but not both.
      * </p>
+     * <p>
+     * By default, <code>0</code> is specified.
+     * </p>
      * 
      * @param failureTolerancePercentage
      *        The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation
@@ -342,6 +375,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        <p>
      *        Conditional: You must specify either <code>FailureToleranceCount</code> or
      *        <code>FailureTolerancePercentage</code>, but not both.
+     *        </p>
+     *        <p>
+     *        By default, <code>0</code> is specified.
      */
 
     public void setFailureTolerancePercentage(Integer failureTolerancePercentage) {
@@ -362,6 +398,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
      * <code>FailureTolerancePercentage</code>, but not both.
      * </p>
+     * <p>
+     * By default, <code>0</code> is specified.
+     * </p>
      * 
      * @return The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation
      *         stops the operation in that Region. If the operation is stopped in a Region, AWS CloudFormation doesn't
@@ -373,6 +412,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *         <p>
      *         Conditional: You must specify either <code>FailureToleranceCount</code> or
      *         <code>FailureTolerancePercentage</code>, but not both.
+     *         </p>
+     *         <p>
+     *         By default, <code>0</code> is specified.
      */
 
     public Integer getFailureTolerancePercentage() {
@@ -393,6 +435,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>FailureToleranceCount</code> or
      * <code>FailureTolerancePercentage</code>, but not both.
      * </p>
+     * <p>
+     * By default, <code>0</code> is specified.
+     * </p>
      * 
      * @param failureTolerancePercentage
      *        The percentage of accounts, per Region, for which this stack operation can fail before AWS CloudFormation
@@ -405,6 +450,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        <p>
      *        Conditional: You must specify either <code>FailureToleranceCount</code> or
      *        <code>FailureTolerancePercentage</code>, but not both.
+     *        </p>
+     *        <p>
+     *        By default, <code>0</code> is specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -427,6 +475,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
+     * <p>
+     * By default, <code>1</code> is specified.
+     * </p>
      * 
      * @param maxConcurrentCount
      *        The maximum number of accounts in which to perform this operation at one time. This is dependent on the
@@ -440,6 +491,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        <p>
      *        Conditional: You must specify either <code>MaxConcurrentCount</code> or
      *        <code>MaxConcurrentPercentage</code>, but not both.
+     *        </p>
+     *        <p>
+     *        By default, <code>1</code> is specified.
      */
 
     public void setMaxConcurrentCount(Integer maxConcurrentCount) {
@@ -460,6 +514,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
+     * <p>
+     * By default, <code>1</code> is specified.
+     * </p>
      * 
      * @return The maximum number of accounts in which to perform this operation at one time. This is dependent on the
      *         value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
@@ -472,6 +529,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *         <p>
      *         Conditional: You must specify either <code>MaxConcurrentCount</code> or
      *         <code>MaxConcurrentPercentage</code>, but not both.
+     *         </p>
+     *         <p>
+     *         By default, <code>1</code> is specified.
      */
 
     public Integer getMaxConcurrentCount() {
@@ -492,6 +552,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
+     * <p>
+     * By default, <code>1</code> is specified.
+     * </p>
      * 
      * @param maxConcurrentCount
      *        The maximum number of accounts in which to perform this operation at one time. This is dependent on the
@@ -505,6 +568,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        <p>
      *        Conditional: You must specify either <code>MaxConcurrentCount</code> or
      *        <code>MaxConcurrentPercentage</code>, but not both.
+     *        </p>
+     *        <p>
+     *        By default, <code>1</code> is specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,6 +596,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
+     * <p>
+     * By default, <code>1</code> is specified.
+     * </p>
      * 
      * @param maxConcurrentPercentage
      *        The maximum percentage of accounts in which to perform this operation at one time.</p>
@@ -546,6 +615,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        <p>
      *        Conditional: You must specify either <code>MaxConcurrentCount</code> or
      *        <code>MaxConcurrentPercentage</code>, but not both.
+     *        </p>
+     *        <p>
+     *        By default, <code>1</code> is specified.
      */
 
     public void setMaxConcurrentPercentage(Integer maxConcurrentPercentage) {
@@ -569,6 +641,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
+     * <p>
+     * By default, <code>1</code> is specified.
+     * </p>
      * 
      * @return The maximum percentage of accounts in which to perform this operation at one time.</p>
      *         <p>
@@ -584,6 +659,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *         <p>
      *         Conditional: You must specify either <code>MaxConcurrentCount</code> or
      *         <code>MaxConcurrentPercentage</code>, but not both.
+     *         </p>
+     *         <p>
+     *         By default, <code>1</code> is specified.
      */
 
     public Integer getMaxConcurrentPercentage() {
@@ -607,6 +685,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * Conditional: You must specify either <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but
      * not both.
      * </p>
+     * <p>
+     * By default, <code>1</code> is specified.
+     * </p>
      * 
      * @param maxConcurrentPercentage
      *        The maximum percentage of accounts in which to perform this operation at one time.</p>
@@ -623,6 +704,9 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      *        <p>
      *        Conditional: You must specify either <code>MaxConcurrentCount</code> or
      *        <code>MaxConcurrentPercentage</code>, but not both.
+     *        </p>
+     *        <p>
+     *        By default, <code>1</code> is specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

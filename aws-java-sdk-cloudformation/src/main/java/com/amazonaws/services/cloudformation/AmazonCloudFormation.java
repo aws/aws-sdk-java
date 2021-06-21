@@ -114,6 +114,55 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Activates a public third-party extension, making it available for use in stack templates. For more information,
+     * see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using public
+     * extensions</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * <p>
+     * Once you have activated a public third-party extension in your account and region, use <a
+     * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify
+     * configuration properties for the extension. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param activateTypeRequest
+     * @return Result of the ActivateType operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @throws TypeNotFoundException
+     *         The specified extension does not exist in the CloudFormation registry.
+     * @sample AmazonCloudFormation.ActivateType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ActivateTypeResult activateType(ActivateTypeRequest activateTypeRequest);
+
+    /**
+     * <p>
+     * Returns configuration data for the specified CloudFormation extensions, from the CloudFormation registry for the
+     * account and region.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param batchDescribeTypeConfigurationsRequest
+     * @return Result of the BatchDescribeTypeConfigurations operation returned by the service.
+     * @throws TypeConfigurationNotFoundException
+     *         The specified extension configuration cannot be found.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.BatchDescribeTypeConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchDescribeTypeConfigurationsResult batchDescribeTypeConfigurations(BatchDescribeTypeConfigurationsRequest batchDescribeTypeConfigurationsRequest);
+
+    /**
+     * <p>
      * Cancels an update on the specified stack. If the call completes successfully, the stack rolls back the update and
      * reverts to the previous stack configuration.
      * </p>
@@ -290,6 +339,28 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Deactivates a public extension that was previously activated in this account and region.
+     * </p>
+     * <p>
+     * Once deactivated, an extension cannot be used in any CloudFormation operation. This includes stack update
+     * operations where the stack template includes the extension, even if no updates are being made to the extension.
+     * In addition, deactivated extensions are not automatically updated if a new version of the extension is released.
+     * </p>
+     * 
+     * @param deactivateTypeRequest
+     * @return Result of the DeactivateType operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @throws TypeNotFoundException
+     *         The specified extension does not exist in the CloudFormation registry.
+     * @sample AmazonCloudFormation.DeactivateType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeactivateTypeResult deactivateType(DeactivateTypeRequest deactivateTypeRequest);
+
+    /**
+     * <p>
      * Deletes the specified change set. Deleting change sets ensures that no one executes the wrong change set.
      * </p>
      * <p>
@@ -399,7 +470,7 @@ public interface AmazonCloudFormation {
      * @throws CFNRegistryException
      *         An error occurred during a CloudFormation registry operation.
      * @throws TypeNotFoundException
-     *         The specified type does not exist in the CloudFormation registry.
+     *         The specified extension does not exist in the CloudFormation registry.
      * @sample AmazonCloudFormation.DeregisterType
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType" target="_top">AWS
      *      API Documentation</a>
@@ -442,6 +513,42 @@ public interface AmazonCloudFormation {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeChangeSetResult describeChangeSet(DescribeChangeSetRequest describeChangeSetRequest);
+
+    /**
+     * <p>
+     * Returns information about a CloudFormation extension publisher.
+     * </p>
+     * <p>
+     * If you do not supply a <code>PublisherId</code>, and you have registered as an extension publisher,
+     * <code>DescribePublisher</code> returns information about your own publisher account.
+     * </p>
+     * <p>
+     * For more information on registering as a publisher, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+     * RegisterPublisher</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+     * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describePublisherRequest
+     * @return Result of the DescribePublisher operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.DescribePublisher
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePublisherResult describePublisher(DescribePublisherRequest describePublisherRequest);
 
     /**
      * <p>
@@ -666,7 +773,7 @@ public interface AmazonCloudFormation {
      * @throws CFNRegistryException
      *         An error occurred during a CloudFormation registry operation.
      * @throws TypeNotFoundException
-     *         The specified type does not exist in the CloudFormation registry.
+     *         The specified extension does not exist in the CloudFormation registry.
      * @sample AmazonCloudFormation.DescribeType
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType" target="_top">AWS
      *      API Documentation</a>
@@ -1190,6 +1297,31 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Publishes the specified extension to the CloudFormation registry as a public extension in this region. Public
+     * extensions are available for use by all CloudFormation users. For more information on publishing extensions, see
+     * <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+     * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * <p>
+     * To publish an extension, you must be registered as a publisher with CloudFormation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+     * RegisterPublisher</a>.
+     * </p>
+     * 
+     * @param publishTypeRequest
+     * @return Result of the PublishType operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @throws TypeNotFoundException
+     *         The specified extension does not exist in the CloudFormation registry.
+     * @sample AmazonCloudFormation.PublishType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PublishTypeResult publishType(PublishTypeRequest publishTypeRequest);
+
+    /**
+     * <p>
      * Reports progress of a resource handler to CloudFormation.
      * </p>
      * <p>
@@ -1213,6 +1345,28 @@ public interface AmazonCloudFormation {
      *      target="_top">AWS API Documentation</a>
      */
     RecordHandlerProgressResult recordHandlerProgress(RecordHandlerProgressRequest recordHandlerProgressRequest);
+
+    /**
+     * <p>
+     * Registers your account as a publisher of public extensions in the CloudFormation registry. Public extensions are
+     * available for use by all CloudFormation users. This publisher ID applies to your account in all AWS regions.
+     * </p>
+     * <p>
+     * For information on requirements for registering as a public extension publisher, see <a href=
+     * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs"
+     * >Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * <p/>
+     * 
+     * @param registerPublisherRequest
+     * @return Result of the RegisterPublisher operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @sample AmazonCloudFormation.RegisterPublisher
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RegisterPublisherResult registerPublisher(RegisterPublisherRequest registerPublisherRequest);
 
     /**
      * <p>
@@ -1250,6 +1404,13 @@ public interface AmazonCloudFormation {
      * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
      * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of the registration request.
      * </p>
+     * <p>
+     * Once you have registered a private extension in your account and region, use <a
+     * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify
+     * configuration properties for the extension. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
      * 
      * @param registerTypeRequest
      * @return Result of the RegisterType operation returned by the service.
@@ -1277,6 +1438,38 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Specifies the configuration data for a registered CloudFormation extension, in the given account and region.
+     * </p>
+     * <p>
+     * To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code> element of
+     * <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * It is strongly recommended that you use dynamic references to restrict sensitive configuration definitions, such
+     * as third-party credentials. For more details on dynamic references, see <a
+     * href="https://docs.aws.amazon.com/">Using dynamic references to specify template values</a> in the <i>AWS
+     * CloudFormation User Guide</i>.
+     * </p>
+     * </important>
+     * 
+     * @param setTypeConfigurationRequest
+     * @return Result of the SetTypeConfiguration operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @throws TypeNotFoundException
+     *         The specified extension does not exist in the CloudFormation registry.
+     * @sample AmazonCloudFormation.SetTypeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SetTypeConfigurationResult setTypeConfiguration(SetTypeConfigurationRequest setTypeConfigurationRequest);
+
+    /**
+     * <p>
      * Specify the default version of an extension. The default version of an extension will be used in CloudFormation
      * operations.
      * </p>
@@ -1286,7 +1479,7 @@ public interface AmazonCloudFormation {
      * @throws CFNRegistryException
      *         An error occurred during a CloudFormation registry operation.
      * @throws TypeNotFoundException
-     *         The specified type does not exist in the CloudFormation registry.
+     *         The specified extension does not exist in the CloudFormation registry.
      * @sample AmazonCloudFormation.SetTypeDefaultVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion"
      *      target="_top">AWS API Documentation</a>
@@ -1329,6 +1522,59 @@ public interface AmazonCloudFormation {
      *      target="_top">AWS API Documentation</a>
      */
     StopStackSetOperationResult stopStackSetOperation(StopStackSetOperationRequest stopStackSetOperationRequest);
+
+    /**
+     * <p>
+     * Tests a registered extension to make sure it meets all necessary requirements for being published in the
+     * CloudFormation registry.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For resource types, this includes passing all contracts tests defined for the type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For modules, this includes determining if the module's model meets all necessary requirements.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing"
+     * >Testing your public extension prior to publishing</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * <p>
+     * If you do not specify a version, CloudFormation uses the default version of the extension in your account and
+     * region for testing.
+     * </p>
+     * <p>
+     * To perform testing, CloudFormation assumes the execution role specified when the test was registered. For more
+     * information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+     * </p>
+     * <p>
+     * Once you've initiated testing on an extension using <code>TestType</code>, you can use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+     * to monitor the current test status and test status description for the extension.
+     * </p>
+     * <p>
+     * An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see
+     * <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
+     * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * 
+     * @param testTypeRequest
+     * @return Result of the TestType operation returned by the service.
+     * @throws CFNRegistryException
+     *         An error occurred during a CloudFormation registry operation.
+     * @throws TypeNotFoundException
+     *         The specified extension does not exist in the CloudFormation registry.
+     * @sample AmazonCloudFormation.TestType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TestTypeResult testType(TestTypeRequest testTypeRequest);
 
     /**
      * <p>

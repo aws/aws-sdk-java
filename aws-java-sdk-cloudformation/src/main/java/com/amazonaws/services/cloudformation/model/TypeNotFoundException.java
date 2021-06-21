@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified type does not exist in the CloudFormation registry.
+ * The specified extension does not exist in the CloudFormation registry.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

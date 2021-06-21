@@ -52,6 +52,102 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
+     * Activates a public third-party extension, making it available for use in stack templates. For more information,
+     * see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using public
+     * extensions</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * <p>
+     * Once you have activated a public third-party extension in your account and region, use <a
+     * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify
+     * configuration properties for the extension. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param activateTypeRequest
+     * @return A Java Future containing the result of the ActivateType operation returned by the service.
+     * @sample AmazonCloudFormationAsync.ActivateType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ActivateTypeResult> activateTypeAsync(ActivateTypeRequest activateTypeRequest);
+
+    /**
+     * <p>
+     * Activates a public third-party extension, making it available for use in stack templates. For more information,
+     * see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using public
+     * extensions</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * <p>
+     * Once you have activated a public third-party extension in your account and region, use <a
+     * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify
+     * configuration properties for the extension. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param activateTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ActivateType operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.ActivateType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ActivateTypeResult> activateTypeAsync(ActivateTypeRequest activateTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<ActivateTypeRequest, ActivateTypeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns configuration data for the specified CloudFormation extensions, from the CloudFormation registry for the
+     * account and region.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param batchDescribeTypeConfigurationsRequest
+     * @return A Java Future containing the result of the BatchDescribeTypeConfigurations operation returned by the
+     *         service.
+     * @sample AmazonCloudFormationAsync.BatchDescribeTypeConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDescribeTypeConfigurationsResult> batchDescribeTypeConfigurationsAsync(
+            BatchDescribeTypeConfigurationsRequest batchDescribeTypeConfigurationsRequest);
+
+    /**
+     * <p>
+     * Returns configuration data for the specified CloudFormation extensions, from the CloudFormation registry for the
+     * account and region.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param batchDescribeTypeConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDescribeTypeConfigurations operation returned by the
+     *         service.
+     * @sample AmazonCloudFormationAsyncHandler.BatchDescribeTypeConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDescribeTypeConfigurationsResult> batchDescribeTypeConfigurationsAsync(
+            BatchDescribeTypeConfigurationsRequest batchDescribeTypeConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDescribeTypeConfigurationsRequest, BatchDescribeTypeConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels an update on the specified stack. If the call completes successfully, the stack rolls back the update and
      * reverts to the previous stack configuration.
      * </p>
@@ -325,6 +421,47 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      */
     java.util.concurrent.Future<CreateStackSetResult> createStackSetAsync(CreateStackSetRequest createStackSetRequest,
             com.amazonaws.handlers.AsyncHandler<CreateStackSetRequest, CreateStackSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deactivates a public extension that was previously activated in this account and region.
+     * </p>
+     * <p>
+     * Once deactivated, an extension cannot be used in any CloudFormation operation. This includes stack update
+     * operations where the stack template includes the extension, even if no updates are being made to the extension.
+     * In addition, deactivated extensions are not automatically updated if a new version of the extension is released.
+     * </p>
+     * 
+     * @param deactivateTypeRequest
+     * @return A Java Future containing the result of the DeactivateType operation returned by the service.
+     * @sample AmazonCloudFormationAsync.DeactivateType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeactivateTypeResult> deactivateTypeAsync(DeactivateTypeRequest deactivateTypeRequest);
+
+    /**
+     * <p>
+     * Deactivates a public extension that was previously activated in this account and region.
+     * </p>
+     * <p>
+     * Once deactivated, an extension cannot be used in any CloudFormation operation. This includes stack update
+     * operations where the stack template includes the extension, even if no updates are being made to the extension.
+     * In addition, deactivated extensions are not automatically updated if a new version of the extension is released.
+     * </p>
+     * 
+     * @param deactivateTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeactivateType operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.DeactivateType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeactivateTypeResult> deactivateTypeAsync(DeactivateTypeRequest deactivateTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeactivateTypeRequest, DeactivateTypeResult> asyncHandler);
 
     /**
      * <p>
@@ -612,6 +749,79 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      */
     java.util.concurrent.Future<DescribeChangeSetResult> describeChangeSetAsync(DescribeChangeSetRequest describeChangeSetRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeChangeSetRequest, DescribeChangeSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a CloudFormation extension publisher.
+     * </p>
+     * <p>
+     * If you do not supply a <code>PublisherId</code>, and you have registered as an extension publisher,
+     * <code>DescribePublisher</code> returns information about your own publisher account.
+     * </p>
+     * <p>
+     * For more information on registering as a publisher, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+     * RegisterPublisher</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+     * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describePublisherRequest
+     * @return A Java Future containing the result of the DescribePublisher operation returned by the service.
+     * @sample AmazonCloudFormationAsync.DescribePublisher
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePublisherResult> describePublisherAsync(DescribePublisherRequest describePublisherRequest);
+
+    /**
+     * <p>
+     * Returns information about a CloudFormation extension publisher.
+     * </p>
+     * <p>
+     * If you do not supply a <code>PublisherId</code>, and you have registered as an extension publisher,
+     * <code>DescribePublisher</code> returns information about your own publisher account.
+     * </p>
+     * <p>
+     * For more information on registering as a publisher, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+     * RegisterPublisher</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+     * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describePublisherRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePublisher operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.DescribePublisher
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePublisherResult> describePublisherAsync(DescribePublisherRequest describePublisherRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePublisherRequest, DescribePublisherResult> asyncHandler);
 
     /**
      * <p>
@@ -2171,6 +2381,53 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
+     * Publishes the specified extension to the CloudFormation registry as a public extension in this region. Public
+     * extensions are available for use by all CloudFormation users. For more information on publishing extensions, see
+     * <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+     * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * <p>
+     * To publish an extension, you must be registered as a publisher with CloudFormation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+     * RegisterPublisher</a>.
+     * </p>
+     * 
+     * @param publishTypeRequest
+     * @return A Java Future containing the result of the PublishType operation returned by the service.
+     * @sample AmazonCloudFormationAsync.PublishType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PublishTypeResult> publishTypeAsync(PublishTypeRequest publishTypeRequest);
+
+    /**
+     * <p>
+     * Publishes the specified extension to the CloudFormation registry as a public extension in this region. Public
+     * extensions are available for use by all CloudFormation users. For more information on publishing extensions, see
+     * <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+     * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * <p>
+     * To publish an extension, you must be registered as a publisher with CloudFormation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+     * RegisterPublisher</a>.
+     * </p>
+     * 
+     * @param publishTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PublishType operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.PublishType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PublishTypeResult> publishTypeAsync(PublishTypeRequest publishTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<PublishTypeRequest, PublishTypeResult> asyncHandler);
+
+    /**
+     * <p>
      * Reports progress of a resource handler to CloudFormation.
      * </p>
      * <p>
@@ -2212,6 +2469,51 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
+     * Registers your account as a publisher of public extensions in the CloudFormation registry. Public extensions are
+     * available for use by all CloudFormation users. This publisher ID applies to your account in all AWS regions.
+     * </p>
+     * <p>
+     * For information on requirements for registering as a public extension publisher, see <a href=
+     * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs"
+     * >Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * <p/>
+     * 
+     * @param registerPublisherRequest
+     * @return A Java Future containing the result of the RegisterPublisher operation returned by the service.
+     * @sample AmazonCloudFormationAsync.RegisterPublisher
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterPublisherResult> registerPublisherAsync(RegisterPublisherRequest registerPublisherRequest);
+
+    /**
+     * <p>
+     * Registers your account as a publisher of public extensions in the CloudFormation registry. Public extensions are
+     * available for use by all CloudFormation users. This publisher ID applies to your account in all AWS regions.
+     * </p>
+     * <p>
+     * For information on requirements for registering as a public extension publisher, see <a href=
+     * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs"
+     * >Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * <p/>
+     * 
+     * @param registerPublisherRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterPublisher operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.RegisterPublisher
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterPublisherResult> registerPublisherAsync(RegisterPublisherRequest registerPublisherRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterPublisherRequest, RegisterPublisherResult> asyncHandler);
+
+    /**
+     * <p>
      * Registers an extension with the CloudFormation service. Registering an extension makes it available for use in
      * CloudFormation templates in your AWS account, and includes:
      * </p>
@@ -2245,6 +2547,13 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * <p>
      * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
      * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of the registration request.
+     * </p>
+     * <p>
+     * Once you have registered a private extension in your account and region, use <a
+     * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify
+     * configuration properties for the extension. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param registerTypeRequest
@@ -2290,6 +2599,13 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * <p>
      * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
      * <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress of the registration request.
+     * </p>
+     * <p>
+     * Once you have registered a private extension in your account and region, use <a
+     * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify
+     * configuration properties for the extension. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param registerTypeRequest
@@ -2337,6 +2653,67 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      */
     java.util.concurrent.Future<SetStackPolicyResult> setStackPolicyAsync(SetStackPolicyRequest setStackPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<SetStackPolicyRequest, SetStackPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Specifies the configuration data for a registered CloudFormation extension, in the given account and region.
+     * </p>
+     * <p>
+     * To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code> element of
+     * <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * It is strongly recommended that you use dynamic references to restrict sensitive configuration definitions, such
+     * as third-party credentials. For more details on dynamic references, see <a
+     * href="https://docs.aws.amazon.com/">Using dynamic references to specify template values</a> in the <i>AWS
+     * CloudFormation User Guide</i>.
+     * </p>
+     * </important>
+     * 
+     * @param setTypeConfigurationRequest
+     * @return A Java Future containing the result of the SetTypeConfiguration operation returned by the service.
+     * @sample AmazonCloudFormationAsync.SetTypeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetTypeConfigurationResult> setTypeConfigurationAsync(SetTypeConfigurationRequest setTypeConfigurationRequest);
+
+    /**
+     * <p>
+     * Specifies the configuration data for a registered CloudFormation extension, in the given account and region.
+     * </p>
+     * <p>
+     * To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code> element of
+     * <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>. For more information, see
+     * <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+     * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * It is strongly recommended that you use dynamic references to restrict sensitive configuration definitions, such
+     * as third-party credentials. For more details on dynamic references, see <a
+     * href="https://docs.aws.amazon.com/">Using dynamic references to specify template values</a> in the <i>AWS
+     * CloudFormation User Guide</i>.
+     * </p>
+     * </important>
+     * 
+     * @param setTypeConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetTypeConfiguration operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.SetTypeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetTypeConfigurationResult> setTypeConfigurationAsync(SetTypeConfigurationRequest setTypeConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<SetTypeConfigurationRequest, SetTypeConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -2442,6 +2819,109 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      */
     java.util.concurrent.Future<StopStackSetOperationResult> stopStackSetOperationAsync(StopStackSetOperationRequest stopStackSetOperationRequest,
             com.amazonaws.handlers.AsyncHandler<StopStackSetOperationRequest, StopStackSetOperationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Tests a registered extension to make sure it meets all necessary requirements for being published in the
+     * CloudFormation registry.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For resource types, this includes passing all contracts tests defined for the type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For modules, this includes determining if the module's model meets all necessary requirements.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing"
+     * >Testing your public extension prior to publishing</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * <p>
+     * If you do not specify a version, CloudFormation uses the default version of the extension in your account and
+     * region for testing.
+     * </p>
+     * <p>
+     * To perform testing, CloudFormation assumes the execution role specified when the test was registered. For more
+     * information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+     * </p>
+     * <p>
+     * Once you've initiated testing on an extension using <code>TestType</code>, you can use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+     * to monitor the current test status and test status description for the extension.
+     * </p>
+     * <p>
+     * An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see
+     * <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
+     * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * 
+     * @param testTypeRequest
+     * @return A Java Future containing the result of the TestType operation returned by the service.
+     * @sample AmazonCloudFormationAsync.TestType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TestTypeResult> testTypeAsync(TestTypeRequest testTypeRequest);
+
+    /**
+     * <p>
+     * Tests a registered extension to make sure it meets all necessary requirements for being published in the
+     * CloudFormation registry.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For resource types, this includes passing all contracts tests defined for the type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For modules, this includes determining if the module's model meets all necessary requirements.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing"
+     * >Testing your public extension prior to publishing</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * <p>
+     * If you do not specify a version, CloudFormation uses the default version of the extension in your account and
+     * region for testing.
+     * </p>
+     * <p>
+     * To perform testing, CloudFormation assumes the execution role specified when the test was registered. For more
+     * information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+     * </p>
+     * <p>
+     * Once you've initiated testing on an extension using <code>TestType</code>, you can use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+     * to monitor the current test status and test status description for the extension.
+     * </p>
+     * <p>
+     * An extension must have a test status of <code>PASSED</code> before it can be published. For more information, see
+     * <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
+     * extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.
+     * </p>
+     * 
+     * @param testTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TestType operation returned by the service.
+     * @sample AmazonCloudFormationAsyncHandler.TestType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TestTypeResult> testTypeAsync(TestTypeRequest testTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<TestTypeRequest, TestTypeResult> asyncHandler);
 
     /**
      * <p>

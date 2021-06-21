@@ -56,6 +56,24 @@ public class ListTypesRequestMarshaller implements Marshaller<Request<ListTypesR
             request.addParameter("Type", StringUtils.fromString(listTypesRequest.getType()));
         }
 
+        {
+            TypeFilters filters = listTypesRequest.getFilters();
+            if (filters != null) {
+
+                if (filters.getCategory() != null) {
+                    request.addParameter("Filters.Category", StringUtils.fromString(filters.getCategory()));
+                }
+
+                if (filters.getPublisherId() != null) {
+                    request.addParameter("Filters.PublisherId", StringUtils.fromString(filters.getPublisherId()));
+                }
+
+                if (filters.getTypeNamePrefix() != null) {
+                    request.addParameter("Filters.TypeNamePrefix", StringUtils.fromString(filters.getTypeNamePrefix()));
+                }
+            }
+        }
+
         if (listTypesRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(listTypesRequest.getMaxResults()));
         }

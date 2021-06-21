@@ -39,6 +39,16 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public ActivateTypeResult activateType(ActivateTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchDescribeTypeConfigurationsResult batchDescribeTypeConfigurations(BatchDescribeTypeConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelUpdateStackResult cancelUpdateStack(CancelUpdateStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -65,6 +75,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
 
     @Override
     public CreateStackSetResult createStackSet(CreateStackSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeactivateTypeResult deactivateType(DeactivateTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -100,6 +115,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
 
     @Override
     public DescribeChangeSetResult describeChangeSet(DescribeChangeSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePublisherResult describePublisher(DescribePublisherRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -279,7 +299,17 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public PublishTypeResult publishType(PublishTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RecordHandlerProgressResult recordHandlerProgress(RecordHandlerProgressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterPublisherResult registerPublisher(RegisterPublisherRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -290,6 +320,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
 
     @Override
     public SetStackPolicyResult setStackPolicy(SetStackPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetTypeConfigurationResult setTypeConfiguration(SetTypeConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -305,6 +340,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
 
     @Override
     public StopStackSetOperationResult stopStackSetOperation(StopStackSetOperationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TestTypeResult testType(TestTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

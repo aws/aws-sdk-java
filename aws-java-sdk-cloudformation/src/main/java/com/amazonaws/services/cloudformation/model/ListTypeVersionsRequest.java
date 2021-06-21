@@ -95,6 +95,15 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String deprecatedStatus;
+    /**
+     * <p>
+     * The publisher ID of the extension publisher.
+     * </p>
+     * <p>
+     * Extensions published by Amazon are not assigned a publisher ID.
+     * </p>
+     */
+    private String publisherId;
 
     /**
      * <p>
@@ -614,6 +623,61 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The publisher ID of the extension publisher.
+     * </p>
+     * <p>
+     * Extensions published by Amazon are not assigned a publisher ID.
+     * </p>
+     * 
+     * @param publisherId
+     *        The publisher ID of the extension publisher.</p>
+     *        <p>
+     *        Extensions published by Amazon are not assigned a publisher ID.
+     */
+
+    public void setPublisherId(String publisherId) {
+        this.publisherId = publisherId;
+    }
+
+    /**
+     * <p>
+     * The publisher ID of the extension publisher.
+     * </p>
+     * <p>
+     * Extensions published by Amazon are not assigned a publisher ID.
+     * </p>
+     * 
+     * @return The publisher ID of the extension publisher.</p>
+     *         <p>
+     *         Extensions published by Amazon are not assigned a publisher ID.
+     */
+
+    public String getPublisherId() {
+        return this.publisherId;
+    }
+
+    /**
+     * <p>
+     * The publisher ID of the extension publisher.
+     * </p>
+     * <p>
+     * Extensions published by Amazon are not assigned a publisher ID.
+     * </p>
+     * 
+     * @param publisherId
+     *        The publisher ID of the extension publisher.</p>
+     *        <p>
+     *        Extensions published by Amazon are not assigned a publisher ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTypeVersionsRequest withPublisherId(String publisherId) {
+        setPublisherId(publisherId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -636,7 +700,9 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getDeprecatedStatus() != null)
-            sb.append("DeprecatedStatus: ").append(getDeprecatedStatus());
+            sb.append("DeprecatedStatus: ").append(getDeprecatedStatus()).append(",");
+        if (getPublisherId() != null)
+            sb.append("PublisherId: ").append(getPublisherId());
         sb.append("}");
         return sb.toString();
     }
@@ -675,6 +741,10 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getDeprecatedStatus() != null && other.getDeprecatedStatus().equals(this.getDeprecatedStatus()) == false)
             return false;
+        if (other.getPublisherId() == null ^ this.getPublisherId() == null)
+            return false;
+        if (other.getPublisherId() != null && other.getPublisherId().equals(this.getPublisherId()) == false)
+            return false;
         return true;
     }
 
@@ -689,6 +759,7 @@ public class ListTypeVersionsRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getDeprecatedStatus() == null) ? 0 : getDeprecatedStatus().hashCode());
+        hashCode = prime * hashCode + ((getPublisherId() == null) ? 0 : getPublisherId().hashCode());
         return hashCode;
     }
 

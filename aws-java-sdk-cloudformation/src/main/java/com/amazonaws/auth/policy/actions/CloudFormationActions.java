@@ -25,6 +25,10 @@ public enum CloudFormationActions implements Action {
     /** Represents any action executed on AWS CloudFormation. */
     AllCloudFormationActions("cloudformation:*"),
 
+    /** Action for the ActivateType operation. */
+    ActivateType("cloudformation:ActivateType"),
+    /** Action for the BatchDescribeTypeConfigurations operation. */
+    BatchDescribeTypeConfigurations("cloudformation:BatchDescribeTypeConfigurations"),
     /** Action for the CancelUpdateStack operation. */
     CancelUpdateStack("cloudformation:CancelUpdateStack"),
     /** Action for the ContinueUpdateRollback operation. */
@@ -37,6 +41,8 @@ public enum CloudFormationActions implements Action {
     CreateStackInstances("cloudformation:CreateStackInstances"),
     /** Action for the CreateStackSet operation. */
     CreateStackSet("cloudformation:CreateStackSet"),
+    /** Action for the DeactivateType operation. */
+    DeactivateType("cloudformation:DeactivateType"),
     /** Action for the DeleteChangeSet operation. */
     DeleteChangeSet("cloudformation:DeleteChangeSet"),
     /** Action for the DeleteStack operation. */
@@ -51,6 +57,8 @@ public enum CloudFormationActions implements Action {
     DescribeAccountLimits("cloudformation:DescribeAccountLimits"),
     /** Action for the DescribeChangeSet operation. */
     DescribeChangeSet("cloudformation:DescribeChangeSet"),
+    /** Action for the DescribePublisher operation. */
+    DescribePublisher("cloudformation:DescribePublisher"),
     /** Action for the DescribeStackDriftDetectionStatus operation. */
     DescribeStackDriftDetectionStatus("cloudformation:DescribeStackDriftDetectionStatus"),
     /** Action for the DescribeStackEvents operation. */
@@ -113,18 +121,26 @@ public enum CloudFormationActions implements Action {
     ListTypeVersions("cloudformation:ListTypeVersions"),
     /** Action for the ListTypes operation. */
     ListTypes("cloudformation:ListTypes"),
+    /** Action for the PublishType operation. */
+    PublishType("cloudformation:PublishType"),
     /** Action for the RecordHandlerProgress operation. */
     RecordHandlerProgress("cloudformation:RecordHandlerProgress"),
+    /** Action for the RegisterPublisher operation. */
+    RegisterPublisher("cloudformation:RegisterPublisher"),
     /** Action for the RegisterType operation. */
     RegisterType("cloudformation:RegisterType"),
     /** Action for the SetStackPolicy operation. */
     SetStackPolicy("cloudformation:SetStackPolicy"),
+    /** Action for the SetTypeConfiguration operation. */
+    SetTypeConfiguration("cloudformation:SetTypeConfiguration"),
     /** Action for the SetTypeDefaultVersion operation. */
     SetTypeDefaultVersion("cloudformation:SetTypeDefaultVersion"),
     /** Action for the SignalResource operation. */
     SignalResource("cloudformation:SignalResource"),
     /** Action for the StopStackSetOperation operation. */
     StopStackSetOperation("cloudformation:StopStackSetOperation"),
+    /** Action for the TestType operation. */
+    TestType("cloudformation:TestType"),
     /** Action for the UpdateStack operation. */
     UpdateStack("cloudformation:UpdateStack"),
     /** Action for the UpdateStackInstances operation. */

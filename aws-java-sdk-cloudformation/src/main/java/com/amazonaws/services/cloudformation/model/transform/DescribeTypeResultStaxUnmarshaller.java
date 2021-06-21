@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cloudformation.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -68,6 +70,16 @@ public class DescribeTypeResultStaxUnmarshaller implements Unmarshaller<Describe
                     continue;
                 }
 
+                if (context.testExpression("TypeTestsStatus", targetDepth)) {
+                    describeTypeResult.setTypeTestsStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("TypeTestsStatusDescription", targetDepth)) {
+                    describeTypeResult.setTypeTestsStatusDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Description", targetDepth)) {
                     describeTypeResult.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -90,6 +102,16 @@ public class DescribeTypeResultStaxUnmarshaller implements Unmarshaller<Describe
 
                 if (context.testExpression("LoggingConfig", targetDepth)) {
                     describeTypeResult.setLoggingConfig(LoggingConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RequiredActivatedTypes", targetDepth)) {
+                    describeTypeResult.withRequiredActivatedTypes(new ArrayList<RequiredActivatedType>());
+                    continue;
+                }
+
+                if (context.testExpression("RequiredActivatedTypes/member", targetDepth)) {
+                    describeTypeResult.withRequiredActivatedTypes(RequiredActivatedTypeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -120,6 +142,46 @@ public class DescribeTypeResultStaxUnmarshaller implements Unmarshaller<Describe
 
                 if (context.testExpression("TimeCreated", targetDepth)) {
                     describeTypeResult.setTimeCreated(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ConfigurationSchema", targetDepth)) {
+                    describeTypeResult.setConfigurationSchema(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PublisherId", targetDepth)) {
+                    describeTypeResult.setPublisherId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OriginalTypeName", targetDepth)) {
+                    describeTypeResult.setOriginalTypeName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OriginalTypeArn", targetDepth)) {
+                    describeTypeResult.setOriginalTypeArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PublicVersionNumber", targetDepth)) {
+                    describeTypeResult.setPublicVersionNumber(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("LatestPublicVersion", targetDepth)) {
+                    describeTypeResult.setLatestPublicVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("IsActivated", targetDepth)) {
+                    describeTypeResult.setIsActivated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AutoUpdate", targetDepth)) {
+                    describeTypeResult.setAutoUpdate(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

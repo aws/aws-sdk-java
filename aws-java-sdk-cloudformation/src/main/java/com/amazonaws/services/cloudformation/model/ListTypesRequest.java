@@ -27,7 +27,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The scope at which the extension is visible and usable in CloudFormation operations.
+     * The scope at which the extensions are visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -35,13 +35,25 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
-     * Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
+     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Private extensions you have registered in this account and region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
+     * Public extensions that you have activated in this account and region.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
+     * account. This includes extensions from Amazon, as well as third-party publishers.
      * </p>
      * </li>
      * </ul>
@@ -52,8 +64,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String visibility;
     /**
      * <p>
-     * The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration,
-     * based on the types of handlers in the schema handler package submitted.
+     * For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the
+     * provisioning type during registration, based on the types of handlers in the schema handler package submitted.
      * </p>
      * <p>
      * Valid values include:
@@ -61,23 +73,26 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during
      * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be updated and
      * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore
-     * cannot actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and
+     * therefore cannot actually be provisioned.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>FULLY_MUTABLE</code>.
+     * </p>
      */
     private String provisioningType;
     /**
@@ -110,6 +125,16 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String type;
     /**
      * <p>
+     * Filter criteria to use in determining which extensions to return.
+     * </p>
+     * <p>
+     * If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning the
+     * list of types.
+     * </p>
+     */
+    private TypeFilters filters;
+    /**
+     * <p>
      * The maximum number of results to be returned with a single call. If the number of available results exceeds this
      * maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
      * request parameter to get the next set of results.
@@ -128,7 +153,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The scope at which the extension is visible and usable in CloudFormation operations.
+     * The scope at which the extensions are visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -136,13 +161,25 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
-     * Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
+     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Private extensions you have registered in this account and region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
+     * Public extensions that you have activated in this account and region.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
+     * account. This includes extensions from Amazon, as well as third-party publishers.
      * </p>
      * </li>
      * </ul>
@@ -151,20 +188,33 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param visibility
-     *        The scope at which the extension is visible and usable in CloudFormation operations.</p>
+     *        The scope at which the extensions are visible and usable in CloudFormation operations.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
-     *        registered. Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
+     *        <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This
+     *        includes:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Private extensions you have registered in this account and region.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
+     *        Public extensions that you have activated in this account and region.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
+     *        account. This includes extensions from Amazon, as well as third-party publishers.
      *        </p>
      *        </li>
      *        </ul>
@@ -179,7 +229,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The scope at which the extension is visible and usable in CloudFormation operations.
+     * The scope at which the extensions are visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -187,13 +237,25 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
-     * Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
+     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Private extensions you have registered in this account and region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
+     * Public extensions that you have activated in this account and region.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
+     * account. This includes extensions from Amazon, as well as third-party publishers.
      * </p>
      * </li>
      * </ul>
@@ -201,20 +263,33 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * The default is <code>PRIVATE</code>.
      * </p>
      * 
-     * @return The scope at which the extension is visible and usable in CloudFormation operations.</p>
+     * @return The scope at which the extensions are visible and usable in CloudFormation operations.</p>
      *         <p>
      *         Valid values include:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
-     *         registered. Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
+     *         <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This
+     *         includes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Private extensions you have registered in this account and region.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
+     *         Public extensions that you have activated in this account and region.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
+     *         account. This includes extensions from Amazon, as well as third-party publishers.
      *         </p>
      *         </li>
      *         </ul>
@@ -229,7 +304,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The scope at which the extension is visible and usable in CloudFormation operations.
+     * The scope at which the extensions are visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -237,13 +312,25 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
-     * Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
+     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Private extensions you have registered in this account and region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
+     * Public extensions that you have activated in this account and region.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
+     * account. This includes extensions from Amazon, as well as third-party publishers.
      * </p>
      * </li>
      * </ul>
@@ -252,20 +339,33 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param visibility
-     *        The scope at which the extension is visible and usable in CloudFormation operations.</p>
+     *        The scope at which the extensions are visible and usable in CloudFormation operations.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
-     *        registered. Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
+     *        <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This
+     *        includes:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Private extensions you have registered in this account and region.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
+     *        Public extensions that you have activated in this account and region.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
+     *        account. This includes extensions from Amazon, as well as third-party publishers.
      *        </p>
      *        </li>
      *        </ul>
@@ -282,7 +382,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The scope at which the extension is visible and usable in CloudFormation operations.
+     * The scope at which the extensions are visible and usable in CloudFormation operations.
      * </p>
      * <p>
      * Valid values include:
@@ -290,13 +390,25 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is registered.
-     * Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
+     * <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Private extensions you have registered in this account and region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
+     * Public extensions that you have activated in this account and region.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
+     * account. This includes extensions from Amazon, as well as third-party publishers.
      * </p>
      * </li>
      * </ul>
@@ -305,20 +417,33 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param visibility
-     *        The scope at which the extension is visible and usable in CloudFormation operations.</p>
+     *        The scope at which the extensions are visible and usable in CloudFormation operations.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIVATE</code>: The extension is only visible and usable within the account in which it is
-     *        registered. Currently, AWS CloudFormation marks any extension you create as <code>PRIVATE</code>.
+     *        <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This
+     *        includes:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Private extensions you have registered in this account and region.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PUBLIC</code>: The extension is publically visible and usable within any Amazon account.
+     *        Public extensions that you have activated in this account and region.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon
+     *        account. This includes extensions from Amazon, as well as third-party publishers.
      *        </p>
      *        </li>
      *        </ul>
@@ -335,8 +460,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration,
-     * based on the types of handlers in the schema handler package submitted.
+     * For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the
+     * provisioning type during registration, based on the types of handlers in the schema handler package submitted.
      * </p>
      * <p>
      * Valid values include:
@@ -344,49 +469,56 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during
      * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be updated and
      * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore
-     * cannot actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and
+     * therefore cannot actually be provisioned.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>FULLY_MUTABLE</code>.
+     * </p>
      * 
      * @param provisioningType
-     *        The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during
-     *        registration, based on the types of handlers in the schema handler package submitted.</p>
+     *        For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the
+     *        provisioning type during registration, based on the types of handlers in the schema handler package
+     *        submitted.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *        <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type
      *        during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *        <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be
      *        updated and must instead be replaced during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and
+     *        <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and
      *        therefore cannot actually be provisioned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>FULLY_MUTABLE</code>.
      * @see ProvisioningType
      */
 
@@ -396,8 +528,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration,
-     * based on the types of handlers in the schema handler package submitted.
+     * For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the
+     * provisioning type during registration, based on the types of handlers in the schema handler package submitted.
      * </p>
      * <p>
      * Valid values include:
@@ -405,48 +537,55 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during
      * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be updated and
      * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore
-     * cannot actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and
+     * therefore cannot actually be provisioned.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>FULLY_MUTABLE</code>.
+     * </p>
      * 
-     * @return The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during
-     *         registration, based on the types of handlers in the schema handler package submitted.</p>
+     * @return For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the
+     *         provisioning type during registration, based on the types of handlers in the schema handler package
+     *         submitted.</p>
      *         <p>
      *         Valid values include:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *         <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type
      *         during stack update operations.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *         <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be
      *         updated and must instead be replaced during stack update operations.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and
+     *         <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and
      *         therefore cannot actually be provisioned.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         The default is <code>FULLY_MUTABLE</code>.
      * @see ProvisioningType
      */
 
@@ -456,8 +595,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration,
-     * based on the types of handlers in the schema handler package submitted.
+     * For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the
+     * provisioning type during registration, based on the types of handlers in the schema handler package submitted.
      * </p>
      * <p>
      * Valid values include:
@@ -465,49 +604,56 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during
      * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be updated and
      * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore
-     * cannot actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and
+     * therefore cannot actually be provisioned.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>FULLY_MUTABLE</code>.
+     * </p>
      * 
      * @param provisioningType
-     *        The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during
-     *        registration, based on the types of handlers in the schema handler package submitted.</p>
+     *        For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the
+     *        provisioning type during registration, based on the types of handlers in the schema handler package
+     *        submitted.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *        <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type
      *        during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *        <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be
      *        updated and must instead be replaced during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and
+     *        <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and
      *        therefore cannot actually be provisioned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>FULLY_MUTABLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningType
      */
@@ -519,8 +665,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration,
-     * based on the types of handlers in the schema handler package submitted.
+     * For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the
+     * provisioning type during registration, based on the types of handlers in the schema handler package submitted.
      * </p>
      * <p>
      * Valid values include:
@@ -528,49 +674,56 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension during
+     * <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during
      * stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be updated and
+     * <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be updated and
      * must instead be replaced during stack update operations.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore
-     * cannot actually be provisioned.
+     * <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and
+     * therefore cannot actually be provisioned.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The default is <code>FULLY_MUTABLE</code>.
+     * </p>
      * 
      * @param provisioningType
-     *        The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during
-     *        registration, based on the types of handlers in the schema handler package submitted.</p>
+     *        For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the
+     *        provisioning type during registration, based on the types of handlers in the schema handler package
+     *        submitted.</p>
      *        <p>
      *        Valid values include:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>FULLY_MUTABLE</code>: The extension includes an update handler to process updates to the extension
+     *        <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type
      *        during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>IMMUTABLE</code>: The extension does not include an update handler, so the extension cannot be
+     *        <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be
      *        updated and must instead be replaced during stack update operations.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and
+     *        <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and
      *        therefore cannot actually be provisioned.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The default is <code>FULLY_MUTABLE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningType
      */
@@ -824,6 +977,67 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * Filter criteria to use in determining which extensions to return.
+     * </p>
+     * <p>
+     * If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning the
+     * list of types.
+     * </p>
+     * 
+     * @param filters
+     *        Filter criteria to use in determining which extensions to return.</p>
+     *        <p>
+     *        If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning
+     *        the list of types.
+     */
+
+    public void setFilters(TypeFilters filters) {
+        this.filters = filters;
+    }
+
+    /**
+     * <p>
+     * Filter criteria to use in determining which extensions to return.
+     * </p>
+     * <p>
+     * If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning the
+     * list of types.
+     * </p>
+     * 
+     * @return Filter criteria to use in determining which extensions to return.</p>
+     *         <p>
+     *         If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when
+     *         returning the list of types.
+     */
+
+    public TypeFilters getFilters() {
+        return this.filters;
+    }
+
+    /**
+     * <p>
+     * Filter criteria to use in determining which extensions to return.
+     * </p>
+     * <p>
+     * If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning the
+     * list of types.
+     * </p>
+     * 
+     * @param filters
+     *        Filter criteria to use in determining which extensions to return.</p>
+     *        <p>
+     *        If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning
+     *        the list of types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTypesRequest withFilters(TypeFilters filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum number of results to be returned with a single call. If the number of available results exceeds this
      * maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
      * request parameter to get the next set of results.
@@ -955,6 +1169,8 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("DeprecatedStatus: ").append(getDeprecatedStatus()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -989,6 +1205,10 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -1009,6 +1229,7 @@ public class ListTypesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getProvisioningType() == null) ? 0 : getProvisioningType().hashCode());
         hashCode = prime * hashCode + ((getDeprecatedStatus() == null) ? 0 : getDeprecatedStatus().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

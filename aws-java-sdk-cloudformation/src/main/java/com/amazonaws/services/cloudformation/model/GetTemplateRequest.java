@@ -64,7 +64,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
-     * template. By default, AWS CloudFormation specifies <code>Original</code>.
+     * template. By default, AWS CloudFormation specifies <code>Processed</code>.
      * </p>
      */
     private String templateStage;
@@ -253,7 +253,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
-     * template. By default, AWS CloudFormation specifies <code>Original</code>.
+     * template. By default, AWS CloudFormation specifies <code>Processed</code>.
      * </p>
      * 
      * @param templateStage
@@ -262,7 +262,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        has processed all transforms, specify <code>Processed</code>. </p>
      *        <p>
      *        If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the
-     *        same template. By default, AWS CloudFormation specifies <code>Original</code>.
+     *        same template. By default, AWS CloudFormation specifies <code>Processed</code>.
      * @see TemplateStage
      */
 
@@ -278,7 +278,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
-     * template. By default, AWS CloudFormation specifies <code>Original</code>.
+     * template. By default, AWS CloudFormation specifies <code>Processed</code>.
      * </p>
      * 
      * @return For templates that include transforms, the stage of the template that AWS CloudFormation returns. To get
@@ -286,7 +286,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         has processed all transforms, specify <code>Processed</code>. </p>
      *         <p>
      *         If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the
-     *         same template. By default, AWS CloudFormation specifies <code>Original</code>.
+     *         same template. By default, AWS CloudFormation specifies <code>Processed</code>.
      * @see TemplateStage
      */
 
@@ -302,7 +302,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
-     * template. By default, AWS CloudFormation specifies <code>Original</code>.
+     * template. By default, AWS CloudFormation specifies <code>Processed</code>.
      * </p>
      * 
      * @param templateStage
@@ -311,7 +311,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        has processed all transforms, specify <code>Processed</code>. </p>
      *        <p>
      *        If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the
-     *        same template. By default, AWS CloudFormation specifies <code>Original</code>.
+     *        same template. By default, AWS CloudFormation specifies <code>Processed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemplateStage
      */
@@ -329,7 +329,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
-     * template. By default, AWS CloudFormation specifies <code>Original</code>.
+     * template. By default, AWS CloudFormation specifies <code>Processed</code>.
      * </p>
      * 
      * @param templateStage
@@ -338,7 +338,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        has processed all transforms, specify <code>Processed</code>. </p>
      *        <p>
      *        If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the
-     *        same template. By default, AWS CloudFormation specifies <code>Original</code>.
+     *        same template. By default, AWS CloudFormation specifies <code>Processed</code>.
      * @see TemplateStage
      */
 
@@ -354,7 +354,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same
-     * template. By default, AWS CloudFormation specifies <code>Original</code>.
+     * template. By default, AWS CloudFormation specifies <code>Processed</code>.
      * </p>
      * 
      * @param templateStage
@@ -363,7 +363,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        has processed all transforms, specify <code>Processed</code>. </p>
      *        <p>
      *        If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the
-     *        same template. By default, AWS CloudFormation specifies <code>Original</code>.
+     *        same template. By default, AWS CloudFormation specifies <code>Processed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TemplateStage
      */

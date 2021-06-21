@@ -56,6 +56,14 @@ public class DescribeTypeRequestMarshaller implements Marshaller<Request<Describ
             request.addParameter("VersionId", StringUtils.fromString(describeTypeRequest.getVersionId()));
         }
 
+        if (describeTypeRequest.getPublisherId() != null) {
+            request.addParameter("PublisherId", StringUtils.fromString(describeTypeRequest.getPublisherId()));
+        }
+
+        if (describeTypeRequest.getPublicVersionNumber() != null) {
+            request.addParameter("PublicVersionNumber", StringUtils.fromString(describeTypeRequest.getPublicVersionNumber()));
+        }
+
         return request;
     }
 

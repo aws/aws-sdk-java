@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains logging configuration information for a type.
+ * Contains logging configuration information for an extension.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/LoggingConfig" target="_top">AWS API
@@ -34,8 +34,8 @@ public class LoggingConfig implements Serializable, Cloneable {
     private String logRoleArn;
     /**
      * <p>
-     * The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the type's
-     * handlers.
+     * The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the
+     * extension's handlers.
      * </p>
      */
     private String logGroupName;
@@ -82,13 +82,13 @@ public class LoggingConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the type's
-     * handlers.
+     * The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the
+     * extension's handlers.
      * </p>
      * 
      * @param logGroupName
      *        The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the
-     *        type's handlers.
+     *        extension's handlers.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -97,12 +97,12 @@ public class LoggingConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the type's
-     * handlers.
+     * The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the
+     * extension's handlers.
      * </p>
      * 
      * @return The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the
-     *         type's handlers.
+     *         extension's handlers.
      */
 
     public String getLogGroupName() {
@@ -111,13 +111,13 @@ public class LoggingConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the type's
-     * handlers.
+     * The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the
+     * extension's handlers.
      * </p>
      * 
      * @param logGroupName
      *        The Amazon CloudWatch log group to which CloudFormation sends error logging information when invoking the
-     *        type's handlers.
+     *        extension's handlers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

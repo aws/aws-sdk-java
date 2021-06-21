@@ -77,6 +77,11 @@ public class TypeVersionSummaryStaxUnmarshaller implements Unmarshaller<TypeVers
                     typeVersionSummary.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("PublicVersionNumber", targetDepth)) {
+                    typeVersionSummary.setPublicVersionNumber(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return typeVersionSummary;

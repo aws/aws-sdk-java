@@ -64,6 +64,10 @@ public class ListTypeVersionsRequestMarshaller implements Marshaller<Request<Lis
             request.addParameter("DeprecatedStatus", StringUtils.fromString(listTypeVersionsRequest.getDeprecatedStatus()));
         }
 
+        if (listTypeVersionsRequest.getPublisherId() != null) {
+            request.addParameter("PublisherId", StringUtils.fromString(listTypeVersionsRequest.getPublisherId()));
+        }
+
         return request;
     }
 
