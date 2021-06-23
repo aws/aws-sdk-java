@@ -269,6 +269,68 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Creates an empty shared folder.
+     * </p>
+     * 
+     * @param createFolderRequest
+     * @return A Java Future containing the result of the CreateFolder operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFolderResult> createFolderAsync(CreateFolderRequest createFolderRequest);
+
+    /**
+     * <p>
+     * Creates an empty shared folder.
+     * </p>
+     * 
+     * @param createFolderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFolder operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFolderResult> createFolderAsync(CreateFolderRequest createFolderRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFolderRequest, CreateFolderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds an asset, such as a dashboard, analysis, or dataset into a folder.
+     * </p>
+     * 
+     * @param createFolderMembershipRequest
+     * @return A Java Future containing the result of the CreateFolderMembership operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateFolderMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolderMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFolderMembershipResult> createFolderMembershipAsync(CreateFolderMembershipRequest createFolderMembershipRequest);
+
+    /**
+     * <p>
+     * Adds an asset, such as a dashboard, analysis, or dataset into a folder.
+     * </p>
+     * 
+     * @param createFolderMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFolderMembership operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateFolderMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolderMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFolderMembershipResult> createFolderMembershipAsync(CreateFolderMembershipRequest createFolderMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFolderMembershipRequest, CreateFolderMembershipResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an Amazon QuickSight group.
      * </p>
      * <p>
@@ -806,6 +868,68 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest deleteDataSourceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an empty folder.
+     * </p>
+     * 
+     * @param deleteFolderRequest
+     * @return A Java Future containing the result of the DeleteFolder operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFolderResult> deleteFolderAsync(DeleteFolderRequest deleteFolderRequest);
+
+    /**
+     * <p>
+     * Deletes an empty folder.
+     * </p>
+     * 
+     * @param deleteFolderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFolder operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFolderResult> deleteFolderAsync(DeleteFolderRequest deleteFolderRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFolderRequest, DeleteFolderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes an asset, such as a dashboard, analysis, or dataset, from a folder.
+     * </p>
+     * 
+     * @param deleteFolderMembershipRequest
+     * @return A Java Future containing the result of the DeleteFolderMembership operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteFolderMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolderMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFolderMembershipResult> deleteFolderMembershipAsync(DeleteFolderMembershipRequest deleteFolderMembershipRequest);
+
+    /**
+     * <p>
+     * Removes an asset, such as a dashboard, analysis, or dataset, from a folder.
+     * </p>
+     * 
+     * @param deleteFolderMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFolderMembership operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteFolderMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolderMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFolderMembershipResult> deleteFolderMembershipAsync(DeleteFolderMembershipRequest deleteFolderMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFolderMembershipRequest, DeleteFolderMembershipResult> asyncHandler);
 
     /**
      * <p>
@@ -1591,6 +1715,107 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Describes a folder.
+     * </p>
+     * 
+     * @param describeFolderRequest
+     * @return A Java Future containing the result of the DescribeFolder operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFolderResult> describeFolderAsync(DescribeFolderRequest describeFolderRequest);
+
+    /**
+     * <p>
+     * Describes a folder.
+     * </p>
+     * 
+     * @param describeFolderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFolder operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFolderResult> describeFolderAsync(DescribeFolderRequest describeFolderRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFolderRequest, DescribeFolderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes permissions for a folder.
+     * </p>
+     * 
+     * @param describeFolderPermissionsRequest
+     * @return A Java Future containing the result of the DescribeFolderPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeFolderPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFolderPermissionsResult> describeFolderPermissionsAsync(
+            DescribeFolderPermissionsRequest describeFolderPermissionsRequest);
+
+    /**
+     * <p>
+     * Describes permissions for a folder.
+     * </p>
+     * 
+     * @param describeFolderPermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFolderPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeFolderPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFolderPermissionsResult> describeFolderPermissionsAsync(
+            DescribeFolderPermissionsRequest describeFolderPermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFolderPermissionsRequest, DescribeFolderPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the folder resolved permissions. Permissions consists of both folder direct permissions and the
+     * inherited permissions from the ancestor folders.
+     * </p>
+     * 
+     * @param describeFolderResolvedPermissionsRequest
+     * @return A Java Future containing the result of the DescribeFolderResolvedPermissions operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DescribeFolderResolvedPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderResolvedPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFolderResolvedPermissionsResult> describeFolderResolvedPermissionsAsync(
+            DescribeFolderResolvedPermissionsRequest describeFolderResolvedPermissionsRequest);
+
+    /**
+     * <p>
+     * Describes the folder resolved permissions. Permissions consists of both folder direct permissions and the
+     * inherited permissions from the ancestor folders.
+     * </p>
+     * 
+     * @param describeFolderResolvedPermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFolderResolvedPermissions operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeFolderResolvedPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderResolvedPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFolderResolvedPermissionsResult> describeFolderResolvedPermissionsAsync(
+            DescribeFolderResolvedPermissionsRequest describeFolderResolvedPermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFolderResolvedPermissionsRequest, DescribeFolderResolvedPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
      * </p>
      * 
@@ -2267,6 +2492,68 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>) in a folder.
+     * </p>
+     * 
+     * @param listFolderMembersRequest
+     * @return A Java Future containing the result of the ListFolderMembers operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListFolderMembers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolderMembers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFolderMembersResult> listFolderMembersAsync(ListFolderMembersRequest listFolderMembersRequest);
+
+    /**
+     * <p>
+     * List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>) in a folder.
+     * </p>
+     * 
+     * @param listFolderMembersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFolderMembers operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListFolderMembers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolderMembers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFolderMembersResult> listFolderMembersAsync(ListFolderMembersRequest listFolderMembersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFolderMembersRequest, ListFolderMembersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all folders in an account.
+     * </p>
+     * 
+     * @param listFoldersRequest
+     * @return A Java Future containing the result of the ListFolders operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolders" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFoldersResult> listFoldersAsync(ListFoldersRequest listFoldersRequest);
+
+    /**
+     * <p>
+     * Lists all folders in an account.
+     * </p>
+     * 
+     * @param listFoldersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFolders operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolders" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFoldersResult> listFoldersAsync(ListFoldersRequest listFoldersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFoldersRequest, ListFoldersResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists member users in a group.
      * </p>
      * 
@@ -2864,6 +3151,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Searches the subfolders in a folder.
+     * </p>
+     * 
+     * @param searchFoldersRequest
+     * @return A Java Future containing the result of the SearchFolders operation returned by the service.
+     * @sample AmazonQuickSightAsync.SearchFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFolders" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchFoldersResult> searchFoldersAsync(SearchFoldersRequest searchFoldersRequest);
+
+    /**
+     * <p>
+     * Searches the subfolders in a folder.
+     * </p>
+     * 
+     * @param searchFoldersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchFolders operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.SearchFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFolders" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchFoldersResult> searchFoldersAsync(SearchFoldersRequest searchFoldersRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchFoldersRequest, SearchFoldersResult> asyncHandler);
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified QuickSight resource.
      * </p>
      * <p>
@@ -3350,6 +3668,68 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<UpdateDataSourcePermissionsResult> updateDataSourcePermissionsAsync(
             UpdateDataSourcePermissionsRequest updateDataSourcePermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDataSourcePermissionsRequest, UpdateDataSourcePermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the name of a folder.
+     * </p>
+     * 
+     * @param updateFolderRequest
+     * @return A Java Future containing the result of the UpdateFolder operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFolderResult> updateFolderAsync(UpdateFolderRequest updateFolderRequest);
+
+    /**
+     * <p>
+     * Updates the name of a folder.
+     * </p>
+     * 
+     * @param updateFolderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFolder operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFolderResult> updateFolderAsync(UpdateFolderRequest updateFolderRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFolderRequest, UpdateFolderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates permissions of a folder.
+     * </p>
+     * 
+     * @param updateFolderPermissionsRequest
+     * @return A Java Future containing the result of the UpdateFolderPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateFolderPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolderPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFolderPermissionsResult> updateFolderPermissionsAsync(UpdateFolderPermissionsRequest updateFolderPermissionsRequest);
+
+    /**
+     * <p>
+     * Updates permissions of a folder.
+     * </p>
+     * 
+     * @param updateFolderPermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFolderPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateFolderPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolderPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFolderPermissionsResult> updateFolderPermissionsAsync(UpdateFolderPermissionsRequest updateFolderPermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFolderPermissionsRequest, UpdateFolderPermissionsResult> asyncHandler);
 
     /**
      * <p>

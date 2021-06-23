@@ -87,9 +87,6 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdentityTypeNotSupportedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.quicksight.model.transform.IdentityTypeNotSupportedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SessionLifetimeInMinutesInvalidException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.SessionLifetimeInMinutesInvalidExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -99,26 +96,32 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.ResourceUnavailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DomainNotWhitelistedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.DomainNotWhitelistedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IdentityTypeNotSupportedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.IdentityTypeNotSupportedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedPricingPlanException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.UnsupportedPricingPlanExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.quicksight.model.transform.ResourceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.ResourceExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DomainNotWhitelistedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.quicksight.model.transform.DomainNotWhitelistedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.quicksight.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PreconditionNotMetException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.PreconditionNotMetExceptionUnmarshaller.getInstance()))
@@ -128,9 +131,6 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.quicksight.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedUserEditionException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.UnsupportedUserEditionExceptionUnmarshaller.getInstance()))
@@ -632,6 +632,161 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDataSourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDataSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an empty shared folder.
+     * </p>
+     * 
+     * @param createFolderRequest
+     * @return Result of the CreateFolder operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateFolderResult createFolder(CreateFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFolder(request);
+    }
+
+    @SdkInternalApi
+    final CreateFolderResult executeCreateFolder(CreateFolderRequest createFolderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFolderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFolderRequest> request = null;
+        Response<CreateFolderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFolderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFolder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFolderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateFolderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds an asset, such as a dashboard, analysis, or dataset into a folder.
+     * </p>
+     * 
+     * @param createFolderMembershipRequest
+     * @return Result of the CreateFolderMembership operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateFolderMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolderMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateFolderMembershipResult createFolderMembership(CreateFolderMembershipRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFolderMembership(request);
+    }
+
+    @SdkInternalApi
+    final CreateFolderMembershipResult executeCreateFolderMembership(CreateFolderMembershipRequest createFolderMembershipRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFolderMembershipRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFolderMembershipRequest> request = null;
+        Response<CreateFolderMembershipResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFolderMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFolderMembershipRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFolderMembership");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFolderMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateFolderMembershipResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1703,6 +1858,155 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDataSourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDataSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an empty folder.
+     * </p>
+     * 
+     * @param deleteFolderRequest
+     * @return Result of the DeleteFolder operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteFolderResult deleteFolder(DeleteFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFolder(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFolderResult executeDeleteFolder(DeleteFolderRequest deleteFolderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFolderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFolderRequest> request = null;
+        Response<DeleteFolderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFolderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFolder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFolderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFolderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes an asset, such as a dashboard, analysis, or dataset, from a folder.
+     * </p>
+     * 
+     * @param deleteFolderMembershipRequest
+     * @return Result of the DeleteFolderMembership operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteFolderMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolderMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFolderMembershipResult deleteFolderMembership(DeleteFolderMembershipRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFolderMembership(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFolderMembershipResult executeDeleteFolderMembership(DeleteFolderMembershipRequest deleteFolderMembershipRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFolderMembershipRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFolderMembershipRequest> request = null;
+        Response<DeleteFolderMembershipResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFolderMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFolderMembershipRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFolderMembership");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFolderMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteFolderMembershipResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3208,6 +3512,228 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Describes a folder.
+     * </p>
+     * 
+     * @param describeFolderRequest
+     * @return Result of the DescribeFolder operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeFolderResult describeFolder(DescribeFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFolder(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFolderResult executeDescribeFolder(DescribeFolderRequest describeFolderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFolderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFolderRequest> request = null;
+        Response<DescribeFolderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFolderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFolder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFolderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeFolderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes permissions for a folder.
+     * </p>
+     * 
+     * @param describeFolderPermissionsRequest
+     * @return Result of the DescribeFolderPermissions operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeFolderPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeFolderPermissionsResult describeFolderPermissions(DescribeFolderPermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFolderPermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFolderPermissionsResult executeDescribeFolderPermissions(DescribeFolderPermissionsRequest describeFolderPermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFolderPermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFolderPermissionsRequest> request = null;
+        Response<DescribeFolderPermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFolderPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFolderPermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFolderPermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFolderPermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeFolderPermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the folder resolved permissions. Permissions consists of both folder direct permissions and the
+     * inherited permissions from the ancestor folders.
+     * </p>
+     * 
+     * @param describeFolderResolvedPermissionsRequest
+     * @return Result of the DescribeFolderResolvedPermissions operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeFolderResolvedPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderResolvedPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeFolderResolvedPermissionsResult describeFolderResolvedPermissions(DescribeFolderResolvedPermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFolderResolvedPermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFolderResolvedPermissionsResult executeDescribeFolderResolvedPermissions(
+            DescribeFolderResolvedPermissionsRequest describeFolderResolvedPermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFolderResolvedPermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFolderResolvedPermissionsRequest> request = null;
+        Response<DescribeFolderResolvedPermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFolderResolvedPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFolderResolvedPermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFolderResolvedPermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFolderResolvedPermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeFolderResolvedPermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
      * </p>
      * 
@@ -4551,6 +5077,154 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDataSourcesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDataSourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>) in a folder.
+     * </p>
+     * 
+     * @param listFolderMembersRequest
+     * @return Result of the ListFolderMembers operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListFolderMembers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolderMembers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListFolderMembersResult listFolderMembers(ListFolderMembersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFolderMembers(request);
+    }
+
+    @SdkInternalApi
+    final ListFolderMembersResult executeListFolderMembers(ListFolderMembersRequest listFolderMembersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFolderMembersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFolderMembersRequest> request = null;
+        Response<ListFolderMembersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFolderMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFolderMembersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFolderMembers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFolderMembersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFolderMembersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all folders in an account.
+     * </p>
+     * 
+     * @param listFoldersRequest
+     * @return Result of the ListFolders operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolders" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListFoldersResult listFolders(ListFoldersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFolders(request);
+    }
+
+    @SdkInternalApi
+    final ListFoldersResult executeListFolders(ListFoldersRequest listFoldersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFoldersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFoldersRequest> request = null;
+        Response<ListFoldersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFoldersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFoldersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFolders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFoldersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFoldersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5928,6 +6602,80 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Searches the subfolders in a folder.
+     * </p>
+     * 
+     * @param searchFoldersRequest
+     * @return Result of the SearchFolders operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.SearchFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFolders" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public SearchFoldersResult searchFolders(SearchFoldersRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchFolders(request);
+    }
+
+    @SdkInternalApi
+    final SearchFoldersResult executeSearchFolders(SearchFoldersRequest searchFoldersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchFoldersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchFoldersRequest> request = null;
+        Response<SearchFoldersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchFoldersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchFoldersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchFolders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchFoldersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchFoldersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified QuickSight resource.
      * </p>
      * <p>
@@ -6880,6 +7628,158 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDataSourcePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateDataSourcePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the name of a folder.
+     * </p>
+     * 
+     * @param updateFolderRequest
+     * @return Result of the UpdateFolder operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateFolderResult updateFolder(UpdateFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFolder(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFolderResult executeUpdateFolder(UpdateFolderRequest updateFolderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFolderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFolderRequest> request = null;
+        Response<UpdateFolderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFolderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFolder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFolderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateFolderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates permissions of a folder.
+     * </p>
+     * 
+     * @param updateFolderPermissionsRequest
+     * @return Result of the UpdateFolderPermissions operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateFolderPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolderPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateFolderPermissionsResult updateFolderPermissions(UpdateFolderPermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFolderPermissions(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFolderPermissionsResult executeUpdateFolderPermissions(UpdateFolderPermissionsRequest updateFolderPermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFolderPermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFolderPermissionsRequest> request = null;
+        Response<UpdateFolderPermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFolderPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateFolderPermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFolderPermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFolderPermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateFolderPermissionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -49,6 +49,8 @@ public class RepositoryAssociationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTimeStamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> KMSKEYDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSKeyDetails").build();
+    private static final MarshallingInfo<StructuredPojo> S3REPOSITORYDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3RepositoryDetails").build();
 
     private static final RepositoryAssociationMarshaller instance = new RepositoryAssociationMarshaller();
 
@@ -77,6 +79,7 @@ public class RepositoryAssociationMarshaller {
             protocolMarshaller.marshall(repositoryAssociation.getLastUpdatedTimeStamp(), LASTUPDATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(repositoryAssociation.getCreatedTimeStamp(), CREATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(repositoryAssociation.getKMSKeyDetails(), KMSKEYDETAILS_BINDING);
+            protocolMarshaller.marshall(repositoryAssociation.getS3RepositoryDetails(), S3REPOSITORYDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

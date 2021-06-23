@@ -58,6 +58,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public CreateFolderResult createFolder(CreateFolderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateFolderMembershipResult createFolderMembership(CreateFolderMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateGroupResult createGroup(CreateGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +134,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public DeleteDataSourceResult deleteDataSource(DeleteDataSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFolderResult deleteFolder(DeleteFolderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFolderMembershipResult deleteFolderMembership(DeleteFolderMembershipRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -228,6 +248,21 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public DescribeFolderResult describeFolder(DescribeFolderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFolderPermissionsResult describeFolderPermissions(DescribeFolderPermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFolderResolvedPermissionsResult describeFolderResolvedPermissions(DescribeFolderResolvedPermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeGroupResult describeGroup(DescribeGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -314,6 +349,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public ListDataSourcesResult listDataSources(ListDataSourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFolderMembersResult listFolderMembers(ListFolderMembersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFoldersResult listFolders(ListFoldersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -413,6 +458,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public SearchFoldersResult searchFolders(SearchFoldersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -474,6 +524,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public UpdateDataSourcePermissionsResult updateDataSourcePermissions(UpdateDataSourcePermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFolderResult updateFolder(UpdateFolderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFolderPermissionsResult updateFolderPermissions(UpdateFolderPermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

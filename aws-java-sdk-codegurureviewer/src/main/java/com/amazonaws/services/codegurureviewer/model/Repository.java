@@ -49,6 +49,8 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
      */
     private ThirdPartySourceRepository gitHubEnterpriseServer;
 
+    private S3Repository s3Bucket;
+
     /**
      * <p>
      * Information about an AWS CodeCommit repository.
@@ -170,6 +172,32 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param s3Bucket
+     */
+
+    public void setS3Bucket(S3Repository s3Bucket) {
+        this.s3Bucket = s3Bucket;
+    }
+
+    /**
+     * @return
+     */
+
+    public S3Repository getS3Bucket() {
+        return this.s3Bucket;
+    }
+
+    /**
+     * @param s3Bucket
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Repository withS3Bucket(S3Repository s3Bucket) {
+        setS3Bucket(s3Bucket);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -186,7 +214,9 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
         if (getBitbucket() != null)
             sb.append("Bitbucket: ").append(getBitbucket()).append(",");
         if (getGitHubEnterpriseServer() != null)
-            sb.append("GitHubEnterpriseServer: ").append(getGitHubEnterpriseServer());
+            sb.append("GitHubEnterpriseServer: ").append(getGitHubEnterpriseServer()).append(",");
+        if (getS3Bucket() != null)
+            sb.append("S3Bucket: ").append(getS3Bucket());
         sb.append("}");
         return sb.toString();
     }
@@ -213,6 +243,10 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGitHubEnterpriseServer() != null && other.getGitHubEnterpriseServer().equals(this.getGitHubEnterpriseServer()) == false)
             return false;
+        if (other.getS3Bucket() == null ^ this.getS3Bucket() == null)
+            return false;
+        if (other.getS3Bucket() != null && other.getS3Bucket().equals(this.getS3Bucket()) == false)
+            return false;
         return true;
     }
 
@@ -224,6 +258,7 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCodeCommit() == null) ? 0 : getCodeCommit().hashCode());
         hashCode = prime * hashCode + ((getBitbucket() == null) ? 0 : getBitbucket().hashCode());
         hashCode = prime * hashCode + ((getGitHubEnterpriseServer() == null) ? 0 : getGitHubEnterpriseServer().hashCode());
+        hashCode = prime * hashCode + ((getS3Bucket() == null) ? 0 : getS3Bucket().hashCode());
         return hashCode;
     }
 

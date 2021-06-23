@@ -68,6 +68,12 @@ public class ScheduleEntryJsonUnmarshaller implements Unmarshaller<ScheduleEntry
                     context.nextToken();
                     scheduleEntry.setProgramName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ScheduleAdBreaks", targetDepth)) {
+                    context.nextToken();
+                    scheduleEntry.setScheduleAdBreaks(new ListUnmarshaller<ScheduleAdBreak>(ScheduleAdBreakJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("SourceLocationName", targetDepth)) {
                     context.nextToken();
                     scheduleEntry.setSourceLocationName(context.getUnmarshaller(String.class).unmarshall(context));

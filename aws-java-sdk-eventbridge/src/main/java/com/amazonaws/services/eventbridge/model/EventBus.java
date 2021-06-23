@@ -20,9 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * An event bus receives events from a source and routes them to rules associated with that event bus. Your account's
- * default event bus receives rules from AWS services. A custom event bus can receive rules from AWS services as well as
- * your custom applications and services. A partner event bus receives events from an event source created by an SaaS
- * partner. These events come from the partners services or applications.
+ * default event bus receives events from AWS services. A custom event bus can receive events from your custom
+ * applications and services. A partner event bus receives events from an event source created by an SaaS partner. These
+ * events come from the partners services or applications.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/EventBus" target="_top">AWS API

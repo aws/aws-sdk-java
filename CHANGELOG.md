@@ -1,3 +1,48 @@
+# __1.12.11__ __2021-06-23__
+## __AWS Cloud9__
+  - ### Features
+    - Updated documentation for CreateEnvironmentEC2 to explain that because Amazon Linux AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2--which includes long term support through 2023--for new AWS Cloud9 environments.
+
+## __AWS License Manager__
+  - ### Features
+    - AWS License Manager now allows license administrators and end users to communicate to each other by setting custom status reasons when updating the status on a granted license.
+
+## __AWS MediaTailor__
+  - ### Features
+    - Update GetChannelSchedule to return information on ad breaks.
+
+## __Amazon CloudFront__
+  - ### Features
+    - Amazon CloudFront adds support for a new security policy, TLSv1.2_2021.
+
+## __Amazon CloudSearch__
+  - ### Features
+    - This release replaces previous generation CloudSearch instances with equivalent new instances that provide better stability at the same price.
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Added the following parameters to ECS targets: CapacityProviderStrategy, EnableECSManagedTags, EnableExecuteCommand, PlacementConstraints, PlacementStrategy, PropagateTags, ReferenceId, and Tags
+
+## __Amazon CodeGuru Reviewer__
+  - ### Features
+    - Adds support for S3 based full repository analysis and changed lines scan.
+
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - DocumentDB documentation-only edits
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for provisioning your own IP (BYOIP) range in multiple regions. This feature is in limited Preview for this release. Contact your account manager if you are interested in this feature.
+
+## __Amazon EventBridge__
+  - ### Features
+    - Added the following parameters to ECS targets: CapacityProviderStrategy, EnableECSManagedTags, EnableExecuteCommand, PlacementConstraints, PlacementStrategy, PropagateTags, ReferenceId, and Tags
+
+## __Amazon QuickSight__
+  - ### Features
+    - Releasing new APIs for AWS QuickSight Folders
+
 # __1.12.10__ __2021-06-21__
 ## __AWS CloudFormation__
   - ### Features

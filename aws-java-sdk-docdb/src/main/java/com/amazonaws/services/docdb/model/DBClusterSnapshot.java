@@ -112,8 +112,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted cluster
-     * snapshot.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster snapshot.
      * </p>
      */
     private String kmsKeyId;
@@ -739,13 +738,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted cluster
-     * snapshot.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted
-     *        cluster snapshot.
+     *        If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster
+     *        snapshot.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -754,12 +752,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted cluster
-     * snapshot.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster snapshot.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted
-     *         cluster snapshot.
+     * @return If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster
+     *         snapshot.
      */
 
     public String getKmsKeyId() {
@@ -768,13 +765,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted cluster
-     * snapshot.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted
-     *        cluster snapshot.
+     *        If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster
+     *        snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

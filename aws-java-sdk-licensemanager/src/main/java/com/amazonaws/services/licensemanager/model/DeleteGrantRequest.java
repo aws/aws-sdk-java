@@ -31,6 +31,8 @@ public class DeleteGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String grantArn;
+
+    private String statusReason;
     /**
      * <p>
      * Current version of the grant.
@@ -75,6 +77,32 @@ public class DeleteGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public DeleteGrantRequest withGrantArn(String grantArn) {
         setGrantArn(grantArn);
+        return this;
+    }
+
+    /**
+     * @param statusReason
+     */
+
+    public void setStatusReason(String statusReason) {
+        this.statusReason = statusReason;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getStatusReason() {
+        return this.statusReason;
+    }
+
+    /**
+     * @param statusReason
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteGrantRequest withStatusReason(String statusReason) {
+        setStatusReason(statusReason);
         return this;
     }
 
@@ -132,6 +160,8 @@ public class DeleteGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getGrantArn() != null)
             sb.append("GrantArn: ").append(getGrantArn()).append(",");
+        if (getStatusReason() != null)
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion());
         sb.append("}");
@@ -152,6 +182,10 @@ public class DeleteGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getGrantArn() != null && other.getGrantArn().equals(this.getGrantArn()) == false)
             return false;
+        if (other.getStatusReason() == null ^ this.getStatusReason() == null)
+            return false;
+        if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
+            return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
@@ -165,6 +199,7 @@ public class DeleteGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGrantArn() == null) ? 0 : getGrantArn().hashCode());
+        hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }

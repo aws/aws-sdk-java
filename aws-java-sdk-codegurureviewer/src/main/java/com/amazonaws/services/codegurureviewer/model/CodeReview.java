@@ -52,7 +52,7 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      */
     private String owner;
@@ -143,6 +143,13 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Metrics metrics;
+    /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     */
+    private java.util.List<String> analysisTypes;
 
     /**
      * <p>
@@ -280,13 +287,14 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
      *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
-     *        username for the account that owns the repository.
+     *        username for the account that owns the repository. For an S3 repository, it can be the username or AWS
+     *        account ID.
      */
 
     public void setOwner(String owner) {
@@ -297,12 +305,13 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      * 
      * @return The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
      *         that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
-     *         username for the account that owns the repository.
+     *         username for the account that owns the repository. For an S3 repository, it can be the username or AWS
+     *         account ID.
      */
 
     public String getOwner() {
@@ -313,13 +322,14 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
      *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
-     *        username for the account that owns the repository.
+     *        username for the account that owns the repository. For an S3 repository, it can be the username or AWS
+     *        account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -988,6 +998,114 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     * 
+     * @return They types of analysis performed during a repository analysis or a pull request review. You can specify
+     *         either <code>Security</code>, <code>CodeQuality</code>, or both.
+     * @see AnalysisType
+     */
+
+    public java.util.List<String> getAnalysisTypes() {
+        return analysisTypes;
+    }
+
+    /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     * 
+     * @param analysisTypes
+     *        They types of analysis performed during a repository analysis or a pull request review. You can specify
+     *        either <code>Security</code>, <code>CodeQuality</code>, or both.
+     * @see AnalysisType
+     */
+
+    public void setAnalysisTypes(java.util.Collection<String> analysisTypes) {
+        if (analysisTypes == null) {
+            this.analysisTypes = null;
+            return;
+        }
+
+        this.analysisTypes = new java.util.ArrayList<String>(analysisTypes);
+    }
+
+    /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAnalysisTypes(java.util.Collection)} or {@link #withAnalysisTypes(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param analysisTypes
+     *        They types of analysis performed during a repository analysis or a pull request review. You can specify
+     *        either <code>Security</code>, <code>CodeQuality</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnalysisType
+     */
+
+    public CodeReview withAnalysisTypes(String... analysisTypes) {
+        if (this.analysisTypes == null) {
+            setAnalysisTypes(new java.util.ArrayList<String>(analysisTypes.length));
+        }
+        for (String ele : analysisTypes) {
+            this.analysisTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     * 
+     * @param analysisTypes
+     *        They types of analysis performed during a repository analysis or a pull request review. You can specify
+     *        either <code>Security</code>, <code>CodeQuality</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnalysisType
+     */
+
+    public CodeReview withAnalysisTypes(java.util.Collection<String> analysisTypes) {
+        setAnalysisTypes(analysisTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     * 
+     * @param analysisTypes
+     *        They types of analysis performed during a repository analysis or a pull request review. You can specify
+     *        either <code>Security</code>, <code>CodeQuality</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnalysisType
+     */
+
+    public CodeReview withAnalysisTypes(AnalysisType... analysisTypes) {
+        java.util.ArrayList<String> analysisTypesCopy = new java.util.ArrayList<String>(analysisTypes.length);
+        for (AnalysisType value : analysisTypes) {
+            analysisTypesCopy.add(value.toString());
+        }
+        if (getAnalysisTypes() == null) {
+            setAnalysisTypes(analysisTypesCopy);
+        } else {
+            getAnalysisTypes().addAll(analysisTypesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1026,7 +1144,9 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
         if (getAssociationArn() != null)
             sb.append("AssociationArn: ").append(getAssociationArn()).append(",");
         if (getMetrics() != null)
-            sb.append("Metrics: ").append(getMetrics());
+            sb.append("Metrics: ").append(getMetrics()).append(",");
+        if (getAnalysisTypes() != null)
+            sb.append("AnalysisTypes: ").append(getAnalysisTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -1097,6 +1217,10 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
             return false;
+        if (other.getAnalysisTypes() == null ^ this.getAnalysisTypes() == null)
+            return false;
+        if (other.getAnalysisTypes() != null && other.getAnalysisTypes().equals(this.getAnalysisTypes()) == false)
+            return false;
         return true;
     }
 
@@ -1119,6 +1243,7 @@ public class CodeReview implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSourceCodeType() == null) ? 0 : getSourceCodeType().hashCode());
         hashCode = prime * hashCode + ((getAssociationArn() == null) ? 0 : getAssociationArn().hashCode());
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
+        hashCode = prime * hashCode + ((getAnalysisTypes() == null) ? 0 : getAnalysisTypes().hashCode());
         return hashCode;
     }
 

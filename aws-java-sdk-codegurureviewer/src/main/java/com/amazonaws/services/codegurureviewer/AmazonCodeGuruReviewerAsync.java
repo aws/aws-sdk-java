@@ -28,7 +28,7 @@ import com.amazonaws.services.codegurureviewer.model.*;
  * <p>
  * This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service
  * that uses program analysis and machine learning to detect potential defects that are difficult for developers to find
- * and recommendations to address them in your Java and Python code.
+ * and recommends fixes in your Java and Python code.
  * </p>
  * <p>
  * By proactively detecting and providing recommendations for addressing code defects and implementing best practices,
@@ -57,8 +57,8 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
      * CodeGuru Reviewer</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i>
      * </p>
      * <p>
-     * If you associate a CodeCommit repository, it must be in the same AWS Region and AWS account where its CodeGuru
-     * Reviewer code reviews are configured.
+     * If you associate a CodeCommit or S3 repository, it must be in the same AWS Region and AWS account where its
+     * CodeGuru Reviewer code reviews are configured.
      * </p>
      * <p>
      * Bitbucket and GitHub Enterprise Server repositories are managed by AWS CodeStar Connections to connect to
@@ -93,8 +93,8 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
      * CodeGuru Reviewer</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i>
      * </p>
      * <p>
-     * If you associate a CodeCommit repository, it must be in the same AWS Region and AWS account where its CodeGuru
-     * Reviewer code reviews are configured.
+     * If you associate a CodeCommit or S3 repository, it must be in the same AWS Region and AWS account where its
+     * CodeGuru Reviewer code reviews are configured.
      * </p>
      * <p>
      * Bitbucket and GitHub Enterprise Server repositories are managed by AWS CodeStar Connections to connect to
@@ -130,7 +130,7 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
      * <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of code review analyzes all code
      * under a specified branch in an associated repository. <code>PullRequest</code> code reviews are automatically
-     * triggered by a pull request so cannot be created using this method.
+     * triggered by a pull request.
      * </p>
      * 
      * @param createCodeReviewRequest
@@ -147,7 +147,7 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
      * <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of code review analyzes all code
      * under a specified branch in an associated repository. <code>PullRequest</code> code reviews are automatically
-     * triggered by a pull request so cannot be created using this method.
+     * triggered by a pull request.
      * </p>
      * 
      * @param createCodeReviewRequest

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An error occurred when accessing an AWS KMS key.
+ * An error occurred when accessing an KMS key.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -30,6 +30,8 @@ public class ReceivedMetadataMarshaller {
 
     private static final MarshallingInfo<String> RECEIVEDSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReceivedStatus").build();
+    private static final MarshallingInfo<String> RECEIVEDSTATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReceivedStatusReason").build();
     private static final MarshallingInfo<List> ALLOWEDOPERATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedOperations").build();
 
@@ -50,6 +52,7 @@ public class ReceivedMetadataMarshaller {
 
         try {
             protocolMarshaller.marshall(receivedMetadata.getReceivedStatus(), RECEIVEDSTATUS_BINDING);
+            protocolMarshaller.marshall(receivedMetadata.getReceivedStatusReason(), RECEIVEDSTATUSREASON_BINDING);
             protocolMarshaller.marshall(receivedMetadata.getAllowedOperations(), ALLOWEDOPERATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

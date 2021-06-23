@@ -25,23 +25,22 @@ import com.amazonaws.services.cloud9.model.*;
  * {@link com.amazonaws.services.cloud9.AbstractAWSCloud9Async} instead.
  * </p>
  * <p>
- * <fullname>AWS Cloud9</fullname>
+ * <fullname>Cloud9</fullname>
  * <p>
- * AWS Cloud9 is a collection of tools that you can use to code, build, run, test, debug, and release software in the
- * cloud.
+ * Cloud9 is a collection of tools that you can use to code, build, run, test, debug, and release software in the cloud.
  * </p>
  * <p>
- * For more information about AWS Cloud9, see the <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide">AWS
- * Cloud9 User Guide</a>.
+ * For more information about Cloud9, see the <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide">Cloud9 User
+ * Guide</a>.
  * </p>
  * <p>
- * AWS Cloud9 supports these operations:
+ * Cloud9 supports these operations:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <code>CreateEnvironmentEC2</code>: Creates an AWS Cloud9 development environment, launches an Amazon EC2 instance,
- * and then connects from the instance to the environment.
+ * <code>CreateEnvironmentEC2</code>: Creates an Cloud9 development environment, launches an Amazon EC2 instance, and
+ * then connects from the instance to the environment.
  * </p>
  * </li>
  * <li>
@@ -112,8 +111,8 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance,
-     * and then connects from the instance to the environment.
+     * Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and
+     * then connects from the instance to the environment.
      * </p>
      * 
      * @param createEnvironmentEC2Request
@@ -126,8 +125,8 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance,
-     * and then connects from the instance to the environment.
+     * Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and
+     * then connects from the instance to the environment.
      * </p>
      * 
      * @param createEnvironmentEC2Request
@@ -145,7 +144,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Adds an environment member to an AWS Cloud9 development environment.
+     * Adds an environment member to an Cloud9 development environment.
      * </p>
      * 
      * @param createEnvironmentMembershipRequest
@@ -159,7 +158,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Adds an environment member to an AWS Cloud9 development environment.
+     * Adds an environment member to an Cloud9 development environment.
      * </p>
      * 
      * @param createEnvironmentMembershipRequest
@@ -178,7 +177,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is connected to the environment, also
+     * Deletes an Cloud9 development environment. If an Amazon EC2 instance is connected to the environment, also
      * terminates the instance.
      * </p>
      * 
@@ -192,7 +191,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is connected to the environment, also
+     * Deletes an Cloud9 development environment. If an Amazon EC2 instance is connected to the environment, also
      * terminates the instance.
      * </p>
      * 
@@ -211,7 +210,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Deletes an environment member from an AWS Cloud9 development environment.
+     * Deletes an environment member from an Cloud9 development environment.
      * </p>
      * 
      * @param deleteEnvironmentMembershipRequest
@@ -225,7 +224,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Deletes an environment member from an AWS Cloud9 development environment.
+     * Deletes an environment member from an Cloud9 development environment.
      * </p>
      * 
      * @param deleteEnvironmentMembershipRequest
@@ -244,7 +243,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Gets information about environment members for an AWS Cloud9 development environment.
+     * Gets information about environment members for an Cloud9 development environment.
      * </p>
      * 
      * @param describeEnvironmentMembershipsRequest
@@ -259,7 +258,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Gets information about environment members for an AWS Cloud9 development environment.
+     * Gets information about environment members for an Cloud9 development environment.
      * </p>
      * 
      * @param describeEnvironmentMembershipsRequest
@@ -279,7 +278,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Gets status information for an AWS Cloud9 development environment.
+     * Gets status information for an Cloud9 development environment.
      * </p>
      * 
      * @param describeEnvironmentStatusRequest
@@ -293,7 +292,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Gets status information for an AWS Cloud9 development environment.
+     * Gets status information for an Cloud9 development environment.
      * </p>
      * 
      * @param describeEnvironmentStatusRequest
@@ -312,7 +311,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Gets information about AWS Cloud9 development environments.
+     * Gets information about Cloud9 development environments.
      * </p>
      * 
      * @param describeEnvironmentsRequest
@@ -325,7 +324,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Gets information about AWS Cloud9 development environments.
+     * Gets information about Cloud9 development environments.
      * </p>
      * 
      * @param describeEnvironmentsRequest
@@ -343,7 +342,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Gets a list of AWS Cloud9 development environment identifiers.
+     * Gets a list of Cloud9 development environment identifiers.
      * </p>
      * 
      * @param listEnvironmentsRequest
@@ -356,7 +355,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Gets a list of AWS Cloud9 development environment identifiers.
+     * Gets a list of Cloud9 development environment identifiers.
      * </p>
      * 
      * @param listEnvironmentsRequest
@@ -374,7 +373,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Gets a list of the tags associated with an AWS Cloud9 development environment.
+     * Gets a list of the tags associated with an Cloud9 development environment.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -387,7 +386,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Gets a list of the tags associated with an AWS Cloud9 development environment.
+     * Gets a list of the tags associated with an Cloud9 development environment.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -405,11 +404,11 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Adds tags to an AWS Cloud9 development environment.
+     * Adds tags to an Cloud9 development environment.
      * </p>
      * <important>
      * <p>
-     * Tags that you add to an AWS Cloud9 environment by using this method will NOT be automatically propagated to
+     * Tags that you add to an Cloud9 environment by using this method will NOT be automatically propagated to
      * underlying resources.
      * </p>
      * </important>
@@ -424,11 +423,11 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Adds tags to an AWS Cloud9 development environment.
+     * Adds tags to an Cloud9 development environment.
      * </p>
      * <important>
      * <p>
-     * Tags that you add to an AWS Cloud9 environment by using this method will NOT be automatically propagated to
+     * Tags that you add to an Cloud9 environment by using this method will NOT be automatically propagated to
      * underlying resources.
      * </p>
      * </important>
@@ -448,7 +447,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Removes tags from an AWS Cloud9 development environment.
+     * Removes tags from an Cloud9 development environment.
      * </p>
      * 
      * @param untagResourceRequest
@@ -461,7 +460,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Removes tags from an AWS Cloud9 development environment.
+     * Removes tags from an Cloud9 development environment.
      * </p>
      * 
      * @param untagResourceRequest
@@ -479,7 +478,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Changes the settings of an existing AWS Cloud9 development environment.
+     * Changes the settings of an existing Cloud9 development environment.
      * </p>
      * 
      * @param updateEnvironmentRequest
@@ -492,7 +491,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Changes the settings of an existing AWS Cloud9 development environment.
+     * Changes the settings of an existing Cloud9 development environment.
      * </p>
      * 
      * @param updateEnvironmentRequest
@@ -510,7 +509,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Changes the settings of an existing environment member for an AWS Cloud9 development environment.
+     * Changes the settings of an existing environment member for an Cloud9 development environment.
      * </p>
      * 
      * @param updateEnvironmentMembershipRequest
@@ -524,7 +523,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Changes the settings of an existing environment member for an AWS Cloud9 development environment.
+     * Changes the settings of an existing environment member for an Cloud9 development environment.
      * </p>
      * 
      * @param updateEnvironmentMembershipRequest

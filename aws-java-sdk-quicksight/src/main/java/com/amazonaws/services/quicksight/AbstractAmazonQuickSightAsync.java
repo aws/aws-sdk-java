@@ -106,6 +106,32 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFolderResult> createFolderAsync(CreateFolderRequest request) {
+
+        return createFolderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFolderResult> createFolderAsync(CreateFolderRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFolderRequest, CreateFolderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFolderMembershipResult> createFolderMembershipAsync(CreateFolderMembershipRequest request) {
+
+        return createFolderMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFolderMembershipResult> createFolderMembershipAsync(CreateFolderMembershipRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFolderMembershipRequest, CreateFolderMembershipResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest request) {
 
         return createGroupAsync(request, null);
@@ -283,6 +309,32 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFolderResult> deleteFolderAsync(DeleteFolderRequest request) {
+
+        return deleteFolderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFolderResult> deleteFolderAsync(DeleteFolderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFolderRequest, DeleteFolderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFolderMembershipResult> deleteFolderMembershipAsync(DeleteFolderMembershipRequest request) {
+
+        return deleteFolderMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFolderMembershipResult> deleteFolderMembershipAsync(DeleteFolderMembershipRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFolderMembershipRequest, DeleteFolderMembershipResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -548,6 +600,47 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeFolderResult> describeFolderAsync(DescribeFolderRequest request) {
+
+        return describeFolderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFolderResult> describeFolderAsync(DescribeFolderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFolderRequest, DescribeFolderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFolderPermissionsResult> describeFolderPermissionsAsync(DescribeFolderPermissionsRequest request) {
+
+        return describeFolderPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFolderPermissionsResult> describeFolderPermissionsAsync(DescribeFolderPermissionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFolderPermissionsRequest, DescribeFolderPermissionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFolderResolvedPermissionsResult> describeFolderResolvedPermissionsAsync(
+            DescribeFolderResolvedPermissionsRequest request) {
+
+        return describeFolderResolvedPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFolderResolvedPermissionsResult> describeFolderResolvedPermissionsAsync(
+            DescribeFolderResolvedPermissionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFolderResolvedPermissionsRequest, DescribeFolderResolvedPermissionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGroupResult> describeGroupAsync(DescribeGroupRequest request) {
 
         return describeGroupAsync(request, null);
@@ -777,6 +870,32 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(ListDataSourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDataSourcesRequest, ListDataSourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFolderMembersResult> listFolderMembersAsync(ListFolderMembersRequest request) {
+
+        return listFolderMembersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFolderMembersResult> listFolderMembersAsync(ListFolderMembersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFolderMembersRequest, ListFolderMembersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFoldersResult> listFoldersAsync(ListFoldersRequest request) {
+
+        return listFoldersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFoldersResult> listFoldersAsync(ListFoldersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFoldersRequest, ListFoldersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1031,6 +1150,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<SearchFoldersResult> searchFoldersAsync(SearchFoldersRequest request) {
+
+        return searchFoldersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchFoldersResult> searchFoldersAsync(SearchFoldersRequest request,
+            com.amazonaws.handlers.AsyncHandler<SearchFoldersRequest, SearchFoldersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1197,6 +1329,32 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<UpdateDataSourcePermissionsResult> updateDataSourcePermissionsAsync(UpdateDataSourcePermissionsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDataSourcePermissionsRequest, UpdateDataSourcePermissionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFolderResult> updateFolderAsync(UpdateFolderRequest request) {
+
+        return updateFolderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFolderResult> updateFolderAsync(UpdateFolderRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateFolderRequest, UpdateFolderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFolderPermissionsResult> updateFolderPermissionsAsync(UpdateFolderPermissionsRequest request) {
+
+        return updateFolderPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFolderPermissionsResult> updateFolderPermissionsAsync(UpdateFolderPermissionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateFolderPermissionsRequest, UpdateFolderPermissionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -25,7 +25,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of certificates for this AWS account.
+     * A list of certificates for this account.
      * </p>
      */
     private java.util.List<Certificate> certificates;
@@ -41,10 +41,10 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of certificates for this AWS account.
+     * A list of certificates for this account.
      * </p>
      * 
-     * @return A list of certificates for this AWS account.
+     * @return A list of certificates for this account.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -53,11 +53,11 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of certificates for this AWS account.
+     * A list of certificates for this account.
      * </p>
      * 
      * @param certificates
-     *        A list of certificates for this AWS account.
+     *        A list of certificates for this account.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -71,7 +71,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of certificates for this AWS account.
+     * A list of certificates for this account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param certificates
-     *        A list of certificates for this AWS account.
+     *        A list of certificates for this account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class DescribeCertificatesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of certificates for this AWS account.
+     * A list of certificates for this account.
      * </p>
      * 
      * @param certificates
-     *        A list of certificates for this AWS account.
+     *        A list of certificates for this account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

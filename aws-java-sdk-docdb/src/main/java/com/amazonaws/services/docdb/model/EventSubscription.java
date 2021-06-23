@@ -28,7 +28,8 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account that is associated with the Amazon DocumentDB event notification subscription.
+     * The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification
+     * subscription.
      * </p>
      */
     private String customerAwsId;
@@ -102,11 +103,13 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account that is associated with the Amazon DocumentDB event notification subscription.
+     * The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification
+     * subscription.
      * </p>
      * 
      * @param customerAwsId
-     *        The AWS customer account that is associated with the Amazon DocumentDB event notification subscription.
+     *        The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification
+     *        subscription.
      */
 
     public void setCustomerAwsId(String customerAwsId) {
@@ -115,10 +118,12 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account that is associated with the Amazon DocumentDB event notification subscription.
+     * The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification
+     * subscription.
      * </p>
      * 
-     * @return The AWS customer account that is associated with the Amazon DocumentDB event notification subscription.
+     * @return The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification
+     *         subscription.
      */
 
     public String getCustomerAwsId() {
@@ -127,11 +132,13 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account that is associated with the Amazon DocumentDB event notification subscription.
+     * The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification
+     * subscription.
      * </p>
      * 
      * @param customerAwsId
-     *        The AWS customer account that is associated with the Amazon DocumentDB event notification subscription.
+     *        The Amazon Web Services customer account that is associated with the Amazon DocumentDB event notification
+     *        subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

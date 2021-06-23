@@ -33,8 +33,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of source that is generating the events.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>,
-     * <code>db-snapshot</code>
+     * Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>
      * </p>
      */
     private String sourceType;
@@ -50,15 +49,13 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of source that is generating the events.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>,
-     * <code>db-snapshot</code>
+     * Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>
      * </p>
      * 
      * @param sourceType
      *        The type of source that is generating the events.</p>
      *        <p>
-     *        Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>,
-     *        <code>db-snapshot</code>
+     *        Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>
      */
 
     public void setSourceType(String sourceType) {
@@ -70,14 +67,12 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of source that is generating the events.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>,
-     * <code>db-snapshot</code>
+     * Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>
      * </p>
      * 
      * @return The type of source that is generating the events.</p>
      *         <p>
-     *         Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>,
-     *         <code>db-snapshot</code>
+     *         Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>
      */
 
     public String getSourceType() {
@@ -89,15 +84,13 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of source that is generating the events.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>,
-     * <code>db-snapshot</code>
+     * Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>
      * </p>
      * 
      * @param sourceType
      *        The type of source that is generating the events.</p>
      *        <p>
-     *        Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>,
-     *        <code>db-snapshot</code>
+     *        Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

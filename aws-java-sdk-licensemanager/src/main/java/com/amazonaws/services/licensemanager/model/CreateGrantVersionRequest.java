@@ -55,6 +55,8 @@ public class CreateGrantVersionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String status;
+
+    private String statusReason;
     /**
      * <p>
      * Current version of the grant.
@@ -340,6 +342,32 @@ public class CreateGrantVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * @param statusReason
+     */
+
+    public void setStatusReason(String statusReason) {
+        this.statusReason = statusReason;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getStatusReason() {
+        return this.statusReason;
+    }
+
+    /**
+     * @param statusReason
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGrantVersionRequest withStatusReason(String statusReason) {
+        setStatusReason(statusReason);
+        return this;
+    }
+
+    /**
      * <p>
      * Current version of the grant.
      * </p>
@@ -401,6 +429,8 @@ public class CreateGrantVersionRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("AllowedOperations: ").append(getAllowedOperations()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusReason() != null)
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getSourceVersion() != null)
             sb.append("SourceVersion: ").append(getSourceVersion());
         sb.append("}");
@@ -437,6 +467,10 @@ public class CreateGrantVersionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getStatusReason() == null ^ this.getStatusReason() == null)
+            return false;
+        if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
+            return false;
         if (other.getSourceVersion() == null ^ this.getSourceVersion() == null)
             return false;
         if (other.getSourceVersion() != null && other.getSourceVersion().equals(this.getSourceVersion()) == false)
@@ -454,6 +488,7 @@ public class CreateGrantVersionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getGrantName() == null) ? 0 : getGrantName().hashCode());
         hashCode = prime * hashCode + ((getAllowedOperations() == null) ? 0 : getAllowedOperations().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getSourceVersion() == null) ? 0 : getSourceVersion().hashCode());
         return hashCode;
     }

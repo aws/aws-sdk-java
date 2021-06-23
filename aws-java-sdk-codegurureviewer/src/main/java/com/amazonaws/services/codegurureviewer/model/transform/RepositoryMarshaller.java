@@ -33,6 +33,8 @@ public class RepositoryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Bitbucket").build();
     private static final MarshallingInfo<StructuredPojo> GITHUBENTERPRISESERVER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GitHubEnterpriseServer").build();
+    private static final MarshallingInfo<StructuredPojo> S3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Bucket").build();
 
     private static final RepositoryMarshaller instance = new RepositoryMarshaller();
 
@@ -53,6 +55,7 @@ public class RepositoryMarshaller {
             protocolMarshaller.marshall(repository.getCodeCommit(), CODECOMMIT_BINDING);
             protocolMarshaller.marshall(repository.getBitbucket(), BITBUCKET_BINDING);
             protocolMarshaller.marshall(repository.getGitHubEnterpriseServer(), GITHUBENTERPRISESERVER_BINDING);
+            protocolMarshaller.marshall(repository.getS3Bucket(), S3BUCKET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

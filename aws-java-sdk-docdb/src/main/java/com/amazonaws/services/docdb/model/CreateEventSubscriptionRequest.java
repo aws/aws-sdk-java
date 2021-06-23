@@ -52,7 +52,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * Valid values: <code>db-instance</code>, <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>, <code>db-cluster-snapshot</code>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code>
      * </p>
      */
     private String sourceType;
@@ -223,7 +223,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * Valid values: <code>db-instance</code>, <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>, <code>db-cluster-snapshot</code>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code>
      * </p>
      * 
      * @param sourceType
@@ -232,7 +232,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        specified, all events are returned.</p>
      *        <p>
      *        Valid values: <code>db-instance</code>, <code>db-cluster</code>, <code>db-parameter-group</code>,
-     *        <code>db-security-group</code>, <code>db-snapshot</code>, <code>db-cluster-snapshot</code>
+     *        <code>db-security-group</code>, <code>db-cluster-snapshot</code>
      */
 
     public void setSourceType(String sourceType) {
@@ -247,7 +247,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * Valid values: <code>db-instance</code>, <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>, <code>db-cluster-snapshot</code>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code>
      * </p>
      * 
      * @return The type of source that is generating the events. For example, if you want to be notified of events
@@ -255,7 +255,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *         specified, all events are returned.</p>
      *         <p>
      *         Valid values: <code>db-instance</code>, <code>db-cluster</code>, <code>db-parameter-group</code>,
-     *         <code>db-security-group</code>, <code>db-snapshot</code>, <code>db-cluster-snapshot</code>
+     *         <code>db-security-group</code>, <code>db-cluster-snapshot</code>
      */
 
     public String getSourceType() {
@@ -270,7 +270,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * Valid values: <code>db-instance</code>, <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>, <code>db-cluster-snapshot</code>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code>
      * </p>
      * 
      * @param sourceType
@@ -279,7 +279,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        specified, all events are returned.</p>
      *        <p>
      *        Valid values: <code>db-instance</code>, <code>db-cluster</code>, <code>db-parameter-group</code>,
-     *        <code>db-security-group</code>, <code>db-snapshot</code>, <code>db-cluster-snapshot</code>
+     *        <code>db-security-group</code>, <code>db-cluster-snapshot</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

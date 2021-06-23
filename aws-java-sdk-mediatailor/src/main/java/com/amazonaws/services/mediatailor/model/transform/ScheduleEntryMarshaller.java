@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediatailor.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class ScheduleEntryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChannelName").build();
     private static final MarshallingInfo<String> PROGRAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProgramName").build();
+    private static final MarshallingInfo<List> SCHEDULEADBREAKS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleAdBreaks").build();
     private static final MarshallingInfo<String> SOURCELOCATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceLocationName").build();
     private static final MarshallingInfo<String> VODSOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,6 +66,7 @@ public class ScheduleEntryMarshaller {
             protocolMarshaller.marshall(scheduleEntry.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getChannelName(), CHANNELNAME_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getProgramName(), PROGRAMNAME_BINDING);
+            protocolMarshaller.marshall(scheduleEntry.getScheduleAdBreaks(), SCHEDULEADBREAKS_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getSourceLocationName(), SOURCELOCATIONNAME_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getVodSourceName(), VODSOURCENAME_BINDING);
         } catch (Exception e) {

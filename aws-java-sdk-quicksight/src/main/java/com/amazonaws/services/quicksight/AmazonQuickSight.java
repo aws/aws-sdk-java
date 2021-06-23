@@ -252,6 +252,76 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Creates an empty shared folder.
+     * </p>
+     * 
+     * @param createFolderRequest
+     * @return Result of the CreateFolder operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateFolderResult createFolder(CreateFolderRequest createFolderRequest);
+
+    /**
+     * <p>
+     * Adds an asset, such as a dashboard, analysis, or dataset into a folder.
+     * </p>
+     * 
+     * @param createFolderMembershipRequest
+     * @return Result of the CreateFolderMembership operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateFolderMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolderMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateFolderMembershipResult createFolderMembership(CreateFolderMembershipRequest createFolderMembershipRequest);
+
+    /**
+     * <p>
      * Creates an Amazon QuickSight group.
      * </p>
      * <p>
@@ -727,6 +797,70 @@ public interface AmazonQuickSight {
      *      API Documentation</a>
      */
     DeleteDataSourceResult deleteDataSource(DeleteDataSourceRequest deleteDataSourceRequest);
+
+    /**
+     * <p>
+     * Deletes an empty folder.
+     * </p>
+     * 
+     * @param deleteFolderRequest
+     * @return Result of the DeleteFolder operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteFolderResult deleteFolder(DeleteFolderRequest deleteFolderRequest);
+
+    /**
+     * <p>
+     * Removes an asset, such as a dashboard, analysis, or dataset, from a folder.
+     * </p>
+     * 
+     * @param deleteFolderMembershipRequest
+     * @return Result of the DeleteFolderMembership operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteFolderMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolderMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteFolderMembershipResult deleteFolderMembership(DeleteFolderMembershipRequest deleteFolderMembershipRequest);
 
     /**
      * <p>
@@ -1366,6 +1500,97 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Describes a folder.
+     * </p>
+     * 
+     * @param describeFolderRequest
+     * @return Result of the DescribeFolder operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeFolderResult describeFolder(DescribeFolderRequest describeFolderRequest);
+
+    /**
+     * <p>
+     * Describes permissions for a folder.
+     * </p>
+     * 
+     * @param describeFolderPermissionsRequest
+     * @return Result of the DescribeFolderPermissions operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeFolderPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFolderPermissionsResult describeFolderPermissions(DescribeFolderPermissionsRequest describeFolderPermissionsRequest);
+
+    /**
+     * <p>
+     * Describes the folder resolved permissions. Permissions consists of both folder direct permissions and the
+     * inherited permissions from the ancestor folders.
+     * </p>
+     * 
+     * @param describeFolderResolvedPermissionsRequest
+     * @return Result of the DescribeFolderResolvedPermissions operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeFolderResolvedPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderResolvedPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFolderResolvedPermissionsResult describeFolderResolvedPermissions(DescribeFolderResolvedPermissionsRequest describeFolderResolvedPermissionsRequest);
+
+    /**
+     * <p>
      * Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN).
      * </p>
      * 
@@ -1957,6 +2182,70 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>) in a folder.
+     * </p>
+     * 
+     * @param listFolderMembersRequest
+     * @return Result of the ListFolderMembers operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListFolderMembers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolderMembers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListFolderMembersResult listFolderMembers(ListFolderMembersRequest listFolderMembersRequest);
+
+    /**
+     * <p>
+     * Lists all folders in an account.
+     * </p>
+     * 
+     * @param listFoldersRequest
+     * @return Result of the ListFolders operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolders" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListFoldersResult listFolders(ListFoldersRequest listFoldersRequest);
+
+    /**
+     * <p>
      * Lists member users in a group.
      * </p>
      * 
@@ -2519,6 +2808,38 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Searches the subfolders in a folder.
+     * </p>
+     * 
+     * @param searchFoldersRequest
+     * @return Result of the SearchFolders operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.SearchFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFolders" target="_top">AWS API
+     *      Documentation</a>
+     */
+    SearchFoldersResult searchFolders(SearchFoldersRequest searchFoldersRequest);
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified QuickSight resource.
      * </p>
      * <p>
@@ -2920,6 +3241,72 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateDataSourcePermissionsResult updateDataSourcePermissions(UpdateDataSourcePermissionsRequest updateDataSourcePermissionsRequest);
+
+    /**
+     * <p>
+     * Updates the name of a folder.
+     * </p>
+     * 
+     * @param updateFolderRequest
+     * @return Result of the UpdateFolder operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateFolderResult updateFolder(UpdateFolderRequest updateFolderRequest);
+
+    /**
+     * <p>
+     * Updates permissions of a folder.
+     * </p>
+     * 
+     * @param updateFolderPermissionsRequest
+     * @return Result of the UpdateFolderPermissions operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateFolderPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolderPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateFolderPermissionsResult updateFolderPermissions(UpdateFolderPermissionsRequest updateFolderPermissionsRequest);
 
     /**
      * <p>

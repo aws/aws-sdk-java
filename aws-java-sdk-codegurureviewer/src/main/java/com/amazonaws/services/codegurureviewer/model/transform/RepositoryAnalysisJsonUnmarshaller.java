@@ -52,6 +52,10 @@ public class RepositoryAnalysisJsonUnmarshaller implements Unmarshaller<Reposito
                     context.nextToken();
                     repositoryAnalysis.setRepositoryHead(RepositoryHeadSourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SourceCodeType", targetDepth)) {
+                    context.nextToken();
+                    repositoryAnalysis.setSourceCodeType(SourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

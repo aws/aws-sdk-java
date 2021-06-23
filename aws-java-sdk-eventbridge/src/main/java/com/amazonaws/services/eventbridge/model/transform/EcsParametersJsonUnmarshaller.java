@@ -72,6 +72,47 @@ public class EcsParametersJsonUnmarshaller implements Unmarshaller<EcsParameters
                     context.nextToken();
                     ecsParameters.setGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CapacityProviderStrategy", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setCapacityProviderStrategy(new ListUnmarshaller<CapacityProviderStrategyItem>(CapacityProviderStrategyItemJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("EnableECSManagedTags", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setEnableECSManagedTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("EnableExecuteCommand", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setEnableExecuteCommand(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("PlacementConstraints", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setPlacementConstraints(new ListUnmarshaller<PlacementConstraint>(PlacementConstraintJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PlacementStrategy", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setPlacementStrategy(new ListUnmarshaller<PlacementStrategy>(PlacementStrategyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PropagateTags", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setPropagateTags(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReferenceId", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setReferenceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
+                    ecsParameters.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

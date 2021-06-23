@@ -142,6 +142,10 @@ public interface AmazonCloudSearch {
      *         the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.
      * @throws LimitExceededException
      *         The request was rejected because a resource limit has already been met.
+     * @throws ResourceAlreadyExistsException
+     *         The request was rejected because it attempted to create a resource that already exists.
+     * @throws ValidationException
+     *         The request was rejected because it has invalid parameters.
      * @sample AmazonCloudSearch.CreateDomain
      */
     CreateDomainResult createDomain(CreateDomainRequest createDomainRequest);

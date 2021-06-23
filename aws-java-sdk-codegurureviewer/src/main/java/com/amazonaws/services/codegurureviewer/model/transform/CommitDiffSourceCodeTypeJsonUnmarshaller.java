@@ -56,6 +56,10 @@ public class CommitDiffSourceCodeTypeJsonUnmarshaller implements Unmarshaller<Co
                     context.nextToken();
                     commitDiffSourceCodeType.setDestinationCommit(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MergeBaseCommit", targetDepth)) {
+                    context.nextToken();
+                    commitDiffSourceCodeType.setMergeBaseCommit(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

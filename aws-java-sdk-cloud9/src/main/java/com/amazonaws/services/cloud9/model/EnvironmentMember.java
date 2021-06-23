@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an environment member for an AWS Cloud9 development environment.
+ * Information about an environment member for an Cloud9 development environment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/EnvironmentMember" target="_top">AWS API
@@ -53,7 +53,7 @@ public class EnvironmentMember implements Serializable, Cloneable, StructuredPoj
     private String permissions;
     /**
      * <p>
-     * The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.
+     * The user ID in Identity and Access Management (IAM) of the environment member.
      * </p>
      */
     private String userId;
@@ -273,11 +273,11 @@ public class EnvironmentMember implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.
+     * The user ID in Identity and Access Management (IAM) of the environment member.
      * </p>
      * 
      * @param userId
-     *        The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.
+     *        The user ID in Identity and Access Management (IAM) of the environment member.
      */
 
     public void setUserId(String userId) {
@@ -286,10 +286,10 @@ public class EnvironmentMember implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.
+     * The user ID in Identity and Access Management (IAM) of the environment member.
      * </p>
      * 
-     * @return The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.
+     * @return The user ID in Identity and Access Management (IAM) of the environment member.
      */
 
     public String getUserId() {
@@ -298,11 +298,11 @@ public class EnvironmentMember implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.
+     * The user ID in Identity and Access Management (IAM) of the environment member.
      * </p>
      * 
      * @param userId
-     *        The user ID in AWS Identity and Access Management (AWS IAM) of the environment member.
+     *        The user ID in Identity and Access Management (IAM) of the environment member.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

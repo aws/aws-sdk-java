@@ -56,6 +56,18 @@ public class SourceCodeTypeJsonUnmarshaller implements Unmarshaller<SourceCodeTy
                     context.nextToken();
                     sourceCodeType.setRepositoryHead(RepositoryHeadSourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BranchDiff", targetDepth)) {
+                    context.nextToken();
+                    sourceCodeType.setBranchDiff(BranchDiffSourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3BucketRepository", targetDepth)) {
+                    context.nextToken();
+                    sourceCodeType.setS3BucketRepository(S3BucketRepositoryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RequestMetadata", targetDepth)) {
+                    context.nextToken();
+                    sourceCodeType.setRequestMetadata(RequestMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

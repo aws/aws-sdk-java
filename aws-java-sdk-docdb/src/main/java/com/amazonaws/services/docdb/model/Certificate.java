@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A certificate authority (CA) certificate for an AWS account.
+ * A certificate authority (CA) certificate for an account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/Certificate" target="_top">AWS API

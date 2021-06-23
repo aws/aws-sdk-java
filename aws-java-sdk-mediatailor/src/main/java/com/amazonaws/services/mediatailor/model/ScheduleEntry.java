@@ -60,6 +60,12 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
     private String programName;
     /**
      * <p>
+     * The schedule's ad break properties.
+     * </p>
+     */
+    private java.util.List<ScheduleAdBreak> scheduleAdBreaks;
+    /**
+     * <p>
      * The name of the source location.
      * </p>
      */
@@ -273,6 +279,76 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The schedule's ad break properties.
+     * </p>
+     * 
+     * @return The schedule's ad break properties.
+     */
+
+    public java.util.List<ScheduleAdBreak> getScheduleAdBreaks() {
+        return scheduleAdBreaks;
+    }
+
+    /**
+     * <p>
+     * The schedule's ad break properties.
+     * </p>
+     * 
+     * @param scheduleAdBreaks
+     *        The schedule's ad break properties.
+     */
+
+    public void setScheduleAdBreaks(java.util.Collection<ScheduleAdBreak> scheduleAdBreaks) {
+        if (scheduleAdBreaks == null) {
+            this.scheduleAdBreaks = null;
+            return;
+        }
+
+        this.scheduleAdBreaks = new java.util.ArrayList<ScheduleAdBreak>(scheduleAdBreaks);
+    }
+
+    /**
+     * <p>
+     * The schedule's ad break properties.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setScheduleAdBreaks(java.util.Collection)} or {@link #withScheduleAdBreaks(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param scheduleAdBreaks
+     *        The schedule's ad break properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleEntry withScheduleAdBreaks(ScheduleAdBreak... scheduleAdBreaks) {
+        if (this.scheduleAdBreaks == null) {
+            setScheduleAdBreaks(new java.util.ArrayList<ScheduleAdBreak>(scheduleAdBreaks.length));
+        }
+        for (ScheduleAdBreak ele : scheduleAdBreaks) {
+            this.scheduleAdBreaks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The schedule's ad break properties.
+     * </p>
+     * 
+     * @param scheduleAdBreaks
+     *        The schedule's ad break properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleEntry withScheduleAdBreaks(java.util.Collection<ScheduleAdBreak> scheduleAdBreaks) {
+        setScheduleAdBreaks(scheduleAdBreaks);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the source location.
      * </p>
      * 
@@ -373,6 +449,8 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
             sb.append("ChannelName: ").append(getChannelName()).append(",");
         if (getProgramName() != null)
             sb.append("ProgramName: ").append(getProgramName()).append(",");
+        if (getScheduleAdBreaks() != null)
+            sb.append("ScheduleAdBreaks: ").append(getScheduleAdBreaks()).append(",");
         if (getSourceLocationName() != null)
             sb.append("SourceLocationName: ").append(getSourceLocationName()).append(",");
         if (getVodSourceName() != null)
@@ -411,6 +489,10 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProgramName() != null && other.getProgramName().equals(this.getProgramName()) == false)
             return false;
+        if (other.getScheduleAdBreaks() == null ^ this.getScheduleAdBreaks() == null)
+            return false;
+        if (other.getScheduleAdBreaks() != null && other.getScheduleAdBreaks().equals(this.getScheduleAdBreaks()) == false)
+            return false;
         if (other.getSourceLocationName() == null ^ this.getSourceLocationName() == null)
             return false;
         if (other.getSourceLocationName() != null && other.getSourceLocationName().equals(this.getSourceLocationName()) == false)
@@ -432,6 +514,7 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
         hashCode = prime * hashCode + ((getProgramName() == null) ? 0 : getProgramName().hashCode());
+        hashCode = prime * hashCode + ((getScheduleAdBreaks() == null) ? 0 : getScheduleAdBreaks().hashCode());
         hashCode = prime * hashCode + ((getSourceLocationName() == null) ? 0 : getSourceLocationName().hashCode());
         hashCode = prime * hashCode + ((getVodSourceName() == null) ? 0 : getVodSourceName().hashCode());
         return hashCode;

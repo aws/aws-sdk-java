@@ -247,8 +247,8 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
     /**
      * <p>
      * Adds metadata tags to an Amazon DocumentDB resource. You can use these tags with cost allocation reporting to
-     * track costs that are associated with Amazon DocumentDB resources. or in a <code>Condition</code> statement in an
-     * AWS Identity and Access Management (IAM) policy for Amazon DocumentDB.
+     * track costs that are associated with Amazon DocumentDB resources or in a <code>Condition</code> statement in an
+     * Identity and Access Management (IAM) policy for Amazon DocumentDB.
      * </p>
      * 
      * @param addTagsToResourceRequest
@@ -442,7 +442,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * <p>
      * To copy a cluster snapshot from a shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
      * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can only copy a shared DB cluster
-     * snapshot, whether encrypted or not, in the same AWS Region.
+     * snapshot, whether encrypted or not, in the same Region.
      * </p>
      * <p>
      * To cancel the copy operation after it is in progress, delete the target cluster snapshot identified by
@@ -463,7 +463,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * @throws SnapshotQuotaExceededException
      *         The request would cause you to exceed the allowed number of snapshots.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred when accessing an AWS KMS key.
+     *         An error occurred when accessing an KMS key.
      * @sample AmazonDocDB.CopyDBClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot" target="_top">AWS
      *      API Documentation</a>
@@ -546,7 +546,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * @throws DBClusterParameterGroupNotFoundException
      *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter group.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred when accessing an AWS KMS key.
+     *         An error occurred when accessing an KMS key.
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
      * @throws DBInstanceNotFoundException
@@ -792,7 +792,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *         <p>
      *         Amazon DocumentDB also might not be authorized to perform necessary actions on your behalf using IAM.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred when accessing an AWS KMS key.
+     *         An error occurred when accessing an KMS key.
      * @sample AmazonDocDB.CreateDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -844,7 +844,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
     /**
      * <p>
      * Creates a new subnet group. subnet groups must contain at least one subnet in at least two Availability Zones in
-     * the AWS Region.
+     * the Region.
      * </p>
      * 
      * @param createDBSubnetGroupRequest
@@ -1001,10 +1001,10 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Creates an Amazon DocumentDB global cluster that can span multiple multiple AWS Regions. The global cluster
-     * contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global
-     * clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated
-     * infrastructure with no impact to your workload’s performance.
+     * Creates an Amazon DocumentDB global cluster that can span multiple multiple Regions. The global cluster contains
+     * one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global clusters uses
+     * storage-based fast replication across regions with latencies less than one second, using dedicated infrastructure
+     * with no impact to your workload’s performance.
      * </p>
      * <p/>
      * <p>
@@ -1536,7 +1536,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Returns a list of certificate authority (CA) certificates provided by Amazon DocumentDB for this AWS account.
+     * Returns a list of certificate authority (CA) certificates provided by Amazon DocumentDB for this account.
      * </p>
      * 
      * @param describeCertificatesRequest
@@ -1718,10 +1718,10 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      * Returns a list of cluster snapshot attribute names and values for a manual DB cluster snapshot.
      * </p>
      * <p>
-     * When you share snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the
-     * <code>restore</code> attribute and a list of IDs for the AWS accounts that are authorized to copy or restore the
+     * When you share snapshots with other accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the
+     * <code>restore</code> attribute and a list of IDs for the accounts that are authorized to copy or restore the
      * manual cluster snapshot. If <code>all</code> is included in the list of values for the <code>restore</code>
-     * attribute, then the manual cluster snapshot is public and can be copied or restored by all AWS accounts.
+     * attribute, then the manual cluster snapshot is public and can be copied or restored by all accounts.
      * </p>
      * 
      * @param describeDBClusterSnapshotAttributesRequest
@@ -2791,17 +2791,17 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
-     * Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.
+     * Adds an attribute and values to, or removes an attribute and values from, a manual cluster snapshot.
      * </p>
      * <p>
-     * To share a manual cluster snapshot with other AWS accounts, specify <code>restore</code> as the
-     * <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
-     * accounts that are authorized to restore the manual cluster snapshot. Use the value <code>all</code> to make the
-     * manual cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not add the
-     * <code>all</code> value for any manual DB cluster snapshots that contain private information that you don't want
-     * available to all AWS accounts. If a manual cluster snapshot is encrypted, it can be shared, but only by
-     * specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use
-     * <code>all</code> as a value for that parameter in this case.
+     * To share a manual cluster snapshot with other accounts, specify <code>restore</code> as the
+     * <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the accounts
+     * that are authorized to restore the manual cluster snapshot. Use the value <code>all</code> to make the manual
+     * cluster snapshot public, which means that it can be copied or restored by all accounts. Do not add the
+     * <code>all</code> value for any manual cluster snapshots that contain private information that you don't want
+     * available to all accounts. If a manual cluster snapshot is encrypted, it can be shared, but only by specifying a
+     * list of authorized account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a
+     * value for that parameter in this case.
      * </p>
      * 
      * @param modifyDBClusterSnapshotAttributeRequest
@@ -2952,7 +2952,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
     /**
      * <p>
      * Modifies an existing subnet group. subnet groups must contain at least one subnet in at least two Availability
-     * Zones in the AWS Region.
+     * Zones in the Region.
      * </p>
      * 
      * @param modifyDBSubnetGroupRequest
@@ -3532,7 +3532,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *         The requested subnet is not valid, or multiple subnets were requested that are not all in a common
      *         virtual private cloud (VPC).
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred when accessing an AWS KMS key.
+     *         An error occurred when accessing an KMS key.
      * @sample AmazonDocDB.RestoreDBClusterFromSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RestoreDBClusterFromSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -3622,7 +3622,7 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
      *         The subnet group doesn't cover all Availability Zones after it is created because of changes that were
      *         made.
      * @throws KMSKeyNotAccessibleException
-     *         An error occurred when accessing an AWS KMS key.
+     *         An error occurred when accessing an KMS key.
      * @throws StorageQuotaExceededException
      *         The request would cause you to exceed the allowed amount of storage available across all instances.
      * @sample AmazonDocDB.RestoreDBClusterToPointInTime

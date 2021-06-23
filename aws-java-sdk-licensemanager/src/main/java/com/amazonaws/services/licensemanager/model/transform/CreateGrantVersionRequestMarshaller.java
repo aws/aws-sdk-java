@@ -38,6 +38,8 @@ public class CreateGrantVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedOperations").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusReason").build();
     private static final MarshallingInfo<String> SOURCEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceVersion").build();
 
@@ -62,6 +64,7 @@ public class CreateGrantVersionRequestMarshaller {
             protocolMarshaller.marshall(createGrantVersionRequest.getGrantName(), GRANTNAME_BINDING);
             protocolMarshaller.marshall(createGrantVersionRequest.getAllowedOperations(), ALLOWEDOPERATIONS_BINDING);
             protocolMarshaller.marshall(createGrantVersionRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(createGrantVersionRequest.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(createGrantVersionRequest.getSourceVersion(), SOURCEVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

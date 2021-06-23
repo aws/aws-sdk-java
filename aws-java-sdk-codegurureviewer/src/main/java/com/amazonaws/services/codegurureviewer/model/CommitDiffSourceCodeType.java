@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
- * <code>SourceCodeType</code> </a> that specifies the commit diff for a pull request on an associated repository.
+ * <code>SourceCodeType</code> </a> that specifies the commit diff for a pull request on an associated repository. The
+ * <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CommitDiffSourceCodeType"
@@ -31,24 +32,34 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the source commit used to generate a commit diff.
+     * The SHA of the source commit used to generate a commit diff. This field is required for a pull request code
+     * review.
      * </p>
      */
     private String sourceCommit;
     /**
      * <p>
-     * The SHA of the destination commit used to generate a commit diff.
+     * The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code
+     * review.
      * </p>
      */
     private String destinationCommit;
+    /**
+     * <p>
+     * The SHA of the merge base of a commit.
+     * </p>
+     */
+    private String mergeBaseCommit;
 
     /**
      * <p>
-     * The SHA of the source commit used to generate a commit diff.
+     * The SHA of the source commit used to generate a commit diff. This field is required for a pull request code
+     * review.
      * </p>
      * 
      * @param sourceCommit
-     *        The SHA of the source commit used to generate a commit diff.
+     *        The SHA of the source commit used to generate a commit diff. This field is required for a pull request
+     *        code review.
      */
 
     public void setSourceCommit(String sourceCommit) {
@@ -57,10 +68,12 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the source commit used to generate a commit diff.
+     * The SHA of the source commit used to generate a commit diff. This field is required for a pull request code
+     * review.
      * </p>
      * 
-     * @return The SHA of the source commit used to generate a commit diff.
+     * @return The SHA of the source commit used to generate a commit diff. This field is required for a pull request
+     *         code review.
      */
 
     public String getSourceCommit() {
@@ -69,11 +82,13 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the source commit used to generate a commit diff.
+     * The SHA of the source commit used to generate a commit diff. This field is required for a pull request code
+     * review.
      * </p>
      * 
      * @param sourceCommit
-     *        The SHA of the source commit used to generate a commit diff.
+     *        The SHA of the source commit used to generate a commit diff. This field is required for a pull request
+     *        code review.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +99,13 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the destination commit used to generate a commit diff.
+     * The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code
+     * review.
      * </p>
      * 
      * @param destinationCommit
-     *        The SHA of the destination commit used to generate a commit diff.
+     *        The SHA of the destination commit used to generate a commit diff. This field is required for a pull
+     *        request code review.
      */
 
     public void setDestinationCommit(String destinationCommit) {
@@ -97,10 +114,12 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the destination commit used to generate a commit diff.
+     * The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code
+     * review.
      * </p>
      * 
-     * @return The SHA of the destination commit used to generate a commit diff.
+     * @return The SHA of the destination commit used to generate a commit diff. This field is required for a pull
+     *         request code review.
      */
 
     public String getDestinationCommit() {
@@ -109,16 +128,58 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the destination commit used to generate a commit diff.
+     * The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code
+     * review.
      * </p>
      * 
      * @param destinationCommit
-     *        The SHA of the destination commit used to generate a commit diff.
+     *        The SHA of the destination commit used to generate a commit diff. This field is required for a pull
+     *        request code review.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CommitDiffSourceCodeType withDestinationCommit(String destinationCommit) {
         setDestinationCommit(destinationCommit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SHA of the merge base of a commit.
+     * </p>
+     * 
+     * @param mergeBaseCommit
+     *        The SHA of the merge base of a commit.
+     */
+
+    public void setMergeBaseCommit(String mergeBaseCommit) {
+        this.mergeBaseCommit = mergeBaseCommit;
+    }
+
+    /**
+     * <p>
+     * The SHA of the merge base of a commit.
+     * </p>
+     * 
+     * @return The SHA of the merge base of a commit.
+     */
+
+    public String getMergeBaseCommit() {
+        return this.mergeBaseCommit;
+    }
+
+    /**
+     * <p>
+     * The SHA of the merge base of a commit.
+     * </p>
+     * 
+     * @param mergeBaseCommit
+     *        The SHA of the merge base of a commit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CommitDiffSourceCodeType withMergeBaseCommit(String mergeBaseCommit) {
+        setMergeBaseCommit(mergeBaseCommit);
         return this;
     }
 
@@ -137,7 +198,9 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
         if (getSourceCommit() != null)
             sb.append("SourceCommit: ").append(getSourceCommit()).append(",");
         if (getDestinationCommit() != null)
-            sb.append("DestinationCommit: ").append(getDestinationCommit());
+            sb.append("DestinationCommit: ").append(getDestinationCommit()).append(",");
+        if (getMergeBaseCommit() != null)
+            sb.append("MergeBaseCommit: ").append(getMergeBaseCommit());
         sb.append("}");
         return sb.toString();
     }
@@ -160,6 +223,10 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
             return false;
         if (other.getDestinationCommit() != null && other.getDestinationCommit().equals(this.getDestinationCommit()) == false)
             return false;
+        if (other.getMergeBaseCommit() == null ^ this.getMergeBaseCommit() == null)
+            return false;
+        if (other.getMergeBaseCommit() != null && other.getMergeBaseCommit().equals(this.getMergeBaseCommit()) == false)
+            return false;
         return true;
     }
 
@@ -170,6 +237,7 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
         hashCode = prime * hashCode + ((getSourceCommit() == null) ? 0 : getSourceCommit().hashCode());
         hashCode = prime * hashCode + ((getDestinationCommit() == null) ? 0 : getDestinationCommit().hashCode());
+        hashCode = prime * hashCode + ((getMergeBaseCommit() == null) ? 0 : getMergeBaseCommit().hashCode());
         return hashCode;
     }
 

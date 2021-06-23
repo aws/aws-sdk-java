@@ -99,6 +99,10 @@ public class ProvisionByoipCidrRequestMarshaller implements Marshaller<Request<P
             }
         }
 
+        if (provisionByoipCidrRequest.getMultiRegion() != null) {
+            request.addParameter("MultiRegion", StringUtils.fromBoolean(provisionByoipCidrRequest.getMultiRegion()));
+        }
+
         return request;
     }
 

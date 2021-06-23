@@ -34,7 +34,11 @@ public enum PartitionInstanceType {
     SearchMedium("search.medium"),
     SearchLarge("search.large"),
     SearchXlarge("search.xlarge"),
-    Search2xlarge("search.2xlarge");
+    Search2xlarge("search.2xlarge"),
+    SearchPreviousgenerationSmall("search.previousgeneration.small"),
+    SearchPreviousgenerationLarge("search.previousgeneration.large"),
+    SearchPreviousgenerationXlarge("search.previousgeneration.xlarge"),
+    SearchPreviousgeneration2xlarge("search.previousgeneration.2xlarge");
 
     private String value;
 

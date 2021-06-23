@@ -139,12 +139,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
+     * The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
-     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a
+     * cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use
+     * the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -153,7 +153,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <li>
      * <p>
      * If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is
-     * encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
+     * encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.
      * </p>
      * </li>
      * <li>
@@ -954,12 +954,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
+     * The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
-     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a
+     * cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use
+     * the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -968,7 +968,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <li>
      * <p>
      * If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is
-     * encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
+     * encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.
      * </p>
      * </li>
      * <li>
@@ -980,12 +980,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </ul>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster
+     *        The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster
      *        snapshot.</p>
      *        <p>
-     *        The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *        restoring a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new
-     *        cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
+     *        a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you
+     *        can use the KMS key alias instead of the ARN for the KMS encryption key.
      *        </p>
      *        <p>
      *        If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -994,7 +994,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <li>
      *        <p>
      *        If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored
-     *        cluster is encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
+     *        cluster is encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.
      *        </p>
      *        </li>
      *        <li>
@@ -1011,12 +1011,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
+     * The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
-     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a
+     * cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use
+     * the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1025,7 +1025,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <li>
      * <p>
      * If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is
-     * encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
+     * encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.
      * </p>
      * </li>
      * <li>
@@ -1036,12 +1036,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </li>
      * </ul>
      * 
-     * @return The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster
+     * @return The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster
      *         snapshot.</p>
      *         <p>
-     *         The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *         restoring a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the
-     *         new cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
+     *         a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then
+     *         you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *         </p>
      *         <p>
      *         If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1050,7 +1050,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *         <li>
      *         <p>
      *         If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored
-     *         cluster is encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
+     *         cluster is encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.
      *         </p>
      *         </li>
      *         <li>
@@ -1067,12 +1067,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
+     * The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
      * </p>
      * <p>
-     * The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new cluster, then
-     * you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a
+     * cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you can use
+     * the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1081,7 +1081,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <li>
      * <p>
      * If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored cluster is
-     * encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
+     * encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.
      * </p>
      * </li>
      * <li>
@@ -1093,12 +1093,12 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </ul>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster
+     *        The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster
      *        snapshot.</p>
      *        <p>
-     *        The AWS KMS key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are
-     *        restoring a cluster with the same AWS account that owns the AWS KMS encryption key used to encrypt the new
-     *        cluster, then you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring
+     *        a cluster with the same account that owns the KMS encryption key used to encrypt the new cluster, then you
+     *        can use the KMS key alias instead of the ARN for the KMS encryption key.
      *        </p>
      *        <p>
      *        If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:
@@ -1107,7 +1107,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <li>
      *        <p>
      *        If the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored
-     *        cluster is encrypted using the AWS KMS key that was used to encrypt the snapshot or the cluster snapshot.
+     *        cluster is encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.
      *        </p>
      *        </li>
      *        <li>

@@ -29,6 +29,8 @@ public class RepositoryAnalysisMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> REPOSITORYHEAD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RepositoryHead").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCECODETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceCodeType").build();
 
     private static final RepositoryAnalysisMarshaller instance = new RepositoryAnalysisMarshaller();
 
@@ -47,6 +49,7 @@ public class RepositoryAnalysisMarshaller {
 
         try {
             protocolMarshaller.marshall(repositoryAnalysis.getRepositoryHead(), REPOSITORYHEAD_BINDING);
+            protocolMarshaller.marshall(repositoryAnalysis.getSourceCodeType(), SOURCECODETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

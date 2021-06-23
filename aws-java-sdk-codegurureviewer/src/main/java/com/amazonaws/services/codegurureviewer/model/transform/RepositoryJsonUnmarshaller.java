@@ -60,6 +60,10 @@ public class RepositoryJsonUnmarshaller implements Unmarshaller<Repository, Json
                     context.nextToken();
                     repository.setGitHubEnterpriseServer(ThirdPartySourceRepositoryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("S3Bucket", targetDepth)) {
+                    context.nextToken();
+                    repository.setS3Bucket(S3RepositoryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

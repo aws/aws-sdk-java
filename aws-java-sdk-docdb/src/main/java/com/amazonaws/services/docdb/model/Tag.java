@@ -28,16 +28,18 @@ public class Tag implements Serializable, Cloneable {
     /**
      * <p>
      * The required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be
-     * prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits, white space, '_',
-     * '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     * prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     * ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     * ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      * </p>
      */
     private String key;
     /**
      * <p>
      * The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and can't be
-     * prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits, white space, '_',
-     * '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     * prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     * ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     * ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      * </p>
      */
     private String value;
@@ -45,14 +47,16 @@ public class Tag implements Serializable, Cloneable {
     /**
      * <p>
      * The required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be
-     * prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits, white space, '_',
-     * '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     * prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     * ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     * ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      * </p>
      * 
      * @param key
      *        The required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't
-     *        be prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits, white
-     *        space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     *        be prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     *        ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     *        ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      */
 
     public void setKey(String key) {
@@ -62,13 +66,15 @@ public class Tag implements Serializable, Cloneable {
     /**
      * <p>
      * The required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be
-     * prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits, white space, '_',
-     * '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     * prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     * ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     * ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      * </p>
      * 
      * @return The required name of the tag. The string value can be from 1 to 128 Unicode characters in length and
-     *         can't be prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits,
-     *         white space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     *         can't be prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     *         ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     *         ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      */
 
     public String getKey() {
@@ -78,14 +84,16 @@ public class Tag implements Serializable, Cloneable {
     /**
      * <p>
      * The required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be
-     * prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits, white space, '_',
-     * '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     * prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     * ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     * ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      * </p>
      * 
      * @param key
      *        The required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't
-     *        be prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits, white
-     *        space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     *        be prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     *        ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     *        ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,14 +105,16 @@ public class Tag implements Serializable, Cloneable {
     /**
      * <p>
      * The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and can't be
-     * prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits, white space, '_',
-     * '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     * prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     * ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     * ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      * </p>
      * 
      * @param value
      *        The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and
-     *        can't be prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits,
-     *        white space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     *        can't be prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     *        ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     *        ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      */
 
     public void setValue(String value) {
@@ -114,13 +124,15 @@ public class Tag implements Serializable, Cloneable {
     /**
      * <p>
      * The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and can't be
-     * prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits, white space, '_',
-     * '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     * prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     * ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     * ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      * </p>
      * 
      * @return The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and
-     *         can't be prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits,
-     *         white space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     *         can't be prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     *         ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     *         ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      */
 
     public String getValue() {
@@ -130,14 +142,16 @@ public class Tag implements Serializable, Cloneable {
     /**
      * <p>
      * The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and can't be
-     * prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits, white space, '_',
-     * '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     * prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     * ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     * ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      * </p>
      * 
      * @param value
      *        The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and
-     *        can't be prefixed with "aws:" or "rds:". The string can contain only the set of Unicode letters, digits,
-     *        white space, '_', '.', '/', '=', '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+     *        can't be prefixed with "<code>aws:</code>" or "<code>rds:</code>
+     *        ". The string can contain only the set of Unicode letters, digits, white space, '_', '.', '/', '=', '+', '-' (Java regex: "
+     *        ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

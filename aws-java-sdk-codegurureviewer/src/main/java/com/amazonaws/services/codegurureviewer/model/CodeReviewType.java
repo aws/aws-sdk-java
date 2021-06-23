@@ -25,9 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an associated
- * repository. Because this type of code review is automatically generated, you cannot specify this code review type
- * using <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
- * <code>CreateCodeReview</code> </a>.
+ * repository.
  * </p>
  * </li>
  * <li>
@@ -55,6 +53,13 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private RepositoryAnalysis repositoryAnalysis;
+    /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     */
+    private java.util.List<String> analysisTypes;
 
     /**
      * <p>
@@ -115,6 +120,114 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     * 
+     * @return They types of analysis performed during a repository analysis or a pull request review. You can specify
+     *         either <code>Security</code>, <code>CodeQuality</code>, or both.
+     * @see AnalysisType
+     */
+
+    public java.util.List<String> getAnalysisTypes() {
+        return analysisTypes;
+    }
+
+    /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     * 
+     * @param analysisTypes
+     *        They types of analysis performed during a repository analysis or a pull request review. You can specify
+     *        either <code>Security</code>, <code>CodeQuality</code>, or both.
+     * @see AnalysisType
+     */
+
+    public void setAnalysisTypes(java.util.Collection<String> analysisTypes) {
+        if (analysisTypes == null) {
+            this.analysisTypes = null;
+            return;
+        }
+
+        this.analysisTypes = new java.util.ArrayList<String>(analysisTypes);
+    }
+
+    /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAnalysisTypes(java.util.Collection)} or {@link #withAnalysisTypes(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param analysisTypes
+     *        They types of analysis performed during a repository analysis or a pull request review. You can specify
+     *        either <code>Security</code>, <code>CodeQuality</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnalysisType
+     */
+
+    public CodeReviewType withAnalysisTypes(String... analysisTypes) {
+        if (this.analysisTypes == null) {
+            setAnalysisTypes(new java.util.ArrayList<String>(analysisTypes.length));
+        }
+        for (String ele : analysisTypes) {
+            this.analysisTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     * 
+     * @param analysisTypes
+     *        They types of analysis performed during a repository analysis or a pull request review. You can specify
+     *        either <code>Security</code>, <code>CodeQuality</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnalysisType
+     */
+
+    public CodeReviewType withAnalysisTypes(java.util.Collection<String> analysisTypes) {
+        setAnalysisTypes(analysisTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * They types of analysis performed during a repository analysis or a pull request review. You can specify either
+     * <code>Security</code>, <code>CodeQuality</code>, or both.
+     * </p>
+     * 
+     * @param analysisTypes
+     *        They types of analysis performed during a repository analysis or a pull request review. You can specify
+     *        either <code>Security</code>, <code>CodeQuality</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AnalysisType
+     */
+
+    public CodeReviewType withAnalysisTypes(AnalysisType... analysisTypes) {
+        java.util.ArrayList<String> analysisTypesCopy = new java.util.ArrayList<String>(analysisTypes.length);
+        for (AnalysisType value : analysisTypes) {
+            analysisTypesCopy.add(value.toString());
+        }
+        if (getAnalysisTypes() == null) {
+            setAnalysisTypes(analysisTypesCopy);
+        } else {
+            getAnalysisTypes().addAll(analysisTypesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -127,7 +240,9 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryAnalysis() != null)
-            sb.append("RepositoryAnalysis: ").append(getRepositoryAnalysis());
+            sb.append("RepositoryAnalysis: ").append(getRepositoryAnalysis()).append(",");
+        if (getAnalysisTypes() != null)
+            sb.append("AnalysisTypes: ").append(getAnalysisTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -146,6 +261,10 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRepositoryAnalysis() != null && other.getRepositoryAnalysis().equals(this.getRepositoryAnalysis()) == false)
             return false;
+        if (other.getAnalysisTypes() == null ^ this.getAnalysisTypes() == null)
+            return false;
+        if (other.getAnalysisTypes() != null && other.getAnalysisTypes().equals(this.getAnalysisTypes()) == false)
+            return false;
         return true;
     }
 
@@ -155,6 +274,7 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRepositoryAnalysis() == null) ? 0 : getRepositoryAnalysis().hashCode());
+        hashCode = prime * hashCode + ((getAnalysisTypes() == null) ? 0 : getAnalysisTypes().hashCode());
         return hashCode;
     }
 

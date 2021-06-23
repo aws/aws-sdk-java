@@ -92,6 +92,10 @@ public class CodeReviewSummaryJsonUnmarshaller implements Unmarshaller<CodeRevie
                     context.nextToken();
                     codeReviewSummary.setMetricsSummary(MetricsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SourceCodeType", targetDepth)) {
+                    context.nextToken();
+                    codeReviewSummary.setSourceCodeType(SourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

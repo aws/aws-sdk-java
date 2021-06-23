@@ -183,14 +183,14 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted cluster.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the cluster is accessed.
+     * The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries
+     * whenever the KMS key for the cluster is accessed.
      * </p>
      */
     private String dbClusterResourceId;
@@ -202,9 +202,9 @@ public class DBCluster implements Serializable, Cloneable {
     private String dBClusterArn;
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the cluster. IAM
-     * roles that are associated with a cluster grant permission for the cluster to access other AWS services on your
-     * behalf.
+     * Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM)
+     * roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services
+     * services on your behalf.
      * </p>
      */
     private java.util.List<DBClusterRole> associatedRoles;
@@ -1401,12 +1401,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted cluster.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted
-     *        cluster.
+     *        If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1415,11 +1414,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted cluster.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted
-     *         cluster.
+     * @return If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.
      */
 
     public String getKmsKeyId() {
@@ -1428,12 +1426,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted cluster.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted
-     *        cluster.
+     *        If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1444,13 +1441,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the cluster is accessed.
+     * The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries
+     * whenever the KMS key for the cluster is accessed.
      * </p>
      * 
      * @param dbClusterResourceId
-     *        The AWS Region-unique, immutable identifier for the cluster. This identifier is found in AWS CloudTrail
-     *        log entries whenever the AWS KMS key for the cluster is accessed.
+     *        The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log
+     *        entries whenever the KMS key for the cluster is accessed.
      */
 
     public void setDbClusterResourceId(String dbClusterResourceId) {
@@ -1459,12 +1456,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the cluster is accessed.
+     * The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries
+     * whenever the KMS key for the cluster is accessed.
      * </p>
      * 
-     * @return The AWS Region-unique, immutable identifier for the cluster. This identifier is found in AWS CloudTrail
-     *         log entries whenever the AWS KMS key for the cluster is accessed.
+     * @return The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log
+     *         entries whenever the KMS key for the cluster is accessed.
      */
 
     public String getDbClusterResourceId() {
@@ -1473,13 +1470,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the cluster is accessed.
+     * The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries
+     * whenever the KMS key for the cluster is accessed.
      * </p>
      * 
      * @param dbClusterResourceId
-     *        The AWS Region-unique, immutable identifier for the cluster. This identifier is found in AWS CloudTrail
-     *        log entries whenever the AWS KMS key for the cluster is accessed.
+     *        The Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log
+     *        entries whenever the KMS key for the cluster is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1530,14 +1527,14 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the cluster. IAM
-     * roles that are associated with a cluster grant permission for the cluster to access other AWS services on your
-     * behalf.
+     * Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM)
+     * roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services
+     * services on your behalf.
      * </p>
      * 
-     * @return Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the
-     *         cluster. IAM roles that are associated with a cluster grant permission for the cluster to access other
-     *         AWS services on your behalf.
+     * @return Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster.
+     *         (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon
+     *         Web Services services on your behalf.
      */
 
     public java.util.List<DBClusterRole> getAssociatedRoles() {
@@ -1546,15 +1543,15 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the cluster. IAM
-     * roles that are associated with a cluster grant permission for the cluster to access other AWS services on your
-     * behalf.
+     * Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM)
+     * roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services
+     * services on your behalf.
      * </p>
      * 
      * @param associatedRoles
-     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the
-     *        cluster. IAM roles that are associated with a cluster grant permission for the cluster to access other AWS
-     *        services on your behalf.
+     *        Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster.
+     *        (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web
+     *        Services services on your behalf.
      */
 
     public void setAssociatedRoles(java.util.Collection<DBClusterRole> associatedRoles) {
@@ -1568,9 +1565,9 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the cluster. IAM
-     * roles that are associated with a cluster grant permission for the cluster to access other AWS services on your
-     * behalf.
+     * Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM)
+     * roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services
+     * services on your behalf.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1579,9 +1576,9 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param associatedRoles
-     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the
-     *        cluster. IAM roles that are associated with a cluster grant permission for the cluster to access other AWS
-     *        services on your behalf.
+     *        Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster.
+     *        (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web
+     *        Services services on your behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1597,15 +1594,15 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the cluster. IAM
-     * roles that are associated with a cluster grant permission for the cluster to access other AWS services on your
-     * behalf.
+     * Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM)
+     * roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services
+     * services on your behalf.
      * </p>
      * 
      * @param associatedRoles
-     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the
-     *        cluster. IAM roles that are associated with a cluster grant permission for the cluster to access other AWS
-     *        services on your behalf.
+     *        Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster.
+     *        (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web
+     *        Services services on your behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

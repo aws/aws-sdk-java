@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the current creation or deletion lifecycle state of an AWS Cloud9 development environment.
+ * Information about the current creation or deletion lifecycle state of an Cloud9 development environment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/EnvironmentLifecycle" target="_top">AWS API
@@ -69,7 +69,7 @@ public class EnvironmentLifecycle implements Serializable, Cloneable, Structured
     private String reason;
     /**
      * <p>
-     * If the environment failed to delete, the Amazon Resource Name (ARN) of the related AWS resource.
+     * If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.
      * </p>
      */
     private String failureResource;
@@ -387,11 +387,12 @@ public class EnvironmentLifecycle implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If the environment failed to delete, the Amazon Resource Name (ARN) of the related AWS resource.
+     * If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.
      * </p>
      * 
      * @param failureResource
-     *        If the environment failed to delete, the Amazon Resource Name (ARN) of the related AWS resource.
+     *        If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services
+     *        resource.
      */
 
     public void setFailureResource(String failureResource) {
@@ -400,10 +401,11 @@ public class EnvironmentLifecycle implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If the environment failed to delete, the Amazon Resource Name (ARN) of the related AWS resource.
+     * If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.
      * </p>
      * 
-     * @return If the environment failed to delete, the Amazon Resource Name (ARN) of the related AWS resource.
+     * @return If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services
+     *         resource.
      */
 
     public String getFailureResource() {
@@ -412,11 +414,12 @@ public class EnvironmentLifecycle implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If the environment failed to delete, the Amazon Resource Name (ARN) of the related AWS resource.
+     * If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.
      * </p>
      * 
      * @param failureResource
-     *        If the environment failed to delete, the Amazon Resource Name (ARN) of the related AWS resource.
+     *        If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services
+     *        resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

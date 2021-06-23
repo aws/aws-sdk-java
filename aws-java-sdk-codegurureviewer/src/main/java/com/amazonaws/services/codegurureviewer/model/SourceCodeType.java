@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the source code that is analyzed in a code review. A code review can analyze the source code that is
- * specified using a pull request diff or a branch in an associated repository.
+ * Specifies the source code that is analyzed in a code review.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/SourceCodeType" target="_top">AWS
@@ -39,6 +38,33 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
     private CommitDiffSourceCodeType commitDiff;
 
     private RepositoryHeadSourceCodeType repositoryHead;
+    /**
+     * <p>
+     * A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     * <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
+     * associated repository.
+     * </p>
+     */
+    private BranchDiffSourceCodeType branchDiff;
+    /**
+     * <p>
+     * Information about an associated repository in an S3 bucket that includes its name and an
+     * <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3
+     * bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
+     * <code>S3BucketRepository</code> is required in <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code>
+     * </a> for <code>S3BucketRepository</code> based code reviews.
+     * </p>
+     */
+    private S3BucketRepository s3BucketRepository;
+    /**
+     * <p>
+     * Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru
+     * Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture
+     * metadata associated with an event trigger, such as a push or a pull request.
+     * </p>
+     */
+    private RequestMetadata requestMetadata;
 
     /**
      * <p>
@@ -119,6 +145,180 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     * <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
+     * associated repository.
+     * </p>
+     * 
+     * @param branchDiff
+     *        A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     *        <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
+     *        associated repository.
+     */
+
+    public void setBranchDiff(BranchDiffSourceCodeType branchDiff) {
+        this.branchDiff = branchDiff;
+    }
+
+    /**
+     * <p>
+     * A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     * <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
+     * associated repository.
+     * </p>
+     * 
+     * @return A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     *         <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
+     *         associated repository.
+     */
+
+    public BranchDiffSourceCodeType getBranchDiff() {
+        return this.branchDiff;
+    }
+
+    /**
+     * <p>
+     * A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     * <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
+     * associated repository.
+     * </p>
+     * 
+     * @param branchDiff
+     *        A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     *        <code>SourceCodeType</code> </a> that specifies a source branch name and a destination branch name in an
+     *        associated repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceCodeType withBranchDiff(BranchDiffSourceCodeType branchDiff) {
+        setBranchDiff(branchDiff);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about an associated repository in an S3 bucket that includes its name and an
+     * <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3
+     * bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
+     * <code>S3BucketRepository</code> is required in <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code>
+     * </a> for <code>S3BucketRepository</code> based code reviews.
+     * </p>
+     * 
+     * @param s3BucketRepository
+     *        Information about an associated repository in an S3 bucket that includes its name and an
+     *        <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of
+     *        an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
+     *        <code>S3BucketRepository</code> is required in <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     *        <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews.
+     */
+
+    public void setS3BucketRepository(S3BucketRepository s3BucketRepository) {
+        this.s3BucketRepository = s3BucketRepository;
+    }
+
+    /**
+     * <p>
+     * Information about an associated repository in an S3 bucket that includes its name and an
+     * <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3
+     * bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
+     * <code>S3BucketRepository</code> is required in <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code>
+     * </a> for <code>S3BucketRepository</code> based code reviews.
+     * </p>
+     * 
+     * @return Information about an associated repository in an S3 bucket that includes its name and an
+     *         <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of
+     *         an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
+     *         <code>S3BucketRepository</code> is required in <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     *         <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews.
+     */
+
+    public S3BucketRepository getS3BucketRepository() {
+        return this.s3BucketRepository;
+    }
+
+    /**
+     * <p>
+     * Information about an associated repository in an S3 bucket that includes its name and an
+     * <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3
+     * bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
+     * <code>S3BucketRepository</code> is required in <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code>
+     * </a> for <code>S3BucketRepository</code> based code reviews.
+     * </p>
+     * 
+     * @param s3BucketRepository
+     *        Information about an associated repository in an S3 bucket that includes its name and an
+     *        <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of
+     *        an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file.
+     *        <code>S3BucketRepository</code> is required in <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     *        <code>SourceCodeType</code> </a> for <code>S3BucketRepository</code> based code reviews.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceCodeType withS3BucketRepository(S3BucketRepository s3BucketRepository) {
+        setS3BucketRepository(s3BucketRepository);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru
+     * Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture
+     * metadata associated with an event trigger, such as a push or a pull request.
+     * </p>
+     * 
+     * @param requestMetadata
+     *        Metadata that is associated with a code review. This applies to any type of code review supported by
+     *        CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it
+     *        might capture metadata associated with an event trigger, such as a push or a pull request.
+     */
+
+    public void setRequestMetadata(RequestMetadata requestMetadata) {
+        this.requestMetadata = requestMetadata;
+    }
+
+    /**
+     * <p>
+     * Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru
+     * Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture
+     * metadata associated with an event trigger, such as a push or a pull request.
+     * </p>
+     * 
+     * @return Metadata that is associated with a code review. This applies to any type of code review supported by
+     *         CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it
+     *         might capture metadata associated with an event trigger, such as a push or a pull request.
+     */
+
+    public RequestMetadata getRequestMetadata() {
+        return this.requestMetadata;
+    }
+
+    /**
+     * <p>
+     * Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru
+     * Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture
+     * metadata associated with an event trigger, such as a push or a pull request.
+     * </p>
+     * 
+     * @param requestMetadata
+     *        Metadata that is associated with a code review. This applies to any type of code review supported by
+     *        CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it
+     *        might capture metadata associated with an event trigger, such as a push or a pull request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceCodeType withRequestMetadata(RequestMetadata requestMetadata) {
+        setRequestMetadata(requestMetadata);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +333,13 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
         if (getCommitDiff() != null)
             sb.append("CommitDiff: ").append(getCommitDiff()).append(",");
         if (getRepositoryHead() != null)
-            sb.append("RepositoryHead: ").append(getRepositoryHead());
+            sb.append("RepositoryHead: ").append(getRepositoryHead()).append(",");
+        if (getBranchDiff() != null)
+            sb.append("BranchDiff: ").append(getBranchDiff()).append(",");
+        if (getS3BucketRepository() != null)
+            sb.append("S3BucketRepository: ").append(getS3BucketRepository()).append(",");
+        if (getRequestMetadata() != null)
+            sb.append("RequestMetadata: ").append(getRequestMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +362,18 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRepositoryHead() != null && other.getRepositoryHead().equals(this.getRepositoryHead()) == false)
             return false;
+        if (other.getBranchDiff() == null ^ this.getBranchDiff() == null)
+            return false;
+        if (other.getBranchDiff() != null && other.getBranchDiff().equals(this.getBranchDiff()) == false)
+            return false;
+        if (other.getS3BucketRepository() == null ^ this.getS3BucketRepository() == null)
+            return false;
+        if (other.getS3BucketRepository() != null && other.getS3BucketRepository().equals(this.getS3BucketRepository()) == false)
+            return false;
+        if (other.getRequestMetadata() == null ^ this.getRequestMetadata() == null)
+            return false;
+        if (other.getRequestMetadata() != null && other.getRequestMetadata().equals(this.getRequestMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +384,9 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getCommitDiff() == null) ? 0 : getCommitDiff().hashCode());
         hashCode = prime * hashCode + ((getRepositoryHead() == null) ? 0 : getRepositoryHead().hashCode());
+        hashCode = prime * hashCode + ((getBranchDiff() == null) ? 0 : getBranchDiff().hashCode());
+        hashCode = prime * hashCode + ((getS3BucketRepository() == null) ? 0 : getS3BucketRepository().hashCode());
+        hashCode = prime * hashCode + ((getRequestMetadata() == null) ? 0 : getRequestMetadata().hashCode());
         return hashCode;
     }
 

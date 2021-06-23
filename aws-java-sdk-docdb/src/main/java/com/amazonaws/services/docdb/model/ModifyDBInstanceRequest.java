@@ -47,7 +47,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance
-     * classes are available in all AWS Regions.
+     * classes are available in all Regions.
      * </p>
      * <p>
      * If you modify the instance class, an outage occurs during the change. The change is applied during the next
@@ -97,11 +97,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Indicates that minor version upgrades are applied automatically to the instance during the maintenance window.
-     * Changing this parameter doesn't result in an outage except in the following case, and the change is
-     * asynchronously applied as soon as possible. An outage results if this parameter is set to <code>true</code>
-     * during the maintenance window, and a newer minor version is available, and Amazon DocumentDB has enabled
-     * automatic patching for that engine version.
+     * This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades
+     * regardless of the value set.
      * </p>
      */
     private Boolean autoMinorVersionUpgrade;
@@ -257,7 +254,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance
-     * classes are available in all AWS Regions.
+     * classes are available in all Regions.
      * </p>
      * <p>
      * If you modify the instance class, an outage occurs during the change. The change is applied during the next
@@ -269,7 +266,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBInstanceClass
      *        The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all
-     *        instance classes are available in all AWS Regions. </p>
+     *        instance classes are available in all Regions. </p>
      *        <p>
      *        If you modify the instance class, an outage occurs during the change. The change is applied during the
      *        next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -286,7 +283,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance
-     * classes are available in all AWS Regions.
+     * classes are available in all Regions.
      * </p>
      * <p>
      * If you modify the instance class, an outage occurs during the change. The change is applied during the next
@@ -297,7 +294,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all
-     *         instance classes are available in all AWS Regions. </p>
+     *         instance classes are available in all Regions. </p>
      *         <p>
      *         If you modify the instance class, an outage occurs during the change. The change is applied during the
      *         next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -314,7 +311,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all instance
-     * classes are available in all AWS Regions.
+     * classes are available in all Regions.
      * </p>
      * <p>
      * If you modify the instance class, an outage occurs during the change. The change is applied during the next
@@ -326,7 +323,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param dBInstanceClass
      *        The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>. Not all
-     *        instance classes are available in all AWS Regions. </p>
+     *        instance classes are available in all Regions. </p>
      *        <p>
      *        If you modify the instance class, an outage occurs during the change. The change is applied during the
      *        next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -599,19 +596,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor version upgrades are applied automatically to the instance during the maintenance window.
-     * Changing this parameter doesn't result in an outage except in the following case, and the change is
-     * asynchronously applied as soon as possible. An outage results if this parameter is set to <code>true</code>
-     * during the maintenance window, and a newer minor version is available, and Amazon DocumentDB has enabled
-     * automatic patching for that engine version.
+     * This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades
+     * regardless of the value set.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version upgrades are applied automatically to the instance during the maintenance
-     *        window. Changing this parameter doesn't result in an outage except in the following case, and the change
-     *        is asynchronously applied as soon as possible. An outage results if this parameter is set to
-     *        <code>true</code> during the maintenance window, and a newer minor version is available, and Amazon
-     *        DocumentDB has enabled automatic patching for that engine version.
+     *        This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version
+     *        upgrades regardless of the value set.
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -620,18 +611,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor version upgrades are applied automatically to the instance during the maintenance window.
-     * Changing this parameter doesn't result in an outage except in the following case, and the change is
-     * asynchronously applied as soon as possible. An outage results if this parameter is set to <code>true</code>
-     * during the maintenance window, and a newer minor version is available, and Amazon DocumentDB has enabled
-     * automatic patching for that engine version.
+     * This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades
+     * regardless of the value set.
      * </p>
      * 
-     * @return Indicates that minor version upgrades are applied automatically to the instance during the maintenance
-     *         window. Changing this parameter doesn't result in an outage except in the following case, and the change
-     *         is asynchronously applied as soon as possible. An outage results if this parameter is set to
-     *         <code>true</code> during the maintenance window, and a newer minor version is available, and Amazon
-     *         DocumentDB has enabled automatic patching for that engine version.
+     * @return This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version
+     *         upgrades regardless of the value set.
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -640,19 +625,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor version upgrades are applied automatically to the instance during the maintenance window.
-     * Changing this parameter doesn't result in an outage except in the following case, and the change is
-     * asynchronously applied as soon as possible. An outage results if this parameter is set to <code>true</code>
-     * during the maintenance window, and a newer minor version is available, and Amazon DocumentDB has enabled
-     * automatic patching for that engine version.
+     * This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades
+     * regardless of the value set.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version upgrades are applied automatically to the instance during the maintenance
-     *        window. Changing this parameter doesn't result in an outage except in the following case, and the change
-     *        is asynchronously applied as soon as possible. An outage results if this parameter is set to
-     *        <code>true</code> during the maintenance window, and a newer minor version is available, and Amazon
-     *        DocumentDB has enabled automatic patching for that engine version.
+     *        This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version
+     *        upgrades regardless of the value set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -663,18 +642,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor version upgrades are applied automatically to the instance during the maintenance window.
-     * Changing this parameter doesn't result in an outage except in the following case, and the change is
-     * asynchronously applied as soon as possible. An outage results if this parameter is set to <code>true</code>
-     * during the maintenance window, and a newer minor version is available, and Amazon DocumentDB has enabled
-     * automatic patching for that engine version.
+     * This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades
+     * regardless of the value set.
      * </p>
      * 
-     * @return Indicates that minor version upgrades are applied automatically to the instance during the maintenance
-     *         window. Changing this parameter doesn't result in an outage except in the following case, and the change
-     *         is asynchronously applied as soon as possible. An outage results if this parameter is set to
-     *         <code>true</code> during the maintenance window, and a newer minor version is available, and Amazon
-     *         DocumentDB has enabled automatic patching for that engine version.
+     * @return This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version
+     *         upgrades regardless of the value set.
      */
 
     public Boolean isAutoMinorVersionUpgrade() {

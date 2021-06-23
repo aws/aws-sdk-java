@@ -472,6 +472,10 @@ public interface AmazonCloudWatchEvents {
      * for changes to take effect.
      * </p>
      * <p>
+     * If you call delete rule multiple times for the same rule, all calls will succeed. When you call delete rule for a
+     * non-existent custom eventbus, <code>ResourceNotFoundException</code> is returned.
+     * </p>
+     * <p>
      * Managed rules are rules created and managed by another AWS service on your behalf. These rules are created by
      * those other AWS services to support functionality in those services. You can delete these rules using the
      * <code>Force</code> option, but you should do so only if you are sure the other service is not still using that
@@ -1103,32 +1107,57 @@ public interface AmazonCloudWatchEvents {
      * <ul>
      * <li>
      * <p>
-     * EC2 instances
+     * <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API destination</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SSM Run Command
+     * Amazon API Gateway REST API endpoints
      * </p>
      * </li>
      * <li>
      * <p>
-     * SSM Automation
+     * API Gateway
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Lambda functions
+     * AWS Batch job queue
      * </p>
      * </li>
      * <li>
      * <p>
-     * Data streams in Amazon Kinesis Data Streams
+     * CloudWatch Logs group
      * </p>
      * </li>
      * <li>
      * <p>
-     * Data delivery streams in Amazon Kinesis Data Firehose
+     * CodeBuild project
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CodePineline
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon EC2 <code>CreateSnapshot</code> API call
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon EC2 <code>RebootInstances</code> API call
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon EC2 <code>StopInstances</code> API call
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon EC2 <code>TerminateInstances</code> API call
      * </p>
      * </li>
      * <li>
@@ -1138,62 +1167,66 @@ public interface AmazonCloudWatchEvents {
      * </li>
      * <li>
      * <p>
-     * AWS Step Functions state machines
+     * Event bus in a different AWS account or Region.
+     * </p>
+     * <p>
+     * You can use an event bus in the US East (N. Virginia) us-east-1, US West (Oregon) us-west-2, or Europe (Ireland)
+     * eu-west-1 Regions as a target for a rule.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Batch jobs
+     * Firehose delivery stream (Kinesis Data Firehose)
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS CodeBuild projects
+     * Inspector assessment template (Amazon Inspector)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Pipelines in AWS CodePipeline
+     * Kinesis stream (Kinesis Data Stream)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon Inspector assessment templates
+     * AWS Lambda function
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon SNS topics
+     * Redshift clusters (Data API statement execution)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon SQS queues, including FIFO queues
+     * Amazon SNS topic
      * </p>
      * </li>
      * <li>
      * <p>
-     * The default event bus of another AWS account
+     * Amazon SQS queues (includes FIFO queues
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon API Gateway REST APIs
+     * SSM Automation
      * </p>
      * </li>
      * <li>
      * <p>
-     * Redshift Clusters to invoke Data API ExecuteStatement on
+     * SSM OpsItem
      * </p>
      * </li>
      * <li>
      * <p>
-     * Custom/SaaS HTTPS APIs via EventBridge API Destinations
+     * SSM Run Command
      * </p>
      * </li>
      * <li>
      * <p>
-     * Amazon SageMaker Model Building Pipelines
+     * Step Functions state machines
      * </p>
      * </li>
      * </ul>
@@ -1460,8 +1493,8 @@ public interface AmazonCloudWatchEvents {
 
     /**
      * <p>
-     * Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge (CloudWatch Events, rules
-     * and event buses can be tagged.
+     * Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge (CloudWatch Events),
+     * rules and event buses can be tagged.
      * </p>
      * 
      * @param untagResourceRequest

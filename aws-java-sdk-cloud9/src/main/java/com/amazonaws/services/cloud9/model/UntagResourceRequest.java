@@ -27,24 +27,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to remove tags from.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * The tag names of the tags to remove from the given AWS Cloud9 development environment.
+     * The tag names of the tags to remove from the given Cloud9 development environment.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to remove tags from.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to remove tags from.
+     *        The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to remove tags from.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to remove tags from.
+     * @return The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to remove tags from.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to remove tags from.
+     *        The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag names of the tags to remove from the given AWS Cloud9 development environment.
+     * The tag names of the tags to remove from the given Cloud9 development environment.
      * </p>
      * 
-     * @return The tag names of the tags to remove from the given AWS Cloud9 development environment.
+     * @return The tag names of the tags to remove from the given Cloud9 development environment.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag names of the tags to remove from the given AWS Cloud9 development environment.
+     * The tag names of the tags to remove from the given Cloud9 development environment.
      * </p>
      * 
      * @param tagKeys
-     *        The tag names of the tags to remove from the given AWS Cloud9 development environment.
+     *        The tag names of the tags to remove from the given Cloud9 development environment.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag names of the tags to remove from the given AWS Cloud9 development environment.
+     * The tag names of the tags to remove from the given Cloud9 development environment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The tag names of the tags to remove from the given AWS Cloud9 development environment.
+     *        The tag names of the tags to remove from the given Cloud9 development environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag names of the tags to remove from the given AWS Cloud9 development environment.
+     * The tag names of the tags to remove from the given Cloud9 development environment.
      * </p>
      * 
      * @param tagKeys
-     *        The tag names of the tags to remove from the given AWS Cloud9 development environment.
+     *        The tag names of the tags to remove from the given Cloud9 development environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

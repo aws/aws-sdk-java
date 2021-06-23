@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.cloudwatchevents.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,22 @@ public class EcsParametersMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlatformVersion").build();
     private static final MarshallingInfo<String> GROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Group").build();
+    private static final MarshallingInfo<List> CAPACITYPROVIDERSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityProviderStrategy").build();
+    private static final MarshallingInfo<Boolean> ENABLEECSMANAGEDTAGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableECSManagedTags").build();
+    private static final MarshallingInfo<Boolean> ENABLEEXECUTECOMMAND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableExecuteCommand").build();
+    private static final MarshallingInfo<List> PLACEMENTCONSTRAINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlacementConstraints").build();
+    private static final MarshallingInfo<List> PLACEMENTSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlacementStrategy").build();
+    private static final MarshallingInfo<String> PROPAGATETAGS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PropagateTags").build();
+    private static final MarshallingInfo<String> REFERENCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReferenceId").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final EcsParametersMarshaller instance = new EcsParametersMarshaller();
 
@@ -62,6 +79,14 @@ public class EcsParametersMarshaller {
             protocolMarshaller.marshall(ecsParameters.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(ecsParameters.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(ecsParameters.getGroup(), GROUP_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getCapacityProviderStrategy(), CAPACITYPROVIDERSTRATEGY_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getEnableECSManagedTags(), ENABLEECSMANAGEDTAGS_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getEnableExecuteCommand(), ENABLEEXECUTECOMMAND_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getPlacementConstraints(), PLACEMENTCONSTRAINTS_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getPlacementStrategy(), PLACEMENTSTRATEGY_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getPropagateTags(), PROPAGATETAGS_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getReferenceId(), REFERENCEID_BINDING);
+            protocolMarshaller.marshall(ecsParameters.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

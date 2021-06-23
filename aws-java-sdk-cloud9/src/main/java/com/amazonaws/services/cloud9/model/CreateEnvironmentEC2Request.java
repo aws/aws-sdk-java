@@ -30,7 +30,7 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * The name of the environment to create.
      * </p>
      * <p>
-     * This name is visible to other AWS IAM users in the same AWS account.
+     * This name is visible to other IAM users in the same Amazon Web Services account.
      * </p>
      */
     private String name;
@@ -42,11 +42,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     private String description;
     /**
      * <p>
-     * A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one time.
+     * A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in
      * the <i>Amazon EC2 API Reference</i>.
      * </p>
      */
@@ -59,17 +59,19 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     private String instanceType;
     /**
      * <p>
-     * The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.
+     * The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.
      * </p>
      */
     private String subnetId;
     /**
      * <p>
      * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
-     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.
      * </p>
      * <p>
-     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request. Because Amazon Linux
+     * AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2, which includes
+     * long term support through 2023.
      * </p>
      * <p>
      * <b>AMI aliases </b>
@@ -121,25 +123,25 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     private Integer automaticStopTimeMinutes;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM principal. If
-     * this value is not specified, the ARN defaults to this environment's creator.
+     * The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this
+     * value is not specified, the ARN defaults to this environment's creator.
      * </p>
      */
     private String ownerArn;
     /**
      * <p>
-     * An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * An array of key-value pairs that will be associated with the new Cloud9 development environment.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
      * The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code>
-     * (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).
+     * (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
-     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.
      * </p>
      */
     private String connectionType;
@@ -149,13 +151,13 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * The name of the environment to create.
      * </p>
      * <p>
-     * This name is visible to other AWS IAM users in the same AWS account.
+     * This name is visible to other IAM users in the same Amazon Web Services account.
      * </p>
      * 
      * @param name
      *        The name of the environment to create.</p>
      *        <p>
-     *        This name is visible to other AWS IAM users in the same AWS account.
+     *        This name is visible to other IAM users in the same Amazon Web Services account.
      */
 
     public void setName(String name) {
@@ -167,12 +169,12 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * The name of the environment to create.
      * </p>
      * <p>
-     * This name is visible to other AWS IAM users in the same AWS account.
+     * This name is visible to other IAM users in the same Amazon Web Services account.
      * </p>
      * 
      * @return The name of the environment to create.</p>
      *         <p>
-     *         This name is visible to other AWS IAM users in the same AWS account.
+     *         This name is visible to other IAM users in the same Amazon Web Services account.
      */
 
     public String getName() {
@@ -184,13 +186,13 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * The name of the environment to create.
      * </p>
      * <p>
-     * This name is visible to other AWS IAM users in the same AWS account.
+     * This name is visible to other IAM users in the same Amazon Web Services account.
      * </p>
      * 
      * @param name
      *        The name of the environment to create.</p>
      *        <p>
-     *        This name is visible to other AWS IAM users in the same AWS account.
+     *        This name is visible to other IAM users in the same Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,20 +243,20 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one time.
+     * A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in
      * the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one
+     *        A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one
      *        time.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client
      *        Tokens</a> in the <i>Amazon EC2 API Reference</i>.
      */
 
@@ -264,19 +266,19 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one time.
+     * A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in
      * the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
-     * @return A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one
+     * @return A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one
      *         time.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client
      *         Tokens</a> in the <i>Amazon EC2 API Reference</i>.
      */
 
@@ -286,20 +288,20 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one time.
+     * A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in
      * the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param clientRequestToken
-     *        A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one
+     *        A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one
      *        time.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client
      *        Tokens</a> in the <i>Amazon EC2 API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -351,11 +353,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.
+     * The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.
+     *        The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.
      */
 
     public void setSubnetId(String subnetId) {
@@ -364,10 +366,10 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.
+     * The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.
      * </p>
      * 
-     * @return The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.
+     * @return The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.
      */
 
     public String getSubnetId() {
@@ -376,11 +378,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.
+     * The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.
+     *        The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,10 +394,12 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
-     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.
      * </p>
      * <p>
-     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request. Because Amazon Linux
+     * AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2, which includes
+     * long term support through 2023.
      * </p>
      * <p>
      * <b>AMI aliases </b>
@@ -440,9 +444,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * 
      * @param imageId
      *        The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI
-     *        for the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.</p>
+     *        for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
      *        <p>
-     *        The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     *        The default AMI is used if the parameter isn't explicitly assigned a value in the request. Because Amazon
+     *        Linux AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2,
+     *        which includes long term support through 2023.
      *        </p>
      *        <p>
      *        <b>AMI aliases </b>
@@ -492,10 +498,12 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
-     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.
      * </p>
      * <p>
-     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request. Because Amazon Linux
+     * AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2, which includes
+     * long term support through 2023.
      * </p>
      * <p>
      * <b>AMI aliases </b>
@@ -539,9 +547,12 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * </ul>
      * 
      * @return The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an
-     *         AMI for the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.</p>
+     *         AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM)
+     *         path.</p>
      *         <p>
-     *         The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     *         The default AMI is used if the parameter isn't explicitly assigned a value in the request. Because Amazon
+     *         Linux AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2,
+     *         which includes long term support through 2023.
      *         </p>
      *         <p>
      *         <b>AMI aliases </b>
@@ -591,10 +602,12 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
-     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.
      * </p>
      * <p>
-     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request. Because Amazon Linux
+     * AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2, which includes
+     * long term support through 2023.
      * </p>
      * <p>
      * <b>AMI aliases </b>
@@ -639,9 +652,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * 
      * @param imageId
      *        The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI
-     *        for the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.</p>
+     *        for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
      *        <p>
-     *        The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     *        The default AMI is used if the parameter isn't explicitly assigned a value in the request. Because Amazon
+     *        Linux AMI has ended standard support as of December 31, 2020, we recommend you choose Amazon Linux 2,
+     *        which includes long term support through 2023.
      *        </p>
      *        <p>
      *        <b>AMI aliases </b>
@@ -732,13 +747,13 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM principal. If
-     * this value is not specified, the ARN defaults to this environment's creator.
+     * The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this
+     * value is not specified, the ARN defaults to this environment's creator.
      * </p>
      * 
      * @param ownerArn
-     *        The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM principal.
-     *        If this value is not specified, the ARN defaults to this environment's creator.
+     *        The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If
+     *        this value is not specified, the ARN defaults to this environment's creator.
      */
 
     public void setOwnerArn(String ownerArn) {
@@ -747,12 +762,12 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM principal. If
-     * this value is not specified, the ARN defaults to this environment's creator.
+     * The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this
+     * value is not specified, the ARN defaults to this environment's creator.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM
-     *         principal. If this value is not specified, the ARN defaults to this environment's creator.
+     * @return The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If
+     *         this value is not specified, the ARN defaults to this environment's creator.
      */
 
     public String getOwnerArn() {
@@ -761,13 +776,13 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM principal. If
-     * this value is not specified, the ARN defaults to this environment's creator.
+     * The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this
+     * value is not specified, the ARN defaults to this environment's creator.
      * </p>
      * 
      * @param ownerArn
-     *        The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM principal.
-     *        If this value is not specified, the ARN defaults to this environment's creator.
+     *        The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If
+     *        this value is not specified, the ARN defaults to this environment's creator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -778,10 +793,10 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * An array of key-value pairs that will be associated with the new Cloud9 development environment.
      * </p>
      * 
-     * @return An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * @return An array of key-value pairs that will be associated with the new Cloud9 development environment.
      */
 
     public java.util.List<Tag> getTags() {
@@ -790,11 +805,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * An array of key-value pairs that will be associated with the new Cloud9 development environment.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     *        An array of key-value pairs that will be associated with the new Cloud9 development environment.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -808,7 +823,7 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * An array of key-value pairs that will be associated with the new Cloud9 development environment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -817,7 +832,7 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     *        An array of key-value pairs that will be associated with the new Cloud9 development environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -833,11 +848,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     * An array of key-value pairs that will be associated with the new Cloud9 development environment.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+     *        An array of key-value pairs that will be associated with the new Cloud9 development environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -849,21 +864,21 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code>
-     * (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).
+     * (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
-     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.
      * </p>
      * 
      * @param connectionType
      *        The connection type used for connecting to an Amazon EC2 environment. Valid values are
-     *        <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems
+     *        <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems
      *        Manager).</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2
-     *        instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     *        instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.
      * @see ConnectionType
      */
 
@@ -874,20 +889,20 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code>
-     * (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).
+     * (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
-     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.
      * </p>
      * 
      * @return The connection type used for connecting to an Amazon EC2 environment. Valid values are
-     *         <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems
+     *         <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems
      *         Manager).</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2
-     *         instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     *         instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.
      * @see ConnectionType
      */
 
@@ -898,21 +913,21 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code>
-     * (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).
+     * (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
-     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.
      * </p>
      * 
      * @param connectionType
      *        The connection type used for connecting to an Amazon EC2 environment. Valid values are
-     *        <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems
+     *        <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems
      *        Manager).</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2
-     *        instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     *        instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -925,21 +940,21 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code>
-     * (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).
+     * (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
-     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.
      * </p>
      * 
      * @param connectionType
      *        The connection type used for connecting to an Amazon EC2 environment. Valid values are
-     *        <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems
+     *        <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems
      *        Manager).</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2
-     *        instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     *        instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */

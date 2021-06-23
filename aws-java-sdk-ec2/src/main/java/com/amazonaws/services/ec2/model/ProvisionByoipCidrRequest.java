@@ -61,6 +61,8 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> poolTagSpecifications;
+    /** <para>Reserved.</para> */
+    private Boolean multiRegion;
 
     /**
      * <p>
@@ -346,6 +348,50 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
     }
 
     /**
+     * <para>Reserved.</para>
+     * 
+     * @param multiRegion
+     *        Reserved.
+     */
+
+    public void setMultiRegion(Boolean multiRegion) {
+        this.multiRegion = multiRegion;
+    }
+
+    /**
+     * <para>Reserved.</para>
+     * 
+     * @return Reserved.
+     */
+
+    public Boolean getMultiRegion() {
+        return this.multiRegion;
+    }
+
+    /**
+     * <para>Reserved.</para>
+     * 
+     * @param multiRegion
+     *        Reserved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionByoipCidrRequest withMultiRegion(Boolean multiRegion) {
+        setMultiRegion(multiRegion);
+        return this;
+    }
+
+    /**
+     * <para>Reserved.</para>
+     * 
+     * @return Reserved.
+     */
+
+    public Boolean isMultiRegion() {
+        return this.multiRegion;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -377,7 +423,9 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getPoolTagSpecifications() != null)
-            sb.append("PoolTagSpecifications: ").append(getPoolTagSpecifications());
+            sb.append("PoolTagSpecifications: ").append(getPoolTagSpecifications()).append(",");
+        if (getMultiRegion() != null)
+            sb.append("MultiRegion: ").append(getMultiRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -412,6 +460,10 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
             return false;
         if (other.getPoolTagSpecifications() != null && other.getPoolTagSpecifications().equals(this.getPoolTagSpecifications()) == false)
             return false;
+        if (other.getMultiRegion() == null ^ this.getMultiRegion() == null)
+            return false;
+        if (other.getMultiRegion() != null && other.getMultiRegion().equals(this.getMultiRegion()) == false)
+            return false;
         return true;
     }
 
@@ -425,6 +477,7 @@ public class ProvisionByoipCidrRequest extends AmazonWebServiceRequest implement
         hashCode = prime * hashCode + ((getPubliclyAdvertisable() == null) ? 0 : getPubliclyAdvertisable().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getPoolTagSpecifications() == null) ? 0 : getPoolTagSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getMultiRegion() == null) ? 0 : getMultiRegion().hashCode());
         return hashCode;
     }
 

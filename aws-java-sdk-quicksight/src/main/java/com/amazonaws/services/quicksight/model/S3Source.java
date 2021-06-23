@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A physical table type for as S3 data source.
+ * A physical table type for an S3 data source.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/S3Source" target="_top">AWS API
@@ -42,8 +42,13 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
     private UploadSettings uploadSettings;
     /**
      * <p>
-     * A physical table type for as S3 data source.
+     * A physical table type for an S3 data source.
      * </p>
+     * <note>
+     * <p>
+     * For non-JSON files, only <code>STRING</code> data types are supported in input columns.
+     * </p>
+     * </note>
      */
     private java.util.List<InputColumn> inputColumns;
 
@@ -129,10 +134,18 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A physical table type for as S3 data source.
+     * A physical table type for an S3 data source.
      * </p>
+     * <note>
+     * <p>
+     * For non-JSON files, only <code>STRING</code> data types are supported in input columns.
+     * </p>
+     * </note>
      * 
-     * @return A physical table type for as S3 data source.
+     * @return A physical table type for an S3 data source.</p> <note>
+     *         <p>
+     *         For non-JSON files, only <code>STRING</code> data types are supported in input columns.
+     *         </p>
      */
 
     public java.util.List<InputColumn> getInputColumns() {
@@ -141,11 +154,19 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A physical table type for as S3 data source.
+     * A physical table type for an S3 data source.
      * </p>
+     * <note>
+     * <p>
+     * For non-JSON files, only <code>STRING</code> data types are supported in input columns.
+     * </p>
+     * </note>
      * 
      * @param inputColumns
-     *        A physical table type for as S3 data source.
+     *        A physical table type for an S3 data source.</p> <note>
+     *        <p>
+     *        For non-JSON files, only <code>STRING</code> data types are supported in input columns.
+     *        </p>
      */
 
     public void setInputColumns(java.util.Collection<InputColumn> inputColumns) {
@@ -159,8 +180,13 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A physical table type for as S3 data source.
+     * A physical table type for an S3 data source.
      * </p>
+     * <note>
+     * <p>
+     * For non-JSON files, only <code>STRING</code> data types are supported in input columns.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInputColumns(java.util.Collection)} or {@link #withInputColumns(java.util.Collection)} if you want to
@@ -168,7 +194,10 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param inputColumns
-     *        A physical table type for as S3 data source.
+     *        A physical table type for an S3 data source.</p> <note>
+     *        <p>
+     *        For non-JSON files, only <code>STRING</code> data types are supported in input columns.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +213,19 @@ public class S3Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A physical table type for as S3 data source.
+     * A physical table type for an S3 data source.
      * </p>
+     * <note>
+     * <p>
+     * For non-JSON files, only <code>STRING</code> data types are supported in input columns.
+     * </p>
+     * </note>
      * 
      * @param inputColumns
-     *        A physical table type for as S3 data source.
+     *        A physical table type for an S3 data source.</p> <note>
+     *        <p>
+     *        For non-JSON files, only <code>STRING</code> data types are supported in input columns.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

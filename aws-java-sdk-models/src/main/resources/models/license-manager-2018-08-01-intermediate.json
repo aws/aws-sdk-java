@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -163,6 +163,10 @@
         "documentation" : "<p>The provided input is not valid. Try your request again.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "InvalidParameterValueException",
+        "documentation" : "<p>One or more parameter values are not valid.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource cannot be found.</p>",
         "httpStatusCode" : null
@@ -222,6 +226,10 @@
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>The provided input is not valid. Try your request again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidParameterValueException",
+        "documentation" : "<p>One or more parameter values are not valid.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -295,6 +303,10 @@
       "exceptions" : [ {
         "exceptionName" : "ValidationException",
         "documentation" : "<p>The provided input is not valid. Try your request again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidParameterValueException",
+        "documentation" : "<p>One or more parameter values are not valid.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -10417,7 +10429,7 @@
       },
       "members" : [ {
         "c2jName" : "ClientToken",
-        "c2jShape" : "String",
+        "c2jShape" : "ClientToken",
         "deprecated" : false,
         "documentation" : "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
         "endpointDiscoveryId" : false,
@@ -11155,7 +11167,7 @@
         },
         "ClientToken" : {
           "c2jName" : "ClientToken",
-          "c2jShape" : "String",
+          "c2jShape" : "ClientToken",
           "deprecated" : false,
           "documentation" : "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
           "endpointDiscoveryId" : false,
@@ -12098,7 +12110,7 @@
       },
       "members" : [ {
         "c2jName" : "ClientToken",
-        "c2jShape" : "String",
+        "c2jShape" : "ClientToken",
         "deprecated" : false,
         "documentation" : "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
         "endpointDiscoveryId" : false,
@@ -12526,6 +12538,75 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "StatusReason",
+        "c2jShape" : "StatusReasonMessage",
+        "deprecated" : false,
+        "documentation" : "",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param statusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withStatusReason",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getStatusReason",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "StatusReason",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "StatusReason",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "StatusReason",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param statusReason */",
+        "setterMethodName" : "setStatusReason",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "statusReason",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param statusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "statusReason",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "SourceVersion",
         "c2jShape" : "String",
         "deprecated" : false,
@@ -12752,7 +12833,7 @@
         },
         "ClientToken" : {
           "c2jName" : "ClientToken",
-          "c2jShape" : "String",
+          "c2jShape" : "ClientToken",
           "deprecated" : false,
           "documentation" : "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
           "endpointDiscoveryId" : false,
@@ -13095,6 +13176,76 @@
             "variableName" : "status",
             "variableType" : "String",
             "documentation" : "<p>Grant status.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "StatusReason" : {
+          "c2jName" : "StatusReason",
+          "c2jShape" : "StatusReasonMessage",
+          "deprecated" : false,
+          "documentation" : "",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param statusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withStatusReason",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getStatusReason",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "StatusReason",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "StatusReason",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "StatusReason",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param statusReason */",
+          "setterMethodName" : "setStatusReason",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "statusReason",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param statusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "statusReason",
+            "variableType" : "String",
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -17999,7 +18150,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "ClientToken",
-        "c2jShape" : "String",
+        "c2jShape" : "ClientToken",
         "deprecated" : false,
         "documentation" : "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
         "endpointDiscoveryId" : false,
@@ -18140,7 +18291,7 @@
         },
         "ClientToken" : {
           "c2jName" : "ClientToken",
-          "c2jShape" : "String",
+          "c2jShape" : "ClientToken",
           "deprecated" : false,
           "documentation" : "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
           "endpointDiscoveryId" : false,
@@ -20375,7 +20526,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "ClientToken",
-        "c2jShape" : "String",
+        "c2jShape" : "ClientToken",
         "deprecated" : false,
         "documentation" : "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
         "endpointDiscoveryId" : false,
@@ -20515,7 +20666,7 @@
       "membersAsMap" : {
         "ClientToken" : {
           "c2jName" : "ClientToken",
-          "c2jShape" : "String",
+          "c2jShape" : "ClientToken",
           "deprecated" : false,
           "documentation" : "<p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>",
           "endpointDiscoveryId" : false,
@@ -22476,7 +22627,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "ClientToken",
-        "c2jShape" : "IdempotencyToken",
+        "c2jShape" : "ClientToken",
         "deprecated" : false,
         "documentation" : "<p>Idempotency token, valid for 10 minutes.</p>",
         "endpointDiscoveryId" : false,
@@ -22547,7 +22698,7 @@
       "membersAsMap" : {
         "ClientToken" : {
           "c2jName" : "ClientToken",
-          "c2jShape" : "IdempotencyToken",
+          "c2jShape" : "ClientToken",
           "deprecated" : false,
           "documentation" : "<p>Idempotency token, valid for 10 minutes.</p>",
           "endpointDiscoveryId" : false,
@@ -23965,6 +24116,75 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "StatusReason",
+        "c2jShape" : "StatusReasonMessage",
+        "deprecated" : false,
+        "documentation" : "",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param statusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withStatusReason",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getStatusReason",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "StatusReason",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "StatusReason",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "StatusReason",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param statusReason */",
+        "setterMethodName" : "setStatusReason",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "statusReason",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param statusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "statusReason",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Version",
         "c2jShape" : "String",
         "deprecated" : false,
@@ -24100,6 +24320,76 @@
             "variableName" : "grantArn",
             "variableType" : "String",
             "documentation" : "<p>Amazon Resource Name (ARN) of the grant.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "StatusReason" : {
+          "c2jName" : "StatusReason",
+          "c2jShape" : "StatusReasonMessage",
+          "deprecated" : false,
+          "documentation" : "",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param statusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withStatusReason",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getStatusReason",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "StatusReason",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "StatusReason",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "StatusReason",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param statusReason */",
+          "setterMethodName" : "setStatusReason",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "statusReason",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param statusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "statusReason",
+            "variableType" : "String",
+            "documentation" : "",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -36820,7 +37110,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "StatusReason",
-        "c2jShape" : "String",
+        "c2jShape" : "StatusReasonMessage",
         "deprecated" : false,
         "documentation" : "<p>Grant status reason.</p>",
         "endpointDiscoveryId" : false,
@@ -37757,7 +38047,7 @@
         },
         "StatusReason" : {
           "c2jName" : "StatusReason",
-          "c2jShape" : "String",
+          "c2jShape" : "StatusReasonMessage",
           "deprecated" : false,
           "documentation" : "<p>Grant status reason.</p>",
           "endpointDiscoveryId" : false,
@@ -37953,6 +38243,9 @@
       }, {
         "name" : "DISABLED",
         "value" : "DISABLED"
+      }, {
+        "name" : "WORKFLOW_COMPLETED",
+        "value" : "WORKFLOW_COMPLETED"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.licensemanager.enum.GrantStatus",
@@ -69767,6 +70060,75 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "ReceivedStatusReason",
+        "c2jShape" : "StatusReasonMessage",
+        "deprecated" : false,
+        "documentation" : "",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param receivedStatusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withReceivedStatusReason",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getReceivedStatusReason",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ReceivedStatusReason",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ReceivedStatusReason",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ReceivedStatusReason",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param receivedStatusReason */",
+        "setterMethodName" : "setReceivedStatusReason",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "receivedStatusReason",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param receivedStatusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "receivedStatusReason",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "AllowedOperations",
         "c2jShape" : "AllowedOperationList",
         "deprecated" : false,
@@ -70144,6 +70506,76 @@
             "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
+        },
+        "ReceivedStatusReason" : {
+          "c2jName" : "ReceivedStatusReason",
+          "c2jShape" : "StatusReasonMessage",
+          "deprecated" : false,
+          "documentation" : "",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param receivedStatusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withReceivedStatusReason",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getReceivedStatusReason",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ReceivedStatusReason",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ReceivedStatusReason",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ReceivedStatusReason",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param receivedStatusReason */",
+          "setterMethodName" : "setReceivedStatusReason",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "receivedStatusReason",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param receivedStatusReason \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "receivedStatusReason",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
         }
       },
       "packageName" : "com.amazonaws.services.licensemanager.model",
@@ -70200,6 +70632,9 @@
       }, {
         "name" : "DISABLED",
         "value" : "DISABLED"
+      }, {
+        "name" : "WORKFLOW_COMPLETED",
+        "value" : "WORKFLOW_COMPLETED"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.licensemanager.enum.ReceivedStatus",

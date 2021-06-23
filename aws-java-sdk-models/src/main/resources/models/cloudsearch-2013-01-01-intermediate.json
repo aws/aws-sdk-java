@@ -163,6 +163,14 @@
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request was rejected because a resource limit has already been met.</p>",
         "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ResourceAlreadyExistsException",
+        "documentation" : "<p>The request was rejected because it attempted to create a resource that already exists.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p>The request was rejected because it has invalid parameters.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -31338,6 +31346,18 @@
       }, {
         "name" : "Search2xlarge",
         "value" : "search.2xlarge"
+      }, {
+        "name" : "SearchPreviousgenerationSmall",
+        "value" : "search.previousgeneration.small"
+      }, {
+        "name" : "SearchPreviousgenerationLarge",
+        "value" : "search.previousgeneration.large"
+      }, {
+        "name" : "SearchPreviousgenerationXlarge",
+        "value" : "search.previousgeneration.xlarge"
+      }, {
+        "name" : "SearchPreviousgeneration2xlarge",
+        "value" : "search.previousgeneration.2xlarge"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.cloudsearchv2.enum.PartitionInstanceType",
@@ -31368,6 +31388,47 @@
         "documentation" : null,
         "simpleType" : "PartitionInstanceType",
         "variableSetterType" : "PartitionInstanceType"
+      },
+      "wrapper" : false
+    },
+    "ResourceAlreadyExistsException" : {
+      "c2jName" : "ResourceAlreadyExistsException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The request was rejected because it attempted to create a resource that already exists.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : "ResourceAlreadyExists",
+      "fullyQualifiedName" : "com.amazonaws.services.cloudsearchv2.exception.ResourceAlreadyExistsException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudsearchv2.exception",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ResourceAlreadyExistsException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ResourceAlreadyExistsException",
+        "variableName" : "resourceAlreadyExistsException",
+        "variableType" : "ResourceAlreadyExistsException",
+        "documentation" : null,
+        "simpleType" : "ResourceAlreadyExistsException",
+        "variableSetterType" : "ResourceAlreadyExistsException"
       },
       "wrapper" : false
     },

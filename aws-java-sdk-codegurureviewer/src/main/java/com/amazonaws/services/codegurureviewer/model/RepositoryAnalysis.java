@@ -39,6 +39,8 @@ public class RepositoryAnalysis implements Serializable, Cloneable, StructuredPo
      */
     private RepositoryHeadSourceCodeType repositoryHead;
 
+    private SourceCodeType sourceCodeType;
+
     /**
      * <p>
      * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
@@ -86,6 +88,32 @@ public class RepositoryAnalysis implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * @param sourceCodeType
+     */
+
+    public void setSourceCodeType(SourceCodeType sourceCodeType) {
+        this.sourceCodeType = sourceCodeType;
+    }
+
+    /**
+     * @return
+     */
+
+    public SourceCodeType getSourceCodeType() {
+        return this.sourceCodeType;
+    }
+
+    /**
+     * @param sourceCodeType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RepositoryAnalysis withSourceCodeType(SourceCodeType sourceCodeType) {
+        setSourceCodeType(sourceCodeType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -98,7 +126,9 @@ public class RepositoryAnalysis implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryHead() != null)
-            sb.append("RepositoryHead: ").append(getRepositoryHead());
+            sb.append("RepositoryHead: ").append(getRepositoryHead()).append(",");
+        if (getSourceCodeType() != null)
+            sb.append("SourceCodeType: ").append(getSourceCodeType());
         sb.append("}");
         return sb.toString();
     }
@@ -117,6 +147,10 @@ public class RepositoryAnalysis implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRepositoryHead() != null && other.getRepositoryHead().equals(this.getRepositoryHead()) == false)
             return false;
+        if (other.getSourceCodeType() == null ^ this.getSourceCodeType() == null)
+            return false;
+        if (other.getSourceCodeType() != null && other.getSourceCodeType().equals(this.getSourceCodeType()) == false)
+            return false;
         return true;
     }
 
@@ -126,6 +160,7 @@ public class RepositoryAnalysis implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRepositoryHead() == null) ? 0 : getRepositoryHead().hashCode());
+        hashCode = prime * hashCode + ((getSourceCodeType() == null) ? 0 : getSourceCodeType().hashCode());
         return hashCode;
     }
 

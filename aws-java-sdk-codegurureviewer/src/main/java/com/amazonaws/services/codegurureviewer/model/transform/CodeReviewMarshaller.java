@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.codegurureviewer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -55,6 +56,8 @@ public class CodeReviewMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationArn").build();
     private static final MarshallingInfo<StructuredPojo> METRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Metrics").build();
+    private static final MarshallingInfo<List> ANALYSISTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AnalysisTypes").build();
 
     private static final CodeReviewMarshaller instance = new CodeReviewMarshaller();
 
@@ -86,6 +89,7 @@ public class CodeReviewMarshaller {
             protocolMarshaller.marshall(codeReview.getSourceCodeType(), SOURCECODETYPE_BINDING);
             protocolMarshaller.marshall(codeReview.getAssociationArn(), ASSOCIATIONARN_BINDING);
             protocolMarshaller.marshall(codeReview.getMetrics(), METRICS_BINDING);
+            protocolMarshaller.marshall(codeReview.getAnalysisTypes(), ANALYSISTYPES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

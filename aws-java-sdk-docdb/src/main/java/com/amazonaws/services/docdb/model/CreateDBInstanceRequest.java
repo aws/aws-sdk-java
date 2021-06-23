@@ -77,7 +77,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The Amazon EC2 Availability Zone that the instance is created in.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
@@ -92,8 +92,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week.
      * </p>
      * <p>
      * Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -105,10 +105,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
+     * This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades
+     * regardless of the value set.
      * </p>
      * <p>
-     * Default: <code>true</code>
+     * Default: <code>false</code>
      * </p>
      */
     private Boolean autoMinorVersionUpgrade;
@@ -413,7 +414,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The Amazon EC2 Availability Zone that the instance is created in.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
@@ -422,7 +423,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param availabilityZone
      *        The Amazon EC2 Availability Zone that the instance is created in. </p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
@@ -437,7 +438,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The Amazon EC2 Availability Zone that the instance is created in.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
@@ -445,7 +446,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The Amazon EC2 Availability Zone that the instance is created in. </p>
      *         <p>
-     *         Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *         Default: A random, system-chosen Availability Zone in the endpoint's Region.
      *         </p>
      *         <p>
      *         Example: <code>us-east-1d</code>
@@ -460,7 +461,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The Amazon EC2 Availability Zone that the instance is created in.
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
@@ -469,7 +470,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param availabilityZone
      *        The Amazon EC2 Availability Zone that the instance is created in. </p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
@@ -489,8 +490,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week.
      * </p>
      * <p>
      * Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -506,7 +507,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Region,
      *        occurring on a random day of the week.
      *        </p>
      *        <p>
@@ -528,8 +529,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week.
      * </p>
      * <p>
      * Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -544,7 +545,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each Region,
      *         occurring on a random day of the week.
      *         </p>
      *         <p>
@@ -566,8 +567,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week.
      * </p>
      * <p>
      * Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
@@ -583,7 +584,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Region,
      *        occurring on a random day of the week.
      *        </p>
      *        <p>
@@ -601,17 +602,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
+     * This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades
+     * regardless of the value set.
      * </p>
      * <p>
-     * Default: <code>true</code>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades are applied automatically to the instance during the maintenance
-     *        window.</p>
+     *        This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version
+     *        upgrades regardless of the value set.</p>
      *        <p>
-     *        Default: <code>true</code>
+     *        Default: <code>false</code>
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -620,16 +622,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
+     * This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades
+     * regardless of the value set.
      * </p>
      * <p>
-     * Default: <code>true</code>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades are applied automatically to the instance during the maintenance
-     *         window.</p>
+     * @return This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version
+     *         upgrades regardless of the value set.</p>
      *         <p>
-     *         Default: <code>true</code>
+     *         Default: <code>false</code>
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -638,17 +641,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
+     * This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades
+     * regardless of the value set.
      * </p>
      * <p>
-     * Default: <code>true</code>
+     * Default: <code>false</code>
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor engine upgrades are applied automatically to the instance during the maintenance
-     *        window.</p>
+     *        This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version
+     *        upgrades regardless of the value set.</p>
      *        <p>
-     *        Default: <code>true</code>
+     *        Default: <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -659,16 +663,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
+     * This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades
+     * regardless of the value set.
      * </p>
      * <p>
-     * Default: <code>true</code>
+     * Default: <code>false</code>
      * </p>
      * 
-     * @return Indicates that minor engine upgrades are applied automatically to the instance during the maintenance
-     *         window.</p>
+     * @return This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version
+     *         upgrades regardless of the value set.</p>
      *         <p>
-     *         Default: <code>true</code>
+     *         Default: <code>false</code>
      */
 
     public Boolean isAutoMinorVersionUpgrade() {

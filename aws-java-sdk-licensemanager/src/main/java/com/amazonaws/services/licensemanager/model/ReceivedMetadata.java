@@ -34,6 +34,8 @@ public class ReceivedMetadata implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String receivedStatus;
+
+    private String receivedStatusReason;
     /**
      * <p>
      * Allowed operations.
@@ -97,6 +99,32 @@ public class ReceivedMetadata implements Serializable, Cloneable, StructuredPojo
 
     public ReceivedMetadata withReceivedStatus(ReceivedStatus receivedStatus) {
         this.receivedStatus = receivedStatus.toString();
+        return this;
+    }
+
+    /**
+     * @param receivedStatusReason
+     */
+
+    public void setReceivedStatusReason(String receivedStatusReason) {
+        this.receivedStatusReason = receivedStatusReason;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getReceivedStatusReason() {
+        return this.receivedStatusReason;
+    }
+
+    /**
+     * @param receivedStatusReason
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReceivedMetadata withReceivedStatusReason(String receivedStatusReason) {
+        setReceivedStatusReason(receivedStatusReason);
         return this;
     }
 
@@ -212,6 +240,8 @@ public class ReceivedMetadata implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getReceivedStatus() != null)
             sb.append("ReceivedStatus: ").append(getReceivedStatus()).append(",");
+        if (getReceivedStatusReason() != null)
+            sb.append("ReceivedStatusReason: ").append(getReceivedStatusReason()).append(",");
         if (getAllowedOperations() != null)
             sb.append("AllowedOperations: ").append(getAllowedOperations());
         sb.append("}");
@@ -232,6 +262,10 @@ public class ReceivedMetadata implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getReceivedStatus() != null && other.getReceivedStatus().equals(this.getReceivedStatus()) == false)
             return false;
+        if (other.getReceivedStatusReason() == null ^ this.getReceivedStatusReason() == null)
+            return false;
+        if (other.getReceivedStatusReason() != null && other.getReceivedStatusReason().equals(this.getReceivedStatusReason()) == false)
+            return false;
         if (other.getAllowedOperations() == null ^ this.getAllowedOperations() == null)
             return false;
         if (other.getAllowedOperations() != null && other.getAllowedOperations().equals(this.getAllowedOperations()) == false)
@@ -245,6 +279,7 @@ public class ReceivedMetadata implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getReceivedStatus() == null) ? 0 : getReceivedStatus().hashCode());
+        hashCode = prime * hashCode + ((getReceivedStatusReason() == null) ? 0 : getReceivedStatusReason().hashCode());
         hashCode = prime * hashCode + ((getAllowedOperations() == null) ? 0 : getAllowedOperations().hashCode());
         return hashCode;
     }

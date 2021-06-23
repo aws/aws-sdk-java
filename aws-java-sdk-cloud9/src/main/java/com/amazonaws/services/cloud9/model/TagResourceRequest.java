@@ -27,24 +27,24 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to add tags to.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.
      * </p>
      */
     private String resourceARN;
     /**
      * <p>
-     * The list of tags to add to the given AWS Cloud9 development environment.
+     * The list of tags to add to the given Cloud9 development environment.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to add tags to.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to add tags to.
+     *        The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to add tags to.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to add tags to.
+     * @return The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.
      */
 
     public String getResourceARN() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to add tags to.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to add tags to.
+     *        The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of tags to add to the given AWS Cloud9 development environment.
+     * The list of tags to add to the given Cloud9 development environment.
      * </p>
      * 
-     * @return The list of tags to add to the given AWS Cloud9 development environment.
+     * @return The list of tags to add to the given Cloud9 development environment.
      */
 
     public java.util.List<Tag> getTags() {
@@ -92,11 +92,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of tags to add to the given AWS Cloud9 development environment.
+     * The list of tags to add to the given Cloud9 development environment.
      * </p>
      * 
      * @param tags
-     *        The list of tags to add to the given AWS Cloud9 development environment.
+     *        The list of tags to add to the given Cloud9 development environment.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -110,7 +110,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of tags to add to the given AWS Cloud9 development environment.
+     * The list of tags to add to the given Cloud9 development environment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The list of tags to add to the given AWS Cloud9 development environment.
+     *        The list of tags to add to the given Cloud9 development environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of tags to add to the given AWS Cloud9 development environment.
+     * The list of tags to add to the given Cloud9 development environment.
      * </p>
      * 
      * @param tags
-     *        The list of tags to add to the given AWS Cloud9 development environment.
+     *        The list of tags to add to the given Cloud9 development environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

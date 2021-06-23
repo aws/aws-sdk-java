@@ -29,6 +29,8 @@ public class DeleteGrantRequestMarshaller {
 
     private static final MarshallingInfo<String> GRANTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GrantArn").build();
+    private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusReason").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Version").build();
 
@@ -49,6 +51,7 @@ public class DeleteGrantRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteGrantRequest.getGrantArn(), GRANTARN_BINDING);
+            protocolMarshaller.marshall(deleteGrantRequest.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(deleteGrantRequest.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

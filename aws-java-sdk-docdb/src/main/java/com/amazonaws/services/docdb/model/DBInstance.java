@@ -121,7 +121,8 @@ public class DBInstance implements Serializable, Cloneable {
     private String engineVersion;
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor
+     * version upgrades regardless of the value set.
      * </p>
      */
     private Boolean autoMinorVersionUpgrade;
@@ -152,14 +153,14 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted instance.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the instance is accessed.
+     * The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries
+     * whenever the KMS key for the instance is accessed.
      * </p>
      */
     private String dbiResourceId;
@@ -184,7 +185,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String dBInstanceArn;
     /**
      * <p>
-     * A list of log types that this instance is configured to export to Amazon CloudWatch Logs.
+     * A list of log types that this instance is configured to export to CloudWatch Logs.
      * </p>
      */
     private java.util.List<String> enabledCloudwatchLogsExports;
@@ -845,11 +846,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor
+     * version upgrades regardless of the value set.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version patches are applied automatically.
+     *        Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform
+     *        minor version upgrades regardless of the value set.
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -858,10 +861,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor
+     * version upgrades regardless of the value set.
      * </p>
      * 
-     * @return Indicates that minor version patches are applied automatically.
+     * @return Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform
+     *         minor version upgrades regardless of the value set.
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -870,11 +875,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor
+     * version upgrades regardless of the value set.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version patches are applied automatically.
+     *        Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform
+     *        minor version upgrades regardless of the value set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -885,10 +892,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor
+     * version upgrades regardless of the value set.
      * </p>
      * 
-     * @return Indicates that minor version patches are applied automatically.
+     * @return Does not apply. This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform
+     *         minor version upgrades regardless of the value set.
      */
 
     public Boolean isAutoMinorVersionUpgrade() {
@@ -1122,12 +1131,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted instance.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted
-     *        instance.
+     *        If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1136,11 +1144,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted instance.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted
-     *         instance.
+     * @return If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance.
      */
 
     public String getKmsKeyId() {
@@ -1149,12 +1156,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted instance.
+     * If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted
-     *        instance.
+     *        If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1165,13 +1171,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the instance is accessed.
+     * The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries
+     * whenever the KMS key for the instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
-     *        The AWS Region-unique, immutable identifier for the instance. This identifier is found in AWS CloudTrail
-     *        log entries whenever the AWS KMS key for the instance is accessed.
+     *        The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log
+     *        entries whenever the KMS key for the instance is accessed.
      */
 
     public void setDbiResourceId(String dbiResourceId) {
@@ -1180,12 +1186,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the instance is accessed.
+     * The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries
+     * whenever the KMS key for the instance is accessed.
      * </p>
      * 
-     * @return The AWS Region-unique, immutable identifier for the instance. This identifier is found in AWS CloudTrail
-     *         log entries whenever the AWS KMS key for the instance is accessed.
+     * @return The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log
+     *         entries whenever the KMS key for the instance is accessed.
      */
 
     public String getDbiResourceId() {
@@ -1194,13 +1200,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the instance is accessed.
+     * The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log entries
+     * whenever the KMS key for the instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
-     *        The AWS Region-unique, immutable identifier for the instance. This identifier is found in AWS CloudTrail
-     *        log entries whenever the AWS KMS key for the instance is accessed.
+     *        The Region-unique, immutable identifier for the instance. This identifier is found in CloudTrail log
+     *        entries whenever the KMS key for the instance is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1337,10 +1343,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of log types that this instance is configured to export to Amazon CloudWatch Logs.
+     * A list of log types that this instance is configured to export to CloudWatch Logs.
      * </p>
      * 
-     * @return A list of log types that this instance is configured to export to Amazon CloudWatch Logs.
+     * @return A list of log types that this instance is configured to export to CloudWatch Logs.
      */
 
     public java.util.List<String> getEnabledCloudwatchLogsExports() {
@@ -1349,11 +1355,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of log types that this instance is configured to export to Amazon CloudWatch Logs.
+     * A list of log types that this instance is configured to export to CloudWatch Logs.
      * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this instance is configured to export to Amazon CloudWatch Logs.
+     *        A list of log types that this instance is configured to export to CloudWatch Logs.
      */
 
     public void setEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
@@ -1367,7 +1373,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of log types that this instance is configured to export to Amazon CloudWatch Logs.
+     * A list of log types that this instance is configured to export to CloudWatch Logs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1376,7 +1382,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this instance is configured to export to Amazon CloudWatch Logs.
+     *        A list of log types that this instance is configured to export to CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1392,11 +1398,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of log types that this instance is configured to export to Amazon CloudWatch Logs.
+     * A list of log types that this instance is configured to export to CloudWatch Logs.
      * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this instance is configured to export to Amazon CloudWatch Logs.
+     *        A list of log types that this instance is configured to export to CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -61,6 +61,12 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The type of a recommendation.
+     * </p>
+     */
+    private String recommendationCategory;
 
     /**
      * <p>
@@ -281,6 +287,65 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The type of a recommendation.
+     * </p>
+     * 
+     * @param recommendationCategory
+     *        The type of a recommendation.
+     * @see RecommendationCategory
+     */
+
+    public void setRecommendationCategory(String recommendationCategory) {
+        this.recommendationCategory = recommendationCategory;
+    }
+
+    /**
+     * <p>
+     * The type of a recommendation.
+     * </p>
+     * 
+     * @return The type of a recommendation.
+     * @see RecommendationCategory
+     */
+
+    public String getRecommendationCategory() {
+        return this.recommendationCategory;
+    }
+
+    /**
+     * <p>
+     * The type of a recommendation.
+     * </p>
+     * 
+     * @param recommendationCategory
+     *        The type of a recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RecommendationCategory
+     */
+
+    public RecommendationSummary withRecommendationCategory(String recommendationCategory) {
+        setRecommendationCategory(recommendationCategory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of a recommendation.
+     * </p>
+     * 
+     * @param recommendationCategory
+     *        The type of a recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RecommendationCategory
+     */
+
+    public RecommendationSummary withRecommendationCategory(RecommendationCategory recommendationCategory) {
+        this.recommendationCategory = recommendationCategory.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -301,7 +366,9 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
         if (getEndLine() != null)
             sb.append("EndLine: ").append(getEndLine()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getRecommendationCategory() != null)
+            sb.append("RecommendationCategory: ").append(getRecommendationCategory());
         sb.append("}");
         return sb.toString();
     }
@@ -336,6 +403,10 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getRecommendationCategory() == null ^ this.getRecommendationCategory() == null)
+            return false;
+        if (other.getRecommendationCategory() != null && other.getRecommendationCategory().equals(this.getRecommendationCategory()) == false)
+            return false;
         return true;
     }
 
@@ -349,6 +420,7 @@ public class RecommendationSummary implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getStartLine() == null) ? 0 : getStartLine().hashCode());
         hashCode = prime * hashCode + ((getEndLine() == null) ? 0 : getEndLine().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getRecommendationCategory() == null) ? 0 : getRecommendationCategory().hashCode());
         return hashCode;
     }
 

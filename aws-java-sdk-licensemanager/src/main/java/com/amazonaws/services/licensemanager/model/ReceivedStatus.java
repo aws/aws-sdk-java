@@ -26,7 +26,8 @@ public enum ReceivedStatus {
     ACTIVE("ACTIVE"),
     FAILED_WORKFLOW("FAILED_WORKFLOW"),
     DELETED("DELETED"),
-    DISABLED("DISABLED");
+    DISABLED("DISABLED"),
+    WORKFLOW_COMPLETED("WORKFLOW_COMPLETED");
 
     private String value;
 

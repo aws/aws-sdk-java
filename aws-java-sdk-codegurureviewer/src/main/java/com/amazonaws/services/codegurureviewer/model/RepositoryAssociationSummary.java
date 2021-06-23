@@ -73,7 +73,7 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      */
     private String owner;
@@ -395,13 +395,14 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
      *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
-     *        username for the account that owns the repository.
+     *        username for the account that owns the repository. For an S3 repository, it can be the username or AWS
+     *        account ID.
      */
 
     public void setOwner(String owner) {
@@ -412,12 +413,13 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      * 
      * @return The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
      *         that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
-     *         username for the account that owns the repository.
+     *         username for the account that owns the repository. For an S3 repository, it can be the username or AWS
+     *         account ID.
      */
 
     public String getOwner() {
@@ -428,13 +430,14 @@ public class RepositoryAssociationSummary implements Serializable, Cloneable, St
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
      *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
-     *        username for the account that owns the repository.
+     *        username for the account that owns the repository. For an S3 repository, it can be the username or AWS
+     *        account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

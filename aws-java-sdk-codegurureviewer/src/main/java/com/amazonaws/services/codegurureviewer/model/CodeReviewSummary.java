@@ -52,7 +52,7 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      */
     private String owner;
@@ -123,6 +123,8 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private MetricsSummary metricsSummary;
+
+    private SourceCodeType sourceCodeType;
 
     /**
      * <p>
@@ -260,13 +262,14 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
      *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
-     *        username for the account that owns the repository.
+     *        username for the account that owns the repository. For an S3 repository, it can be the username or AWS
+     *        account ID.
      */
 
     public void setOwner(String owner) {
@@ -277,12 +280,13 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      * 
      * @return The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
      *         that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
-     *         username for the account that owns the repository.
+     *         username for the account that owns the repository. For an S3 repository, it can be the username or AWS
+     *         account ID.
      */
 
     public String getOwner() {
@@ -293,13 +297,14 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
      * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
-     * the account that owns the repository.
+     * the account that owns the repository. For an S3 repository, it can be the username or AWS account ID.
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
      *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
-     *        username for the account that owns the repository.
+     *        username for the account that owns the repository. For an S3 repository, it can be the username or AWS
+     *        account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -842,6 +847,32 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * @param sourceCodeType
+     */
+
+    public void setSourceCodeType(SourceCodeType sourceCodeType) {
+        this.sourceCodeType = sourceCodeType;
+    }
+
+    /**
+     * @return
+     */
+
+    public SourceCodeType getSourceCodeType() {
+        return this.sourceCodeType;
+    }
+
+    /**
+     * @param sourceCodeType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeReviewSummary withSourceCodeType(SourceCodeType sourceCodeType) {
+        setSourceCodeType(sourceCodeType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -874,7 +905,9 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
         if (getPullRequestId() != null)
             sb.append("PullRequestId: ").append(getPullRequestId()).append(",");
         if (getMetricsSummary() != null)
-            sb.append("MetricsSummary: ").append(getMetricsSummary());
+            sb.append("MetricsSummary: ").append(getMetricsSummary()).append(",");
+        if (getSourceCodeType() != null)
+            sb.append("SourceCodeType: ").append(getSourceCodeType());
         sb.append("}");
         return sb.toString();
     }
@@ -933,6 +966,10 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMetricsSummary() != null && other.getMetricsSummary().equals(this.getMetricsSummary()) == false)
             return false;
+        if (other.getSourceCodeType() == null ^ this.getSourceCodeType() == null)
+            return false;
+        if (other.getSourceCodeType() != null && other.getSourceCodeType().equals(this.getSourceCodeType()) == false)
+            return false;
         return true;
     }
 
@@ -952,6 +989,7 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getPullRequestId() == null) ? 0 : getPullRequestId().hashCode());
         hashCode = prime * hashCode + ((getMetricsSummary() == null) ? 0 : getMetricsSummary().hashCode());
+        hashCode = prime * hashCode + ((getSourceCodeType() == null) ? 0 : getSourceCodeType().hashCode());
         return hashCode;
     }
 

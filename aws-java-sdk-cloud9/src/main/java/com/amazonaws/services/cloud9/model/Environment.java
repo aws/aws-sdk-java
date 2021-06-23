@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an AWS Cloud9 development environment.
+ * Information about an Cloud9 development environment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/Environment" target="_top">AWS API
@@ -91,7 +91,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private EnvironmentLifecycle lifecycle;
     /**
      * <p>
-     * Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:
+     * Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available
+     * values are:
      * </p>
      * <ul>
      * <li>
@@ -608,7 +609,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:
+     * Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available
+     * values are:
      * </p>
      * <ul>
      * <li>
@@ -664,8 +666,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param managedCredentialsStatus
-     *        Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values
-     *        are:</p>
+     *        Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment.
+     *        Available values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -726,7 +728,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:
+     * Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available
+     * values are:
      * </p>
      * <ul>
      * <li>
@@ -781,8 +784,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available
-     *         values are:</p>
+     * @return Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment.
+     *         Available values are:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -843,7 +846,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:
+     * Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available
+     * values are:
      * </p>
      * <ul>
      * <li>
@@ -899,8 +903,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param managedCredentialsStatus
-     *        Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values
-     *        are:</p>
+     *        Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment.
+     *        Available values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -963,7 +967,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:
+     * Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available
+     * values are:
      * </p>
      * <ul>
      * <li>
@@ -1019,8 +1024,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param managedCredentialsStatus
-     *        Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values
-     *        are:</p>
+     *        Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment.
+     *        Available values are:</p>
      *        <ul>
      *        <li>
      *        <p>

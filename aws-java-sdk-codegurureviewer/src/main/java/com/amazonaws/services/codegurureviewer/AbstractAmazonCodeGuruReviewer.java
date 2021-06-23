@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.codegurureviewer.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.codegurureviewer.waiters.AmazonCodeGuruReviewerWaiters;
 
 /**
  * Abstract implementation of {@code AmazonCodeGuruReviewer}. Convenient method forms pass through to the corresponding
@@ -104,6 +105,11 @@ public class AbstractAmazonCodeGuruReviewer implements AmazonCodeGuruReviewer {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AmazonCodeGuruReviewerWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

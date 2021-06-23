@@ -80,6 +80,8 @@ public interface AWSLicenseManager {
      * @return Result of the CheckInLicense operation returned by the service.
      * @throws ValidationException
      *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
      * @throws ResourceNotFoundException
      *         The resource cannot be found.
      * @throws ConflictException
@@ -108,6 +110,8 @@ public interface AWSLicenseManager {
      * @return Result of the CheckoutBorrowLicense operation returned by the service.
      * @throws ValidationException
      *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
      * @throws ResourceNotFoundException
      *         The resource cannot be found.
      * @throws NoEntitlementsAllowedException
@@ -142,6 +146,8 @@ public interface AWSLicenseManager {
      * @return Result of the CheckoutLicense operation returned by the service.
      * @throws ValidationException
      *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
      * @throws ResourceNotFoundException
      *         The resource cannot be found.
      * @throws NoEntitlementsAllowedException

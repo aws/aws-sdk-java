@@ -52,6 +52,10 @@ public class ReceivedMetadataJsonUnmarshaller implements Unmarshaller<ReceivedMe
                     context.nextToken();
                     receivedMetadata.setReceivedStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ReceivedStatusReason", targetDepth)) {
+                    context.nextToken();
+                    receivedMetadata.setReceivedStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AllowedOperations", targetDepth)) {
                     context.nextToken();
                     receivedMetadata.setAllowedOperations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

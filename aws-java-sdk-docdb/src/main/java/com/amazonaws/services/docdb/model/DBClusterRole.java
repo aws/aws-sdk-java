@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an AWS Identity and Access Management (IAM) role that is associated with a cluster.
+ * Describes an Identity and Access Management (IAM) role that is associated with a cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DBClusterRole" target="_top">AWS API
@@ -28,31 +28,31 @@ public class DBClusterRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.
+     * The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * Describes the state of association between the IAM role and the cluster. The <code>Status</code> property returns
+     * Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns
      * one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - The IAM role ARN is associated with the cluster and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web
+     * Services services on your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PENDING</code> - The IAM role ARN is being associated with the DB cluster.
+     * <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVALID</code> - The IAM role ARN is associated with the cluster, but the cluster cannot assume the IAM
-     * role to access other AWS services on your behalf.
+     * <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole
+     * to access other Amazon Web Services services on your behalf.
      * </p>
      * </li>
      * </ul>
@@ -61,11 +61,11 @@ public class DBClusterRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.
+     * The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.
+     *        The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.
      */
 
     public void setRoleArn(String roleArn) {
@@ -74,10 +74,10 @@ public class DBClusterRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.
+     * The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.
+     * @return The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.
      */
 
     public String getRoleArn() {
@@ -86,11 +86,11 @@ public class DBClusterRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.
+     * The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.
+     *        The Amazon Resource Name (ARN) of the IAMrole that is associated with the DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,48 +101,48 @@ public class DBClusterRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the state of association between the IAM role and the cluster. The <code>Status</code> property returns
+     * Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns
      * one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - The IAM role ARN is associated with the cluster and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web
+     * Services services on your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PENDING</code> - The IAM role ARN is being associated with the DB cluster.
+     * <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVALID</code> - The IAM role ARN is associated with the cluster, but the cluster cannot assume the IAM
-     * role to access other AWS services on your behalf.
+     * <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole
+     * to access other Amazon Web Services services on your behalf.
      * </p>
      * </li>
      * </ul>
      * 
      * @param status
-     *        Describes the state of association between the IAM role and the cluster. The <code>Status</code> property
+     *        Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property
      *        returns one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ACTIVE</code> - The IAM role ARN is associated with the cluster and can be used to access other AWS
-     *        services on your behalf.
+     *        <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other
+     *        Amazon Web Services services on your behalf.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> - The IAM role ARN is being associated with the DB cluster.
+     *        <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INVALID</code> - The IAM role ARN is associated with the cluster, but the cluster cannot assume the
-     *        IAM role to access other AWS services on your behalf.
+     *        <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the
+     *        IAMrole to access other Amazon Web Services services on your behalf.
      *        </p>
      *        </li>
      */
@@ -153,47 +153,47 @@ public class DBClusterRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the state of association between the IAM role and the cluster. The <code>Status</code> property returns
+     * Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns
      * one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - The IAM role ARN is associated with the cluster and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web
+     * Services services on your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PENDING</code> - The IAM role ARN is being associated with the DB cluster.
+     * <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVALID</code> - The IAM role ARN is associated with the cluster, but the cluster cannot assume the IAM
-     * role to access other AWS services on your behalf.
+     * <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole
+     * to access other Amazon Web Services services on your behalf.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Describes the state of association between the IAM role and the cluster. The <code>Status</code> property
+     * @return Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property
      *         returns one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ACTIVE</code> - The IAM role ARN is associated with the cluster and can be used to access other AWS
-     *         services on your behalf.
+     *         <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other
+     *         Amazon Web Services services on your behalf.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PENDING</code> - The IAM role ARN is being associated with the DB cluster.
+     *         <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>INVALID</code> - The IAM role ARN is associated with the cluster, but the cluster cannot assume the
-     *         IAM role to access other AWS services on your behalf.
+     *         <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the
+     *         IAMrole to access other Amazon Web Services services on your behalf.
      *         </p>
      *         </li>
      */
@@ -204,48 +204,48 @@ public class DBClusterRole implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the state of association between the IAM role and the cluster. The <code>Status</code> property returns
+     * Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property returns
      * one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - The IAM role ARN is associated with the cluster and can be used to access other AWS
-     * services on your behalf.
+     * <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other Amazon Web
+     * Services services on your behalf.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PENDING</code> - The IAM role ARN is being associated with the DB cluster.
+     * <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVALID</code> - The IAM role ARN is associated with the cluster, but the cluster cannot assume the IAM
-     * role to access other AWS services on your behalf.
+     * <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the IAMrole
+     * to access other Amazon Web Services services on your behalf.
      * </p>
      * </li>
      * </ul>
      * 
      * @param status
-     *        Describes the state of association between the IAM role and the cluster. The <code>Status</code> property
+     *        Describes the state of association between the IAMrole and the cluster. The <code>Status</code> property
      *        returns one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ACTIVE</code> - The IAM role ARN is associated with the cluster and can be used to access other AWS
-     *        services on your behalf.
+     *        <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used to access other
+     *        Amazon Web Services services on your behalf.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PENDING</code> - The IAM role ARN is being associated with the DB cluster.
+     *        <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INVALID</code> - The IAM role ARN is associated with the cluster, but the cluster cannot assume the
-     *        IAM role to access other AWS services on your behalf.
+     *        <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster cannot assume the
+     *        IAMrole to access other Amazon Web Services services on your behalf.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

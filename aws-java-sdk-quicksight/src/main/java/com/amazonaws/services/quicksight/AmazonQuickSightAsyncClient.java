@@ -277,6 +277,72 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFolderResult> createFolderAsync(CreateFolderRequest request) {
+
+        return createFolderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFolderResult> createFolderAsync(final CreateFolderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFolderRequest, CreateFolderResult> asyncHandler) {
+        final CreateFolderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFolderResult>() {
+            @Override
+            public CreateFolderResult call() throws Exception {
+                CreateFolderResult result = null;
+
+                try {
+                    result = executeCreateFolder(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFolderMembershipResult> createFolderMembershipAsync(CreateFolderMembershipRequest request) {
+
+        return createFolderMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFolderMembershipResult> createFolderMembershipAsync(final CreateFolderMembershipRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFolderMembershipRequest, CreateFolderMembershipResult> asyncHandler) {
+        final CreateFolderMembershipRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFolderMembershipResult>() {
+            @Override
+            public CreateFolderMembershipResult call() throws Exception {
+                CreateFolderMembershipResult result = null;
+
+                try {
+                    result = executeCreateFolderMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest request) {
 
         return createGroupAsync(request, null);
@@ -723,6 +789,72 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeDeleteDataSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFolderResult> deleteFolderAsync(DeleteFolderRequest request) {
+
+        return deleteFolderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFolderResult> deleteFolderAsync(final DeleteFolderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFolderRequest, DeleteFolderResult> asyncHandler) {
+        final DeleteFolderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFolderResult>() {
+            @Override
+            public DeleteFolderResult call() throws Exception {
+                DeleteFolderResult result = null;
+
+                try {
+                    result = executeDeleteFolder(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFolderMembershipResult> deleteFolderMembershipAsync(DeleteFolderMembershipRequest request) {
+
+        return deleteFolderMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFolderMembershipResult> deleteFolderMembershipAsync(final DeleteFolderMembershipRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFolderMembershipRequest, DeleteFolderMembershipResult> asyncHandler) {
+        final DeleteFolderMembershipRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFolderMembershipResult>() {
+            @Override
+            public DeleteFolderMembershipResult call() throws Exception {
+                DeleteFolderMembershipResult result = null;
+
+                try {
+                    result = executeDeleteFolderMembership(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1400,6 +1532,107 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeFolderResult> describeFolderAsync(DescribeFolderRequest request) {
+
+        return describeFolderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFolderResult> describeFolderAsync(final DescribeFolderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFolderRequest, DescribeFolderResult> asyncHandler) {
+        final DescribeFolderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFolderResult>() {
+            @Override
+            public DescribeFolderResult call() throws Exception {
+                DescribeFolderResult result = null;
+
+                try {
+                    result = executeDescribeFolder(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFolderPermissionsResult> describeFolderPermissionsAsync(DescribeFolderPermissionsRequest request) {
+
+        return describeFolderPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFolderPermissionsResult> describeFolderPermissionsAsync(final DescribeFolderPermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFolderPermissionsRequest, DescribeFolderPermissionsResult> asyncHandler) {
+        final DescribeFolderPermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFolderPermissionsResult>() {
+            @Override
+            public DescribeFolderPermissionsResult call() throws Exception {
+                DescribeFolderPermissionsResult result = null;
+
+                try {
+                    result = executeDescribeFolderPermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFolderResolvedPermissionsResult> describeFolderResolvedPermissionsAsync(
+            DescribeFolderResolvedPermissionsRequest request) {
+
+        return describeFolderResolvedPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFolderResolvedPermissionsResult> describeFolderResolvedPermissionsAsync(
+            final DescribeFolderResolvedPermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFolderResolvedPermissionsRequest, DescribeFolderResolvedPermissionsResult> asyncHandler) {
+        final DescribeFolderResolvedPermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFolderResolvedPermissionsResult>() {
+            @Override
+            public DescribeFolderResolvedPermissionsResult call() throws Exception {
+                DescribeFolderResolvedPermissionsResult result = null;
+
+                try {
+                    result = executeDescribeFolderResolvedPermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGroupResult> describeGroupAsync(DescribeGroupRequest request) {
 
         return describeGroupAsync(request, null);
@@ -1978,6 +2211,72 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeListDataSources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFolderMembersResult> listFolderMembersAsync(ListFolderMembersRequest request) {
+
+        return listFolderMembersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFolderMembersResult> listFolderMembersAsync(final ListFolderMembersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFolderMembersRequest, ListFolderMembersResult> asyncHandler) {
+        final ListFolderMembersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFolderMembersResult>() {
+            @Override
+            public ListFolderMembersResult call() throws Exception {
+                ListFolderMembersResult result = null;
+
+                try {
+                    result = executeListFolderMembers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFoldersResult> listFoldersAsync(ListFoldersRequest request) {
+
+        return listFoldersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFoldersResult> listFoldersAsync(final ListFoldersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFoldersRequest, ListFoldersResult> asyncHandler) {
+        final ListFoldersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFoldersResult>() {
+            @Override
+            public ListFoldersResult call() throws Exception {
+                ListFoldersResult result = null;
+
+                try {
+                    result = executeListFolders(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2623,6 +2922,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<SearchFoldersResult> searchFoldersAsync(SearchFoldersRequest request) {
+
+        return searchFoldersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchFoldersResult> searchFoldersAsync(final SearchFoldersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchFoldersRequest, SearchFoldersResult> asyncHandler) {
+        final SearchFoldersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchFoldersResult>() {
+            @Override
+            public SearchFoldersResult call() throws Exception {
+                SearchFoldersResult result = null;
+
+                try {
+                    result = executeSearchFolders(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -3038,6 +3370,72 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeUpdateDataSourcePermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFolderResult> updateFolderAsync(UpdateFolderRequest request) {
+
+        return updateFolderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFolderResult> updateFolderAsync(final UpdateFolderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFolderRequest, UpdateFolderResult> asyncHandler) {
+        final UpdateFolderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFolderResult>() {
+            @Override
+            public UpdateFolderResult call() throws Exception {
+                UpdateFolderResult result = null;
+
+                try {
+                    result = executeUpdateFolder(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFolderPermissionsResult> updateFolderPermissionsAsync(UpdateFolderPermissionsRequest request) {
+
+        return updateFolderPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFolderPermissionsResult> updateFolderPermissionsAsync(final UpdateFolderPermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFolderPermissionsRequest, UpdateFolderPermissionsResult> asyncHandler) {
+        final UpdateFolderPermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFolderPermissionsResult>() {
+            @Override
+            public UpdateFolderPermissionsResult call() throws Exception {
+                UpdateFolderPermissionsResult result = null;
+
+                try {
+                    result = executeUpdateFolderPermissions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

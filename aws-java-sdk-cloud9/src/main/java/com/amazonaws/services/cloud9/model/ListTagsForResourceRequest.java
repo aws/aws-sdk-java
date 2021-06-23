@@ -27,18 +27,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to get the tags for.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.
      * </p>
      */
     private String resourceARN;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to get the tags for.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to get the tags for.
+     *        The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -47,10 +47,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to get the tags for.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to get the tags for.
+     * @return The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.
      */
 
     public String getResourceARN() {
@@ -59,11 +59,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to get the tags for.
+     * The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name (ARN) of the AWS Cloud9 development environment to get the tags for.
+     *        The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

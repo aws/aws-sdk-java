@@ -31,6 +31,8 @@ public class CommitDiffSourceCodeTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceCommit").build();
     private static final MarshallingInfo<String> DESTINATIONCOMMIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationCommit").build();
+    private static final MarshallingInfo<String> MERGEBASECOMMIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MergeBaseCommit").build();
 
     private static final CommitDiffSourceCodeTypeMarshaller instance = new CommitDiffSourceCodeTypeMarshaller();
 
@@ -50,6 +52,7 @@ public class CommitDiffSourceCodeTypeMarshaller {
         try {
             protocolMarshaller.marshall(commitDiffSourceCodeType.getSourceCommit(), SOURCECOMMIT_BINDING);
             protocolMarshaller.marshall(commitDiffSourceCodeType.getDestinationCommit(), DESTINATIONCOMMIT_BINDING);
+            protocolMarshaller.marshall(commitDiffSourceCodeType.getMergeBaseCommit(), MERGEBASECOMMIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

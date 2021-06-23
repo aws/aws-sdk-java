@@ -281,6 +281,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ValidationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BaseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InternalExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.cloudsearchv2.model.AmazonCloudSearchException.class));
 
@@ -377,6 +378,10 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
      *         the <a href="http://status.aws.amazon.com/" target="_blank">Service Health Dashboard</a>.
      * @throws LimitExceededException
      *         The request was rejected because a resource limit has already been met.
+     * @throws ResourceAlreadyExistsException
+     *         The request was rejected because it attempted to create a resource that already exists.
+     * @throws ValidationException
+     *         The request was rejected because it has invalid parameters.
      * @sample AmazonCloudSearch.CreateDomain
      */
     @Override

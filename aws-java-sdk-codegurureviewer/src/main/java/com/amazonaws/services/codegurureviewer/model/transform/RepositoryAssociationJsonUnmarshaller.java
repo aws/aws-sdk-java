@@ -92,6 +92,10 @@ public class RepositoryAssociationJsonUnmarshaller implements Unmarshaller<Repos
                     context.nextToken();
                     repositoryAssociation.setKMSKeyDetails(KMSKeyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("S3RepositoryDetails", targetDepth)) {
+                    context.nextToken();
+                    repositoryAssociation.setS3RepositoryDetails(S3RepositoryDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

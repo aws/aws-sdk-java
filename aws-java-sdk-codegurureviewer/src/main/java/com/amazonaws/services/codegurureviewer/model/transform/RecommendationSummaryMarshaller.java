@@ -37,6 +37,8 @@ public class RecommendationSummaryMarshaller {
             .marshallLocationName("EndLine").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> RECOMMENDATIONCATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommendationCategory").build();
 
     private static final RecommendationSummaryMarshaller instance = new RecommendationSummaryMarshaller();
 
@@ -59,6 +61,7 @@ public class RecommendationSummaryMarshaller {
             protocolMarshaller.marshall(recommendationSummary.getStartLine(), STARTLINE_BINDING);
             protocolMarshaller.marshall(recommendationSummary.getEndLine(), ENDLINE_BINDING);
             protocolMarshaller.marshall(recommendationSummary.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(recommendationSummary.getRecommendationCategory(), RECOMMENDATIONCATEGORY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -41,6 +41,12 @@ public class XmlUtils {
         throws SAXException, IOException {
 
         XMLReader reader = XMLReaderFactory.createXMLReader();
+
+        reader.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+        reader.setFeature("http://xml.org/sax/features/external-general-entities", false);
+        reader.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+        reader.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+
         reader.setContentHandler(handler);
         reader.parse(new InputSource(in));
         in.close();
